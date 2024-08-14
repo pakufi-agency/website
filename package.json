@@ -1,0 +1,25 @@
+{
+  "name": "maxdi",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.0",
+    "next": "12.2.3",
+    "react": "18.2.0",
+    "react-bootstrap": "^2.4.0",
+    "react-countup": "^6.3.0",
+    "react-dom": "18.2.0",
+    "react-player": "^2.10.1",
+    "swiper": "^8.3.1"
+  },
+  "devDependencies": {
+    "eslint": "8.20.0",
+    "eslint-config-next": "12.2.3"
+  }
+}

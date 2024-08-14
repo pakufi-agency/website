@@ -1,0 +1,50 @@
+// Font Family
+$opensans: "Open Sans", sans-serif;
+$poppins: "Poppins", sans-serif;
+$fontawesome: "Font Awesome 6 Free";
+
+
+// Theme Colors
+$blue: #7432ff;
+$dark: #1d233a;
+$green: #c5f617;
+
+
+// Soft Colors
+$creamyellow: #fffef2;
+$lightyellow: #f2dac0;
+$softyellow: #fff5e8;
+$softblue: #ccc2ff;
+$lightblue: #8b61ff;
+$pcolor: #e6edff;
+$input-bg: #eef3ff;
+$input-text: #b2bcd6;
+$sdcolor: #e3dcff;
+$pagination: #e6e6ef;
+$cborder: #e2e2e2;
+
+
+// Text Color
+$white: #ffffff;
+$gray: #4a4f61;
+
+
+// Services Colors
+$sbox: #232745;
+$sbox-hover: #23234c;
+$sbtn-color: #b3b8d5;
+$sbtn-hover: #b499ff;
+$sbtn-hover-bg: #2b2a5b;
+$sbox-pink: #d4c5ff;
+$sbox-pink-btn: #b19cff;
+$sbox-green: #e5ffcf;
+$sbox-green-btn: #c2ea9b;
+
+
+// Responsive Variables
+$xxl: 'only screen and (min-width: 1400px) and (max-width: 1700px)';
+$xl: 'only screen and (min-width: 1200px) and (max-width: 1399px)';
+$lg : 'only screen and (min-width: 992px) and (max-width: 1199px)';
+$md:'only screen and (min-width: 768px) and (max-width: 991px)';
+$sm: 'only screen and (min-width: 576px) and (max-width: 767px)';
+$xs:'(max-width: 575px)';
