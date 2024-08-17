@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
@@ -13,27 +13,27 @@ import BlogHome from "../components/BlogHome";
 import LetsWork from "../components/LetsWork";
 import Footer from "../components/Footer";
 
-const HomeOne = () => {
+const HomeOne: FC = () => {
   return (
     <Layout pageTitle="Maxdi | Business & Digital Agency">
-      <Header heroLogo="/assets/images/logo/logo.svg"
-      />      
+      <Header heroLogo="/assets/images/logo/logo.svg" />
       <main>
-        <Hero/>      
-        <About subTitle="About Us"
-        titleFirst="We are here to make your"
-        titleSecond="product look more elegant and stylish"
-        />   
-        <Services extraClass="mt-75"/>      
-        <Facts/>      
-        <Portfolio/>      
-        <Experience/>      
-        <Testimonial testimonialArea="testimonials__area" paddingTop="pt-120"/>      
-        <Faq/>      
-        <BlogHome extraClass="pt-60"/>      
-        <LetsWork/>
-      </main> 
-      <Footer/>     
+        <Hero />
+        <About
+          subTitle="About Us"
+          titleFirst="We are here to make your"
+          titleSecond="product look more elegant and stylish"
+        />
+        <Services extraClass="mt-75" />
+        <Facts />
+        <Portfolio />
+        <Experience />
+        <Testimonial testimonialArea="testimonials__area" paddingTop="pt-120" />
+        <Faq />
+        <BlogHome extraClass="pt-60" />
+        <LetsWork />
+      </main>
+      <Footer />
     </Layout>
   );
 };

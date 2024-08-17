@@ -1,27 +1,40 @@
-import React, { useState, useEffect } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Link from "next/link";
 import NavMenu from "./NavMenu";
 
-const Header = ({ headerClass, menuClass, sideMenuClass, heroLogo }) => {
-  const [sidebar, setSidebar] = useState(false);
-  const showSidebar = () => setSidebar(!sidebar);
+interface HeaderProps {
+  headerClass?: string;
+  menuClass?: string;
+  sideMenuClass?: string;
+  heroLogo: string;
+}
 
-  const [sticky, setSticky] = useState(false);
+const Header: FC<HeaderProps> = ({
+  headerClass,
+  menuClass,
+  sideMenuClass,
+  heroLogo,
+}) => {
+  const [sidebar, setSidebar] = useState<boolean>(false);
+  const showSidebar = (): void => setSidebar(!sidebar);
 
-  const handleScroll = () => {
+  const [sticky, setSticky] = useState<boolean>(false);
+
+  const handleScroll = (): void => {
     if (window.scrollY > 100) {
       setSticky(true);
     } else if (window.scrollY < 100) {
       setSticky(false);
     }
   };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  });
+  }, []);
 
   return (
     <>
@@ -29,7 +42,7 @@ const Header = ({ headerClass, menuClass, sideMenuClass, heroLogo }) => {
         <div
           id="header-sticky"
           className={`header__area header__transparent ${headerClass} ${
-            sticky === true ? "sticky" : " "
+            sticky ? "sticky" : " "
           }`}
         >
           <Container>
