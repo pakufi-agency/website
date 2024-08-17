@@ -22,7 +22,18 @@ const ServicesPage: FC = () => {
         <Services />
         <Maxdi />
         <Faq />
-        <Pricing extraClass="mt-60 mb-260" />
+        <Pricing
+          priceText=""
+          priceTitle=""
+          amount=""
+          amountTag=""
+          listOne=""
+          listTwo=""
+          listThree=""
+          listFour=""
+          listFive=""
+          extraClass="mt-60 mb-260"
+        />
         <LetsWork />
       </main>
       <Footer />

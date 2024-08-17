@@ -16,7 +16,13 @@ const TeamPage: FC = () => {
         menuClass="main-menu-3"
       />
       <main>
-        <PortfolioTwo extraClass="portfolio__area-2 pb-230" />
+        <PortfolioTwo
+          portfolioImg=""
+          portfolioLink=""
+          portfolioText=""
+          portfolioTitle=""
+          extraClass="portfolio__area-2 pb-230"
+        />
         <LetsWork />
       </main>
       <Footer />

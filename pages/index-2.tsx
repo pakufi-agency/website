@@ -24,13 +24,30 @@ const HomeTwo: FC = () => {
       <main>
         <HeroTwo />
         <Maxdi />
-        <PortfolioTwo extraClass="pb-120" />
+        <PortfolioTwo
+          portfolioImg=""
+          portfolioLink=""
+          portfolioText=""
+          portfolioTitle=""
+          extraClass="pb-120"
+        />
         <Project subTitle="25 Years Of Experience" />
         <Testimonial
           testimonialArea="testimonials__area-2"
           paddingTop="pt-110"
         />
-        <Pricing extraClass="mt-105" />
+        <Pricing
+          priceText=""
+          priceTitle=""
+          amount=""
+          amountTag=""
+          listOne=""
+          listTwo=""
+          listThree=""
+          listFour=""
+          listFive=""
+          extraClass="mt-105"
+        />
         <Customer />
         <BlogHome extraClass="pt-60" />
         <LetsWork />

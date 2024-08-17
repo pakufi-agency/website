@@ -25,7 +25,7 @@ const AboutPage: FC = () => {
           titleFirst="We are here to make your"
           titleSecond="product look more elegant and stylish"
         />
-        <Experience extraClass="mt-70" />
+        <Experience />
         <TeamHome subTitle="Team Members" />
         <Project extraClass="project__area-pt" subTitle="Get Started" />
         <BlogHome extraClass="pt-110" />
