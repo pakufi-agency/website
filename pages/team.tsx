@@ -9,8 +9,7 @@ import Footer from "../components/Footer";
 const TeamPage: FC = () => {
   return (
     <Layout pageTitle="Maxdi | Business & Digital Agency">
-      team
-      {/* <PageHeader title="Team Members" crumbTitle="Team Members" />
+      <PageHeader title="Team Members" crumbTitle="Team Members" />
       <Header
         heroLogo="/assets/images/logo/logo.svg"
         headerClass="header__white"
@@ -20,7 +19,7 @@ const TeamPage: FC = () => {
         <TeamMember subTitle="Let's Create Something" />
         <LetsWork />
       </main>
-      <Footer /> */}
+      <Footer />
     </Layout>
   );
 };
