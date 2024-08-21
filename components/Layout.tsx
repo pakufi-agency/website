@@ -1,5 +1,4 @@
 import React, { FC, ReactNode } from "react";
-import Link from "next/link";
 import Head from "next/head";
 
 interface LayoutProps {
@@ -17,7 +16,7 @@ const Layout: FC<LayoutProps> = ({ pageTitle, children }) => {
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <Link
+        <link
           rel="shortcut icon"
           type="image/x-icon"
           href="/assets/images/logo/favicon.png"
