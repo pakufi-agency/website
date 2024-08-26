@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import HeroTwo from "../components/HeroTwo";
@@ -12,7 +12,7 @@ import BlogHome from "../components/BlogHome";
 import LetsWork from "../components/LetsWork";
 import Footer from "../components/Footer";
 
-const HomeTwo: FC = () => {
+const HomeTwo = () => {
   return (
     <Layout pageTitle="Maxdi | Business & Digital Agency">
       <Header
@@ -24,30 +24,13 @@ const HomeTwo: FC = () => {
       <main>
         <HeroTwo />
         <Maxdi />
-        <PortfolioTwo
-          portfolioImg=""
-          portfolioLink=""
-          portfolioText=""
-          portfolioTitle=""
-          extraClass="pb-120"
-        />
+        <PortfolioTwo extraClass="pb-120" />
         <Project subTitle="25 Years Of Experience" />
         <Testimonial
           testimonialArea="testimonials__area-2"
           paddingTop="pt-110"
         />
-        <Pricing
-          priceText=""
-          priceTitle=""
-          amount=""
-          amountTag=""
-          listOne=""
-          listTwo=""
-          listThree=""
-          listFour=""
-          listFive=""
-          extraClass="mt-105"
-        />
+        <Pricing extraClass="mt-105" />
         <Customer />
         <BlogHome extraClass="pt-60" />
         <LetsWork />

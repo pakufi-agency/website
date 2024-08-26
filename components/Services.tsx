@@ -11,7 +11,7 @@ interface ServiceData {
   serviceLink: string;
 }
 
-const SERVICE_DATA: ServiceData[] = [
+export const SERVICE_DATA: ServiceData[] = [
   {
     serviceIcon: "/assets/images/icon/s-icon-1.png",
     serviceTitle: "UI/UX Design",

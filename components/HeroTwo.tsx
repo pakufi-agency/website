@@ -3,50 +3,8 @@ import Container from "react-bootstrap/Container";
 import { Row, Col } from "react-bootstrap";
 import Link from "next/link";
 import SectionTitle from "./SectionTitle";
-import HeroService from "./HeroService";
-
-interface HeroData {
-  serviceIcon: string;
-  serviceTitle: string;
-  serviceDesc: string;
-  serviceLink: string;
-  bgClass: string;
-  iconClass: string;
-  btnClass: string;
-}
-
-const HERO_DATA: HeroData[] = [
-  {
-    serviceIcon: "/assets/images/icon/s2-icon-1.png",
-    serviceTitle: "UI/UX Design",
-    serviceDesc:
-      "Beautiful and Influential websites & apps that are mobile friendly quick to load and help drive sales giving you a solid presence online.",
-    serviceLink: "/services-details",
-    bgClass: "single__bg-pink",
-    iconClass: "single__service-icon-pink",
-    btnClass: "s-btn-pink",
-  },
-  {
-    serviceIcon: "/assets/images/icon/s2-icon-2.png",
-    serviceTitle: "Web Development",
-    serviceDesc:
-      "Beautiful and Influential websites & apps that are mobile friendly quick to load and help drive sales giving you a solid presence online.",
-    serviceLink: "/services-details",
-    bgClass: "single__bg-yellow",
-    iconClass: "single__service-icon-yellow",
-    btnClass: "s-btn-yellow",
-  },
-  {
-    serviceIcon: "/assets/images/icon/s2-icon-3.png",
-    serviceTitle: "App Development",
-    serviceDesc:
-      "Beautiful and Influential websites & apps that are mobile friendly quick to load and help drive sales giving you a solid presence online.",
-    serviceLink: "/services-details",
-    bgClass: "single__bg-green",
-    iconClass: "single__service-icon-green",
-    btnClass: "s-btn-green",
-  },
-];
+import ServiceItem from "./ServiceItem";
+import { SERVICE_DATA } from "./Services";
 
 const HeroTwo: FC = () => {
   return (
@@ -89,18 +47,19 @@ const HeroTwo: FC = () => {
             <Col xl={6} lg={6} md={6} sm={10}>
               <div className="hero__content-2">
                 <h4 className="section__sub-title">
-                  Let’s Create Great Things
+                  Let's make the <s>web</s> word a better place
                 </h4>
                 <h2 className="hero__title hero__title-2">
-                  <span>Digital product</span>
-                  design agency
+                  <span>WE ARE PAKUFI</span>
+                  <br />A Tech Agency with focus on humans
                 </h2>
                 <p>
-                  The carbon in our apple pies extraordinary claims require
-                  extra evidence permanence of the stars energy.
+                  We help individuals and business to make their IT solution
+                  outstanding while empowering talent from developing nations to
+                  go one step closer to freedom.
                 </p>
                 <Link href="/contact" className="m-btn mt-35">
-                  Get Started
+                  Let's talk!
                 </Link>
               </div>
             </Col>
@@ -114,7 +73,7 @@ const HeroTwo: FC = () => {
           </Row>
         </Container>
       </div>
-      <div className="hero__services">
+      <div>
         <Container>
           <Row className="mb-55">
             <Col xl={6}>
@@ -128,28 +87,17 @@ const HeroTwo: FC = () => {
             </Col>
           </Row>
           <Row>
-            {HERO_DATA.map(
+            {SERVICE_DATA.map(
               (
-                {
-                  serviceIcon,
-                  serviceTitle,
-                  serviceDesc,
-                  serviceLink,
-                  bgClass,
-                  iconClass,
-                  btnClass,
-                }: HeroData,
-                index: number
+                { serviceIcon, serviceTitle, serviceDesc, serviceLink },
+                index
               ) => (
-                <HeroService
+                <ServiceItem
                   key={index}
                   serviceIcon={serviceIcon}
                   serviceTitle={serviceTitle}
                   serviceDesc={serviceDesc}
                   serviceLink={serviceLink}
-                  bgClass={bgClass}
-                  iconClass={iconClass}
-                  btnClass={btnClass}
                 />
               )
             )}

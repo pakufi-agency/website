@@ -73,7 +73,7 @@ const TeamMember: FC<TeamMemberProps> = ({ subTitle }) => {
             <div className="team__heading text-center">
               <SectionTitle
                 subTitle={subTitle}
-                titleFirst="Our beloved creative team"
+                titleFirst="Meet Pakufi core team"
                 titleSecond=""
               />
               <p>

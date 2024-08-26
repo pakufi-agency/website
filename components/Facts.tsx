@@ -42,29 +42,31 @@ const Facts: FC = () => {
             <div className="facts__content">
               <div className="facts__content-text">
                 <SectionTitle
-                  subTitle="Facts To Know"
-                  titleFirst="Our project will help"
-                  titleSecond="you standout"
+                  subTitle="Why work with us?"
+                  titleFirst="Experience, knowlede"
+                  titleSecond="and human center agency"
                 />
                 <p>
-                  The carbon in our apple pies extraordinary claims require
-                  extraord evidence permanence of the stars kindling the energy
-                  hidden in matter from which we spring emerged.
+                  We have years of experience in IT industry, teaching and
+                  international development. Professionality, detail oriented,
+                  communication and mental health are our main priority We are a
+                  small team and will give you all the attention you need. Join
+                  the family!
                 </p>
               </div>
               <div className="facts__counter-content d-flex">
                 <div className="facts__counter-text">
                   <h2>
-                    <CountUp end={2} duration={5} />K
+                    <CountUp end={15} duration={5} /> Years
                   </h2>
-                  <h5>Project Delivered</h5>
+                  <h5>Somethign amazing we have done</h5>
                   <p>Preserve and cherish that pale blue dot star stuff.</p>
                 </div>
                 <div className="facts__counter-text">
                   <h2>
-                    <CountUp end={5} duration={5} />M
+                    <CountUp end={25} duration={5} /> Countries
                   </h2>
-                  <h5>Total Revinue</h5>
+                  <h5>Another number of amazing things!</h5>
                   <p>The carbon in our appies event not nosunrise.</p>
                 </div>
               </div>

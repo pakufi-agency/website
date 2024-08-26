@@ -10,42 +10,16 @@ const NavMenu: FC = () => {
   return (
     <ul className="main-menu__links">
       <li>
-        <Link href="/">Home</Link>
-        <button className="dropdown" onClick={showActive}>
-          <i className="fa-solid fa-chevron-left"></i>
-        </button>
-        <ul className="submenu">
-          <li>
-            <Link href="/">Digital Agency</Link>
-          </li>
-          <li>
-            <Link href="index-2">Creative Agency</Link>
-          </li>
-        </ul>
-      </li>
-      <li>
         <Link href="/about">About</Link>
-      </li>
-      <li>
-        <Link href="/about">Pages</Link>
         <button className="dropdown" onClick={showActive}>
           <i className="fa-solid fa-chevron-left"></i>
         </button>
         <ul className="submenu">
           <li>
-            <Link href="/contact">Contact</Link>
+            <Link href="/about">Our mission</Link>
           </li>
           <li>
-            <Link href="/blog">Blog</Link>
-          </li>
-          <li>
-            <Link href="/single-blog">Blog Details</Link>
-          </li>
-          <li>
-            <Link href="/team">Team</Link>
-          </li>
-          <li>
-            <Link href="/single-team">Team Details</Link>
+            <Link href="/team">Who we are</Link>
           </li>
         </ul>
       </li>
@@ -56,26 +30,18 @@ const NavMenu: FC = () => {
         </button>
         <ul className="submenu">
           <li>
-            <Link href="/services">Services</Link>
+            <Link href="/services">I am a client</Link>
           </li>
           <li>
-            <Link href="/services-details">Services Details</Link>
+            <Link href="/services">I am a developer</Link>
           </li>
         </ul>
       </li>
       <li>
-        <Link href="/portfolio">Portfolio</Link>
-        <button className="dropdown" onClick={showActive}>
-          <i className="fa-solid fa-chevron-left"></i>
-        </button>
-        <ul className="submenu">
-          <li>
-            <Link href="/portfolio">Portfolio</Link>
-          </li>
-          <li>
-            <Link href="/single-portfolio">Portfolio Details</Link>
-          </li>
-        </ul>
+        <Link href="/">Support Pakufi</Link>
+      </li>
+      <li>
+        <Link href="/contact">Contact</Link>
       </li>
     </ul>
   );

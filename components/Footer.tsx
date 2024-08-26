@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import Container from "react-bootstrap/Container";
 import { Row, Col } from "react-bootstrap";
-import SectionTitle from "./SectionTitle";
 import Link from "next/link";
 
 const Footer: FC = () => {
@@ -21,33 +20,6 @@ const Footer: FC = () => {
           />
         </div>
         <Container>
-          <Row className="mb-145">
-            <Col xxl={6} xl={7} lg={8} md={10}>
-              <div className="footer__newsletter">
-                <SectionTitle
-                  subTitle="Join Our Community"
-                  titleFirst="Subscribe for newsletter"
-                  titleSecond=""
-                />
-              </div>
-            </Col>
-            <Col xxl={{ span: 5, offset: 1 }} xl={5} lg={4} md={4}>
-              <div className="footer__subscribe">
-                <form action="#">
-                  <div className="footer__subscribe-input">
-                    <div className="form-group">
-                      <input
-                        type="email"
-                        className="form-control"
-                        placeholder="Email address"
-                      />
-                    </div>
-                    <button type="submit">Subscribe</button>
-                  </div>
-                </form>
-              </div>
-            </Col>
-          </Row>
           <Row className="mb-50">
             <Col xl={4} lg={4} md={10} sm={10}>
               <div className="footer__widget wow fadeIn" data-wow-delay=".5s">
@@ -61,9 +33,6 @@ const Footer: FC = () => {
                 <div className="footer__widget-social">
                   <Link href="#">
                     <i className="fa-brands fa-facebook-f"></i>
-                  </Link>
-                  <Link href="#">
-                    <i className="fa-brands fa-twitter"></i>
                   </Link>
                   <Link href="#">
                     <i className="fa-brands fa-instagram"></i>
@@ -153,16 +122,16 @@ const Footer: FC = () => {
               </div>
             </Col>
           </Row>
-          <Row>
+          {/* <Row>
             <Col xl={12}>
               <div className="footer__copyright">
                 <p>
-                  Copyright © 2022
+                  Copyright © 2024
                   <Link href="https://alimasha.net/">Alimasha</Link>
                 </p>
               </div>
             </Col>
-          </Row>
+          </Row> */}
         </Container>
       </div>
     </footer>

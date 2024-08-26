@@ -1,48 +1,51 @@
-import React, { FC } from "react";
+import React, { FC, Fragment } from "react";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
-import Hero from "../components/Hero";
-import About from "../components/About";
-import Services from "../components/Services";
-import Facts from "../components/Facts";
-import Portfolio from "../components/Portfolio";
+import HeroTwo from "../components/HeroTwo";
 import Experience from "../components/Experience";
-import Testimonial from "../components/Testimonial";
-import Faq from "../components/Faq";
-import BlogHome from "../components/BlogHome";
 import LetsWork from "../components/LetsWork";
 import Footer from "../components/Footer";
+import About from "../components/About";
+import Faq from "../components/Faq";
+import TeamHome from "../components/TeamHome";
+import Facts from "../components/Facts";
+import WorkInProgress from "../components/WorkInProgress";
 
-import ErrorBoundary from "../components/ErrorBoundary";
+const ONLINE = false;
 
-const HomeOne: FC = () => {
+const HomeTwo: FC = () => {
   return (
-    <ErrorBoundary>
-      <Layout pageTitle="Maxdi | Business & Digital Agency">
-        <Header heroLogo="/assets/images/logo/logo.svg" />
-        <main>
-          <Hero />
-          <About
-            subTitle="About Us"
-            titleFirst="We are here to make your"
-            titleSecond="product look more elegant and stylish"
-          />
-          <Services extraClass="mt-75" />
-          <Facts />
-          <Portfolio />
-          <Experience />
-          <Testimonial
-            testimonialArea="testimonials__area"
-            paddingTop="pt-120"
-          />
-          <Faq />
-          <BlogHome extraClass="pt-60" />
-          <LetsWork />
-        </main>
-        <Footer />
-      </Layout>
-    </ErrorBoundary>
+    <Layout pageTitle="Pakufi | Ethical Tech Agency">
+      <Header
+        heroLogo="/assets/images/logo/Logo-white.svg"
+        headerClass="header__area-2"
+        menuClass="main-menu-2"
+        sideMenuClass="icon-white"
+      />
+      <main>
+        {ONLINE ? (
+          <Fragment>
+            <HeroTwo />
+            <About
+              subTitle="Who we are"
+              titleFirst="We dream a world where there are no borders"
+              titleSecond="and this is how we want to achieve it"
+            />
+
+            <div> HOW DO WE WORK </div>
+            <Facts />
+            <Experience />
+            <TeamHome subTitle="Team Members" />
+            <Faq />
+            <LetsWork />
+          </Fragment>
+        ) : (
+          <WorkInProgress />
+        )}
+      </main>
+      <Footer />
+    </Layout>
   );
 };
 
-export default HomeOne;
+export default HomeTwo;
