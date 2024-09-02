@@ -16,34 +16,36 @@ const ONLINE = false;
 const HomeTwo: FC = () => {
   return (
     <Layout pageTitle="Pakufi | Ethical Tech Agency">
-      <Header
-        heroLogo="/assets/images/logo/Logo-white.svg"
-        headerClass="header__area-2"
-        menuClass="main-menu-2"
-        sideMenuClass="icon-white"
-      />
-      <main>
-        {ONLINE ? (
-          <Fragment>
-            <HeroTwo />
-            <About
-              subTitle="Who we are"
-              titleFirst="We dream a world where there are no borders"
-              titleSecond="and this is how we want to achieve it"
-            />
+      {ONLINE ? (
+        <Fragment>
+          <Header
+            heroLogo="/assets/images/logo/Logo-white.svg"
+            headerClass="header__area-2"
+            menuClass="main-menu-2"
+            sideMenuClass="icon-white"
+          />
+          <main>
+            <Fragment>
+              <HeroTwo />
+              <About
+                subTitle="Who we are"
+                titleFirst="We dream a world where there are no borders"
+                titleSecond="and this is how we want to achieve it"
+              />
 
-            <div> HOW DO WE WORK </div>
-            <Facts />
-            <Experience />
-            <TeamHome subTitle="Team Members" />
-            <Faq />
-            <LetsWork />
-          </Fragment>
-        ) : (
-          <WorkInProgress />
-        )}
-      </main>
-      <Footer />
+              <div> HOW DO WE WORK </div>
+              <Facts />
+              <Experience />
+              <TeamHome subTitle="Team Members" />
+              <Faq />
+              <LetsWork />
+            </Fragment>
+          </main>
+          <Footer />
+        </Fragment>
+      ) : (
+        <WorkInProgress />
+      )}
     </Layout>
   );
 };
