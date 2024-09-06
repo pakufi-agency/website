@@ -88,19 +88,39 @@ This files table contents are outlined below>>>>>
 /*================================================
 Default CSS
 =================================================*/
-$light-green-color: #44ce6f;
+// $light-green-color: #44ce6f;
+// $purple-color: #c679e3;
+
 $white-color: #ffffff;
 $black-color: #0e314c;
+
 $navlink-color: #4a6f8a;
 $paragraph-color: #6084a4;
-$purple-color: #c679e3;
 $bg-color: #f7fafd;
 $bg-color2: #f9f6f6;
+$bg-color3: #f9fafb;
+$bg-color4: #eef6fd;
 $hosting-main-color: #032b8d;
-$gradient-color: linear-gradient(135deg, #23bdb8 0%, #43e794 100%);
-$gradient-color2: linear-gradient(to right bottom, #1fa2ff, #00c0ff, #00d9f2, #53eedd, #a6ffcb);
+// $gradient-color: linear-gradient(135deg, #23bdb8 0%, #43e794 100%);
+// $gradient-color2: linear-gradient(to right bottom, #1fa2ff, #00c0ff, #00d9f2, #53eedd, #a6ffcb);
+
 $transition: .5s;
 $font-size: 14px;
+
+$acid-green: #85B360;
+$mint-green: #5D9F7B;
+$jade-green: #487B6E;
+$river-bed-green: #385C61;
+$dark-grey-blue: #2A4555;
+$navy-blue: #10133B;
+
+$primary-color: $dark-grey-blue;
+$secondary-color: $mint-green;
+
+
+$gradient-color: linear-gradient(135deg, $primary-color 0%, $mint-green 100%);
+$gradient-color2: linear-gradient(to right bottom, $primary-color, $river-bed-green, $secondary-color, $mint-green, $acid-green);
+
 
 body { 
     padding: 0;
@@ -119,7 +139,7 @@ a {
     outline: 0 !important;
 
     &:hover, &:focus {
-        color: $light-green-color;
+        color: $primary-color;
         text-decoration: none;
     }
 }
@@ -168,13 +188,13 @@ p {
     background-color: $bg-color2;
 }
 .bg-f9fafb {
-    background-color: #f9fafb;
+    background-color: $bg-color3;
 }
 .bg-0f054b {
     background-color: #0f054b;
 }
 .bg-eef6fd {
-    background-color: #eef6fd;
+    background-color: $bg-color4;
 }
 .pb-80 {
     padding-bottom: 80px;
@@ -192,7 +212,7 @@ textarea.form-control {
         width: 12px;
         height: 12px;
         &.swiper-pagination-bullet-active, &:hover {
-            background-color: $light-green-color;
+            background-color: $primary-color;
         }
     }
 }
@@ -200,7 +220,7 @@ textarea.form-control {
 /* btn btn-primary */
 .btn-primary {
     color: $white-color;
-    background-color: $light-green-color;
+    background-color: $primary-color;
     box-shadow: 0 13px 27px 0 rgba(68, 206, 111, .25);
 
     &:hover, &:focus, &:active {
@@ -223,7 +243,7 @@ textarea.form-control {
     }
     &.disabled, &:disabled {
         color: $white-color;
-        background-color: $light-green-color;
+        background-color: $primary-color;
         box-shadow: 0 13px 27px 0 rgba(68, 206, 111, .25);
         opacity: 1;
 
@@ -253,7 +273,7 @@ textarea.form-control {
         height: 100%;
         width: 0;
         transition: $transition;
-        background: $purple-color;
+        background: $secondary-color;
         z-index: -1;
     }
     &::after {
@@ -276,7 +296,7 @@ textarea.form-control {
     &.btn-secondary {
         text-transform: capitalize;
         border-radius: 0;
-        background-color: $light-green-color;
+        background-color: $primary-color;
         padding: 13px 30px;
         box-shadow: 5px 5px 5px #a6f5be;
         margin: {
@@ -289,16 +309,16 @@ textarea.form-control {
         };
         &::before {
             border-radius: 0;
-            background: $purple-color;
+            background: $secondary-color;
         }
         &::after {
             border-radius: 0;
-            background: $purple-color;
+            background: $secondary-color;
         }
         &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active, .show>&.dropdown-toggle {
             color: $white-color;
-            background-color: $light-green-color;
-            border-color: $light-green-color;
+            background-color: $primary-color;
+            border-color: $primary-color;
         }
         &:not(:disabled):not(.disabled).active:focus, &:not(:disabled):not(.disabled):active:focus, .show>&.dropdown-toggle:focus {
             box-shadow: 5px 5px 5px #e9caf5;
@@ -338,7 +358,7 @@ label {
         outline: 0;
         background: $white-color;
         box-shadow: unset;
-        border-color: $light-green-color;
+        border-color: $primary-color;
     }
 }
 /* Section Title */
@@ -374,7 +394,7 @@ label {
             height: 10px;
             width: 10px;
             border-radius: 50%;
-            background: $light-green-color;
+            background: $primary-color;
             animation-duration: 3s;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
@@ -383,7 +403,7 @@ label {
     }
     .sub-title {
         display: inline-block;
-        color: $purple-color;
+        color: $secondary-color;
         background-color: #f5dffd;
         margin-bottom: 18px;
         border-radius: 30px;
@@ -428,7 +448,7 @@ Preloader CSS
     width: 100%;
     height: 100%;
     z-index: 9999999;
-    background: $light-green-color;
+    background: $primary-color;
 
     .spinner {
         width: 60px;
@@ -526,7 +546,7 @@ Navbar CSS
                         right: 14px;
                     }
                     &:hover, &:focus, &.active {
-                        color: $light-green-color;
+                        color: $primary-color;
                     }
                     svg {
                         width: 14px;
@@ -568,7 +588,7 @@ Navbar CSS
                             color: $navlink-color;
 
                             &:hover, &:focus, &.active {
-                                color: $light-green-color;
+                                color: $primary-color;
                             }
 
                             svg, i {
@@ -587,7 +607,7 @@ Navbar CSS
                                     color: $navlink-color;
 
                                     &:hover, &:focus, &.active {
-                                        color: $light-green-color;
+                                        color: $primary-color;
                                     }
                                 }
                             }
@@ -599,7 +619,7 @@ Navbar CSS
                                 top: -10px !important;
                             }
                             a {
-                                color: $light-green-color;
+                                color: $primary-color;
                             }
                         }
                     }
@@ -653,18 +673,18 @@ Navbar CSS
                     }
                     &:hover, &:focus {
                         color: $white-color;
-                        border-color: $light-green-color;
+                        border-color: $primary-color;
                     }
                     &::after, &::before {
-                        background: $light-green-color;
+                        background: $primary-color;
                     }
                 }
                 &.btn-primary {
-                    background: $purple-color;
+                    background: $secondary-color;
                     box-shadow: 0 13px 27px 0 rgba(198, 121, 227, 0.25);
 
                     &::after, &::before {
-                        background: $light-green-color;
+                        background: $primary-color;
                         box-shadow: 0 13px 27px 0 rgba(68, 206, 111, 0.25);
                     }
                 }
@@ -689,7 +709,7 @@ Navbar CSS
                         color: $white-color;
 
                         &:hover, &:focus, &.active {
-                            color: $light-green-color;
+                            color: $primary-color;
                         }
                     }
                 }
@@ -700,11 +720,11 @@ Navbar CSS
                 }
                 .btn {
                     &.btn-primary {
-                        background: $purple-color;
+                        background: $secondary-color;
                         box-shadow: 0 13px 27px 0 rgba(198, 121, 227, 0.25);
     
                         &::after, &::before {
-                            background: $light-green-color;
+                            background: $primary-color;
                             box-shadow: 0 13px 27px 0 rgba(68, 206, 111, 0.25);
                         }
                     }
@@ -829,7 +849,7 @@ Main Banner CSS
                     font-size: 13px;
                     font-weight: 400;
                     a {
-                        color: $light-green-color;
+                        color: $primary-color;
                     }
                 }
             }
@@ -956,7 +976,7 @@ Main Banner CSS
                     transform: translateY(-50%);
                     width: 20px;
                     height: 2px;
-                    background: $light-green-color;
+                    background: $primary-color;
                     content: '';
                 }
                 &:last-child {
@@ -1204,7 +1224,7 @@ Boxes CSS
         line-height: 55px;
         background: #cdf1d8;
         border-radius: 50%;
-        color: $light-green-color;
+        color: $primary-color;
         transition: $transition;
     }
     h3 {
@@ -1250,7 +1270,7 @@ Boxes CSS
         border-color: #edc3fc;
 
         .icon {
-            color: $purple-color;
+            color: $secondary-color;
             background: #edc3fc;
         }
     }
@@ -1272,7 +1292,7 @@ Boxes CSS
         }
         .icon {
             background: $white-color;
-            color: $light-green-color;
+            color: $primary-color;
         }
         h3, p, a {
             color: $white-color;
@@ -1284,7 +1304,7 @@ Boxes CSS
         }
         &.bg-c679e3 {
             .icon {
-                color: $purple-color;
+                color: $secondary-color;
             }
         }
         &.bg-eb6b3d {
@@ -1392,7 +1412,7 @@ Why Choose US CSS
     margin-top: 30px;
 
     .icon {
-        color: $light-green-color;
+        color: $primary-color;
         transition: $transition;
         
         i {
@@ -1507,7 +1527,7 @@ Services CSS
         svg {
             margin-right: 5px;
             display: inline-block;
-            color: $light-green-color;
+            color: $primary-color;
             transition: $transition;
             width: 18px;
             position: absolute;
@@ -1726,11 +1746,11 @@ Services CSS
         line-height: 55px;
         background: #cdf1d8;
         border-radius: 50%;
-        color: $light-green-color;
+        color: $primary-color;
         transition: $transition;
 
         &.bg-c679e3 {
-            color: $purple-color;
+            color: $secondary-color;
             background: #edc3fc;
         }
         &.bg-eb6b3d {
@@ -1743,7 +1763,7 @@ Services CSS
         position: absolute;
         width: 0;
         height: 4px;
-        background: $light-green-color;
+        background: $primary-color;
         opacity: 0;
         visibility: hidden;
         bottom: 0;
@@ -1760,11 +1780,11 @@ Services CSS
         box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
 
         .icon {
-            background: $light-green-color;
+            background: $primary-color;
             color: $white-color;
 
             &.bg-c679e3 {
-                background: $purple-color;
+                background: $secondary-color;
             }
             &.bg-eb6b3d {
                 background: #eb6b3d;
@@ -1827,7 +1847,7 @@ Bigdata Services CSS
         z-index: -1;
     }
     .learn-more-btn {
-        color: $light-green-color;
+        color: $primary-color;
         font-weight: 500;
         display: inline-block;
         margin-top: 5px;
@@ -1848,7 +1868,7 @@ Bigdata Services CSS
             };
             svg {
                 left: 100%;
-                color: $light-green-color;
+                color: $primary-color;
             }
         }
     }
@@ -1938,7 +1958,7 @@ Services Details CSS
                     width: 40px;
                     text-align: center;
                     height: 100%;
-                    background: $light-green-color;
+                    background: $primary-color;
                     color: $white-color;
         
                     &::before {
@@ -2007,13 +2027,13 @@ Features CSS
         line-height: 55px;
         background: #cdf1d8;
         border-radius: 50%;
-        color: $light-green-color;
+        color: $primary-color;
         left: 20px;
         top: 30px;
         transition: $transition;
 
         &.bg-c679e3 {
-            color: $purple-color;
+            color: $secondary-color;
             background: #edc3fc;
         }
         &.bg-eb6b3d {
@@ -2026,11 +2046,11 @@ Features CSS
         box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
 
         .icon {
-            background: $light-green-color;
+            background: $primary-color;
             color: $white-color;
 
             &.bg-c679e3 {
-                background: $purple-color;
+                background: $secondary-color;
             }
             &.bg-eb6b3d {
                 background: #eb6b3d;
@@ -2067,11 +2087,11 @@ Features CSS
         background: #cdf1d8;
         display: inline-block;
         border-radius: 50%;
-        color: $light-green-color;
+        color: $primary-color;
         transition: $transition;
 
         &.bg-c679e3 {
-            color: $purple-color;
+            color: $secondary-color;
             background: #edc3fc;
         }
         &.bg-eb6b3d {
@@ -2084,7 +2104,7 @@ Features CSS
         position: absolute;
         width: 0;
         height: 4px;
-        background: $light-green-color;
+        background: $primary-color;
         opacity: 0;
         visibility: hidden;
         bottom: 0;
@@ -2101,11 +2121,11 @@ Features CSS
         box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
 
         .icon {
-            background: $light-green-color;
+            background: $primary-color;
             color: $white-color;
 
             &.bg-c679e3 {
-                background: $purple-color;
+                background: $secondary-color;
             }
             &.bg-eb6b3d {
                 background: #eb6b3d;
@@ -2139,7 +2159,7 @@ Features Details CSS
             padding-left: 15px;
 
             &::before {
-                background: $light-green-color;
+                background: $primary-color;
                 width: 8px;
                 height: 8px;
                 left: 0;
@@ -2188,7 +2208,7 @@ Features Details CSS
                     width: 40px;
                     text-align: center;
                     height: 100%;
-                    background: $light-green-color;
+                    background: $primary-color;
                     color: $white-color;
 
                     &::before {
@@ -2283,11 +2303,11 @@ Team CSS
                 margin: 0 5px;
 
                 a {
-                    color: $purple-color;
+                    color: $secondary-color;
 
                     &:hover {
                         transform: translateY(-5px);
-                        color: $light-green-color;
+                        color: $primary-color;
                     }
                     svg {
                         width: 19px;
@@ -2332,7 +2352,7 @@ Team CSS
                 height: 0;
             }
             img {
-                border-color: $light-green-color;
+                border-color: $primary-color;
             }
         }
         .team-info {
@@ -2464,7 +2484,7 @@ Fun Facts CSS
     text-align: center;
 
     h3 {
-        color: $light-green-color;
+        color: $primary-color;
         font-size: 32px;
         margin-bottom: 7px;
     }
@@ -2494,11 +2514,11 @@ Fun Facts CSS
         margin-top: -27px;
 
         &::before, &::after {
-            background: $light-green-color;
+            background: $primary-color;
         }
     }
     .btn-primary {
-        background: $purple-color;
+        background: $secondary-color;
         box-shadow: 0 13px 27px 0 rgba(198, 121, 227, 0.25);
 
         &:hover, &:focus {
@@ -2554,7 +2574,7 @@ Fun Facts CSS
     border-radius: 5px;
 
     h3 {
-        color: $light-green-color;
+        color: $primary-color;
         font-size: 32px;
         margin-bottom: 7px;
     }
@@ -2617,7 +2637,7 @@ Pricing CSS
         margin-bottom: 15px;
 
         span {
-            color: $light-green-color;
+            color: $primary-color;
             font: {
                 size: 30px;
                 weight: 600;
@@ -2680,11 +2700,11 @@ Pricing CSS
             }
         }
         .btn-primary {
-            background: $purple-color;
+            background: $secondary-color;
             box-shadow: 0 13px 27px 0 rgba(198, 121, 227, 0.25);
 
             &::after, &::before {
-                background: $light-green-color;
+                background: $primary-color;
                 box-shadow: 0 13px 27px 0 rgba(68, 206, 111, 0.25);
             }
         }
@@ -2720,7 +2740,7 @@ Pricing CSS
         margin-bottom: 20px;
 
         span {
-            color: $light-green-color;
+            color: $primary-color;
             font: {
                 size: 30px;
                 weight: 600;
@@ -2759,11 +2779,11 @@ Pricing CSS
     }
     &.active-plan {
         .btn-primary {
-            background: $purple-color;
+            background: $secondary-color;
             box-shadow: 0 13px 27px 0 rgba(198, 121, 227, 0.25);
 
             &::after, &::before {
-                background: $light-green-color;
+                background: $primary-color;
                 box-shadow: 0 13px 27px 0 rgba(68, 206, 111, 0.25);
             }
         }
@@ -2887,7 +2907,7 @@ Pricing CSS
             };
             &::after {
                 border-radius: 30px;
-                background: $light-green-color;
+                background: $primary-color;
                 width: 100%;
                 opacity: 1;
                 visibility: visible;
@@ -2924,7 +2944,7 @@ Pricing CSS
                 margin-bottom: 0;
             }
             svg {
-                color: $light-green-color;
+                color: $primary-color;
                 position: absolute;
                 left: 0;
                 top: 50%;
@@ -2988,7 +3008,7 @@ Domain Search CSS
             width: 22%;
             height: 55px;
             border-radius: 30px;
-            background-color: $light-green-color;
+            background-color: $primary-color;
             color: $white-color;
             font: {
                 weight: 600;
@@ -3002,7 +3022,7 @@ Domain Search CSS
             transition: $transition;
 
             &:hover, &:focus {
-                background-color: $purple-color;
+                background-color: $secondary-color;
             }
         }
     }
@@ -3067,7 +3087,7 @@ Feedback CSS
 
                 img {
                     border-radius: 50%;
-                    border: 2px solid $light-green-color;
+                    border: 2px solid $primary-color;
                     padding: 3px;
                     width: auto !important;
                     display: inline-block !important;
@@ -3085,7 +3105,7 @@ Feedback CSS
                     top: 8px;
                     bottom: 15px;
                 }
-                color: $purple-color;
+                color: $secondary-color;
             }
             p {
                 font-size: 15px;
@@ -3107,7 +3127,7 @@ Feedback CSS
                     transition: $transition;
                     display: inline-block;
                     position: relative;
-                    border: 2px solid $light-green-color;
+                    border: 2px solid $primary-color;
                     border-radius: 50%;
                     padding: 3px;
                     width: 85px;
@@ -3163,7 +3183,7 @@ Feedback CSS
         }
         &:hover {
             color: $white-color;
-            border-color: $light-green-color;
+            border-color: $primary-color;
 
             &::before {
                 opacity: 1;
@@ -3240,7 +3260,7 @@ Feedback CSS
                 display: inline-block !important;
                 width: 75px;
                 border-radius: 50%;
-                border: 3px solid $light-green-color;
+                border: 3px solid $primary-color;
             }
         }
         .title {
@@ -3251,7 +3271,7 @@ Feedback CSS
             span {
                 display: block;
                 margin-top: 8px;
-                color: $purple-color;
+                color: $secondary-color;
             }
         }
     }
@@ -3299,7 +3319,7 @@ Feedback CSS
     }
 }
 .bigdata-feedback-area {
-    background-color: #eef6fd;
+    background-color: $bg-color4;
 }
 .single-feedback-box {
     position: relative;
@@ -3434,7 +3454,7 @@ Ready To Talk CSS
         }
     }
     .btn-primary {
-        background: $purple-color;
+        background: $secondary-color;
         box-shadow: 0 5px 20px 0 rgba(198, 121, 227, 0.25);
 
         &:hover, &:focus {
@@ -3527,7 +3547,7 @@ Big Data Analytics Banner CSS
         line-height: 55px;
         background: #cdf1d8;
         border-radius: 50%;
-        color: $light-green-color;
+        color: $primary-color;
         transition: $transition;
     }
     h3 {
@@ -3547,7 +3567,7 @@ Big Data Analytics Banner CSS
         border-color: transparent;
 
         .icon {
-            color: $light-green-color;
+            color: $primary-color;
             background-color: $white-color;
         }
         &::before {
@@ -3577,13 +3597,13 @@ Big Data Analytics Banner CSS
     &:nth-child(3) {
         .single-banner-boxes {
             .icon {
-                color: $purple-color;
+                color: $secondary-color;
                 background: #edc3fc;
             }
             &:hover {
                 .icon {
                     background-color: $white-color;
-                    color: $purple-color;
+                    color: $secondary-color;
                 }
             }
         }
@@ -3914,7 +3934,7 @@ Blog CSS
                 color: $paragraph-color;
 
                 &:hover {
-                    color: $light-green-color;
+                    color: $primary-color;
                 }
             }
         }
@@ -3926,7 +3946,7 @@ Blog CSS
                 width: 15px;
             }
             &:hover {
-                color: $light-green-color;
+                color: $primary-color;
 
                 svg {
                     margin-left: 5px;
@@ -3991,7 +4011,7 @@ Blog CSS
                         color: $paragraph-color;
 
                         &:hover {
-                            color: $light-green-color;
+                            color: $primary-color;
                         }
                     }
                     &:last-child {
@@ -4123,7 +4143,7 @@ Blog CSS
                     color: $paragraph-color;
 
                     &:hover {
-                        color: $light-green-color;
+                        color: $primary-color;
                     }
                 }
                 &::before {
@@ -4172,8 +4192,8 @@ Blog CSS
                 margin-left: 2px;
             }
             &:hover {
-                background-color: $light-green-color;
-                border-color: $light-green-color;
+                background-color: $primary-color;
+                border-color: $primary-color;
                 color: $white-color;
             }
         }
@@ -4330,7 +4350,7 @@ Shop CSS
                         width: 20px;
                     }
                     &:hover, &:focus {
-                        background-color: $light-green-color;
+                        background-color: $primary-color;
                         color: $white-color;
                     }
                 }
@@ -4397,7 +4417,7 @@ Shop CSS
                 transition: $transition;
             }
             &:hover, &:focus {
-                background-color: $light-green-color;
+                background-color: $primary-color;
                 color: $white-color;
     
                 span {
@@ -4462,7 +4482,7 @@ Shop CSS
                                 width: 20px;
                             }
                             &:hover {
-                                color: $light-green-color;
+                                color: $primary-color;
                             }
                         }
                         input {
@@ -4485,7 +4505,7 @@ Shop CSS
                     }
                 }
                 button {
-                    background: $light-green-color;
+                    background: $primary-color;
                     color: $white-color;
                     border: none;
                     height: 46px;
@@ -4497,7 +4517,7 @@ Shop CSS
                     transition: $transition;
     
                     &:hover, &:focus {
-                        background-color: $purple-color;
+                        background-color: $secondary-color;
                         color: $white-color;
                     }
                 }
@@ -4523,7 +4543,7 @@ Shop Details CSS
     }
     .swiper-button-next, .swiper-button-prev {
         &:after {
-            color: $light-green-color;
+            color: $primary-color;
         }
     }
 }
@@ -4571,7 +4591,7 @@ Shop Details CSS
         margin-bottom: 20px;
         
         span {
-            color: $light-green-color;
+            color: $primary-color;
         }
     }
     form {
@@ -4610,7 +4630,7 @@ Shop Details CSS
                         width: 20px;
                     }
                     &:hover {
-                        color: $light-green-color;
+                        color: $primary-color;
                     }
                 }
                 input {
@@ -4633,7 +4653,7 @@ Shop Details CSS
             }
         }
         button {
-            background: $light-green-color;
+            background: $primary-color;
             color: $white-color;
             border: none;
             height: 46px;
@@ -4645,7 +4665,7 @@ Shop Details CSS
             transition: $transition;
 
             &:hover, &:focus {
-                background-color: $purple-color;
+                background-color: $secondary-color;
                 color: $white-color;
             }
         }
@@ -4667,20 +4687,20 @@ Shop Details CSS
             padding: 0;
 
             &:hover, &:focus {
-                background-color: $purple-color;
+                background-color: $secondary-color;
                 color: $white-color;
-                border-color: $purple-color;
+                border-color: $secondary-color;
             }
         }
         .buy-btn {
             margin-top: 20px;
 
             .btn-primary {
-                background: $purple-color;
+                background: $secondary-color;
                 box-shadow: 0 13px 27px 0 rgba(198, 121, 227, 0.25);
 
                 &::after, &::before {
-                    background: $light-green-color;
+                    background: $primary-color;
                     box-shadow: 0 13px 27px 0 rgba(68, 206, 111, 0.25);
                 }
             }
@@ -4719,9 +4739,9 @@ Shop Details CSS
                     text-align: center;
                     line-height: 27px;
                     height: 30px;
-                    border: 1px solid $light-green-color;
+                    border: 1px solid $primary-color;
                     border-radius: 50%;
-                    color: $light-green-color;
+                    color: $primary-color;
                     
                     svg {
                         width: 15px;
@@ -4763,7 +4783,7 @@ Shop Details CSS
                         }
                     }
                     &:hover {
-                        background: $light-green-color;
+                        background: $primary-color;
                         color: $white-color;
                     }
                 }
@@ -4801,7 +4821,7 @@ Shop Details CSS
                     height: 4px;
                     top: 0;
                     left: 0;
-                    background: $light-green-color;
+                    background: $primary-color;
                 }
             }
             &.inactive {
@@ -4932,7 +4952,7 @@ Cart CSS
                             display: inline-block;
 
                             &:hover {
-                                color: $light-green-color;
+                                color: $primary-color;
                             }
                         }
                     }
@@ -4980,7 +5000,7 @@ Cart CSS
                                     width: 20px;
                                 }
                                 &:hover {
-                                    color: $light-green-color;
+                                    color: $primary-color;
                                 }
                             }
                             input {
@@ -5076,16 +5096,16 @@ Checkout CSS
     background: $white-color;
     padding: 18px 25px 15px;
     margin-bottom: 35px;
-    border-top: 3px solid $light-green-color;
+    border-top: 3px solid $primary-color;
 
     svg {
-        color: $light-green-color;
+        color: $primary-color;
         margin-right: 4px;
         width: 16px;
     }
     span {
         display: inline-block;
-        color: $light-green-color;
+        color: $primary-color;
 
         a {
             font-weight: 500;
@@ -5093,7 +5113,7 @@ Checkout CSS
             color: $black-color;
 
             &:hover, &:focus {
-                color: $light-green-color;
+                color: $primary-color;
             }
         }
     }
@@ -5198,7 +5218,7 @@ Checkout CSS
                                 display: inline-block;
     
                                 &:hover {
-                                    color: $light-green-color;
+                                    color: $primary-color;
                                 }
                             }
                         }
@@ -5254,7 +5274,7 @@ Checkout CSS
                             content: '';
                             width: 12px;
                             height: 12px;
-                            background: $light-green-color;
+                            background: $primary-color;
                             position: absolute;
                             top: 7px;
                             left: 3px;
@@ -5362,7 +5382,7 @@ FAQ CSS
                 width: 40px;
                 text-align: center;
                 height: 100%;
-                background: $light-green-color;
+                background: $primary-color;
                 color: $white-color;
     
                 &::before {
@@ -5433,7 +5453,7 @@ Pagination CSS
 
                 &:hover, &:focus {
                     color: $white-color;
-                    background-color: $light-green-color;
+                    background-color: $primary-color;
                     box-shadow: unset;
                 }
                 svg {
@@ -5443,7 +5463,7 @@ Pagination CSS
             &.active {
                 .page-link {
                     color: $white-color;
-                    background-color: $light-green-color;
+                    background-color: $primary-color;
                 }
             }
         }
@@ -5476,11 +5496,11 @@ Blog Details CSS
                         color: $paragraph-color;
     
                         &:hover {
-                            color: $light-green-color;
+                            color: $primary-color;
                         }
                     }
                     svg {
-                        color: $purple-color;
+                        color: $secondary-color;
                         margin-right: 2px;
                         position: relative;
                         top: -1px;
@@ -5493,7 +5513,7 @@ Blog Details CSS
                         right: -15px;
                         width: 6px;
                         height: 1px;
-                        background: $light-green-color;
+                        background: $primary-color;
                     }
                     &:last-child {
                         margin-right: 0;
@@ -5565,7 +5585,7 @@ Blog Details CSS
                 color: $paragraph-color;
 
                 svg {
-                    color: $light-green-color;
+                    color: $primary-color;
                     display: inline-block;
                     width: 20px;
                     position: absolute;
@@ -5586,7 +5606,7 @@ Blog Details CSS
             a {
                 display: inline-block;
                 color: $white-color;
-                background-color: $purple-color;
+                background-color: $secondary-color;
                 padding: 4px 12px;
                 border-radius: 5px;
                 margin-right: 3px;
@@ -5594,7 +5614,7 @@ Blog Details CSS
 
                 &:hover {
                     color: $white-color;
-                    background-color: $light-green-color;
+                    background-color: $primary-color;
                 }
             }
         }
@@ -5651,8 +5671,8 @@ Blog Details CSS
                 };
                 &:hover {
                     color: $white-color;
-                    background-color: $light-green-color;
-                    border-color: $light-green-color;
+                    background-color: $primary-color;
+                    border-color: $primary-color;
                 }
             }
         }
@@ -5691,7 +5711,7 @@ Blog Details CSS
             color: $paragraph-color;
 
             &:hover {
-                color: $light-green-color;
+                color: $primary-color;
             }
         }
     }
@@ -5740,7 +5760,7 @@ Blog Details CSS
             transition: $transition;
 
             &:focus {
-                border-color: $light-green-color;
+                border-color: $primary-color;
             }
         }
         .comment-form-author {
@@ -5786,7 +5806,7 @@ Blog Details CSS
             width: 100%;
 
             input {
-                background: $light-green-color;
+                background: $primary-color;
                 border: none;
                 color: $white-color;
                 padding: 11px 25px 10px;
@@ -5802,7 +5822,7 @@ Blog Details CSS
                 };
                 &:hover, &:focus {
                     color: $white-color;
-                    background-color: $purple-color;
+                    background-color: $secondary-color;
                     transform: translateY(-5px);
                 }
             }
@@ -5857,7 +5877,7 @@ Blog Details CSS
                 }
             }
             .prev-link-info-wrapper {
-                color: $light-green-color;
+                color: $primary-color;
             }
         }
     }
@@ -5885,7 +5905,7 @@ Blog Details CSS
             left: 0;
             border-radius: 5px;
             opacity: 0;
-            background-color: $light-green-color;
+            background-color: $primary-color;
             visibility: hidden;
             transition: $transition;
         }
@@ -5963,7 +5983,7 @@ Blog Details CSS
                 }
             }
             .next-link-info-wrapper {
-                color: $light-green-color;
+                color: $primary-color;
             }
         }
     }
@@ -5991,7 +6011,7 @@ Blog Details CSS
             left: 0;
             border-radius: 5px;
             opacity: 0;
-            background-color: $light-green-color;
+            background-color: $primary-color;
             visibility: hidden;
             transition: $transition;
         }
@@ -6067,7 +6087,7 @@ blockquote, .blockquote {
         top: 0;
         bottom: 0;
         width: 3px;
-        background-color: $light-green-color;
+        background-color: $primary-color;
         margin: {
             top: 20px;
             bottom: 20px;
@@ -6097,7 +6117,7 @@ Sidebar Widget CSS
             &::before {
                 content: '';
                 position: absolute;
-                background: $light-green-color;
+                background: $primary-color;
                 bottom: -1px;
                 left: 0;
                 width: 50px;
@@ -6131,7 +6151,7 @@ Sidebar Widget CSS
                 transition: $transition;
 
                 &:focus {
-                    border-color: $light-green-color;
+                    border-color: $primary-color;
                 }
             }
             button {
@@ -6145,7 +6165,7 @@ Sidebar Widget CSS
                 border: none;
                 cursor: pointer;
                 color: $white-color;
-                background-color: $light-green-color;
+                background-color: $primary-color;
                 transition: $transition;
                 font-size: 20px;
 
@@ -6162,7 +6182,7 @@ Sidebar Widget CSS
                     };
                 }
                 &:hover {
-                    background-color: $purple-color;
+                    background-color: $secondary-color;
                     color: $white-color;
                 }
             }
@@ -6248,7 +6268,7 @@ Sidebar Widget CSS
                     margin-bottom: 0;
                 }
                 &::before {
-                    background: $light-green-color;
+                    background: $primary-color;
                     position: absolute;
                     height: 7px;
                     width: 7px;
@@ -6261,7 +6281,7 @@ Sidebar Widget CSS
                     color: $black-color;
 
                     &:hover {
-                        color: $light-green-color;
+                        color: $primary-color;
                     }
                 }
                 .post-date {
@@ -6293,7 +6313,7 @@ Sidebar Widget CSS
                     margin-bottom: 0;
                 }
                 &::before {
-                    background: $light-green-color;
+                    background: $primary-color;
                     position: absolute;
                     height: 7px;
                     width: 7px;
@@ -6306,7 +6326,7 @@ Sidebar Widget CSS
                     color: $black-color;
 
                     &:hover {
-                        color: $light-green-color;
+                        color: $primary-color;
                     }
                 }
             }
@@ -6331,7 +6351,7 @@ Sidebar Widget CSS
                     margin-bottom: 0;
                 }
                 &::before {
-                    background: $light-green-color;
+                    background: $primary-color;
                     height: 7px;
                     width: 7px;
                     content: '';
@@ -6344,7 +6364,7 @@ Sidebar Widget CSS
                     color: $black-color;
 
                     &:hover {
-                        color: $light-green-color;
+                        color: $primary-color;
                     }
                 }
             }
@@ -6369,7 +6389,7 @@ Sidebar Widget CSS
                     margin-bottom: 0;
                 }
                 &::before {
-                    background: $light-green-color;
+                    background: $primary-color;
                     height: 7px;
                     width: 7px;
                     content: '';
@@ -6382,7 +6402,7 @@ Sidebar Widget CSS
                     display: block;
 
                     &:hover {
-                        color: $light-green-color;
+                        color: $primary-color;
                     }
                 }
                 .post-count {
@@ -6410,7 +6430,7 @@ Sidebar Widget CSS
                     margin-bottom: 0;
                 }
                 &::before {
-                    background: $light-green-color;
+                    background: $primary-color;
                     height: 7px;
                     width: 7px;
                     content: '';
@@ -6423,7 +6443,7 @@ Sidebar Widget CSS
                     color: $black-color;
 
                     &:hover {
-                        color: $light-green-color;
+                        color: $primary-color;
                     }
                 }
             }
@@ -6445,8 +6465,8 @@ Sidebar Widget CSS
             };
             &:hover, &:focus {
                 color: $white-color;
-                background-color: $light-green-color;
-                border-color: $light-green-color;
+                background-color: $primary-color;
+                border-color: $primary-color;
             }
         }
     }
@@ -6486,7 +6506,7 @@ Project Details CSS
         margin-top: 25px;
 
         &:hover {
-            color: $light-green-color;
+            color: $primary-color;
         }
     }
 }
@@ -6533,7 +6553,7 @@ Project Details CSS
                             width: 18px;
                         }
                         &:hover {
-                            color: $light-green-color;
+                            color: $primary-color;
                             transform: translateY(-5px);
                         }
                     }
@@ -6554,7 +6574,7 @@ Contact CSS
             font-size: 14px;
             font-weight: 400;
             a {
-                color: $light-green-color; 
+                color: $primary-color; 
                 &:hover {
                     text-decoration: underline;
                 }
@@ -6577,7 +6597,7 @@ Contact CSS
         background: $bg-color;
         border-radius: 50%;
         font-size: 30px;
-        color: $light-green-color;
+        color: $primary-color;
         transition: .4s;
     }
     h3 {
@@ -6593,7 +6613,7 @@ Contact CSS
             color: $paragraph-color;
 
             &:hover {
-                color: $light-green-color;
+                color: $primary-color;
             }
         }
     }
@@ -6602,7 +6622,7 @@ Contact CSS
 
         .icon {
             color: $white-color;
-            background: $light-green-color;
+            background: $primary-color;
         }
     }
 }
@@ -6624,7 +6644,7 @@ Contact CSS
             font-size: 14px;
             font-weight: 400;
             a {
-                color: $light-green-color;
+                color: $primary-color;
             }
         }
     }
@@ -6644,14 +6664,14 @@ Coming Soon CSS
     }
     &::before {
         z-index: -1;
-        background: linear-gradient(-9deg, #6a82fb 0%, #6a82fb 40%, #fc5c7d 100%);
+        background: linear-gradient(-9deg, #10133B 0%, #10133B 40%, #5D9F7B 100%);
         position: absolute;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
         content: '';
-        opacity: .8;
+        opacity: .9;
     }
     .social-list {
         padding: 0;
@@ -6680,7 +6700,7 @@ Coming Soon CSS
                 width: 35px;
                 height: 35px;
                 line-height: 35px;
-                background: $light-green-color;
+                background: $primary-color;
                 color: $white-color;
                 border-radius: 50%;
                 margin: 0 2px;
@@ -6701,7 +6721,7 @@ Coming Soon CSS
                     background-color: #c13584;
                 }
                 &:hover, &:focus {
-                    background-color: $light-green-color;
+                    background-color: $primary-color;
                 }
             }
         }
@@ -6720,11 +6740,15 @@ Coming Soon CSS
         }
         margin-bottom: 15px;
     }
+    h3 {
+        color: $white-color;
+        margin: 25px 0;
+    }
     p {
         color: $white-color;
         font-size: 16px;
         margin: 0 auto;
-        max-width: 620px;
+        max-width: 820px;
     }
     form {
         position: relative;
@@ -6748,7 +6772,7 @@ Coming Soon CSS
             right: 3px;
             top: 3px;
             height: 50px;
-            background: $light-green-color;
+            background: $primary-color;
             color: $white-color;
             border: none;
             border-radius: 40px;
@@ -6762,7 +6786,7 @@ Coming Soon CSS
                 weight: 500;
             }
             &:hover, &:focus {
-                background-color: $purple-color;
+                background-color: $secondary-color;
             }
         }
     }
@@ -6773,7 +6797,7 @@ Coming Soon CSS
             border-radius: 50%;
             width: 110px;
             height: 110px;
-            color: $purple-color;
+            color: $secondary-color;
             box-shadow: 0px 0px 0px 5px rgba(255,255,255,.5);
             margin: 0 10px;
             padding-top: 18px;
@@ -6786,6 +6810,44 @@ Coming Soon CSS
                 margin-top: -4px;
                 color: $paragraph-color;
                 font-size: 15px;
+            }
+        }
+    }
+
+    .button-group {
+        display: flex;
+        justify-content: space-around;
+        margin: 45px 0;
+
+        a {
+            max-width: 50%;
+        }
+
+        .btn-primary {
+            background: $secondary-color;
+            box-shadow: 0 13px 27px 0 rgba($dark-grey-blue, 0.25);
+    
+            &:hover, &:focus {
+                background: $primary-color;
+                box-shadow: 0 13px 27px 0 rgba($jade-green, 0.25);
+            }
+        }
+    }
+
+    .who-we-are {
+        .col1 {
+            text-align: left;
+
+            h3 {
+                text-align: center;
+            }
+        }
+
+        .col2 {
+            text-align: right;
+
+            h3 {
+                text-align: center;
             }
         }
     }
@@ -6881,7 +6943,7 @@ CTA CSS
         top: -15px;
 
         .btn-primary {
-            background: $purple-color;
+            background: $secondary-color;
             box-shadow: 0 13px 27px 0 rgba(198, 121, 227, 0.25);
 
             &::after, &::before {
@@ -6889,7 +6951,7 @@ CTA CSS
                 box-shadow: 0 13px 27px 0 rgba(68, 206, 111, 0.25);
             }
             &:hover, &:focus {
-                color: $light-green-color;
+                color: $primary-color;
             }
         }
     }
@@ -6998,7 +7060,7 @@ Repair About CSS
 .repair-about-content {
     .sub-title {
         text-transform: uppercase;
-        color: $light-green-color;
+        color: $primary-color;
         display: block;
         font: {
             size: 15px;
@@ -7051,7 +7113,7 @@ Repair About CSS
                 svg {
                     margin-right: 5px;
                     display: inline-block;
-                    color: $light-green-color;
+                    color: $primary-color;
                     transition: $transition;
                     width: 18px;
                 }
@@ -7181,7 +7243,7 @@ Repair Services CSS
     }
     .icon {
         display: inline-block;
-        color: $light-green-color;
+        color: $primary-color;
         width: 85px;
         height: 85px;
         line-height: 85px;
@@ -7201,7 +7263,7 @@ Repair Services CSS
     }
     a {
         width: 35px;
-        background-color: #f9fafb;
+        background-color: $bg-color3;
         height: 35px;
         line-height: 35px;
         color: $black-color;
@@ -7232,7 +7294,7 @@ Repair Services CSS
         }
         a {
             background-color: $white-color;
-            color: $light-green-color;
+            color: $primary-color;
         }
     }
 }
@@ -7407,10 +7469,10 @@ Repair Why Choose Us CSS
         }
     }
     &:hover, &:focus {
-        border-color: $light-green-color;
+        border-color: $primary-color;
 
         a {
-            background-color: $light-green-color;
+            background-color: $primary-color;
             color: $white-color;
         }
     }
@@ -7442,7 +7504,7 @@ Repair Feedback CSS
         }
         img {
             border-radius: 50%;
-            border: 2px solid $light-green-color;
+            border: 2px solid $primary-color;
             padding: 3px;
             display: inline-block;
             position: absolute;
@@ -7457,7 +7519,7 @@ Repair Feedback CSS
         }
         span {
             display: block;
-            color: $purple-color;
+            color: $secondary-color;
             margin: {
                 top: 8px;
             }
@@ -7508,7 +7570,7 @@ IoT Main Banner CSS
     max-width: 445px;
 
     span {
-        color: $light-green-color;
+        color: $primary-color;
         font-size: 15px;
         display: block;
     }
@@ -7671,7 +7733,7 @@ Iot Services CSS
     }
     .icon {
         display: inline-block;
-        color: $light-green-color;
+        color: $primary-color;
         width: 85px;
         height: 85px;
         line-height: 85px;
@@ -7691,7 +7753,7 @@ Iot Services CSS
     }
     a {
         width: 35px;
-        background-color: #f9fafb;
+        background-color: $bg-color3;
         height: 35px;
         line-height: 35px;
         color: $black-color;
@@ -7718,7 +7780,7 @@ Iot Services CSS
         }
         a {
             background-color: $white-color;
-            color: $light-green-color;
+            color: $primary-color;
         }
     }
 }
@@ -7884,10 +7946,10 @@ IoT Why Choose Us CSS
         }
     }
     &:hover, &:focus {
-        border-color: $light-green-color;
+        border-color: $primary-color;
 
         a {
-            background-color: $light-green-color;
+            background-color: $primary-color;
             color: $white-color;
         }
     }
@@ -8135,7 +8197,7 @@ Our Solutions CSS
             margin-right: 3px;
         }
         &:hover {
-            color: $light-green-color;
+            color: $primary-color;
         }
     }
     &:hover {
@@ -8165,7 +8227,7 @@ ML About CSS
 
     .sub-title {
         display: inline-block;
-        color: $purple-color;
+        color: $secondary-color;
         background-color: #f5dffd;
         margin-bottom: 18px;
         border-radius: 30px;
@@ -8197,7 +8259,7 @@ ML About CSS
             height: 10px;
             width: 10px;
             border-radius: 50%;
-            background: $light-green-color;
+            background: $primary-color;
             animation: {
                 duration: 3s;
                 timing-function: linear;
@@ -8252,7 +8314,7 @@ ML Services CSS
         height: 30px;
         transition: $transition;
         transform: rotate(45deg);
-        background: $light-green-color;
+        background: $primary-color;
         visibility: hidden;
         opacity: 0;
     }
@@ -8306,7 +8368,7 @@ ML Feedback CSS
         }
         span {
             display: block;
-            color: $purple-color;
+            color: $secondary-color;
             margin-top: 5px;
             font-size: 13px;
         }
@@ -8426,7 +8488,7 @@ Free Trial CSS
             border: none;
             padding: 0 30px;
             line-height: 50px;
-            background-color: $light-green-color;
+            background-color: $primary-color;
             border-radius: 0 30px 30px 0;
             transition: $transition;
             color: $white-color;
@@ -8434,7 +8496,7 @@ Free Trial CSS
                 size: 16px;
             }
             &:hover {
-                background-color: $purple-color;
+                background-color: $secondary-color;
                 color: $white-color;
             }
         }
@@ -8609,7 +8671,7 @@ ML Projects CSS
     }
     .plus-icon {
         a {
-            background-color: $light-green-color;
+            background-color: $primary-color;
             width: 70px;
             height: 70px;
             position: absolute;
@@ -8647,7 +8709,7 @@ ML Projects CSS
                 }
             }
             &:hover {
-                background-color: $purple-color;
+                background-color: $secondary-color;
             }
         }
     }
@@ -8741,7 +8803,7 @@ Our Solutions CSS
     z-index: 1;
 
     .icon {
-        color: $light-green-color;
+        color: $primary-color;
         position: relative;
         z-index: 1;
         margin-bottom: 30px;
@@ -8775,7 +8837,7 @@ Our Solutions CSS
             margin-right: 3px;
         }
         &:hover {
-            color: $light-green-color;
+            color: $primary-color;
         }
     }
 }
@@ -8818,7 +8880,7 @@ Agency About CSS
 
     .sub-title {
         display: inline-block;
-        color: $purple-color;
+        color: $secondary-color;
         background-color: #f5dffd;
         margin-bottom: 18px;
         border-radius: 30px;
@@ -8850,7 +8912,7 @@ Agency About CSS
             height: 10px;
             width: 10px;
             border-radius: 50%;
-            background: $light-green-color;
+            background: $primary-color;
             animation: {
                 duration: 3s;
                 timing-function: linear;
@@ -8927,8 +8989,8 @@ Agency Services CSS
                 margin-left: 2px;
             }
             &:hover {
-                background-color: $light-green-color;
-                border-color: $light-green-color;
+                background-color: $primary-color;
+                border-color: $primary-color;
                 color: $white-color;
             }
         }
@@ -9008,7 +9070,7 @@ Testimonials CSS
         }
         span {
             display: block;
-            color: $purple-color;
+            color: $secondary-color;
             margin-top: 5px;
             font-size: 13px;
         }
@@ -9364,7 +9426,7 @@ Agency Portfolio About CSS
             margin-right: 3px;
         }
         &:hover {
-            color: $light-green-color;
+            color: $primary-color;
         }
     }
 }
@@ -9449,7 +9511,7 @@ Creative Area CSS
         };
         &:nth-child(1) {
             .single-counter {
-                background-color: $light-green-color;
+                background-color: $primary-color;
             }
         }
         &:nth-child(2) {
@@ -9507,7 +9569,7 @@ Footer CSS
                     color: $paragraph-color;
                     
                     &:hover {
-                        color: $light-green-color;
+                        color: $primary-color;
                         padding-left: 7px;
                     }
                 }
@@ -9539,7 +9601,7 @@ Footer CSS
                     color: $paragraph-color;
 
                     &:hover {
-                        color: $light-green-color;
+                        color: $primary-color;
                     }
                 }
             }
@@ -9558,9 +9620,9 @@ Footer CSS
                     text-align: center;
                     line-height: 29px;
                     height: 32px;
-                    border: 1px solid $light-green-color;
+                    border: 1px solid $primary-color;
                     border-radius: 50%;
-                    color: $light-green-color;
+                    color: $primary-color;
                     
                     svg {
                         width: 15px;
@@ -9602,7 +9664,7 @@ Footer CSS
                         }
                     }
                     &:hover {
-                        background: $light-green-color;
+                        background: $primary-color;
                         color: $white-color;
                     }
                 }
@@ -9629,7 +9691,7 @@ Go Top CSS
 	bottom: 30px;
 	right: 0;
 	color: $white-color;
-	background-color: $purple-color;
+	background-color: $secondary-color;
 	width: 45px;
 	text-align: center;
 	height: 45px;
@@ -9640,7 +9702,7 @@ Go Top CSS
     
     &:hover {
         color: $white-color;
-        background: $light-green-color;
+        background: $primary-color;
     }
 }
 .main-text-area {
