@@ -1,18 +1,15 @@
 # Pakufi Website
 
-This is a [Next.js](https://nextjs.org/) project, build on top of [Maxdi theme](https://themeforest.net/item/maxdi-creative-agency-react-nextjs-template/39002986?s_rank=1).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app), build on top of [StartP theme](https://themeforest.net/item/startp-react-next-it-solutions-software-and-saas-template/23634564).
 The project is bootstrapped with
 
 - [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
-- React Bootstrap
-- Google Fonts
-- Swiper Slider
-- Font Awesome + Flaticon
-
-It built with:
-
+- Nextjs
 - Typescript
-- Eslint
+- Bootstrap
+- Sass
+- Dynamic Contact Form
+- Stripe
 
 ## Getting Started
 
@@ -37,6 +34,19 @@ npm start
 ```
 
 - Have a look at the script section of the `package.json` to learn which other useful scripts you can run.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## Good to know
 
