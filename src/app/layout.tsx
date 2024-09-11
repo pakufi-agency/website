@@ -12,26 +12,30 @@ import "../../public/css/style.css";
 // Global Responsive Style
 import "../../public/css/responsive.css";
 
-// Multicolor if you want this just one color comment out
+// Comment out if you want this just one color
 // import '../../public/css/colors/brink-pink-style.css'
 // import '../../public/css/colors/pink-style.css'
 // import '../../public/css/colors/purple-style.css'
 
-import "./globals.css";
+// Different themes
+// comment out the template you chose
+// import '../../public/css/themes/rapair.css'
+// import '../../public/css/themes/agency.css'
 
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Roboto } from "next/font/google";
 import AosAnimation from "@/components/Layout/AosAnimation";
 import GoTop from "@/components/Layout/GoTop";
 
-const poppins = Poppins({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+const roboto = Roboto({
+  weight: "400",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "StartP - React Next.js IT Startup & Digital Agency Template",
-  description: "React Next.js IT Startup & Digital Agency Template",
+  title: "Pakufi - Ethical Tech Agency",
+  description:
+    "We help you bring your ideas online pofessionally and tailored to you. We work just with talente freelancers from less priviledge countries, offering opportunity to achieve economical and geographical freedome.",
 };
 
 export default function RootLayout({
@@ -41,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={roboto.className}>
         {children}
 
         <AosAnimation />

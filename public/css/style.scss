@@ -46,14 +46,6 @@ This files table contents are outlined below>>>>>
 ** - Coming Soon CSS
 ** - 404 Error CSS
 ** - CTA CSS
-** - Repair Main Banner CSS
-** - Repair Partner CSS
-** - Repair About CSS
-** - Repair Services CSS
-** - Repair CTA CSS
-** - Repair Team CSS
-** - Repair Why Choose Us CSS
-** - Repair Feedback CSS
 ** - IoT Main Banner CSS
 ** - IoT Partner CSS
 ** - Iot Services CSS
@@ -69,16 +61,9 @@ This files table contents are outlined below>>>>>
 ** - ML Feedback CSS
 ** - Free Trial CSS
 ** - ML Projects CSS
-** - Agency Main Banner CSS
 ** - Our Solutions CSS
-** - Agency About CSS
-** - Agency Services CSS
 ** - Testimonials CSS
-** - Agency CTA CSS
-** - Agency Portfolio Main Banner CSS
 ** - Our Latest Projects CSS
-** - Agency Portfolio About CSS
-** - Agency Portfolio Partner CSS
 ** - Creative Area CSS
 ** - Footer CSS
 ** - Auth Form CSS
@@ -88,25 +73,11 @@ This files table contents are outlined below>>>>>
 /*================================================
 Default CSS
 =================================================*/
-// $light-green-color: #44ce6f;
-// $purple-color: #c679e3;
-
-$white-color: #ffffff;
-$black-color: #0e314c;
-
-$navlink-color: #4a6f8a;
-$paragraph-color: #6084a4;
-$bg-color: #f7fafd;
-$bg-color2: #f9f6f6;
-$bg-color3: #f9fafb;
-$bg-color4: #eef6fd;
-$hosting-main-color: #032b8d;
-// $gradient-color: linear-gradient(135deg, #23bdb8 0%, #43e794 100%);
-// $gradient-color2: linear-gradient(to right bottom, #1fa2ff, #00c0ff, #00d9f2, #53eedd, #a6ffcb);
-
 $transition: .5s;
 $font-size: 14px;
 
+$white-color: #ffffff;
+$black-color: #0e314c;
 $acid-green: #85B360;
 $mint-green: #5D9F7B;
 $jade-green: #487B6E;
@@ -117,6 +88,38 @@ $navy-blue: #10133B;
 $primary-color: $dark-grey-blue;
 $secondary-color: $mint-green;
 
+$primary-box-shadow: rgba(42,69,85, 0.25);
+$secondary-box-shadow: rgba(93,159,123, 0.25);
+$black-06-box-shadow: rgba(0, 0, 0, 0.06);
+$black-01-box-shadow: rgba(0, 0, 0, 0.1);
+
+$navlink-color: #4a6f8a;
+$paragraph-color: #6084a4;
+
+$bg-color-f7fafd: #f7fafd;
+$bg-color-f9f6f6: #f9f6f6;
+$bg-color-f9fafb: #f9fafb;
+$bg-color-0f054b: #0f054b;
+$bg-color-eef6fd: #eef6fd;
+$bg-color-d6d6d6: #d6d6d6;
+
+
+$white-fffcff: #fffcff;
+$white-fbfaff: #fbfaff;
+$white-effbff: #effbff;
+$white-e0fdff: #e0fdff;
+$white-d5fefd: #d5fefd;
+$white-eeeeee: #eeeeee;
+
+$grey-b5b5b5: #b5b5b5;
+$grey-a3a3a3: #a3a3a3;
+$grey-9a9a9a: #9a9a9a;
+$grey-909090: #909090;
+$grey-878787: #878787;
+$grey-7e7e7e: #7e7e7e;
+$grey-5e5e5e: #5e5e5e;
+
+$hosting-main-color: #032b8d;
 
 $gradient-color: linear-gradient(135deg, $primary-color 0%, $mint-green 100%);
 $gradient-color2: linear-gradient(to right bottom, $primary-color, $river-bed-green, $secondary-color, $mint-green, $acid-green);
@@ -182,19 +185,19 @@ p {
     padding-bottom: 50px;
 }
 .bg-f7fafd {
-    background-color: $bg-color;
+    background-color: $bg-color-f7fafd;
 }
 .bg-f9f6f6 {
-    background-color: $bg-color2;
+    background-color: $bg-color-f9f6f6;
 }
 .bg-f9fafb {
-    background-color: $bg-color3;
+    background-color: $bg-color-f9fafb;
 }
 .bg-0f054b {
-    background-color: #0f054b;
+    background-color: $bg-color-0f054b;
 }
 .bg-eef6fd {
-    background-color: $bg-color4;
+    background-color: $bg-color-eef6fd;
 }
 .pb-80 {
     padding-bottom: 80px;
@@ -207,7 +210,7 @@ textarea.form-control {
 .swiper-pagination {
     position: initial;
     .swiper-pagination-bullet {
-        background-color: #d6d6d6;
+        background-color: $bg-color-d6d6d6;
         opacity: 1;
         width: 12px;
         height: 12px;
@@ -221,13 +224,13 @@ textarea.form-control {
 .btn-primary {
     color: $white-color;
     background-color: $primary-color;
-    box-shadow: 0 13px 27px 0 rgba(68, 206, 111, .25);
+    box-shadow: 0 13px 27px 0 $primary-box-shadow;
 
     &:hover, &:focus, &:active {
         color: $white-color;
         background: $black-color;
         transform: translateY(-5px);
-        box-shadow: 0 13px 27px 0 rgba(198, 121, 227, .25);
+        box-shadow: 0 13px 27px 0 $secondary-box-shadow;
     }
     &.focus, &:focus {
         box-shadow: unset;
@@ -239,17 +242,17 @@ textarea.form-control {
         color: $white-color;
         background: $black-color;
         transform: translateY(-5px);
-        box-shadow: 0 13px 27px 0 rgba(198, 121, 227, .25);
+        box-shadow: 0 13px 27px 0 $secondary-box-shadow;
     }
     &.disabled, &:disabled {
         color: $white-color;
         background-color: $primary-color;
-        box-shadow: 0 13px 27px 0 rgba(68, 206, 111, .25);
+        box-shadow: 0 13px 27px 0 $primary-box-shadow;
         opacity: 1;
 
         &:hover, &:focus {
             background: $black-color;
-            box-shadow: 0 13px 27px 0 rgba(198, 121, 227, .25);
+            box-shadow: 0 13px 27px 0 $secondary-box-shadow;
         }
     }
 }
@@ -298,7 +301,7 @@ textarea.form-control {
         border-radius: 0;
         background-color: $primary-color;
         padding: 13px 30px;
-        box-shadow: 5px 5px 5px #a6f5be;
+        box-shadow: 5px 5px 5px $acid-green;
         margin: {
             right: 5px;
             bottom: 5px;
@@ -321,13 +324,13 @@ textarea.form-control {
             border-color: $primary-color;
         }
         &:not(:disabled):not(.disabled).active:focus, &:not(:disabled):not(.disabled):active:focus, .show>&.dropdown-toggle:focus {
-            box-shadow: 5px 5px 5px #e9caf5;
+            box-shadow: 5px 5px 5px $acid-green;
         }
         &:focus {
             color: $white-color;
         }
         &:hover, &:focus {
-            box-shadow: 5px 5px 5px #e9caf5;
+            box-shadow: 5px 5px 5px $acid-green;
         }
     }
 }
@@ -349,9 +352,9 @@ label {
     padding: 10px 15px;
     font-size: 14px;
     color: $black-color;
-    border: 1px solid #eeeeee;
+    border: 1px solid $white-eeeeee;
     border-radius: 0;
-    background: #eeeeee;
+    background: $white-eeeeee;
     transition: $transition;
 
     &:focus {
@@ -795,7 +798,7 @@ Navbar CSS
             bottom: 15px;
         };
         &.headroom {
-            border-bottom: 1px solid #eeeeee;
+            border-bottom: 1px solid $white-eeeeee;
 
             &.is-sticky {
                 border-bottom: none;
@@ -2280,7 +2283,7 @@ Team CSS
             position: absolute;
             left: 0;
             top: 50%;
-            background: $bg-color2;
+            background: $bg-color-f9f6f6;
             height: 10px;
             width: 100%;
             z-index: -1;
@@ -2606,7 +2609,7 @@ Pricing CSS
         padding: 30px 20px;
         border: {
             radius: 5px 5px 0 0;
-            bottom: 1px solid #eeeeee;
+            bottom: 1px solid $white-eeeeee;
         }
         transition: $transition;
         margin-bottom: 30px;
@@ -2662,7 +2665,7 @@ Pricing CSS
             margin-bottom: 30px;
 
             li {
-                color: #b5b5b5;
+                color: $grey-b5b5b5;
                 margin-bottom: 12px;
                 text-decoration: line-through;
 
@@ -2701,11 +2704,11 @@ Pricing CSS
         }
         .btn-primary {
             background: $secondary-color;
-            box-shadow: 0 13px 27px 0 rgba(198, 121, 227, 0.25);
+            box-shadow: 0 13px 27px 0 $secondary-box-shadow;
 
             &::after, &::before {
                 background: $primary-color;
-                box-shadow: 0 13px 27px 0 rgba(68, 206, 111, 0.25);
+                box-shadow: 0 13px 27px 0 $primary-box-shadow;
             }
         }
     }
@@ -2713,7 +2716,7 @@ Pricing CSS
 .single-pricing-table {
 	text-align: center;
 	background: $white-color;
-	box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.06);
+	box-shadow: 0 1px 20px 0 $black-box-shadow;
     border-radius: 5px;
     padding: 35px;
     transition: $transition;
@@ -2780,11 +2783,11 @@ Pricing CSS
     &.active-plan {
         .btn-primary {
             background: $secondary-color;
-            box-shadow: 0 13px 27px 0 rgba(198, 121, 227, 0.25);
+            box-shadow: 0 13px 27px 0 $secondary-box-shadow;
 
             &::after, &::before {
                 background: $primary-color;
-                box-shadow: 0 13px 27px 0 rgba(68, 206, 111, 0.25);
+                box-shadow: 0 13px 27px 0 $primary-box-shadow;
             }
         }
     }
@@ -2798,7 +2801,7 @@ Pricing CSS
         }
         &:nth-child(2) {
             .pricing-box {
-                background: linear-gradient(to right top, #fffcff, #fbfaff, #effbff, #e0fdff, #d5fefd);
+                background: linear-gradient(to right top, $white-fffcff, $white-fbfaff, $white-effbff, $white-e0fdff, $white-d5fefd);
             }
         }
     }
@@ -2812,7 +2815,7 @@ Pricing CSS
 
         li {
             display: inline-block;
-            background: linear-gradient(to left bottom, #fffcff, #fbfaff, #effbff, #e0fdff, #d5fefd);
+            background: linear-gradient(to left bottom, $white-fffcff, $white-fbfaff, $white-effbff, $white-e0fdff, $white-d5fefd);
             padding: 10px 30px 9.5px;
             cursor: pointer;
             margin: {
@@ -2825,7 +2828,7 @@ Pricing CSS
             };
             &:hover {
                 color: $black-color;
-                background: linear-gradient(to left bottom, #fffcff, #fbfaff, #effbff, #e0fdff, #d5fefd);
+                background: linear-gradient(to left bottom, $white-fffcff, $white-fbfaff, $white-effbff, $white-e0fdff, $white-d5fefd);
             }
             &.react-tabs__tab--selected {
                 color: $white-color;
@@ -2849,7 +2852,7 @@ Pricing CSS
     }
 }
 .pricing-box {
-    background: linear-gradient(to left bottom, #fffcff, #fbfaff, #effbff, #e0fdff, #d5fefd);
+    background: linear-gradient(to left bottom, $white-fffcff, $white-fbfaff, $white-effbff, $white-e0fdff, $white-d5fefd);
     text-align: center;
     padding: 30px;
     transition: $transition;
@@ -2899,7 +2902,7 @@ Pricing CSS
         }
         .btn-primary {
             border-radius: 30px;
-            background: linear-gradient(to right top, #a3a3a3, #9a9a9a, #909090, #878787, #7e7e7e);
+            background: linear-gradient(to right top, $grey-a3a3a3, $grey-9a9a9a, $grey-909090, $grey-878787, $grey-7e7e7e);
             text-transform: capitalize;
             padding: 11px 30px;
             font: {
@@ -2916,7 +2919,7 @@ Pricing CSS
                 display: none;
             }
             &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active, & .show > &.dropdown-toggle {
-                background: linear-gradient(to right top, #a3a3a3, #9a9a9a, #909090, #878787, #7e7e7e);
+                background: linear-gradient(to right top, $grey-a3a3a3, $grey-9a9a9a, $grey-909090, $grey-878787, $grey-7e7e7e);
             }
             &:hover, &:focus {
                 &::after {
@@ -2936,7 +2939,7 @@ Pricing CSS
         };
         li {
             margin-bottom: 12px;
-            color: #495771;
+            color: $navlink-color;
             position: relative;
             padding-left: 27px;
 
@@ -2972,7 +2975,7 @@ Domain Search CSS
         }
     }
     form {
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 30px $black-01-box-shadow;
         background-color: $white-color;
         overflow: hidden;
         border-radius: 30px;
@@ -3041,7 +3044,7 @@ Domain Search CSS
             -ms-flex: 1;
             flex: 1;
             font-weight: 500;
-            border-left: 1px solid #eeeeee;
+            border-left: 1px solid $white-eeeeee;
 
             &:first-child {
                 border-left: none;
@@ -3160,8 +3163,8 @@ Feedback CSS
         top: 50%;
         transform: translateY(-50%);
         background: transparent;
-        color: #5e5e5e;
-        border: 2px solid #5e5e5e;
+        color: $grey-5e5e5e;
+        border: 2px solid $grey-5e5e5e;
         z-index: 1;
         border-radius: 50%;
         line-height: 30px;
@@ -3227,7 +3230,7 @@ Feedback CSS
     }
 }
 .testimonials-slides {
-    background-color: #f7fbfe;
+    background-color: $white-fbfaff;
     max-width: 850px;
     margin: 90px auto 30px;
     position: relative;
@@ -3241,7 +3244,7 @@ Feedback CSS
 .single-feedback-item {
     padding: 40px 130px 90px;
     text-align: center;
-    background-color: #f7fbfe;
+    background-color: $white-fbfaff;
     position: relative;
 
     .client-info {
@@ -3281,7 +3284,7 @@ Feedback CSS
     }
     &::before {
         content: "\f11b";
-        color: #d9dcde;
+        color: $bg-color-d6d6d6;
         font: {
             family: Flaticon;
             size: 30px;
@@ -3308,7 +3311,7 @@ Feedback CSS
         width: auto !important;
         display: inline-block !important;
         border-radius: 50%;
-        border: 3px solid #999999;
+        border: 3px solid $grey-9a9a9a;
     }
     p {
         font-size: 16px;
@@ -3319,7 +3322,7 @@ Feedback CSS
     }
 }
 .bigdata-feedback-area {
-    background-color: $bg-color4;
+    background-color: $bg-color-0f054b;
 }
 .single-feedback-box {
     position: relative;
@@ -3455,11 +3458,11 @@ Ready To Talk CSS
     }
     .btn-primary {
         background: $secondary-color;
-        box-shadow: 0 5px 20px 0 rgba(198, 121, 227, 0.25);
+        box-shadow: 0 5px 20px 0 $secondary-box-shadow;
 
         &:hover, &:focus {
             color: $black-color;
-            box-shadow: 0 5px 20px 0 rgba(68, 206, 111, 0.25);
+            box-shadow: 0 5px 20px 0 $primary-box-shadow;
         }
     }
     span {
@@ -3917,7 +3920,7 @@ Blog CSS
             bottom: 20px;
             right: 20px;
         }
-        background: $bg-color;
+        background: $bg-color-f7fafd;
         transition: $transition;
 
         h3 {
@@ -4408,7 +4411,7 @@ Shop CSS
             height: 35px;
             text-align: center;
             line-height: 32px;
-            border: 1px solid #eeeeee;
+            border: 1px solid $white-eeeeee;
             border-radius: 50%;
             outline: 0;
             transition: $transition;
@@ -4673,7 +4676,7 @@ Shop Details CSS
             margin-left: 5px;
             background: transparent;
             color: $black-color;
-            border: 1px solid #eeeeee;
+            border: 1px solid $white-eeeeee;
             position: relative;
             top: -2px;
             cursor: pointer;
@@ -4825,7 +4828,7 @@ Shop Details CSS
                 }
             }
             &.inactive {
-                background-color: #eeeeee;
+                background-color: $white-eeeeee;
                 padding: 12px 50px;
             }
         }
@@ -4844,13 +4847,13 @@ Shop Details CSS
             text-align: left;
 
             li {
-                border: 1px solid #eeeeee;
+                border: 1px solid $white-eeeeee;
                 border-bottom: none;
                 padding: 10px 15px;
                 color: $paragraph-color;
 
                 &:last-child {
-                    border-bottom: 1px solid #eeeeee;;
+                    border-bottom: 1px solid $white-eeeeee;;
                 }
                 span {
                     display: inline-block;
@@ -5174,7 +5177,7 @@ Checkout CSS
         padding: 10px;
         font-size: 14px;
         color: #0e314c;
-        border: 1px solid #eeeeee;
+        border: 1px solid $white-eeeeee;
         border-radius: 0;
         transition: 0.5s;
     }
@@ -5646,7 +5649,7 @@ Blog Details CSS
         margin-left: 20px;
     }
     .comment-body {
-        border-bottom: 1px solid #eeeeee;
+        border-bottom: 1px solid $white-eeeeee;
         padding-left: 65px;
         color: $black-color;
         font-size: 14px;
@@ -5754,7 +5757,7 @@ Blog Details CSS
             display: block;
             width: 100%;
             background-color: $white-color;
-            border: 1px solid #eeeeee;
+            border: 1px solid $white-eeeeee;
             padding: 0.625em 0.7375em;
             outline: 0;
             transition: $transition;
@@ -5842,8 +5845,8 @@ Blog Details CSS
         bottom: 30px;
     };
     border: {
-        top: 1px solid #eeeeee;
-        bottom: 1px solid #eeeeee;
+        top: 1px solid $white-eeeeee;
+        bottom: 1px solid $white-eeeeee;
     };
 }
 .prev-link-wrapper {
@@ -6106,7 +6109,7 @@ Sidebar Widget CSS
             margin-top: 0;
         }
         .widget-title {
-            border-bottom: 1px solid #eeeeee;
+            border-bottom: 1px solid $white-eeeeee;
             padding-bottom: 10px;
             margin-bottom: 25px;
             position: relative;
@@ -6144,7 +6147,7 @@ Sidebar Widget CSS
                 background-color: transparent;
                 height: 50px;
                 padding: 6px 15px;
-                border: 1px solid #eeeeee;
+                border: 1px solid $white-eeeeee;
                 width: 100%;
                 display: block;
                 outline: 0;
@@ -6458,7 +6461,7 @@ Sidebar Widget CSS
                 size: 14px !important;
             };
             padding: 6px 13px;
-            border: 1px dashed #eeeeee;
+            border: 1px dashed $white-eeeeee;
             margin: {
                 top: 8px;
                 right: 8px;
@@ -6594,7 +6597,7 @@ Contact CSS
         width: 65px;
         height: 65px;
         line-height: 62px;
-        background: $bg-color;
+        background: $bg-color-f7fafd;
         border-radius: 50%;
         font-size: 30px;
         color: $primary-color;
@@ -6958,604 +6961,6 @@ CTA CSS
 }
 
 /*================================================
-Repair Main Banner CSS
-=================================================*/
-.repair-main-banner {
-    overflow-x: hidden;
-    padding: {
-        top: 200px;
-        bottom: 140px;
-    }
-}
-.repair-banner-content {
-    h1 {
-        margin-bottom: 20px;
-        font: {
-            size: 45px;
-            weight: 500;
-        }
-    }
-    p {
-        margin-bottom: 30px;
-    }
-}
-.repair-banner-image {
-    position: relative;
-    text-align: center;
-
-    img {
-        &:nth-child(2) {
-            position: absolute;
-            left: 0;
-            top: -65px;
-            right: -30px;
-            margin: 0 auto;
-            z-index: -1;
-        }
-        &:nth-child(3) {
-            position: absolute;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            top: -69px;
-            z-index: -2;
-        }
-        &:nth-child(4) {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: -30px;
-            z-index: -1;
-            margin: 0 auto;
-        }
-    }
-}
-
-/*================================================
-Repair Partner CSS
-=================================================*/
-.repair-partner-area {
-    padding: {
-        top: 45px;
-        bottom: 45px;
-    }
-}
-.single-repair-partner {
-    text-align: center;
-
-    a {
-        display: block;
-        position: relative;
-
-        img {
-            width: auto !important;
-            display: inline-block !important;
-
-            &:last-child {
-                position: absolute;
-                top: 20px;
-                left: 0;
-                right: 0;
-                margin: 0 auto;
-                transition: $transition;
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-        &:hover, &:focus {
-            img {
-                &:last-child {
-                    opacity: 1;
-                    visibility: visible;
-                    top: 0;
-                }
-            }
-        }
-    }
-}
-
-/*================================================
-Repair About CSS
-=================================================*/
-.repair-about-content {
-    .sub-title {
-        text-transform: uppercase;
-        color: $primary-color;
-        display: block;
-        font: {
-            size: 15px;
-            weight: 400;
-        }
-    }
-    h2 {
-        font: {
-            size: 24px;
-            weight: 600;
-        }
-        margin: {
-            top: 10px;
-            bottom: 10px;
-        }
-    }
-    ul {
-        padding: 0;
-        list-style-type: none;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        margin: {
-            top: -10px;
-            right: -10px;
-            left: -10px;
-        }
-        li {
-            -ms-flex: 0 0 50%;
-            flex: 0 0 50%;
-            max-width: 50%;
-            width: 100%;
-            margin-top: 25px;
-            color: $paragraph-color;
-            position: relative;
-            padding: {
-                right: 10px;
-                left: 10px;
-            }
-            span {
-                display: block;
-                position: relative;
-                z-index: 1;
-                padding: 10px;
-                border-radius: 3px;
-                transition: $transition;
-                box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
-
-                svg {
-                    margin-right: 5px;
-                    display: inline-block;
-                    color: $primary-color;
-                    transition: $transition;
-                    width: 18px;
-                }
-                &::before {
-                    content: '';
-                    left: 0;
-                    top: 0;
-                    height: 100%;
-                    width: 100%;
-                    background: $gradient-color;
-                    opacity: 0;
-                    visibility: hidden;
-                    position: absolute;
-                    border-radius: 3px;
-                    z-index: -1;
-                    transition: $transition;
-                }
-                &:hover, &:focus {
-                    color: $white-color;
-                    transform: translateY(-5px);
-
-                    &::before {
-                        opacity: 1;
-                        visibility: visible;
-                    }
-                    svg {
-                        color: $white-color;
-                    }
-                }
-            }
-        }
-    }
-}
-.repair-about-image {
-    position: relative;
-    width: 100%;
-    height: 100%;
-
-    img {
-        position: absolute;
-
-        &:nth-child(1) {
-            left: 0;
-            top: 0;
-            z-index: 1;
-        }
-        &:nth-child(2) {
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            right: 0;
-            text-align: center;
-            z-index: 2;
-            margin: 0 auto;
-            border: 5px solid #f8fbff;
-            width: 350px;
-        }
-        &:nth-child(3) {
-            right: 0;
-            bottom: 0;
-            z-index: 1;
-        }
-        &:nth-child(4) {
-            right: 0;
-            top: 0;
-        }
-        &:nth-child(5) {
-            left: 0;
-            bottom: 0;
-        }
-    }
-}
-
-/*================================================
-Repair Services CSS
-=================================================*/
-.repair-services-area {
-    padding-bottom: 50px;
-}
-.single-repair-services {
-    margin-bottom: 30px;
-    position: relative;
-    z-index: 1;
-    padding: 40px 30px;
-    text-align: center;
-    background: {
-        position: center center;
-        size: cover;
-        repeat: no-repeat;
-    }
-    &::before {
-        position: absolute;
-        transition: $transition;
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: $white-color;
-        z-index: -1;
-        border: 1px dashed #cdf1d8;
-    }
-    &::after {
-        position: absolute;
-        transition: $transition;
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: $gradient-color;
-        z-index: -1;
-        opacity: 0;
-        visibility: hidden;
-        border: 1px dashed #cdf1d8;
-    }
-    h3 {
-        font-size: 19px;
-        transition: $transition;
-        line-height: 1.4;
-        margin: {
-            top: 22px;
-            bottom: 12px;
-        }
-    }
-    .icon {
-        display: inline-block;
-        color: $primary-color;
-        width: 85px;
-        height: 85px;
-        line-height: 85px;
-        border: 1px solid #e3f7e9;
-        border-radius: 50%;
-        transition: $transition;
-
-        i {
-            &::before {
-                font-size: 35px;
-            }
-        }
-    }
-    p {
-        margin-bottom: 25px;
-        transition: $transition;
-    }
-    a {
-        width: 35px;
-        background-color: $bg-color3;
-        height: 35px;
-        line-height: 35px;
-        color: $black-color;
-        border-radius: 50%;
-
-        svg {
-            width: 15px;
-        }
-    }
-    &:hover, &:focus {
-        &::before {
-            opacity: 0;
-            visibility: hidden;
-        }
-        &::after {
-            opacity: .85;
-            visibility: visible;
-        }
-        h3 {
-            color: $white-color;
-        }
-        p {
-            color: $white-color;
-        }
-        .icon {
-            border-color: $white-color;
-            color: $white-color;
-        }
-        a {
-            background-color: $white-color;
-            color: $primary-color;
-        }
-    }
-}
-
-/*================================================
-Repair CTA CSS
-=================================================*/
-.repair-cta-area {
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-    padding: {
-        top: 10px;
-        bottom: 10px;
-    }
-}
-.cta-repair-content {
-    padding: 30px 0;
-    h3 {
-        color: $white-color;
-        font-size: 25px;
-        margin-bottom: 17px;
-    }
-    p {
-       color: $white-color;
-       opacity: .95;
-       margin-bottom: 25px;
-    }
-}
-.cta-repair-img {
-    text-align: right;
-}
-.circle-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-.cta-shape {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-}
-
-/*================================================
-Repair Team CSS
-=================================================*/
-.repair-team-area {
-    .container {
-        max-width: 1175px;
-    }
-    .single-team {
-        .team-content {
-            padding: {
-                left: 25px;
-                right: 25px;
-            }
-        }
-    }
-}
-
-/*================================================
-Repair Why Choose Us CSS
-=================================================*/
-.repair-why-choose-us {
-    position: relative;
-    z-index: 1;
-    background: $gradient-color;
-
-    .section-title {
-        h2 {
-            color: $white-color;
-        }
-        .bar {
-            &::before {
-                background: $white-color;
-            }
-        }
-        p {
-            color: $white-color;
-            opacity: .95;
-        }
-    }
-    &::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 37%;
-        width: 100%;
-        background: $white-color;
-        z-index: -1;
-    }
-}
-.single-repair-box {
-    text-align: center;
-    background-color: $white-color;
-    border: 1px dashed #cdf1d8;
-    padding: 30px;
-    position: relative;
-    z-index: 1;
-    transition: $transition;
-
-    h3 {
-        font-size: 18px;
-        margin: {
-            top: 22px;
-            bottom: 17px;
-        }
-    }
-    p {
-        margin-bottom: 25px;
-    }
-    a {
-        width: 40px;
-        background-color: #eef0f3;
-        height: 40px;
-        line-height: 40px;
-        color: $black-color;
-        border-radius: 50%;
-
-        svg {
-            width: 18px;
-        }
-    }
-    .icon {
-        display: inline-block;
-        border: 1px solid #6ee9fa;
-        width: 100px;
-        height: 100px;
-        line-height: 100px;
-        border-radius: 50%;
-        position: relative;
-        color: $white-color;
-        z-index: 1;
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: -1;
-            bottom: 0;
-            background: $gradient-color2;
-            border-radius: 50%;
-            margin: 6px;
-            transition: $transition;
-        }
-        i {
-            &::before {
-                font-size: 35px;
-            }
-        }
-    }
-    .back-icon {
-        position: absolute;
-        top: 58%;
-        transform: translateY(-50%);
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        color: #4457c3;
-        opacity: .06;
-        z-index: -1;
-        
-        i {
-            &::before {
-                font-size: 200px;
-            }
-        }
-    }
-    &:hover, &:focus {
-        border-color: $primary-color;
-
-        a {
-            background-color: $primary-color;
-            color: $white-color;
-        }
-    }
-}
-
-/*================================================
-Repair Feedback CSS
-=================================================*/
-.single-repair-feedback {
-    background: $white-color;
-    border-radius: 5px;
-    margin-bottom: 55px;
-    position: relative;
-    text-align: center;
-    padding: {
-        left: 40px;
-        right: 40px;
-        top: 40px;
-        bottom: 40px;
-    }
-    .client-img {
-        position: relative;
-        text-align: left;
-        margin-bottom: 40px;
-        display: inline-block;
-        padding: {
-            left: 108px;
-            top: 18px;
-        }
-        img {
-            border-radius: 50%;
-            border: 2px solid $primary-color;
-            padding: 3px;
-            display: inline-block;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 90px;
-            height: 90px;
-        }
-        h3 {
-            font-size: 18px;
-            margin: 0;
-        }
-        span {
-            display: block;
-            color: $secondary-color;
-            margin: {
-                top: 8px;
-            }
-        }
-    }
-    p {
-        font-size: 15px;
-    }
-    &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -25px;
-        width: 50px;
-        height: 50px;
-        background: $white-color;
-        right: 0;
-        margin: 0 auto;
-        transform: rotate(45deg);
-    }
-    &::after {
-        content: "\f11b";
-        color: #d9dcde;
-        font: {
-            family: Flaticon;
-            size: 30px;
-            style: normal;
-            size: 65px;
-        }
-        position: absolute;
-        top: 0;
-        left: 25px;
-    }
-}
-
-/*================================================
 IoT Main Banner CSS
 =================================================*/
 .iot-main-banner {
@@ -7753,7 +7158,7 @@ Iot Services CSS
     }
     a {
         width: 35px;
-        background-color: $bg-color3;
+        background-color: $bg-color-f9fafb
         height: 35px;
         line-height: 35px;
         color: $black-color;
@@ -8723,72 +8128,6 @@ ML Projects CSS
 }
 
 /*================================================
-Agency Main Banner CSS
-=================================================*/
-.agency-main-banner {
-    position: relative;
-    z-index: 1;
-
-    .container-fluid {
-        padding: {
-            left: 0;
-            right: 0;
-        };
-        .row {
-            margin: {
-                left: 0;
-                right: 0;
-            };
-            .col-lg-6 {
-                padding: {
-                    left: 0;
-                    right: 0;
-                };
-            }
-        }
-    }
-    .shape2 {
-        left: 5%;
-    }
-    .shape8 {
-        right: 50%;
-    }
-    .shape4 {
-        right: 50%;
-    }
-}
-.agency-banner-content {
-    margin-left: auto;
-    max-width: 650px;
-
-    .sub-title {
-        text-transform: uppercase;
-        display: block;
-        font-size: 16px;
-        color: $paragraph-color;
-        margin-bottom: 8px;
-    }
-    h1 {
-        margin-bottom: 15px;
-        line-height: 1.3;
-        font: {
-            size: 50px;
-            weight: 500;
-        };
-    }
-    p {
-        font-size: 15px;
-        max-width: 450px;
-    }
-    .btn {
-        margin-top: 5px;
-    }
-}
-.agency-banner-image {
-    text-align: right;
-}
-
-/*================================================
 Our Solutions CSS
 =================================================*/
 .solutions-area {
@@ -8838,174 +8177,6 @@ Our Solutions CSS
         }
         &:hover {
             color: $primary-color;
-        }
-    }
-}
-
-/*================================================
-Agency About CSS
-=================================================*/
-.agency-about-area {
-    position: relative;
-    z-index: 1;
-
-    .container-fluid {
-        padding: {
-            left: 0;
-            right: 0;
-        };
-        .row {
-            margin: {
-                left: 0;
-                right: 0;
-            };
-            .col-lg-6 {
-                padding: {
-                    left: 0;
-                    right: 0;
-                };
-            }
-        }
-    }
-}
-.agency-about-img {
-    padding-right: 100px;
-
-    img {
-        width: 100%;
-    }
-}
-.agency-about-content {
-    max-width: 540px;
-
-    .sub-title {
-        display: inline-block;
-        color: $secondary-color;
-        background-color: #f5dffd;
-        margin-bottom: 18px;
-        border-radius: 30px;
-        padding: 5px 20px 4px;
-        font-size: 13px;
-    }
-    h2 {
-        margin-bottom: 0;
-        line-height: 1.4;
-        font: {
-            size: 28px;
-            weight: 600;
-        }
-        text-transform: capitalize;
-    }
-    .bar {
-        height: 5px;
-        width: 90px;
-        background: #cdf1d8;
-        margin: 20px 0;
-        position: relative;
-        border-radius: 30px;
-
-        &::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: -2.7px;
-            height: 10px;
-            width: 10px;
-            border-radius: 50%;
-            background: $primary-color;
-            animation: {
-                duration: 3s;
-                timing-function: linear;
-                iteration-count: infinite;
-                name: MOVE-BG;
-            };
-        }
-    }
-    p {
-        margin-bottom: 12px;
-    }
-    .btn {
-        margin-top: 10px;
-    }
-}
-.shape10 {
-    position: absolute;
-    right: 0;
-    top: -40%;
-    z-index: -1;
-}
-
-/*================================================
-Agency Services CSS
-=================================================*/
-.agency-services-area {
-    position: relative;
-    z-index: 1;
-    background: linear-gradient(to top, #d5fefd, #e1fdff, #effdff, #fafdff, #ffffff);
-}
-.agency-services-box {
-    margin-bottom: 30px;
-    text-align: center;
-
-    img {
-        border-radius: 7px;
-    }
-    .content {
-        transition: $transition;
-        background: $white-color;
-        position: relative;
-        border-radius: 7px;
-        padding: 25px;
-        box-shadow: 0 2px 48px 0 rgba(0, 0, 0, .05);
-        margin: {
-            left: 15px;
-            right: 15px;
-            top: -30px;
-        };
-        h3 {
-            transition: $transition;
-            font-size: 20px;
-            margin-bottom: 0;
-        }
-        .read-more-btn {
-            display: inline-block;
-            border-radius: 30px;
-            padding: 9px 25px;
-            border: 1px solid #e6e6e6;
-            background-color: $white-color;
-            position: absolute;
-            transition: $transition;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: -22px;
-            opacity: 0;
-            visibility: hidden;
-            font: {
-                size: 14px;
-                weight: 500;
-            };
-            svg {
-                width: 15px;
-                margin-left: 2px;
-            }
-            &:hover {
-                background-color: $primary-color;
-                border-color: $primary-color;
-                color: $white-color;
-            }
-        }
-    }
-    &:hover {
-        .content {
-            transform: translateY(-20px);
-
-            h3 {
-                transform: translateY(-10px);
-            }
-            .read-more-btn {
-                opacity: 1;
-                visibility: visible;
-            }
         }
     }
 }
@@ -9165,152 +8336,6 @@ Testimonials CSS
 }
 
 /*================================================
-Agency CTA CSS
-=================================================*/
-.agency-cta-area {
-    position: relative;
-    z-index: 1;
-    background: {
-        image: url('/images/agency-image/agency-gradient-bg.jpg');
-        position: center center;
-        size: cover;
-        repeat: no-repeat;
-    };
-}
-.agency-cta-content {
-    text-align: center;
-
-    h2 {
-        color: $white-color;
-        margin-bottom: 30px;
-        font: {
-            size: 28px;
-            weight: 600;
-        };
-    }
-}
-
-/*btn-gradient*/
-.btn-gradient {
-    color: $white-color;
-    background: linear-gradient(90deg,#ee0979 0,#ff6a00 100%);
-    box-shadow: unset !important;
-    transform: unset !important;
-
-    &::after {
-        display: none;
-    }
-    &::before {
-        opacity: 0;
-        visibility: hidden;
-        width: 100%;
-        background: linear-gradient(135deg,#23bdb8 0,#43e794 100%);
-        left: 0;
-        border-radius: 4px;
-    }
-    &:hover, &:focus, &:active {
-        color: $white-color;
-        background: linear-gradient(90deg,#ee0979 0,#ff6a00 100%);
-        box-shadow: unset !important;
-
-        &::before {
-            opacity: 1;
-            visibility: visible;
-            width: 100%;
-        }
-    }
-    &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
-        color: $white-color;
-        background: linear-gradient(90deg,#ee0979 0,#ff6a00 100%);
-        box-shadow: unset !important;
-
-        &::before {
-            opacity: 1;
-            visibility: visible;
-            width: 100%;
-        }
-    }
-    &.disabled, &:disabled {
-        color: $white-color;
-        background: linear-gradient(90deg,#ee0979 0,#ff6a00 100%);
-        box-shadow: unset !important;
-
-        &::before {
-            opacity: 1;
-            visibility: visible;
-            width: 100%;
-        }
-    }
-}
-
-/*================================================
-Agency Portfolio Main Banner CSS
-=================================================*/
-.agency-portfolio-main-banner {
-    height: 100vh;
-    position: relative;
-    z-index: 1;
-    background: {
-        position: center center;
-        size: cover;
-        repeat: no-repeat;
-    };
-}
-.portfolio-banner-content {
-    text-align: center;
-    max-width: 700px;
-    margin: {
-        left: auto;
-        right: auto;
-        top: -50px;
-    };
-    .sub-title {
-        display: block;
-        font-size: 16px;
-        text-transform: uppercase;
-        letter-spacing: .5px;
-        color: $paragraph-color;
-        margin-bottom: 10px;
-    }
-    h1 {
-        margin-bottom: 15px;
-        line-height: 1.3;
-        font: {
-            size: 40px;
-            weight: 500;
-        };
-    }
-    p {
-        font-size: 15px;
-        max-width: 490px;
-        margin: {
-            left: auto;
-            right: auto;
-        };
-    }
-    .btn {
-        margin-top: 5px;
-    }
-}
-.agency-portfolio-home-slides {
-    .swiper-button-next, .swiper-button-prev {
-        width: 50px;
-        height: 50px;
-
-        &:after {
-            background-color: #e1e1e1;
-            color: $black-color;
-            width: 50px;
-            height: 50px;
-            text-align: center;
-            line-height: 50px;
-            transition: $transition;
-            font-size: 25px;
-        }
-    }
-}
-
-/*================================================
 Our Latest Projects CSS
 =================================================*/
 .our-latest-projects {
@@ -9391,61 +8416,6 @@ Our Latest Projects CSS
         }
         &:last-child {
             margin-right: 0;
-        }
-    }
-}
-
-/*================================================
-Agency Portfolio About CSS
-=================================================*/
-.agency-portfolio-about-area {
-    background-color: #f4f4f4;
-}
-.single-text-box {
-    margin-bottom: 30px;
-    h3 {
-        margin: {
-            bottom: 12px;
-            top: 25px;
-        };
-        font: {
-            weight: 600;
-            size: 22px;
-        };
-    }
-    .learn-more-btn {
-        color: #365267;
-        font: {
-            size: $font-size;
-            weight: 600;
-        };
-        svg {
-            width: 18px;
-            position: relative;
-            top: -1px;
-            margin-right: 3px;
-        }
-        &:hover {
-            color: $primary-color;
-        }
-    }
-}
-
-/*================================================
-Agency Portfolio Partner CSS
-=================================================*/
-.agency-portfolio-partner-area {
-    background-color: $black-color;
-}
-.single-agency-portfolio-partner {
-    text-align: center;
-
-    a {
-        display: block;
-
-        img {
-            width: auto !important;
-            display: inline-block !important;
         }
     }
 }
@@ -9786,3 +8756,4 @@ Go Top CSS
         }
     }
 }
+
