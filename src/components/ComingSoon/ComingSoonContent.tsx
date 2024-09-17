@@ -127,11 +127,11 @@ const Countdown: React.FC<CountdownProps> = ({ endDate }) => {
           </div>
         </div>
 
-        {/* <ul className="social-list">
+        <ul className="social-list">
           <li className="list-heading">Follow us for an update:</li>
           <li>
             <a
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/company/pakufi"
               className="linkedin"
               target="_blank"
               rel="noopener noreferrer"
@@ -141,7 +141,7 @@ const Countdown: React.FC<CountdownProps> = ({ endDate }) => {
           </li>
           <li>
             <a
-              href="https://instagram.com/"
+              href="https://instagram.com/pakufi_ethical_agency"
               className="instagram"
               target="_blank"
               rel="noopener noreferrer"
@@ -149,17 +149,17 @@ const Countdown: React.FC<CountdownProps> = ({ endDate }) => {
               <Icon.Instagram />
             </a>
           </li>
-          <li>
+          {/* <li>
             <a
-              href="https://instagram.com/"
+              href="https://discord.gg/KUeQrY5eMw"
               className="discord"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Icon.MessageCircle />
             </a>
-          </li>
-        </ul> */}
+          </li> */}
+        </ul>
       </div>
     </>
   );
