@@ -2716,7 +2716,7 @@ Pricing CSS
 .single-pricing-table {
 	text-align: center;
 	background: $white-color;
-	box-shadow: 0 1px 20px 0 $black-box-shadow;
+	box-shadow: 0 1px 20px 0 $black-06-box-shadow;
     border-radius: 5px;
     padding: 35px;
     transition: $transition;
@@ -6689,6 +6689,7 @@ Coming Soon CSS
 
         li {
             display: inline-block;
+            padding-right: 20px;
 
             &.list-heading {
                 display: block;
@@ -6736,12 +6737,11 @@ Coming Soon CSS
     margin: -80px auto 0;
 
     h1 {
+        margin-bottom: 30px;
+    }
+    h2 {
         color: $white-color;
-        font: {
-            size: 55px;
-            weight: 600;
-        }
-        margin-bottom: 15px;
+        font-size: 40px;
     }
     h3 {
         color: $white-color;
@@ -6752,6 +6752,9 @@ Coming Soon CSS
         font-size: 16px;
         margin: 0 auto;
         max-width: 820px;
+    }
+    .logo-container {
+        margin-bottom: 40px;
     }
     form {
         position: relative;
@@ -7158,7 +7161,7 @@ Iot Services CSS
     }
     a {
         width: 35px;
-        background-color: $bg-color-f9fafb
+        background-color: $bg-color-f9fafb;
         height: 35px;
         line-height: 35px;
         color: $black-color;
