@@ -2,13 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import * as Icon from "react-feather";
-
+import comingBgImg from "/public/images/coming-soon-1.jpg";
+import Link from "next/link";
+import Image from "next/image";
+import logo from "/public/images/logo.png";
 interface CountdownProps {
   endDate?: string; // Format: "Month Day, Year HH:mm:ss" i.e. "August 23, 2025 17:00:00 PDT"
 }
-
-import comingBgImg from "/public/images/coming-soon-1.jpg";
-import Link from "next/link";
 
 const Countdown: React.FC<CountdownProps> = ({ endDate }) => {
   const calculateTimeLeft = () => {
@@ -59,8 +59,10 @@ const Countdown: React.FC<CountdownProps> = ({ endDate }) => {
           <div className="d-table-cell">
             <div className="container">
               <div className="coming-soon-content">
-                <h1>PAKUFI</h1>
-                <h1>Under Construction</h1>
+                <h1>
+                  <Image src={logo} alt="logo" width={300} />
+                </h1>
+                <h2>Under Construction</h2>
                 <p>We are currently working on our new website.</p>
 
                 <div className="who-we-are">
@@ -127,11 +129,11 @@ const Countdown: React.FC<CountdownProps> = ({ endDate }) => {
           </div>
         </div>
 
-        {/* <ul className="social-list">
+        <ul className="social-list">
           <li className="list-heading">Follow us for an update:</li>
           <li>
             <a
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/company/pakufi"
               className="linkedin"
               target="_blank"
               rel="noopener noreferrer"
@@ -141,7 +143,7 @@ const Countdown: React.FC<CountdownProps> = ({ endDate }) => {
           </li>
           <li>
             <a
-              href="https://instagram.com/"
+              href="https://instagram.com/pakufi_ethical_agency"
               className="instagram"
               target="_blank"
               rel="noopener noreferrer"
@@ -151,7 +153,7 @@ const Countdown: React.FC<CountdownProps> = ({ endDate }) => {
           </li>
           <li>
             <a
-              href="https://instagram.com/"
+              href="https://discord.gg/KUeQrY5eMw"
               className="discord"
               target="_blank"
               rel="noopener noreferrer"
@@ -159,7 +161,7 @@ const Countdown: React.FC<CountdownProps> = ({ endDate }) => {
               <Icon.MessageCircle />
             </a>
           </li>
-        </ul> */}
+        </ul>
       </div>
     </>
   );
