@@ -5714,10 +5714,12 @@ Coming Soon CSS
 .coming-soon-area {
   position: relative;
   z-index: 1;
-  height: 100vh;
+  min-height: 100vh;
+  padding-top: 170px;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .coming-soon-area::before {
   z-index: -1;
@@ -5731,15 +5733,8 @@ Coming Soon CSS
   opacity: 0.9;
 }
 .coming-soon-area .social-list {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
   text-align: center;
-  bottom: 30px;
+  padding-top: 100px;
 }
 .coming-soon-area .social-list li {
   display: inline-block;

@@ -6659,11 +6659,13 @@ Coming Soon CSS
 .coming-soon-area {
     position: relative;
     z-index: 1;
-    height: 100vh;
+    min-height: 100vh;
+    padding-top: 170px;
     background: {
         position: center center;
         size: cover;
         repeat: no-repeat;
+        attachment: fixed;
     }
     &::before {
         z-index: -1;
@@ -6677,15 +6679,8 @@ Coming Soon CSS
         opacity: .9;
     }
     .social-list {
-        padding: 0;
-        margin: 0;
-        list-style-type: none;
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
         text-align: center;
-        bottom: 30px;
+        padding-top: 100px;
 
         li {
             display: inline-block;
