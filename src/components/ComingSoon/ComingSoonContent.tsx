@@ -77,16 +77,22 @@ const Countdown: React.FC<CountdownProps> = ({ endDate }) => {
                     </p>
                   </div>
 
-                  {/* <div className="button-group">
-                    <Link href="/" className="btn btn-primary">
+                  <div className="button-group">
+                    <Link
+                      href="https://tally.so/r/nGDg5e"
+                      className="btn btn-primary"
+                    >
                       Sounds exciting! <br />I want to discuss a project with
                       you
                     </Link>
 
-                    <Link href="/" className="btn btn-primary">
-                      Sounds exciting! <br />I want to join Pakufi community
+                    <Link
+                      href="https://tally.so/r/waE8Av"
+                      className="btn btn-primary"
+                    >
+                      Sounds exciting! <br />I want to join Pakufi talents
                     </Link>
-                  </div> */}
+                  </div>
 
                   <div className="col1">
                     <h3>How do we do that?</h3>
