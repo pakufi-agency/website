@@ -5716,6 +5716,7 @@ Coming Soon CSS
   z-index: 1;
   min-height: 100vh;
   padding-top: 170px;
+  padding-bottom: 60px;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -5734,7 +5735,7 @@ Coming Soon CSS
 }
 .coming-soon-area .social-list {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 60px;
 }
 .coming-soon-area .social-list li {
   display: inline-block;
@@ -5858,13 +5859,14 @@ Coming Soon CSS
 }
 .coming-soon-content .button-group {
   display: flex;
-  justify-content: space-around;
-  margin: 45px 0;
-}
-.coming-soon-content .button-group a {
-  max-width: 50%;
+  flex-direction: column;
+  align-items: center;
+  margin: 35px 0;
 }
 .coming-soon-content .button-group .btn-primary {
+  margin: 25px 0;
+  max-width: 50%;
+  min-width: 50%;
   background: #5D9F7B;
   box-shadow: 0 13px 27px 0 rgba(42, 69, 85, 0.25);
 }
@@ -5883,6 +5885,19 @@ Coming Soon CSS
 }
 .coming-soon-content .who-we-are .col2 h3 {
   text-align: center;
+}
+@media only screen and (min-width: 800px) {
+  .coming-soon-content .button-group {
+    display: flex;
+    justify-content: space-around;
+    margin: 45px 0;
+    flex-direction: row;
+    align-items: inherit;
+  }
+  .coming-soon-content .button-group .btn-primary {
+    margin: 0;
+    min-width: 30%;
+  }
 }
 
 /*================================================
