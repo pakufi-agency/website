@@ -62,14 +62,12 @@ const Countdown: React.FC<CountdownProps> = ({ endDate }) => {
                 <h1>
                   <Image src={logo} alt="logo" width={300} />
                 </h1>
-                <h2>Under Construction</h2>
-                <p>We are currently working on our new website.</p>
+                <h2>Coming Soon</h2>
 
                 <div className="who-we-are">
                   <div className="col1">
-                    <h3>Hi! We are Pakufi</h3>
                     <p>
-                      An <strong>ethical tech agency </strong>
+                      Pakufi is an <strong>ethical tech agency</strong>
                       that makes it easy for you to bring your website, app, or
                       online project to life, while offering better job
                       opportunities for IT experts from economically
