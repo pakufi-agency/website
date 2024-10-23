@@ -67,7 +67,7 @@ const Countdown: React.FC<CountdownProps> = ({ endDate }) => {
                 <div className="who-we-are">
                   <div className="col1">
                     <p>
-                      Pakufi is an <strong>ethical tech agency</strong>
+                      Pakufi is an <strong>ethical tech agency </strong>
                       that makes it easy for you to bring your website, app, or
                       online project to life, while offering better job
                       opportunities for IT experts from economically
