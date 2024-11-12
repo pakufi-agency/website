@@ -1,6 +1,10 @@
 import React from "react";
-import ComingSoonContent from "../components/ComingSoon/ComingSoonContent";
 import type { Metadata } from "next";
+
+import Navbar from "../components/Layout/Navbar";
+import Footer from "../components/Layout/Footer";
+
+import MainBanner from "../components/Hosting/MainBanner";
 
 export const metadata: Metadata = {
   title: "Pakufi - Ethical Tech Agency",
@@ -11,7 +15,11 @@ export const metadata: Metadata = {
 export default async function Page() {
   return (
     <>
-      <ComingSoonContent />
+      <Navbar />
+
+      <MainBanner />
+
+      <Footer />
     </>
   );
 }
