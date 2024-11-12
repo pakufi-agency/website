@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 
 import Navbar from "../components/Layout/Navbar";
 import Footer from "../components/Layout/Footer";
-
 import MainBanner from "../components/Hosting/MainBanner";
 
 export const metadata: Metadata = {

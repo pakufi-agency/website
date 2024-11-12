@@ -1,0 +1,189 @@
+@use '../../styles/variables.scss' as *;
+
+
+.footerArea {
+    padding: {
+        top: 50px;
+    }
+    position: relative;
+    z-index: 1;
+}
+
+.map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    z-index: -1;
+    bottom: 0;
+    opacity: .7;
+}
+
+.singleFooterWidget {
+    margin-bottom: 30px;
+
+    .logo {
+        margin-bottom: 20px;
+
+        .link {
+            display: block;
+        }
+    }
+    
+    .h3Title {
+        font-size: 17px;
+        margin-bottom: 20px;
+    }
+    
+    .list {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+
+        li {
+            margin-bottom: 10px;
+
+            a {
+                color: $paragraph-color;
+                
+                &:hover {
+                    color: $primary-color;
+                    padding-left: 7px;
+                }
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        
+        &.footerContactInfo {
+            margin-bottom: 20px;
+
+            li {
+                position: relative;
+                color: $paragraph-color;
+                margin-bottom: 8px;
+                padding-left: 25px;
+
+                svg {
+                    position: absolute;
+                    left: 0;
+                    width: 15px;
+                    height: auto;
+                    top: 2px;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                a {
+                    color: $paragraph-color;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+        &.socialLinks {
+            li {
+                display: inline-block;
+                margin-right: 8px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                a {
+                    width: 32px;
+                    text-align: center;
+                    line-height: 29px;
+                    height: 32px;
+                    border: 1px solid $primary-color;
+                    border-radius: 50%;
+                    color: $primary-color;
+                    
+                    svg {
+                        width: 15px;
+                    }
+                    &.facebook {
+                        border-color: #4267b2;
+                        color: #4267b2;
+
+                        &:hover {
+                            background: #4267b2;
+                            color: $white-color;
+                        }
+                    }
+                    &.twitter {
+                        border-color: #38A1F3;
+                        color: #38A1F3;
+
+                        &:hover {
+                            background: #38A1F3;
+                            color: $white-color;
+                        }
+                    }
+                    &.linkedin {
+                        border-color: #0077B5;
+                        color: #0077B5;
+
+                        &:hover {
+                            background: #0077B5;
+                            color: $white-color;
+                        }
+                    }
+                    &.instagram {
+                        border-color: #231F20;
+                        color: #231F20;
+
+                        &:hover {
+                            background: #231F20;
+                            color: $white-color;
+                        }
+                    }
+                    &:hover {
+                        background: $primary-color;
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+}
+.copyrightArea {
+    margin-top: 20px;
+    border-top: 1px solid #d8ebfd;
+    text-align: center;
+    padding: {
+        top: 20px;
+        bottom: 20px;
+    }
+}
+
+// tablet
+@media only screen and (min-width: 767px) {
+    .footerArea {
+        padding-top: 80px;
+    }
+
+    .singleFooterWidget {
+        .h3Title {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .logoCol {
+        margin-right: 3rem;
+    }
+
+    .copyrightArea {
+        margin-top: 80px;
+        padding: {
+            top: 25px;
+            bottom: 25px;
+        }
+    }
+}

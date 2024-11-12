@@ -7,20 +7,7 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import "swiper/css";
 import "swiper/css/bundle";
 
-// Global Style
-import "../../public/css/style.css";
-// Global Responsive Style
-import "../../public/css/responsive.css";
-
-// Comment out if you want this just one color
-// import '../../public/css/colors/brink-pink-style.css'
-// import '../../public/css/colors/pink-style.css'
-// import '../../public/css/colors/purple-style.css'
-
-// Different themes
-// comment out the template you chose
-// import '../../public/css/themes/rapair.css'
-// import '../../public/css/themes/agency.css'
+import "../styles/common.scss";
 
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
