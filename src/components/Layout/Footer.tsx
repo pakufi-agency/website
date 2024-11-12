@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import * as Icon from "react-feather";
 
+import styles from "./Footer.module.scss";
+
 import logo from "/public/images/logo.png";
 import map from "/public/images/map.png";
 
@@ -17,7 +19,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="footer-area bg-f7fafd">
+      <footer className={`${styles.footerArea} bg-f7fafd`}>
         <div className="container">
           <div className="row">
             <div
@@ -27,9 +29,9 @@ const Footer = () => {
               data-aos-duration="500"
               data-aos-once="true"
             >
-              <div className="single-footer-widget">
-                <div className="logo">
-                  <Link href="/" >
+              <div className={`${styles.singleFooterWidget} ${styles.logoCol}`}>
+                <div className={styles.logo}>
+                  <Link href="/" className={styles.link}>
                     <Image src={logo} alt="logo" width={110} height={36} />
                   </Link>
                 </div>
@@ -49,34 +51,24 @@ const Footer = () => {
               data-aos-duration="500"
               data-aos-once="true"
             >
-              <div className="single-footer-widget ps-5">
-                <h3>Company</h3>
+              <div className={styles.singleFooterWidget}>
+                <h3 className={styles.h3Title}>Company</h3>
 
-                <ul className="list">
+                <ul className={styles.list}>
                   <li>
-                    <Link href="/about" >
-                      About Us
-                    </Link>
+                    <Link href="/about">About Us</Link>
                   </li>
                   <li>
-                    <Link href="/services" >
-                      Services
-                    </Link>
+                    <Link href="/services">Services</Link>
                   </li>
                   <li>
-                    <Link href="/features" >
-                      Features
-                    </Link>
+                    <Link href="/features">Features</Link>
                   </li>
                   <li>
-                    <Link href="/pricing" >
-                      Our Pricing
-                    </Link>
+                    <Link href="/pricing">Our Pricing</Link>
                   </li>
                   <li>
-                    <Link href="/blog" >
-                      Latest News
-                    </Link>
+                    <Link href="/blog">Latest News</Link>
                   </li>
                 </ul>
               </div>
@@ -89,34 +81,24 @@ const Footer = () => {
               data-aos-duration="500"
               data-aos-once="true"
             >
-              <div className="single-footer-widget">
-                <h3>Support</h3>
+              <div className={styles.singleFooterWidget}>
+                <h3 className={styles.h3Title}>Support</h3>
 
-                <ul className="list">
+                <ul className={styles.list}>
                   <li>
-                    <Link href="/faq" >
-                      FAQ&apos;s
-                    </Link>
+                    <Link href="/faq">FAQ&apos;s</Link>
                   </li>
                   <li>
-                    <Link href="/privacy-policy" >
-                      Privacy Policy
-                    </Link>
+                    <Link href="/privacy-policy">Privacy Policy</Link>
                   </li>
                   <li>
-                    <Link href="/terms-conditions" >
-                      Terms & Conditions
-                    </Link>
+                    <Link href="/terms-conditions">Terms & Conditions</Link>
                   </li>
                   <li>
-                    <Link href="/team" >
-                      Team
-                    </Link>
+                    <Link href="/team">Team</Link>
                   </li>
                   <li>
-                    <Link href="/contact" >
-                      Contact Us
-                    </Link>
+                    <Link href="/contact">Contact Us</Link>
                   </li>
                 </ul>
               </div>
@@ -129,10 +111,10 @@ const Footer = () => {
               data-aos-duration="500"
               data-aos-once="true"
             >
-              <div className="single-footer-widget">
-                <h3>Address</h3>
+              <div className={styles.singleFooterWidget}>
+                <h3 className={styles.h3Title}>Address</h3>
 
-                <ul className="footer-contact-info">
+                <ul className={`${styles.footerContactInfo} ${styles.list}`}>
                   <li>
                     <Icon.MapPin />
                     27 Division St, New York, <br /> NY 10002, USA
@@ -150,7 +132,7 @@ const Footer = () => {
                   </li>
                 </ul>
 
-                <ul className="social-links">
+                <ul className={`${styles.list} ${styles.socialLinks}`}>
                   <li>
                     <a
                       href="https://www.facebook.com/"
@@ -195,7 +177,7 @@ const Footer = () => {
             </div>
 
             <div className="col-lg-12 col-md-12">
-              <div className="copyright-area">
+              <div className={styles.copyrightArea}>
                 <p>
                   Copyright &copy; {currentYear} StartP. All rights reserved by{" "}
                   <a href="https://envytheme.com/" target="_blank">
@@ -207,7 +189,13 @@ const Footer = () => {
           </div>
         </div>
 
-        <Image src={map} className="map" alt="map" width={910} height={443} />
+        <Image
+          src={map}
+          className={styles.map}
+          alt="map"
+          width={910}
+          height={443}
+        />
 
         {/* Shape Images */}
         <div className="shape1">
