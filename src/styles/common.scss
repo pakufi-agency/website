@@ -506,3 +506,13 @@ label {
         }
     }
 }
+
+@media only screen and (min-width : 992px) {
+    .shape1 {
+        display: none;
+    }
+
+    .shape9 {
+        display: none;
+    }
+}

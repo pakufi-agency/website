@@ -6,6 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import styles from "./Navbar.module.scss";
+
 import logo from "/public/images/logo.png";
 
 const Navbar: React.FC = () => {
