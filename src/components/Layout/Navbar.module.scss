@@ -1,0 +1,145 @@
+@use '../../styles/variables.scss' as *;
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+  background-color: $white-color;
+  z-index: 99;
+
+  &.isSticky {
+    box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);
+  }
+}
+
+.startpNav {
+  background: transparent;
+
+    .navBarContent {
+      text-align: center;
+      height: 100vh;
+
+      .nav-link {
+        padding: 10px;
+        font-weight: 500;
+        color: $navlink-color;
+        
+        &:hover, &.active {
+          color: $primary-color;
+        }
+
+        svg {
+          margin-left: 5px;
+        }
+      }
+    }
+}
+
+.navBarMobileMenu {
+  background: none;
+  border: none;
+
+  .icon-bar {
+    background: $navlink-color;
+  }
+}
+
+.navBarContent {
+  .navItem {
+    position: relative;
+
+    .dropdownMenu {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background-color: $white-color;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s;
+
+      .nav-link {
+        color: $navlink-color;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+
+    &:hover .dropdownMenu {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+
+.othersOption {
+    .cart-wrapper-btn {
+        position: relative;
+        margin-right: 25px;
+
+        svg {
+            width: 15px;
+        }
+        i {
+            font-size: 20px;
+        }
+        span {
+            background-color: red;
+            color: #ffffff;
+            font-size: 9px;
+            width: 13px;
+            height: 13px;
+            text-align: center;
+            line-height: 14px;
+            border-radius: 50%;
+            position: absolute;
+            top: -2px;
+            right: -9px;
+        }
+    }
+
+    .btnLight {
+        background: transparent;
+        border: 1px dashed #cdf1d8;
+        padding: 6px 12px;
+        margin-right: 5px;
+        font-size: 10px;
+        &:focus {
+            color: $black-color !important
+        }
+        &:hover, &:focus {
+            color: $white-color;
+            border-color: $primary-color;
+        }
+        &::after, &::before {
+            background: $primary-color;
+        }
+    }
+
+    .btnPrimary {
+        background: $secondary-color;
+        box-shadow: 0 13px 27px 0 rgba(198, 121, 227, 0.25);
+
+        &::after, &::before {
+            background: $primary-color;
+            box-shadow: 0 13px 27px 0 rgba(68, 206, 111, 0.25);
+        }
+    }
+}
+
+
+
+@media only screen and (min-width: 767px) {
+    .startpNav {
+        .navBarContent {
+            height: auto;
+        }
+    }
+}
