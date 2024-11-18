@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Navbar from "../components/Layout/Navbar";
 import Footer from "../components/Layout/Footer";
 import MainBanner from "../components/Hosting/MainBanner";
+import MobileMenuProvider from "../context/MobileMenuProvider";
 
 export const metadata: Metadata = {
   title: "Pakufi - Ethical Tech Agency",
@@ -13,12 +14,12 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   return (
-    <>
+    <MobileMenuProvider>
       <Navbar />
 
       <MainBanner />
 
       <Footer />
-    </>
+    </MobileMenuProvider>
   );
 }

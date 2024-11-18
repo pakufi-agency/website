@@ -5,6 +5,7 @@ import * as Icon from "react-feather";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useMobileMenu } from "../../context/MobileMenuProvider";
 
 import styles from "./Navbar.module.scss";
 
@@ -12,10 +13,17 @@ import logo from "/public/images/logo.png";
 
 const Navbar: React.FC = () => {
   const currentRoute = usePathname();
-  const [menuOpen, setMenuOpen] = useState(false);
+  const { isMobileMenuOpen, setMobileMenuOpen } = useMobileMenu();
+  const [isDropdownOpen, setDropdownOpen] = useState<Boolean>(false);
 
   const toggleMenu = () => {
-    setMenuOpen((prev) => !prev);
+    setMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleMenuItemClick = (e: any) => {
+    e.preventDefault();
+
+    setDropdownOpen(!isDropdownOpen);
   };
 
   useEffect(() => {
@@ -30,18 +38,21 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <header id="header" className={`${styles.header} ${styles.headroom}`}>
+    <header
+      id="header"
+      className={`${styles.header} ${isMobileMenuOpen ? styles.isOpen : ""}`}
+    >
       <div className={styles.startpNav}>
-        <div className="container">
-          <nav className="navbar navbar-expand-md navbar-light">
-            <Link href="/" className="navbar-brand">
+        <div className={`container ${styles.container}`}>
+          <nav className={`navbar navbar-expand-md navbar-light ${styles.nav}`}>
+            <Link href="/" className={`navbar-brand ${styles.logo}`}>
               <Image src={logo} alt="logo" width={110} height={36} />
             </Link>
 
             <div
-              className={`collapse navbar-collapse ${menuOpen ? "show" : ""} ${
-                styles.navBarContent
-              }`}
+              className={`collapse navbar-collapse ${
+                isMobileMenuOpen ? "show" : ""
+              } ${styles.navBarContent}`}
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav ms-auto">
@@ -49,11 +60,15 @@ const Navbar: React.FC = () => {
                   <Link
                     href="#"
                     className="nav-link"
-                    onClick={(e) => e.preventDefault()}
+                    onClick={handleMenuItemClick}
                   >
                     Home <Icon.ChevronDown />
                   </Link>
-                  <ul className={`${styles.dropdownMenu}`}>
+                  <ul
+                    className={`${styles.dropdownMenu} ${
+                      isDropdownOpen ? styles.dropdownOpen : ""
+                    }`}
+                  >
                     <li className={styles.navItem}>
                       <Link
                         href="/iot/"
@@ -64,10 +79,26 @@ const Navbar: React.FC = () => {
                         IOT
                       </Link>
                     </li>
-                    {/* Add more links as needed */}
                   </ul>
                 </li>
-                {/* Add more top-level links as needed */}
+                <li className={`nav-item ${styles.navItem}`}>
+                  <Link
+                    href="#"
+                    className="nav-link"
+                    onClick={handleMenuItemClick}
+                  >
+                    About <Icon.ChevronDown />
+                  </Link>
+                </li>
+                <li className={`nav-item ${styles.navItem}`}>
+                  <Link
+                    href="#"
+                    className="nav-link"
+                    onClick={handleMenuItemClick}
+                  >
+                    Contact <Icon.ChevronDown />
+                  </Link>
+                </li>
               </ul>
             </div>
             <div className={styles.othersOption}>
@@ -79,17 +110,18 @@ const Navbar: React.FC = () => {
                 Support us
               </Link>
             </div>
+
             <button
-              className={`navbar-toggler ${styles.navBarMobileMenu} ${
-                menuOpen ? "" : "collapsed"
+              className={`navbar-toggler ${styles.navBarMobileButton} ${
+                isMobileMenuOpen ? "" : "collapsed"
               }`}
               type="button"
               onClick={toggleMenu}
               aria-controls="navbarSupportedContent"
-              aria-expanded={menuOpen}
+              aria-expanded={isMobileMenuOpen}
               aria-label="Toggle navigation"
             >
-              {menuOpen ? <Icon.X /> : <Icon.Menu />}
+              {isMobileMenuOpen ? <Icon.X /> : <Icon.Menu />}
             </button>
           </nav>
         </div>

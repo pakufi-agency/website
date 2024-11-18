@@ -12,6 +12,10 @@
   &.isSticky {
     box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);
   }
+
+  &.isOpen {
+    height: 100%;
+  }
 }
 
 .startpNav {
@@ -19,7 +23,6 @@
 
     .navBarContent {
       text-align: center;
-      height: 100vh;
 
       .nav-link {
         padding: 10px;
@@ -37,12 +40,71 @@
     }
 }
 
-.navBarMobileMenu {
-  background: none;
-  border: none;
+// Nav order
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
 
-  .icon-bar {
-    background: $navlink-color;
+  .othersOption {
+    display: none;
+  }
+
+  .navBarMobileButton {
+    background: none;
+    border: none;
+  }
+}
+
+
+// Menu on Mobile when open
+.isOpen {
+  height: 100%;
+
+  .startpNav, .container, .nav {
+    height: 100%;
+  }
+
+  .logo {
+    order: 1;
+    align-self: flex-start;
+  }
+
+  .navBarMobileButton {
+    order: 2;
+    align-self: self-start;
+    padding-top: 20px;
+
+    .icon-bar {
+      background: $navlink-color;
+    }
+  }
+
+  .navBarContent {
+    order: 3;
+    flex-grow: 1;
+  }
+
+  .othersOption {
+    display: inline-block;
+    order: 4;
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .navItem {
+    position: relative;
+
+    .dropdownMenu {
+      position: static;
+      width: 100%; 
+      margin-top: 0.5rem; 
+      visibility: visible; 
+      opacity: 1;
+      box-shadow: none; 
+    }
   }
 }
 
@@ -50,7 +112,12 @@
   .navItem {
     position: relative;
 
+    a svg {
+      width: 14px;
+    }
+
     .dropdownMenu {
+      list-style: none;
       position: absolute;
       left: 0;
       top: 100%;
@@ -71,7 +138,8 @@
       }
     }
 
-    &:hover .dropdownMenu {
+    &:hover .dropdownMenu,
+    .dropdownOpen {
       visibility: visible;
       opacity: 1;
     }
@@ -135,11 +203,39 @@
 }
 
 
-
+// Desktop
 @media only screen and (min-width: 767px) {
     .startpNav {
         .navBarContent {
             height: auto;
         }
+    }
+
+    // Nav order
+    .nav {
+      display: flex;
+      align-items: center;
+
+      .logo {
+        order: 1;
+        align-self: center;
+      }
+
+      .navBarContent {
+        order: 2;
+        flex-grow: 1;
+      }
+
+      .othersOption {
+        display: inline;
+        order: 3;
+        margin-top: 0;
+        margin-left: 20px;
+      }
+
+      .navBarMobileButton {
+        order: 4;
+        align-self: center;
+      }
     }
 }

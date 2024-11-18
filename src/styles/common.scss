@@ -81,18 +81,8 @@ textarea.form-control {
     height: auto !important;
 }
 
-// tablet
-@media only screen and (min-width: 767px) {
-    .pb-80 {
-        padding-bottom: 80px;
-    }
-
-    .pt-80 {
-        padding-top: 80px;
-    }
-    .pb-50 {
-        padding-bottom: 50px;
-    }
+.mobileMenuIsOpen {
+    overflow: hidden;
 }
 
 // swiper-pagination
@@ -332,6 +322,10 @@ label {
     }
 }
 
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
 
 // phone/tablet
 @media only screen and (min-width: 576px) {
@@ -353,6 +347,7 @@ label {
     }
 }
 
+
 // tablet
 @media only screen and (min-width: 767px) {
     .btn {
@@ -364,6 +359,9 @@ label {
             top: 80px;
             bottom: 80px;
         }
+    }
+    .pb-50 {
+        padding-bottom: 50px;
     }
     .section-title {
         margin-bottom: 50px;
@@ -380,7 +378,6 @@ label {
     }
 } 
 
-/* Shapes */
 @media only screen and (min-width: 767px) {
     .shape1 {
         position: absolute;
@@ -507,7 +504,12 @@ label {
     }
 }
 
+// desktop
 @media only screen and (min-width : 992px) {
+    .mobileMenuIsOpen {
+        overflow: auto;
+    }
+
     .shape1 {
         display: none;
     }
