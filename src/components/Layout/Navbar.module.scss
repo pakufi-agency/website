@@ -40,7 +40,7 @@
     }
 }
 
-// Nav order
+// Nav (mobile/desktop)
 .nav {
   display: flex;
   flex-direction: row;
@@ -57,7 +57,7 @@
 }
 
 
-// Menu on Mobile when open
+// Nav (mobile & open)
 .isOpen {
   height: 100%;
 
@@ -108,6 +108,7 @@
   }
 }
 
+// Links & Dropdown
 .navBarContent {
   .navItem {
     position: relative;
@@ -118,16 +119,14 @@
 
     .dropdownMenu {
       list-style: none;
-      position: absolute;
       left: 0;
       top: 100%;
       background-color: $white-color;
       padding: 10px;
       border-radius: 5px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.3s;
+      display: none;
+      transition: display 0.3s;
 
       .nav-link {
         color: $navlink-color;
@@ -138,15 +137,13 @@
       }
     }
 
-    &:hover .dropdownMenu,
     .dropdownOpen {
-      visibility: visible;
-      opacity: 1;
+      display: inline-block;
     }
   }
 }
 
-
+// Buttons
 .othersOption {
     .cart-wrapper-btn {
         position: relative;
@@ -224,6 +221,13 @@
       .navBarContent {
         order: 2;
         flex-grow: 1;
+
+        .dropdownMenu {
+          position: absolute;
+          min-width: 150px;
+          margin-left: 10px;
+          text-align: left;
+        }
       }
 
       .othersOption {
