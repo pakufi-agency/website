@@ -1136,47 +1136,47 @@ $value_seven: 1550px;
         }
     }
 
-    .iot-main-banner {
-        padding: {
-            top: 150px;
-            bottom: 80px;
-        }
-    }
-    .iot-banner-content {
-        text-align: center;
-        max-width: 100%;
+    // .iot-main-banner {
+    //     padding: {
+    //         top: 150px;
+    //         bottom: 80px;
+    //     }
+    // }
+    // .iot-banner-content {
+    //     text-align: center;
+    //     max-width: 100%;
 
-        span {
-            font-size: 14px;
-        }
-        h2 {
-            font-size: 25px;
-            margin-bottom: 17px;
-            line-height: 1.4;
-        }
-    }
-    .iot-banner-image {
-        position: relative;
-        right: 0;
-        top: 0;
-        transform: unset;
-        margin-top: 50px;
+    //     span {
+    //         font-size: 14px;
+    //     }
+    //     h2 {
+    //         font-size: 25px;
+    //         margin-bottom: 17px;
+    //         line-height: 1.4;
+    //     }
+    // }
+    // .iot-banner-image {
+    //     position: relative;
+    //     right: 0;
+    //     top: 0;
+    //     transform: unset;
+    //     margin-top: 50px;
 
-        img {
-            &:first-child {
-                max-width: 100%;
-            }
-            &:last-child {
-                display: none;
-            }
-        }
-    }
-    .animate-border {
-        span {
-            top: 78%;
-            left: 41%;
-        }
-    }
+    //     img {
+    //         &:first-child {
+    //             max-width: 100%;
+    //         }
+    //         &:last-child {
+    //             display: none;
+    //         }
+    //     }
+    // }
+    // .animate-border {
+    //     span {
+    //         top: 78%;
+    //         left: 41%;
+    //     }
+    // }
 
     .single-iot-services {
         padding: 30px 20px;
@@ -2589,39 +2589,39 @@ $value_seven: 1550px;
         }
     }
 
-    .iot-main-banner {
-        padding: {
-            top: 190px;
-            bottom: 100px;
-        }
-    }
-    .iot-banner-content {
-        span {
-            font-size: 14px;
-        }
-        h2 {
-            font-size: 30px;
-        }
-    }
-    .iot-banner-image {
-        position: relative;
-        right: 0;
-        top: 0;
-        transform: unset;
-        margin-top: 80px;
+    // .iot-main-banner {
+    //     padding: {
+    //         top: 190px;
+    //         bottom: 100px;
+    //     }
+    // }
+    // .iot-banner-content {
+    //     span {
+    //         font-size: 14px;
+    //     }
+    //     h2 {
+    //         font-size: 30px;
+    //     }
+    // }
+    // .iot-banner-image {
+    //     position: relative;
+    //     right: 0;
+    //     top: 0;
+    //     transform: unset;
+    //     margin-top: 80px;
             
-        img {
-            &:first-child {
-                max-width: 100%;
-            }
-        }
-    }
-    .animate-border {
-        span {
-            top: 70%;
-            left: 42%;
-        }
-    }
+    //     img {
+    //         &:first-child {
+    //             max-width: 100%;
+    //         }
+    //     }
+    // }
+    // .animate-border {
+    //     span {
+    //         top: 70%;
+    //         left: 42%;
+    //     }
+    // }
 
     .iot-cta-area {
         padding: {
@@ -3361,25 +3361,25 @@ $value_seven: 1550px;
 /* Min width 1550px */
 @media only #{$media} and ($feature_min : $value_seven) {
 
-    .iot-banner-image {
-        right: 90px;
-        top: 56%;
-        transform: translateY(-50%);
+    // .iot-banner-image {
+    //     right: 90px;
+    //     top: 56%;
+    //     transform: translateY(-50%);
 
-        img {
-            &:first-child {
-                max-width: 90%;
-            }
-            &:last-child {
-                left: -128px;
-                top: 50px;
-            }
-        }
-    }
-    .animate-border span {
-        top: 51%;
-        left: 70%;
-    }
+    //     img {
+    //         &:first-child {
+    //             max-width: 90%;
+    //         }
+    //         &:last-child {
+    //             left: -128px;
+    //             top: 50px;
+    //         }
+    //     }
+    // }
+    // .animate-border span {
+    //     top: 51%;
+    //     left: 70%;
+    // }
 
     // .navbar-style-three {
     //     .startp-nav {

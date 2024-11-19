@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 import Navbar from "../components/Layout/Navbar";
 import Footer from "../components/Layout/Footer";
-import MainBanner from "../components/Hosting/MainBanner";
+import HeroBanner from "../components/Hero/Hero";
 import MobileMenuProvider from "../context/MobileMenuProvider";
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export default async function Page() {
     <MobileMenuProvider>
       <Navbar />
 
-      <MainBanner />
+      <HeroBanner />
 
       <Footer />
     </MobileMenuProvider>
