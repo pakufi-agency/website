@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMobileMenu } from "../../context/MobileMenuProvider";
+import { DESKTOP_MEDIA_QUERY } from "../../utils/consts";
 
 import styles from "./Navbar.module.scss";
 
@@ -14,16 +15,16 @@ import logo from "/public/images/logo.png";
 const Navbar: React.FC = () => {
   const currentRoute = usePathname();
   const { isMobileMenuOpen, setMobileMenuOpen } = useMobileMenu();
-  const [isDropdownOpen, setDropdownOpen] = useState<Boolean>(false);
+  const [isDropdownOpen, setDropdownOpen] = useState<string | null>(null);
 
   const toggleMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleMenuItemClick = (e: any) => {
+  const handleMenuItemClick = (e: any, id: string) => {
     e.preventDefault();
 
-    setDropdownOpen(!isDropdownOpen);
+    setDropdownOpen((prev) => (prev === id ? null : id));
   };
 
   useEffect(() => {
@@ -36,6 +37,22 @@ const Navbar: React.FC = () => {
     document.addEventListener("scroll", handleScroll);
     return () => document.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(DESKTOP_MEDIA_QUERY);
+
+    const handleResize = () => {
+      if (mediaQuery.matches) {
+        setMobileMenuOpen(false);
+      }
+    };
+    mediaQuery.addEventListener("change", handleResize);
+    handleResize();
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleResize);
+    };
+  }, [setMobileMenuOpen]);
 
   return (
     <header
@@ -60,13 +77,13 @@ const Navbar: React.FC = () => {
                   <Link
                     href="#"
                     className="nav-link"
-                    onClick={handleMenuItemClick}
+                    onClick={(e) => handleMenuItemClick(e, "home")}
                   >
                     Home <Icon.ChevronDown />
                   </Link>
                   <ul
                     className={`${styles.dropdownMenu} ${
-                      isDropdownOpen ? styles.dropdownOpen : ""
+                      isDropdownOpen === "home" ? styles.dropdownOpen : ""
                     }`}
                   >
                     <li className={styles.navItem}>
@@ -85,7 +102,7 @@ const Navbar: React.FC = () => {
                   <Link
                     href="#"
                     className="nav-link"
-                    onClick={handleMenuItemClick}
+                    onClick={(e) => handleMenuItemClick(e, "about")}
                   >
                     About <Icon.ChevronDown />
                   </Link>
@@ -94,7 +111,7 @@ const Navbar: React.FC = () => {
                   <Link
                     href="#"
                     className="nav-link"
-                    onClick={handleMenuItemClick}
+                    onClick={(e) => handleMenuItemClick(e, "contact")}
                   >
                     Contact <Icon.ChevronDown />
                   </Link>
