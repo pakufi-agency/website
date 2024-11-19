@@ -1,0 +1,62 @@
+@use '../../styles/variables.scss' as *;
+
+.ctaArea {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    padding: {
+        top: 50px;
+        bottom: 50px;
+    }
+}
+.ctaContent {
+    text-align: center;
+    margin-top: 35px;
+    color: $white-color;
+
+    h3 {
+        color: $white-color;
+        margin-bottom: 17px;
+        font-size: 20px;
+        line-height: 1.5;
+    }
+    p {
+       opacity: .95;
+       margin-bottom: 25px;
+    }
+}
+.ctaImg {
+    text-align: center;
+}
+
+.circleBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.ctaShape {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+@media only screen and (min-width: 767px) {
+    .ctaArea {
+        padding: {
+            top: 50px;
+            bottom: 50px;
+        }
+    }
+
+    .ctaContent {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        text-align: left;
+
+        h3 {
+            font-size: 25px;
+        }
+    }
+}
