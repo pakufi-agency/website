@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import Navbar from "../components/Layout/Navbar";
 import Footer from "../components/Layout/Footer";
 import HeroBanner from "../components/Hero/Hero";
+import WeBanner from "../components/WeBanner/WeBanner";
+
 import MobileMenuProvider from "../context/MobileMenuProvider";
 
 export const metadata: Metadata = {
@@ -18,6 +20,8 @@ export default async function Page() {
       <Navbar />
 
       <HeroBanner />
+
+      <WeBanner />
 
       <Footer />
     </MobileMenuProvider>
