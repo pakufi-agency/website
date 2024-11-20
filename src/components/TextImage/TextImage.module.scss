@@ -1,0 +1,29 @@
+@use '../../styles/variables.scss' as *;
+
+.content {
+    order: 1;
+    margin-bottom: 30px;
+    h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+        line-height: 1.5;
+    }
+    .btn {
+        margin-top: 15px;
+    }
+}
+.image {
+    order: 2;
+    position: relative;
+    text-align: center;
+}
+
+
+@media only screen and (min-width: 767px) {
+    .content {
+        h3 {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+    }
+}
