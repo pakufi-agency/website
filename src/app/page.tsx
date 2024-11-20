@@ -5,6 +5,7 @@ import Navbar from "../components/Layout/Navbar";
 import Footer from "../components/Layout/Footer";
 import HeroBanner from "../components/Hero/Hero";
 import WeBanner from "../components/WeBanner/WeBanner";
+import TextImage from "@/components/TextImage/TextImage";
 
 import MobileMenuProvider from "../context/MobileMenuProvider";
 
@@ -22,6 +23,8 @@ export default async function Page() {
       <HeroBanner />
 
       <WeBanner />
+
+      <TextImage />
 
       <Footer />
     </MobileMenuProvider>
