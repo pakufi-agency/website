@@ -5,7 +5,8 @@ import Navbar from "../components/Layout/Navbar";
 import Footer from "../components/Layout/Footer";
 import HeroBanner from "../components/Hero/Hero";
 import WeBanner from "../components/WeBanner/WeBanner";
-import TextImage from "@/components/TextImage/TextImage";
+import TextImage from "../components/TextImage/TextImage";
+import TeamSection from "../components/TeamSection/TeamSection";
 import CTABig from "../components/CTABig/CTABig";
 
 import MobileMenuProvider from "../context/MobileMenuProvider";
@@ -26,6 +27,8 @@ export default async function Page() {
       <WeBanner />
 
       <TextImage />
+
+      <TeamSection />
 
       <CTABig />
 

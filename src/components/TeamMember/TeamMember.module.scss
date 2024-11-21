@@ -1,0 +1,130 @@
+@use '../../styles/variables.scss' as *;
+
+.container {
+    max-width: 1175px;
+}
+.singleTeam {
+    background: $white-color;
+    padding: {
+        top: 35px;
+        bottom: 35px;
+    }
+    margin-bottom: 30px;
+    transition: $transition;
+    z-index: 1;
+    text-align: center;
+
+    .teamContent {
+        padding: {
+            left: 25px;
+            right: 25px;
+        }
+        padding: {
+            left: 35px;
+            right: 35px;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+
+            li {
+                display: inline-block;
+                margin: 0 5px;
+
+                a {
+                    color: $secondary-color;
+
+                    &:hover {
+                        transform: translateY(-5px);
+                        color: $primary-color;
+                    }
+                    svg {
+                        width: 19px;
+                    }
+                }
+            }
+        }
+        p {
+            margin: {
+                top: 15px;
+                bottom: 0;
+            }
+        }
+    }
+
+    .teamImage {
+        position: relative;
+        z-index: 1;
+        padding: {
+            left: 35px;
+            right: 35px;
+        }
+
+        img {
+            border: 3px solid #cdf1d8;
+            width: auto !important;
+            border-radius: 50%;
+            display: inline-block !important;
+            transition: $transition;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            background: $bg-color-f9f6f6;
+            height: 10px;
+            width: 100%;
+            z-index: -1;
+            transition: $transition;
+        }
+    }
+
+    .teamInfo {
+        background: $gradient-color;
+        padding: 10px 15px;
+        border-radius: 75px;
+        margin: {
+            bottom: 25px;
+            left: 10px;
+            right: 10px;
+            top: 25px;
+        }
+        transition: $transition;
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: $white-color;
+        }
+        span {
+            color: $white-color;
+            font-size: 13px;
+        }
+    }
+    &:hover {
+        box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+
+        .teamImage {
+            &::before {
+                height: 0;
+            }
+            img {
+                border-color: $primary-color;
+            }
+        }
+        .teamInfo {
+            margin: {
+                left: 0;
+                right: 0;
+            }
+            border-radius: 0;
+        }
+    }
+}
+
+@media only screen and (min-width: 767px) {
+
+}
