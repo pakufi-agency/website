@@ -6,6 +6,7 @@ import Footer from "../components/Layout/Footer";
 import HeroBanner from "../components/Hero/Hero";
 import WeBanner from "../components/WeBanner/WeBanner";
 import TextImage from "@/components/TextImage/TextImage";
+import CTABig from "../components/CTABig/CTABig";
 
 import MobileMenuProvider from "../context/MobileMenuProvider";
 
@@ -25,6 +26,8 @@ export default async function Page() {
       <WeBanner />
 
       <TextImage />
+
+      <CTABig />
 
       <Footer />
     </MobileMenuProvider>
