@@ -313,6 +313,7 @@ label {
         }
     }
 }
+
 @keyframes MOVE-BG {
     from {
         transform: translateX(0);
@@ -324,6 +325,11 @@ label {
 
 .navbar-toggler:focus {
     box-shadow: none;
+}
+
+// BG Animations
+.shape1, .shape2, .shape3, .shape4, .shape5, .shape7, .shape8 {
+    display: none;
 }
 
 
@@ -376,9 +382,12 @@ label {
             font-size: 12px;
         }
     }
-} 
+}
 
 @media only screen and (min-width: 767px) {
+    .shape1, .shape2, .shape3, .shape4, .shape5, .shape7 {
+        display: block;
+    }
     .shape1 {
         position: absolute;
         top: 20%;
