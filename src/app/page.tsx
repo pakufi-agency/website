@@ -6,8 +6,11 @@ import Footer from "../components/Layout/Footer";
 import HeroBanner from "../components/Hero/Hero";
 import WeBanner from "../components/WeBanner/WeBanner";
 import TextImage from "../components/TextImage/TextImage";
+import ServicesSection from "../components/ServicesSection/ServicesSection";
+import CtaText from "../components/CtaText/CtaText";
+
 import TeamSection from "../components/TeamSection/TeamSection";
-import CTABig from "../components/CTABig/CTABig";
+import CtaBig from "../components/CtaBig/CtaBig";
 
 import MobileMenuProvider from "../context/MobileMenuProvider";
 
@@ -28,9 +31,15 @@ export default async function Page() {
 
       <TextImage />
 
+      <ServicesSection />
+
+      <div className="pb-80">
+        <CtaText />
+      </div>
+
       <TeamSection />
 
-      <CTABig />
+      <CtaBig />
 
       <Footer />
     </MobileMenuProvider>

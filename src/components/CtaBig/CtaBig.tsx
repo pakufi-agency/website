@@ -5,13 +5,13 @@ import Image from "next/image";
 
 import freeTrialImg from "/public/images/free-trial-img.png";
 
-import styles from "./CTABig.module.scss";
+import styles from "./CtaBig.module.scss";
 
 // Shape Images
 import shape2 from "/public/images/shape2.svg";
 import shape4 from "/public/images/shape4.svg";
 
-const CTABig = () => {
+const CtaBig = () => {
   return (
     <>
       <div className={styles.container}>
@@ -54,4 +54,4 @@ const CTABig = () => {
   );
 };
 
-export default CTABig;
+export default CtaBig;

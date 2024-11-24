@@ -1,0 +1,82 @@
+@use '../../styles/variables.scss' as *;
+
+.solutionsArea {
+    padding-bottom: 50px;
+    position: relative;
+    z-index: 1;
+}
+.singleSolutionsBox {
+    padding: 20px 15px;
+    text-align: center;
+    transition: $transition;
+    position: relative;
+    margin-bottom: 30px;
+    z-index: 1;
+    border: 1px solid #c5fffd;
+    border-radius: 5px;
+
+    .icon {
+        margin-bottom: 25px;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+
+        img {
+            transition: $transition;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: -1;
+            background: #f0fdfe;
+            box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.09);
+            border-radius: 30% 70% 70% 30% / 40% 60% 40% 60%;
+            width: 60px;
+            height: 60px;
+        }
+    }
+    h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        border-radius: 5px;
+        height: 100%;
+        background: linear-gradient(to right top, #d5fefd, #e0fdff, #effbff, #fbfaff, #fffcff);
+    }
+    .learnMoreButton {
+        color: #365267;
+        font: {
+            size: $font-size;
+            weight: 600;
+        };
+        svg {
+            width: 18px;
+            position: relative;
+            top: -1px;
+            margin-right: 3px;
+        }
+        &:hover {
+            color: $primary-color;
+        }
+    }
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+
+        .icon {
+            img {
+                transform: rotateY(-360deg);
+            }
+        }
+    }
+}

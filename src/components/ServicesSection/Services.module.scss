@@ -1,0 +1,32 @@
+@use '../../styles/variables.scss' as *;
+
+.serviceSectionContainer {
+    position: relative;
+    z-index: 1;
+    background: $gradient-color;
+
+    .sectionTitleServiceSection {
+        h2 {
+            color: $white-color;
+        }
+        .barServiceSection {
+            &::before {
+                background: $white-color;
+            }
+        }
+        p {
+            color: $white-color;
+            opacity: .95;
+        }
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 37%;
+        width: 100%;
+        background: $white-color;
+        z-index: -1;
+    }
+}
