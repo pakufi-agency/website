@@ -33,7 +33,7 @@ const ServicesStyle3 = () => {
                   <Image src={icon1} alt="image" width={60} height={60} />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
+                  <Link href="/services/service-details/">
                     Robotic Automation
                   </Link>
                 </h3>
@@ -45,7 +45,6 @@ const ServicesStyle3 = () => {
                 <Link
                   href="/services/service-details/"
                   className="learn-more-btn"
-                  
                 >
                   <Icon.PlusCircle /> Learn More
                 </Link>
@@ -58,7 +57,7 @@ const ServicesStyle3 = () => {
                   <Image src={icon2} alt="image" width={60} height={60} />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
+                  <Link href="/services/service-details/">
                     Cognitive Automation
                   </Link>
                 </h3>
@@ -70,7 +69,6 @@ const ServicesStyle3 = () => {
                 <Link
                   href="/services/service-details/"
                   className="learn-more-btn"
-                  
                 >
                   <Icon.PlusCircle /> Learn More
                 </Link>
@@ -83,7 +81,7 @@ const ServicesStyle3 = () => {
                   <Image src={icon3} alt="image" width={60} height={60} />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
+                  <Link href="/services/service-details/">
                     Cognitive Engagement
                   </Link>
                 </h3>
@@ -95,7 +93,6 @@ const ServicesStyle3 = () => {
                 <Link
                   href="/services/service-details/"
                   className="learn-more-btn"
-                  
                 >
                   <Icon.PlusCircle /> Learn More
                 </Link>
@@ -108,7 +105,7 @@ const ServicesStyle3 = () => {
                   <Image src={icon4} alt="image" width={60} height={60} />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
+                  <Link href="/services/service-details/">
                     Security & Surveillance
                   </Link>
                 </h3>
@@ -120,7 +117,6 @@ const ServicesStyle3 = () => {
                 <Link
                   href="/services/service-details/"
                   className="learn-more-btn"
-                  
                 >
                   <Icon.PlusCircle /> Learn More
                 </Link>
@@ -133,7 +129,7 @@ const ServicesStyle3 = () => {
                   <Image src={icon5} alt="image" width={60} height={60} />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
+                  <Link href="/services/service-details/">
                     Automatic Optimization
                   </Link>
                 </h3>
@@ -145,7 +141,6 @@ const ServicesStyle3 = () => {
                 <Link
                   href="/services/service-details/"
                   className="learn-more-btn"
-                  
                 >
                   <Icon.PlusCircle /> Learn More
                 </Link>
@@ -158,9 +153,7 @@ const ServicesStyle3 = () => {
                   <Image src={icon6} alt="image" width={60} height={60} />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
-                    Data Analysts
-                  </Link>
+                  <Link href="/services/service-details/">Data Analysts</Link>
                 </h3>
                 <p>
                   Lorem ipsum dolor sit amet elit, adipiscing, sed do eiusmod
@@ -170,7 +163,6 @@ const ServicesStyle3 = () => {
                 <Link
                   href="/services/service-details/"
                   className="learn-more-btn"
-                  
                 >
                   <Icon.PlusCircle /> Learn More
                 </Link>
@@ -183,7 +175,7 @@ const ServicesStyle3 = () => {
                   <Image src={icon7} alt="image" width={60} height={60} />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
+                  <Link href="/services/service-details/">
                     Health & Manufacturing
                   </Link>
                 </h3>
@@ -195,7 +187,6 @@ const ServicesStyle3 = () => {
                 <Link
                   href="/services/service-details/"
                   className="learn-more-btn"
-                  
                 >
                   <Icon.PlusCircle /> Learn More
                 </Link>
@@ -208,7 +199,7 @@ const ServicesStyle3 = () => {
                   <Image src={icon8} alt="image" width={60} height={60} />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
+                  <Link href="/services/service-details/">
                     Software Engineers
                   </Link>
                 </h3>
@@ -220,7 +211,6 @@ const ServicesStyle3 = () => {
                 <Link
                   href="/services/service-details/"
                   className="learn-more-btn"
-                  
                 >
                   <Icon.PlusCircle /> Learn More
                 </Link>
