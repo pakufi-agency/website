@@ -8,8 +8,8 @@ import WeBanner from "../components/WeBanner/WeBanner";
 import TextImage from "../components/TextImage/TextImage";
 import ServicesSection from "../components/ServicesSection/ServicesSection";
 import CtaText from "../components/CtaText/CtaText";
-
 import TeamSection from "../components/TeamSection/TeamSection";
+import FaqSection from "../components/FaqSection/FaqSection";
 import CtaBig from "../components/CtaBig/CtaBig";
 
 import MobileMenuProvider from "../context/MobileMenuProvider";
@@ -38,6 +38,8 @@ export default async function Page() {
       </div>
 
       <TeamSection />
+
+      <FaqSection />
 
       <CtaBig />
 

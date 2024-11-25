@@ -1,11 +1,10 @@
 import React from "react";
 import Navbar from "../../components/Layout/Navbar";
-import Team from "../../components/Common/Team";
-import FunFactsArea from "../../components/Common/FunFactsArea";
-import Partner from "../../components/Common/Partner";
+import TeamSection from "../../components/TeamSection/TeamSection";
+import CtaText from "../../components/CtaText/CtaText";
 import Footer from "../../components/Layout/Footer";
-import PageBanner from "../../components/Common/PageBanner";
-import AboutUsContent1 from "../../components/AboutUs/AboutUsContent1";
+import PageBanner from "../../components/Legacy/Common/PageBanner";
+import AboutUsContent1 from "../../components/Legacy/AboutUs/AboutUsContent1";
 
 export default function Page() {
   return (
@@ -16,13 +15,11 @@ export default function Page() {
 
       <AboutUsContent1 />
 
-      <Team />
+      <TeamSection />
 
-      <Partner />
-
-      <FunFactsArea />
+      <CtaText />
 
       <Footer />
     </>
   );
-};
+}

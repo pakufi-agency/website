@@ -100,11 +100,12 @@ const Navbar: React.FC = () => {
                 </li>
                 <li className={`nav-item ${styles.navItem}`}>
                   <Link
-                    href="#"
-                    className="nav-link"
-                    onClick={(e) => handleMenuItemClick(e, "about")}
+                    href="/about/"
+                    className={`nav-link ${
+                      currentRoute === "/iot/" ? "active" : ""
+                    }`}
                   >
-                    About <Icon.ChevronDown />
+                    About
                   </Link>
                 </li>
                 <li className={`nav-item ${styles.navItem}`}>
@@ -113,7 +114,7 @@ const Navbar: React.FC = () => {
                     className="nav-link"
                     onClick={(e) => handleMenuItemClick(e, "contact")}
                   >
-                    Contact <Icon.ChevronDown />
+                    Contact
                   </Link>
                 </li>
               </ul>

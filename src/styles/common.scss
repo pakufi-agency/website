@@ -385,7 +385,7 @@ label {
 }
 
 @media only screen and (min-width: 767px) {
-    .shape1, .shape2, .shape3, .shape4, .shape5, .shape7 {
+    .shape1, .shape2, .shape3, .shape4, .shape5, .shape7, .shape8, .shape9 {
         display: block;
     }
     .shape1 {
@@ -519,11 +519,11 @@ label {
         overflow: auto;
     }
 
-    .shape1 {
-        display: none;
-    }
+    // .shape1 {
+    //     display: none;
+    // }
 
-    .shape9 {
-        display: none;
-    }
+    // .shape9 {
+    //     display: none;
+    // }
 }
