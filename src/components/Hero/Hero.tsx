@@ -8,6 +8,11 @@ import styles from "./Hero.module.scss";
 
 import bannerImg from "/public/images/iot-banner-image/iot-main-img1.png";
 import iotShape1 from "/public/images/iot-banner-image/iot-shape1.png";
+// Shape Images
+import shape1 from "/public/images/shape1.png";
+import shape2 from "/public/images/shape2.svg";
+import shape3 from "/public/images/shape3.svg";
+import shape4 from "/public/images/shape4.svg";
 
 const Hero = () => {
   return (
@@ -81,6 +86,26 @@ const Hero = () => {
             <span></span>
             <span></span>
             <span></span>
+          </div>
+
+          {/* Shape Images */}
+          <div className="shape1">
+            <Image src={shape1} alt="shape" width={202} height={202} />
+          </div>
+          <div className="shape3">
+            <Image src={shape3} alt="shape" width={28} height={28} />
+          </div>
+          <div className="shape4">
+            <Image src={shape4} alt="shape" width={21} height={20} />
+          </div>
+          <div className="shape6 rotateme">
+            <Image src={shape4} alt="shape" width={21} height={20} />
+          </div>
+          <div className="shape7">
+            <Image src={shape4} alt="shape" width={21} height={20} />
+          </div>
+          <div className="shape8 rotateme">
+            <Image src={shape2} alt="shape" width={22} height={22} />
           </div>
         </div>
       </div>

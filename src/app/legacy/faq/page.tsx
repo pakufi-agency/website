@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../../components/Layout/Navbar";
 import Footer from "../../components/Layout/Footer";
 import PageBanner from "../../components/Common/PageBanner";
-import FaqContent from "../../components/FAQ/FaqContent";
+import FaqContent from "../../components/FAQ/FaqAccordion";
 
 export default function Page() {
   return (
@@ -16,4 +16,4 @@ export default function Page() {
       <Footer />
     </>
   );
-};
+}
