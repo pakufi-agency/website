@@ -1,6 +1,7 @@
 @use '../../styles/variables.scss' as *;
 
 .ctaArea {
+    background-color: $tertiary-color; //$bg-color-d6d6d6, $bg-color-eef6fd, $acid-green
     overflow: hidden;
     position: relative;
     z-index: 1;
@@ -12,10 +13,10 @@
 .ctaContent {
     text-align: center;
     margin-top: 35px;
-    color: $white;
+    color: $black-color;
 
     h3 {
-        color: $white;
+        color: $black-color;
         margin-bottom: 17px;
         font-size: 20px;
         line-height: 1.5;
@@ -23,6 +24,7 @@
     p {
        opacity: .95;
        margin-bottom: 25px;
+       color: $black-color;
     }
 }
 .ctaImg {

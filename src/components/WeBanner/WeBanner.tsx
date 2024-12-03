@@ -13,7 +13,7 @@ import circle from "/public/images/circle.png";
 const WeBanner = () => {
   return (
     <>
-      <div className={`${styles.ctaArea} bg-0f054b`}>
+      <div className={`${styles.ctaArea}`}>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6">
