@@ -17,7 +17,7 @@ import shape4 from "/public/images/shape4.svg";
 const Hero = () => {
   return (
     <>
-      <div className={styles.heroBanner}>
+      <div className={`${styles.heroBanner} pakufi-dark-theme`}>
         <div className={`container ${styles.contentContainer}`}>
           <div className={styles.bannerContent}>
             <span
@@ -51,14 +51,7 @@ const Hero = () => {
               perspective.
             </p>
 
-            <Link
-              href="/contact"
-              className="btn btn-primary"
-              data-aos="fade-up"
-              data-aos-delay="400"
-              data-aos-duration="500"
-              data-aos-once="true"
-            >
+            <Link href="/contact" className="btn button-pakufi-dark">
               Get Started
             </Link>
           </div>

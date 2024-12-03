@@ -3,7 +3,7 @@
 .faqAccordion {
     box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.08);
     padding: 10px;
-    background: $white-color;
+    background: $white;
     border-radius: 10px;
 
     .accordionCustom {
@@ -14,7 +14,7 @@
     
         .accordionItem {
             box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.1);
-            background: $white-color;
+            background: $white;
             margin-bottom: 15px;
             border: none;
     
@@ -42,7 +42,7 @@
                 text-align: center;
                 height: 100%;
                 background: $primary-color;
-                color: $white-color;
+                color: $white;
     
                 &::before {
                     position: absolute;

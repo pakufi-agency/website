@@ -76,7 +76,7 @@ Default CSS
 $transition: .5s;
 $font-size: 14px;
 
-$white-color: #ffffff;
+$white: #ffffff;
 $black-color: #0e314c;
 $acid-green: #85B360;
 $mint-green: #5D9F7B;
@@ -222,12 +222,12 @@ textarea.form-control {
 
 /* btn btn-primary */
 .btn-primary {
-    color: $white-color;
+    color: $white;
     background-color: $primary-color;
     box-shadow: 0 13px 27px 0 $primary-box-shadow;
 
     &:hover, &:focus, &:active {
-        color: $white-color;
+        color: $white;
         background: $black-color;
         transform: translateY(-5px);
         box-shadow: 0 13px 27px 0 $secondary-box-shadow;
@@ -239,13 +239,13 @@ textarea.form-control {
         box-shadow: unset;
     }
     &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
-        color: $white-color;
+        color: $white;
         background: $black-color;
         transform: translateY(-5px);
         box-shadow: 0 13px 27px 0 $secondary-box-shadow;
     }
     &.disabled, &:disabled {
-        color: $white-color;
+        color: $white;
         background-color: $primary-color;
         box-shadow: 0 13px 27px 0 $primary-box-shadow;
         opacity: 1;
@@ -319,7 +319,7 @@ textarea.form-control {
             background: $secondary-color;
         }
         &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active, .show>&.dropdown-toggle {
-            color: $white-color;
+            color: $white;
             background-color: $primary-color;
             border-color: $primary-color;
         }
@@ -327,7 +327,7 @@ textarea.form-control {
             box-shadow: 5px 5px 5px $acid-green;
         }
         &:focus {
-            color: $white-color;
+            color: $white;
         }
         &:hover, &:focus {
             box-shadow: 5px 5px 5px $acid-green;
@@ -359,7 +359,7 @@ label {
 
     &:focus {
         outline: 0;
-        background: $white-color;
+        background: $white;
         box-shadow: unset;
         border-color: $primary-color;
     }
@@ -456,7 +456,7 @@ Preloader CSS
     .spinner {
         width: 60px;
         height: 60px;
-        background-color: $white-color;
+        background-color: $white;
         margin: 0 auto;
         animation: sk-rotateplane 1.2s infinite ease-in-out;
         position: absolute;
@@ -493,14 +493,14 @@ Navbar CSS
        
 //         &.is-sticky {
 //             box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);
-//             background-color: $white-color !important;
+//             background-color: $white !important;
 //             padding: {
 //                 top: 15px;
 //                 bottom: 15px;
 //             };
 //         }
 //         &.navbar-style-two {
-//             background-color: $white-color;
+//             background-color: $white;
 //             padding: {
 //                 top: 15px;
 //                 bottom: 15px;
@@ -557,7 +557,7 @@ Navbar CSS
 //                 }
 //                 .dropdown-menu {
 //                     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
-//                     background: $white-color;
+//                     background: $white;
 //                     position: absolute;
 //                     border: none;
 //                     top: 80px;
@@ -675,7 +675,7 @@ Navbar CSS
 //                         color: $black-color !important
 //                     }
 //                     &:hover, &:focus {
-//                         color: $white-color;
+//                         color: $white;
 //                         border-color: $primary-color;
 //                     }
 //                     &::after, &::before {
@@ -709,7 +709,7 @@ Navbar CSS
 //             .navbar-nav {
 //                 .nav-item {
 //                     a {
-//                         color: $white-color;
+//                         color: $white;
 
 //                         &:hover, &:focus, &.active {
 //                             color: $primary-color;
@@ -719,7 +719,7 @@ Navbar CSS
 //             }
 //             .others-option {    
 //                 .cart-wrapper-btn {
-//                     color: $white-color;
+//                     color: $white;
 //                 }
 //                 .btn {
 //                     &.btn-primary {
@@ -830,7 +830,7 @@ Main Banner CSS
         }
     }
     .banner-form {
-        background: $white-color;
+        background: $white;
         box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
         padding: 50px 30px;
         border-radius: 5px;
@@ -958,7 +958,7 @@ Main Banner CSS
                 size: 45px;
                 weight: 500;
             }
-            color: $white-color;
+            color: $white;
             margin-bottom: 25px;
         }
         ul {
@@ -968,7 +968,7 @@ Main Banner CSS
     
             li {
                 margin-bottom: 12px;
-                color: $white-color;
+                color: $white;
                 position: relative;
                 padding-left: 30px;
     
@@ -988,7 +988,7 @@ Main Banner CSS
             }
         }
         p {
-            color: $white-color;
+            color: $white;
             font-size: 18px;
             margin: {
                 bottom: 30px;
@@ -1215,7 +1215,7 @@ Boxes CSS
     position: relative;
     z-index: 1;
     border-radius: 5px;
-    background: $white-color;
+    background: $white;
     box-shadow: 0 0 10px rgba(72, 69, 224, 0.1);
     transition: $transition;
 
@@ -1294,11 +1294,11 @@ Boxes CSS
             visibility: visible;
         }
         .icon {
-            background: $white-color;
+            background: $white;
             color: $primary-color;
         }
         h3, p, a {
-            color: $white-color;
+            color: $white;
         }
         &.bg-f78acb {
             .icon {
@@ -1409,7 +1409,7 @@ Why Choose US CSS
     padding: 30px 15px;
     border-radius: 5px;
     text-align: center;
-    background: $white-color;
+    background: $white;
     box-shadow: 0 0 30px rgba(56, 46, 46, 0.1);
     transition: $transition;
     margin-top: 30px;
@@ -1458,10 +1458,10 @@ Why Choose US CSS
             visibility: visible;
         }
         .icon {
-            color: $white-color;
+            color: $white;
         }
         h3, p {
-            color: $white-color;
+            color: $white;
         }
     }
 }
@@ -1507,7 +1507,7 @@ Services CSS
         color: #6084a4;
         font-weight: 500;
         border-radius: 3px;
-        background-color: $white-color;
+        background-color: $white;
         transition: $transition;
         box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
         margin: {
@@ -1538,7 +1538,7 @@ Services CSS
             top: 12px;
         }
         &:hover {
-            color: $white-color;
+            color: $white;
             transform: translateY(-5px);
 
             &::before {
@@ -1546,7 +1546,7 @@ Services CSS
                 visibility: visible;
             }
             svg {
-                color: $white-color;
+                color: $white;
             }
         }
     }
@@ -1724,7 +1724,7 @@ Services CSS
 }
 .single-services-box {
     position: relative;
-    background: $white-color;
+    background: $white;
     padding: {
         left: 25px;
         top: 30px;
@@ -1784,7 +1784,7 @@ Services CSS
 
         .icon {
             background: $primary-color;
-            color: $white-color;
+            color: $white;
 
             &.bg-c679e3 {
                 background: $secondary-color;
@@ -1805,7 +1805,7 @@ Services CSS
 Bigdata Services CSS
 ===============================*/
 .single-services-box-item {
-    background-color: $white-color;
+    background-color: $white;
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -1934,7 +1934,7 @@ Services Details CSS
         
             .accordion__item {
                 box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.1);
-                background: $white-color;
+                background: $white;
                 margin-bottom: 10px;
                 border: none;
         
@@ -1962,7 +1962,7 @@ Services Details CSS
                     text-align: center;
                     height: 100%;
                     background: $primary-color;
-                    color: $white-color;
+                    color: $white;
         
                     &::before {
                         position: absolute;
@@ -2007,7 +2007,7 @@ Features CSS
 }
 .single-features {
     position: relative;
-    background: $white-color;
+    background: $white;
     padding: {
         left: 95px;
         top: 30px;
@@ -2050,7 +2050,7 @@ Features CSS
 
         .icon {
             background: $primary-color;
-            color: $white-color;
+            color: $white;
 
             &.bg-c679e3 {
                 background: $secondary-color;
@@ -2063,7 +2063,7 @@ Features CSS
 }
 .single-hosting-features {
     position: relative;
-    background: $white-color;
+    background: $white;
     text-align: center;
     padding: {
         left: 20px;
@@ -2125,7 +2125,7 @@ Features CSS
 
         .icon {
             background: $primary-color;
-            color: $white-color;
+            color: $white;
 
             &.bg-c679e3 {
                 background: $secondary-color;
@@ -2184,7 +2184,7 @@ Features Details CSS
 
             .accordion__item {
                 box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.1);
-                background: $white-color;
+                background: $white;
                 margin-bottom: 10px;
                 border: none;
  
@@ -2212,7 +2212,7 @@ Features Details CSS
                     text-align: center;
                     height: 100%;
                     background: $primary-color;
-                    color: $white-color;
+                    color: $white;
 
                     &::before {
                         position: absolute;
@@ -2253,7 +2253,7 @@ Features Details CSS
 Team CSS
 =================================================*/
 .single-team {
-    background: $white-color;
+    background: $white;
     padding: {
         top: 35px;
         bottom: 35px;
@@ -2340,10 +2340,10 @@ Team CSS
         h3 {
             font-size: 18px;
             margin-bottom: 5px;
-            color: $white-color;
+            color: $white;
         }
         span {
-            color: $white-color;
+            color: $white;
             font-size: 13px;
         }
     }
@@ -2397,7 +2397,7 @@ Works CSS
         border-radius: 50%;
         top: 0;
         right: 25px;
-        background: $white-color;
+        background: $white;
         width: 45px;
         text-align: center;
         height: 45px;
@@ -2411,7 +2411,7 @@ Works CSS
         }
         &:hover {
             background: $black-color;
-            color: $white-color;
+            color: $white;
         }
     }
     .works-content {
@@ -2428,14 +2428,14 @@ Works CSS
             margin-bottom: 15px;
             
             a {
-                color: $white-color;
+                color: $white;
                 &:hover {
                     text-decoration: underline;
                 }
             }
         }
         p {
-            color: $white-color;
+            color: $white;
         }
     }
     &:hover {
@@ -2552,20 +2552,20 @@ Fun Facts CSS
         }
         .section-title {
             h2 {
-                color: $white-color;
+                color: $white;
             }
             p {
-                color: $white-color;
+                color: $white;
             }
         }
         .contact-cta-box {
             border-color: #406883;
 
             h3 {
-                color: $white-color;
+                color: $white;
             }
             p {
-                color: $white-color;
+                color: $white;
             }
         }
     }
@@ -2583,7 +2583,7 @@ Fun Facts CSS
     }
     p {
         line-height: initial;
-        color: $white-color;
+        color: $white;
     }
 }
 
@@ -2596,7 +2596,7 @@ Pricing CSS
 }
 .pricing-table {
 	text-align: center;
-	background: $white-color;
+	background: $white;
 	box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.06);
 	border-radius: 5px;
 	padding-bottom: 35px;
@@ -2604,7 +2604,7 @@ Pricing CSS
     margin-bottom: 30px;
 
     .pricing-header {
-        background: $white-color;
+        background: $white;
         position: relative;
         padding: 30px 20px;
         border: {
@@ -2688,7 +2688,7 @@ Pricing CSS
                 visibility: visible;
             }
             h3 {
-                color: $white-color;
+                color: $white;
             }
         }
     }
@@ -2699,7 +2699,7 @@ Pricing CSS
                 visibility: visible;
             }
             h3 {
-                color: $white-color;
+                color: $white;
             }
         }
         .btn-primary {
@@ -2715,7 +2715,7 @@ Pricing CSS
 }
 .single-pricing-table {
 	text-align: center;
-	background: $white-color;
+	background: $white;
 	box-shadow: 0 1px 20px 0 $black-06-box-shadow;
     border-radius: 5px;
     padding: 35px;
@@ -2831,7 +2831,7 @@ Pricing CSS
                 background: linear-gradient(to left bottom, $white-fffcff, $white-fbfaff, $white-effbff, $white-e0fdff, $white-d5fefd);
             }
             &.react-tabs__tab--selected {
-                color: $white-color;
+                color: $white;
                 background: $black-color;
             }
             &:nth-child(1) {
@@ -2976,12 +2976,12 @@ Domain Search CSS
     }
     form {
         box-shadow: 0 0 30px $black-01-box-shadow;
-        background-color: $white-color;
+        background-color: $white;
         overflow: hidden;
         border-radius: 30px;
 
         .form-control {
-            background-color: $white-color;
+            background-color: $white;
             border: none;
             height: 55px;
             padding-left: 20px;
@@ -3012,7 +3012,7 @@ Domain Search CSS
             height: 55px;
             border-radius: 30px;
             background-color: $primary-color;
-            color: $white-color;
+            color: $white;
             font: {
                 weight: 600;
                 size: 14px;
@@ -3073,7 +3073,7 @@ Feedback CSS
         position: relative;
 
         .single-feedback {
-            background: $white-color;
+            background: $white;
             border-radius: 5px;
             padding: {
                 left: 170px;
@@ -3185,7 +3185,7 @@ Feedback CSS
             border-radius: 50%;
         }
         &:hover {
-            color: $white-color;
+            color: $white;
             border-color: $primary-color;
 
             &::before {
@@ -3332,7 +3332,7 @@ Feedback CSS
         bottom: 30px;
     }
     .feedback-desc {
-        background-color: $white-color;
+        background-color: $white;
         border-radius: 5px;
         position: relative;
         z-index: 1;
@@ -3370,7 +3370,7 @@ Feedback CSS
             width: 25px;
             height: 25px;
             z-index: -1;
-            background: $white-color;
+            background: $white;
             transform: rotate(45deg);
         }
     }
@@ -3381,7 +3381,7 @@ Feedback CSS
         left: 0;
         top: -25px;
         left: -25px;
-        color: $white-color;
+        color: $white;
         background: linear-gradient(135deg, #43e794 0%, #23bdb8 100%);
         width: 60px;
         height: 60px;
@@ -3442,18 +3442,18 @@ Ready To Talk CSS
 
     h3 {
         font-size: 28px;
-        color: $white-color;
+        color: $white;
         text-transform: capitalize;
         margin-bottom: 15px;
     }
     p {
-        color: $white-color;
+        color: $white;
         margin-bottom: 20px;
         font-size: 16px;
     }
     .btn {
         &::before, &::after {
-            background: $white-color;
+            background: $white;
         }
     }
     .btn-primary {
@@ -3468,7 +3468,7 @@ Ready To Talk CSS
     span {
         a {
             margin-left: 15px;
-            color: $white-color;
+            color: $white;
             text-decoration: underline;
         }
     }
@@ -3492,7 +3492,7 @@ Big Data Analytics Banner CSS
     max-width: 555px;
 
     h1 {
-        color: $white-color;
+        color: $white;
         margin-bottom: 25px;
         line-height: 1.4;
         font: {
@@ -3554,7 +3554,7 @@ Big Data Analytics Banner CSS
         transition: $transition;
     }
     h3 {
-        color: $white-color;
+        color: $white;
         margin-bottom: 12px;
         font: {
             size: 18px;
@@ -3571,14 +3571,14 @@ Big Data Analytics Banner CSS
 
         .icon {
             color: $primary-color;
-            background-color: $white-color;
+            background-color: $white;
         }
         &::before {
             opacity: 1;
             visibility: visible;
         }
         p {
-            color: $white-color;
+            color: $white;
         }
     }
 }
@@ -3591,7 +3591,7 @@ Big Data Analytics Banner CSS
             }
             &:hover {
                 .icon {
-                    background-color: $white-color;
+                    background-color: $white;
                     color: #f78acb;
                 }
             }
@@ -3605,7 +3605,7 @@ Big Data Analytics Banner CSS
             }
             &:hover {
                 .icon {
-                    background-color: $white-color;
+                    background-color: $white;
                     color: $secondary-color;
                 }
             }
@@ -3631,7 +3631,7 @@ What We Do CSS
         width: 65px;
         height: 65px;
         border-radius: 5px;
-        color: $white-color;
+        color: $white;
         text-align: center;
         background: linear-gradient(135deg, #23bdb8 0%, #43e794 100%);
 
@@ -3698,7 +3698,7 @@ Discover CSS
     padding-left: 15px;
 
     h2 {
-        color: $white-color;
+        color: $white;
         margin-bottom: 15px;
         line-height: 1.5;
         font: {
@@ -3707,16 +3707,16 @@ Discover CSS
         };
     }
     p {
-        color: $white-color;
+        color: $white;
     }
     .btn-primary {
         box-shadow: unset !important;
         margin-top: 15px;
-        background-color: $white-color;
+        background-color: $white;
         color: $black-color;
 
         &:hover {
-            color: $white-color;
+            color: $white;
         }
     }
 }
@@ -3749,11 +3749,11 @@ Partner CSS
             size: 20px;
             weight: 400;
         }
-        color: $white-color;
+        color: $white;
         margin-bottom: 0;
     }
     .partner-inner {
-        background: $white-color;
+        background: $white;
         padding: {
             top: 5px;
             left: 30px;
@@ -3805,14 +3805,14 @@ Industries Serve CSS
 
     .section-title {
         h2 {
-            color: $white-color;
+            color: $white;
         }
         p {
-            color: $white-color;
+            color: $white;
         }
         .bar {
             &::before {
-                background: $white-color;
+                background: $white;
             }
         }
     }
@@ -3867,10 +3867,10 @@ Industries Serve CSS
         z-index: 2;
     }
     &:hover {
-        color: $white-color;
+        color: $white;
 
         .icon {
-            color: $white-color;
+            color: $white;
         }
         &::before {
             width: 100%;
@@ -3901,7 +3901,7 @@ Blog CSS
             left: 20px;
             bottom: -20px;
             background: $gradient-color;
-            color: $white-color;
+            color: $white;
             padding: 8px 16px;
             font-size: 13px;
             border-radius: 50px;
@@ -3961,7 +3961,7 @@ Blog CSS
         box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
         
         .blog-post-content {
-            background: $white-color;
+            background: $white;
         }
     }
 }
@@ -4179,7 +4179,7 @@ Blog CSS
             border-radius: 30px;
             padding: 9px 25px;
             border: 1px solid #e6e6e6;
-            background-color: $white-color;
+            background-color: $white;
             position: absolute;
             transition: $transition;
             left: 25px;
@@ -4197,7 +4197,7 @@ Blog CSS
             &:hover {
                 background-color: $primary-color;
                 border-color: $primary-color;
-                color: $white-color;
+                color: $white;
             }
         }
     }
@@ -4342,7 +4342,7 @@ Shop CSS
 
                 a, button {
                     display: inline-block;
-                    background: $white-color;
+                    background: $white;
                     width: 35px;
                     height: 35px;
                     line-height: 35px;
@@ -4354,7 +4354,7 @@ Shop CSS
                     }
                     &:hover, &:focus {
                         background-color: $primary-color;
-                        color: $white-color;
+                        color: $white;
                     }
                 }
             }
@@ -4364,7 +4364,7 @@ Shop CSS
         .products-content {
             .add-to-cart-btn {
                 background-color: $black-color;
-                color: $white-color;
+                color: $white;
             }
         }
         .products-image {
@@ -4421,10 +4421,10 @@ Shop CSS
             }
             &:hover, &:focus {
                 background-color: $primary-color;
-                color: $white-color;
+                color: $white;
     
                 span {
-                    color: $white-color;
+                    color: $white;
                 }
             }
         }
@@ -4509,7 +4509,7 @@ Shop CSS
                 }
                 button {
                     background: $primary-color;
-                    color: $white-color;
+                    color: $white;
                     border: none;
                     height: 46px;
                     padding: 0 20px;
@@ -4521,7 +4521,7 @@ Shop CSS
     
                     &:hover, &:focus {
                         background-color: $secondary-color;
-                        color: $white-color;
+                        color: $white;
                     }
                 }
             }
@@ -4657,7 +4657,7 @@ Shop Details CSS
         }
         button {
             background: $primary-color;
-            color: $white-color;
+            color: $white;
             border: none;
             height: 46px;
             padding: 0 20px;
@@ -4669,7 +4669,7 @@ Shop Details CSS
 
             &:hover, &:focus {
                 background-color: $secondary-color;
-                color: $white-color;
+                color: $white;
             }
         }
         .add-to-wishlist-btn {
@@ -4691,7 +4691,7 @@ Shop Details CSS
 
             &:hover, &:focus {
                 background-color: $secondary-color;
-                color: $white-color;
+                color: $white;
                 border-color: $secondary-color;
             }
         }
@@ -4755,7 +4755,7 @@ Shop Details CSS
 
                         &:hover {
                             background: #4267b2;
-                            color: $white-color;
+                            color: $white;
                         }
                     }
                     &.twitter {
@@ -4764,7 +4764,7 @@ Shop Details CSS
 
                         &:hover {
                             background: #38A1F3;
-                            color: $white-color;
+                            color: $white;
                         }
                     }
                     &.linkedin {
@@ -4773,7 +4773,7 @@ Shop Details CSS
 
                         &:hover {
                             background: #0077B5;
-                            color: $white-color;
+                            color: $white;
                         }
                     }
                     &.instagram {
@@ -4782,12 +4782,12 @@ Shop Details CSS
 
                         &:hover {
                             background: #231F20;
-                            color: $white-color;
+                            color: $white;
                         }
                     }
                     &:hover {
                         background: $primary-color;
-                        color: $white-color;
+                        color: $white;
                     }
                 }
             }
@@ -4814,7 +4814,7 @@ Shop Details CSS
                 weight: 500;
             }
             &.active, &.react-tabs__tab--selected {
-                background-color: $white-color;
+                background-color: $white;
                 position: relative;
 
                 &::before {
@@ -5037,19 +5037,19 @@ Cart CSS
         background-color: #eaedff;
         
         &:hover, &:focus {
-            color: $white-color;
+            color: $white;
 
             &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active, .show>.btn-light.dropdown-toggle {
-                color: $white-color;
+                color: $white;
             }
         }
         &:focus {
-            color: $white-color;
+            color: $white;
         }
     }
 }
 .cart-totals {
-    background: $white-color;
+    background: $white;
     padding: 40px;
     max-width: 600px;
     box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
@@ -5096,7 +5096,7 @@ Checkout CSS
 =================================================*/
 .user-actions {
     box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
-    background: $white-color;
+    background: $white;
     padding: 18px 25px 15px;
     margin-bottom: 35px;
     border-top: 3px solid $primary-color;
@@ -5131,7 +5131,7 @@ Checkout CSS
 }
 .billing-details {
     box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
-    background: $white-color;
+    background: $white;
     padding: 25px;
     border-radius: 5px;
 
@@ -5184,7 +5184,7 @@ Checkout CSS
 }
 .order-details {
     box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
-    background: $white-color;
+    background: $white;
     padding: 25px;
     border-radius: 5px;
 
@@ -5271,7 +5271,7 @@ Checkout CSS
                             height: 18px;
                             border: 1px solid #dddddd;
                             border-radius: 50%;
-                            background: $white-color;
+                            background: $white;
                         }
                         &::after {
                             content: '';
@@ -5347,7 +5347,7 @@ FAQ CSS
 .faq-accordion {
     box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.08);
     padding: 60px;
-    background: $white-color;
+    background: $white;
     border-radius: 10px;
 
     .accordion {
@@ -5358,7 +5358,7 @@ FAQ CSS
     
         .accordion__item {
             box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.1);
-            background: $white-color;
+            background: $white;
             margin-bottom: 15px;
             border: none;
     
@@ -5386,7 +5386,7 @@ FAQ CSS
                 text-align: center;
                 height: 100%;
                 background: $primary-color;
-                color: $white-color;
+                color: $white;
     
                 &::before {
                     position: absolute;
@@ -5418,7 +5418,7 @@ FAQ CSS
     box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.08);
     padding: 60px;
     border-radius: 4px;
-    background: $white-color;
+    background: $white;
 
     h3 {
         font: {
@@ -5449,13 +5449,13 @@ Pagination CSS
                 padding: 11px 20px;
                 margin: 0 -1px;
                 color: #6f8ba4;
-                background-color: $white-color;
+                background-color: $white;
                 border: none;
                 border-radius: 0;
                 box-shadow: 0 2px 10px 0 #d8dde6;
 
                 &:hover, &:focus {
-                    color: $white-color;
+                    color: $white;
                     background-color: $primary-color;
                     box-shadow: unset;
                 }
@@ -5465,7 +5465,7 @@ Pagination CSS
             }
             &.active {
                 .page-link {
-                    color: $white-color;
+                    color: $white;
                     background-color: $primary-color;
                 }
             }
@@ -5608,7 +5608,7 @@ Blog Details CSS
         .article-tags {
             a {
                 display: inline-block;
-                color: $white-color;
+                color: $white;
                 background-color: $secondary-color;
                 padding: 4px 12px;
                 border-radius: 5px;
@@ -5616,7 +5616,7 @@ Blog Details CSS
                 font-size: 14px;
 
                 &:hover {
-                    color: $white-color;
+                    color: $white;
                     background-color: $primary-color;
                 }
             }
@@ -5673,7 +5673,7 @@ Blog Details CSS
                     weight: 500;
                 };
                 &:hover {
-                    color: $white-color;
+                    color: $white;
                     background-color: $primary-color;
                     border-color: $primary-color;
                 }
@@ -5756,7 +5756,7 @@ Blog Details CSS
         input[type="date"], input[type="time"], input[type="datetime-local"], input[type="week"], input[type="month"], input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], input[type="number"], textarea {
             display: block;
             width: 100%;
-            background-color: $white-color;
+            background-color: $white;
             border: 1px solid $white-eeeeee;
             padding: 0.625em 0.7375em;
             outline: 0;
@@ -5811,7 +5811,7 @@ Blog Details CSS
             input {
                 background: $primary-color;
                 border: none;
-                color: $white-color;
+                color: $white;
                 padding: 11px 25px 10px;
                 display: inline-block;
                 cursor: pointer;
@@ -5824,7 +5824,7 @@ Blog Details CSS
                     size: $font-size;
                 };
                 &:hover, &:focus {
-                    color: $white-color;
+                    color: $white;
                     background-color: $secondary-color;
                     transform: translateY(-5px);
                 }
@@ -5922,7 +5922,7 @@ Blog Details CSS
             text-align: center;
             text-transform: uppercase;
             z-index: 2;
-            color: $white-color;
+            color: $white;
             opacity: 0;
             visibility: hidden;
             transition: $transition;
@@ -6028,7 +6028,7 @@ Blog Details CSS
             text-align: center;
             text-transform: uppercase;
             z-index: 2;
-            color: $white-color;
+            color: $white;
             opacity: 0;
             visibility: hidden;
             transition: $transition;
@@ -6130,7 +6130,7 @@ Sidebar Widget CSS
     }
     .widget_search {
         box-shadow: 0px 0px 29px 0px rgba(102, 102, 102, 0.1);
-        background-color: $white-color;
+        background-color: $white;
         padding: 15px;
 
         form {
@@ -6167,7 +6167,7 @@ Sidebar Widget CSS
                 z-index: 1;
                 border: none;
                 cursor: pointer;
-                color: $white-color;
+                color: $white;
                 background-color: $primary-color;
                 transition: $transition;
                 font-size: 20px;
@@ -6186,7 +6186,7 @@ Sidebar Widget CSS
                 }
                 &:hover {
                     background-color: $secondary-color;
-                    color: $white-color;
+                    color: $white;
                 }
             }
         }
@@ -6467,7 +6467,7 @@ Sidebar Widget CSS
                 right: 8px;
             };
             &:hover, &:focus {
-                color: $white-color;
+                color: $white;
                 background-color: $primary-color;
                 border-color: $primary-color;
             }
@@ -6502,7 +6502,7 @@ Project Details CSS
         right: 0;
         margin: 0 auto;
         top: 50%;
-        color: $white-color;
+        color: $white;
         margin-top: 0;
         opacity: 0;
         visibility: hidden;
@@ -6589,7 +6589,7 @@ Contact CSS
     text-align: center;
     transition: .4s;
     box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
-    background: $white-color;
+    background: $white;
     padding: 30px;
     
     .icon {
@@ -6624,7 +6624,7 @@ Contact CSS
         transform: translateY(-10px);
 
         .icon {
-            color: $white-color;
+            color: $white;
             background: $primary-color;
         }
     }
@@ -6689,7 +6689,7 @@ Coming Soon CSS
 
             &.list-heading {
                 display: block;
-                color: $white-color;
+                color: $white;
                 margin-bottom: 10px;
                 font: {
                     size: 16px;
@@ -6701,7 +6701,7 @@ Coming Soon CSS
                 height: 35px;
                 line-height: 35px;
                 background: $primary-color;
-                color: $white-color;
+                color: $white;
                 border-radius: 50%;
                 margin: 0 2px;
 
@@ -6737,15 +6737,15 @@ Coming Soon CSS
         margin-bottom: 30px;
     }
     h2 {
-        color: $white-color;
+        color: $white;
         font-size: 40px;
     }
     h3 {
-        color: $white-color;
+        color: $white;
         margin: 25px 0;
     }
     p {
-        color: $white-color;
+        color: $white;
         font-size: 16px;
         margin: 0 auto;
         max-width: 820px;
@@ -6776,7 +6776,7 @@ Coming Soon CSS
             top: 3px;
             height: 50px;
             background: $primary-color;
-            color: $white-color;
+            color: $white;
             border: none;
             border-radius: 40px;
             width: 130px;
@@ -6795,7 +6795,7 @@ Coming Soon CSS
     }
     #timer {
         div {
-            background: $white-color;
+            background: $white;
             display: inline-block;
             border-radius: 50%;
             width: 110px;
@@ -6930,7 +6930,7 @@ CTA CSS
 }
 .cta-content {
     h3 {
-        color: $white-color;
+        color: $white;
         margin: 0;
         font: {
             size: 24px;
@@ -6950,7 +6950,7 @@ CTA CSS
         }
         h4 {
             margin: 10px 0 0;
-            color: $white-color;
+            color: $white;
             font-size: 20px;
         }
     }
@@ -6965,7 +6965,7 @@ CTA CSS
             box-shadow: 0 13px 27px 0 rgba(198, 121, 227, 0.25);
 
             &::after, &::before {
-                background: $white-color;
+                background: $white;
                 box-shadow: 0 13px 27px 0 rgba(68, 206, 111, 0.25);
             }
             &:hover, &:focus {
@@ -7125,7 +7125,7 @@ Iot Services CSS
     z-index: 1;
     padding: 40px 30px;
     text-align: center;
-    background-color: $white-color;
+    background-color: $white;
     border: 1px dashed #cdf1d8;
     
     &::after {
@@ -7189,17 +7189,17 @@ Iot Services CSS
             visibility: visible;
         }
         h3 {
-            color: $white-color;
+            color: $white;
         }
         p {
-            color: $white-color;
+            color: $white;
         }
         .icon {
-            border-color: $white-color;
-            color: $white-color;
+            border-color: $white;
+            color: $white;
         }
         a {
-            background-color: $white-color;
+            background-color: $white;
             color: $primary-color;
         }
     }
@@ -7221,12 +7221,12 @@ IoT CTA CSS
 //     padding-top: 30px;
 //     padding-bottom: 30px;
 //     h3 {
-//         color: $white-color;
+//         color: $white;
 //         font-size: 25px;
 //         margin-bottom: 17px;
 //     }
 //     p {
-//        color: $white-color;
+//        color: $white;
 //        opacity: .95;
 //        margin-bottom: 25px;
 //     }
@@ -7279,15 +7279,15 @@ IoT Why Choose Us CSS
 
     .section-title {
         h2 {
-            color: $white-color;
+            color: $white;
         }
         .bar {
             &::before {
-                background: $white-color;
+                background: $white;
             }
         }
         p {
-            color: $white-color;
+            color: $white;
             opacity: .95;
         }
     }
@@ -7298,13 +7298,13 @@ IoT Why Choose Us CSS
         left: 0;
         height: 37%;
         width: 100%;
-        background: $white-color;
+        background: $white;
         z-index: -1;
     }
 }
 .single-iot-box {
     text-align: center;
-    background-color: $white-color;
+    background-color: $white;
     border: 1px dashed #cdf1d8;
     padding: 30px;
     position: relative;
@@ -7370,7 +7370,7 @@ IoT Why Choose Us CSS
 
         a {
             background-color: $primary-color;
-            color: $white-color;
+            color: $white;
         }
     }
 }
@@ -7708,7 +7708,7 @@ ML Services CSS
 .single-ml-services-box {
     position: relative;
     z-index: 1;
-    background-color: $white-color;
+    background-color: $white;
     text-align: center;
     margin-bottom: 30px;
     padding: 30px 25px;
@@ -7757,7 +7757,7 @@ ML Feedback CSS
 .single-ml-feedback-item {
     box-shadow: 0 0 25px 3px rgba(0, 0, 0, 0.04);
     margin-bottom: 45px;
-    background-color: $white-color;
+    background-color: $white;
     position: relative;
     padding: 60px 70px 60px 190px;
     border-radius: 5px;
@@ -7817,7 +7817,7 @@ ML Feedback CSS
         top: 0;
         border-radius: 5px;
         bottom: -15px;
-        background-color: $white-color;
+        background-color: $white;
         box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 0.04);
         z-index: -1;
         margin: {
@@ -7880,7 +7880,7 @@ Free Trial CSS
             display: block;
             width: 99%;
             height: 50px;
-            color: $white-color;
+            color: $white;
             border: none;
             outline: 0;
             background-color: $black-color;
@@ -7911,13 +7911,13 @@ Free Trial CSS
             background-color: $primary-color;
             border-radius: 0 30px 30px 0;
             transition: $transition;
-            color: $white-color;
+            color: $white;
             font: {
                 size: 16px;
             }
             &:hover {
                 background-color: $secondary-color;
-                color: $white-color;
+                color: $white;
             }
         }
     }
@@ -7975,7 +7975,7 @@ Newsletter CSS
     max-width: 540px;
 
     h2 {
-        color: $white-color;
+        color: $white;
         margin-bottom: 0;
         line-height: 1.5;
         font: {
@@ -7994,7 +7994,7 @@ Newsletter CSS
             display: block;
             width: 100%;
             height: 50px;
-            color: $white-color;
+            color: $white;
             border: none;
             outline: 0;
             background-color: #333333;
@@ -8005,7 +8005,7 @@ Newsletter CSS
             };
             &::placeholder {
                 transition: $transition;
-                color: $white-color;
+                color: $white;
             }
             &:focus {
                 &::placeholder {
@@ -8021,7 +8021,7 @@ Newsletter CSS
             border: none;
             padding: 0 30px;
             line-height: 50px;
-            background-color: $white-color;
+            background-color: $white;
             border-radius: 30px;
             transition: $transition;
             color: $black-color;
@@ -8031,12 +8031,12 @@ Newsletter CSS
             };
             &:hover {
                 background-color: $black-color;
-                color: $white-color;
+                color: $white;
             }
         }
     }
     p {
-        color: $white-color;
+        color: $white;
         max-width: 400px;
     }
     &::before {
@@ -8084,7 +8084,7 @@ ML Projects CSS
     border-radius: 5px;
     margin-bottom: 30px;
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.175);
-    background-color: $white-color;
+    background-color: $white;
 
     img {
         border-radius: 5px;
@@ -8115,7 +8115,7 @@ ML Projects CSS
                     content: '';
                     width: 2px;
                     height: 100%;
-                    background-color: $white-color;
+                    background-color: $white;
                     top: 0;
                     left: 50%;
                     transform: translateX(-50%);
@@ -8202,7 +8202,7 @@ Testimonials CSS
 .single-testimonials-item {
     box-shadow: 0 0 25px 3px rgba(0, 0, 0, 0.04);
     margin-bottom: 45px;
-    background-color: $white-color;
+    background-color: $white;
     position: relative;
     padding: 110px 65px 60px;
     border-radius: 5px;
@@ -8269,7 +8269,7 @@ Testimonials CSS
         top: 0;
         border-radius: 5px;
         bottom: -15px;
-        background-color: $white-color;
+        background-color: $white;
         box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 0.04);
         z-index: -1;
         margin: {
@@ -8382,7 +8382,7 @@ Our Latest Projects CSS
         opacity: 0;
         visibility: hidden;
         transition: $transition;
-        background-color: $white-color;
+        background-color: $white;
         box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);
         padding: 25px;
         margin-top: 20px;
@@ -8463,7 +8463,7 @@ Creative Area CSS
         padding: 60px;
 
         h3 {
-            color: $white-color;
+            color: $white;
             margin-bottom: 5px;
             font: {
                 size: 32px;
@@ -8476,7 +8476,7 @@ Creative Area CSS
         p {
             margin-bottom: 0;
             line-height: initial;
-            color: $white-color;
+            color: $white;
             font: {
                 size: 15px;
                 weight: 600;
@@ -8618,7 +8618,7 @@ Footer CSS
 
                         &:hover {
                             background: #4267b2;
-                            color: $white-color;
+                            color: $white;
                         }
                     }
                     &.twitter {
@@ -8627,7 +8627,7 @@ Footer CSS
 
                         &:hover {
                             background: #38A1F3;
-                            color: $white-color;
+                            color: $white;
                         }
                     }
                     &.linkedin {
@@ -8636,7 +8636,7 @@ Footer CSS
 
                         &:hover {
                             background: #0077B5;
-                            color: $white-color;
+                            color: $white;
                         }
                     }
                     &.instagram {
@@ -8645,12 +8645,12 @@ Footer CSS
 
                         &:hover {
                             background: #231F20;
-                            color: $white-color;
+                            color: $white;
                         }
                     }
                     &:hover {
                         background: $primary-color;
-                        color: $white-color;
+                        color: $white;
                     }
                 }
             }
@@ -8675,7 +8675,7 @@ Go Top CSS
 	cursor: pointer;
 	bottom: 30px;
 	right: 0;
-	color: $white-color;
+	color: $white;
 	background-color: $secondary-color;
 	width: 45px;
 	text-align: center;
@@ -8686,7 +8686,7 @@ Go Top CSS
     z-index: 999;
     
     &:hover {
-        color: $white-color;
+        color: $white;
         background: $primary-color;
     }
 }

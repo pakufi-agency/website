@@ -1,12 +1,13 @@
 @use '../../styles/variables.scss' as *;
-
+ 
 .header {
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   transition: 0.3s;
-  background-color: $white-color;
+  background-color: $primary-color;
+  color: $white;
   z-index: 99;
 
   &.isSticky {
@@ -18,23 +19,34 @@
   }
 }
 
-.startpNav {
-  background: transparent;
+.conatinerNav {
+    .logo {
+      width: 150px;
+
+      img {
+        width: 100%;
+      }
+    }
 
     .navBarContent {
       text-align: center;
 
-      .nav-link {
+      .navLink {
+        text-transform: uppercase;
         padding: 10px;
-        font-weight: 500;
-        color: $navlink-color;
+        color: inherit;
+        font-size: 40px;
+        border-bottom: 1px $white-effbff solid;
+
         
         &:hover, &.active {
-          color: $primary-color;
+          color: $secondary-color;
         }
 
         svg {
           margin-left: 5px;
+          width: 25px;
+          height: 100%; 
         }
       }
     }
@@ -44,7 +56,7 @@
 .nav {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
+  align-items: center;
 
   .othersOption {
     display: none;
@@ -52,7 +64,13 @@
 
   .navBarMobileButton {
     background: none;
+    color: $secondary-color;
     border: none;
+
+    svg {
+      width: 34px;
+      height: 34px;
+    }
   }
 }
 
@@ -61,8 +79,8 @@
 .isOpen {
   height: 100%;
 
-  .startpNav, .container, .nav {
-    height: 100%;
+  .container, .nav {
+    height: 100vh;
   }
 
   .logo {
@@ -76,7 +94,7 @@
     padding-top: 20px;
 
     .icon-bar {
-      background: $navlink-color;
+      background: $secondary-color;
     }
   }
 
@@ -106,6 +124,23 @@
       box-shadow: none; 
     }
   }
+
+  .conatinerNav {
+    .navBarContent {
+      .navLink {
+        line-height: 1.5em;
+      }
+    }
+  }
+
+  .navLink.linkWithIcon {
+    padding-left: 40px;
+  }
+
+  .navLink.navLinkDropdown {
+    border-bottom: 1px transparent solid;
+  }
+
 }
 
 // Links & Dropdown
@@ -121,82 +156,16 @@
       list-style: none;
       left: 0;
       top: 100%;
-      background-color: $white-color;
       padding: 10px;
       border-radius: 5px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       display: none;
       transition: display 0.3s;
-
-      .nav-link {
-        color: $navlink-color;
-
-        &:hover {
-          color: $primary-color;
-        }
-      }
     }
 
     .dropdownOpen {
       display: inline-block;
     }
   }
-}
-
-// Buttons
-.othersOption {
-    .cart-wrapper-btn {
-        position: relative;
-        margin-right: 25px;
-
-        svg {
-            width: 15px;
-        }
-        i {
-            font-size: 20px;
-        }
-        span {
-            background-color: red;
-            color: #ffffff;
-            font-size: 9px;
-            width: 13px;
-            height: 13px;
-            text-align: center;
-            line-height: 14px;
-            border-radius: 50%;
-            position: absolute;
-            top: -2px;
-            right: -9px;
-        }
-    }
-
-    .btnLight {
-        background: transparent;
-        border: 1px dashed #cdf1d8;
-        padding: 6px 12px;
-        margin-right: 5px;
-        font-size: 10px;
-        &:focus {
-            color: $black-color !important
-        }
-        &:hover, &:focus {
-            color: $white-color;
-            border-color: $primary-color;
-        }
-        &::after, &::before {
-            background: $primary-color;
-        }
-    }
-
-    .btnPrimary {
-        background: $secondary-color;
-        box-shadow: 0 13px 27px 0 rgba(198, 121, 227, 0.25);
-
-        &::after, &::before {
-            background: $primary-color;
-            box-shadow: 0 13px 27px 0 rgba(68, 206, 111, 0.25);
-        }
-    }
 }
 
 
@@ -221,6 +190,15 @@
       .navBarContent {
         order: 2;
         flex-grow: 1;
+        margin-top: 20px;
+
+          .navLink {
+            line-height: normal;
+            border-bottom: none;
+            font-size: 20px;
+            padding: 0 40px;
+            border-bottom: none;
+          }
 
         .dropdownMenu {
           position: absolute;
@@ -233,7 +211,7 @@
       .othersOption {
         display: inline;
         order: 3;
-        margin-top: 0;
+        margin-top: 16px;
         margin-left: 20px;
       }
 

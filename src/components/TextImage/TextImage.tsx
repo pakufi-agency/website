@@ -11,7 +11,7 @@ import featureImg1 from "/public/images/iot-features-image/iot-feature-image1.pn
 const TextImage = () => {
   return (
     <>
-      <div className="ptb-80 bg-f7fafd">
+      <div className="ptb-80">
         <div className="container">
           <div className="row align-items-center">
             <div className={`col-lg-6 ${styles.content}`}>

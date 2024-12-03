@@ -1,5 +1,5 @@
 import React from "react";
-import "../../public/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "animate.css";
 import "../../public/css/boxicons.min.css";
 import "../../public/css/flaticon.css";

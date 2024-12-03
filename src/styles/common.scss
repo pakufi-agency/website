@@ -141,12 +141,12 @@ textarea.form-control {
 
 /* btn btn-primary */
 .btn-primary {
-    color: $white-color;
+    color: $white;
     background-color: $primary-color;
     box-shadow: 0 13px 27px 0 $primary-box-shadow;
 
     &:hover, &:focus, &:active {
-        color: $white-color;
+        color: $white;
         background: $black-color;
         transform: translateY(-5px);
         box-shadow: 0 13px 27px 0 $secondary-box-shadow;
@@ -158,13 +158,13 @@ textarea.form-control {
         box-shadow: unset;
     }
     &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
-        color: $white-color;
+        color: $white;
         background: $black-color;
         transform: translateY(-5px);
         box-shadow: 0 13px 27px 0 $secondary-box-shadow;
     }
     &.disabled, &:disabled {
-        color: $white-color;
+        color: $white;
         background-color: $primary-color;
         box-shadow: 0 13px 27px 0 $primary-box-shadow;
         opacity: 1;
@@ -200,7 +200,7 @@ textarea.form-control {
         background: $secondary-color;
     }
     &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active, .show>&.dropdown-toggle {
-        color: $white-color;
+        color: $white;
         background-color: $primary-color;
         border-color: $primary-color;
     }
@@ -208,7 +208,7 @@ textarea.form-control {
         box-shadow: 5px 5px 5px $acid-green;
     }
     &:focus {
-        color: $white-color;
+        color: $white;
     }
     &:hover, &:focus {
         box-shadow: 5px 5px 5px $acid-green;
@@ -239,7 +239,7 @@ label {
 
     &:focus {
         outline: 0;
-        background: $white-color;
+        background: $white;
         box-shadow: unset;
         border-color: $primary-color;
     }
@@ -331,6 +331,37 @@ label {
 .shape1, .shape2, .shape3, .shape4, .shape5, .shape7, .shape8 {
     display: none;
 }
+
+// Dark theme
+.pakufi-dark-theme {
+    background-color: $navy-blue;
+    color: #f8f9fa;
+
+    h1, h2, h3, h4, h5, h6, p {
+        color: #f8f9fa;  
+    }
+
+    .link {
+        color: $tertiary-color;
+    }
+}
+
+.button-pakufi-dark {
+    background: $secondary-color;
+    box-shadow: 0 0 4px 0 rgba(121, 227, 213, 0.474);
+    color: $primary-color;
+
+    &::after, &::before {
+        background: $primary-color;
+        box-shadow: 0 0 4px 0 rgba(68, 165, 206, 0.491);
+    }
+
+    &:hover {
+        border: 1px solid $secondary-color;
+        color: $secondary-color;
+    }
+}
+
 
 
 // phone/tablet
