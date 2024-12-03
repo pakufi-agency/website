@@ -58,22 +58,25 @@ const TeamSection = () => {
           </div>
 
           <div className="row justify-content-center">
-            {teamMembers.map(({ name, position, socialLinks, description }) => (
-              <div
-                className="col-lg-3 col-md-6"
-                data-aos="fade-up"
-                data-aos-delay="400"
-                data-aos-duration="500"
-                data-aos-once="true"
-              >
-                <TeamMember
-                  name={name}
-                  position={position}
-                  socialLinks={socialLinks}
-                  description={description}
-                />
-              </div>
-            ))}
+            {teamMembers.map(
+              ({ name, position, socialLinks, description }, i) => (
+                <div
+                  className="col-lg-3 col-md-6"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                  data-aos-duration="500"
+                  data-aos-once="true"
+                  key={i}
+                >
+                  <TeamMember
+                    name={name}
+                    position={position}
+                    socialLinks={socialLinks}
+                    description={description}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
 

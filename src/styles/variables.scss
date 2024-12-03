@@ -1,8 +1,10 @@
 $font-size: 14px;
 
 // COLOR PALETTE
-$white-color: #ffffff;
+$white: #ffffff;
 $black-color: #0e314c;
+
+// Pakufi Color
 $acid-green: #85B360;
 $mint-green: #5D9F7B;
 $jade-green: #487B6E;
@@ -10,15 +12,15 @@ $river-bed-green: #385C61;
 $dark-grey-blue: #2A4555;
 $navy-blue: #10133B;
 
-$primary-color: $dark-grey-blue;
+$primary-color: $navy-blue;
 $secondary-color: $mint-green;
+$tertiary-color: $acid-green;
 
 $primary-box-shadow: rgba(42,69,85, 0.25);
 $secondary-box-shadow: rgba(93,159,123, 0.25);
 $black-06-box-shadow: rgba(0, 0, 0, 0.06);
 $black-01-box-shadow: rgba(0, 0, 0, 0.1);
 
-$navlink-color: #4a6f8a;
 $paragraph-color: #6084a4;
 
 $bg-color-f7fafd: #f7fafd;
@@ -43,8 +45,6 @@ $grey-909090: #909090;
 $grey-878787: #878787;
 $grey-7e7e7e: #7e7e7e;
 $grey-5e5e5e: #5e5e5e;
-
-$hosting-main-color: #032b8d;
 
 $gradient-color: linear-gradient(135deg, $primary-color 0%, $mint-green 100%);
 $gradient-color2: linear-gradient(to right bottom, $primary-color, $river-bed-green, $secondary-color, $mint-green, $acid-green);

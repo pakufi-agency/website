@@ -6,7 +6,7 @@
 	cursor: pointer;
 	bottom: 30px;
 	right: 0;
-	color: $white-color;
+	color: $white;
 	background-color: $secondary-color;
 	text-align: center;
 	border-radius: 10px 0 0 10px;
@@ -17,7 +17,7 @@
     line-height: 30px;
 
     &:hover {
-        color: $white-color;
+        color: $white;
         background: $primary-color;
     }
     svg {

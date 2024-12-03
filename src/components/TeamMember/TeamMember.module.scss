@@ -4,7 +4,7 @@
     max-width: 1175px;
 }
 .singleTeam {
-    background: $white-color;
+    background: $white;
     padding: {
         top: 35px;
         bottom: 35px;
@@ -97,10 +97,10 @@
         h3 {
             font-size: 18px;
             margin-bottom: 5px;
-            color: $white-color;
+            color: $white;
         }
         span {
-            color: $white-color;
+            color: $white;
             font-size: 13px;
         }
     }

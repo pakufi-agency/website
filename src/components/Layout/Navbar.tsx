@@ -59,7 +59,7 @@ const Navbar: React.FC = () => {
       id="header"
       className={`${styles.header} ${isMobileMenuOpen ? styles.isOpen : ""}`}
     >
-      <div className={styles.startpNav}>
+      <div className={styles.conatinerNav}>
         <div className={`container ${styles.container}`}>
           <nav className={`navbar navbar-expand-md navbar-light ${styles.nav}`}>
             <Link href="/" className={`navbar-brand ${styles.logo}`}>
@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
 
             <div
               className={`collapse navbar-collapse ${
-                isMobileMenuOpen ? "show" : ""
+                isMobileMenuOpen && "show"
               } ${styles.navBarContent}`}
               id="navbarSupportedContent"
             >
@@ -76,7 +76,9 @@ const Navbar: React.FC = () => {
                 <li className={`nav-item ${styles.navItem}`}>
                   <Link
                     href="#"
-                    className="nav-link"
+                    className={`${styles.navLink} ${
+                      isDropdownOpen === "home" && styles.navLinkDropdown
+                    } ${styles.linkWithIcon}`}
                     onClick={(e) => handleMenuItemClick(e, "home")}
                   >
                     Home <Icon.ChevronDown />
@@ -89,7 +91,7 @@ const Navbar: React.FC = () => {
                     <li className={styles.navItem}>
                       <Link
                         href="/iot/"
-                        className={`nav-link ${
+                        className={`${styles.navLink} ${
                           currentRoute === "/iot/" ? "active" : ""
                         }`}
                       >
@@ -99,19 +101,14 @@ const Navbar: React.FC = () => {
                   </ul>
                 </li>
                 <li className={`nav-item ${styles.navItem}`}>
-                  <Link
-                    href="/about/"
-                    className={`nav-link ${
-                      currentRoute === "/iot/" ? "active" : ""
-                    }`}
-                  >
+                  <Link href="/about/" className={styles.navLink}>
                     About
                   </Link>
                 </li>
                 <li className={`nav-item ${styles.navItem}`}>
                   <Link
                     href="#"
-                    className="nav-link"
+                    className={styles.navLink}
                     onClick={(e) => handleMenuItemClick(e, "contact")}
                   >
                     Contact
@@ -120,11 +117,7 @@ const Navbar: React.FC = () => {
               </ul>
             </div>
             <div className={styles.othersOption}>
-              <Link href="/" className={`btn btn-light ${styles.btnLight}`}>
-                Support us
-              </Link>
-
-              <Link href="/" className={`btn btn-primary ${styles.btnPrimary}`}>
+              <Link href="/" className={`btn button-pakufi-dark`}>
                 Support us
               </Link>
             </div>

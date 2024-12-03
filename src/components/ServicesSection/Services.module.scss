@@ -7,15 +7,15 @@
 
     .sectionTitleServiceSection {
         h2 {
-            color: $white-color;
+            color: $white;
         }
         .barServiceSection {
             &::before {
-                background: $white-color;
+                background: $white;
             }
         }
         p {
-            color: $white-color;
+            color: $white;
             opacity: .95;
         }
     }
@@ -26,7 +26,7 @@
         left: 0;
         height: 37%;
         width: 100%;
-        background: $white-color;
+        background: $white;
         z-index: -1;
     }
 }
