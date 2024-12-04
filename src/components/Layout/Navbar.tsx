@@ -88,7 +88,7 @@ const Navbar: React.FC = () => {
                       isDropdownOpen === "home" ? styles.dropdownOpen : ""
                     }`}
                   >
-                    <li className={styles.navItem}>
+                    {/* <li className={styles.navItem}>
                       <Link
                         href="/iot/"
                         className={`${styles.navLink} ${
@@ -97,7 +97,7 @@ const Navbar: React.FC = () => {
                       >
                         IOT
                       </Link>
-                    </li>
+                    </li> */}
                   </ul>
                 </li>
                 <li className={`nav-item ${styles.navItem}`}>
@@ -107,9 +107,9 @@ const Navbar: React.FC = () => {
                 </li>
                 <li className={`nav-item ${styles.navItem}`}>
                   <Link
-                    href="#"
+                    href="/contact/"
                     className={styles.navLink}
-                    onClick={(e) => handleMenuItemClick(e, "contact")}
+                    // onClick={(e) => handleMenuItemClick(e, "contact")}
                   >
                     Contact
                   </Link>

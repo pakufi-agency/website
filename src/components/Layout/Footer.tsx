@@ -123,7 +123,7 @@ const Footer = () => {
                   <li>
                     <Icon.Mail />
                     Email:{" "}
-                    <a href="mailto:startp@gmail.com">startp@gmail.com</a>
+                    <a href="mailto:startp@gmail.com">info@pakufi.agency</a>
                   </li>
 
                   <li>
@@ -178,12 +178,7 @@ const Footer = () => {
 
             <div className="col-lg-12 col-md-12">
               <div className={styles.copyrightArea}>
-                <p>
-                  Copyright &copy; {currentYear} StartP. All rights reserved by{" "}
-                  <a href="https://envytheme.com/" target="_blank">
-                    EnvyTheme
-                  </a>
-                </p>
+                <p>Pakufi</p>
               </div>
             </div>
           </div>
