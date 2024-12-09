@@ -1,5 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
+import { gql } from "@apollo/client";
+import client from "../utils/apolloClient";
 
 import Navbar from "../components/Layout/Navbar";
 import Footer from "../components/Layout/Footer";
@@ -21,13 +23,64 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
+  const { data } = await client.query({
+    query: gql`
+      query getHomepage {
+        pages(filters: { pageTitle: { eq: "Homepage" } }) {
+          pageTitle
+          sections {
+            ... on ComponentStaticComponentHero {
+              id
+              title
+              content
+              ctaLabel
+              ctaLink
+              backgroundImage {
+                url
+              }
+            }
+
+            ... on ComponentStaticComponentWeStatment {
+              content
+            }
+          }
+        }
+      }
+    `,
+  });
+
+  const homepagePage = data.pages[0];
+  const homepageSections = data.pages[0].sections;
+  // const homepageAttr = data.pages[0].attributes;
+  console.log({ homepagePage, homepageSections });
+
   return (
     <MobileMenuProvider>
       <Navbar />
 
-      <HeroBanner />
-
-      <WeBanner />
+      {homepagePage.sections.map((section: any, index: number) => {
+        console.log("lalal", section);
+        switch (section.__typename) {
+          case "ComponentStaticComponentHero":
+            // <HeroBanner section={section} />;
+            console.log("hello??");
+            return (
+              <section
+                key={index}
+                style={{
+                  backgroundImage: `url(${section.backgroundImage.url})`,
+                }}
+              >
+                <h2>{section.title}</h2>
+                <p>{section.subtitle}</p>
+              </section>
+            );
+          case "ComponentStaticComponentWeStatment":
+            <WeBanner />;
+          default:
+            return null;
+        }
+      })}
 
       <TextImage />
 
