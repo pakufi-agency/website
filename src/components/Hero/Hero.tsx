@@ -14,7 +14,8 @@ import shape2 from "/public/images/shape2.svg";
 import shape3 from "/public/images/shape3.svg";
 import shape4 from "/public/images/shape4.svg";
 
-const Hero = () => {
+const Hero = ({ section }: any) => {
+  console.log({ section });
   return (
     <>
       <div className={`${styles.heroBanner} pakufi-dark-theme`}>
