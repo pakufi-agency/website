@@ -3,19 +3,35 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { type BlocksContent } from "@strapi/blocks-react-renderer";
+import BlockRendererClient from "../BlockRendererClient";
 
 import styles from "./Hero.module.scss";
 
-import bannerImg from "/public/images/iot-banner-image/iot-main-img1.png";
 import iotShape1 from "/public/images/iot-banner-image/iot-shape1.png";
-// Shape Images
 import shape1 from "/public/images/shape1.png";
 import shape2 from "/public/images/shape2.svg";
 import shape3 from "/public/images/shape3.svg";
 import shape4 from "/public/images/shape4.svg";
 
-const Hero = ({ section }: any) => {
-  console.log({ section });
+interface HeroProps {
+  title: string;
+  content: BlocksContent;
+  ctaLabel: string;
+  ctaLink: string;
+}
+
+const Hero: React.FC<HeroProps> = ({
+  title,
+  content,
+  ctaLabel,
+  ctaLink,
+  backgroundImage,
+}: any) => {
+  const contentWithBlock: BlocksContent = content;
+
+  console.log(backgroundImage);
+
   return (
     <>
       <div className={`${styles.heroBanner} pakufi-dark-theme`}>
@@ -36,30 +52,26 @@ const Hero = ({ section }: any) => {
               data-aos-duration="500"
               data-aos-once="true"
             >
-              We get it! IoT growth is happening
+              {title}
             </h2>
 
-            <p
+            <div
               data-aos="fade-up"
               data-aos-delay="300"
               data-aos-duration="500"
               data-aos-once="true"
             >
-              At this point, it may seem like overkill to point out the
-              continued growth bound to happen in the Internet of Things space
-              for the years to come and how it will create new opportunities for
-              companies, both established and new, from a hardware and software
-              perspective.
-            </p>
+              <BlockRendererClient content={contentWithBlock} />
+            </div>
 
-            <Link href="/contact" className="btn button-pakufi-dark">
-              Get Started
+            <Link href={ctaLink} className="btn button-pakufi-dark">
+              {ctaLabel}
             </Link>
           </div>
 
           <div className={styles.bannerImage}>
             <Image
-              src={bannerImg}
+              src={`${process.env.NEXT_PUBLIC_CMS_ENDPOINT}${backgroundImage.url}`}
               className="animate__animated animate__fadeInUp animate__delay-0.8s"
               alt="image"
               width={837}

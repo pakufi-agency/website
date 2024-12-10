@@ -3,6 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { type BlocksContent } from "@strapi/blocks-react-renderer";
+import BlockRendererClient from "../BlockRendererClient";
 
 import styles from "./WeBanner.module.scss";
 
@@ -10,7 +12,12 @@ import ctaShape from "/public/images/cta-shape.png";
 import ctaShape2 from "/public/images/cta-shape2.png";
 import circle from "/public/images/circle.png";
 
-const WeBanner = () => {
+interface WeBannerProps {
+  section: BlocksContent;
+}
+
+const WeBanner: React.FC<WeBannerProps> = ({ section }: any) => {
+  const contentWithBlock: BlocksContent = section.content;
   return (
     <>
       <div className={`${styles.ctaArea}`}>
@@ -18,7 +25,9 @@ const WeBanner = () => {
           <div className="row align-items-center">
             <div className="col-lg-6">
               <div className={styles.ctaContent}>
-                <h3>Connect and Manage your IoT at Scale</h3>
+                <BlockRendererClient content={contentWithBlock} />
+
+                {/* <h3>Connect and Manage your IoT at Scale</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -28,15 +37,15 @@ const WeBanner = () => {
 
                 <Link href="/contact" className="btn btn-primary">
                   Get Started!
-                </Link>
+                </Link> */}
               </div>
             </div>
 
-            <div className="col-lg-6">
+            {/* <div className="col-lg-6">
               <div className={styles.ctaImg}>
                 <Image src={ctaShape2} alt="image" width={648} height={401} />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 

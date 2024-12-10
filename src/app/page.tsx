@@ -50,33 +50,22 @@ export default async function Page() {
   });
 
   const homepagePage = data.pages[0];
-  const homepageSections = data.pages[0].sections;
-  // const homepageAttr = data.pages[0].attributes;
-  console.log({ homepagePage, homepageSections });
+  // console.log({ homepagePage });
 
   return (
     <MobileMenuProvider>
       <Navbar />
 
       {homepagePage.sections.map((section: any, index: number) => {
-        console.log("lalal", section);
+        // console.log("section in page", section);
+
         switch (section.__typename) {
           case "ComponentStaticComponentHero":
-            // <HeroBanner section={section} />;
-            console.log("hello??");
-            return (
-              <section
-                key={index}
-                style={{
-                  backgroundImage: `url(${section.backgroundImage.url})`,
-                }}
-              >
-                <h2>{section.title}</h2>
-                <p>{section.subtitle}</p>
-              </section>
-            );
+            return <HeroBanner {...section} key={index} />;
+
           case "ComponentStaticComponentWeStatment":
-            <WeBanner />;
+            return <WeBanner section={section} key={index} />;
+
           default:
             return null;
         }
