@@ -6,64 +6,84 @@ import Image from "next/image";
 
 import styles from "./TeamMember.module.scss";
 
-import teamImg1 from "/public/images/team-image/team1.jpg";
-
-interface SocialLink {
-  social: string;
-  link: string;
-}
+// import teamImg1 from "/public/images/team-image/team1.jpg";
 
 interface TeamMemberProps {
   name: string;
-  position: string;
-  socialLinks: SocialLink[];
-  description: string;
+  jobPosition: string;
+  shortDescription: string;
+  email: string;
+  profilePic: { url: string; alternativeText: string };
+  linkedinAbsoluteUrl: string;
+  personalWebsiteAbsoluteUrl: string;
+  githubAsboluteUrl: string;
 }
 
 const TeamMember: React.FC<TeamMemberProps> = ({
   name,
-  position,
-  socialLinks,
-  description,
+  jobPosition,
+  shortDescription,
+  email,
+  profilePic,
+  linkedinAbsoluteUrl,
+  personalWebsiteAbsoluteUrl,
+  githubAsboluteUrl,
 }) => {
-  const renderIcon = (social: string) => {
-    switch (social) {
-      case "facebook":
-        return <Icon.Facebook />;
-      case "linkedin":
-        return <Icon.Linkedin />;
-      case "twitter":
-        return <Icon.Twitter />;
-      case "gitlab":
-        return <Icon.Gitlab />;
-      default:
-        return null;
-    }
-  };
-
   return (
     <div className={styles.singleTeam}>
       <div className={styles.teamImage}>
-        <Image src={teamImg1} alt="Team Member" width={125} height={125} />
+        <Image
+          src={`${process.env.NEXT_PUBLIC_CMS_ENDPOINT}${profilePic.url}`}
+          alt={profilePic.alternativeText}
+          width={125}
+          height={125}
+        />
       </div>
 
       <div className={styles.teamContent}>
         <div className={styles.teamInfo}>
           <h3>{name}</h3>
-          <span>{position}</span>
+          <span>{jobPosition}</span>
         </div>
 
         <ul>
-          {socialLinks.map(({ social, link }) => (
-            <li key={social}>
-              <a href={link} target="_blank" rel="noopener noreferrer">
-                {renderIcon(social)}
+          {linkedinAbsoluteUrl && (
+            <li>
+              <a
+                href={linkedinAbsoluteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon.Linkedin />
               </a>
             </li>
-          ))}
+          )}
+          {personalWebsiteAbsoluteUrl && (
+            <li>
+              <a
+                href={personalWebsiteAbsoluteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon.Link />
+              </a>
+            </li>
+          )}
+          {githubAsboluteUrl && (
+            <li>
+              <a
+                href={githubAsboluteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon.GitHub />
+              </a>
+            </li>
+          )}
         </ul>
 
-        <p>{description}</p>
+        <p>{shortDescription}</p>
+        <p>{email}</p>
       </div>
     </div>
   );

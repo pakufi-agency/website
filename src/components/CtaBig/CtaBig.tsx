@@ -11,7 +11,27 @@ import styles from "./CtaBig.module.scss";
 import shape2 from "/public/images/shape2.svg";
 import shape4 from "/public/images/shape4.svg";
 
-const CtaBig = () => {
+interface CtaBigProps {
+  title: String;
+  description: String;
+  buttonCtaOneLabel: String;
+  buttonCtaOneLink: URL;
+  buttonCtaTwoLabel: String;
+  buttonCtaTwoLink: URL;
+  media: { url: string; alternativeText: string };
+  isBig: Boolean;
+}
+
+const CtaBig: React.FC<CtaBigProps> = ({
+  title,
+  description,
+  buttonCtaOneLabel,
+  buttonCtaOneLink,
+  buttonCtaTwoLabel,
+  buttonCtaTwoLink,
+  isBig,
+  media,
+}) => {
   return (
     <>
       <div className={styles.container}>
@@ -30,7 +50,7 @@ const CtaBig = () => {
 
             <div className="col-lg-6 col-md-12">
               <div className={styles.content}>
-                <h2>Start your free trial</h2>
+                <h2>{title}</h2>
               </div>
             </div>
           </div>

@@ -1,0 +1,92 @@
+import { gql } from "@apollo/client";
+
+export const HOMEPAGE_QUERY = gql`
+  query getHomepage {
+    pages(filters: { pageTitle: { eq: "Homepage" } }) {
+      pageTitle
+      sections {
+        ... on ComponentStaticComponentHero {
+          id
+          title
+          ctaLabel
+          ctaLink
+          descriptionHero
+          imageHero {
+            url
+            alternativeText
+          }
+        }
+
+        ... on ComponentStaticComponentWeStatment {
+          backgroundImage {
+            url
+            alternativeText
+          }
+          statmentOne
+          statmentThree
+          statmentTwo
+        }
+        ... on ComponentCommonTextImageButtons {
+          title
+          content
+          media {
+            url
+            alternativeText
+          }
+          buttonOneLabel
+          buttonOneLink
+          buttonTwoLabel
+          buttonTwoLink
+        }
+        ... on ComponentSectionsServiceSection {
+          sectionTitle
+          services {
+            name
+            description
+            icon
+          }
+          sectionSubtitle
+        }
+        ... on ComponentCommonCta {
+          title
+          description
+          media {
+            url
+            alternativeText
+          }
+          buttonCtaTwoLabel
+          buttonCtaTwoLink
+          isBig
+          buttonCtaOneLabel
+          buttonCtaOneLink
+        }
+        ... on ComponentSectionsTeamSection {
+          sectionTitle
+          sectionSubtitle
+          members: team_members {
+            firstName
+            lastName
+            jobPosition
+            email
+            linkedinAbsoluteUrl
+            personalWebsiteAbsoluteUrl
+            githubAsboluteUrl
+            profilePic {
+              url
+              alternativeText
+            }
+            shortDescription
+          }
+        }
+        ... on ComponentSectionsFaqSection {
+          title
+          description
+          questions: question_answers {
+            question
+            answer
+          }
+        }
+      }
+    }
+  }
+`;

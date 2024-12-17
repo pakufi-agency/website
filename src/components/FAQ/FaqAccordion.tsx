@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { type BlocksContent } from "@strapi/blocks-react-renderer";
 import {
   Accordion,
   AccordionItem,
@@ -8,42 +9,21 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
+
+import BlockRendererClient from "../BlockRendererClient";
+
 import styles from "./FaqAccordion.module.scss";
 
-const FAQs = [
-  {
-    question: "How do permissions work in Google Play Instant?",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    question: "Is Smart Lock required for instant apps?",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    question: "Can I have multiple activities in a single feature?",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    question: "Can I share resources between features?",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    question: "Is multidex supported for instant apps?",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Incididunt ut labore et dolore magna aliqua.",
-  },
-];
+interface FaqProps {
+  questions: { question: String; answer: BlocksContent }[];
+}
 
-const FaqSection = () => {
+const Faq: React.FC<FaqProps> = ({ questions }) => {
   return (
     <>
       <div className={styles.faqAccordion}>
         <Accordion className={styles.accordionCustom}>
-          {FAQs.map((faq, index) => (
+          {questions.map((question, index) => (
             <AccordionItem
               key={index}
               uuid={String(index)}
@@ -53,11 +33,12 @@ const FaqSection = () => {
                 <AccordionItemButton
                   className={`accordion__button ${styles.accordionButton}`}
                 >
-                  <span>{faq.question}</span>
+                  <span>{question.question}</span>
                 </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel className={styles.accordionPanel}>
-                <p>{faq.answer}</p>
+                {/* <p>{question.answer}</p> */}
+                <BlockRendererClient content={question.answer} />
               </AccordionItemPanel>
             </AccordionItem>
           ))}
@@ -67,4 +48,4 @@ const FaqSection = () => {
   );
 };
 
-export default FaqSection;
+export default Faq;
