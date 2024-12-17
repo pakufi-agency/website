@@ -3,8 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { type BlocksContent } from "@strapi/blocks-react-renderer";
-import BlockRendererClient from "../BlockRendererClient";
 
 import styles from "./Hero.module.scss";
 
@@ -16,22 +14,19 @@ import shape4 from "/public/images/shape4.svg";
 
 interface HeroProps {
   title: string;
-  content: BlocksContent;
+  descriptionHero: string;
   ctaLabel: string;
   ctaLink: string;
+  imageHero: { url: string; alternativeText: string };
 }
 
 const Hero: React.FC<HeroProps> = ({
   title,
-  content,
+  descriptionHero,
   ctaLabel,
   ctaLink,
-  backgroundImage,
-}: any) => {
-  const contentWithBlock: BlocksContent = content;
-
-  console.log(backgroundImage);
-
+  imageHero,
+}) => {
   return (
     <>
       <div className={`${styles.heroBanner} pakufi-dark-theme`}>
@@ -61,7 +56,7 @@ const Hero: React.FC<HeroProps> = ({
               data-aos-duration="500"
               data-aos-once="true"
             >
-              <BlockRendererClient content={contentWithBlock} />
+              {descriptionHero}
             </div>
 
             <Link href={ctaLink} className="btn button-pakufi-dark">
@@ -71,9 +66,9 @@ const Hero: React.FC<HeroProps> = ({
 
           <div className={styles.bannerImage}>
             <Image
-              src={`${process.env.NEXT_PUBLIC_CMS_ENDPOINT}${backgroundImage.url}`}
+              src={`${process.env.NEXT_PUBLIC_CMS_ENDPOINT}${imageHero.url}`}
               className="animate__animated animate__fadeInUp animate__delay-0.8s"
-              alt="image"
+              alt={imageHero.alternativeText}
               width={837}
               height={447}
             />

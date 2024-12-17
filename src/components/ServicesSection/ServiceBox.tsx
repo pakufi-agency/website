@@ -1,16 +1,20 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
+// import Link from "next/link";
 import * as Icon from "react-feather";
+import robot from "/public/images/icon4.png";
+import chip from "/public/images/icon5.png";
+import mindChip from "/public/images/icon6.png";
+import drone from "/public/images/icon7.png";
+
 import Image, { StaticImageData } from "next/image";
 
 import styles from "./ServiceBox.module.scss";
 
 interface ServiceBoxProps {
-  title: string;
+  name: string;
   description: string;
-  link: string;
   icon: StaticImageData;
 }
 
@@ -29,18 +33,16 @@ const ServiceBox: React.FC<ServiceBoxesProps> = ({ services }) => {
                 <div className={styles.icon}>
                   <Image
                     src={service.icon}
-                    alt={service.title}
+                    alt={service.name}
                     width={60}
                     height={60}
                   />
                 </div>
-                <h3>
-                  <Link href={service.link}>{service.title}</Link>
-                </h3>
+                <h3>{service.name}</h3>
                 <p>{service.description}</p>
-                <Link href={service.link} className={styles.learnMoreButton}>
+                {/* <Link href={service.link} className={styles.learnMoreButton}>
                   <Icon.PlusCircle /> Learn More
-                </Link>
+                </Link> */}
               </div>
             </div>
           ))}

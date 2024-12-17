@@ -5,21 +5,33 @@ import Link from "next/link";
 
 import styles from "./CtaText.module.scss";
 
-const CtaText = () => {
+interface CtaTextProps {
+  title: String;
+  description: String;
+  buttonCtaOneLabel: String;
+  buttonCtaOneLink: URL;
+}
+
+const CtaText: React.FC<CtaTextProps> = ({
+  title,
+  description,
+  buttonCtaOneLabel,
+  buttonCtaOneLink,
+}) => {
   return (
     <>
       <div className={styles.container}>
         <div className="container">
-          <h3>Ready to talk?</h3>
-          <p>Our team is here to answer your question about StartP</p>
+          <h3>{title}</h3>
+          <p>{description}</p>
 
-          <Link href="/contact" className={`btn btn-light`}>
-            Contact Us
+          <Link href={buttonCtaOneLink} className={`btn btn-light`}>
+            {buttonCtaOneLabel}
           </Link>
 
-          <span>
+          {/* <span>
             <Link href="#">Or, get started now with a free trial</Link>
-          </span>
+          </span> */}
         </div>
       </div>
     </>

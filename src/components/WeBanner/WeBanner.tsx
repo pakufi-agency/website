@@ -1,10 +1,7 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { type BlocksContent } from "@strapi/blocks-react-renderer";
-import BlockRendererClient from "../BlockRendererClient";
 
 import styles from "./WeBanner.module.scss";
 
@@ -13,11 +10,16 @@ import ctaShape2 from "/public/images/cta-shape2.png";
 import circle from "/public/images/circle.png";
 
 interface WeBannerProps {
-  section: BlocksContent;
+  statmentOne: String;
+  statmentTwo: String;
+  statmentThree: String;
 }
 
-const WeBanner: React.FC<WeBannerProps> = ({ section }: any) => {
-  const contentWithBlock: BlocksContent = section.content;
+const WeBanner: React.FC<WeBannerProps> = ({
+  statmentOne,
+  statmentTwo,
+  statmentThree,
+}) => {
   return (
     <>
       <div className={`${styles.ctaArea}`}>
@@ -25,8 +27,9 @@ const WeBanner: React.FC<WeBannerProps> = ({ section }: any) => {
           <div className="row align-items-center">
             <div className="col-lg-6">
               <div className={styles.ctaContent}>
-                <BlockRendererClient content={contentWithBlock} />
-
+                <p>{statmentOne}</p>
+                <p>{statmentTwo}</p>
+                <p>{statmentThree}</p>
                 {/* <h3>Connect and Manage your IoT at Scale</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
