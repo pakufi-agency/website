@@ -8,11 +8,7 @@ import styles from "./Services.module.scss";
 interface ServiceSectionProps {
   sectionTitle: String;
   sectionSubtitle: String;
-  services: {
-    name: string;
-    description: string;
-    icon: string;
-  };
+  services: [];
 }
 
 const ServiceSection: React.FC<ServiceSectionProps> = ({

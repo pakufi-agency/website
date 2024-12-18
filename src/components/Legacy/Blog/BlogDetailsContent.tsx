@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import Link from 'next/link';
+import Link from "next/link";
 import * as Icon from "react-feather";
 import Image from "next/image";
-import BlogSidebar from "../../components/Blog/BlogSidebar";
+import BlogSidebar from "../Blog/BlogSidebar";
 
 import blogDetails from "/public/images/blog-image/blog-details.jpg";
 
@@ -181,7 +181,8 @@ const BlogDetailsContent = () => {
 
                         <span className="prev-link-info-wrapper">
                           <span className="prev-title">
-                            Don&apos;t buy a tech gift until you read these rules
+                            Don&apos;t buy a tech gift until you read these
+                            rules
                           </span>
                           <span className="meta-wrapper">
                             <span className="date-post">January 21, 2022</span>
@@ -280,8 +281,8 @@ const BlogDetailsContent = () => {
 
                             <div className="comment-content">
                               <p>
-                                Lorem Ipsum has been the industry standard
-                                dummy text ever since the 1500s, when an unknown
+                                Lorem Ipsum has been the industry standard dummy
+                                text ever since the 1500s, when an unknown
                                 printer took a galley of type and scrambled it
                                 to make a type specimen.
                               </p>
@@ -395,8 +396,8 @@ const BlogDetailsContent = () => {
 
                             <div className="comment-content">
                               <p>
-                                Lorem Ipsum has been the industry standard
-                                dummy text ever since the 1500s, when an unknown
+                                Lorem Ipsum has been the industry standard dummy
+                                text ever since the 1500s, when an unknown
                                 printer took a galley of type and scrambled it
                                 to make a type specimen.
                               </p>
@@ -441,24 +442,14 @@ const BlogDetailsContent = () => {
                         <label>
                           Name <span className="required">*</span>
                         </label>
-                        <input
-                          type="text"
-                          id="author"
-                          name="author"
-                          required
-                        />
+                        <input type="text" id="author" name="author" required />
                       </p>
 
                       <p className="comment-form-email">
                         <label>
                           Email <span className="required">*</span>
                         </label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          required
-                        />
+                        <input type="email" id="email" name="email" required />
                       </p>
 
                       <p className="comment-form-url">

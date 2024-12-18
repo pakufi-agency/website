@@ -4,7 +4,7 @@ import React from "react";
 import * as Icon from "react-feather";
 import Image from "next/image";
 import Link from "next/link";
-import BlogSidebar from "../../components/Blog/BlogSidebar";
+import BlogSidebar from "./BlogSidebar";
 
 import blogImg1 from "/public/images/blog-image/blog9.jpg";
 import blogImg2 from "/public/images/blog-image/blog10.jpg";
@@ -24,7 +24,7 @@ const BlogWithRightSidebarStyle2 = () => {
                 <div className="col-lg-6 col-md-6">
                   <div className="single-blog-post-box">
                     <div className="entry-thumbnail">
-                      <Link href="/blog/blog-details/" >
+                      <Link href="/blog/blog-details/">
                         <Image
                           src={blogImg1}
                           alt="image"
@@ -38,16 +38,14 @@ const BlogWithRightSidebarStyle2 = () => {
                       <div className="entry-meta">
                         <ul>
                           <li>
-                            <Link href="#" >
-                              Admin
-                            </Link>
+                            <Link href="#">Admin</Link>
                           </li>
                           <li>August 15, 2022</li>
                         </ul>
                       </div>
 
                       <h3>
-                        <Link href="/blog/blog-details/" >
+                        <Link href="/blog/blog-details/">
                           Making Peace With The Feast Or Famine Of Freelancing
                         </Link>
                       </h3>
@@ -59,7 +57,6 @@ const BlogWithRightSidebarStyle2 = () => {
                       <Link
                         href="/blog/blog-details/"
                         className="learn-more-btn"
-                        
                       >
                         Read Story <Icon.Plus />
                       </Link>
@@ -70,7 +67,7 @@ const BlogWithRightSidebarStyle2 = () => {
                 <div className="col-lg-6 col-md-6">
                   <div className="single-blog-post-box">
                     <div className="entry-thumbnail">
-                      <Link href="/blog/blog-details/" >
+                      <Link href="/blog/blog-details/">
                         <Image
                           src={blogImg2}
                           alt="image"
@@ -84,16 +81,14 @@ const BlogWithRightSidebarStyle2 = () => {
                       <div className="entry-meta">
                         <ul>
                           <li>
-                            <Link href="#" >
-                              Admin
-                            </Link>
+                            <Link href="#">Admin</Link>
                           </li>
                           <li>August 18, 2022</li>
                         </ul>
                       </div>
 
                       <h3>
-                        <Link href="/blog/blog-details/" >
+                        <Link href="/blog/blog-details/">
                           I Used The Web For A Day On A 50 MB Budget
                         </Link>
                       </h3>
@@ -105,7 +100,6 @@ const BlogWithRightSidebarStyle2 = () => {
                       <Link
                         href="/blog/blog-details/"
                         className="learn-more-btn"
-                        
                       >
                         Read Story <Icon.Plus />
                       </Link>
@@ -116,7 +110,7 @@ const BlogWithRightSidebarStyle2 = () => {
                 <div className="col-lg-6 col-md-6">
                   <div className="single-blog-post-box">
                     <div className="entry-thumbnail">
-                      <Link href="/blog/blog-details/" >
+                      <Link href="/blog/blog-details/">
                         <Image
                           src={blogImg3}
                           alt="image"
@@ -130,16 +124,14 @@ const BlogWithRightSidebarStyle2 = () => {
                       <div className="entry-meta">
                         <ul>
                           <li>
-                            <Link href="#" >
-                              Admin
-                            </Link>
+                            <Link href="#">Admin</Link>
                           </li>
                           <li>August 15, 2022</li>
                         </ul>
                       </div>
 
                       <h3>
-                        <Link href="/blog/blog-details/" >
+                        <Link href="/blog/blog-details/">
                           Here are the 5 most telling signs of micromanagement
                         </Link>
                       </h3>
@@ -151,7 +143,6 @@ const BlogWithRightSidebarStyle2 = () => {
                       <Link
                         href="/blog/blog-details/"
                         className="learn-more-btn"
-                        
                       >
                         Read Story <Icon.Plus />
                       </Link>
@@ -162,7 +153,7 @@ const BlogWithRightSidebarStyle2 = () => {
                 <div className="col-lg-6 col-md-6">
                   <div className="single-blog-post-box">
                     <div className="entry-thumbnail">
-                      <Link href="/blog/blog-details/" >
+                      <Link href="/blog/blog-details/">
                         <Image
                           src={blogImg4}
                           alt="image"
@@ -176,16 +167,14 @@ const BlogWithRightSidebarStyle2 = () => {
                       <div className="entry-meta">
                         <ul>
                           <li>
-                            <Link href="#" >
-                              Admin
-                            </Link>
+                            <Link href="#">Admin</Link>
                           </li>
                           <li>August 15, 2022</li>
                         </ul>
                       </div>
 
                       <h3>
-                        <Link href="/blog/blog-details/" >
+                        <Link href="/blog/blog-details/">
                           The security risks of changing package owners
                         </Link>
                       </h3>
@@ -197,7 +186,6 @@ const BlogWithRightSidebarStyle2 = () => {
                       <Link
                         href="/blog/blog-details/"
                         className="learn-more-btn"
-                        
                       >
                         Read Story <Icon.Plus />
                       </Link>
@@ -208,7 +196,7 @@ const BlogWithRightSidebarStyle2 = () => {
                 <div className="col-lg-6 col-md-6">
                   <div className="single-blog-post-box">
                     <div className="entry-thumbnail">
-                      <Link href="/blog/blog-details/" >
+                      <Link href="/blog/blog-details/">
                         <Image
                           src={blogImg5}
                           alt="image"
@@ -222,16 +210,14 @@ const BlogWithRightSidebarStyle2 = () => {
                       <div className="entry-meta">
                         <ul>
                           <li>
-                            <Link href="#" >
-                              Admin
-                            </Link>
+                            <Link href="#">Admin</Link>
                           </li>
                           <li>August 18, 2022</li>
                         </ul>
                       </div>
 
                       <h3>
-                        <Link href="/blog/blog-details/" >
+                        <Link href="/blog/blog-details/">
                           Tips to Protecting Your Business and Family
                         </Link>
                       </h3>
@@ -243,7 +229,6 @@ const BlogWithRightSidebarStyle2 = () => {
                       <Link
                         href="/blog/blog-details/"
                         className="learn-more-btn"
-                        
                       >
                         Read Story <Icon.Plus />
                       </Link>
@@ -254,7 +239,7 @@ const BlogWithRightSidebarStyle2 = () => {
                 <div className="col-lg-6 col-md-6">
                   <div className="single-blog-post-box">
                     <div className="entry-thumbnail">
-                      <Link href="/blog/blog-details/" >
+                      <Link href="/blog/blog-details/">
                         <Image
                           src={blogImg6}
                           alt="image"
@@ -268,16 +253,14 @@ const BlogWithRightSidebarStyle2 = () => {
                       <div className="entry-meta">
                         <ul>
                           <li>
-                            <Link href="#" >
-                              Admin
-                            </Link>
+                            <Link href="#">Admin</Link>
                           </li>
                           <li>August 15, 2022</li>
                         </ul>
                       </div>
 
                       <h3>
-                        <Link href="/blog/blog-details/" >
+                        <Link href="/blog/blog-details/">
                           Protect Your Workplace from Cyber Attacks
                         </Link>
                       </h3>
@@ -289,7 +272,6 @@ const BlogWithRightSidebarStyle2 = () => {
                       <Link
                         href="/blog/blog-details/"
                         className="learn-more-btn"
-                        
                       >
                         Read Story <Icon.Plus />
                       </Link>

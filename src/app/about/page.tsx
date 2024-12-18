@@ -15,9 +15,9 @@ export default function Page() {
 
       <AboutUsContent1 />
 
-      <TeamSection />
+      {/* <TeamSection />
 
-      <CtaText />
+      <CtaText /> */}
 
       <Footer />
     </>
