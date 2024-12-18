@@ -1,9 +1,9 @@
 "use client";
-  
-import React from "react"; 
-import ProductsDetailsTabs from "../../components/Shop/ProductsDetailsTabs";
+
+import React from "react";
+import ProductsDetailsTabs from "../../../components/Legacy/Shop/ProductsDetailsTabs";
 import * as Icon from "react-feather";
-import PaymentOption from "../../components/Shop/PaymentOption";
+import PaymentOption from "../../../components/Legacy/Shop/PaymentOption";
 import ProductSlider from "./ProductSlider";
 import QuantityInput from "./QuantityInput";
 
@@ -41,7 +41,12 @@ const ProductDetailsContent: React.FC = () => {
                   </li>
                 </ul>
 
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&apos;t look even slightly believable.</p>
+                <p>
+                  There are many variations of passages of Lorem Ipsum
+                  available, but the majority have suffered alteration in some
+                  form, by injected humour, or randomised words which don&apos;t
+                  look even slightly believable.
+                </p>
 
                 <div className="availability">
                   Availability: <span>In Stock</span>

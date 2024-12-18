@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "../../components/Layout/Navbar";
-import Footer from "../../components/Layout/Footer";
-import PageBanner from "../../components/Common/PageBanner";
-import TermsConditionsContent from "../../components/TermsConditions/TermsConditionsContent";
+import Navbar from "../../../components/Layout/Navbar";
+import Footer from "../../../components/Layout/Footer";
+import PageBanner from "../../../components/Legacy/Common/PageBanner";
+import TermsConditionsContent from "../../../components/Legacy/TermsConditions/TermsConditionsContent";
 
 export default function Page() {
   return (
@@ -16,5 +16,4 @@ export default function Page() {
       <Footer />
     </>
   );
-};
- 
+}

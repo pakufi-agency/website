@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "../../components/Layout/Navbar";
-import Footer from "../../components/Layout/Footer";
-import PageBanner from "../../components/Common/PageBanner";
-import FaqContent from "../../components/FAQ/FaqAccordion";
+import Navbar from "../../../components/Layout/Navbar";
+import Footer from "../../../components/Layout/Footer";
+import PageBanner from "../../../components/Legacy/Common/PageBanner";
+import Faq from "../../../components/FAQ/FaqAccordion";
 
 export default function Page() {
   return (
@@ -11,7 +11,7 @@ export default function Page() {
 
       <PageBanner pageTitle="FAQ" />
 
-      <FaqContent />
+      <Faq questions={[]} />
 
       <Footer />
     </>

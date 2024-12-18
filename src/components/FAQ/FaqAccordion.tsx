@@ -37,7 +37,6 @@ const Faq: React.FC<FaqProps> = ({ questions }) => {
                 </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel className={styles.accordionPanel}>
-                {/* <p>{question.answer}</p> */}
                 <BlockRendererClient content={question.answer} />
               </AccordionItemPanel>
             </AccordionItem>
