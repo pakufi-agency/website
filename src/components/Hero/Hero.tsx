@@ -38,7 +38,7 @@ const Hero: React.FC<HeroProps> = ({
               data-aos-duration="500"
               data-aos-once="true"
             >
-              Internet of Things
+              Internet of Things.
             </span>
 
             <h2
