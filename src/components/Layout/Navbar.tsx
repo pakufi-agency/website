@@ -64,6 +64,7 @@ const Navbar: React.FC = () => {
           <nav className={`navbar navbar-expand-md navbar-light ${styles.nav}`}>
             <Link href="/" className={`navbar-brand ${styles.logo}`}>
               <Image src={logo} alt="logo" width={110} height={36} />
+              <span>Ethical Tech Agency</span>
             </Link>
 
             <div

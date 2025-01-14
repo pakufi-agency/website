@@ -15,7 +15,7 @@ import styles from "./ServiceBox.module.scss";
 interface ServiceBoxProps {
   name: string;
   description: string;
-  icon: StaticImageData;
+  icon: string;
 }
 
 interface ServiceBoxesProps {
@@ -23,6 +23,21 @@ interface ServiceBoxesProps {
 }
 
 const ServiceBox: React.FC<ServiceBoxesProps> = ({ services }) => {
+  const getImage = (iconName: string): StaticImageData => {
+    switch (iconName) {
+      case "drone":
+        return drone;
+      case "mindChip":
+        return mindChip;
+      case "robot":
+        return robot;
+      case "chip":
+        return chip;
+      default:
+        return robot; // Fallback image
+    }
+  };
+
   return (
     <div className={`${styles.solutionsArea}`}>
       <div className="container">
@@ -32,7 +47,7 @@ const ServiceBox: React.FC<ServiceBoxesProps> = ({ services }) => {
               <div className={styles.singleSolutionsBox}>
                 <div className={styles.icon}>
                   <Image
-                    src={service.icon}
+                    src={getImage(service.icon)}
                     alt={service.name}
                     width={60}
                     height={60}

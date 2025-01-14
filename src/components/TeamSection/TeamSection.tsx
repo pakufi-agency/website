@@ -23,7 +23,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({
 }) => {
   return (
     <>
-      <div className="pt-80 pb-50 bg-f9f6f6">
+      <div className="pt-80 bg-f7fafd">
         <div className="container">
           <div className="section-title">
             <h2>{sectionTitle}</h2>

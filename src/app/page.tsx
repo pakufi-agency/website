@@ -57,6 +57,7 @@ export default async function Page() {
 
       {homepagePage.sections &&
         homepagePage.sections.map((section: any, index: number) => {
+          console.log("section", section);
           switch (section.__typename) {
             case "ComponentStaticComponentHero":
               return <HeroBanner {...section} key={index} />;
@@ -71,20 +72,17 @@ export default async function Page() {
               return <ServicesSection {...section} key={index} />;
 
             case "ComponentCommonCta":
-              return (
-                <div className="pb-80">
-                  <CtaText {...section} key={index} />
-                </div>
-              );
+              if (!section.isBig) {
+                return <CtaText {...section} key={index} />;
+              } else {
+                return <CtaBig {...section} key={index} />;
+              }
 
             case "ComponentSectionsTeamSection":
               return <TeamSection {...section} key={index} />;
 
             case "ComponentSectionsFaqSection":
               return <FaqSection {...section} key={index} />;
-
-            case "ComponentCommonCta":
-              return <CtaBig {...section} key={index} />;
 
             default:
               return null;

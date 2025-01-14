@@ -25,30 +25,13 @@ const WeBanner: React.FC<WeBannerProps> = ({
       <div className={`${styles.ctaArea}`}>
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-6">
+            <div className="col-lg-10">
               <div className={styles.ctaContent}>
-                <p>{statmentOne}</p>
-                <p>{statmentTwo}</p>
-                <p>{statmentThree}</p>
-                {/* <h3>Connect and Manage your IoT at Scale</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
-                  maecenas accumsan lacus vel facilisis.
-                </p>
-
-                <Link href="/contact" className="btn btn-primary">
-                  Get Started!
-                </Link> */}
+                <h2>{statmentOne}</h2>
+                <h2>{statmentTwo}</h2>
+                <h2>{statmentThree}</h2>
               </div>
             </div>
-
-            {/* <div className="col-lg-6">
-              <div className={styles.ctaImg}>
-                <Image src={ctaShape2} alt="image" width={648} height={401} />
-              </div>
-            </div> */}
           </div>
         </div>
 

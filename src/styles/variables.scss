@@ -12,6 +12,10 @@ $river-bed-green: #385C61;
 $dark-grey-blue: #2A4555;
 $navy-blue: #10133B;
 
+// rgba
+$river-bed-green-rgba: rgb(56,92,97);
+$navy-blue-rgba: rgba(16,19,59,1);
+
 $primary-color: $navy-blue;
 $secondary-color: $mint-green;
 $tertiary-color: $acid-green;
@@ -34,8 +38,6 @@ $bg-color-d6d6d6: #d6d6d6;
 $white-fffcff: #fffcff;
 $white-fbfaff: #fbfaff;
 $white-effbff: #effbff;
-$white-e0fdff: #e0fdff;
-$white-d5fefd: #d5fefd;
 $white-eeeeee: #eeeeee;
 
 $grey-b5b5b5: #b5b5b5;
@@ -46,8 +48,13 @@ $grey-878787: #878787;
 $grey-7e7e7e: #7e7e7e;
 $grey-5e5e5e: #5e5e5e;
 
+
+// gradients
 $gradient-color: linear-gradient(135deg, $primary-color 0%, $mint-green 100%);
 $gradient-color2: linear-gradient(to right bottom, $primary-color, $river-bed-green, $secondary-color, $mint-green, $acid-green);
+$gradient-hero: linear-gradient(0deg, $river-bed-green-rgba 0%, $river-bed-green-rgba 10%, rgba(37,56,78,1) 40%, $navy-blue-rgba 70%);
+$gradient1: linear-gradient(0deg, $river-bed-green-rgba 0%, $river-bed-green-rgba 65%, $navy-blue-rgba 100%);
+$gradient2: linear-gradient(0deg, $river-bed-green-rgba 0%, $river-bed-green-rgba 45%, $navy-blue-rgba 100%);
 
-// ANIMATION
+// animations
 $transition: .5s;

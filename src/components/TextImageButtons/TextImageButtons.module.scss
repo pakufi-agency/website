@@ -1,15 +1,25 @@
 @use '../../styles/variables.scss' as *;
 
+.container {
+    padding: 80px 0;
+}
+
 .content {
     order: 1;
     margin-bottom: 30px;
+    text-align: center;
     h3 {
         font-size: 20px;
         margin-bottom: 15px;
         line-height: 1.5;
     }
-    .btn {
-        margin-top: 15px;
+    p {
+        margin-bottom: 20px;
+    }
+    .buttonLink {
+        margin-bottom: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
     }
 }
 .image {
@@ -20,10 +30,18 @@
 
 
 @media only screen and (min-width: 767px) {
+    .container {
+        padding: 120px 0;
+    }
+
     .content {
+        text-align: left;
         h3 {
             font-size: 26px;
             margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 35px;
         }
     }
 }

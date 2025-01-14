@@ -27,9 +27,10 @@ const Hero: React.FC<HeroProps> = ({
   ctaLink,
   imageHero,
 }) => {
+  console.log(descriptionHero);
   return (
     <>
-      <div className={`${styles.heroBanner} pakufi-dark-theme`}>
+      <div className={`${styles.heroBanner}`}>
         <div className={`container ${styles.contentContainer}`}>
           <div className={styles.bannerContent}>
             <span
@@ -38,19 +39,20 @@ const Hero: React.FC<HeroProps> = ({
               data-aos-duration="500"
               data-aos-once="true"
             >
-              Internet of Things.
+              We are an ethical tech agency
             </span>
 
-            <h2
+            <h4
               data-aos="fade-up"
               data-aos-delay="200"
               data-aos-duration="500"
               data-aos-once="true"
             >
               {title}
-            </h2>
+            </h4>
 
             <div
+              className={styles.description}
               data-aos="fade-up"
               data-aos-delay="300"
               data-aos-duration="500"

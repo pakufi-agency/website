@@ -27,18 +27,24 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
 }) => {
   return (
     <>
-      <div className="ptb-80">
+      <div className={`ptb-80 ${styles.container}`}>
         <div className="container">
           <div className="row align-items-center">
             <div className={`col-lg-6 ${styles.content}`}>
               <h3>{title}</h3>
               <p>{content}</p>
 
-              <Link href={buttonOneLink} className="btn btn-primary">
+              <Link
+                href={buttonOneLink}
+                className={`btn btn-primary ${styles.buttonLink}`}
+              >
                 {buttonOneLabel}
               </Link>
 
-              <Link href={buttonTwoLink} className="btn btn-primary">
+              <Link
+                href={buttonTwoLink}
+                className={`btn btn-primary ${styles.buttonLink}`}
+              >
                 {buttonTwoLabel}
               </Link>
             </div>

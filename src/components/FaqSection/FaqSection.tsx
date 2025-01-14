@@ -11,7 +11,7 @@ interface FaqSectionProps {
 const FaqSection: React.FC<FaqSectionProps> = ({ title, questions }) => {
   return (
     <>
-      <div className="pt-80 pb-50 bg-f9f6f6">
+      <div className="pt-80 pb-50">
         <div className="container">
           <div className="section-title">
             <h2>{title}</h2>
