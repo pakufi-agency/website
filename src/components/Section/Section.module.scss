@@ -1,0 +1,42 @@
+@use '../../styles/variables.scss' as *;
+
+.sectionContainer {
+    position: relative;
+    padding: 80px 0;
+    z-index: 1;
+
+    .ballGreen {
+        background: #cdf1d8;
+
+        &::before {
+            background: $jade-green;
+        }
+    }
+
+    .ballBlue {
+        background: #cdf1d8;
+
+        &::before {
+            background: $navy-blue;
+        }
+    }
+
+    p {
+        opacity: .95;
+    }
+
+}
+
+@media only screen and (min-width: 767px) {
+    .sectionContainer {
+        padding: 120px 0;
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 35px;
+        }
+    }
+}

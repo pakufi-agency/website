@@ -68,7 +68,7 @@ const Hero: React.FC<HeroProps> = ({
 
           <div className={styles.bannerImage}>
             <Image
-              src={`${process.env.NEXT_PUBLIC_CMS_ENDPOINT}${imageHero.url}`}
+              src={imageHero.url}
               className="animate__animated animate__fadeInUp animate__delay-0.8s"
               alt={imageHero.alternativeText}
               width={837}

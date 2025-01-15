@@ -33,10 +33,11 @@ const TeamMember: React.FC<TeamMemberProps> = ({
     <div className={styles.singleTeam}>
       <div className={styles.teamImage}>
         <Image
-          src={`${process.env.NEXT_PUBLIC_CMS_ENDPOINT}${profilePic.url}`}
+          src={profilePic.url}
           alt={profilePic.alternativeText}
           width={125}
           height={125}
+          style={{ objectFit: "cover", borderRadius: "50%" }}
         />
       </div>
 

@@ -1,5 +1,15 @@
 @use './variables.scss' as *;
 
+:root {
+    --primary-color: #10133B;
+    --secondary-color: #5D9F7B;
+    --tertiary-color: #85B360;
+    --black-color: #0e314c;
+    --jade-green: #487B6E;
+    --river-bed-green: #385C61;
+    --dark-grey-blue: #2A4555;
+}
+
 body { 
     padding: 0;
     margin: 0;

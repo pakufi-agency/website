@@ -14,6 +14,31 @@
     z-index: 1;
     border: 0px solid transparent;
     border-radius: 5px;
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.09);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        border-radius: 5px;
+        height: 100%;
+        background: $bg-color-f9fafb;
+        background: linear-gradient(0deg, $white-fffcff 0%, $bg-color-f9fafb 70%, $bg-color-d6d6d6 100% );
+    }
+
+    .singleSolutionsBoxTitle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
     .icon {
         margin-bottom: 25px;
@@ -31,7 +56,7 @@
             top: 50%;
             transform: translateY(-50%);
             z-index: -1;
-            background: #f0fdfe;
+            background: $mint-green;
             box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.09);
             border-radius: 30% 70% 70% 30% / 40% 60% 40% 60%;
             width: 60px;
@@ -42,17 +67,8 @@
         font-size: 18px;
         margin-bottom: 12px;
     }
-    &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: -1;
-        width: 100%;
-        border-radius: 5px;
-        height: 100%;
-        // background: linear-gradient(to right top, #d5fefd, #e0fdff, #effbff, #fbfaff, #fffcff);
-        background: $bg-color-f9fafb;
+    p {
+        margin-top: auto;
     }
     .learnMoreButton {
         color: #365267;

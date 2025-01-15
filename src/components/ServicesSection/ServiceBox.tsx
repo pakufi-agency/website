@@ -45,15 +45,17 @@ const ServiceBox: React.FC<ServiceBoxesProps> = ({ services }) => {
           {services.map((service, index) => (
             <div key={index} className="col-lg-3 col-sm-6 col-md-6">
               <div className={styles.singleSolutionsBox}>
-                <div className={styles.icon}>
-                  <Image
-                    src={getImage(service.icon)}
-                    alt={service.name}
-                    width={60}
-                    height={60}
-                  />
+                <div className={styles.singleSolutionsBoxTitle}>
+                  <div className={styles.icon}>
+                    <Image
+                      src={getImage(service.icon)}
+                      alt={service.name}
+                      width={60}
+                      height={60}
+                    />
+                  </div>
+                  <h3>{service.name}</h3>
                 </div>
-                <h3>{service.name}</h3>
                 <p>{service.description}</p>
                 {/* <Link href={service.link} className={styles.learnMoreButton}>
                   <Icon.PlusCircle /> Learn More

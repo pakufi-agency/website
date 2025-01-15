@@ -6,6 +6,7 @@ import Navbar from "../components/Layout/Navbar";
 import Footer from "../components/Layout/Footer";
 import HeroBanner from "../components/Hero/Hero";
 import WeBanner from "../components/WeBanner/WeBanner";
+import Section from "../components/Section/Section";
 import TextImageButtons from "../components/TextImageButtons/TextImageButtons";
 import ServicesSection from "../components/ServicesSection/ServicesSection";
 import CtaText from "../components/CtaText/CtaText";
@@ -16,6 +17,8 @@ import LoadingError from "../components/Errors/LoadingError";
 
 import MobileMenuProvider from "../context/MobileMenuProvider";
 import { HOMEPAGE_QUERY } from "../graphqlQueries/Homepage";
+
+import "../styles/common.scss";
 
 export const metadata: Metadata = {
   title: "Pakufi - Ethical Tech Agency",
@@ -66,7 +69,18 @@ export default async function Page() {
               return <WeBanner {...section} key={index} />;
 
             case "ComponentCommonTextImageButtons":
-              return <TextImageButtons {...section} key={index} />;
+              return (
+                <Section
+                  sectionTitle={section.title}
+                  sectionSubtitle={section.description}
+                  backgroundColor=""
+                  titleColor=""
+                  descriptionColor=""
+                  barBallColor=""
+                >
+                  <TextImageButtons {...section} key={index} />
+                </Section>
+              );
 
             case "ComponentSectionsServiceSection":
               return <ServicesSection {...section} key={index} />;
@@ -79,10 +93,25 @@ export default async function Page() {
               }
 
             case "ComponentSectionsTeamSection":
-              return <TeamSection {...section} key={index} />;
+              return (
+                <Section
+                  sectionTitle={section.sectionTitle}
+                  sectionSubtitle={section.sectionDescription}
+                >
+                  <TeamSection {...section} key={index} />
+                </Section>
+              );
 
             case "ComponentSectionsFaqSection":
-              return <FaqSection {...section} key={index} />;
+              return (
+                <Section
+                  sectionTitle={section.title}
+                  sectionSubtitle={section.description}
+                  backgroundColor="#f9f6f6"
+                >
+                  <FaqSection {...section} key={index} />
+                </Section>
+              );
 
             default:
               return null;

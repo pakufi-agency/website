@@ -75,31 +75,9 @@ const Navbar: React.FC = () => {
             >
               <ul className="navbar-nav ms-auto">
                 <li className={`nav-item ${styles.navItem}`}>
-                  <Link
-                    href="#"
-                    className={`${styles.navLink} ${
-                      isDropdownOpen === "home" && styles.navLinkDropdown
-                    } ${styles.linkWithIcon}`}
-                    onClick={(e) => handleMenuItemClick(e, "home")}
-                  >
-                    Home <Icon.ChevronDown />
+                  <Link href="/" className={styles.navLink}>
+                    Home
                   </Link>
-                  <ul
-                    className={`${styles.dropdownMenu} ${
-                      isDropdownOpen === "home" ? styles.dropdownOpen : ""
-                    }`}
-                  >
-                    {/* <li className={styles.navItem}>
-                      <Link
-                        href="/iot/"
-                        className={`${styles.navLink} ${
-                          currentRoute === "/iot/" ? "active" : ""
-                        }`}
-                      >
-                        IOT
-                      </Link>
-                    </li> */}
-                  </ul>
                 </li>
                 <li className={`nav-item ${styles.navItem}`}>
                   <Link href="/about/" className={styles.navLink}>
@@ -115,13 +93,40 @@ const Navbar: React.FC = () => {
                     Contact
                   </Link>
                 </li>
+                {/* <li className={`nav-item ${styles.navItem}`}>
+                  <Link
+                    href="#"
+                    className={`${styles.navLink} ${
+                      isDropdownOpen === "home" && styles.navLinkDropdown
+                    } ${styles.linkWithIcon}`}
+                    onClick={(e) => handleMenuItemClick(e, "home")}
+                  >
+                    Item with subitem example <Icon.ChevronDown />
+                  </Link>
+                  <ul
+                    className={`${styles.dropdownMenu} ${
+                      isDropdownOpen === "home" ? styles.dropdownOpen : ""
+                    }`}
+                  >
+                    <li className={styles.navItem}>
+                      <Link
+                        href="/iot/"
+                        className={`${styles.navLink} ${
+                          currentRoute === "/iot/" ? "active" : ""
+                        }`}
+                      >
+                        IOT
+                      </Link>
+                    </li>
+                  </ul>
+                </li> */}
               </ul>
             </div>
-            <div className={styles.othersOption}>
+            {/* <div className={styles.othersOption}>
               <Link href="/" className={`btn button-pakufi-dark`}>
                 Support us
               </Link>
-            </div>
+            </div> */}
 
             <button
               className={`navbar-toggler ${styles.navBarMobileButton} ${

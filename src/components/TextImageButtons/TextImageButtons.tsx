@@ -27,7 +27,7 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
 }) => {
   return (
     <>
-      <div className={`ptb-80 ${styles.container}`}>
+      <div className={`${styles.container}`}>
         <div className="container">
           <div className="row align-items-center">
             <div className={`col-lg-6 ${styles.content}`}>
