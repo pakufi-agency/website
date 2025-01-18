@@ -4,6 +4,8 @@ import React from "react";
 import Image from "next/image";
 import TeamMember from "../TeamMember/TeamMember";
 
+import styles from "./TeamSection.module.scss";
+
 // Shape Images
 import shape1 from "/public/images/shape1.png";
 import shape2 from "/public/images/shape2.svg";
@@ -41,7 +43,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({
               index
             ) => (
               <div
-                className="col-lg-3 col-md-6"
+                className={`col-12 col-lg-3 ${styles.card}`}
                 data-aos="fade-up"
                 data-aos-delay="400"
                 data-aos-duration="500"

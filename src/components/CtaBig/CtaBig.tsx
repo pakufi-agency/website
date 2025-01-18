@@ -2,24 +2,23 @@
 
 import React from "react";
 import Image from "next/image";
-
-import freeTrialImg from "/public/images/free-trial-img.png";
+import Link from "next/link";
 
 import styles from "./CtaBig.module.scss";
 
 // Shape Images
 import shape2 from "/public/images/shape2.svg";
 import shape4 from "/public/images/shape4.svg";
+import freeTrialImg from "/public/images/free-trial-img.png";
 
 interface CtaBigProps {
-  title: String;
-  description: String;
-  buttonCtaOneLabel: String;
-  buttonCtaOneLink: URL;
+  title: string;
+  description: string;
+  buttonCtaOneLabel: string;
+  buttonCtaOneLink: string;
   buttonCtaTwoLabel: String;
-  buttonCtaTwoLink: URL;
+  buttonCtaTwoLink: string;
   media: { url: string; alternativeText: string };
-  isBig: Boolean;
 }
 
 const CtaBig: React.FC<CtaBigProps> = ({
@@ -29,15 +28,16 @@ const CtaBig: React.FC<CtaBigProps> = ({
   buttonCtaOneLink,
   buttonCtaTwoLabel,
   buttonCtaTwoLink,
-  isBig,
   media,
 }) => {
+  console.log("media", media);
+
   return (
     <>
       <div className={styles.container}>
         <div className="container-fluid">
           <div className="row align-items-center">
-            <div className="col-lg-6 col-md-12">
+            <div className="col-12 col-md-6">
               <div className={styles.image}>
                 <Image
                   src={freeTrialImg}
@@ -48,9 +48,28 @@ const CtaBig: React.FC<CtaBigProps> = ({
               </div>
             </div>
 
-            <div className="col-lg-6 col-md-12">
+            <div className="col-12 col-md-6">
               <div className={styles.content}>
                 <h2>{title}</h2>
+                {description && <p>{description}</p>}
+                <div className={styles.buttonsContainer}>
+                  {buttonCtaOneLink && (
+                    <Link
+                      href={buttonCtaOneLink}
+                      className={`btn btn-light ${styles.button}`}
+                    >
+                      {buttonCtaOneLabel}
+                    </Link>
+                  )}
+                  {buttonCtaTwoLink && (
+                    <Link
+                      href={buttonCtaTwoLink}
+                      className={`btn btn-light ${styles.button}`}
+                    >
+                      {buttonCtaTwoLabel}
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
           </div>

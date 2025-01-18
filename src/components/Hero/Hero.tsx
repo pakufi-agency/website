@@ -27,7 +27,6 @@ const Hero: React.FC<HeroProps> = ({
   ctaLink,
   imageHero,
 }) => {
-  console.log(descriptionHero);
   return (
     <>
       <div className={`${styles.heroBanner}`}>

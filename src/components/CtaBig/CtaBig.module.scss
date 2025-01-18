@@ -4,6 +4,10 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
+    background: $gradient2;
+    color: $white;
+    padding: 80px 0; 
+
 
     &::before {
         content: '';
@@ -13,7 +17,6 @@
         position: absolute;
         left: -30%;
         top: 0;
-        background: linear-gradient(to right, #d5fefd, #e1fdff, #effdff, #fafdff, #ffffff);
     }
     .shape6 {
         top: 75%;
@@ -28,12 +31,29 @@
     max-width: 540px;
     text-align: center;
     margin-top: 30px;
+    color: $white;
 
     h2 {
+        color: $white;
         margin-bottom: 0;
         font: {
             size: 28px;
             weight: 600;
+        }
+    }
+
+    .buttonsContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .button {
+            margin-top: 50px;
+        }
+    
+        .button:last-child {
+            margin-top: 20px;
         }
     }
 }
@@ -42,5 +62,9 @@
 @media only screen and (min-width: 767px) {
     .container {
         padding-bottom: 50px;
+    }
+
+    .button {
+        margin-top: 50px;
     }
 }

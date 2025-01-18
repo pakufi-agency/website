@@ -83,12 +83,14 @@ export default async function Page() {
               );
 
             case "ComponentSectionsServiceSection":
+              console.log(section);
               return <ServicesSection {...section} key={index} />;
 
             case "ComponentCommonCta":
               if (!section.isBig) {
                 return <CtaText {...section} key={index} />;
               } else {
+                console.log(section);
                 return <CtaBig {...section} key={index} />;
               }
 

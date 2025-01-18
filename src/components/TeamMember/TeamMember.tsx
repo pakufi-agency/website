@@ -81,10 +81,21 @@ const TeamMember: React.FC<TeamMemberProps> = ({
               </a>
             </li>
           )}
+
+          {email && (
+            <li>
+              <a
+                href={`mailto:${email}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon.Mail />
+              </a>
+            </li>
+          )}
         </ul>
 
         <p>{shortDescription}</p>
-        <p>{email}</p>
       </div>
     </div>
   );
