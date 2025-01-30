@@ -5,8 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 // Shape Images
-import shape2 from "/public/images/shape2.svg";
-import shape4 from "/public/images/shape4.svg";
+import shape2 from "/public/images/legacy/shape2.svg";
+import shape4 from "/public/images/legacy/shape4.svg";
 
 const PricingStyleOne = () => {
   return (
@@ -55,7 +55,7 @@ const PricingStyleOne = () => {
                 </div>
 
                 <div className="pricing-footer">
-                  <Link href="#" className="btn btn-primary" >
+                  <Link href="#" className="btn btn-primary">
                     Select Plan
                   </Link>
                 </div>
@@ -94,7 +94,7 @@ const PricingStyleOne = () => {
                 </div>
 
                 <div className="pricing-footer">
-                  <Link href="#" className="btn btn-primary" >
+                  <Link href="#" className="btn btn-primary">
                     Select Plan
                   </Link>
                 </div>
@@ -133,7 +133,7 @@ const PricingStyleOne = () => {
                 </div>
 
                 <div className="pricing-footer">
-                  <Link href="#" className="btn btn-primary" >
+                  <Link href="#" className="btn btn-primary">
                     Select Plan
                   </Link>
                 </div>

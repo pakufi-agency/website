@@ -6,11 +6,8 @@ import Image from "next/image";
 
 import styles from "./Hero.module.scss";
 
-import iotShape1 from "/public/images/iot-banner-image/iot-shape1.png";
-import shape1 from "/public/images/shape1.png";
-import shape2 from "/public/images/shape2.svg";
-import shape3 from "/public/images/shape3.svg";
-import shape4 from "/public/images/shape4.svg";
+import whiteCross from "/public/images/backgrounds/white-cross.svg";
+import greenTriangle from "/public/images/backgrounds/green-triangle.svg";
 
 interface HeroProps {
   title: string;
@@ -73,14 +70,6 @@ const Hero: React.FC<HeroProps> = ({
               width={837}
               height={447}
             />
-
-            <Image
-              src={iotShape1}
-              className="animate__animated animate__zoomIn"
-              alt="image"
-              width={247}
-              height={247}
-            />
           </div>
 
           <div className={styles.animateBorder}>
@@ -91,23 +80,20 @@ const Hero: React.FC<HeroProps> = ({
           </div>
 
           {/* Shape Images */}
-          <div className="shape1">
-            <Image src={shape1} alt="shape" width={202} height={202} />
-          </div>
           <div className="shape3">
-            <Image src={shape3} alt="shape" width={28} height={28} />
+            <Image src={greenTriangle} alt="shape" width={21} height={20} />
           </div>
-          <div className="shape4">
-            <Image src={shape4} alt="shape" width={21} height={20} />
-          </div>
-          <div className="shape6 rotateme">
-            <Image src={shape4} alt="shape" width={21} height={20} />
-          </div>
+          {/* <div className="shape4">
+            <Image src={whiteTriangle} alt="shape" width={21} height={20} />
+          </div> */}
+          {/* <div className="shape6 rotateme">
+            <Image src={whiteTriangle} alt="shape" width={21} height={20} />
+          </div> */}
           <div className="shape7">
-            <Image src={shape4} alt="shape" width={21} height={20} />
+            <Image src={greenTriangle} alt="shape" width={21} height={20} />
           </div>
           <div className="shape8 rotateme">
-            <Image src={shape2} alt="shape" width={22} height={22} />
+            <Image src={whiteCross} alt="shape" width={22} height={22} />
           </div>
         </div>
       </div>

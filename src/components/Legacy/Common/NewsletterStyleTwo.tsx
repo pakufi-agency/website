@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 
-import newsletter from "/public/images/bigdata-analytics/newsletter.jpg";
+import newsletter from "/public/images/legacy/bigdata-analytics/newsletter.jpg";
 
 const NewsletterStyleTwo = () => {
   return (
@@ -13,12 +13,7 @@ const NewsletterStyleTwo = () => {
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-12">
               <div className="newsletter-image">
-                <Image
-                  src={newsletter}
-                  alt="image"
-                  width={985}
-                  height={600}
-                />
+                <Image src={newsletter} alt="image" width={985} height={600} />
               </div>
             </div>
 

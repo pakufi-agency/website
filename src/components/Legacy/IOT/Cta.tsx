@@ -4,9 +4,9 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import ctaShape from "/public/images/cta-shape.png";
-import ctaShape2 from "/public/images/cta-shape2.png";
-import circle from "/public/images/circle.png";
+import ctaShape from "/public/images/legacy/cta-shape.png";
+import ctaShape2 from "/public/images/legacy/cta-shape2.png";
+import circle from "/public/images/legacy/circle.png";
 
 const Cta = () => {
   return (
@@ -30,11 +30,7 @@ const Cta = () => {
                   maecenas accumsan lacus vel facilisis.
                 </p>
 
-                <Link
-                  href="/contact"
-                  className="btn btn-primary"
-                  
-                >
+                <Link href="/contact" className="btn btn-primary">
                   Get Started!
                 </Link>
               </div>

@@ -5,14 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 import * as Icon from "react-feather";
 
-import blogImg1 from "/public/images/blog-image/blog1.jpg";
-import blogImg2 from "/public/images/blog-image/blog2.jpg";
-import blogImg3 from "/public/images/blog-image/blog3.jpg";
+import blogImg1 from "/public/images/legacy/blog-image/blog1.jpg";
+import blogImg2 from "/public/images/legacy/blog-image/blog2.jpg";
+import blogImg3 from "/public/images/legacy/blog-image/blog3.jpg";
 
 // Shape Images
-import shape2 from "/public/images/shape2.svg";
-import shape3 from "/public/images/shape3.svg";
-import shape4 from "/public/images/shape4.svg";
+import shape2 from "/public/images/legacy/shape2.svg";
+import shape3 from "/public/images/legacy/shape3.svg";
+import shape4 from "/public/images/legacy/shape4.svg";
 
 const BlogPostStyleTwo = () => {
   return (
@@ -39,7 +39,7 @@ const BlogPostStyleTwo = () => {
             >
               <div className="single-blog-post-item">
                 <div className="post-image">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg1}
                       alt="image"
@@ -52,24 +52,18 @@ const BlogPostStyleTwo = () => {
                 <div className="post-content">
                   <ul className="post-meta">
                     <li>
-                      <Link href="#" >
-                        Admin
-                      </Link>
+                      <Link href="#">Admin</Link>
                     </li>
                     <li>August 15, 2022</li>
                   </ul>
 
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       The security risks of changing package owners
                     </Link>
                   </h3>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="read-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="read-more-btn">
                     Read More <Icon.PlusCircle />
                   </Link>
                 </div>
@@ -85,7 +79,7 @@ const BlogPostStyleTwo = () => {
             >
               <div className="single-blog-post-item">
                 <div className="post-image">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg2}
                       alt="image"
@@ -98,24 +92,18 @@ const BlogPostStyleTwo = () => {
                 <div className="post-content">
                   <ul className="post-meta">
                     <li>
-                      <Link href="#" >
-                        Admin
-                      </Link>
+                      <Link href="#">Admin</Link>
                     </li>
                     <li>August 15, 2022</li>
                   </ul>
 
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       Tips to Protecting Your Business and Family
                     </Link>
                   </h3>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="read-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="read-more-btn">
                     Read More <Icon.PlusCircle />
                   </Link>
                 </div>
@@ -131,7 +119,7 @@ const BlogPostStyleTwo = () => {
             >
               <div className="single-blog-post-item">
                 <div className="post-image">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg3}
                       alt="image"
@@ -144,23 +132,17 @@ const BlogPostStyleTwo = () => {
                 <div className="post-content">
                   <ul className="post-meta">
                     <li>
-                      <Link href="#" >
-                        Admin
-                      </Link>
+                      <Link href="#">Admin</Link>
                     </li>
                     <li>August 15, 2022</li>
                   </ul>
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       Protect Your Workplace from Cyber Attacks
                     </Link>
                   </h3>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="read-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="read-more-btn">
                     Read More <Icon.PlusCircle />
                   </Link>
                 </div>

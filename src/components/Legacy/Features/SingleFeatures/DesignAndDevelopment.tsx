@@ -4,16 +4,16 @@ import React from "react";
 import * as Icon from "react-feather";
 import Image from "next/image";
 
-import bigMonitor from "/public/images/services-left-image/big-monitor.png";
-import creative from "/public/images/services-left-image/creative.png";
-import developer from "/public/images/services-left-image/developer.png";
-import flowerTop from "/public/images/services-left-image/flower-top.png";
-import smallMonitor from "/public/images/services-left-image/small-monitor.png";
-import smallTop from "/public/images/services-left-image/small-top.png";
-import Table from "/public/images/services-left-image/table.png";
-import Target from "/public/images/services-left-image/target.png";
-import cercleShape from "/public/images/services-left-image/cercle-shape.png";
-import serviceLeftMainPic from "/public/images/services-left-image/service-left-main-pic.png";
+import bigMonitor from "/public/images/legacy/services-left-image/big-monitor.png";
+import creative from "/public/images/legacy/services-left-image/creative.png";
+import developer from "/public/images/legacy/services-left-image/developer.png";
+import flowerTop from "/public/images/legacy/services-left-image/flower-top.png";
+import smallMonitor from "/public/images/legacy/services-left-image/small-monitor.png";
+import smallTop from "/public/images/legacy/services-left-image/small-top.png";
+import Table from "/public/images/legacy/services-left-image/table.png";
+import Target from "/public/images/legacy/services-left-image/target.png";
+import cercleShape from "/public/images/legacy/services-left-image/cercle-shape.png";
+import serviceLeftMainPic from "/public/images/legacy/services-left-image/service-left-main-pic.png";
 
 const DesignAndDevelopment = () => {
   return (

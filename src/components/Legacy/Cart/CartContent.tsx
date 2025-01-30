@@ -5,10 +5,10 @@ import Link from "next/link";
 import Image from "next/image";
 import * as Icon from "react-feather";
 
-import productImg1 from "/public/images/shop-image/shop-image1.jpg";
-import productImg2 from "/public/images/shop-image/shop-image2.jpg";
-import productImg3 from "/public/images/shop-image/shop-image3.jpg";
-import productImg4 from "/public/images/shop-image/shop-image4.jpg";
+import productImg1 from "/public/images/legacy/shop-image/shop-image1.jpg";
+import productImg2 from "/public/images/legacy/shop-image/shop-image2.jpg";
+import productImg3 from "/public/images/legacy/shop-image/shop-image3.jpg";
+import productImg4 from "/public/images/legacy/shop-image/shop-image4.jpg";
 import QuantityInput from "./QuantityInput";
 
 const CartContent = () => {
@@ -34,7 +34,7 @@ const CartContent = () => {
                     <tbody>
                       <tr>
                         <td className="product-thumbnail">
-                          <Link href="/shop/product-details/" >
+                          <Link href="/shop/product-details/">
                             <Image
                               src={productImg1}
                               alt="item"
@@ -45,9 +45,7 @@ const CartContent = () => {
                         </td>
 
                         <td className="product-name">
-                          <Link href="/shop/product-details/" >
-                            Wood Pencil
-                          </Link>
+                          <Link href="/shop/product-details/">Wood Pencil</Link>
                         </td>
 
                         <td className="product-price">
@@ -69,7 +67,7 @@ const CartContent = () => {
 
                       <tr>
                         <td className="product-thumbnail">
-                          <Link href="/shop/product-details/" >
+                          <Link href="/shop/product-details/">
                             <Image
                               src={productImg2}
                               alt="item"
@@ -80,9 +78,7 @@ const CartContent = () => {
                         </td>
 
                         <td className="product-name">
-                          <Link href="/shop/product-details/" >
-                            T-Shirt
-                          </Link>
+                          <Link href="/shop/product-details/">T-Shirt</Link>
                         </td>
 
                         <td className="product-price">
@@ -104,7 +100,7 @@ const CartContent = () => {
 
                       <tr>
                         <td className="product-thumbnail">
-                          <Link href="/shop/product-details/" >
+                          <Link href="/shop/product-details/">
                             <Image
                               src={productImg3}
                               alt="item"
@@ -115,9 +111,7 @@ const CartContent = () => {
                         </td>
 
                         <td className="product-name">
-                          <Link href="/shop/product-details/" >
-                            Casual Shoe
-                          </Link>
+                          <Link href="/shop/product-details/">Casual Shoe</Link>
                         </td>
 
                         <td className="product-price">
@@ -139,7 +133,7 @@ const CartContent = () => {
 
                       <tr>
                         <td className="product-thumbnail">
-                          <Link href="/shop/product-details/" >
+                          <Link href="/shop/product-details/">
                             <Image
                               src={productImg4}
                               alt="item"
@@ -150,9 +144,7 @@ const CartContent = () => {
                         </td>
 
                         <td className="product-name">
-                          <Link href="/shop/product-details/" >
-                            Coffee Bag
-                          </Link>
+                          <Link href="/shop/product-details/">Coffee Bag</Link>
                         </td>
 
                         <td className="product-price">
@@ -179,11 +171,7 @@ const CartContent = () => {
                   <div className="row align-items-center">
                     <div className="col-lg-7 col-md-7 col-sm-7">
                       <div className="continue-shopping-box">
-                        <Link
-                          href="/shop/"
-                          className="btn btn-light"
-                          
-                        >
+                        <Link href="/shop/" className="btn btn-light">
                           Continue Shopping
                         </Link>
                       </div>
@@ -215,11 +203,7 @@ const CartContent = () => {
                     </li>
                   </ul>
 
-                  <Link
-                    href="/checkout"
-                    className="btn btn-primary"
-                    
-                  >
+                  <Link href="/checkout" className="btn btn-primary">
                     Proceed to Checkout
                   </Link>
                 </div>

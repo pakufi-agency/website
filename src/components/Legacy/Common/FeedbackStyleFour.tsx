@@ -6,15 +6,15 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 
-import clientImg1 from "/public/images/client-image/client1.jpg";
-import clientImg2 from "/public/images/client-image/client2.jpg";
-import clientImg3 from "/public/images/client-image/client3.jpg";
+import clientImg1 from "/public/images/legacy/client-image/client1.jpg";
+import clientImg2 from "/public/images/legacy/client-image/client2.jpg";
+import clientImg3 from "/public/images/legacy/client-image/client3.jpg";
 
 // Shape Images
-import shape1 from "/public/images/shape1.png";
-import shape2 from "/public/images/shape2.svg";
-import shape3 from "/public/images/shape3.svg";
-import shape4 from "/public/images/shape4.svg";
+import shape1 from "/public/images/legacy/shape1.png";
+import shape2 from "/public/images/legacy/shape2.svg";
+import shape3 from "/public/images/legacy/shape3.svg";
+import shape4 from "/public/images/legacy/shape4.svg";
 
 const FeedbackStyleFour = () => {
   return (

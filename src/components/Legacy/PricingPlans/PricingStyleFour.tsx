@@ -7,10 +7,10 @@ import Image from "next/image";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 // Shape Images
-import shape1 from "/public/images/shape1.png";
-import shape2 from "/public/images/shape2.svg";
-import shape3 from "/public/images/shape3.svg";
-import shape4 from "/public/images/shape4.svg";
+import shape1 from "/public/images/legacy/shape1.png";
+import shape2 from "/public/images/legacy/shape2.svg";
+import shape3 from "/public/images/legacy/shape3.svg";
+import shape4 from "/public/images/legacy/shape4.svg";
 
 const PricingStyleFour = () => {
   return (
@@ -54,7 +54,7 @@ const PricingStyleFour = () => {
                     </div>
 
                     <div className="buy-btn">
-                      <Link href="#" className="btn btn-primary" >
+                      <Link href="#" className="btn btn-primary">
                         Get Started Free
                       </Link>
                     </div>
@@ -105,7 +105,7 @@ const PricingStyleFour = () => {
                     </div>
 
                     <div className="buy-btn">
-                      <Link href="#" className="btn btn-primary" >
+                      <Link href="#" className="btn btn-primary">
                         Start 3 Days Free Trial
                       </Link>
                     </div>
@@ -156,7 +156,7 @@ const PricingStyleFour = () => {
                     </div>
 
                     <div className="buy-btn">
-                      <Link href="#" className="btn btn-primary" >
+                      <Link href="#" className="btn btn-primary">
                         Start 6 Days Free Trial
                       </Link>
                     </div>
@@ -211,7 +211,7 @@ const PricingStyleFour = () => {
                     </div>
 
                     <div className="buy-btn">
-                      <Link href="#" className="btn btn-primary" >
+                      <Link href="#" className="btn btn-primary">
                         Get Started Free
                       </Link>
                     </div>
@@ -262,7 +262,7 @@ const PricingStyleFour = () => {
                     </div>
 
                     <div className="buy-btn">
-                      <Link href="#" className="btn btn-primary" >
+                      <Link href="#" className="btn btn-primary">
                         Start 3 Days Free Trial
                       </Link>
                     </div>
@@ -313,7 +313,7 @@ const PricingStyleFour = () => {
                     </div>
 
                     <div className="buy-btn">
-                      <Link href="#" className="btn btn-primary" >
+                      <Link href="#" className="btn btn-primary">
                         Start 6 Days Free Trial
                       </Link>
                     </div>

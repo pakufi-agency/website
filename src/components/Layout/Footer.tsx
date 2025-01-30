@@ -8,11 +8,11 @@ import * as Icon from "react-feather";
 import styles from "./Footer.module.scss";
 
 import logo from "/public/images/logo.png";
-// import map from "/public/images/map.png";
+// import map from "/public/images/legacy/map.png";
 
 // Shape Images
-import shape1 from "/public/images/shape1.png";
-import shape2 from "/public/images/shape2.svg";
+// import shape1 from "/public/images/legacy/shape1.png";
+import shape2 from "/public/images/legacy/shape2.svg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -200,9 +200,9 @@ const Footer = () => {
         /> */}
 
         {/* Shape Images */}
-        <div className="shape1">
+        {/* <div className="shape1">
           <Image src={shape1} alt="shape" width={202} height={202} />
-        </div>
+        </div> */}
 
         <div className="shape8 rotateme">
           <Image src={shape2} alt="shape" width={22} height={22} />

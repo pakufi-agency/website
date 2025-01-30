@@ -4,8 +4,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import featureImg1 from "/public/images/iot-features-image/iot-feature-image1.png";
-import featureImg2 from "/public/images/iot-features-image/iot-feature-image2.png";
+import featureImg1 from "/public/images/legacy/iot-features-image/iot-feature-image1.png";
+import featureImg2 from "/public/images/legacy/iot-features-image/iot-feature-image2.png";
 
 const Features = () => {
   return (
@@ -28,7 +28,7 @@ const Features = () => {
                 maecenas accumsan lacus.
               </p>
 
-              <Link href="#" className="btn btn-primary" >
+              <Link href="#" className="btn btn-primary">
                 Explore More
               </Link>
             </div>
@@ -74,7 +74,7 @@ const Features = () => {
                 maecenas accumsan lacus.
               </p>
 
-              <Link href="#" className="btn btn-primary" >
+              <Link href="#" className="btn btn-primary">
                 Explore More
               </Link>
             </div>

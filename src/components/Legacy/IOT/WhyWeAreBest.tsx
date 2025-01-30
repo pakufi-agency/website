@@ -5,9 +5,9 @@ import Link from "next/link";
 import * as Icon from "react-feather";
 import Image from "next/image";
 
-import icon1 from "/public/images/icon1.png";
-import icon2 from "/public/images/icon2.png";
-import icon3 from "/public/images/icon3.png";
+import icon1 from "/public/images/legacy/icon1.png";
+import icon2 from "/public/images/legacy/icon2.png";
+import icon3 from "/public/images/legacy/icon3.png";
 
 const WhyWeAreBest = () => {
   return (
@@ -39,7 +39,7 @@ const WhyWeAreBest = () => {
                   Lorem ipsum dolor sit amet elit, adipiscing, sed do eiusmod
                   tempor incididunt ut labore dolore magna aliqua.
                 </p>
-                <Link href="/services/service-details/" >
+                <Link href="/services/service-details/">
                   <Icon.ArrowRight />
                 </Link>
               </div>
@@ -60,7 +60,7 @@ const WhyWeAreBest = () => {
                   Lorem ipsum dolor sit amet elit, adipiscing, sed do eiusmod
                   tempor incididunt ut labore dolore magna aliqua.
                 </p>
-                <Link href="/services/service-details/" >
+                <Link href="/services/service-details/">
                   <Icon.ArrowRight />
                 </Link>
               </div>
@@ -81,7 +81,7 @@ const WhyWeAreBest = () => {
                   Lorem ipsum dolor sit amet elit, adipiscing, sed do eiusmod
                   tempor incididunt ut labore dolore magna aliqua.
                 </p>
-                <Link href="/services/service-details/" >
+                <Link href="/services/service-details/">
                   <Icon.ArrowRight />
                 </Link>
               </div>

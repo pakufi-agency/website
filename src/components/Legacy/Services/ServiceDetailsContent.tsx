@@ -10,8 +10,8 @@ import {
 } from "react-accessible-accordion";
 import Image from "next/image";
 
-import servicesDetailsImg1 from "/public/images/services-details-image/services-details1.png";
-import servicesDetailsImg2 from "/public/images/services-details-image/services-details2.png";
+import servicesDetailsImg1 from "/public/images/legacy/services-details-image/services-details1.png";
+import servicesDetailsImg2 from "/public/images/legacy/services-details-image/services-details2.png";
 
 const ServiceDetailsContent = () => {
   return (

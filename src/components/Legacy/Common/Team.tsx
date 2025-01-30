@@ -6,11 +6,11 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 
-import teamImg1 from "/public/images/team-image/team1.jpg";
-import teamImg2 from "/public/images/team-image/team2.jpg";
-import teamImg3 from "/public/images/team-image/team3.jpg";
-import teamImg4 from "/public/images/team-image/team4.jpg";
-import teamImg5 from "/public/images/team-image/team5.jpg"; 
+import teamImg1 from "/public/images/legacy/team-image/team1.jpg";
+import teamImg2 from "/public/images/legacy/team-image/team2.jpg";
+import teamImg3 from "/public/images/legacy/team-image/team3.jpg";
+import teamImg4 from "/public/images/legacy/team-image/team4.jpg";
+import teamImg5 from "/public/images/legacy/team-image/team5.jpg";
 
 const Team = () => {
   return (
@@ -59,12 +59,7 @@ const Team = () => {
           <SwiperSlide>
             <div className="single-team">
               <div className="team-image">
-                <Image
-                  src={teamImg1}
-                  alt="image"
-                  width={125}
-                  height={125}
-                />
+                <Image src={teamImg1} alt="image" width={125} height={125} />
               </div>
 
               <div className="team-content">
@@ -107,12 +102,7 @@ const Team = () => {
           <SwiperSlide>
             <div className="single-team">
               <div className="team-image">
-                <Image
-                  src={teamImg2}
-                  alt="image"
-                  width={125}
-                  height={125}
-                />
+                <Image src={teamImg2} alt="image" width={125} height={125} />
               </div>
 
               <div className="team-content">
@@ -155,12 +145,7 @@ const Team = () => {
           <SwiperSlide>
             <div className="single-team">
               <div className="team-image">
-                <Image
-                  src={teamImg3}
-                  alt="image"
-                  width={125}
-                  height={125}
-                />
+                <Image src={teamImg3} alt="image" width={125} height={125} />
               </div>
 
               <div className="team-content">
@@ -203,12 +188,7 @@ const Team = () => {
           <SwiperSlide>
             <div className="single-team">
               <div className="team-image">
-                <Image
-                  src={teamImg4}
-                  alt="image"
-                  width={125}
-                  height={125}
-                />
+                <Image src={teamImg4} alt="image" width={125} height={125} />
               </div>
 
               <div className="team-content">
@@ -251,12 +231,7 @@ const Team = () => {
           <SwiperSlide>
             <div className="single-team">
               <div className="team-image">
-                <Image
-                  src={teamImg5}
-                  alt="image"
-                  width={125}
-                  height={125}
-                />
+                <Image src={teamImg5} alt="image" width={125} height={125} />
               </div>
 
               <div className="team-content">
@@ -299,12 +274,7 @@ const Team = () => {
           <SwiperSlide>
             <div className="single-team">
               <div className="team-image">
-                <Image
-                  src={teamImg1}
-                  alt="image"
-                  width={125}
-                  height={125}
-                />
+                <Image src={teamImg1} alt="image" width={125} height={125} />
               </div>
 
               <div className="team-content">
@@ -347,12 +317,7 @@ const Team = () => {
           <SwiperSlide>
             <div className="single-team">
               <div className="team-image">
-                <Image
-                  src={teamImg2}
-                  alt="image"
-                  width={125}
-                  height={125}
-                />
+                <Image src={teamImg2} alt="image" width={125} height={125} />
               </div>
 
               <div className="team-content">
@@ -395,12 +360,7 @@ const Team = () => {
           <SwiperSlide>
             <div className="single-team">
               <div className="team-image">
-                <Image
-                  src={teamImg3}
-                  alt="image"
-                  width={125}
-                  height={125}
-                />
+                <Image src={teamImg3} alt="image" width={125} height={125} />
               </div>
 
               <div className="team-content">
@@ -443,12 +403,7 @@ const Team = () => {
           <SwiperSlide>
             <div className="single-team">
               <div className="team-image">
-                <Image
-                  src={teamImg4}
-                  alt="image"
-                  width={125}
-                  height={125}
-                />
+                <Image src={teamImg4} alt="image" width={125} height={125} />
               </div>
 
               <div className="team-content">
@@ -491,12 +446,7 @@ const Team = () => {
           <SwiperSlide>
             <div className="single-team">
               <div className="team-image">
-                <Image
-                  src={teamImg5}
-                  alt="image"
-                  width={125}
-                  height={125}
-                />
+                <Image src={teamImg5} alt="image" width={125} height={125} />
               </div>
 
               <div className="team-content">

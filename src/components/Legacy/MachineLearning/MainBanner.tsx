@@ -4,24 +4,24 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import bannerShape1 from "/public/images/ml-banner-image/one.png";
-import bannerShape2 from "/public/images/ml-banner-image/two.png";
-import bannerShape3 from "/public/images/ml-banner-image/three.png";
-import bannerShape4 from "/public/images/ml-banner-image/four.png";
-import bannerShape5 from "/public/images/ml-banner-image/five.png";
-import bannerShape6 from "/public/images/ml-banner-image/six.png";
-import bannerShape7 from "/public/images/ml-banner-image/seven.png";
-import bannerShape8 from "/public/images/ml-banner-image/eight.png";
-import bannerShape9 from "/public/images/ml-banner-image/nine.png";
-import bannerShape10 from "/public/images/ml-banner-image/ten.png";
-import bannerShape11 from "/public/images/ml-banner-image/eleven.png";
-import bannerImg from "/public/images/ml-banner-image/ml-main-pic.png";
+import bannerShape1 from "/public/images/legacy/ml-banner-image/one.png";
+import bannerShape2 from "/public/images/legacy/ml-banner-image/two.png";
+import bannerShape3 from "/public/images/legacy/ml-banner-image/three.png";
+import bannerShape4 from "/public/images/legacy/ml-banner-image/four.png";
+import bannerShape5 from "/public/images/legacy/ml-banner-image/five.png";
+import bannerShape6 from "/public/images/legacy/ml-banner-image/six.png";
+import bannerShape7 from "/public/images/legacy/ml-banner-image/seven.png";
+import bannerShape8 from "/public/images/legacy/ml-banner-image/eight.png";
+import bannerShape9 from "/public/images/legacy/ml-banner-image/nine.png";
+import bannerShape10 from "/public/images/legacy/ml-banner-image/ten.png";
+import bannerShape11 from "/public/images/legacy/ml-banner-image/eleven.png";
+import bannerImg from "/public/images/legacy/ml-banner-image/ml-main-pic.png";
 
 // Shape Images
-import shape1 from "/public/images/shape1.png";
-import shape2 from "/public/images/shape2.svg";
-import shape3 from "/public/images/shape3.svg";
-import shape4 from "/public/images/shape4.svg";
+import shape1 from "/public/images/legacy/shape1.png";
+import shape2 from "/public/images/legacy/shape2.svg";
+import shape3 from "/public/images/legacy/shape3.svg";
+import shape4 from "/public/images/legacy/shape4.svg";
 
 const MainBanner = () => {
   return (
@@ -58,7 +58,6 @@ const MainBanner = () => {
                   data-aos-delay="300"
                   data-aos-duration="500"
                   data-aos-once="true"
-                  
                 >
                   Get Started
                 </Link>

@@ -95,6 +95,18 @@ textarea.form-control {
     overflow: hidden;
 }
 
+// Helper classes
+.zindexFirst {
+    z-index: -1;
+}
+
+.zindexMiddle {
+    z-index: -50;
+}
+
+.zindexLast {
+    z-index: -100;
+}
 // swiper-pagination
 .swiper-pagination {
     position: initial;
@@ -338,7 +350,7 @@ label {
 }
 
 // BG Animations
-.shape1, .shape2, .shape3, .shape4, .shape5, .shape7, .shape8 {
+.shape1, .shape2, .shape3, .shape4, .shape7, .shape8 {
     display: none;
 }
 
@@ -426,7 +438,7 @@ label {
 }
 
 @media only screen and (min-width: 767px) {
-    .shape1, .shape2, .shape3, .shape4, .shape5, .shape7, .shape8, .shape9 {
+    .shape1, .shape2, .shape3, .shape4, .shape7, .shape8, .shape9 {
         display: block;
     }
     .shape1 {

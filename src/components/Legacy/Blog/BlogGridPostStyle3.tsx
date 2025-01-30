@@ -5,17 +5,17 @@ import * as Icon from "react-feather";
 import Link from "next/link";
 import Image from "next/image";
 
-import blogImg1 from "/public/images/blog-image/blog1.jpg";
-import blogImg2 from "/public/images/blog-image/blog2.jpg";
-import blogImg3 from "/public/images/blog-image/blog3.jpg";
-import blogImg4 from "/public/images/blog-image/blog4.jpg";
-import blogImg5 from "/public/images/blog-image/blog5.jpg";
-import blogImg6 from "/public/images/blog-image/blog6.jpg";
+import blogImg1 from "/public/images/legacy/blog-image/blog1.jpg";
+import blogImg2 from "/public/images/legacy/blog-image/blog2.jpg";
+import blogImg3 from "/public/images/legacy/blog-image/blog3.jpg";
+import blogImg4 from "/public/images/legacy/blog-image/blog4.jpg";
+import blogImg5 from "/public/images/legacy/blog-image/blog5.jpg";
+import blogImg6 from "/public/images/legacy/blog-image/blog6.jpg";
 
 // Shape Images
-import shape1 from "/public/images/shape1.png";
-import shape3 from "/public/images/shape3.svg";
-import shape4 from "/public/images/shape4.svg";
+import shape1 from "/public/images/legacy/shape1.png";
+import shape3 from "/public/images/legacy/shape3.svg";
+import shape4 from "/public/images/legacy/shape4.svg";
 
 const BlogGridPost3 = () => {
   return (
@@ -26,7 +26,7 @@ const BlogGridPost3 = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-blog-post-item">
                 <div className="post-image">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg1}
                       alt="image"
@@ -39,23 +39,17 @@ const BlogGridPost3 = () => {
                 <div className="post-content">
                   <ul className="post-meta">
                     <li>
-                      <Link href="#" >
-                        Admin
-                      </Link>
+                      <Link href="#">Admin</Link>
                     </li>
                     <li>August 15, 2022</li>
                   </ul>
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       The security risks of changing package owners
                     </Link>
                   </h3>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="read-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="read-more-btn">
                     Read More <Icon.PlusCircle />
                   </Link>
                 </div>
@@ -65,7 +59,7 @@ const BlogGridPost3 = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-blog-post-item">
                 <div className="post-image">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg2}
                       alt="image"
@@ -78,23 +72,17 @@ const BlogGridPost3 = () => {
                 <div className="post-content">
                   <ul className="post-meta">
                     <li>
-                      <Link href="#" >
-                        Admin
-                      </Link>
+                      <Link href="#">Admin</Link>
                     </li>
                     <li>August 15, 2022</li>
                   </ul>
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       Tips to Protecting Your Business and Family
                     </Link>
                   </h3>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="read-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="read-more-btn">
                     Read More <Icon.PlusCircle />
                   </Link>
                 </div>
@@ -104,7 +92,7 @@ const BlogGridPost3 = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-blog-post-item">
                 <div className="post-image">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg3}
                       alt="image"
@@ -117,9 +105,7 @@ const BlogGridPost3 = () => {
                 <div className="post-content">
                   <ul className="post-meta">
                     <li>
-                      <Link href="#" >
-                        Admin
-                      </Link>
+                      <Link href="#">Admin</Link>
                     </li>
                     <li>August 15, 2022</li>
                   </ul>
@@ -129,11 +115,7 @@ const BlogGridPost3 = () => {
                     </Link>
                   </h3>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="read-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="read-more-btn">
                     Read More <Icon.PlusCircle />
                   </Link>
                 </div>
@@ -143,7 +125,7 @@ const BlogGridPost3 = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-blog-post-item">
                 <div className="post-image">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg4}
                       alt="image"
@@ -156,23 +138,17 @@ const BlogGridPost3 = () => {
                 <div className="post-content">
                   <ul className="post-meta">
                     <li>
-                      <Link href="#" >
-                        Admin
-                      </Link>
+                      <Link href="#">Admin</Link>
                     </li>
                     <li>August 15, 2022</li>
                   </ul>
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       The security risks of changing package owners
                     </Link>
                   </h3>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="read-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="read-more-btn">
                     Read More <Icon.PlusCircle />
                   </Link>
                 </div>
@@ -182,7 +158,7 @@ const BlogGridPost3 = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-blog-post-item">
                 <div className="post-image">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg5}
                       alt="image"
@@ -195,23 +171,17 @@ const BlogGridPost3 = () => {
                 <div className="post-content">
                   <ul className="post-meta">
                     <li>
-                      <Link href="#" >
-                        Admin
-                      </Link>
+                      <Link href="#">Admin</Link>
                     </li>
                     <li>August 15, 2022</li>
                   </ul>
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       Tips to Protecting Your Business and Family
                     </Link>
                   </h3>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="read-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="read-more-btn">
                     Read More <Icon.PlusCircle />
                   </Link>
                 </div>
@@ -221,7 +191,7 @@ const BlogGridPost3 = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-blog-post-item">
                 <div className="post-image">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg6}
                       alt="image"
@@ -234,23 +204,17 @@ const BlogGridPost3 = () => {
                 <div className="post-content">
                   <ul className="post-meta">
                     <li>
-                      <Link href="#" >
-                        Admin
-                      </Link>
+                      <Link href="#">Admin</Link>
                     </li>
                     <li>August 15, 2022</li>
                   </ul>
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       Protect Your Workplace from Cyber Attacks
                     </Link>
                   </h3>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="read-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="read-more-btn">
                     Read More <Icon.PlusCircle />
                   </Link>
                 </div>

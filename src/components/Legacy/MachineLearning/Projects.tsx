@@ -6,17 +6,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
 
-import projectImg1 from "/public/images/projects-img1.jpg";
-import projectImg2 from "/public/images/projects-img2.jpg";
-import projectImg3 from "/public/images/projects-img3.jpg";
-import projectImg4 from "/public/images/projects-img4.jpg";
-import projectImg5 from "/public/images/projects-img5.jpg";
+import projectImg1 from "/public/images/legacy/projects-img1.jpg";
+import projectImg2 from "/public/images/legacy/projects-img2.jpg";
+import projectImg3 from "/public/images/legacy/projects-img3.jpg";
+import projectImg4 from "/public/images/legacy/projects-img4.jpg";
+import projectImg5 from "/public/images/legacy/projects-img5.jpg";
 
 // Shape Images
-import shape1 from "/public/images/shape1.png";
-import shape2 from "/public/images/shape2.svg";
-import shape3 from "/public/images/shape3.svg";
-import shape4 from "/public/images/shape4.svg";
+import shape1 from "/public/images/legacy/shape1.png";
+import shape2 from "/public/images/legacy/shape2.svg";
+import shape3 from "/public/images/legacy/shape3.svg";
+import shape4 from "/public/images/legacy/shape4.svg";
 
 const Projects = () => {
   return (
@@ -64,7 +64,7 @@ const Projects = () => {
               <div className="single-ml-projects-box">
                 <Image src={projectImg1} alt="image" width={800} height={800} />
                 <div className="plus-icon">
-                  <Link href="/projects/project-details/" >
+                  <Link href="/projects/project-details/">
                     <span></span>
                   </Link>
                 </div>
@@ -75,7 +75,7 @@ const Projects = () => {
               <div className="single-ml-projects-box">
                 <Image src={projectImg2} alt="image" width={800} height={800} />
                 <div className="plus-icon">
-                  <Link href="/projects/project-details/" >
+                  <Link href="/projects/project-details/">
                     <span></span>
                   </Link>
                 </div>
@@ -86,7 +86,7 @@ const Projects = () => {
               <div className="single-ml-projects-box">
                 <Image src={projectImg3} alt="image" width={800} height={800} />
                 <div className="plus-icon">
-                  <Link href="/projects/project-details/" >
+                  <Link href="/projects/project-details/">
                     <span></span>
                   </Link>
                 </div>
@@ -97,7 +97,7 @@ const Projects = () => {
               <div className="single-ml-projects-box">
                 <Image src={projectImg4} alt="image" width={800} height={800} />
                 <div className="plus-icon">
-                  <Link href="/projects/project-details/" >
+                  <Link href="/projects/project-details/">
                     <span></span>
                   </Link>
                 </div>
@@ -108,7 +108,7 @@ const Projects = () => {
               <div className="single-ml-projects-box">
                 <Image src={projectImg5} alt="image" width={800} height={800} />
                 <div className="plus-icon">
-                  <Link href="/projects/project-details/" >
+                  <Link href="/projects/project-details/">
                     <span></span>
                   </Link>
                 </div>

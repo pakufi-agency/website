@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 
-import aboutImg from "/public/images/about-one.png";
+import aboutImg from "/public/images/legacy/about-one.png";
 
 const AboutUsContent1 = () => {
   return (
@@ -13,12 +13,7 @@ const AboutUsContent1 = () => {
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-12">
               <div className="about-image">
-                <Image
-                  src={aboutImg}
-                  alt="image"
-                  width={685}
-                  height={494}
-                />
+                <Image src={aboutImg} alt="image" width={685} height={494} />
               </div>
             </div>
 

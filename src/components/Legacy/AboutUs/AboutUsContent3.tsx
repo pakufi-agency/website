@@ -3,12 +3,12 @@
 import React from "react";
 import Image from "next/image";
 
-import aboutImg from "/public/images/agency-image/agency-about-img.jpg";
+import aboutImg from "/public/images/legacy/agency-image/agency-about-img.jpg";
 
 // Shape Images
-import shape2 from "/public/images/shape2.svg";
-import shape3 from "/public/images/shape3.svg";
-import shape4 from "/public/images/shape4.svg";
+import shape2 from "/public/images/legacy/shape2.svg";
+import shape3 from "/public/images/legacy/shape3.svg";
+import shape4 from "/public/images/legacy/shape4.svg";
 
 const AboutUsContent3 = () => {
   return (

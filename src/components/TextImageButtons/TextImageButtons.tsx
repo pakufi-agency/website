@@ -6,7 +6,7 @@ import Image from "next/image";
 
 import styles from "./TextImageButtons.module.scss";
 
-import featureImg1 from "/public/images/iot-features-image/iot-feature-image1.png";
+import featureImg1 from "/public/images/legacy/iot-features-image/iot-feature-image1.png";
 
 interface TextImageButtons {
   title: String;

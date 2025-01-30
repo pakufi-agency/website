@@ -7,7 +7,7 @@ import Image from "next/image";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 // Shape Images
-import shape1 from "/public/images/agency-image/agency-shape1.png"; 
+import shape1 from "/public/images/legacy/agency-image/agency-shape1.png";
 
 const PricingStyleThree = () => {
   return (
@@ -32,7 +32,7 @@ const PricingStyleThree = () => {
 
             <TabPanel>
               <div className="row justify-content-center">
-                <div 
+                <div
                   className="col-lg-4 col-md-6 col-sm-6"
                   data-aos="fade-up"
                   data-aos-delay="100"
@@ -52,7 +52,7 @@ const PricingStyleThree = () => {
                     </div>
 
                     <div className="buy-btn">
-                      <Link href="#" className="btn btn-primary" >
+                      <Link href="#" className="btn btn-primary">
                         Get Started Free
                       </Link>
                     </div>
@@ -83,7 +83,7 @@ const PricingStyleThree = () => {
                   </div>
                 </div>
 
-                <div 
+                <div
                   className="col-lg-4 col-md-6 col-sm-6"
                   data-aos="fade-up"
                   data-aos-delay="200"
@@ -103,7 +103,7 @@ const PricingStyleThree = () => {
                     </div>
 
                     <div className="buy-btn">
-                      <Link href="#" className="btn btn-primary" >
+                      <Link href="#" className="btn btn-primary">
                         Start 3 Days Free Trial
                       </Link>
                     </div>
@@ -134,7 +134,7 @@ const PricingStyleThree = () => {
                   </div>
                 </div>
 
-                <div 
+                <div
                   className="col-lg-4 col-md-6 col-sm-6"
                   data-aos="fade-up"
                   data-aos-delay="300"
@@ -154,7 +154,7 @@ const PricingStyleThree = () => {
                     </div>
 
                     <div className="buy-btn">
-                      <Link href="#" className="btn btn-primary" >
+                      <Link href="#" className="btn btn-primary">
                         Start 6 Days Free Trial
                       </Link>
                     </div>
@@ -189,7 +189,7 @@ const PricingStyleThree = () => {
 
             <TabPanel>
               <div className="row justify-content-center">
-                <div 
+                <div
                   className="col-lg-4 col-md-6 col-sm-6"
                   data-aos="fade-up"
                   data-aos-delay="100"
@@ -209,7 +209,7 @@ const PricingStyleThree = () => {
                     </div>
 
                     <div className="buy-btn">
-                      <Link href="#" className="btn btn-primary" >
+                      <Link href="#" className="btn btn-primary">
                         Get Started Free
                       </Link>
                     </div>
@@ -240,7 +240,7 @@ const PricingStyleThree = () => {
                   </div>
                 </div>
 
-                <div 
+                <div
                   className="col-lg-4 col-md-6 col-sm-6"
                   data-aos="fade-up"
                   data-aos-delay="200"
@@ -260,7 +260,7 @@ const PricingStyleThree = () => {
                     </div>
 
                     <div className="buy-btn">
-                      <Link href="#" className="btn btn-primary" >
+                      <Link href="#" className="btn btn-primary">
                         Start 3 Days Free Trial
                       </Link>
                     </div>
@@ -291,7 +291,7 @@ const PricingStyleThree = () => {
                   </div>
                 </div>
 
-                <div 
+                <div
                   className="col-lg-4 col-md-6 col-sm-6"
                   data-aos="fade-up"
                   data-aos-delay="300"
@@ -311,7 +311,7 @@ const PricingStyleThree = () => {
                     </div>
 
                     <div className="buy-btn">
-                      <Link href="#" className="btn btn-primary" >
+                      <Link href="#" className="btn btn-primary">
                         Start 6 Days Free Trial
                       </Link>
                     </div>
@@ -348,12 +348,7 @@ const PricingStyleThree = () => {
 
         {/* Shape Image */}
         <div className="shape9 mobile-dnone">
-          <Image
-            src={shape1}
-            alt="image"
-            width={299}
-            height={278}
-          />
+          <Image src={shape1} alt="image" width={299} height={278} />
         </div>
       </div>
     </>

@@ -5,12 +5,12 @@ import Link from "next/link";
 import * as Icon from "react-feather";
 import Image from "next/image";
 
-import serviceImg1 from "/public/images/agency-image/agency-services-img1.jpg";
-import serviceImg2 from "/public/images/agency-image/agency-services-img2.jpg";
-import serviceImg3 from "/public/images/agency-image/agency-services-img3.jpg";
-import serviceImg4 from "/public/images/agency-image/agency-services-img4.jpg";
-import serviceImg5 from "/public/images/agency-image/agency-services-img5.jpg";
-import serviceImg6 from "/public/images/agency-image/agency-services-img6.jpg";
+import serviceImg1 from "/public/images/legacy/agency-image/agency-services-img1.jpg";
+import serviceImg2 from "/public/images/legacy/agency-image/agency-services-img2.jpg";
+import serviceImg3 from "/public/images/legacy/agency-image/agency-services-img3.jpg";
+import serviceImg4 from "/public/images/legacy/agency-image/agency-services-img4.jpg";
+import serviceImg5 from "/public/images/legacy/agency-image/agency-services-img5.jpg";
+import serviceImg6 from "/public/images/legacy/agency-image/agency-services-img6.jpg";
 
 const ServicesStyle5 = () => {
   return (
@@ -24,7 +24,7 @@ const ServicesStyle5 = () => {
 
                 <div className="content">
                   <h3>
-                    <Link href="/services/service-details/" >
+                    <Link href="/services/service-details/">
                       IT Professionals
                     </Link>
                   </h3>
@@ -32,7 +32,6 @@ const ServicesStyle5 = () => {
                   <Link
                     href="/services/service-details/"
                     className="read-more-btn"
-                    
                   >
                     Read More <Icon.PlusCircle />
                   </Link>
@@ -46,7 +45,7 @@ const ServicesStyle5 = () => {
 
                 <div className="content">
                   <h3>
-                    <Link href="/services/service-details/" >
+                    <Link href="/services/service-details/">
                       Software Engineers
                     </Link>
                   </h3>
@@ -54,7 +53,6 @@ const ServicesStyle5 = () => {
                   <Link
                     href="/services/service-details/"
                     className="read-more-btn"
-                    
                   >
                     Read More <Icon.PlusCircle />
                   </Link>
@@ -68,7 +66,7 @@ const ServicesStyle5 = () => {
 
                 <div className="content">
                   <h3>
-                    <Link href="/services/service-details/" >
+                    <Link href="/services/service-details/">
                       Web Development
                     </Link>
                   </h3>
@@ -76,7 +74,6 @@ const ServicesStyle5 = () => {
                   <Link
                     href="/services/service-details/"
                     className="read-more-btn"
-                    
                   >
                     Read More <Icon.PlusCircle />
                   </Link>
@@ -90,15 +87,12 @@ const ServicesStyle5 = () => {
 
                 <div className="content">
                   <h3>
-                    <Link href="/services/service-details/" >
-                      SEO & Content
-                    </Link>
+                    <Link href="/services/service-details/">SEO & Content</Link>
                   </h3>
 
                   <Link
                     href="/services/service-details/"
                     className="read-more-btn"
-                    
                   >
                     Read More <Icon.PlusCircle />
                   </Link>
@@ -112,7 +106,7 @@ const ServicesStyle5 = () => {
 
                 <div className="content">
                   <h3>
-                    <Link href="/services/service-details/" >
+                    <Link href="/services/service-details/">
                       Digital Marketing
                     </Link>
                   </h3>
@@ -120,7 +114,6 @@ const ServicesStyle5 = () => {
                   <Link
                     href="/services/service-details/"
                     className="read-more-btn"
-                    
                   >
                     Read More <Icon.PlusCircle />
                   </Link>
@@ -134,15 +127,12 @@ const ServicesStyle5 = () => {
 
                 <div className="content">
                   <h3>
-                    <Link href="/services/service-details/" >
-                      Data Analysts
-                    </Link>
+                    <Link href="/services/service-details/">Data Analysts</Link>
                   </h3>
 
                   <Link
                     href="/services/service-details/"
                     className="read-more-btn"
-                    
                   >
                     Read More <Icon.PlusCircle />
                   </Link>

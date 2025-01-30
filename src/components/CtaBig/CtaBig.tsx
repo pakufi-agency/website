@@ -7,9 +7,9 @@ import Link from "next/link";
 import styles from "./CtaBig.module.scss";
 
 // Shape Images
-import shape2 from "/public/images/shape2.svg";
-import shape4 from "/public/images/shape4.svg";
-import freeTrialImg from "/public/images/free-trial-img.png";
+import shape2 from "/public/images/legacy/shape2.svg";
+import shape4 from "/public/images/legacy/shape4.svg";
+import freeTrialImg from "/public/images/legacy/free-trial-img.png";
 
 interface CtaBigProps {
   title: string;

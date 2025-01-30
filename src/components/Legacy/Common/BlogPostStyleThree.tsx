@@ -6,10 +6,10 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 
-import blogImg1 from "/public/images/blog-image/blog1.jpg";
-import blogImg2 from "/public/images/blog-image/blog2.jpg";
-import blogImg3 from "/public/images/blog-image/blog3.jpg";
-import blogImg4 from "/public/images/blog-image/blog4.jpg";
+import blogImg1 from "/public/images/legacy/blog-image/blog1.jpg";
+import blogImg2 from "/public/images/legacy/blog-image/blog2.jpg";
+import blogImg3 from "/public/images/legacy/blog-image/blog3.jpg";
+import blogImg4 from "/public/images/legacy/blog-image/blog4.jpg";
 
 const BlogPostStyleThree = () => {
   return (
@@ -52,7 +52,7 @@ const BlogPostStyleThree = () => {
             <SwiperSlide>
               <div className="single-blog-item">
                 <div className="post-image">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg1}
                       alt="image"
@@ -65,15 +65,12 @@ const BlogPostStyleThree = () => {
                 <div className="post-content">
                   <ul className="post-meta">
                     <li>
-                      By{" "}
-                      <Link href="#" >
-                        Admin
-                      </Link>
+                      By <Link href="#">Admin</Link>
                     </li>
                     <li>20 February 2020</li>
                   </ul>
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       The security risks of changing package owners
                     </Link>
                   </h3>
@@ -84,7 +81,7 @@ const BlogPostStyleThree = () => {
             <SwiperSlide>
               <div className="single-blog-item">
                 <div className="post-image">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg2}
                       alt="image"
@@ -97,15 +94,12 @@ const BlogPostStyleThree = () => {
                 <div className="post-content">
                   <ul className="post-meta">
                     <li>
-                      By{" "}
-                      <Link href="#" >
-                        Admin
-                      </Link>
+                      By <Link href="#">Admin</Link>
                     </li>
                     <li>21 February 2020</li>
                   </ul>
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       Tips to Protecting Your Business and Family
                     </Link>
                   </h3>
@@ -116,7 +110,7 @@ const BlogPostStyleThree = () => {
             <SwiperSlide>
               <div className="single-blog-item">
                 <div className="post-image">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg3}
                       alt="image"
@@ -129,10 +123,7 @@ const BlogPostStyleThree = () => {
                 <div className="post-content">
                   <ul className="post-meta">
                     <li>
-                      By{" "}
-                      <Link href="#" >
-                        Admin
-                      </Link>
+                      By <Link href="#">Admin</Link>
                     </li>
                     <li>22 February 2020</li>
                   </ul>
@@ -148,7 +139,7 @@ const BlogPostStyleThree = () => {
             <SwiperSlide>
               <div className="single-blog-item">
                 <div className="post-image">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg4}
                       alt="image"
@@ -161,15 +152,12 @@ const BlogPostStyleThree = () => {
                 <div className="post-content">
                   <ul className="post-meta">
                     <li>
-                      By{" "}
-                      <Link href="#" >
-                        Admin
-                      </Link>
+                      By <Link href="#">Admin</Link>
                     </li>
                     <li>22 February 2020</li>
                   </ul>
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       Four New WordPress.com Color Schemes
                     </Link>
                   </h3>

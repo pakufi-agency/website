@@ -5,23 +5,23 @@ import Link from "next/link";
 
 import Image from "next/image";
 
-import partnerImg2 from "/public/images/partner-img/partner-2.png";
-import partnerHoverImg2 from "/public/images/partner-img/partner-hover2.png";
+import partnerImg2 from "/public/images/legacy/partner-img/partner-2.png";
+import partnerHoverImg2 from "/public/images/legacy/partner-img/partner-hover2.png";
 
-import partnerImg3 from "/public/images/partner-img/partner-3.png";
-import partnerHoverImg3 from "/public/images/partner-img/partner-hover3.png";
+import partnerImg3 from "/public/images/legacy/partner-img/partner-3.png";
+import partnerHoverImg3 from "/public/images/legacy/partner-img/partner-hover3.png";
 
-import partnerImg4 from "/public/images/partner-img/partner-4.png";
-import partnerHoverImg4 from "/public/images/partner-img/partner-hover4.png";
+import partnerImg4 from "/public/images/legacy/partner-img/partner-4.png";
+import partnerHoverImg4 from "/public/images/legacy/partner-img/partner-hover4.png";
 
-import partnerImg5 from "/public/images/partner-img/partner-5.png";
-import partnerHoverImg5 from "/public/images/partner-img/partner-hover5.png";
+import partnerImg5 from "/public/images/legacy/partner-img/partner-5.png";
+import partnerHoverImg5 from "/public/images/legacy/partner-img/partner-hover5.png";
 
-import partnerImg6 from "/public/images/partner-img/partner-6.png";
-import partnerHoverImg6 from "/public/images/partner-img/partner-hover6.png";
+import partnerImg6 from "/public/images/legacy/partner-img/partner-6.png";
+import partnerHoverImg6 from "/public/images/legacy/partner-img/partner-hover6.png";
 
-import partnerImg7 from "/public/images/partner-img/partner-7.png";
-import partnerHoverImg7 from "/public/images/partner-img/partner-hover7.png";
+import partnerImg7 from "/public/images/legacy/partner-img/partner-7.png";
+import partnerHoverImg7 from "/public/images/legacy/partner-img/partner-hover7.png";
 
 const Partner = () => {
   return (
@@ -31,14 +31,12 @@ const Partner = () => {
           <h3>Ready to talk?</h3>
           <p>Our team is here to answer your question about StartP</p>
 
-          <Link href="/contact" className="btn btn-primary" >
+          <Link href="/contact" className="btn btn-primary">
             Contact Us
           </Link>
 
           <span>
-            <Link href="#" >
-              Or, get started now with a free trial
-            </Link>
+            <Link href="#">Or, get started now with a free trial</Link>
           </span>
         </div>
       </div>

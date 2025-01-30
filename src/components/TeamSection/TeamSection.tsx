@@ -7,10 +7,10 @@ import TeamMember from "../TeamMember/TeamMember";
 import styles from "./TeamSection.module.scss";
 
 // Shape Images
-import shape1 from "/public/images/shape1.png";
-import shape2 from "/public/images/shape2.svg";
-import shape3 from "/public/images/shape3.svg";
-import shape4 from "/public/images/shape4.svg";
+// import shape1 from "/public/images/legacy/shape1.png";
+import shape2 from "/public/images/legacy/shape2.svg";
+import shape3 from "/public/images/legacy/shape3.svg";
+import shape4 from "/public/images/legacy/shape4.svg";
 
 interface TeamSectionProps {
   sectionTitle: String;
@@ -67,9 +67,9 @@ const TeamSection: React.FC<TeamSectionProps> = ({
       </div>
 
       {/* Shape Images */}
-      <div className="shape1">
+      {/* <div className="shape1">
         <Image src={shape1} alt="shape" width={202} height={202} />
-      </div>
+      </div> */}
       <div className="shape3">
         <Image src={shape3} alt="shape" width={28} height={28} />
       </div>

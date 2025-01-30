@@ -3,10 +3,10 @@
 import React from "react";
 // import Link from "next/link";
 import * as Icon from "react-feather";
-import robot from "/public/images/icon4.png";
-import chip from "/public/images/icon5.png";
-import mindChip from "/public/images/icon6.png";
-import drone from "/public/images/icon7.png";
+import robot from "/public/images/legacy/icon4.png";
+import chip from "/public/images/legacy/icon5.png";
+import mindChip from "/public/images/legacy/icon6.png";
+import drone from "/public/images/legacy/icon7.png";
 
 import Image, { StaticImageData } from "next/image";
 

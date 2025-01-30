@@ -7,15 +7,15 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 
-import worksImg1 from "/public/images/works-image/works-image1.jpg";
-import worksImg2 from "/public/images/works-image/works-image2.jpg";
-import worksImg3 from "/public/images/works-image/works-image3.jpg";
-import worksImg4 from "/public/images/works-image/works-image4.jpg";
-import worksImg5 from "/public/images/works-image/works-image5.jpg";
+import worksImg1 from "/public/images/legacy/works-image/works-image1.jpg";
+import worksImg2 from "/public/images/legacy/works-image/works-image2.jpg";
+import worksImg3 from "/public/images/legacy/works-image/works-image3.jpg";
+import worksImg4 from "/public/images/legacy/works-image/works-image4.jpg";
+import worksImg5 from "/public/images/legacy/works-image/works-image5.jpg";
 
 // Shape Images
-import shape2 from "/public/images/shape2.svg";
-import shape4 from "/public/images/shape4.svg";
+import shape2 from "/public/images/legacy/shape2.svg";
+import shape4 from "/public/images/legacy/shape4.svg";
 
 const RecentWorks = () => {
   return (
@@ -62,17 +62,13 @@ const RecentWorks = () => {
             <div className="single-works">
               <Image src={worksImg1} alt="image" width={640} height={450} />
 
-              <Link
-                href="/projects/project-details/"
-                className="icon"
-                
-              >
+              <Link href="/projects/project-details/" className="icon">
                 <Icon.Settings />
               </Link>
 
               <div className="works-content">
                 <h3>
-                  <Link href="/projects/project-details/" >
+                  <Link href="/projects/project-details/">
                     Incredible infrastructure
                   </Link>
                 </h3>
@@ -88,17 +84,13 @@ const RecentWorks = () => {
             <div className="single-works">
               <Image src={worksImg2} alt="image" width={640} height={450} />
 
-              <Link
-                href="/projects/project-details/"
-                className="icon"
-                
-              >
+              <Link href="/projects/project-details/" className="icon">
                 <Icon.Settings />
               </Link>
 
               <div className="works-content">
                 <h3>
-                  <Link href="/projects/project-details/" >
+                  <Link href="/projects/project-details/">
                     Email Notifications
                   </Link>
                 </h3>
@@ -114,17 +106,13 @@ const RecentWorks = () => {
             <div className="single-works">
               <Image src={worksImg3} alt="image" width={640} height={450} />
 
-              <Link
-                href="/projects/project-details/"
-                className="icon"
-                
-              >
+              <Link href="/projects/project-details/" className="icon">
                 <Icon.Settings />
               </Link>
 
               <div className="works-content">
                 <h3>
-                  <Link href="/projects/project-details/" >
+                  <Link href="/projects/project-details/">
                     Best Analytics Audits
                   </Link>
                 </h3>
@@ -140,17 +128,13 @@ const RecentWorks = () => {
             <div className="single-works">
               <Image src={worksImg4} alt="image" width={640} height={450} />
 
-              <Link
-                href="/projects/project-details/"
-                className="icon"
-                
-              >
+              <Link href="/projects/project-details/" className="icon">
                 <Icon.Settings />
               </Link>
 
               <div className="works-content">
                 <h3>
-                  <Link href="/projects/project-details/" >
+                  <Link href="/projects/project-details/">
                     Simple Dashboard
                   </Link>
                 </h3>
@@ -166,17 +150,13 @@ const RecentWorks = () => {
             <div className="single-works">
               <Image src={worksImg5} alt="image" width={640} height={450} />
 
-              <Link
-                href="/projects/project-details/"
-                className="icon"
-                
-              >
+              <Link href="/projects/project-details/" className="icon">
                 <Icon.Settings />
               </Link>
 
               <div className="works-content">
                 <h3>
-                  <Link href="/projects/project-details/" >
+                  <Link href="/projects/project-details/">
                     Information Retrieval
                   </Link>
                 </h3>

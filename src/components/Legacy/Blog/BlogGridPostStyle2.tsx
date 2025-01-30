@@ -5,12 +5,12 @@ import * as Icon from "react-feather";
 import Link from "next/link";
 import Image from "next/image";
 
-import blogImg1 from "/public/images/blog-image/blog9.jpg";
-import blogImg2 from "/public/images/blog-image/blog10.jpg";
-import blogImg3 from "/public/images/blog-image/blog11.jpg";
-import blogImg4 from "/public/images/blog-image/blog12.jpg";
-import blogImg5 from "/public/images/blog-image/blog13.jpg";
-import blogImg6 from "/public/images/blog-image/blog14.jpg";
+import blogImg1 from "/public/images/legacy/blog-image/blog9.jpg";
+import blogImg2 from "/public/images/legacy/blog-image/blog10.jpg";
+import blogImg3 from "/public/images/legacy/blog-image/blog11.jpg";
+import blogImg4 from "/public/images/legacy/blog-image/blog12.jpg";
+import blogImg5 from "/public/images/legacy/blog-image/blog13.jpg";
+import blogImg6 from "/public/images/legacy/blog-image/blog14.jpg";
 
 const BlogGridPost2 = () => {
   return (
@@ -21,7 +21,7 @@ const BlogGridPost2 = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-blog-post-box">
                 <div className="entry-thumbnail">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg1}
                       alt="image"
@@ -35,16 +35,14 @@ const BlogGridPost2 = () => {
                   <div className="entry-meta">
                     <ul>
                       <li>
-                        <Link href="#" >
-                          Admin
-                        </Link>
+                        <Link href="#">Admin</Link>
                       </li>
                       <li>August 15, 2022</li>
                     </ul>
                   </div>
 
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       Making Peace With The Feast Or Famine Of Freelancing
                     </Link>
                   </h3>
@@ -53,11 +51,7 @@ const BlogGridPost2 = () => {
                     do eiusmod...
                   </p>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="learn-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="learn-more-btn">
                     Read Story <Icon.Plus />
                   </Link>
                 </div>
@@ -67,7 +61,7 @@ const BlogGridPost2 = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-blog-post-box">
                 <div className="entry-thumbnail">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg2}
                       alt="image"
@@ -81,16 +75,14 @@ const BlogGridPost2 = () => {
                   <div className="entry-meta">
                     <ul>
                       <li>
-                        <Link href="#" >
-                          Admin
-                        </Link>
+                        <Link href="#">Admin</Link>
                       </li>
                       <li>August 18, 2022</li>
                     </ul>
                   </div>
 
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       I Used The Web For A Day On A 50 MB Budget
                     </Link>
                   </h3>
@@ -99,11 +91,7 @@ const BlogGridPost2 = () => {
                     do eiusmod...
                   </p>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="learn-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="learn-more-btn">
                     Read Story <Icon.Plus />
                   </Link>
                 </div>
@@ -113,7 +101,7 @@ const BlogGridPost2 = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-blog-post-box">
                 <div className="entry-thumbnail">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg3}
                       alt="image"
@@ -127,16 +115,14 @@ const BlogGridPost2 = () => {
                   <div className="entry-meta">
                     <ul>
                       <li>
-                        <Link href="#" >
-                          Admin
-                        </Link>
+                        <Link href="#">Admin</Link>
                       </li>
                       <li>August 15, 2022</li>
                     </ul>
                   </div>
 
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       Here are the 5 most telling signs of micromanagement
                     </Link>
                   </h3>
@@ -145,11 +131,7 @@ const BlogGridPost2 = () => {
                     do eiusmod...
                   </p>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="learn-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="learn-more-btn">
                     Read Story <Icon.Plus />
                   </Link>
                 </div>
@@ -159,7 +141,7 @@ const BlogGridPost2 = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-blog-post-box">
                 <div className="entry-thumbnail">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg4}
                       alt="image"
@@ -173,16 +155,14 @@ const BlogGridPost2 = () => {
                   <div className="entry-meta">
                     <ul>
                       <li>
-                        <Link href="#" >
-                          Admin
-                        </Link>
+                        <Link href="#">Admin</Link>
                       </li>
                       <li>August 15, 2022</li>
                     </ul>
                   </div>
 
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       The security risks of changing package owners
                     </Link>
                   </h3>
@@ -191,11 +171,7 @@ const BlogGridPost2 = () => {
                     do eiusmod...
                   </p>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="learn-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="learn-more-btn">
                     Read Story <Icon.Plus />
                   </Link>
                 </div>
@@ -205,7 +181,7 @@ const BlogGridPost2 = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-blog-post-box">
                 <div className="entry-thumbnail">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg5}
                       alt="image"
@@ -219,16 +195,14 @@ const BlogGridPost2 = () => {
                   <div className="entry-meta">
                     <ul>
                       <li>
-                        <Link href="#" >
-                          Admin
-                        </Link>
+                        <Link href="#">Admin</Link>
                       </li>
                       <li>August 18, 2022</li>
                     </ul>
                   </div>
 
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       Tips to Protecting Your Business and Family
                     </Link>
                   </h3>
@@ -237,11 +211,7 @@ const BlogGridPost2 = () => {
                     do eiusmod...
                   </p>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="learn-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="learn-more-btn">
                     Read Story <Icon.Plus />
                   </Link>
                 </div>
@@ -251,7 +221,7 @@ const BlogGridPost2 = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-blog-post-box">
                 <div className="entry-thumbnail">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg6}
                       alt="image"
@@ -265,16 +235,14 @@ const BlogGridPost2 = () => {
                   <div className="entry-meta">
                     <ul>
                       <li>
-                        <Link href="#" >
-                          Admin
-                        </Link>
+                        <Link href="#">Admin</Link>
                       </li>
                       <li>August 15, 2022</li>
                     </ul>
                   </div>
 
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       Protect Your Workplace from Cyber Attacks
                     </Link>
                   </h3>
@@ -283,11 +251,7 @@ const BlogGridPost2 = () => {
                     do eiusmod...
                   </p>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="learn-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="learn-more-btn">
                     Read Story <Icon.Plus />
                   </Link>
                 </div>

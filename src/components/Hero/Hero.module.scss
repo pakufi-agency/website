@@ -3,7 +3,7 @@
 .heroBanner {
     position: relative;
     padding: 150px 0 80px;
-    z-index: -1;
+    z-index: -100;
     height: 97vh;
     background: $river-bed-green;
     background: $gradient-hero;
@@ -12,7 +12,7 @@
     &::after {
         content: '';
         position: absolute;
-        z-index: -1;
+        z-index: -50;
         bottom: 10%;
         left: 0;
         width: 100%;
@@ -158,12 +158,6 @@
                 }
                 &:last-child {
                     display: block;
-                    position: absolute;
-                    left: 500px;
-                    right: 0;
-                    margin: 0 auto;
-                    top: 300px;
-                    z-index: -1;
                 }
             }
         }
@@ -184,10 +178,6 @@
         img {
             &:first-child {
                 max-width: 90%;
-            }
-            &:last-child {
-                left: -128px;
-                top: 50px;
             }
         }
     }

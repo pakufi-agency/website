@@ -6,12 +6,12 @@ import Image from "next/image";
 import Link from "next/link";
 import BlogSidebar from "./BlogSidebar";
 
-import blogImg1 from "/public/images/blog-image/blog9.jpg";
-import blogImg2 from "/public/images/blog-image/blog10.jpg";
-import blogImg3 from "/public/images/blog-image/blog11.jpg";
-import blogImg4 from "/public/images/blog-image/blog12.jpg";
-import blogImg5 from "/public/images/blog-image/blog13.jpg";
-import blogImg6 from "/public/images/blog-image/blog14.jpg";
+import blogImg1 from "/public/images/legacy/blog-image/blog9.jpg";
+import blogImg2 from "/public/images/legacy/blog-image/blog10.jpg";
+import blogImg3 from "/public/images/legacy/blog-image/blog11.jpg";
+import blogImg4 from "/public/images/legacy/blog-image/blog12.jpg";
+import blogImg5 from "/public/images/legacy/blog-image/blog13.jpg";
+import blogImg6 from "/public/images/legacy/blog-image/blog14.jpg";
 
 const BlogWithRightSidebarStyle2 = () => {
   return (

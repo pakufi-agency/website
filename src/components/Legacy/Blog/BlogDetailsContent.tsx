@@ -6,17 +6,17 @@ import * as Icon from "react-feather";
 import Image from "next/image";
 import BlogSidebar from "../Blog/BlogSidebar";
 
-import blogDetails from "/public/images/blog-image/blog-details.jpg";
+import blogDetails from "/public/images/legacy/blog-image/blog-details.jpg";
 
-import blogImg1 from "/public/images/blog-image/blog7.jpg";
-import blogImg2 from "/public/images/blog-image/blog8.jpg";
-import blogImg3 from "/public/images/blog-image/blog9.jpg";
+import blogImg1 from "/public/images/legacy/blog-image/blog7.jpg";
+import blogImg2 from "/public/images/legacy/blog-image/blog8.jpg";
+import blogImg3 from "/public/images/legacy/blog-image/blog9.jpg";
 
-import user1 from "/public/images/client-image/client1.jpg";
-import user2 from "/public/images/client-image/client2.jpg";
-import user3 from "/public/images/client-image/client3.jpg";
-import user4 from "/public/images/client-image/client4.jpg";
-import user5 from "/public/images/client-image/client5.jpg";
+import user1 from "/public/images/legacy/client-image/client1.jpg";
+import user2 from "/public/images/legacy/client-image/client2.jpg";
+import user3 from "/public/images/legacy/client-image/client3.jpg";
+import user4 from "/public/images/legacy/client-image/client4.jpg";
+import user5 from "/public/images/legacy/client-image/client5.jpg";
 
 const BlogDetailsContent = () => {
   return (

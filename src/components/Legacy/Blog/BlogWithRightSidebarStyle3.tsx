@@ -6,17 +6,17 @@ import Image from "next/image";
 import Link from "next/link";
 import BlogSidebar from "./BlogSidebar";
 
-import blogImg1 from "/public/images/blog-image/blog1.jpg";
-import blogImg2 from "/public/images/blog-image/blog2.jpg";
-import blogImg3 from "/public/images/blog-image/blog3.jpg";
-import blogImg4 from "/public/images/blog-image/blog4.jpg";
-import blogImg5 from "/public/images/blog-image/blog5.jpg";
-import blogImg6 from "/public/images/blog-image/blog6.jpg";
+import blogImg1 from "/public/images/legacy/blog-image/blog1.jpg";
+import blogImg2 from "/public/images/legacy/blog-image/blog2.jpg";
+import blogImg3 from "/public/images/legacy/blog-image/blog3.jpg";
+import blogImg4 from "/public/images/legacy/blog-image/blog4.jpg";
+import blogImg5 from "/public/images/legacy/blog-image/blog5.jpg";
+import blogImg6 from "/public/images/legacy/blog-image/blog6.jpg";
 
 // Shape Images
-import shape1 from "/public/images/shape1.png";
-import shape3 from "/public/images/shape3.svg";
-import shape4 from "/public/images/shape4.svg";
+import shape1 from "/public/images/legacy/shape1.png";
+import shape3 from "/public/images/legacy/shape3.svg";
+import shape4 from "/public/images/legacy/shape4.svg";
 
 const BlogWithRightSidebarStyle3 = () => {
   return (

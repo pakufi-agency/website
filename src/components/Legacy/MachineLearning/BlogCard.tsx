@@ -5,15 +5,15 @@ import Link from "next/link";
 import * as Icon from "react-feather";
 import Image from "next/image";
 
-import blogImg1 from "/public/images/blog-image/blog9.jpg";
-import blogImg2 from "/public/images/blog-image/blog10.jpg";
-import blogImg3 from "/public/images/blog-image/blog11.jpg";
+import blogImg1 from "/public/images/legacy/blog-image/blog9.jpg";
+import blogImg2 from "/public/images/legacy/blog-image/blog10.jpg";
+import blogImg3 from "/public/images/legacy/blog-image/blog11.jpg";
 
 // Shape Images
-import shape1 from "/public/images/shape1.png";
-import shape2 from "/public/images/shape2.svg";
-import shape3 from "/public/images/shape3.svg";
-import shape4 from "/public/images/shape4.svg";
+import shape1 from "/public/images/legacy/shape1.png";
+import shape2 from "/public/images/legacy/shape2.svg";
+import shape3 from "/public/images/legacy/shape3.svg";
+import shape4 from "/public/images/legacy/shape4.svg";
 
 const BlogCard = () => {
   return (
@@ -39,7 +39,7 @@ const BlogCard = () => {
             >
               <div className="single-blog-post-box">
                 <div className="entry-thumbnail">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg1}
                       alt="image"
@@ -53,9 +53,7 @@ const BlogCard = () => {
                   <div className="entry-meta">
                     <ul>
                       <li>
-                        <Link href="#" >
-                          Admin
-                        </Link>
+                        <Link href="#">Admin</Link>
                       </li>
                       <li>August 15, 2022</li>
                     </ul>
@@ -71,11 +69,7 @@ const BlogCard = () => {
                     do eiusmod...
                   </p>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="learn-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="learn-more-btn">
                     Read Story <Icon.Plus />
                   </Link>
                 </div>
@@ -91,7 +85,7 @@ const BlogCard = () => {
             >
               <div className="single-blog-post-box">
                 <div className="entry-thumbnail">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg2}
                       alt="image"
@@ -105,16 +99,14 @@ const BlogCard = () => {
                   <div className="entry-meta">
                     <ul>
                       <li>
-                        <Link href="#" >
-                          Admin
-                        </Link>
+                        <Link href="#">Admin</Link>
                       </li>
                       <li>August 18, 2019</li>
                     </ul>
                   </div>
 
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       I Used The Web For A Day On A 50 MB Budget
                     </Link>
                   </h3>
@@ -123,11 +115,7 @@ const BlogCard = () => {
                     do eiusmod...
                   </p>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="learn-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="learn-more-btn">
                     Read Story <Icon.Plus />
                   </Link>
                 </div>
@@ -143,7 +131,7 @@ const BlogCard = () => {
             >
               <div className="single-blog-post-box">
                 <div className="entry-thumbnail">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg3}
                       alt="image"
@@ -157,16 +145,14 @@ const BlogCard = () => {
                   <div className="entry-meta">
                     <ul>
                       <li>
-                        <Link href="#" >
-                          Admin
-                        </Link>
+                        <Link href="#">Admin</Link>
                       </li>
                       <li>August 15, 2019</li>
                     </ul>
                   </div>
 
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       Here are the 5 most telling signs of micromanagement
                     </Link>
                   </h3>
@@ -175,11 +161,7 @@ const BlogCard = () => {
                     do eiusmod...
                   </p>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="learn-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="learn-more-btn">
                     Read Story <Icon.Plus />
                   </Link>
                 </div>

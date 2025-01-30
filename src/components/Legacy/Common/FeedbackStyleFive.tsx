@@ -5,9 +5,9 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 
-import clientImg1 from "/public/images/client-image/client1.jpg";
-import clientImg2 from "/public/images/client-image/client2.jpg";
-import clientImg3 from "/public/images/client-image/client3.jpg";
+import clientImg1 from "/public/images/legacy/client-image/client1.jpg";
+import clientImg2 from "/public/images/legacy/client-image/client2.jpg";
+import clientImg3 from "/public/images/legacy/client-image/client3.jpg";
 
 const FeedbackStyleFive = () => {
   return (
@@ -27,12 +27,7 @@ const FeedbackStyleFive = () => {
           >
             <SwiperSlide>
               <div className="agency-portfolio-feedback-item">
-                <Image
-                  src={clientImg1}
-                  alt="image"
-                  width={95}
-                  height={95}
-                />
+                <Image src={clientImg1} alt="image" width={95} height={95} />
                 <p>
                   Pellentesque sed purus eu urna vulputate interdum quis sit
                   amet sapien. Pellentesque porta mauris at orci sagittis
@@ -46,12 +41,7 @@ const FeedbackStyleFive = () => {
 
             <SwiperSlide>
               <div className="agency-portfolio-feedback-item">
-                <Image
-                  src={clientImg2}
-                  alt="image"
-                  width={95}
-                  height={95}
-                />
+                <Image src={clientImg2} alt="image" width={95} height={95} />
                 <p>
                   Pellentesque sed purus eu urna vulputate interdum quis sit
                   amet sapien. Pellentesque porta mauris at orci sagittis
@@ -65,12 +55,7 @@ const FeedbackStyleFive = () => {
 
             <SwiperSlide>
               <div className="agency-portfolio-feedback-item">
-                <Image
-                  src={clientImg3}
-                  alt="image"
-                  width={95}
-                  height={95}
-                />
+                <Image src={clientImg3} alt="image" width={95} height={95} />
                 <p>
                   Pellentesque sed purus eu urna vulputate interdum quis sit
                   amet sapien. Pellentesque porta mauris at orci sagittis

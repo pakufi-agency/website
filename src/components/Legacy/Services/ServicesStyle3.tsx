@@ -5,21 +5,21 @@ import Link from "next/link";
 import * as Icon from "react-feather";
 import Image from "next/image";
 
-import icon1 from "/public/images/icon4.png";
-import icon2 from "/public/images/icon5.png";
-import icon3 from "/public/images/icon6.png";
-import icon4 from "/public/images/icon7.png";
-import icon5 from "/public/images/icon4.png";
-import icon6 from "/public/images/icon5.png";
-import icon7 from "/public/images/icon6.png";
-import icon8 from "/public/images/icon7.png";
+import icon1 from "/public/images/legacy/icon4.png";
+import icon2 from "/public/images/legacy/icon5.png";
+import icon3 from "/public/images/legacy/icon6.png";
+import icon4 from "/public/images/legacy/icon7.png";
+import icon5 from "/public/images/legacy/icon4.png";
+import icon6 from "/public/images/legacy/icon5.png";
+import icon7 from "/public/images/legacy/icon6.png";
+import icon8 from "/public/images/legacy/icon7.png";
 
 // Shape Images
-import shape1 from "/public/images/shape1.png";
-import shape2 from "/public/images/shape2.svg";
-import shape3 from "/public/images/shape3.svg";
-import shape4 from "/public/images/shape4.svg";
-import shape5 from "/public/images/shape5.png";
+import shape1 from "/public/images/legacy/shape1.png";
+import shape2 from "/public/images/legacy/shape2.svg";
+import shape3 from "/public/images/legacy/shape3.svg";
+import shape4 from "/public/images/legacy/shape4.svg";
+import shape5 from "/public/images/legacy/shape5.png";
 
 const ServicesStyle3 = () => {
   return (

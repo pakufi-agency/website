@@ -6,7 +6,7 @@ import Image from "next/image";
 
 import styles from "./TeamMember.module.scss";
 
-// import teamImg1 from "/public/images/team-image/team1.jpg";
+// import teamImg1 from "/public/images/legacy/team-image/team1.jpg";
 
 interface TeamMemberProps {
   name: string;

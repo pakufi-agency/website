@@ -5,12 +5,12 @@ import Link from "next/link";
 import * as Icon from "react-feather";
 import Image from "next/image";
 
-import iconBg1 from "/public/images/agency-image/agency-icon-bg.png";
+import iconBg1 from "/public/images/legacy/agency-image/agency-icon-bg.png";
 
 // Shape Images
-import shape2 from "/public/images/shape2.svg";
-import shape3 from "/public/images/shape3.svg";
-import shape4 from "/public/images/shape4.svg";
+import shape2 from "/public/images/legacy/shape2.svg";
+import shape3 from "/public/images/legacy/shape3.svg";
+import shape4 from "/public/images/legacy/shape4.svg";
 
 const ServicesStyle4 = () => {
   return (
@@ -26,7 +26,7 @@ const ServicesStyle4 = () => {
                 </div>
 
                 <h3>
-                  <Link href="/services/service-details/" >
+                  <Link href="/services/service-details/">
                     Programmatic Advertising
                   </Link>
                 </h3>
@@ -38,7 +38,6 @@ const ServicesStyle4 = () => {
                 <Link
                   href="/services/service-details/"
                   className="learn-more-btn"
-                  
                 >
                   <Icon.PlusCircle /> Learn More
                 </Link>
@@ -52,7 +51,7 @@ const ServicesStyle4 = () => {
                   <Image src={iconBg1} alt="image" width={93} height={88} />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
+                  <Link href="/services/service-details/">
                     Strategy & Research
                   </Link>
                 </h3>
@@ -64,7 +63,6 @@ const ServicesStyle4 = () => {
                 <Link
                   href="/services/service-details/"
                   className="learn-more-btn"
-                  
                 >
                   <Icon.PlusCircle /> Learn More
                 </Link>
@@ -78,7 +76,7 @@ const ServicesStyle4 = () => {
                   <Image src={iconBg1} alt="image" width={93} height={88} />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
+                  <Link href="/services/service-details/">
                     Design & Development
                   </Link>
                 </h3>
@@ -90,7 +88,6 @@ const ServicesStyle4 = () => {
                 <Link
                   href="/services/service-details/"
                   className="learn-more-btn"
-                  
                 >
                   <Icon.PlusCircle /> Learn More
                 </Link>
@@ -104,7 +101,7 @@ const ServicesStyle4 = () => {
                   <Image src={iconBg1} alt="image" width={93} height={88} />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
+                  <Link href="/services/service-details/">
                     Branding & Marketing
                   </Link>
                 </h3>
@@ -116,7 +113,6 @@ const ServicesStyle4 = () => {
                 <Link
                   href="/services/service-details/"
                   className="learn-more-btn"
-                  
                 >
                   <Icon.PlusCircle /> Learn More
                 </Link>
@@ -130,7 +126,7 @@ const ServicesStyle4 = () => {
                   <Image src={iconBg1} alt="image" width={93} height={88} />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
+                  <Link href="/services/service-details/">
                     Programmatic Advertising
                   </Link>
                 </h3>
@@ -142,7 +138,6 @@ const ServicesStyle4 = () => {
                 <Link
                   href="/services/service-details/"
                   className="learn-more-btn"
-                  
                 >
                   <Icon.PlusCircle /> Learn More
                 </Link>
@@ -156,7 +151,7 @@ const ServicesStyle4 = () => {
                   <Image src={iconBg1} alt="image" width={93} height={88} />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
+                  <Link href="/services/service-details/">
                     Strategy & Research
                   </Link>
                 </h3>
@@ -168,7 +163,6 @@ const ServicesStyle4 = () => {
                 <Link
                   href="/services/service-details/"
                   className="learn-more-btn"
-                  
                 >
                   <Icon.PlusCircle /> Learn More
                 </Link>
@@ -182,7 +176,7 @@ const ServicesStyle4 = () => {
                   <Image src={iconBg1} alt="image" width={93} height={88} />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
+                  <Link href="/services/service-details/">
                     Design & Development
                   </Link>
                 </h3>
@@ -194,7 +188,6 @@ const ServicesStyle4 = () => {
                 <Link
                   href="/services/service-details/"
                   className="learn-more-btn"
-                  
                 >
                   <Icon.PlusCircle /> Learn More
                 </Link>
@@ -208,7 +201,7 @@ const ServicesStyle4 = () => {
                   <Image src={iconBg1} alt="image" width={93} height={88} />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
+                  <Link href="/services/service-details/">
                     Branding & Marketing
                   </Link>
                 </h3>
@@ -220,7 +213,6 @@ const ServicesStyle4 = () => {
                 <Link
                   href="/services/service-details/"
                   className="learn-more-btn"
-                  
                 >
                   <Icon.PlusCircle /> Learn More
                 </Link>

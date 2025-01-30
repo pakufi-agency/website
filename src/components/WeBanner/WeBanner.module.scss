@@ -26,17 +26,22 @@
     text-align: center;
 }
 
-.circleBox {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
+// .circleBox {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     z-index: -1;
+// }
 .ctaShape {
     position: absolute;
     bottom: 0;
     right: 0;
     z-index: -1;
+
+    img {
+        transform: rotate(180deg);
+        opacity: 0.6;
+    }
 }
 
 @media only screen and (min-width: 767px) {

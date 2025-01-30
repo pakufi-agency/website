@@ -5,12 +5,12 @@ import * as Icon from "react-feather";
 import Link from "next/link";
 import Image from "next/image";
 
-import blogImg1 from "/public/images/blog-image/blog1.jpg";
-import blogImg2 from "/public/images/blog-image/blog2.jpg";
-import blogImg3 from "/public/images/blog-image/blog3.jpg";
-import blogImg4 from "/public/images/blog-image/blog4.jpg";
-import blogImg5 from "/public/images/blog-image/blog5.jpg";
-import blogImg6 from "/public/images/blog-image/blog6.jpg";
+import blogImg1 from "/public/images/legacy/blog-image/blog1.jpg";
+import blogImg2 from "/public/images/legacy/blog-image/blog2.jpg";
+import blogImg3 from "/public/images/legacy/blog-image/blog3.jpg";
+import blogImg4 from "/public/images/legacy/blog-image/blog4.jpg";
+import blogImg5 from "/public/images/legacy/blog-image/blog5.jpg";
+import blogImg6 from "/public/images/legacy/blog-image/blog6.jpg";
 
 const BlogGridPost = () => {
   return (
@@ -21,7 +21,7 @@ const BlogGridPost = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-blog-post">
                 <div className="blog-image">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg1}
                       alt="image"
@@ -37,16 +37,13 @@ const BlogGridPost = () => {
 
                 <div className="blog-post-content">
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       The Security Risks of Changing Package Owners
                     </Link>
                   </h3>
 
                   <span>
-                    By{" "}
-                    <Link href="#" >
-                      Admin
-                    </Link>
+                    By <Link href="#">Admin</Link>
                   </span>
 
                   <p>
@@ -55,11 +52,7 @@ const BlogGridPost = () => {
                     aliqua. Quis ipsum suspendisse ultrices gravida.
                   </p>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="read-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="read-more-btn">
                     Read More <Icon.ArrowRight />
                   </Link>
                 </div>
@@ -69,7 +62,7 @@ const BlogGridPost = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-blog-post">
                 <div className="blog-image">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg2}
                       alt="image"
@@ -85,16 +78,13 @@ const BlogGridPost = () => {
 
                 <div className="blog-post-content">
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       Tips to Protecting Your Business and Family
                     </Link>
                   </h3>
 
                   <span>
-                    By{" "}
-                    <Link href="#" >
-                      Smith
-                    </Link>
+                    By <Link href="#">Smith</Link>
                   </span>
 
                   <p>
@@ -103,11 +93,7 @@ const BlogGridPost = () => {
                     aliqua. Quis ipsum suspendisse ultrices gravida.
                   </p>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="read-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="read-more-btn">
                     Read More <Icon.ArrowRight />
                   </Link>
                 </div>
@@ -117,7 +103,7 @@ const BlogGridPost = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-blog-post">
                 <div className="blog-image">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg3}
                       alt="image"
@@ -133,16 +119,13 @@ const BlogGridPost = () => {
 
                 <div className="blog-post-content">
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       Protect Your Workplace from Cyber Attacks
                     </Link>
                   </h3>
 
                   <span>
-                    By{" "}
-                    <Link href="#" >
-                      John
-                    </Link>
+                    By <Link href="#">John</Link>
                   </span>
 
                   <p>
@@ -151,11 +134,7 @@ const BlogGridPost = () => {
                     aliqua. Quis ipsum suspendisse ultrices gravida.
                   </p>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="read-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="read-more-btn">
                     Read More <Icon.ArrowRight />
                   </Link>
                 </div>
@@ -165,7 +144,7 @@ const BlogGridPost = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-blog-post">
                 <div className="blog-image">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg4}
                       alt="image"
@@ -181,16 +160,13 @@ const BlogGridPost = () => {
 
                 <div className="blog-post-content">
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       Here are the 5 most telling signs of micromanagement
                     </Link>
                   </h3>
 
                   <span>
-                    By{" "}
-                    <Link href="#" >
-                      Admin
-                    </Link>
+                    By <Link href="#">Admin</Link>
                   </span>
 
                   <p>
@@ -199,11 +175,7 @@ const BlogGridPost = () => {
                     aliqua. Quis ipsum suspendisse ultrices gravida.
                   </p>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="read-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="read-more-btn">
                     Read More <Icon.ArrowRight />
                   </Link>
                 </div>
@@ -213,7 +185,7 @@ const BlogGridPost = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-blog-post">
                 <div className="blog-image">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg5}
                       alt="image"
@@ -229,16 +201,13 @@ const BlogGridPost = () => {
 
                 <div className="blog-post-content">
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       I Used The Web For A Day On A 50 MB Budget
                     </Link>
                   </h3>
 
                   <span>
-                    By{" "}
-                    <Link href="#" >
-                      Smith
-                    </Link>
+                    By <Link href="#">Smith</Link>
                   </span>
 
                   <p>
@@ -247,11 +216,7 @@ const BlogGridPost = () => {
                     aliqua. Quis ipsum suspendisse ultrices gravida.
                   </p>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="read-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="read-more-btn">
                     Read More <Icon.ArrowRight />
                   </Link>
                 </div>
@@ -261,7 +226,7 @@ const BlogGridPost = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-blog-post">
                 <div className="blog-image">
-                  <Link href="/blog/blog-details/" >
+                  <Link href="/blog/blog-details/">
                     <Image
                       src={blogImg6}
                       alt="image"
@@ -277,16 +242,13 @@ const BlogGridPost = () => {
 
                 <div className="blog-post-content">
                   <h3>
-                    <Link href="/blog/blog-details/" >
+                    <Link href="/blog/blog-details/">
                       Making Peace With The Feast Or Famine Of Freelancing
                     </Link>
                   </h3>
 
                   <span>
-                    By{" "}
-                    <Link href="#" >
-                      John
-                    </Link>
+                    By <Link href="#">John</Link>
                   </span>
 
                   <p>
@@ -295,11 +257,7 @@ const BlogGridPost = () => {
                     aliqua. Quis ipsum suspendisse ultrices gravida.
                   </p>
 
-                  <Link
-                    href="/blog/blog-details/"
-                    className="read-more-btn"
-                    
-                  >
+                  <Link href="/blog/blog-details/" className="read-more-btn">
                     Read More <Icon.ArrowRight />
                   </Link>
                 </div>

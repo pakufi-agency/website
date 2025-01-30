@@ -4,8 +4,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import bannerImg from "/public/images/iot-banner-image/iot-main-img1.png";
-import iotShape1 from "/public/images/iot-banner-image/iot-shape1.png";
+import bannerImg from "/public/images/legacy/iot-banner-image/iot-main-img1.png";
+import iotShape1 from "/public/images/legacy/iot-banner-image/iot-shape1.png";
 
 const MainBanner = () => {
   return (
@@ -51,7 +51,6 @@ const MainBanner = () => {
               data-aos-delay="400"
               data-aos-duration="500"
               data-aos-once="true"
-              
             >
               Get Started
             </Link>

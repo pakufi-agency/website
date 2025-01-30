@@ -4,14 +4,14 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import projectImg1 from "/public/images/projects-img1.jpg";
-import projectImg2 from "/public/images/projects-img2.jpg";
-import projectImg3 from "/public/images/projects-img3.jpg";
-import projectImg4 from "/public/images/projects-img4.jpg";
-import projectImg5 from "/public/images/projects-img5.jpg";
-import projectImg6 from "/public/images/projects-img6.jpg";
-import projectImg7 from "/public/images/projects-img7.jpg";
-import projectImg8 from "/public/images/projects-img8.jpg";
+import projectImg1 from "/public/images/legacy/projects-img1.jpg";
+import projectImg2 from "/public/images/legacy/projects-img2.jpg";
+import projectImg3 from "/public/images/legacy/projects-img3.jpg";
+import projectImg4 from "/public/images/legacy/projects-img4.jpg";
+import projectImg5 from "/public/images/legacy/projects-img5.jpg";
+import projectImg6 from "/public/images/legacy/projects-img6.jpg";
+import projectImg7 from "/public/images/legacy/projects-img7.jpg";
+import projectImg8 from "/public/images/legacy/projects-img8.jpg";
 
 const ProjectsCardStyle2 = () => {
   return (
@@ -24,7 +24,7 @@ const ProjectsCardStyle2 = () => {
                 <Image src={projectImg1} alt="image" width={800} height={800} />
 
                 <div className="plus-icon">
-                  <Link href="/projects/project-details/" >
+                  <Link href="/projects/project-details/">
                     <span></span>
                   </Link>
                 </div>
@@ -36,7 +36,7 @@ const ProjectsCardStyle2 = () => {
                 <Image src={projectImg2} alt="image" width={800} height={800} />
 
                 <div className="plus-icon">
-                  <Link href="/projects/project-details/" >
+                  <Link href="/projects/project-details/">
                     <span></span>
                   </Link>
                 </div>
@@ -48,7 +48,7 @@ const ProjectsCardStyle2 = () => {
                 <Image src={projectImg3} alt="image" width={800} height={800} />
 
                 <div className="plus-icon">
-                  <Link href="/projects/project-details/" >
+                  <Link href="/projects/project-details/">
                     <span></span>
                   </Link>
                 </div>
@@ -60,7 +60,7 @@ const ProjectsCardStyle2 = () => {
                 <Image src={projectImg4} alt="image" width={800} height={800} />
 
                 <div className="plus-icon">
-                  <Link href="/projects/project-details/" >
+                  <Link href="/projects/project-details/">
                     <span></span>
                   </Link>
                 </div>
@@ -72,7 +72,7 @@ const ProjectsCardStyle2 = () => {
                 <Image src={projectImg5} alt="image" width={800} height={800} />
 
                 <div className="plus-icon">
-                  <Link href="/projects/project-details/" >
+                  <Link href="/projects/project-details/">
                     <span></span>
                   </Link>
                 </div>
@@ -84,7 +84,7 @@ const ProjectsCardStyle2 = () => {
                 <Image src={projectImg6} alt="image" width={800} height={800} />
 
                 <div className="plus-icon">
-                  <Link href="/projects/project-details/" >
+                  <Link href="/projects/project-details/">
                     <span></span>
                   </Link>
                 </div>
@@ -96,7 +96,7 @@ const ProjectsCardStyle2 = () => {
                 <Image src={projectImg7} alt="image" width={800} height={800} />
 
                 <div className="plus-icon">
-                  <Link href="/projects/project-details/" >
+                  <Link href="/projects/project-details/">
                     <span></span>
                   </Link>
                 </div>
@@ -108,7 +108,7 @@ const ProjectsCardStyle2 = () => {
                 <Image src={projectImg8} alt="image" width={800} height={800} />
 
                 <div className="plus-icon">
-                  <Link href="/projects/project-details/" >
+                  <Link href="/projects/project-details/">
                     <span></span>
                   </Link>
                 </div>

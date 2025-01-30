@@ -3,9 +3,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import Image from "next/image";
 
-import productImg1 from "/public/images/shop-image/shop-image1.jpg";
-import productImg2 from "/public/images/shop-image/shop-image2.jpg";
-import productImg3 from "/public/images/shop-image/shop-image3.jpg";
+import productImg1 from "/public/images/legacy/shop-image/shop-image1.jpg";
+import productImg2 from "/public/images/legacy/shop-image/shop-image2.jpg";
+import productImg3 from "/public/images/legacy/shop-image/shop-image3.jpg";
 
 const ProductSlider = () => {
   return (

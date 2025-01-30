@@ -4,18 +4,18 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import serviceImg1 from "/public/images/services-image/service-image1.png";
-import serviceImg2 from "/public/images/services-image/service-image2.png";
-import serviceImg3 from "/public/images/services-image/service-image3.png";
-import serviceImg4 from "/public/images/services-image/service-image4.png";
-import serviceImg5 from "/public/images/services-image/service-image5.png";
-import serviceImg6 from "/public/images/services-image/service-image6.png";
+import serviceImg1 from "/public/images/legacy/services-image/service-image1.png";
+import serviceImg2 from "/public/images/legacy/services-image/service-image2.png";
+import serviceImg3 from "/public/images/legacy/services-image/service-image3.png";
+import serviceImg4 from "/public/images/legacy/services-image/service-image4.png";
+import serviceImg5 from "/public/images/legacy/services-image/service-image5.png";
+import serviceImg6 from "/public/images/legacy/services-image/service-image6.png";
 
 // Shape Images
-import shape1 from "/public/images/shape1.png";
-import shape2 from "/public/images/shape2.svg";
-import shape3 from "/public/images/shape3.svg";
-import shape4 from "/public/images/shape4.svg";
+import shape1 from "/public/images/legacy/shape1.png";
+import shape2 from "/public/images/legacy/shape2.svg";
+import shape3 from "/public/images/legacy/shape3.svg";
+import shape4 from "/public/images/legacy/shape4.svg";
 
 const OurServices = () => {
   return (
@@ -50,7 +50,7 @@ const OurServices = () => {
                   />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
+                  <Link href="/services/service-details/">
                     IT Professionals
                   </Link>
                 </h3>
@@ -78,7 +78,7 @@ const OurServices = () => {
                   />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
+                  <Link href="/services/service-details/">
                     Software Engineers
                   </Link>
                 </h3>
@@ -106,7 +106,7 @@ const OurServices = () => {
                   />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
+                  <Link href="/services/service-details/">
                     Health & Manufacturing
                   </Link>
                 </h3>
@@ -134,7 +134,7 @@ const OurServices = () => {
                   />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
+                  <Link href="/services/service-details/">
                     Security & Surveillance
                   </Link>
                 </h3>
@@ -162,7 +162,7 @@ const OurServices = () => {
                   />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
+                  <Link href="/services/service-details/">
                     Automatic Optimization
                   </Link>
                 </h3>
@@ -190,9 +190,7 @@ const OurServices = () => {
                   />
                 </div>
                 <h3>
-                  <Link href="/services/service-details/" >
-                    Data Analysts
-                  </Link>
+                  <Link href="/services/service-details/">Data Analysts</Link>
                 </h3>
                 <p>
                   Lorem ipsum dolor sit amet elit, adipiscing, sed do eiusmod

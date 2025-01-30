@@ -4,10 +4,10 @@ import React from "react";
 import * as Icon from "react-feather";
 import Image from "next/image";
 
-import worksImg1 from "/public/images/works-image/works-image1.jpg";
-import worksImg2 from "/public/images/works-image/works-image2.jpg";
-import worksImg3 from "/public/images/works-image/works-image3.jpg";
-import worksImg4 from "/public/images/works-image/works-image4.jpg";
+import worksImg1 from "/public/images/legacy/works-image/works-image1.jpg";
+import worksImg2 from "/public/images/legacy/works-image/works-image2.jpg";
+import worksImg3 from "/public/images/legacy/works-image/works-image3.jpg";
+import worksImg4 from "/public/images/legacy/works-image/works-image4.jpg";
 
 const ProjectsDetailsContent = () => {
   return (
@@ -17,45 +17,25 @@ const ProjectsDetailsContent = () => {
           <div className="row">
             <div className="col-lg-6 col-md-6 col-sm-6">
               <div className="project-details-image">
-                <Image
-                  src={worksImg1}
-                  alt="work"
-                  width={640}
-                  height={550}
-                />
+                <Image src={worksImg1} alt="work" width={640} height={550} />
               </div>
             </div>
 
             <div className="col-lg-6 col-md-6 col-sm-6">
               <div className="project-details-image">
-                <Image
-                  src={worksImg2}
-                  alt="work"
-                  width={640}
-                  height={550}
-                />
+                <Image src={worksImg2} alt="work" width={640} height={550} />
               </div>
             </div>
 
             <div className="col-lg-6 col-md-6 col-sm-6">
               <div className="project-details-image">
-                <Image
-                  src={worksImg3}
-                  alt="work"
-                  width={640}
-                  height={550}
-                />
+                <Image src={worksImg3} alt="work" width={640} height={550} />
               </div>
             </div>
 
             <div className="col-lg-6 col-md-6 col-sm-6">
               <div className="project-details-image">
-                <Image
-                  src={worksImg4}
-                  alt="work"
-                  width={640}
-                  height={550}
-                />
+                <Image src={worksImg4} alt="work" width={640} height={550} />
               </div>
             </div>
 

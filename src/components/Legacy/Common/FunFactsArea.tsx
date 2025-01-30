@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import map from "/public/images/map.png";
+import map from "/public/images/legacy/map.png";
 
 const FunFactsArea = () => {
   return (
@@ -90,7 +90,7 @@ const FunFactsArea = () => {
             <h3>Have any question about us?</h3>
             <p>Don&apos;t hesitate to contact us</p>
 
-            <Link href="/contact" className="btn btn-primary" >
+            <Link href="/contact" className="btn btn-primary">
               Contact Us
             </Link>
           </div>

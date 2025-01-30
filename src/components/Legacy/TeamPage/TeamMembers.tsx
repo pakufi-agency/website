@@ -4,15 +4,15 @@ import React from "react";
 import * as Icon from "react-feather";
 import Image from "next/image";
 
-import teamImg1 from "/public/images/team-image/team1.jpg";
-import teamImg2 from "/public/images/team-image/team2.jpg";
-import teamImg3 from "/public/images/team-image/team3.jpg";
-import teamImg4 from "/public/images/team-image/team4.jpg";
-import teamImg5 from "/public/images/team-image/team5.jpg"; 
-import teamImg6 from "/public/images/team-image/team6.jpg"; 
-import teamImg7 from "/public/images/team-image/team7.jpg"; 
-import teamImg8 from "/public/images/team-image/team8.jpg"; 
-import teamImg9 from "/public/images/team-image/team9.jpg"; 
+import teamImg1 from "/public/images/legacy/team-image/team1.jpg";
+import teamImg2 from "/public/images/legacy/team-image/team2.jpg";
+import teamImg3 from "/public/images/legacy/team-image/team3.jpg";
+import teamImg4 from "/public/images/legacy/team-image/team4.jpg";
+import teamImg5 from "/public/images/legacy/team-image/team5.jpg";
+import teamImg6 from "/public/images/legacy/team-image/team6.jpg";
+import teamImg7 from "/public/images/legacy/team-image/team7.jpg";
+import teamImg8 from "/public/images/legacy/team-image/team8.jpg";
+import teamImg9 from "/public/images/legacy/team-image/team9.jpg";
 
 const TeamMembers = () => {
   return (

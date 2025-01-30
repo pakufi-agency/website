@@ -3,11 +3,11 @@
 import React from "react";
 import Image from "next/image";
 
-import freeTrialImg from "/public/images/free-trial-img.png";
+import freeTrialImg from "/public/images/legacy/free-trial-img.png";
 
 // Shape Images
-import shape2 from "/public/images/shape2.svg";
-import shape4 from "/public/images/shape4.svg";
+import shape2 from "/public/images/legacy/shape2.svg";
+import shape4 from "/public/images/legacy/shape4.svg";
 
 const Newsletter = () => {
   return (

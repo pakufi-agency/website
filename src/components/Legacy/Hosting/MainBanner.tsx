@@ -4,23 +4,23 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import hostingShape1 from "/public/images/hosting-banner-image/hosting-shape1.png";
-import hostingShape2 from "/public/images/hosting-banner-image/hosting-shape2.png";
-import hostingShape3 from "/public/images/hosting-banner-image/hosting-shape3.png";
-import hostingShape4 from "/public/images/hosting-banner-image/hosting-shape4.png";
-import hostingShape5 from "/public/images/hosting-banner-image/hosting-shape5.png";
-import hostingShape6 from "/public/images/hosting-banner-image/hosting-shape6.png";
-import hostingShape7 from "/public/images/hosting-banner-image/hosting-shape7.png";
-import hostingShape8 from "/public/images/hosting-banner-image/hosting-shape8.png";
-import hostingShape9 from "/public/images/hosting-banner-image/hosting-shape9.png";
-import hostingStaticMain from "/public/images/hosting-banner-image/hosting-static-main.png";
+import hostingShape1 from "/public/images/legacy/hosting-banner-image/hosting-shape1.png";
+import hostingShape2 from "/public/images/legacy/hosting-banner-image/hosting-shape2.png";
+import hostingShape3 from "/public/images/legacy/hosting-banner-image/hosting-shape3.png";
+import hostingShape4 from "/public/images/legacy/hosting-banner-image/hosting-shape4.png";
+import hostingShape5 from "/public/images/legacy/hosting-banner-image/hosting-shape5.png";
+import hostingShape6 from "/public/images/legacy/hosting-banner-image/hosting-shape6.png";
+import hostingShape7 from "/public/images/legacy/hosting-banner-image/hosting-shape7.png";
+import hostingShape8 from "/public/images/legacy/hosting-banner-image/hosting-shape8.png";
+import hostingShape9 from "/public/images/legacy/hosting-banner-image/hosting-shape9.png";
+import hostingStaticMain from "/public/images/legacy/hosting-banner-image/hosting-static-main.png";
 
 // Shape Images
-import shape1 from "/public/images/shape1.png";
-import shape2 from "/public/images/shape2.svg";
-import shape3 from "/public/images/shape3.svg";
-import shape4 from "/public/images/shape4.svg";
-import shape5 from "/public/images/shape5.png";
+import shape1 from "/public/images/legacy/shape1.png";
+import shape2 from "/public/images/legacy/shape2.svg";
+import shape3 from "/public/images/legacy/shape3.svg";
+import shape4 from "/public/images/legacy/shape4.svg";
+import shape5 from "/public/images/legacy/shape5.png";
 
 const MainBanner = () => {
   return (
@@ -44,11 +44,7 @@ const MainBanner = () => {
                       Starting at <span>$8.99</span> $3.95/month
                     </p>
 
-                    <Link
-                      href="/contact"
-                      className="btn btn-primary"
-                      
-                    >
+                    <Link href="/contact" className="btn btn-primary">
                       Get Started
                     </Link>
                   </div>

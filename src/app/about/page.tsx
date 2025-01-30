@@ -4,7 +4,7 @@ import TeamSection from "../../components/TeamSection/TeamSection";
 import CtaText from "../../components/CtaText/CtaText";
 import Footer from "../../components/Layout/Footer";
 import PageBanner from "../../components/Legacy/Common/PageBanner";
-import AboutUsContent1 from "../../components/Legacy/AboutUs/AboutUsContent1";
+import AboutUsContent1 from "../../components/Legacy/AboutUs/AboutUsContent2";
 
 export default function Page() {
   return (

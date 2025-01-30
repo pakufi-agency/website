@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 
-import aboutImg from "/public/images/about4.png";
+import aboutImg from "/public/images/legacy/about4.png";
 
 const AboutUsContent2 = () => {
   return (
@@ -13,12 +13,7 @@ const AboutUsContent2 = () => {
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-12">
               <div className="ml-about-img">
-                <Image
-                  src={aboutImg}
-                  alt="image"
-                  width={677}
-                  height={575}
-                />
+                <Image src={aboutImg} alt="image" width={677} height={575} />
               </div>
             </div>
 

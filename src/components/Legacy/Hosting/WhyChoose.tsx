@@ -3,8 +3,8 @@
 import React from "react";
 import Image from "next/image";
 
-import cercleShape from "/public/images/services-left-image/cercle-shape.png";
-import whyChooseUsImg from "/public/images/why-choose-us-image/main-static.png";
+import cercleShape from "/public/images/legacy/services-left-image/cercle-shape.png";
+import whyChooseUsImg from "/public/images/legacy/why-choose-us-image/main-static.png";
 
 const WhyChoose = () => {
   return (

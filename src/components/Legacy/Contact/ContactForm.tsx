@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import contactImg from "/public/images/contact-img.png";
+import contactImg from "/public/images/legacy/contact-img.png";
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -138,14 +138,8 @@ const ContactForm: React.FC = () => {
                         htmlFor="flexCheckDefault"
                       >
                         By checking this, you agree to our{" "}
-                        <Link href="/terms-conditions" >
-                          Terms
-                        </Link>{" "}
-                        and{" "}
-                        <Link href="/privacy-policy" >
-                          Privacy policy
-                        </Link>
-                        .
+                        <Link href="/terms-conditions">Terms</Link> and{" "}
+                        <Link href="/privacy-policy">Privacy policy</Link>.
                       </label>
                     </div>
                   </div>

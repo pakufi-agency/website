@@ -5,14 +5,14 @@ import Link from "next/link";
 import * as Icon from "react-feather";
 import Image from "next/image";
 
-import productImg1 from "/public/images/shop-image/shop-image1.jpg";
-import productImg2 from "/public/images/shop-image/shop-image2.jpg";
-import productImg3 from "/public/images/shop-image/shop-image3.jpg";
-import productImg4 from "/public/images/shop-image/shop-image4.jpg";
-import productImg5 from "/public/images/shop-image/shop-image5.jpg";
-import productImg6 from "/public/images/shop-image/shop-image6.jpg";
-import productImg7 from "/public/images/shop-image/shop-image7.jpg";
-import productImg8 from "/public/images/shop-image/shop-image8.jpg";
+import productImg1 from "/public/images/legacy/shop-image/shop-image1.jpg";
+import productImg2 from "/public/images/legacy/shop-image/shop-image2.jpg";
+import productImg3 from "/public/images/legacy/shop-image/shop-image3.jpg";
+import productImg4 from "/public/images/legacy/shop-image/shop-image4.jpg";
+import productImg5 from "/public/images/legacy/shop-image/shop-image5.jpg";
+import productImg6 from "/public/images/legacy/shop-image/shop-image6.jpg";
+import productImg7 from "/public/images/legacy/shop-image/shop-image7.jpg";
+import productImg8 from "/public/images/legacy/shop-image/shop-image8.jpg";
 
 const ProductCard = () => {
   return (
@@ -64,7 +64,7 @@ const ProductCard = () => {
                       </button>
                     </li>
                     <li>
-                      <Link href="/shop/product-details/" >
+                      <Link href="/shop/product-details/">
                         <Icon.Link />
                       </Link>
                     </li>
@@ -73,9 +73,7 @@ const ProductCard = () => {
 
                 <div className="products-content">
                   <h3>
-                    <Link href="/shop/product-details/" >
-                      Wood Pencil
-                    </Link>
+                    <Link href="/shop/product-details/">Wood Pencil</Link>
                   </h3>
                   <span>$19.99</span>
                   <ul>
@@ -123,7 +121,7 @@ const ProductCard = () => {
                       </button>
                     </li>
                     <li>
-                      <Link href="/shop/product-details/" >
+                      <Link href="/shop/product-details/">
                         <Icon.Link />
                       </Link>
                     </li>
@@ -131,9 +129,7 @@ const ProductCard = () => {
                 </div>
                 <div className="products-content">
                   <h3>
-                    <Link href="/shop/product-details/" >
-                      T-Shirt
-                    </Link>
+                    <Link href="/shop/product-details/">T-Shirt</Link>
                   </h3>
                   <span>$22.99</span>
                   <ul>
@@ -181,7 +177,7 @@ const ProductCard = () => {
                       </button>
                     </li>
                     <li>
-                      <Link href="/shop/product-details/" >
+                      <Link href="/shop/product-details/">
                         <Icon.Link />
                       </Link>
                     </li>
@@ -190,9 +186,7 @@ const ProductCard = () => {
 
                 <div className="products-content">
                   <h3>
-                    <Link href="/shop/product-details/" >
-                      Casual Shoe
-                    </Link>
+                    <Link href="/shop/product-details/">Casual Shoe</Link>
                   </h3>
                   <span>$31.99</span>
                   <ul>
@@ -240,7 +234,7 @@ const ProductCard = () => {
                       </button>
                     </li>
                     <li>
-                      <Link href="/shop/product-details/" >
+                      <Link href="/shop/product-details/">
                         <Icon.Link />
                       </Link>
                     </li>
@@ -249,9 +243,7 @@ const ProductCard = () => {
 
                 <div className="products-content">
                   <h3>
-                    <Link href="/shop/product-details/" >
-                      Coffee Bag
-                    </Link>
+                    <Link href="/shop/product-details/">Coffee Bag</Link>
                   </h3>
                   <span>$4.99</span>
                   <ul>
@@ -299,7 +291,7 @@ const ProductCard = () => {
                       </button>
                     </li>
                     <li>
-                      <Link href="/shop/product-details/" >
+                      <Link href="/shop/product-details/">
                         <Icon.Link />
                       </Link>
                     </li>
@@ -308,9 +300,7 @@ const ProductCard = () => {
 
                 <div className="products-content">
                   <h3>
-                    <Link href="/shop/product-details/" >
-                      Single Chair
-                    </Link>
+                    <Link href="/shop/product-details/">Single Chair</Link>
                   </h3>
                   <span>$149.99</span>
                   <ul>
@@ -358,7 +348,7 @@ const ProductCard = () => {
                       </button>
                     </li>
                     <li>
-                      <Link href="/shop/product-details/" >
+                      <Link href="/shop/product-details/">
                         <Icon.Link />
                       </Link>
                     </li>
@@ -367,9 +357,7 @@ const ProductCard = () => {
 
                 <div className="products-content">
                   <h3>
-                    <Link href="/shop/product-details/" >
-                      Business Card
-                    </Link>
+                    <Link href="/shop/product-details/">Business Card</Link>
                   </h3>
                   <span>$1.99</span>
                   <ul>
@@ -417,7 +405,7 @@ const ProductCard = () => {
                       </button>
                     </li>
                     <li>
-                      <Link href="/shop/product-details/" >
+                      <Link href="/shop/product-details/">
                         <Icon.Link />
                       </Link>
                     </li>
@@ -426,9 +414,7 @@ const ProductCard = () => {
 
                 <div className="products-content">
                   <h3>
-                    <Link href="/shop/product-details/" >
-                      Book Cover
-                    </Link>
+                    <Link href="/shop/product-details/">Book Cover</Link>
                   </h3>
                   <span>$3.99</span>
                   <ul>
@@ -476,7 +462,7 @@ const ProductCard = () => {
                       </button>
                     </li>
                     <li>
-                      <Link href="/shop/product-details/" >
+                      <Link href="/shop/product-details/">
                         <Icon.Link />
                       </Link>
                     </li>
@@ -484,9 +470,7 @@ const ProductCard = () => {
                 </div>
                 <div className="products-content">
                   <h3>
-                    <Link href="/shop/product-details/" >
-                      Wall Watch
-                    </Link>
+                    <Link href="/shop/product-details/">Wall Watch</Link>
                   </h3>
                   <span>$9.99</span>
                   <ul>
@@ -518,27 +502,27 @@ const ProductCard = () => {
                 <nav aria-label="Page navigation">
                   <ul className="pagination justify-content-center">
                     <li className="page-item">
-                      <Link className="page-link" href="#" >
+                      <Link className="page-link" href="#">
                         Prev
                       </Link>
                     </li>
                     <li className="page-item active">
-                      <Link className="page-link" href="#" >
+                      <Link className="page-link" href="#">
                         1
                       </Link>
                     </li>
                     <li className="page-item">
-                      <Link className="page-link" href="#" >
+                      <Link className="page-link" href="#">
                         2
                       </Link>
                     </li>
                     <li className="page-item">
-                      <Link className="page-link" href="#" >
+                      <Link className="page-link" href="#">
                         3
                       </Link>
                     </li>
                     <li className="page-item">
-                      <Link className="page-link" href="#" >
+                      <Link className="page-link" href="#">
                         Next
                       </Link>
                     </li>

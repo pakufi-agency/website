@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react"; 
+import React from "react";
 import {
   Accordion,
   AccordionItem,
@@ -10,8 +10,8 @@ import {
 } from "react-accessible-accordion";
 import Image from "next/image";
 
-import featureImg1 from "/public/images/features-details-image/feature1.png";
-import featureImg2 from "/public/images/features-details-image/feature2.png";
+import featureImg1 from "/public/images/legacy/features-details-image/feature1.png";
+import featureImg2 from "/public/images/legacy/features-details-image/feature2.png";
 
 const FeatureDetailsContent = () => {
   return (
@@ -20,12 +20,7 @@ const FeatureDetailsContent = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6 features-details-image">
-              <Image
-                src={featureImg1}
-                alt="image"
-                width={800}
-                height={600}
-              />
+              <Image src={featureImg1} alt="image" width={800} height={600} />
             </div>
 
             <div className="col-lg-6 features-details">
@@ -119,12 +114,7 @@ const FeatureDetailsContent = () => {
             </div>
 
             <div className="col-lg-6 features-details-image">
-              <Image
-                src={featureImg2}
-                alt="image"
-                width={800}
-                height={600}
-              />
+              <Image src={featureImg2} alt="image" width={800} height={600} />
             </div>
           </div>
         </div>

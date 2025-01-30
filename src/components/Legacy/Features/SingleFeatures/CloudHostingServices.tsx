@@ -4,21 +4,21 @@ import React from "react";
 import * as Icon from "react-feather";
 import Image from "next/image";
 
-import bookSelf from "/public/images/services-right-image/book-self.png";
-import box from "/public/images/services-right-image/box.png";
-import chair from "/public/images/services-right-image/chair.png";
-import cloud from "/public/images/services-right-image/cloud.png";
-import cup from "/public/images/services-right-image/cup.png";
-import flowerTop from "/public/images/services-right-image/flower-top.png";
-import headPhone from "/public/images/services-right-image/head-phone.png";
-import monitor from "/public/images/services-right-image/monitor.png";
-import mug from "/public/images/services-right-image/mug.png";
-import table from "/public/images/services-right-image/table.png";
-import tissue from "/public/images/services-right-image/tissue.png";
-import waterBottle from "/public/images/services-right-image/water-bottle.png";
-import wifi from "/public/images/services-right-image/wifi.png";
-import cercleShape from "/public/images/services-right-image/cercle-shape.png";
-import serviceRightMainPic from "/public/images/services-right-image/service-right-main-pic.png";
+import bookSelf from "/public/images/legacy/services-right-image/book-self.png";
+import box from "/public/images/legacy/services-right-image/box.png";
+import chair from "/public/images/legacy/services-right-image/chair.png";
+import cloud from "/public/images/legacy/services-right-image/cloud.png";
+import cup from "/public/images/legacy/services-right-image/cup.png";
+import flowerTop from "/public/images/legacy/services-right-image/flower-top.png";
+import headPhone from "/public/images/legacy/services-right-image/head-phone.png";
+import monitor from "/public/images/legacy/services-right-image/monitor.png";
+import mug from "/public/images/legacy/services-right-image/mug.png";
+import table from "/public/images/legacy/services-right-image/table.png";
+import tissue from "/public/images/legacy/services-right-image/tissue.png";
+import waterBottle from "/public/images/legacy/services-right-image/water-bottle.png";
+import wifi from "/public/images/legacy/services-right-image/wifi.png";
+import cercleShape from "/public/images/legacy/services-right-image/cercle-shape.png";
+import serviceRightMainPic from "/public/images/legacy/services-right-image/service-right-main-pic.png";
 
 const CloudHostingServices = () => {
   return (
