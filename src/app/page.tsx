@@ -1,6 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
-import client from "../utils/apolloClient";
+import createApolloClient from "../utils/apolloClient";
+import Image from "next/image";
 
 import Navbar from "../components/Layout/Navbar";
 import Footer from "../components/Layout/Footer";
@@ -20,6 +21,11 @@ import { HOMEPAGE_QUERY } from "../graphqlQueries/Homepage";
 
 import "../styles/common.scss";
 
+import greenCross from "/public/images/backgrounds/green-cross.svg";
+import whiteCross from "/public/images/backgrounds/white-cross.svg";
+import greenTriangle from "/public/images/backgrounds/green-triangle.svg";
+import whiteTriangle from "/public/images/backgrounds/white-triangle.svg";
+
 export const metadata: Metadata = {
   title: "Pakufi - Ethical Tech Agency",
   description:
@@ -28,10 +34,12 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   let homepagePage;
+  const client = createApolloClient();
 
   try {
     const { data } = await client.query({
       query: HOMEPAGE_QUERY,
+      fetchPolicy: "cache-first", // Prevents Apollo from using ANY cache
     });
 
     if (!data || !data.pages || !data.pages[0]) {
@@ -60,9 +68,9 @@ export default async function Page() {
 
       {homepagePage.sections &&
         homepagePage.sections.map((section: any, index: number) => {
-          console.log("section", section);
           switch (section.__typename) {
             case "ComponentStaticComponentHero":
+              console.log("section", section);
               return <HeroBanner {...section} key={index} />;
 
             case "ComponentStaticComponentWeStatment":
@@ -83,14 +91,12 @@ export default async function Page() {
               );
 
             case "ComponentSectionsServiceSection":
-              console.log(section);
               return <ServicesSection {...section} key={index} />;
 
             case "ComponentCommonCta":
               if (!section.isBig) {
                 return <CtaText {...section} key={index} />;
               } else {
-                console.log(section);
                 return <CtaBig {...section} key={index} />;
               }
 
@@ -99,6 +105,42 @@ export default async function Page() {
                 <Section
                   sectionTitle={section.sectionTitle}
                   sectionSubtitle={section.sectionDescription}
+                  shapes={
+                    <>
+                      <div className="shape4">
+                        <Image
+                          src={greenTriangle}
+                          alt="shape"
+                          width={21}
+                          height={20}
+                        />
+                      </div>
+                      <div className="shape6 rotateme">
+                        <Image
+                          src={greenTriangle}
+                          alt="shape"
+                          width={21}
+                          height={20}
+                        />
+                      </div>
+                      <div className="shape7">
+                        <Image
+                          src={greenTriangle}
+                          alt="shape"
+                          width={21}
+                          height={20}
+                        />
+                      </div>
+                      <div className="shape2 rotateme">
+                        <Image
+                          src={greenCross}
+                          alt="shape"
+                          width={22}
+                          height={22}
+                        />
+                      </div>
+                    </>
+                  }
                 >
                   <TeamSection {...section} key={index} />
                 </Section>
@@ -110,6 +152,42 @@ export default async function Page() {
                   sectionTitle={section.title}
                   sectionSubtitle={section.description}
                   backgroundColor="#f9f6f6"
+                  shapes={
+                    <>
+                      <div className="shape6 rotateme">
+                        <Image
+                          src={whiteTriangle}
+                          alt="shape"
+                          width={21}
+                          height={20}
+                        />
+                      </div>
+                      <div className="shape7 rotateme">
+                        <Image
+                          src={greenCross}
+                          alt="shape"
+                          width={22}
+                          height={22}
+                        />
+                      </div>
+                      <div className="shape2">
+                        <Image
+                          src={whiteTriangle}
+                          alt="shape"
+                          width={21}
+                          height={20}
+                        />
+                      </div>
+                      <div className="shape4 rotateme">
+                        <Image
+                          src={greenTriangle}
+                          alt="shape"
+                          width={21}
+                          height={20}
+                        />
+                      </div>
+                    </>
+                  }
                 >
                   <FaqSection {...section} key={index} />
                 </Section>

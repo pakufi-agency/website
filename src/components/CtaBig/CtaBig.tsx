@@ -6,9 +6,9 @@ import Link from "next/link";
 
 import styles from "./CtaBig.module.scss";
 
-// Shape Images
-import shape2 from "/public/images/legacy/shape2.svg";
-import shape4 from "/public/images/legacy/shape4.svg";
+import whiteCross from "/public/images/backgrounds/white-cross.svg";
+import greenTriangle from "/public/images/backgrounds/green-triangle.svg";
+import whiteTriangle from "/public/images/backgrounds/white-triangle.svg";
 import freeTrialImg from "/public/images/legacy/free-trial-img.png";
 
 interface CtaBigProps {
@@ -30,8 +30,6 @@ const CtaBig: React.FC<CtaBigProps> = ({
   buttonCtaTwoLink,
   media,
 }) => {
-  console.log("media", media);
-
   return (
     <>
       <div className={styles.container}>
@@ -75,18 +73,14 @@ const CtaBig: React.FC<CtaBigProps> = ({
           </div>
         </div>
 
-        {/* Shape Images */}
-        <div className="shape2 rotateme">
-          <Image src={shape2} alt="shape" width={22} height={22} />
-        </div>
         <div className="shape4">
-          <Image src={shape4} alt="shape" width={21} height={20} />
+          <Image src={greenTriangle} alt="shape" width={21} height={20} />
         </div>
-        <div className="shape7">
-          <Image src={shape4} alt="shape" width={21} height={20} />
+        <div className="shape1">
+          <Image src={whiteTriangle} alt="shape" width={21} height={20} />
         </div>
         <div className="shape8 rotateme">
-          <Image src={shape2} alt="shape" width={22} height={22} />
+          <Image src={whiteCross} alt="shape" width={22} height={22} />
         </div>
       </div>
     </>

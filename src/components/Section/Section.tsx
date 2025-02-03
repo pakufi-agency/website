@@ -12,6 +12,7 @@ interface SectionProps {
   descriptionColor?: string;
   barBallColor?: "green" | "blue" | "";
   children: ReactNode;
+  shapes?: ReactNode;
 }
 
 const Section: React.FC<SectionProps> = ({
@@ -21,6 +22,7 @@ const Section: React.FC<SectionProps> = ({
   titleColor = "",
   descriptionColor = "",
   barBallColor = "green",
+  shapes,
   children,
 }) => {
   return (
@@ -39,6 +41,8 @@ const Section: React.FC<SectionProps> = ({
 
           <div className="row justify-content-center">{children}</div>
         </div>
+
+        {shapes && <>{shapes}</>}
       </div>
     </>
   );

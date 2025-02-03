@@ -3,6 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import BlockRendererClient from "../BlockRendererClient";
+import { type BlocksContent } from "@strapi/blocks-react-renderer";
 
 import styles from "./Hero.module.scss";
 
@@ -11,18 +13,20 @@ import greenTriangle from "/public/images/backgrounds/green-triangle.svg";
 
 interface HeroProps {
   title: string;
-  descriptionHero: string;
+  descriptionRichText: BlocksContent;
   ctaLabel: string;
   ctaLink: string;
-  imageHero: { url: string; alternativeText: string };
+  tagline: string;
+  mediaHero: { url: string; alternativeText: string };
 }
 
 const Hero: React.FC<HeroProps> = ({
   title,
-  descriptionHero,
+  descriptionRichText,
   ctaLabel,
   ctaLink,
-  imageHero,
+  mediaHero,
+  tagline,
 }) => {
   return (
     <>
@@ -35,17 +39,8 @@ const Hero: React.FC<HeroProps> = ({
               data-aos-duration="500"
               data-aos-once="true"
             >
-              We are an ethical tech agency
-            </span>
-
-            <h4
-              data-aos="fade-up"
-              data-aos-delay="200"
-              data-aos-duration="500"
-              data-aos-once="true"
-            >
               {title}
-            </h4>
+            </span>
 
             <div
               className={styles.description}
@@ -54,8 +49,16 @@ const Hero: React.FC<HeroProps> = ({
               data-aos-duration="500"
               data-aos-once="true"
             >
-              {descriptionHero}
+              <BlockRendererClient content={descriptionRichText} />
             </div>
+            <h4
+              data-aos="fade-up"
+              data-aos-delay="200"
+              data-aos-duration="500"
+              data-aos-once="true"
+            >
+              {tagline}
+            </h4>
 
             <Link href={ctaLink} className="btn button-pakufi-dark">
               {ctaLabel}
@@ -63,13 +66,17 @@ const Hero: React.FC<HeroProps> = ({
           </div>
 
           <div className={styles.bannerImage}>
-            <Image
-              src={imageHero.url}
+            <video
+              width="837"
+              height="447"
+              autoPlay
+              muted
+              loop
               className="animate__animated animate__fadeInUp animate__delay-0.8s"
-              alt={imageHero.alternativeText}
-              width={837}
-              height={447}
-            />
+            >
+              <source src={mediaHero.url} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
 
           <div className={styles.animateBorder}>

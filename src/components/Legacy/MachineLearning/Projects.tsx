@@ -1,16 +1,16 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+// import Link from "next/link";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
 
-import projectImg1 from "/public/images/legacy/projects-img1.jpg";
-import projectImg2 from "/public/images/legacy/projects-img2.jpg";
-import projectImg3 from "/public/images/legacy/projects-img3.jpg";
-import projectImg4 from "/public/images/legacy/projects-img4.jpg";
-import projectImg5 from "/public/images/legacy/projects-img5.jpg";
+// import projectImg1 from "/public/images/legacy/projects-img1.jpg";
+// import projectImg2 from "/public/images/legacy/projects-img2.jpg";
+// import projectImg3 from "/public/images/legacy/projects-img3.jpg";
+// import projectImg4 from "/public/images/legacy/projects-img4.jpg";
+// import projectImg5 from "/public/images/legacy/projects-img5.jpg";
 
 // Shape Images
 import shape1 from "/public/images/legacy/shape1.png";
@@ -34,7 +34,7 @@ const Projects = () => {
         </div>
 
         <div className="container-fluid">
-          <Swiper
+          {/* <Swiper
             spaceBetween={30}
             pagination={{
               clickable: true,
@@ -114,7 +114,7 @@ const Projects = () => {
                 </div>
               </div>
             </SwiperSlide>
-          </Swiper>
+          </Swiper> */}
         </div>
 
         {/* Shape Images */}

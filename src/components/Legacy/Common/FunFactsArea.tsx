@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import map from "/public/images/legacy/map.png";
+import map from "/public/images/map.png";
 
 const FunFactsArea = () => {
   return (

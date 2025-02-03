@@ -1,16 +1,16 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import * as Icon from "react-feather";
-import Image from "next/image";
+// import Link from "next/link";
+// import * as Icon from "react-feather";
+// import Image from "next/image";
 
-import serviceImg1 from "/public/images/legacy/repair-services-img/repair-services-img1.jpg";
-import serviceImg2 from "/public/images/legacy/repair-services-img/repair-services-img2.jpg";
-import serviceImg3 from "/public/images/legacy/repair-services-img/repair-services-img3.jpg";
-import serviceImg4 from "/public/images/legacy/repair-services-img/repair-services-img4.jpg";
-import serviceImg5 from "/public/images/legacy/repair-services-img/repair-services-img5.jpg";
-import serviceImg6 from "/public/images/legacy/repair-services-img/repair-services-img6.jpg";
+// import serviceImg1 from "/public/images/legacy/repair-services-img/repair-services-img1.jpg";
+// import serviceImg2 from "/public/images/legacy/repair-services-img/repair-services-img2.jpg";
+// import serviceImg3 from "/public/images/legacy/repair-services-img/repair-services-img3.jpg";
+// import serviceImg4 from "/public/images/legacy/repair-services-img/repair-services-img4.jpg";
+// import serviceImg5 from "/public/images/legacy/repair-services-img/repair-services-img5.jpg";
+// import serviceImg6 from "/public/images/legacy/repair-services-img/repair-services-img6.jpg";
 
 const OurServices = () => {
   return (
@@ -26,7 +26,7 @@ const OurServices = () => {
             </p>
           </div>
 
-          <div className="row justify-content-center">
+          {/* <div className="row justify-content-center">
             <div
               className="col-lg-4 col-md-6"
               data-aos="fade-up"
@@ -201,7 +201,7 @@ const OurServices = () => {
                 </Link>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

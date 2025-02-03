@@ -10,9 +10,7 @@ import styles from "./Footer.module.scss";
 import logo from "/public/images/logo.png";
 // import map from "/public/images/legacy/map.png";
 
-// Shape Images
-// import shape1 from "/public/images/legacy/shape1.png";
-import shape2 from "/public/images/legacy/shape2.svg";
+import greenCross from "/public/images/backgrounds/green-cross.svg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -199,13 +197,8 @@ const Footer = () => {
           height={443}
         /> */}
 
-        {/* Shape Images */}
-        {/* <div className="shape1">
-          <Image src={shape1} alt="shape" width={202} height={202} />
-        </div> */}
-
         <div className="shape8 rotateme">
-          <Image src={shape2} alt="shape" width={22} height={22} />
+          <Image src={greenCross} alt="shape" width={22} height={22} />
         </div>
       </footer>
     </>

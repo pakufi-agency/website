@@ -10,13 +10,13 @@ export const HOMEPAGE_QUERY = gql`
           title
           ctaLabel
           ctaLink
-          descriptionHero
-          imageHero {
+          descriptionRichText
+          tagline
+          mediaHero {
             url
             alternativeText
           }
         }
-
         ... on ComponentStaticComponentWeStatment {
           backgroundImage {
             url
