@@ -1,6 +1,27 @@
 @use './variables.scss' as *;
 
+@font-face {
+    font-family: "Grafita Normal";
+    src: url("/fonts/grafita_normal.woff2") format("woff2"),
+         url("/fonts/grafita_normal.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Grafita Special";
+    src: url("/fonts/grafita_special.woff2") format("woff2"),
+         url("/fonts/grafita_special.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
+    --font-primary: var(--font-roboto);
+    --font-secondary: "Grafita Normal", sans-serif;
+    --font-special: "Grafita Special", sans-serif;
     --primary-color: #10133B;
     --secondary-color: #5D9F7B;
     --tertiary-color: #85B360;
@@ -10,10 +31,12 @@
     --dark-grey-blue: #2A4555;
 }
 
+
 body { 
     padding: 0;
     margin: 0;
     font-size: $font-size;
+    font-family: var(--font-primary);
 }
 img {
     max-width: 100%;
@@ -50,6 +73,7 @@ p {
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     color: $black-color;
     font-weight: 500;
+    font-family: var(--font-secondary);
 }
 .text-right {
     text-align: end;
@@ -125,7 +149,7 @@ textarea.form-control {
 // Buttons
 .btn {
     font: {
-        weight: 600;
+        weight: 700;
         size: 13px;
     }
     border: none;

@@ -10,13 +10,15 @@ import "swiper/css/bundle";
 import "../styles/common.scss";
 
 import type { Metadata } from "next";
+import Head from "next/head";
 import { Roboto } from "next/font/google";
 import AosAnimation from "@/components/Layout/AosAnimation";
 import GoTop from "@/components/Layout/GoTop";
 
 const roboto = Roboto({
-  weight: "400",
+  weight: ["100", "400", "700", "900"],
   subsets: ["latin"],
+  variable: "--font-roboto",
 });
 
 export const metadata: Metadata = {
@@ -32,6 +34,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <link
+          rel="preload"
+          href="/fonts/grafita_normal.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </Head>
       <body className={roboto.className}>
         {children}
 
