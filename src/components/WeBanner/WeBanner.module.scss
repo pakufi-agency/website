@@ -55,3 +55,56 @@
         }
     }
 }
+
+
+// <div className={styles.animateBorder}>
+// <span></span>
+// <span></span>
+// <span></span>
+// <span></span>
+// </div>
+// .animateBorder {
+//     span {
+//         position: absolute;
+//         display: block;
+//         width: 5%;
+//         padding-bottom: 5%;
+//         opacity: 0;
+//         transform: translate(-50%, -50%);
+//         backface-visibility: hidden;
+//         pointer-events: none;
+//         border-radius: 50%;
+//         z-index: -2;
+//         top: 78%;
+//         left: 41%;
+
+//         &:nth-child(1) {
+//             animation: 4.2s ease-out .5s infinite normal none running pulsei;
+//         }
+//         &:nth-child(2) {
+//             animation: 4.2s ease-out 1.5s infinite normal none running pulsei;
+//         }
+//         &:nth-child(3) {
+//             animation: 4.2s ease-out 2.5s infinite normal none running pulsei;
+//         }
+//         &:nth-child(4) {
+//             animation: 4.2s ease-out 3.5s infinite normal none running pulsei;
+//         }
+//     }
+// }
+// @keyframes pulsei {
+//     0% {
+//         transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+//         border: 1.5px solid #b3eaf8;
+//         opacity: 1;
+//         width: 5%;
+//         padding-bottom: 5%;
+//     }
+//     100% {
+//         transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+//         opacity: 0;
+//         width: 50%;
+//         border: 1.5px solid #b3eaf8;
+//         padding-bottom: 50%;
+//     }
+// }

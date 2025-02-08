@@ -22,7 +22,7 @@ const Faq: React.FC<FaqProps> = ({ questions }) => {
   return (
     <>
       <div className={styles.faqAccordion}>
-        <Accordion className={styles.accordionCustom}>
+        <Accordion className={styles.accordionCustom} allowZeroExpanded>
           {questions.map((question, index) => (
             <AccordionItem
               key={index}

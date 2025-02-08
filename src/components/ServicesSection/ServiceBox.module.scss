@@ -49,6 +49,7 @@
         img {
             transition: $transition;
         }
+
         &::before {
             content: '';
             position: absolute;
@@ -63,37 +64,13 @@
             height: 60px;
         }
     }
+
     h3 {
         font-size: 18px;
         margin-bottom: 12px;
     }
-    p {
-        margin-top: auto;
-    }
-    .learnMoreButton {
-        color: #365267;
-        font: {
-            size: $font-size;
-            weight: 600;
-        };
-        svg {
-            width: 18px;
-            position: relative;
-            top: -1px;
-            margin-right: 3px;
-        }
-        &:hover {
-            color: $primary-color;
-        }
-    }
-    &:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
 
-        .icon {
-            img {
-                transform: rotateY(-360deg);
-            }
-        }
+    p {
+        max-width: 400px;
     }
 }

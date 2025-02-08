@@ -51,14 +51,14 @@ const Hero: React.FC<HeroProps> = ({
             >
               <BlockRendererClient content={descriptionRichText} />
             </div>
-            <h4
+            {/* <h4
               data-aos="fade-up"
               data-aos-delay="200"
               data-aos-duration="500"
               data-aos-once="true"
             >
               {tagline}
-            </h4>
+            </h4> */}
 
             <Link href={ctaLink} className="btn button-pakufi-dark">
               {ctaLabel}
@@ -66,42 +66,31 @@ const Hero: React.FC<HeroProps> = ({
           </div>
 
           <div className={styles.bannerImage}>
-            <video
-              width="837"
-              height="447"
-              autoPlay
-              muted
-              loop
-              className="animate__animated animate__fadeInUp animate__delay-0.8s"
-            >
-              <source src={mediaHero.url} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-
-          <div className={styles.animateBorder}>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+            <Image
+              src={mediaHero.url}
+              alt="shape"
+              width={821}
+              height={820}
+              className={styles.Image}
+            />
           </div>
 
           {/* Shape Images */}
-          <div className="shape3">
+          <div className={`shape3 ${styles.triangleShape}`}>
             <Image src={greenTriangle} alt="shape" width={21} height={20} />
           </div>
           {/* <div className="shape4">
-            <Image src={whiteTriangle} alt="shape" width={21} height={20} />
-          </div> */}
-          {/* <div className="shape6 rotateme">
-            <Image src={whiteTriangle} alt="shape" width={21} height={20} />
-          </div> */}
-          <div className="shape7">
             <Image src={greenTriangle} alt="shape" width={21} height={20} />
           </div>
-          <div className="shape8 rotateme">
-            <Image src={whiteCross} alt="shape" width={22} height={22} />
+          <div className="shape6 rotateme">
+            <Image src={greenTriangle} alt="shape" width={21} height={20} />
+          </div> */}
+          <div className={`shape7 ${styles.crossShape}`}>
+            <Image src={whiteCross} alt="shape" width={21} height={20} />
           </div>
+          {/* <div className="shape8 rotateme">
+            <Image src={whiteCross} alt="shape" width={22} height={22} />
+          </div> */}
         </div>
       </div>
     </>
