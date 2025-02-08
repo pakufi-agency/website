@@ -34,10 +34,10 @@ const Footer = () => {
                   </Link>
                 </div>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi.
+                  Pakufi, is a web agency driven by social impact. We craft
+                  high-quality, ethical, and human-centered digital solutions
+                  while empowering IT and digital professionals from
+                  underrepresented regions.
                 </p>
               </div>
             </div>
