@@ -165,6 +165,10 @@
 
 // Big screen
 @media only screen and (min-width: 1550px ) {
+    .heroBanner {
+        height: 97vh;
+    }
+
     .contentContainer {
         .bannerImage {
             top: 50px;
