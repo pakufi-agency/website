@@ -8,12 +8,14 @@ import styles from "./WeBanner.module.scss";
 import circle from "/public/images/backgrounds/green-spiral-bg.svg";
 
 interface WeBannerProps {
+  sectionTitle: String;
   statmentOne: String;
   statmentTwo: String;
   statmentThree: String;
 }
 
 const WeBanner: React.FC<WeBannerProps> = ({
+  sectionTitle,
   statmentOne,
   statmentTwo,
   statmentThree,
@@ -30,7 +32,7 @@ const WeBanner: React.FC<WeBannerProps> = ({
             </div>
             <div className="col-lg-8">
               <div className={styles.ctaContent}>
-                <h1>Empowering freedom, Bridging gaps in global inequality</h1>
+                <h1>{sectionTitle}</h1>
                 <h2>{statmentOne}</h2>
                 <h2>{statmentThree}</h2>
                 <h2>{statmentTwo}</h2>

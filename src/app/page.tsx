@@ -68,6 +68,8 @@ export default async function Page() {
 
       {homepagePage.sections &&
         homepagePage.sections.map((section: any, index: number) => {
+          console.log("section", section);
+
           switch (section.__typename) {
             case "ComponentStaticComponentHero":
               console.log("section", section);

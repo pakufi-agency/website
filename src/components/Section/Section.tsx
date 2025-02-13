@@ -1,6 +1,10 @@
 "use client";
 
 import React, { ReactNode } from "react";
+import Image from "next/image";
+
+import Bars1 from "/public/images/backgrounds/two-bars-blue-pinky.svg";
+import Bars2 from "/public/images/backgrounds/two-bars-spacing-blue-yellow.svg";
 
 import styles from "./Section.module.scss";
 
@@ -28,6 +32,9 @@ const Section: React.FC<SectionProps> = ({
   return (
     <>
       <div className={`${styles.sectionContainer}`} style={{ backgroundColor }}>
+        <div className={styles.barsLeft}>
+          <Image src={Bars1} alt="decorations" width={350} height={350} />
+        </div>
         <div className="container">
           <div className={`section-title`}>
             <h2 style={{ color: titleColor }}>{sectionTitle}</h2>
@@ -43,6 +50,9 @@ const Section: React.FC<SectionProps> = ({
         </div>
 
         {shapes && <>{shapes}</>}
+        <div className={styles.barsRight}>
+          <Image src={Bars2} alt="decorations" width={350} height={350} />
+        </div>
       </div>
     </>
   );

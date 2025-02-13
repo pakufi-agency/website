@@ -16,7 +16,6 @@ interface HeroProps {
   descriptionRichText: BlocksContent;
   ctaLabel: string;
   ctaLink: string;
-  tagline: string;
   mediaHero: { url: string; alternativeText: string };
 }
 
@@ -26,7 +25,6 @@ const Hero: React.FC<HeroProps> = ({
   ctaLabel,
   ctaLink,
   mediaHero,
-  tagline,
 }) => {
   return (
     <>
@@ -51,14 +49,6 @@ const Hero: React.FC<HeroProps> = ({
             >
               <BlockRendererClient content={descriptionRichText} />
             </div>
-            {/* <h4
-              data-aos="fade-up"
-              data-aos-delay="200"
-              data-aos-duration="500"
-              data-aos-once="true"
-            >
-              {tagline}
-            </h4> */}
 
             <Link href={ctaLink} className="btn button-pakufi-dark">
               {ctaLabel}
@@ -68,29 +58,19 @@ const Hero: React.FC<HeroProps> = ({
           <div className={styles.bannerImage}>
             <Image
               src={mediaHero.url}
-              alt="shape"
+              alt={mediaHero.alternativeText}
               width={821}
               height={820}
               className={styles.Image}
             />
           </div>
 
-          {/* Shape Images */}
           <div className={`shape3 ${styles.triangleShape}`}>
             <Image src={greenTriangle} alt="shape" width={21} height={20} />
           </div>
-          {/* <div className="shape4">
-            <Image src={greenTriangle} alt="shape" width={21} height={20} />
-          </div>
-          <div className="shape6 rotateme">
-            <Image src={greenTriangle} alt="shape" width={21} height={20} />
-          </div> */}
           <div className={`shape7 ${styles.crossShape}`}>
             <Image src={whiteCross} alt="shape" width={21} height={20} />
           </div>
-          {/* <div className="shape8 rotateme">
-            <Image src={whiteCross} alt="shape" width={22} height={22} />
-          </div> */}
         </div>
       </div>
     </>

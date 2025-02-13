@@ -18,6 +18,7 @@ export const HOMEPAGE_QUERY = gql`
           }
         }
         ... on ComponentStaticComponentWeStatment {
+          sectionTitle
           backgroundImage {
             url
             alternativeText
@@ -28,7 +29,7 @@ export const HOMEPAGE_QUERY = gql`
         }
         ... on ComponentCommonTextImageButtons {
           title
-          content
+          richText
           media {
             url
             alternativeText

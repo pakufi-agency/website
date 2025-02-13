@@ -3,23 +3,22 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import BlockRendererClient from "../BlockRendererClient";
+import { type BlocksContent } from "@strapi/blocks-react-renderer";
 
 import styles from "./TextImageButtons.module.scss";
-
-import featureImg1 from "/public/images/legacy/iot-features-image/iot-feature-image1.png";
-
 interface TextImageButtons {
-  title: String;
-  content: String;
+  richText: BlocksContent;
   buttonOneLabel: String;
   buttonOneLink: URL;
   buttonTwoLabel: String;
   buttonTwoLink: URL;
+  media: { url: string; alternativeText: string };
 }
 
 const TextImageButtons: React.FC<TextImageButtons> = ({
-  title,
-  content,
+  richText,
+  media,
   buttonOneLabel,
   buttonOneLink,
   buttonTwoLabel,
@@ -31,8 +30,7 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
         <div className="container">
           <div className="row align-items-center">
             <div className={`col-lg-6 ${styles.content}`}>
-              <h3>{title}</h3>
-              <p>{content}</p>
+              <BlockRendererClient content={richText} />
 
               <Link
                 href={buttonOneLink}
@@ -56,7 +54,12 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
               data-aos-duration="500"
               data-aos-once="true"
             >
-              <Image src={featureImg1} alt="image" width={499} height={370} />
+              <Image
+                src={media.url}
+                alt={media.alternativeText}
+                width={499}
+                height={370}
+              />
             </div>
           </div>
         </div>
