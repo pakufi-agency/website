@@ -4,16 +4,15 @@ import React from "react";
 import FaqAccordion from "../FAQ/FaqAccordion";
 
 interface FaqSectionProps {
-  title: String;
-  questions: [];
+  question_answers: [];
 }
 
-const FaqSection: React.FC<FaqSectionProps> = ({ title, questions }) => {
+const FaqSection: React.FC<FaqSectionProps> = ({ question_answers }) => {
   return (
     <>
       <div className="row justify-content-center">
         <div className="container">
-          <FaqAccordion questions={questions} />
+          <FaqAccordion questions={question_answers} />
         </div>
       </div>
     </>

@@ -33,13 +33,17 @@
     margin-top: 30px;
     color: $white;
 
-    h2 {
+    h3 {
         color: $white;
-        margin-bottom: 0;
+        margin-bottom: 20px;
         font: {
             size: 28px;
             weight: 600;
         }
+    }
+
+    p {
+        color: $white; 
     }
 
     .buttonsContainer {
@@ -61,10 +65,24 @@
 
 @media only screen and (min-width: 767px) {
     .container {
-        padding-bottom: 50px;
+        padding: 20px;
     }
 
-    .button {
-        margin-top: 50px;
+    .content {
+        .buttonsContainer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 50px;
+
+            .button {
+                margin-top: 0px;
+            }
+            .button:last-child {
+                margin-top: 0px;
+            }
+
+        }
     }
 }

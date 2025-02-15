@@ -1,7 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
 import createApolloClient from "../utils/apolloClient";
-import Image from "next/image";
 
 import Navbar from "../components/Layout/Navbar";
 import Footer from "../components/Layout/Footer";
@@ -68,32 +67,56 @@ export default async function Page() {
 
       {homepagePage.sections &&
         homepagePage.sections.map((section: any, index: number) => {
-          console.log("section", section);
-
           switch (section.__typename) {
             case "ComponentStaticComponentHero":
-              console.log("section", section);
               return <HeroBanner {...section} key={index} />;
 
             case "ComponentStaticComponentWeStatment":
-              return <WeBanner {...section} key={index} />;
+              return <WeBanner {...section} herokey={index} />;
 
-            case "ComponentCommonTextImageButtons":
+            case "ComponentCommonSection":
+              const component =
+                section.TextImageButtonsComponent ||
+                section.serviceList ||
+                section.teamMemberList ||
+                section.faqList;
+              let componentContent;
+
+              switch (component) {
+                case section.TextImageButtonsComponent:
+                  componentContent = (
+                    <TextImageButtons {...section.TextImageButtonsComponent} />
+                  );
+                  break;
+                case section.serviceList:
+                  componentContent = (
+                    <ServicesSection {...section.serviceList} />
+                  );
+                  break;
+                case section.teamMemberList:
+                  componentContent = (
+                    <TeamSection {...section.teamMemberList} />
+                  );
+                  break;
+                case section.faqList:
+                  componentContent = <FaqSection {...section.faqList} />;
+                  break;
+                default:
+                  componentContent = null;
+              }
+
               return (
                 <Section
-                  sectionTitle={section.title}
-                  sectionSubtitle={section.description}
-                  backgroundColor=""
-                  titleColor=""
-                  descriptionColor=""
-                  barBallColor=""
+                  sectionTitle={section.sectionTitle}
+                  sectionSubtitle={section.sectionSubtitle}
+                  backgroundColor={section.backgroundColor}
+                  titleColor={section.titleColor}
+                  descriptionColor={section.descriptionColor}
+                  barBallColor={section.barBallColor}
                 >
-                  <TextImageButtons {...section} key={index} />
+                  {componentContent}
                 </Section>
               );
-
-            case "ComponentSectionsServiceSection":
-              return <ServicesSection {...section} key={index} />;
 
             case "ComponentCommonCta":
               if (!section.isBig) {
@@ -101,100 +124,6 @@ export default async function Page() {
               } else {
                 return <CtaBig {...section} key={index} />;
               }
-
-            case "ComponentSectionsTeamSection":
-              return (
-                <Section
-                  sectionTitle={section.sectionTitle}
-                  sectionSubtitle={section.sectionDescription}
-                  shapes={
-                    <>
-                      <div className="shape4">
-                        <Image
-                          src={greenTriangle}
-                          alt="shape"
-                          width={21}
-                          height={20}
-                        />
-                      </div>
-                      <div className="shape6 rotateme">
-                        <Image
-                          src={greenTriangle}
-                          alt="shape"
-                          width={21}
-                          height={20}
-                        />
-                      </div>
-                      <div className="shape7">
-                        <Image
-                          src={greenTriangle}
-                          alt="shape"
-                          width={21}
-                          height={20}
-                        />
-                      </div>
-                      <div className="shape2 rotateme">
-                        <Image
-                          src={greenCross}
-                          alt="shape"
-                          width={22}
-                          height={22}
-                        />
-                      </div>
-                    </>
-                  }
-                >
-                  <TeamSection {...section} key={index} />
-                </Section>
-              );
-
-            case "ComponentSectionsFaqSection":
-              return (
-                <Section
-                  sectionTitle={section.title}
-                  sectionSubtitle={section.description}
-                  backgroundColor="#f9f6f6"
-                  shapes={
-                    <>
-                      <div className="shape6 rotateme">
-                        <Image
-                          src={whiteTriangle}
-                          alt="shape"
-                          width={21}
-                          height={20}
-                        />
-                      </div>
-                      <div className="shape7 rotateme">
-                        <Image
-                          src={greenCross}
-                          alt="shape"
-                          width={22}
-                          height={22}
-                        />
-                      </div>
-                      <div className="shape2">
-                        <Image
-                          src={whiteTriangle}
-                          alt="shape"
-                          width={21}
-                          height={20}
-                        />
-                      </div>
-                      <div className="shape4 rotateme">
-                        <Image
-                          src={greenTriangle}
-                          alt="shape"
-                          width={21}
-                          height={20}
-                        />
-                      </div>
-                    </>
-                  }
-                >
-                  <FaqSection {...section} key={index} />
-                </Section>
-              );
-
             default:
               return null;
           }

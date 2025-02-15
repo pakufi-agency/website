@@ -1,20 +1,23 @@
 "use client";
 
 import React from "react";
-// import Link from "next/link";
-import * as Icon from "react-feather";
-import robot from "/public/images/legacy/icon4.png";
-import chip from "/public/images/legacy/icon5.png";
-import mindChip from "/public/images/legacy/icon6.png";
-import drone from "/public/images/legacy/icon7.png";
-
+import { type BlocksContent } from "@strapi/blocks-react-renderer";
 import Image, { StaticImageData } from "next/image";
+import BlockRendererClient from "../BlockRendererClient";
+
+import brush from "/public/images/brush.svg";
+import devices from "/public/images/devices.svg";
+import maintenance from "/public/images/maintenance.svg";
+import management from "/public/images/management.svg";
+import planning from "/public/images/planning.svg";
+import socialMedia from "/public/images/social-media.svg";
 
 import styles from "./ServiceBox.module.scss";
 
 interface ServiceBoxProps {
   name: string;
-  description: string;
+  subtitle: string;
+  descriptionRichText: BlocksContent;
   icon: string;
 }
 
@@ -25,16 +28,20 @@ interface ServiceBoxesProps {
 const ServiceBox: React.FC<ServiceBoxesProps> = ({ services }) => {
   const getImage = (iconName: string): StaticImageData => {
     switch (iconName) {
-      case "drone":
-        return drone;
-      case "mindChip":
-        return mindChip;
-      case "robot":
-        return robot;
-      case "chip":
-        return chip;
+      case "brush":
+        return brush;
+      case "devices":
+        return devices;
+      case "maintenance":
+        return maintenance;
+      case "management":
+        return management;
+      case "planning":
+        return planning;
+      case "socialMedia":
+        return socialMedia;
       default:
-        return robot; // Fallback image
+        return devices; // Fallback image
     }
   };
 
@@ -50,13 +57,17 @@ const ServiceBox: React.FC<ServiceBoxesProps> = ({ services }) => {
                     <Image
                       src={getImage(service.icon)}
                       alt={service.name}
-                      width={60}
-                      height={60}
+                      width={150}
+                      height={150}
                     />
                   </div>
-                  <h3>{service.name}</h3>
+                  <h2>{service.name}</h2>
+                  <h5>{service.subtitle}</h5>
                 </div>
-                <p>{service.description}</p>
+                <div className={styles.description}>
+                  {" "}
+                  <BlockRendererClient content={service.descriptionRichText} />
+                </div>
               </div>
             </div>
           ))}

@@ -11,10 +11,9 @@ export const HOMEPAGE_QUERY = gql`
           ctaLabel
           ctaLink
           descriptionRichText
-          tagline
           mediaHero {
-            url
             alternativeText
+            url
           }
         }
         ... on ComponentStaticComponentWeStatment {
@@ -26,27 +25,6 @@ export const HOMEPAGE_QUERY = gql`
           statmentOne
           statmentThree
           statmentTwo
-        }
-        ... on ComponentCommonTextImageButtons {
-          title
-          richText
-          media {
-            url
-            alternativeText
-          }
-          buttonOneLabel
-          buttonOneLink
-          buttonTwoLabel
-          buttonTwoLink
-        }
-        ... on ComponentSectionsServiceSection {
-          sectionTitle
-          services {
-            name
-            description
-            icon
-          }
-          sectionSubtitle
         }
         ... on ComponentCommonCta {
           title
@@ -61,30 +39,51 @@ export const HOMEPAGE_QUERY = gql`
           buttonCtaOneLabel
           buttonCtaOneLink
         }
-        ... on ComponentSectionsTeamSection {
+        ... on ComponentCommonSection {
           sectionTitle
           sectionSubtitle
-          members: team_members {
-            firstName
-            lastName
-            jobPosition
-            email
-            linkedinAbsoluteUrl
-            personalWebsiteAbsoluteUrl
-            githubAsboluteUrl
-            profilePic {
+          backgroundColor
+          titleColor
+          descriptionColor
+          TextImageButtonsComponent {
+            richText
+            media {
               url
               alternativeText
             }
-            shortDescription
+            buttonOneLabel
+            buttonOneLink
+            buttonTwoLabel
+            buttonTwoLink
           }
-        }
-        ... on ComponentSectionsFaqSection {
-          title
-          description
-          questions: question_answers {
-            question
-            answer
+          serviceList {
+            services {
+              name
+              descriptionRichText
+              icon
+            }
+          }
+          teamMemberList {
+            team_members {
+              firstName
+              lastName
+              jobPosition
+              email
+              linkedinAbsoluteUrl
+              personalWebsiteAbsoluteUrl
+              githubAsboluteUrl
+              profilePic {
+                url
+                alternativeText
+              }
+              shortDescription
+            }
+          }
+          faqList {
+            question_answers {
+              question
+              answer
+            }
           }
         }
       }

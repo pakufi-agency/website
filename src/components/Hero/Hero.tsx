@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import BlockRendererClient from "../BlockRendererClient";
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
+import { getStrapiImageUrl } from "../../utils/utils";
 
 import styles from "./Hero.module.scss";
 
@@ -57,7 +58,7 @@ const Hero: React.FC<HeroProps> = ({
 
           <div className={styles.bannerImage}>
             <Image
-              src={mediaHero.url}
+              src={getStrapiImageUrl(mediaHero.url)}
               alt={mediaHero.alternativeText}
               width={821}
               height={820}

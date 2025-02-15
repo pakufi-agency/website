@@ -3,13 +3,13 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { getStrapiImageUrl } from "../../utils/utils";
 
 import styles from "./CtaBig.module.scss";
 
 import whiteCross from "/public/images/backgrounds/white-cross.svg";
 import greenTriangle from "/public/images/backgrounds/green-triangle.svg";
 import whiteTriangle from "/public/images/backgrounds/white-triangle.svg";
-import freeTrialImg from "/public/images/legacy/free-trial-img.png";
 
 interface CtaBigProps {
   title: string;
@@ -38,8 +38,8 @@ const CtaBig: React.FC<CtaBigProps> = ({
             <div className="col-12 col-md-6">
               <div className={styles.image}>
                 <Image
-                  src={freeTrialImg}
-                  alt="image"
+                  src={getStrapiImageUrl(media.url)}
+                  alt={media.alternativeText}
                   width={700}
                   height={400}
                 />
@@ -48,7 +48,7 @@ const CtaBig: React.FC<CtaBigProps> = ({
 
             <div className="col-12 col-md-6">
               <div className={styles.content}>
-                <h2>{title}</h2>
+                <h3>{title}</h3>
                 {description && <p>{description}</p>}
                 <div className={styles.buttonsContainer}>
                   {buttonCtaOneLink && (

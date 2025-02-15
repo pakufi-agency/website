@@ -5,15 +5,15 @@ import TeamMember from "../TeamMember/TeamMember";
 
 import styles from "./TeamSection.module.scss";
 interface TeamSectionProps {
-  members: [];
+  team_members: [];
 }
 
-const TeamSection: React.FC<TeamSectionProps> = ({ members }) => {
+const TeamSection: React.FC<TeamSectionProps> = ({ team_members }) => {
   return (
     <>
       <div>
         <div className="row justify-content-center">
-          {members.map(
+          {team_members.map(
             (
               {
                 firstName,
@@ -29,7 +29,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ members }) => {
               index
             ) => (
               <div
-                className={`col-12 col-lg-3 ${styles.card}`}
+                className={`col-8 col-lg-4 ${styles.card}`}
                 data-aos="fade-up"
                 data-aos-delay="400"
                 data-aos-duration="500"

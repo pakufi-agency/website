@@ -92,15 +92,12 @@ const Footer = () => {
                     <Link href="https://tally.so/r/waE8Av">I am a talent</Link>
                   </li>
                   <li>
-                    <a href="mailto:info@pakufi.agency">Write to us!</a>
-                  </li>
-                  <li>
                     <a
                       href="https://discord.gg/KUeQrY5eMw"
                       className="discord"
                       target="_blank"
                     >
-                      Join Pakufi community
+                      Join Pakufi Community
                     </a>
                   </li>
                 </ul>
@@ -127,8 +124,6 @@ const Footer = () => {
                   </li>
 
                   <li>
-                    <Icon.Mail />
-                    {/* Email:{" "} */}
                     <a href="mailto:info@pakufi.agency">info@pakufi.agency</a>
                   </li>
 
@@ -188,14 +183,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
-        {/* <Image
-          src={map}
-          className={styles.map}
-          alt="map"
-          width={910}
-          height={443}
-        /> */}
 
         <div className="shape8 rotateme">
           <Image src={greenCross} alt="shape" width={22} height={22} />

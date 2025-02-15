@@ -38,39 +38,29 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
+        margin-bottom: 30px;
 
-    .icon {
-        margin-bottom: 25px;
-        position: relative;
-        z-index: 1;
-        display: inline-block;
-
-        img {
-            transition: $transition;
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            left: -5px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: -1;
-            background: $mint-green;
-            box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.09);
-            border-radius: 30% 70% 70% 30% / 40% 60% 40% 60%;
-            width: 60px;
-            height: 60px;
+        .icon {
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+    
+            img {
+                transition: $transition;
+            }
         }
     }
 
-    h3 {
-        font-size: 18px;
-        margin-bottom: 12px;
-    }
-
-    p {
-        max-width: 400px;
+    .description {
+        h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+    
+        p {
+            max-width: 400px;
+            margin-bottom: 0; 
+        }
     }
 }

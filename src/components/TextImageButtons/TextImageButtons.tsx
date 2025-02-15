@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import BlockRendererClient from "../BlockRendererClient";
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
+import { getStrapiImageUrl } from "../../utils/utils";
 
 import styles from "./TextImageButtons.module.scss";
 interface TextImageButtons {
@@ -32,19 +33,25 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
             <div className={`col-lg-6 ${styles.content}`}>
               <BlockRendererClient content={richText} />
 
-              <Link
-                href={buttonOneLink}
-                className={`btn btn-primary ${styles.buttonLink}`}
-              >
-                {buttonOneLabel}
-              </Link>
+              <div className={styles.buttons}>
+                {buttonOneLink && (
+                  <Link
+                    href={buttonOneLink}
+                    className={`btn btn-primary ${styles.buttonLink}`}
+                  >
+                    {buttonOneLabel}
+                  </Link>
+                )}
 
-              <Link
-                href={buttonTwoLink}
-                className={`btn btn-primary ${styles.buttonLink}`}
-              >
-                {buttonTwoLabel}
-              </Link>
+                {buttonTwoLink && (
+                  <Link
+                    href={buttonTwoLink}
+                    className={`btn btn-primary ${styles.buttonLink}`}
+                  >
+                    {buttonTwoLabel}
+                  </Link>
+                )}
+              </div>
             </div>
 
             <div
@@ -55,7 +62,7 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
               data-aos-once="true"
             >
               <Image
-                src={media.url}
+                src={getStrapiImageUrl(media.url)}
                 alt={media.alternativeText}
                 width={499}
                 height={370}

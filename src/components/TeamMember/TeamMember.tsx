@@ -3,11 +3,9 @@
 import React from "react";
 import * as Icon from "react-feather";
 import Image from "next/image";
+import { getStrapiImageUrl } from "../../utils/utils";
 
 import styles from "./TeamMember.module.scss";
-
-// import teamImg1 from "/public/images/legacy/team-image/team1.jpg";
-
 interface TeamMemberProps {
   name: string;
   jobPosition: string;
@@ -33,8 +31,8 @@ const TeamMember: React.FC<TeamMemberProps> = ({
     <div className={styles.singleTeam}>
       <div className={styles.teamImage}>
         <Image
-          src={profilePic.url}
           alt={profilePic.alternativeText}
+          src={getStrapiImageUrl(profilePic.url)}
           width={125}
           height={125}
           style={{ objectFit: "cover", borderRadius: "50%" }}
