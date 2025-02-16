@@ -1,16 +1,16 @@
 @use '../../styles/variables.scss' as *;
 
-.serviceSectionContainer {
+.container {
     position: relative;
     padding: 80px 0;
     z-index: 1;
     background: $jade-green;
 
-    .sectionTitleServiceSection {
+    .sectionTitle {
         h2 {
             color: $white;
         }
-        .barServiceSection {
+        .bar {
             &::before {
                 background: $navy-blue;
             }
@@ -31,11 +31,28 @@
         background: $bg-color-f9fafb;
         z-index: -1;
     }
+
+    .ballGreen {
+        background: #cdf1d8;
+
+        &::before {
+            background: $jade-green;
+        }
+    }
+
+    .ballBlue {
+        background: #cdf1d8;
+
+        &::before {
+            background: $navy-blue;
+        }
+    }
+
 }
 
 
 @media only screen and (min-width: 767px) {
-    .serviceSectionContainer {
+    .container {
         padding: 120px 0;
 
         h2 {

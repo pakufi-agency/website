@@ -6,11 +6,12 @@ import Navbar from "../components/Layout/Navbar";
 import Footer from "../components/Layout/Footer";
 import HeroBanner from "../components/Hero/Hero";
 import WeBanner from "../components/WeBanner/WeBanner";
-import Section from "../components/Section/Section";
+import Section from "../components/Sections/Section";
+import SectionHalfBackground from "../components/Sections/SectionHalfBackground";
 import TextImageButtons from "../components/TextImageButtons/TextImageButtons";
-import ServicesSection from "../components/ServicesSection/ServicesSection";
 import CtaText from "../components/CtaText/CtaText";
 import TeamSection from "../components/TeamSection/TeamSection";
+import ServiceBox from "../components/ServicesBox/ServiceBox";
 import FaqSection from "../components/FaqSection/FaqSection";
 import CtaBig from "../components/CtaBig/CtaBig";
 import LoadingError from "../components/Errors/LoadingError";
@@ -19,11 +20,6 @@ import MobileMenuProvider from "../context/MobileMenuProvider";
 import { HOMEPAGE_QUERY } from "../graphqlQueries/Homepage";
 
 import "../styles/common.scss";
-
-import greenCross from "/public/images/backgrounds/green-cross.svg";
-import whiteCross from "/public/images/backgrounds/white-cross.svg";
-import greenTriangle from "/public/images/backgrounds/green-triangle.svg";
-import whiteTriangle from "/public/images/backgrounds/white-triangle.svg";
 
 export const metadata: Metadata = {
   title: "Pakufi - Ethical Tech Agency",
@@ -61,6 +57,25 @@ export default async function Page() {
     );
   }
 
+  function renderSection(section: any, ComponentWrapper: any) {
+    const componentMap: Record<string, any> = {
+      TextImageButtonsComponent: TextImageButtons,
+      serviceList: ServiceBox,
+      teamMemberList: TeamSection,
+      faqList: FaqSection,
+    };
+    const validKeys = Object.keys(componentMap);
+    const detectedKey = validKeys.find((key) => section[key]);
+    const Component = detectedKey ? componentMap[detectedKey] : null;
+    return (
+      <ComponentWrapper key={section.id || Math.random()} {...section}>
+        {detectedKey && Component ? (
+          <Component {...section[detectedKey]} />
+        ) : null}
+      </ComponentWrapper>
+    );
+  }
+
   return (
     <MobileMenuProvider>
       <Navbar />
@@ -75,48 +90,10 @@ export default async function Page() {
               return <WeBanner {...section} herokey={index} />;
 
             case "ComponentCommonSection":
-              const component =
-                section.TextImageButtonsComponent ||
-                section.serviceList ||
-                section.teamMemberList ||
-                section.faqList;
-              let componentContent;
+              return renderSection(section, Section);
 
-              switch (component) {
-                case section.TextImageButtonsComponent:
-                  componentContent = (
-                    <TextImageButtons {...section.TextImageButtonsComponent} />
-                  );
-                  break;
-                case section.serviceList:
-                  componentContent = (
-                    <ServicesSection {...section.serviceList} />
-                  );
-                  break;
-                case section.teamMemberList:
-                  componentContent = (
-                    <TeamSection {...section.teamMemberList} />
-                  );
-                  break;
-                case section.faqList:
-                  componentContent = <FaqSection {...section.faqList} />;
-                  break;
-                default:
-                  componentContent = null;
-              }
-
-              return (
-                <Section
-                  sectionTitle={section.sectionTitle}
-                  sectionSubtitle={section.sectionSubtitle}
-                  backgroundColor={section.backgroundColor}
-                  titleColor={section.titleColor}
-                  descriptionColor={section.descriptionColor}
-                  barBallColor={section.barBallColor}
-                >
-                  {componentContent}
-                </Section>
-              );
+            case "ComponentCommonSectionhalfbackground":
+              return renderSection(section, SectionHalfBackground);
 
             case "ComponentCommonCta":
               if (!section.isBig) {

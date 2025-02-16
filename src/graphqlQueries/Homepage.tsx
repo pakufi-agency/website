@@ -16,6 +16,7 @@ export const HOMEPAGE_QUERY = gql`
             url
           }
         }
+
         ... on ComponentStaticComponentWeStatment {
           sectionTitle
           backgroundImage {
@@ -45,20 +46,77 @@ export const HOMEPAGE_QUERY = gql`
           backgroundColor
           titleColor
           descriptionColor
+          barBallColor
+          shapesVariation
+          backgroundVariation
           TextImageButtonsComponent {
-            richText
+            ImagePosition
             media {
               url
               alternativeText
             }
+            richText
             buttonOneLabel
             buttonOneLink
             buttonTwoLabel
             buttonTwoLink
+            textColor
           }
           serviceList {
             services {
               name
+              subtitle
+              descriptionRichText
+              icon
+            }
+          }
+          teamMemberList {
+            team_members {
+              firstName
+              lastName
+              jobPosition
+              email
+              linkedinAbsoluteUrl
+              personalWebsiteAbsoluteUrl
+              githubAsboluteUrl
+              profilePic {
+                url
+                alternativeText
+              }
+              shortDescription
+            }
+          }
+          faqList {
+            question_answers {
+              question
+              answer
+            }
+          }
+        }
+        ... on ComponentCommonSectionhalfbackground {
+          sectionTitle
+          sectionSubtitle
+          backgroundColor
+          titleColor
+          descriptionColor
+          barBallColor2
+          TextImageButtonsComponent {
+            ImagePosition
+            media {
+              url
+              alternativeText
+            }
+            richText
+            buttonOneLabel
+            buttonOneLink
+            buttonTwoLabel
+            buttonTwoLink
+            textColor
+          }
+          serviceList {
+            services {
+              name
+              subtitle
               descriptionRichText
               icon
             }
