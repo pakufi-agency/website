@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../../../components/Layout/Navbar";
 import Footer from "../../../components/Layout/Footer";
-import PageBanner from "../../../components/Legacy/Common/PageBanner";
+// import PageBanner from "../../../components/Legacy/Common/PageBanner";
 import ServicesStyle2 from "../../../components/Legacy/Services/ServicesStyle2";
 
 export default function Page() {
@@ -9,7 +9,7 @@ export default function Page() {
     <>
       <Navbar />
 
-      <PageBanner pageTitle="Services Style Two" />
+      {/* <PageBanner pageTitle="Services Style Two" /> */}
 
       <ServicesStyle2 />
 

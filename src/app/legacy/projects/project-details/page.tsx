@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../../../../components/Layout/Navbar";
 import Footer from "../../../../components/Layout/Footer";
-import PageBanner from "../../../../components/Legacy/Common/PageBanner";
+// import PageBanner from "../../../../components/Legacy/Common/PageBanner";
 import ProjectsDetailsContent from "../../../../components/Legacy/Projects/ProjectsDetailsContent";
 
 export default function Page() {
@@ -9,7 +9,7 @@ export default function Page() {
     <>
       <Navbar />
 
-      <PageBanner pageTitle="Projects Details" />
+      {/* <PageBanner pageTitle="Projects Details" /> */}
 
       <ProjectsDetailsContent />
 
