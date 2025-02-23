@@ -1,0 +1,58 @@
+@use '../../styles/variables.scss' as *;
+
+.sectionContainer {
+    position: relative;
+    padding: 80px 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.contentContainer {
+    h2 {
+        margin-bottom: 0;
+        line-height: 1.4;
+        font: {
+            size: 28px;
+            weight: 600;
+        }
+        text-transform: capitalize;
+    }
+    .bar {
+        height: 5px;
+        width: 90px;
+        background: #cdf1d8;
+        margin: 20px 0;
+        position: relative;
+        border-radius: 30px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -2.7px;
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background: $primary-color;
+            animation: {
+                duration: 3s;
+                timing-function: linear;
+                iteration-count: infinite;
+                name: MOVE-BG;
+            };
+        }
+    }
+    p {
+        margin-bottom: 12px;
+    }
+}
+
+.details {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+@media only screen and (min-width: 767px ) {
+
+}
