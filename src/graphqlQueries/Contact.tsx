@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 export const CONTACT_QUERY = gql`
   query getContact {
-    pages(filters: { pageTitle: { eq: "Contact" } }) {
+    pages(filters: { documentId: { eq: "feli3eyi8vf1pi56v3jct7js" } }) {
       pageTitle
       pageDescription
       internalBannerMedia {

@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 export const ABOUTUS_QUERY = gql`
   query getAboutus {
-    pages(filters: { pageTitle: { eq: "About us" } }) {
+    pages(filters: { documentId: { eq: "v5mtxcrqht85b8xve4lcfhn3" } }) {
       pageTitle
       pageDescription
       internalBannerMedia {
@@ -59,9 +59,6 @@ export const ABOUTUS_QUERY = gql`
               }
               shortDescription
             }
-          }
-          boxesText {
-            content
           }
         }
         ... on ComponentSectionsIntroSinglePage {
