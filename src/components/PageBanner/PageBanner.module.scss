@@ -3,7 +3,8 @@
 .pageBannerBox {
     position: relative;
     z-index: 1;
-    background: transparent center center no-repeat;
+    background: $gradient-color2 center center no-repeat;
+    background-size: cover;
     padding: {
         top: 190px;
         bottom: 100px;

@@ -56,6 +56,24 @@ export const CONTACT_QUERY = gql`
               shortDescription
             }
           }
+          faqList {
+            question_answers {
+              question
+              answer
+            }
+          }
+          iconTitleSubtitle {
+            Title
+            subtitle
+            iconImg {
+              alternativeText
+              url
+            }
+            iconName
+          }
+          boxesText {
+            content
+          }
         }
         ... on ComponentSectionsIntroSinglePage {
           title

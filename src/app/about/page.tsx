@@ -5,18 +5,22 @@ import createApolloClient from "../../utils/apolloClient";
 import Navbar from "../../components/Layout/Navbar";
 import Footer from "../../components/Layout/Footer";
 import Section from "../../components/Sections/Section";
-import SectionHalfBackground from "../../components/Sections/SectionHalfBackground";
 import TextImageButtons from "../../components/TextImageButtons/TextImageButtons";
 import CtaText from "../../components/CtaText/CtaText";
 import TeamSection from "../../components/TeamSection/TeamSection";
 import CtaBig from "../../components/CtaBig/CtaBig";
+import BoxesText from "../../components/BoxesText/BoxesText";
 import LoadingError from "../../components/Errors/LoadingError";
-
 import PageBanner from "../../components/PageBanner/PageBanner";
 import IntroSinglePage from "../../components/IntroSinglePage/IntroSinglePage";
+import { renderMultipleComponents } from "../../utils/utils";
 
 import MobileMenuProvider from "../../context/MobileMenuProvider";
 import { ABOUTUS_QUERY } from "../../graphqlQueries/Aboutus";
+
+interface SectionProps {
+  [key: string]: any;
+}
 
 export const metadata: Metadata = {
   title: "Pakufi - Ethical Tech Agency",
@@ -54,21 +58,20 @@ export default async function Page() {
     );
   }
 
-  function renderSection(section: any, ComponentWrapper: any) {
+  function renderSection(
+    section: SectionProps,
+    ComponentWrapper: React.ComponentType<any>
+  ) {
     const componentMap: Record<string, any> = {
       TextImageButtonsComponent: TextImageButtons,
       teamMemberList: TeamSection,
+      boxesText: BoxesText,
     };
-    const validKeys = Object.keys(componentMap);
-    const detectedKey = validKeys.find((key) => section[key]);
-    const Component = detectedKey ? componentMap[detectedKey] : null;
-    return (
-      <ComponentWrapper key={section.id || Math.random()} {...section}>
-        {detectedKey && Component ? (
-          <Component {...section[detectedKey]} />
-        ) : null}
-      </ComponentWrapper>
-    );
+    return renderMultipleComponents({
+      section,
+      ComponentWrapper,
+      componentMap,
+    });
   }
 
   return (
@@ -81,6 +84,7 @@ export default async function Page() {
       ;
       {page.sections &&
         page.sections.map((section: any, index: number) => {
+          console.log({ section });
           switch (section.__typename) {
             case "ComponentSectionsIntroSinglePage":
               return <IntroSinglePage {...section} key={index} />;

@@ -1,0 +1,55 @@
+@use '../../styles/variables.scss' as *;
+
+
+.container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.box {
+    text-align: center;
+    transition: .4s;
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    margin-bottom: 30px;
+    background: $gradient3;
+    color: white;
+    
+    h1, h2, h3, h4, h5, h6 {
+        font: {
+            size: 20px;
+        }
+        margin: 25px 0 15px;
+        color: $white-fffcff;
+    }
+    p {
+        margin-bottom: 0;
+        color: $white-eeeeee;
+
+        a {
+            color: $paragraph-color;
+
+            &:hover {
+                color: $white-eeeeee;
+            }
+        }
+    }
+    &:hover {
+        transform: translateY(-10px);
+    }
+}
+
+@media only screen and (min-width: 991px ) {
+    .container {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .box {
+        margin-bottom: 0;
+        flex: 1;
+        margin: 0 30px;
+    }
+}

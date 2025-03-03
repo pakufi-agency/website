@@ -25,7 +25,9 @@ const PageBanner: React.FC<PageBannerProps> = ({
       <div
         className={styles.pageBannerBox}
         style={{
-          backgroundImage: `url(${getStrapiImageUrl(internalBannerMedia.url)})`,
+          backgroundImage:
+            internalBannerMedia &&
+            `url(${getStrapiImageUrl(internalBannerMedia.url)})`,
         }}
       >
         <div className="d-table">

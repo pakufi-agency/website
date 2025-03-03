@@ -12,14 +12,20 @@ import TextImageButtons from "../components/TextImageButtons/TextImageButtons";
 import CtaText from "../components/CtaText/CtaText";
 import TeamSection from "../components/TeamSection/TeamSection";
 import ServiceBox from "../components/ServicesBox/ServiceBox";
+import BoxesText from "../components/BoxesText/BoxesText";
 import FaqSection from "../components/FaqSection/FaqSection";
 import CtaBig from "../components/CtaBig/CtaBig";
 import LoadingError from "../components/Errors/LoadingError";
+import { renderMultipleComponents } from "../utils/utils";
 
 import MobileMenuProvider from "../context/MobileMenuProvider";
 import { HOMEPAGE_QUERY } from "../graphqlQueries/Homepage";
 
 import "../styles/common.scss";
+
+interface SectionProps {
+  [key: string]: any;
+}
 
 export const metadata: Metadata = {
   title: "Pakufi - Ethical Tech Agency",
@@ -57,23 +63,22 @@ export default async function Page() {
     );
   }
 
-  function renderSection(section: any, ComponentWrapper: any) {
+  function renderSection(
+    section: SectionProps,
+    ComponentWrapper: React.ComponentType<any>
+  ) {
     const componentMap: Record<string, any> = {
       TextImageButtonsComponent: TextImageButtons,
       serviceList: ServiceBox,
       teamMemberList: TeamSection,
+      boxesText: BoxesText,
       faqList: FaqSection,
     };
-    const validKeys = Object.keys(componentMap);
-    const detectedKey = validKeys.find((key) => section[key]);
-    const Component = detectedKey ? componentMap[detectedKey] : null;
-    return (
-      <ComponentWrapper key={section.id || Math.random()} {...section}>
-        {detectedKey && Component ? (
-          <Component {...section[detectedKey]} />
-        ) : null}
-      </ComponentWrapper>
-    );
+    return renderMultipleComponents({
+      section,
+      ComponentWrapper,
+      componentMap,
+    });
   }
 
   return (

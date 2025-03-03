@@ -60,6 +60,9 @@ export const ABOUTUS_QUERY = gql`
               shortDescription
             }
           }
+          boxesText {
+            content
+          }
         }
         ... on ComponentSectionsIntroSinglePage {
           title

@@ -27,7 +27,7 @@ const IntroSinglePage: React.FC<TextImageButtons> = ({
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-12">
-              <div className="aboutImage">
+              <div className={styles.image}>
                 <Image
                   src={
                     mediaIntroSinglePage &&
@@ -44,8 +44,10 @@ const IntroSinglePage: React.FC<TextImageButtons> = ({
 
             <div className="col-lg-6 col-md-12">
               <div className={styles.contentContainer}>
-                <h2 className={styles.title}>{title}</h2>
-                <div className={styles.bar}></div>
+                <div className={`section-title ${styles.title}`}>
+                  <h2>{title}</h2>
+                  <div className={`bar`}></div>
+                </div>
                 <BlockRendererClient content={richTextDescription} />
               </div>
             </div>

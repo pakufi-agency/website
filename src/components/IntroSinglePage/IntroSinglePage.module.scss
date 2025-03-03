@@ -7,8 +7,12 @@
     overflow: hidden;
 }
 
+.image {
+    margin-bottom: 20px;
+}
+
 .contentContainer {
-    h2 {
+    .title {
         margin-bottom: 0;
         line-height: 1.4;
         font: {
@@ -18,31 +22,12 @@
         text-transform: capitalize;
     }
     .bar {
-        height: 5px;
-        width: 90px;
-        background: #cdf1d8;
-        margin: 20px 0;
-        position: relative;
-        border-radius: 30px;
-
         &::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: -2.7px;
-            height: 10px;
-            width: 10px;
-            border-radius: 50%;
-            background: $primary-color;
-            animation: {
-                duration: 3s;
-                timing-function: linear;
-                iteration-count: infinite;
-                name: MOVE-BG;
-            };
+            background: $navy-blue;
         }
     }
     p {
+        text-align: center;
         margin-bottom: 12px;
     }
 }
@@ -53,6 +38,22 @@
     margin-top: 50px;
 }
 
-@media only screen and (min-width: 767px ) {
+@media only screen and (min-width: 991px ) {
+    .image {
+        margin-bottom: 0px;
+    }
+
+    .contentContainer {
+        .title {
+            text-align: left;
+        }
+        .bar {
+            margin: 20px;
+        }
+        p {
+            text-align: left;
+            margin-bottom: 12px;
+        }
+    }
 
 }

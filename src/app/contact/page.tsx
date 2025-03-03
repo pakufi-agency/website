@@ -8,15 +8,21 @@ import Section from "../../components/Sections/Section";
 import SectionHalfBackground from "../../components/Sections/SectionHalfBackground";
 import TextImageButtons from "../../components/TextImageButtons/TextImageButtons";
 import CtaText from "../../components/CtaText/CtaText";
-import TeamSection from "../../components/TeamSection/TeamSection";
+import FaqSection from "../../components/FaqSection/FaqSection";
+import IconTitleSubtitle from "../../components/IconTitleSubtitle/IconTitleSubtitle";
 import CtaBig from "../../components/CtaBig/CtaBig";
 import LoadingError from "../../components/Errors/LoadingError";
-
+import BoxesText from "../../components/BoxesText/BoxesText";
 import PageBanner from "../../components/PageBanner/PageBanner";
 import IntroSinglePage from "../../components/IntroSinglePage/IntroSinglePage";
+import { renderMultipleComponents } from "../../utils/utils";
 
 import MobileMenuProvider from "../../context/MobileMenuProvider";
 import { CONTACT_QUERY } from "../../graphqlQueries/Contact";
+
+interface SectionProps {
+  [key: string]: any;
+}
 
 export const metadata: Metadata = {
   title: "Pakufi - Ethical Tech Agency",
@@ -54,21 +60,21 @@ export default async function Page() {
     );
   }
 
-  function renderSection(section: any, ComponentWrapper: any) {
+  function renderSection(
+    section: SectionProps,
+    ComponentWrapper: React.ComponentType<any>
+  ) {
     const componentMap: Record<string, any> = {
       TextImageButtonsComponent: TextImageButtons,
-      teamMemberList: TeamSection,
+      boxesText: BoxesText,
+      faqList: FaqSection,
+      iconTitleSubtitle: IconTitleSubtitle,
     };
-    const validKeys = Object.keys(componentMap);
-    const detectedKey = validKeys.find((key) => section[key]);
-    const Component = detectedKey ? componentMap[detectedKey] : null;
-    return (
-      <ComponentWrapper key={section.id || Math.random()} {...section}>
-        {detectedKey && Component ? (
-          <Component {...section[detectedKey]} />
-        ) : null}
-      </ComponentWrapper>
-    );
+    return renderMultipleComponents({
+      section,
+      ComponentWrapper,
+      componentMap,
+    });
   }
 
   return (

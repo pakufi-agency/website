@@ -55,6 +55,7 @@ $gradient-color2: linear-gradient(to right bottom, $primary-color, $river-bed-gr
 $gradient-hero: linear-gradient(0deg, $river-bed-green-rgba 0%, $river-bed-green-rgba 10%, rgba(37,56,78,1) 40%, $navy-blue-rgba 70%);
 $gradient1: linear-gradient(0deg, $river-bed-green-rgba 0%, $river-bed-green-rgba 65%, $navy-blue-rgba 100%);
 $gradient2: linear-gradient(0deg, $river-bed-green-rgba 0%, $river-bed-green-rgba 45%, $navy-blue-rgba 100%);
+$gradient3: linear-gradient(150deg, $primary-color 0%, $mint-green 50%, $mint-green 100%);
 
 // animations
 $transition: .5s;

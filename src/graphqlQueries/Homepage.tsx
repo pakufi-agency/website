@@ -92,6 +92,9 @@ export const HOMEPAGE_QUERY = gql`
               answer
             }
           }
+          boxesText {
+            content
+          }
         }
         ... on ComponentCommonSectionhalfbackground {
           sectionTitle
