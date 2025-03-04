@@ -1,0 +1,59 @@
+@use '../../styles/variables.scss' as *;
+
+.sectionContainer {
+    position: relative;
+    padding: 80px 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.image {
+    margin-bottom: 20px;
+}
+
+.contentContainer {
+    .title {
+        margin-bottom: 0;
+        line-height: 1.4;
+        font: {
+            size: 28px;
+            weight: 600;
+        }
+        text-transform: capitalize;
+    }
+    .bar {
+        &::before {
+            background: $navy-blue;
+        }
+    }
+    p {
+        text-align: center;
+        margin-bottom: 12px;
+    }
+}
+
+.details {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+@media only screen and (min-width: 991px ) {
+    .image {
+        margin-bottom: 0px;
+    }
+
+    .contentContainer {
+        .title {
+            text-align: left;
+        }
+        .bar {
+            margin: 20px;
+        }
+        p {
+            text-align: left;
+            margin-bottom: 12px;
+        }
+    }
+
+}

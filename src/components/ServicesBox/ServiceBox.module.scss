@@ -1,0 +1,66 @@
+@use '../../styles/variables.scss' as *;
+
+.solutionsArea {
+    padding-bottom: 50px;
+    position: relative;
+    z-index: 1;
+}
+.singleSolutionsBox {
+    padding: 20px 15px;
+    text-align: center;
+    transition: $transition;
+    position: relative;
+    margin-bottom: 30px;
+    z-index: 1;
+    border: 0px solid transparent;
+    border-radius: 5px;
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.09);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        border-radius: 5px;
+        height: 100%;
+        background: $bg-color-f9fafb;
+        background: linear-gradient(0deg, $white-fffcff 0%, $bg-color-f9fafb 70%, $bg-color-d6d6d6 100% );
+    }
+
+    .singleSolutionsBoxTitle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+
+        .icon {
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+    
+            img {
+                transition: $transition;
+            }
+        }
+    }
+
+    .description {
+        h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+    
+        p {
+            max-width: 400px;
+            margin-bottom: 0; 
+        }
+    }
+}

@@ -1,0 +1,71 @@
+@use '../../styles/variables.scss' as *;
+
+.faqAccordion {
+    box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.08);
+    padding: 10px;
+    background: $white;
+    border-radius: 10px;
+
+    .accordionCustom {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border: none;
+    
+        .accordionItem {
+            box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.1);
+            background: $white;
+            margin-bottom: 15px;
+            border: none;
+    
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        .accordionButton {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: $black-color;
+            position: relative;
+            background-color: #fff;
+            
+            font: {
+                size: 15px;
+                weight: 500;
+            }
+            i {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 40px;
+                text-align: center;
+                height: 100%;
+                background: $primary-color;
+                color: $white;
+    
+                &::before {
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    right: 0;
+                    transform: translateY(-50%);
+                    font-size: 15px;
+                }
+            }
+            &.active {
+                border-bottom-color: #e1e1e1;
+    
+                i {
+                    &::before {
+                        content: "\f10f";
+                    }
+                }
+            }
+        }
+        .accordionPanel {
+            padding: 15px 15px;
+            border-top: 1px solid #e1e1e1;
+        }
+    }
+}

@@ -1,0 +1,135 @@
+@use '../../styles/variables.scss' as *;
+
+.container {
+    max-width: 1175px;
+}
+.card {
+    background: $gradient1;
+    padding: {
+        top: 15px;
+        bottom: 35px;
+        left: 15px;
+        right: 15px;
+    }
+    margin-bottom: 30px;
+    transition: $transition;
+    z-index: 1;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    .cardPersonContent {
+        padding-right: 15px;
+        padding-left: 15px;
+        
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            margin-bottom: 15px;
+
+            li {
+                display: inline-block;
+                margin: 0 5px;
+
+                a {
+                    color: $white;
+
+                    &:hover {
+                        transform: translateY(-5px);
+                        color: $secondary-color;
+                    }
+                    svg {
+                        width: 19px;
+                    }
+                }
+            }
+        }
+        p {
+            word-break: break-word;
+            color: $white;
+        }
+
+        .cardPersonInfo {
+            background: $mint-green;
+            word-break: keep-all;
+            padding: 10px 15px;
+            border-radius: 75px;
+            margin: {
+                bottom: 25px;
+                left: 10px;
+                right: 10px;
+                top: 25px;
+            }
+            transition: $transition;
+    
+            h3 {
+                font-size: 18px;
+                margin-bottom: 5px;
+                color: $white;
+            }
+            span {
+                color: $white;
+                font-size: 13px;
+            }
+        }
+    }
+
+    .cardPersonImage {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%; 
+        overflow: hidden; 
+        max-height: 180px;
+
+        img {
+            border: 3px solid $mint-green;
+            border-radius: 50%;
+            display: block;
+            transition: $transition;
+            width: 150px; 
+            height: 150px; 
+            object-fit: cover;
+            z-index: 1;
+        }
+    }
+    .withAnimatedBar::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 15%;
+        background: #f9f6f6;
+        height: 5px;
+        width: 100%;
+        z-index: 0;
+        transition: .5s;
+    }
+
+
+    &:hover {
+        box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+
+        .cardPersonImage {
+            &::before {
+                height: 0;
+            }
+            img {
+                border-color: $primary-color;
+            }
+        }
+        .cardPersonInfo {
+            margin: {
+                left: 0;
+                right: 0;
+            }
+            border-radius: 0;
+        }
+    }
+}
+

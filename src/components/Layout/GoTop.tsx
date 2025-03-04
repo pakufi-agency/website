@@ -3,6 +3,8 @@
 import React, { Component } from "react";
 import * as Icon from "react-feather";
 
+import "./GoTop.modules.scss";
+
 interface GoTopState {
   is_visible: boolean;
 }
