@@ -29,6 +29,14 @@
     --jade-green: #487B6E;
     --river-bed-green: #385C61;
     --dark-grey-blue: #2A4555;
+    --river-bed-green-rgba: rgb(56,92,97);
+    --navy-blue-rgba: rgba(16,19,59,1);
+    --gradient-color: linear-gradient(135deg, var(--primary-color) 0%, var(--mint-green) 100%);
+    --gradient-color2: linear-gradient(to right bottom, var(--primary-color), var(--river-bed-green), var(--secondary-color), var(--mint-green), var(--acid-green));
+    --gradient-hero: linear-gradient(0deg, var(--river-bed-green-rgba) 0%, var(--river-bed-green-rgba) 10%, rgba(37,56,78,1) 40%, var(--navy-blue-rgba) 70%);
+    --gradient1: linear-gradient(0deg, var(--river-bed-green-rgba) 0%, var(--river-bed-green-rgba) 65%, var(--navy-blue-rgba) 100%);
+    --gradient2: linear-gradient(0deg, var(--river-bed-green-rgba) 0%, var(--river-bed-green-rgba) 45%, var(--navy-blue-rgba) 100%);
+    --gradient3: linear-gradient(150deg, var(--primary-color) 0%, var(--mint-green) 50%, var(--mint-green) 100%);
 }
 
 
@@ -167,7 +175,7 @@ textarea.form-control {
         height: 100%;
         width: 0;
         transition: $transition;
-        background: $secondary-color;
+        background: --;
         z-index: -1;
     }
     &::after {

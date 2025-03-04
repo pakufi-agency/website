@@ -5,19 +5,23 @@ import * as Icon from "react-feather";
 import Image from "next/image";
 import { getStrapiImageUrl } from "../../utils/utils";
 
-import styles from "./TeamMember.module.scss";
-interface TeamMemberProps {
+import PersonIcon from "/public/images/icons/person-icon-placeholder.png";
+import styles from "./PersonCard.module.scss";
+
+interface PersonCardProps {
   name: string;
   jobPosition: string;
-  shortDescription: string;
-  email: string;
+  shortDescription?: string;
+  email?: string;
   profilePic: { url: string; alternativeText: string };
-  linkedinAbsoluteUrl: string;
-  personalWebsiteAbsoluteUrl: string;
-  githubAsboluteUrl: string;
+  linkedinAbsoluteUrl?: string;
+  personalWebsiteAbsoluteUrl?: string;
+  githubAsboluteUrl?: string;
+  backgroundColor?: string;
+  withAnimatedBar?: boolean;
 }
 
-const TeamMember: React.FC<TeamMemberProps> = ({
+const PersonCard: React.FC<PersonCardProps> = ({
   name,
   jobPosition,
   shortDescription,
@@ -26,21 +30,27 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   linkedinAbsoluteUrl,
   personalWebsiteAbsoluteUrl,
   githubAsboluteUrl,
+  backgroundColor,
+  withAnimatedBar = true,
 }) => {
   return (
-    <div className={styles.singleTeam}>
-      <div className={styles.teamImage}>
+    <div className={styles.card} style={{ background: backgroundColor }}>
+      <div
+        className={`${styles.cardPersonImage} ${
+          withAnimatedBar && styles.withAnimatedBar
+        }`}
+      >
         <Image
-          alt={profilePic.alternativeText}
-          src={getStrapiImageUrl(profilePic.url)}
+          alt={profilePic?.alternativeText || "profile icon"}
+          src={profilePic?.url ? getStrapiImageUrl(profilePic.url) : PersonIcon}
           width={125}
           height={125}
           style={{ objectFit: "cover", borderRadius: "50%" }}
         />
       </div>
 
-      <div className={styles.teamContent}>
-        <div className={styles.teamInfo}>
+      <div className={styles.cardPersonContent}>
+        <div className={styles.cardPersonInfo}>
           <h3>{name}</h3>
           <span>{jobPosition}</span>
         </div>
@@ -99,4 +109,4 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   );
 };
 
-export default TeamMember;
+export default PersonCard;

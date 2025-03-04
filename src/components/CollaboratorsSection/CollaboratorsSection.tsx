@@ -3,28 +3,27 @@
 import React from "react";
 import PersonCard from "../PersonCard/PersonCard";
 
-import styles from "./TeamSection.module.scss";
-interface TeamSectionProps {
-  team_members: [];
+import styles from "./CollaboratorsSection.module.scss";
+interface CollaboratorsSectionProps {
+  collaborators: [];
 }
 
-const TeamSection: React.FC<TeamSectionProps> = ({ team_members }) => {
+const CollaboratorsSection: React.FC<CollaboratorsSectionProps> = ({
+  collaborators,
+}) => {
   return (
     <>
       <div>
         <div className="row justify-content-center">
-          {team_members.map(
+          {collaborators.map(
             (
               {
-                firstName,
-                lastName,
+                fullName,
                 jobPosition,
                 email,
                 linkedinAbsoluteUrl,
                 personalWebsiteAbsoluteUrl,
-                githubAsboluteUrl,
                 profilePic,
-                shortDescription,
               },
               index
             ) => (
@@ -37,16 +36,14 @@ const TeamSection: React.FC<TeamSectionProps> = ({ team_members }) => {
                 key={index}
               >
                 <PersonCard
-                  name={`${firstName} ${lastName}`}
+                  name={fullName}
                   jobPosition={jobPosition}
-                  shortDescription={shortDescription}
                   email={email}
                   profilePic={profilePic}
                   linkedinAbsoluteUrl={linkedinAbsoluteUrl}
                   personalWebsiteAbsoluteUrl={personalWebsiteAbsoluteUrl}
-                  githubAsboluteUrl={githubAsboluteUrl}
-                  backgroundColor="var(--gradient1)"
-                  withAnimatedBar={true}
+                  backgroundColor="none"
+                  withAnimatedBar={false}
                 />
               </div>
             )
@@ -57,4 +54,4 @@ const TeamSection: React.FC<TeamSectionProps> = ({ team_members }) => {
   );
 };
 
-export default TeamSection;
+export default CollaboratorsSection;

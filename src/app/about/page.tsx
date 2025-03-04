@@ -8,8 +8,8 @@ import Section from "../../components/Sections/Section";
 import TextImageButtons from "../../components/TextImageButtons/TextImageButtons";
 import CtaText from "../../components/CtaText/CtaText";
 import TeamSection from "../../components/TeamSection/TeamSection";
+import CollaboratorsSection from "../../components/CollaboratorsSection/CollaboratorsSection";
 import CtaBig from "../../components/CtaBig/CtaBig";
-// import BoxesText from "../../components/BoxesText/BoxesText";
 import LoadingError from "../../components/Errors/LoadingError";
 import PageBanner from "../../components/PageBanner/PageBanner";
 import IntroSinglePage from "../../components/IntroSinglePage/IntroSinglePage";
@@ -65,7 +65,7 @@ export default async function Page() {
     const componentMap: Record<string, any> = {
       TextImageButtonsComponent: TextImageButtons,
       teamMemberList: TeamSection,
-      // boxesText: BoxesText,
+      collaboratorList: CollaboratorsSection,
     };
     return renderMultipleComponents({
       section,
@@ -84,7 +84,6 @@ export default async function Page() {
       ;
       {page.sections &&
         page.sections.map((section: any, index: number) => {
-          console.log({ section });
           switch (section.__typename) {
             case "ComponentSectionsIntroSinglePage":
               return <IntroSinglePage {...section} key={index} />;

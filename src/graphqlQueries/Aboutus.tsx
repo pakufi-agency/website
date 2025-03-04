@@ -60,6 +60,19 @@ export const ABOUTUS_QUERY = gql`
               shortDescription
             }
           }
+          collaboratorList {
+            collaborators {
+              fullName
+              jobPosition
+              email
+              linkedinAbsoluteUrl
+              personalWebsiteAbsoluteUrl
+              profilePic {
+                url
+                alternativeText
+              }
+            }
+          }
         }
         ... on ComponentSectionsIntroSinglePage {
           title
