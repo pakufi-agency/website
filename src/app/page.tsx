@@ -37,10 +37,12 @@ export default async function Page() {
   let homepagePage;
   const client = createApolloClient();
 
+  // Reset the Apollo Client cache before fetching data
+  client.resetStore(); // or client.clearStore()
   try {
     const { data } = await client.query({
       query: HOMEPAGE_QUERY,
-      fetchPolicy: "cache-first", // Prevents Apollo from using ANY cache
+      fetchPolicy: "network-only", // Prevents Apollo from using ANY cache
     });
 
     if (!data || !data.pages || !data.pages[0]) {
