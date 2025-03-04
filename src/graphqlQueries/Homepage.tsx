@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 export const HOMEPAGE_QUERY = gql`
   query getHomepage {
-    pages(filters: { pageTitle: { eq: "Homepage" } }) {
+    pages(filters: { documentId: { eq: "liqb7hs6ksgzj1k4129d892d" } }) {
       pageTitle
       sections {
         ... on ComponentStaticComponentHero {
