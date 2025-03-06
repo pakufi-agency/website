@@ -23,7 +23,7 @@ const IntroSinglePage: React.FC<TextImageButtons> = ({
 }) => {
   return (
     <>
-      <div className={`${styles.sectionContainer}`}>
+      <div className={styles.sectionContainer}>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-12">

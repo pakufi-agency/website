@@ -6874,49 +6874,49 @@ Coming Soon CSS
 /*================================================
 404 Error CSS
 =================================================*/
-.error-area {
-    height: 100vh;
-}
-.error-content {
-    text-align: center;
-    margin-top: -70px;
+// .error-area {
+//     height: 100vh;
+// }
+// .error-content {
+//     text-align: center;
+//     margin-top: -70px;
 
-    .notfound-404 {
-        position: relative;
-        height: 280px;
-        z-index: -1;
-        margin-bottom: 30px;
+//     .notfound-404 {
+//         position: relative;
+//         height: 280px;
+//         z-index: -1;
+//         margin-bottom: 30px;
 
-        h1 {
-            font: {
-                size: 230px;
-                weight: 900;
-            }
-            margin: 0;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            background: url('/images/oops-bg.jpg') no-repeat;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background: {
-                size: cover;
-                position: center;
-            }
-        }
-    }
-    h3 {
-        font: {
-            weight: 600;
-            size: 25px;
-        }
-        margin-bottom: 15px;
-    }
-    p {
-        max-width: 550px;
-        margin: 0 auto 25px;
-    }
-}
+//         h1 {
+//             font: {
+//                 size: 230px;
+//                 weight: 900;
+//             }
+//             margin: 0;
+//             position: absolute;
+//             left: 50%;
+//             transform: translateX(-50%);
+//             background: url('/images/oops-bg.jpg') no-repeat;
+//             -webkit-background-clip: text;
+//             -webkit-text-fill-color: transparent;
+//             background: {
+//                 size: cover;
+//                 position: center;
+//             }
+//         }
+//     }
+//     h3 {
+//         font: {
+//             weight: 600;
+//             size: 25px;
+//         }
+//         margin-bottom: 15px;
+//     }
+//     p {
+//         max-width: 550px;
+//         margin: 0 auto 25px;
+//     }
+// }
 
 /*================================================
 CTA CSS
