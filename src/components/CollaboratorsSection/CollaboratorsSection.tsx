@@ -44,6 +44,7 @@ const CollaboratorsSection: React.FC<CollaboratorsSectionProps> = ({
                   personalWebsiteAbsoluteUrl={personalWebsiteAbsoluteUrl}
                   backgroundColor="none"
                   withAnimatedBar={false}
+                  iconColor="var(--jade-green)"
                 />
               </div>
             )

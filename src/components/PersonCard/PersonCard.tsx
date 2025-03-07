@@ -19,6 +19,7 @@ interface PersonCardProps {
   githubAsboluteUrl?: string;
   backgroundColor?: string;
   withAnimatedBar?: boolean;
+  iconColor?: string;
 }
 
 const PersonCard: React.FC<PersonCardProps> = ({
@@ -32,6 +33,7 @@ const PersonCard: React.FC<PersonCardProps> = ({
   githubAsboluteUrl,
   backgroundColor,
   withAnimatedBar = true,
+  iconColor
 }) => {
   return (
     <div className={styles.card} style={{ background: backgroundColor }}>
@@ -62,6 +64,7 @@ const PersonCard: React.FC<PersonCardProps> = ({
                 href={linkedinAbsoluteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{ color: iconColor }}
               >
                 <Icon.Linkedin />
               </a>
@@ -73,6 +76,7 @@ const PersonCard: React.FC<PersonCardProps> = ({
                 href={personalWebsiteAbsoluteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{ color: iconColor }}
               >
                 <Icon.Link />
               </a>
@@ -84,6 +88,7 @@ const PersonCard: React.FC<PersonCardProps> = ({
                 href={githubAsboluteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{ color: iconColor }}
               >
                 <Icon.GitHub />
               </a>
@@ -96,6 +101,7 @@ const PersonCard: React.FC<PersonCardProps> = ({
                 href={`mailto:${email}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{ color: iconColor }}
               >
                 <Icon.Mail />
               </a>
