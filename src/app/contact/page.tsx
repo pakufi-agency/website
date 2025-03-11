@@ -84,7 +84,7 @@ export default async function Page() {
         pageTitle={page.pageTitle}
         internalBannerMedia={page.internalBannerMedia}
       />
-      ;
+      
       {page.sections &&
         page.sections.map((section: any, index: number) => {
           switch (section.__typename) {
