@@ -1,0 +1,68 @@
+@use '../../styles/variables.scss' as *;
+
+
+.container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contactInfoBox {
+    text-align: center;
+    transition: .4s;
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+    background: $white;
+    padding: 30px;
+    margin-bottom: 30px;
+    
+    .icon {
+        display: inline-block;
+        width: 65px;
+        height: 65px;
+        line-height: 62px;
+        background: $bg-color-f7fafd;
+        border-radius: 50%;
+        font-size: 30px;
+        color: $primary-color;
+        transition: .4s;
+    }
+    h3 {
+        font: {
+            size: 20px;
+        }
+        margin: 25px 0 15px;
+    }
+    p {
+        margin-bottom: 0;
+
+        a {
+            color: $paragraph-color;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+    &:hover {
+        transform: translateY(-10px);
+
+        .icon {
+            color: $white;
+            background: $primary-color;
+        }
+    }
+}
+
+@media only screen and (min-width: 991px ) {
+    .container {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .contactInfoBox {
+        margin-bottom: 0;
+        flex: 1;
+        margin: 0 30px;
+    }
+}

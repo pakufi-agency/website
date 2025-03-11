@@ -1,0 +1,35 @@
+@use '../../styles/variables.scss' as *;
+
+.pageBannerBox {
+    position: relative;
+    z-index: 1;
+    background: $gradient-color2 center center no-repeat;
+    background-size: cover;
+    padding: {
+        top: 190px;
+        bottom: 100px;
+    }
+    text-align: center;
+
+    h2 {
+        color: white;
+        font: {
+            size: 28px;
+            weight: 700;
+        }
+        margin: 0;
+    }
+
+}
+
+@media only screen and (min-width: 767px ) {
+    .pageBannerBox {
+        .shape8 {
+            top: auto;
+            right: auto;
+            left: 15px;
+            display: block;
+            bottom: 20px;
+        }
+    }
+}

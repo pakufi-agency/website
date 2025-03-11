@@ -1,0 +1,149 @@
+@use '../../styles/variables.scss' as *;
+
+.ctaArea {
+    background: $river-bed-green;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    padding: {
+        top: 100px;
+        bottom: 100px;
+    }
+}
+.ctaContent {
+    text-align: center;
+
+    h1 {
+        color: $secondary-color;
+        font-size: 36px;
+        font-weight: 800;
+        line-height: 1.5;
+        text-transform: uppercase;
+        padding-bottom: 53px;
+    }
+
+    h2 {
+        color: $navy-blue;
+        font-size: 25px;
+        line-height: 1.5;
+        text-transform: uppercase;
+        padding-bottom: 15px;
+        font-family: var(--font-primary);
+    }
+}
+
+.ctaShape {
+    position: absolute;
+    top: 360px;
+    left: 30px;
+    z-index: -1;
+
+    img {
+        transform: rotate(-60deg);
+        opacity: 0.2;
+    }
+}
+
+@media only screen and (min-width: 990px) {
+    .ctaContent {
+        text-align: left;
+    }
+
+    .ctaShape {
+        position: absolute;
+        top: 150px;
+        left: 30px;
+        z-index: -1;
+    }
+
+}
+
+@media only screen and (min-width: 1500px) {
+    .ctaArea {
+        padding: {
+            top: 0px;
+            bottom: 100px;
+        }
+    }
+
+    .ctaContent {
+        padding: 30px 0;
+        text-align: left;
+
+        h1 {
+            font-size: 46px;
+            padding-bottom: 33px;
+        }
+
+        h2 {
+            font-size: 30px;
+            padding-bottom: 28px;
+        }
+    }
+
+    .ctaShape {
+        position: absolute;
+        top: 50px;
+        left: 30px;
+        z-index: -1;
+    
+        img {
+            transform: rotate(-60deg);
+            opacity: 0.6;
+        }
+    }
+
+}
+
+
+// <div className={styles.animateBorder}>
+// <span></span>
+// <span></span>
+// <span></span>
+// <span></span>
+// </div>
+// .animateBorder {
+//     span {
+//         position: absolute;
+//         display: block;
+//         width: 5%;
+//         padding-bottom: 5%;
+//         opacity: 0;
+//         transform: translate(-50%, -50%);
+//         backface-visibility: hidden;
+//         pointer-events: none;
+//         border-radius: 50%;
+//         z-index: -2;
+//         top: 78%;
+//         left: 41%;
+
+//         &:nth-child(1) {
+//             animation: 4.2s ease-out .5s infinite normal none running pulsei;
+//         }
+//         &:nth-child(2) {
+//             animation: 4.2s ease-out 1.5s infinite normal none running pulsei;
+//         }
+//         &:nth-child(3) {
+//             animation: 4.2s ease-out 2.5s infinite normal none running pulsei;
+//         }
+//         &:nth-child(4) {
+//             animation: 4.2s ease-out 3.5s infinite normal none running pulsei;
+//         }
+//     }
+// }
+// @keyframes pulsei {
+//     0% {
+//         transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+//         border: 1.5px solid #b3eaf8;
+//         opacity: 1;
+//         width: 5%;
+//         padding-bottom: 5%;
+//     }
+//     100% {
+//         transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+//         opacity: 0;
+//         width: 50%;
+//         border: 1.5px solid #b3eaf8;
+//         padding-bottom: 50%;
+//     }
+// }

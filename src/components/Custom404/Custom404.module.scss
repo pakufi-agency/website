@@ -1,0 +1,57 @@
+.errorArea {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.errorContent {
+    text-align: center;
+
+    .notfound {
+        position: relative;
+        height: 180px;
+        z-index: -1;
+        margin-bottom: 30px;
+
+        h1 {
+            font: {
+                size: 120px;
+                weight: 900;
+            }
+            margin: 0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: url('/images/oops-bg.jpg') no-repeat;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background: {
+                size: cover;
+                position: center;
+            }
+        }
+    }
+    h3 {
+        font: {
+            weight: 600;
+            size: 25px;
+        }
+        margin-bottom: 15px;
+    }
+    p {
+        max-width: 550px;
+        margin: 0 auto 25px;
+    }
+}
+
+@media only screen and (min-width: 767px) {
+    .errorContent {
+        .notfound {
+            height: 280px;
+
+            h1 {
+                font-size: 230px;
+            }
+        }
+    }
+}

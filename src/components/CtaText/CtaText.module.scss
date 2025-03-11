@@ -1,0 +1,64 @@
+@use '../../styles/variables.scss' as *;
+
+.container {
+    text-align: center;
+    position: relative;
+    padding: {
+        top: 50px;
+        bottom: 50px;
+    }
+    background: $gradient2;
+
+    h3 {
+        font-size: 20px;
+        color: $white;
+        text-transform: capitalize;
+        margin-bottom: 15px;
+    }
+    p {
+        color: $white;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+    .btn {
+        &::before, &::after {
+            background: $white;
+        }
+    }
+    .button {
+        background: $secondary-color;
+        box-shadow: 0 5px 20px 0 $secondary-box-shadow;
+
+        &:hover, &:focus {
+            color: $black-color;
+            background: $white;
+
+            box-shadow: 0 5px 20px 0 $primary-box-shadow;
+        }
+    }
+    span {
+        display: block;
+        margin-top: 25px;
+        a {
+            margin-left: 15px;
+            color: $white;
+            text-decoration: underline;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 767px) {
+
+    .container {
+        padding: {
+            top: 80px;
+            bottom: 80px;
+        }
+
+        h3 {
+            font-size: 28px;
+        }
+    }
+
+}

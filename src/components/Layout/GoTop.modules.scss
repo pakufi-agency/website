@@ -1,0 +1,44 @@
+@use '../../styles/variables.scss' as *;
+
+
+.go-top {
+	position: fixed;
+	cursor: pointer;
+	bottom: 30px;
+	right: 0;
+	color: $white;
+	background-color: $secondary-color;
+	text-align: center;
+	border-radius: 10px 0 0 10px;
+    transition: $transition;
+    z-index: 999;
+    width: 35px;
+    height: 35px;
+    line-height: 30px;
+
+    &:hover {
+        color: $white;
+        background: $primary-color;
+    }
+    svg {
+        width: 18px;
+    }
+}
+.main-text-area {
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 15px;
+    }
+}
+
+// tablet
+@media only screen and (min-width: 767px) {
+    .go-top {
+        width: 45px;
+        height: 45px;
+        line-height: 46px;
+
+        svg {
+            width: 24px;
+        }
+    }
+}
