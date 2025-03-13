@@ -10,7 +10,7 @@ interface FaqSectionProps {
 const FaqSection: React.FC<FaqSectionProps> = ({ question_answers }) => {
   return (
     <>
-      <div className="row justify-content-center">
+      <div id="faqSection" className="row justify-content-center">
         <div className="container">
           <FaqAccordion questions={question_answers} />
         </div>

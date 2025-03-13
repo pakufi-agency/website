@@ -39,6 +39,10 @@
     --gradient3: linear-gradient(150deg, var(--primary-color) 0%, var(--mint-green) 50%, var(--mint-green) 100%);
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 400px;
+}
 
 body { 
     padding: 0;

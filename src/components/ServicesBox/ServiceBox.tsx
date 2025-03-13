@@ -46,7 +46,7 @@ const ServiceBox: React.FC<ServiceBoxesProps> = ({ services }) => {
   };
 
   return (
-    <div className={`${styles.solutionsArea}`}>
+    <div id="serviceSection" className={`${styles.solutionsArea}`}>
       <div className="container">
         <div className="row justify-content-center g-4">
           {services.map((service, index) => (
