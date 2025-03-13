@@ -1,13 +1,45 @@
 import React from "react";
+import createApolloClient from "./apolloClient";
 
 export const getStrapiImageUrl = (url: string) => {
-  const baseUrl =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:1337" // Strapi local URL
-      : "https://your-strapi-production.com"; // Strapi production URL
 
-  return url.startsWith("http") ? url : `${baseUrl}${url}`;
+  return url.startsWith("http") ? url : `${process.env.NEXT_PUBLIC_CMS_ENDPOINT}${url}`;
 };
+
+
+/**
+ * Fetches data for a Strapi page.
+ * This function is used to fetch data for a specific page type from Strapi.
+ * @param {any} query - The GraphQL query to fetch the page data.
+ * @param {Record<string, any>} variables - The variables to pass to the query.
+ * @param {string} pageType - The type of page being fetched.
+ */
+interface StrapiPageDataOptions {
+    query: any;
+    variables?: Record<string, any>;
+    pageType: string;
+}
+
+export async function getStrapiPageData<T>(options: StrapiPageDataOptions): Promise<T | null> {
+    const client = createApolloClient();
+
+    try {
+        const { data } = await client.query({
+            query: options.query,
+            fetchPolicy: "cache-first",
+        });
+
+        if (!data || !data.pages || !data.pages[0]) {
+            console.warn(`${options.pageType} data is missing or invalid.`);
+            return null;
+        }
+
+        return data.pages[0] as T;
+    } catch (error) {
+        console.error(`Error fetching ${options.pageType} data:`, error);
+        return null;
+    }
+}
 
 /**
  * Renders multiple components within a section based on a component map.

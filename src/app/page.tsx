@@ -1,7 +1,5 @@
 import React from "react";
-import type { Metadata } from "next";
-import createApolloClient from "../utils/apolloClient";
-
+import { Metadata } from "next";
 import Navbar from "../components/Layout/Navbar";
 import Footer from "../components/Layout/Footer";
 import HeroBanner from "../components/Hero/Hero";
@@ -16,7 +14,8 @@ import BoxesText from "../components/BoxesText/BoxesText";
 import FaqSection from "../components/FaqSection/FaqSection";
 import CtaBig from "../components/CtaBig/CtaBig";
 import LoadingError from "../components/Errors/LoadingError";
-import { renderMultipleComponents } from "../utils/utils";
+import { getStrapiPageData, renderMultipleComponents } from "../utils/utils";
+import { generatePageMetadata } from "../utils/seo"
 
 import MobileMenuProvider from "../context/MobileMenuProvider";
 import { HOMEPAGE_QUERY } from "../graphqlQueries/Homepage";
@@ -27,33 +26,37 @@ interface SectionProps {
   [key: string]: any;
 }
 
-export const metadata: Metadata = {
-  title: "Pakufi - Ethical Tech Agency",
-  description:
-    "We help you bring your ideas online pofessionally and tailored to you. We work just with talente freelancers from less priviledge countries, offering opportunity to achieve economical and geographical freedom.",
-};
+interface PageProps {
+  SEO: {
+    seoTitle: string;
+    seoDescription: string;
+    seoPreview: { url: string; alternativeText: string }[];
+  };
+  pageTitle: string;
+  internalBannerMedia: any;
+  sections: any[];
+}
+
+export const generateMetadata = async () => generatePageMetadata(() => getStrapiPageData<PageProps>({ query: HOMEPAGE_QUERY, pageType: "Homepage" }));
+
+export function renderSection(section: SectionProps, ComponentWrapper: React.ComponentType<any>) {
+  const componentMap: Record<string, any> = {
+    TextImageButtonsComponent: TextImageButtons,
+    serviceList: ServiceBox,
+    teamMemberList: TeamSection,
+    boxesText: BoxesText,
+    faqList: FaqSection,
+  };
+  return renderMultipleComponents({
+      section,
+      ComponentWrapper,
+      componentMap,
+  });
+}
 
 export default async function Page() {
-  let homepagePage;
-  const client = createApolloClient();
-
-  try {
-    const { data } = await client.query({
-      query: HOMEPAGE_QUERY,
-      fetchPolicy: "cache-first", // Uses cache when available
-    });
-
-    if (!data || !data.pages || !data.pages[0]) {
-      throw new Error("Homepage data is missing or invalid.");
-    }
-
-    homepagePage = data.pages[0];
-  } catch (error) {
-    console.error("Error fetching homepage data:", error);
-    homepagePage = null;
-  }
-
-  if (!homepagePage) {
+  const pageData = await getStrapiPageData<PageProps>({ query: HOMEPAGE_QUERY, pageType: "Homepage" });
+  if (!pageData) {
     return (
       <MobileMenuProvider>
         <Navbar />
@@ -63,30 +66,13 @@ export default async function Page() {
     );
   }
 
-  function renderSection(
-    section: SectionProps,
-    ComponentWrapper: React.ComponentType<any>
-  ) {
-    const componentMap: Record<string, any> = {
-      TextImageButtonsComponent: TextImageButtons,
-      serviceList: ServiceBox,
-      teamMemberList: TeamSection,
-      boxesText: BoxesText,
-      faqList: FaqSection,
-    };
-    return renderMultipleComponents({
-      section,
-      ComponentWrapper,
-      componentMap,
-    });
-  }
 
   return (
     <MobileMenuProvider>
       <Navbar />
 
-      {homepagePage.sections &&
-        homepagePage.sections.map((section: any, index: number) => {
+      {pageData.sections &&
+        pageData.sections.map((section: any, index: number) => {
           switch (section.__typename) {
             case "ComponentStaticComponentHero":
               return <HeroBanner {...section} key={index} />;

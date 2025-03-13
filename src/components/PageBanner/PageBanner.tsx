@@ -6,10 +6,8 @@ import { getStrapiImageUrl } from "../../utils/utils";
 
 import styles from "./PageBanner.module.scss";
 
-import greenCross from "/public/images/backgrounds/green-cross.svg";
 import whiteCross from "/public/images/backgrounds/white-cross.svg";
 import greenTriangle from "/public/images/backgrounds/green-triangle.svg";
-import whiteTriangle from "/public/images/backgrounds/white-triangle.svg";
 
 interface PageBannerProps {
   pageTitle: string;
