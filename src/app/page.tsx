@@ -1,5 +1,4 @@
 import React from "react";
-import { Metadata } from "next";
 import Navbar from "../components/Layout/Navbar";
 import Footer from "../components/Layout/Footer";
 import HeroBanner from "../components/Hero/Hero";
@@ -39,7 +38,7 @@ interface PageProps {
 
 export const generateMetadata = async () => generatePageMetadata(() => getStrapiPageData<PageProps>({ query: HOMEPAGE_QUERY, pageType: "Homepage" }));
 
-export function renderSection(section: SectionProps, ComponentWrapper: React.ComponentType<any>) {
+function renderSection(section: SectionProps, ComponentWrapper: React.ComponentType<any>) {
   const componentMap: Record<string, any> = {
     TextImageButtonsComponent: TextImageButtons,
     serviceList: ServiceBox,

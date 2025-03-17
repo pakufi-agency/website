@@ -1,6 +1,7 @@
 import React from "react";
 import * as Icons from "react-feather";
 import BlockRendererClient from "../BlockRendererClient";
+import Image from 'next/image';
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
 
 import styles from "./iconTitleSubtitle.module.scss";
@@ -25,7 +26,6 @@ const IconTitleSubtitle: React.FC<Props> = ({ items }) => {
       return null;
     }
 
-    // console.log(item.iconName, Icons[item.iconName]);
     return (
       <div className={styles.icon}>
         {item.iconName && Icons[item.iconName] !== undefined
@@ -37,7 +37,7 @@ const IconTitleSubtitle: React.FC<Props> = ({ items }) => {
             })}
 
         {item.iconImg?.url && (
-          <img
+          <Image
             src={item.iconImg?.url}
             alt={item.iconImg?.alternativeText || "Icon"}
             width="24"

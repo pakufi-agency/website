@@ -34,7 +34,7 @@ interface PageProps {
 
 export const generateMetadata = async () => generatePageMetadata(() => getStrapiPageData<PageProps>({ query: CONTACT_QUERY, pageType: "Contact Us" }));
 
-export function renderSection(section: SectionProps, ComponentWrapper: React.ComponentType<any>) {
+function renderSection(section: SectionProps, ComponentWrapper: React.ComponentType<any>) {
   const componentMap: Record<string, any> = {
     TextImageButtonsComponent: TextImageButtons,
     boxesText: BoxesText,

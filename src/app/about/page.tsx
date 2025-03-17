@@ -32,7 +32,7 @@ interface PageProps {
 
 export const generateMetadata = async () => generatePageMetadata(() => getStrapiPageData<PageProps>({ query: ABOUTUS_QUERY, pageType: "About Us" }));
 
-export function renderSection(section: SectionProps, ComponentWrapper: React.ComponentType<any>) {
+function renderSection(section: SectionProps, ComponentWrapper: React.ComponentType<any>) {
   const componentMap: Record<string, any> = {
       TextImageButtonsComponent: TextImageButtons,
       teamMemberList: TeamSection,
