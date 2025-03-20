@@ -3,18 +3,20 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import BlockRendererClient from "../BlockRendererClient";
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
-import { getStrapiImageUrl } from "../../utils/utils";
+import { getStrapiImageUrl, trackClick } from "../../utils/utils";
 
 import styles from "./TextImageButtons.module.scss";
+import { Url } from "url";
 interface TextImageButtons {
   ImagePosition: string;
   richText: BlocksContent;
-  buttonOneLabel: String;
-  buttonOneLink: URL;
-  buttonTwoLabel: String;
-  buttonTwoLink: URL;
+  buttonOneLabel: string;
+  buttonOneLink: Url;
+  buttonTwoLabel: string;
+  buttonTwoLink: Url;
   media: { url: string; alternativeText: string };
   textColor: string;
 }
@@ -29,6 +31,8 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
   buttonTwoLink,
   textColor,
 }) => {
+  const pathname = usePathname();
+  
   return (
     <>
       <div className={`${styles.container}`}>
@@ -48,7 +52,12 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                         href={buttonOneLink}
                         className={`btn btn-primary ${styles.buttonLink}`}
                       >
-                        {buttonOneLabel}
+                        <span
+                          className={`btn btn-light ${styles.button}`}
+                          onClick={() => trackClick('CTA:TextImageSection', buttonOneLabel, buttonOneLink, pathname)}
+                        >
+                          {buttonOneLabel}
+                        </span>
                       </Link>
                     )}
 
@@ -57,7 +66,12 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                         href={buttonTwoLink}
                         className={`btn btn-primary ${styles.buttonLink}`}
                       >
-                        {buttonTwoLabel}
+                        <span
+                          className={`btn btn-light ${styles.button}`}
+                          onClick={() => trackClick('CTA:TextImageSection', buttonTwoLabel, buttonTwoLink, pathname)}
+                        >
+                          {buttonTwoLabel}
+                        </span>
                       </Link>
                     )}
                   </div>
@@ -113,7 +127,12 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                         href={buttonOneLink}
                         className={`btn btn-primary ${styles.buttonLink}`}
                       >
-                        {buttonOneLabel}
+                        <span
+                          className={`btn btn-light ${styles.button}`}
+                          onClick={() => trackClick('CTA:TextImageSection', buttonOneLabel, buttonOneLink, pathname)}
+                        >
+                          {buttonOneLabel}
+                        </span>
                       </Link>
                     )}
 
@@ -122,7 +141,12 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                         href={buttonTwoLink}
                         className={`btn btn-primary ${styles.buttonLink}`}
                       >
-                        {buttonTwoLabel}
+                        <span
+                          className={`btn btn-light ${styles.button}`}
+                          onClick={() => trackClick('CTA:TextImageSection', buttonTwoLabel, buttonTwoLink, pathname)}
+                        >
+                          {buttonTwoLabel}
+                        </span>
                       </Link>
                     )}
                   </div>
@@ -143,7 +167,12 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                       href={buttonOneLink}
                       className={`btn btn-primary ${styles.buttonLink}`}
                     >
-                      {buttonOneLabel}
+                      <span
+                          className={`btn btn-light ${styles.button}`}
+                          onClick={() => trackClick('CTA:TextImageSection', buttonOneLabel, buttonOneLink, pathname)}
+                        >
+                          {buttonOneLabel}
+                        </span>
                     </Link>
                   )}
 
@@ -152,7 +181,12 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                       href={buttonTwoLink}
                       className={`btn btn-primary ${styles.buttonLink}`}
                     >
-                      {buttonTwoLabel}
+                      <span
+                          className={`btn btn-light ${styles.button}`}
+                          onClick={() => trackClick('CTA:TextImageSection', buttonTwoLabel, buttonTwoLink, pathname)}
+                        >
+                          {buttonTwoLabel}
+                        </span>
                     </Link>
                   )}
                 </div>

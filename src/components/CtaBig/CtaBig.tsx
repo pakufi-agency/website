@@ -3,21 +3,23 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { getStrapiImageUrl } from "../../utils/utils";
+import { usePathname } from "next/navigation";
+import { getStrapiImageUrl, trackClick } from "../../utils/utils";
 
 import styles from "./CtaBig.module.scss";
 
 import whiteCross from "/public/images/backgrounds/white-cross.svg";
 import greenTriangle from "/public/images/backgrounds/green-triangle.svg";
 import whiteTriangle from "/public/images/backgrounds/white-triangle.svg";
+import { Url } from "url";
 
 interface CtaBigProps {
   title: string;
   description: string;
   buttonCtaOneLabel: string;
-  buttonCtaOneLink: string;
+  buttonCtaOneLink: Url;
   buttonCtaTwoLabel: String;
-  buttonCtaTwoLink: string;
+  buttonCtaTwoLink: Url;
   media: { url: string; alternativeText: string };
 }
 
@@ -30,6 +32,8 @@ const CtaBig: React.FC<CtaBigProps> = ({
   buttonCtaTwoLink,
   media,
 }) => {
+  const pathname = usePathname();
+  
   return (
     <>
       <div className={styles.container}>
@@ -56,7 +60,12 @@ const CtaBig: React.FC<CtaBigProps> = ({
                       href={buttonCtaOneLink}
                       className={`btn btn-light ${styles.button}`}
                     >
-                      {buttonCtaOneLabel}
+                      <span
+                        className={`btn btn-light ${styles.button}`}
+                        onClick={() => trackClick('CTA:big', buttonCtaOneLabel, buttonCtaOneLink, pathname)}
+                      >
+                        {buttonCtaOneLabel}
+                      </span>
                     </Link>
                   )}
                   {buttonCtaTwoLink && (
@@ -64,7 +73,12 @@ const CtaBig: React.FC<CtaBigProps> = ({
                       href={buttonCtaTwoLink}
                       className={`btn btn-light ${styles.button}`}
                     >
-                      {buttonCtaTwoLabel}
+                      <span
+                        className={`btn btn-light ${styles.button}`}
+                        onClick={() => trackClick('Big CTA', buttonCtaOneLabel, buttonCtaOneLink, pathname)}
+                      >
+                        {buttonCtaTwoLabel}
+                      </span>
                     </Link>
                   )}
                 </div>

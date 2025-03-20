@@ -42,6 +42,8 @@ export default function RootLayout({
           type="font/woff2"
           crossOrigin="anonymous"
         />
+        {/* Umami Analytics Tracking */}
+        <script defer src="https://umami-production-6c0d.up.railway.app/script.js" data-website-id="5385a5e8-4250-4358-b0aa-729b2250768c"></script>
       </Head>
       <body className={roboto.className}>
         {children}

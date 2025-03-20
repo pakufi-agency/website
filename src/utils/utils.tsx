@@ -1,8 +1,9 @@
 import React from "react";
 import createApolloClient from "./apolloClient";
+import { Url } from "url";
+
 
 export const getStrapiImageUrl = (url: string) => {
-
   return url.startsWith("http") ? url : `${process.env.NEXT_PUBLIC_CMS_ENDPOINT}${url}`;
 };
 
@@ -94,3 +95,21 @@ export function renderMultipleComponents({
     </ComponentWrapper>
   );
 }
+
+declare global {
+  interface Window {
+    umami?: {
+      track: (eventName: string, data: Record<string, any>) => void;
+    };
+  }
+}
+
+export const trackClick = (eventName: string, label: string, link: Url | string, pathname: string) => {
+  if (typeof window !== "undefined" && window.umami) {
+    window.umami.track(eventName, {
+      label,
+      link,
+      page: pathname,
+    });
+  }
+};

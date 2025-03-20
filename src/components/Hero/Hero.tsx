@@ -3,9 +3,10 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import BlockRendererClient from "../BlockRendererClient";
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
-import { getStrapiImageUrl } from "../../utils/utils";
+import { getStrapiImageUrl, trackClick } from "../../utils/utils";
 
 import styles from "./Hero.module.scss";
 
@@ -27,6 +28,8 @@ const Hero: React.FC<HeroProps> = ({
   ctaLink,
   mediaHero,
 }) => {
+  const pathname = usePathname();
+  
   return (
     <>
       <div className={`${styles.heroBanner}`}>
@@ -52,7 +55,12 @@ const Hero: React.FC<HeroProps> = ({
             </div>
 
             <Link href={ctaLink} className="btn button-pakufi-dark">
-              {ctaLabel}
+              <span
+                className={`btn btn-light ${styles.button}`}
+                onClick={() => trackClick('CTA:hero', ctaLabel, ctaLink, pathname)}
+              >
+                {ctaLabel}
+              </span>
             </Link>
           </div>
 
