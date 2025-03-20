@@ -32,7 +32,6 @@ const CtaText: React.FC<CtaTextProps> = ({
 
           <Link href={buttonCtaOneLink} className={`btn btn-light`}>
             <span
-              className={`btn btn-light ${styles.button}`}
               onClick={() => trackClick('CTA:banner', buttonCtaOneLabel, buttonCtaOneLink, pathname)}
             >
               {buttonCtaOneLabel}

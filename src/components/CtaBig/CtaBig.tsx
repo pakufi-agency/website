@@ -61,7 +61,6 @@ const CtaBig: React.FC<CtaBigProps> = ({
                       className={`btn btn-light ${styles.button}`}
                     >
                       <span
-                        className={`btn btn-light ${styles.button}`}
                         onClick={() => trackClick('CTA:big', buttonCtaOneLabel, buttonCtaOneLink, pathname)}
                       >
                         {buttonCtaOneLabel}
@@ -74,7 +73,6 @@ const CtaBig: React.FC<CtaBigProps> = ({
                       className={`btn btn-light ${styles.button}`}
                     >
                       <span
-                        className={`btn btn-light ${styles.button}`}
                         onClick={() => trackClick('Big CTA', buttonCtaOneLabel, buttonCtaOneLink, pathname)}
                       >
                         {buttonCtaTwoLabel}

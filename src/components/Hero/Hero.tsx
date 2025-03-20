@@ -56,7 +56,6 @@ const Hero: React.FC<HeroProps> = ({
 
             <Link href={ctaLink} className="btn button-pakufi-dark">
               <span
-                className={`btn btn-light ${styles.button}`}
                 onClick={() => trackClick('CTA:hero', ctaLabel, ctaLink, pathname)}
               >
                 {ctaLabel}

@@ -53,7 +53,6 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                         className={`btn btn-primary ${styles.buttonLink}`}
                       >
                         <span
-                          className={`btn btn-light ${styles.button}`}
                           onClick={() => trackClick('CTA:TextImageSection', buttonOneLabel, buttonOneLink, pathname)}
                         >
                           {buttonOneLabel}
@@ -67,7 +66,6 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                         className={`btn btn-primary ${styles.buttonLink}`}
                       >
                         <span
-                          className={`btn btn-light ${styles.button}`}
                           onClick={() => trackClick('CTA:TextImageSection', buttonTwoLabel, buttonTwoLink, pathname)}
                         >
                           {buttonTwoLabel}
@@ -128,7 +126,6 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                         className={`btn btn-primary ${styles.buttonLink}`}
                       >
                         <span
-                          className={`btn btn-light ${styles.button}`}
                           onClick={() => trackClick('CTA:TextImageSection', buttonOneLabel, buttonOneLink, pathname)}
                         >
                           {buttonOneLabel}
@@ -142,7 +139,6 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                         className={`btn btn-primary ${styles.buttonLink}`}
                       >
                         <span
-                          className={`btn btn-light ${styles.button}`}
                           onClick={() => trackClick('CTA:TextImageSection', buttonTwoLabel, buttonTwoLink, pathname)}
                         >
                           {buttonTwoLabel}
@@ -168,7 +164,6 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                       className={`btn btn-primary ${styles.buttonLink}`}
                     >
                       <span
-                          className={`btn btn-light ${styles.button}`}
                           onClick={() => trackClick('CTA:TextImageSection', buttonOneLabel, buttonOneLink, pathname)}
                         >
                           {buttonOneLabel}
@@ -182,7 +177,6 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                       className={`btn btn-primary ${styles.buttonLink}`}
                     >
                       <span
-                          className={`btn btn-light ${styles.button}`}
                           onClick={() => trackClick('CTA:TextImageSection', buttonTwoLabel, buttonTwoLink, pathname)}
                         >
                           {buttonTwoLabel}
