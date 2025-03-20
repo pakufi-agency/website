@@ -36,6 +36,7 @@ export async function generatePageMetadata(
             openGraph: {
                 title: DEFAULT_METADATA.seoTitle,
                 description: DEFAULT_METADATA.seoDescription,
+                url: "https://pakufi.com",
                 images: [getStrapiImageUrl(DEFAULT_METADATA.seoPreview.url)],
             },
             twitter: {
@@ -54,6 +55,7 @@ export async function generatePageMetadata(
         openGraph: {
             title: seoTitle,
             description: seoDescription,
+            url: "https://pakufi.com",
             images: [getStrapiImageUrl(seoPreview[0].url)],
         },
         twitter: {
