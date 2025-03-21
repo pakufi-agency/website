@@ -58,7 +58,7 @@ const CtaBig: React.FC<CtaBigProps> = ({
                   {buttonCtaOneLink && (
                     <Link
                       href={buttonCtaOneLink}
-                      className={`btn btn-light ${styles.button}`}
+                      className={`btn button-pakufi-dark ${styles.button}`}
                     >
                       <span
                         onClick={() => trackClick('CTA:big', buttonCtaOneLabel, buttonCtaOneLink, pathname)}
@@ -70,7 +70,7 @@ const CtaBig: React.FC<CtaBigProps> = ({
                   {buttonCtaTwoLink && (
                     <Link
                       href={buttonCtaTwoLink}
-                      className={`btn btn-light ${styles.button}`}
+                      className={`btn button-pakufi-dark ${styles.button}`}
                     >
                       <span
                         onClick={() => trackClick('Big CTA', buttonCtaOneLabel, buttonCtaOneLink, pathname)}

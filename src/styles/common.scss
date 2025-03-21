@@ -195,6 +195,13 @@ textarea.form-control {
             width: 50%;
         }
     }
+
+    > span {
+        padding: 0;
+        margin: 0;
+        background: inherit;
+        color: inherit;
+    }
 }
 
 /* btn btn-primary */
@@ -390,7 +397,7 @@ label {
     display: none;
 }
 
-// Dark theme
+// DARK THEME
 .pakufi-dark-theme {
     background-color: $navy-blue;
     color: #f8f9fa;
@@ -419,6 +426,7 @@ label {
         color: $secondary-color;
     }
 }
+
 
 
 
@@ -607,12 +615,4 @@ label {
     .mobileMenuIsOpen {
         overflow: auto;
     }
-
-    // .shape1 {
-    //     display: none;
-    // }
-
-    // .shape9 {
-    //     display: none;
-    // }
 }

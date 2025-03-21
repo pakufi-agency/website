@@ -99,28 +99,19 @@
                     text-align: center;
                     line-height: 29px;
                     height: 32px;
-                    border: 1px solid $primary-color;
+                    border: 1px solid $secondary-color;
                     border-radius: 50%;
-                    color: $primary-color;
+                    color: $secondary-color;
                     
                     svg {
                         width: 15px;
                     }
-                    &.facebook {
-                        border-color: #4267b2;
-                        color: #4267b2;
+                    &.discord {
+                        border-color: #7289da;
+                        color: #7289da;
 
                         &:hover {
-                            background: #4267b2;
-                            color: $white;
-                        }
-                    }
-                    &.twitter {
-                        border-color: #38A1F3;
-                        color: #38A1F3;
-
-                        &:hover {
-                            background: #38A1F3;
+                            background: #7289da;
                             color: $white;
                         }
                     }
@@ -134,11 +125,20 @@
                         }
                     }
                     &.instagram {
-                        border-color: #231F20;
-                        color: #231F20;
+                        border-color: #ff006e;
+                        color: #ff006e;
 
                         &:hover {
-                            background: #231F20;
+                            background: #ff006e;
+                            color: $white;
+                        }
+                    }
+                    &.github {
+                        border-color: #2b3137;
+                        color: #2b3137;
+
+                        &:hover {
+                            background: #2b3137;
                             color: $white;
                         }
                     }

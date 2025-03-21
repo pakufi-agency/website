@@ -54,7 +54,7 @@ const Hero: React.FC<HeroProps> = ({
               <BlockRendererClient content={descriptionRichText} />
             </div>
 
-            <Link href={ctaLink} className="btn button-pakufi-dark">
+            <Link href={ctaLink} className={`btn button-pakufi-dark ${styles.button}`}>
               <span
                 onClick={() => trackClick('CTA:hero', ctaLabel, ctaLink, pathname)}
               >
