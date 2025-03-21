@@ -20,20 +20,10 @@
         margin-bottom: 20px;
         font-size: 16px;
     }
-    .btn {
-        &::before, &::after {
-            background: $white;
-        }
-    }
+
     .button {
-        background: $secondary-color;
-        box-shadow: 0 5px 20px 0 $secondary-box-shadow;
-
-        &:hover, &:focus {
-            color: $black-color;
-            background: $white;
-
-            box-shadow: 0 5px 20px 0 $primary-box-shadow;
+        span {
+            margin: 0;
         }
     }
     span {

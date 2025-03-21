@@ -5,6 +5,14 @@ export const CONTACT_QUERY = gql`
     pages(filters: { documentId: { eq: "feli3eyi8vf1pi56v3jct7js" } }) {
       pageTitle
       pageDescription
+      SEO {
+        seoTitle
+        seoDescription
+        seoPreview {
+          url
+          alternativeText
+        }
+      }
       internalBannerMedia {
         alternativeText
         url

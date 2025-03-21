@@ -57,10 +57,10 @@ const Footer = () => {
                     <Link href="/about">About Us</Link>
                   </li>
                   <li>
-                    <Link href="/">Services</Link>
+                    <Link href="/#serviceSection">Services</Link>
                   </li>
                   <li>
-                    <Link href="/">FAQ&apos;s</Link>
+                    <Link href="/#faqSection">FAQ&apos;s</Link>
                   </li>
                 </ul>
               </div>
@@ -137,7 +137,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="https://www.linkedin.com/company/pakufi"
-                      className="linkedin"
+                      className={styles.linkedin}
                       target="_blank"
                     >
                       <Icon.Linkedin />
@@ -146,7 +146,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="https://discord.gg/KUeQrY5eMw"
-                      className="discord"
+                      className={styles.discord}
                       target="_blank"
                     >
                       <Icon.MessageCircle />
@@ -156,7 +156,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="https://instagram.com/pakufi_ethical_agency"
-                      className="instagram"
+                      className={styles.instagram}
                       target="_blank"
                     >
                       <Icon.Instagram />
@@ -166,13 +166,14 @@ const Footer = () => {
                   <li>
                     <a
                       href="https://github.com/pakufi-agency/"
-                      className="github"
+                      className={styles.github}
                       target="_blank"
                     >
                       <Icon.GitHub />
                     </a>
                   </li>
                 </ul>
+                <p>We are open source! <br/> Check out our <a href="https://github.com/pakufi-agency/">Github</a> if you wish to contribute!</p>
               </div>
             </div>
 

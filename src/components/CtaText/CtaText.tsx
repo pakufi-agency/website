@@ -2,14 +2,17 @@
 
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { trackClick } from "../../utils/utils";
 
 import styles from "./CtaText.module.scss";
+import { Url } from "url";
 
 interface CtaTextProps {
-  title: String;
-  description: String;
-  buttonCtaOneLabel: String;
-  buttonCtaOneLink: URL;
+  title: string;
+  description: string;
+  buttonCtaOneLabel: string;
+  buttonCtaOneLink: Url;
 }
 
 const CtaText: React.FC<CtaTextProps> = ({
@@ -18,6 +21,8 @@ const CtaText: React.FC<CtaTextProps> = ({
   buttonCtaOneLabel,
   buttonCtaOneLink,
 }) => {
+  const pathname = usePathname(); // Get the current page path
+  
   return (
     <>
       <div className={styles.container}>
@@ -25,13 +30,13 @@ const CtaText: React.FC<CtaTextProps> = ({
           <h3>{title}</h3>
           <p>{description}</p>
 
-          <Link href={buttonCtaOneLink} className={`btn btn-light`}>
-            {buttonCtaOneLabel}
+          <Link href={buttonCtaOneLink} className={`btn button-pakufi-dark ${styles.button}`}>
+            <span
+              onClick={() => trackClick('CTA:banner', buttonCtaOneLabel, buttonCtaOneLink, pathname)}
+            >
+              {buttonCtaOneLabel}
+            </span>
           </Link>
-
-          {/* <span>
-            <Link href="#">Or, get started now with a free trial</Link>
-          </span> */}
         </div>
       </div>
     </>
