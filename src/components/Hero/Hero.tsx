@@ -40,6 +40,7 @@ const Hero: React.FC<HeroProps> = ({
               data-aos-delay="100"
               data-aos-duration="500"
               data-aos-once="true"
+              className={styles.smallTitle}
             >
               {title}
             </span>

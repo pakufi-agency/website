@@ -9,8 +9,8 @@ import "swiper/css/bundle";
 
 import "../styles/common.scss";
 
-import type { Metadata } from "next";
 import Head from "next/head";
+import Script from 'next/script'
 import { Roboto } from "next/font/google";
 import AosAnimation from "@/components/Layout/AosAnimation";
 import GoTop from "@/components/Layout/GoTop";
@@ -20,12 +20,6 @@ const roboto = Roboto({
   subsets: ["latin"],
   variable: "--font-roboto",
 });
-
-export const metadata: Metadata = {
-  title: "Pakufi - Ethical Tech Agency",
-  description:
-    "We help you bring your ideas online pofessionally and tailored to you. We work just with talente freelancers from less priviledge countries, offering opportunity to achieve economical and geographical freedome.",
-};
 
 export default function RootLayout({
   children,
@@ -42,8 +36,6 @@ export default function RootLayout({
           type="font/woff2"
           crossOrigin="anonymous"
         />
-        {/* Umami Analytics Tracking */}
-        <script defer src="https://umami-production-6c0d.up.railway.app/script.js" data-website-id="5385a5e8-4250-4358-b0aa-729b2250768c"></script>
       </Head>
       <body className={roboto.className}>
         {children}
@@ -51,6 +43,16 @@ export default function RootLayout({
         <AosAnimation />
 
         <GoTop />
+        {/* Umami Analytics Tracking with Next/Script */}
+        {process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && process.env.NEXT_PUBLIC_UMAMI_SCRIPT_SRC && (
+          <Script
+            src={process.env.NEXT_PUBLIC_UMAMI_SCRIPT_SRC}
+            data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+            data-domains="pakufi.agency"
+            strategy="lazyOnload"
+            defer={true}
+          />
+        )}
       </body>
     </html>
   );
