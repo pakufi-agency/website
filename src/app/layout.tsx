@@ -36,10 +36,14 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         {/* Umami Analytics Tracking */}
-        <script defer src="https://umami-production-6c0d.up.railway.app/script.js" 
-          data-website-id="5385a5e8-4250-4358-b0aa-729b2250768c" 
-          data-domains="pakufi.agency"
-        ></script>
+        {process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && process.env.NEXT_PUBLIC_UMAMI_SCRIPT_SRC && (
+          <script
+              defer
+              src={process.env.NEXT_PUBLIC_UMAMI_SCRIPT_SRC}
+              data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+              data-domains="pakufi.agency"
+          />
+        )}
       </Head>
       <body className={roboto.className}>
         {children}
