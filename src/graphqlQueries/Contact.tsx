@@ -47,6 +47,7 @@ export const CONTACT_QUERY = gql`
             buttonOneLink
             buttonTwoLabel
             buttonTwoLink
+            textColor
           }
           teamMemberList {
             team_members {

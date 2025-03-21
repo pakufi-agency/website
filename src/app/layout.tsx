@@ -9,7 +9,6 @@ import "swiper/css/bundle";
 
 import "../styles/common.scss";
 
-import type { Metadata } from "next";
 import Head from "next/head";
 import { Roboto } from "next/font/google";
 import AosAnimation from "@/components/Layout/AosAnimation";
@@ -20,12 +19,6 @@ const roboto = Roboto({
   subsets: ["latin"],
   variable: "--font-roboto",
 });
-
-export const metadata: Metadata = {
-  title: "Pakufi - Ethical Tech Agency",
-  description:
-    "We help you bring your ideas online pofessionally and tailored to you. We work just with talente freelancers from less priviledge countries, offering opportunity to achieve economical and geographical freedome.",
-};
 
 export default function RootLayout({
   children,
@@ -43,7 +36,10 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         {/* Umami Analytics Tracking */}
-        <script defer src="https://umami-production-6c0d.up.railway.app/script.js" data-website-id="5385a5e8-4250-4358-b0aa-729b2250768c"></script>
+        <script defer src="https://umami-production-6c0d.up.railway.app/script.js" 
+          data-website-id="5385a5e8-4250-4358-b0aa-729b2250768c" 
+          data-domains="pakufi.agency"
+        ></script>
       </Head>
       <body className={roboto.className}>
         {children}
