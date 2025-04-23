@@ -1,0 +1,99 @@
+@use "../../styles/variables.scss" as *;
+
+.container {
+  text-align: center;
+  position: relative;
+  padding: {
+    top: 50px;
+    bottom: 50px;
+  }
+  background: $gradient2;
+
+  h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+.newsletterForm {
+  position: relative;
+  margin-top: 25px;
+  margin-bottom: 10px;
+
+  .inputNewsletter {
+    display: block;
+    width: 100%;
+    height: 50px;
+    color: $white;
+    border: none;
+    outline: 0;
+    background-color: #0e314c;
+    border-radius: 30px;
+    padding-top: 3px;
+    padding-left: 20px;
+
+    &::placeholder {
+      color: #d5d5d5;
+      transition: 0.5s;
+    }
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+  }
+
+  button {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    height: 44px;
+    cursor: pointer;
+    border: none;
+    padding: 0 30px;
+    line-height: 44px;
+    background-color: #2a4555;
+    border-radius: 30px;
+    transition: 0.5s;
+    color: $white;
+    font-size: 16px;
+    font-weight: 600;
+
+    &:hover {
+      background-color: #5d9f7b;
+      color: $white;
+    }
+
+    span {
+      margin: 0;
+    }
+  }
+}
+
+.successMessage {
+  color: green;
+  margin-top: 10px;
+}
+
+.errorMessage {
+  color: red;
+  margin-top: 10px;
+}
+
+@media only screen and (min-width: 767px) {
+  .container {
+    padding: {
+      top: 80px;
+      bottom: 80px;
+    }
+
+    h2 {
+      font-size: 28px;
+    }
+  }
+}
