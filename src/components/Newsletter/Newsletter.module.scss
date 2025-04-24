@@ -1,23 +1,34 @@
 @use "../../styles/variables.scss" as *;
 
-.container {
+.section {
+  background: $gradient2;
+  z-index: 0;
   text-align: center;
   position: relative;
+}
+
+.container {
+  max-width: 650px;
+  z-index: 0;
   padding: {
     top: 50px;
     bottom: 50px;
   }
-  background: $gradient2;
 
   h2 {
-    margin-bottom: 15px;
     font-size: 28px;
-    font-weight: 600;
-    text-transform: capitalize;
+    color: $white;
   }
 
   p {
-    font-size: 16px;
+    font-size: 18px;
+    color: $mint-green;
+  }
+
+  .footnote {
+    color: $navy-blue;
+    font-size: 12px;
+    margin-top: 15px;
   }
 }
 
@@ -33,13 +44,13 @@
     color: $white;
     border: none;
     outline: 0;
-    background-color: #0e314c;
-    border-radius: 30px;
+    background-color: $primary-color;
+    border-radius: 10px;
     padding-top: 3px;
     padding-left: 20px;
 
     &::placeholder {
-      color: #d5d5d5;
+      color: $secondary-color;
       transition: 0.5s;
     }
 
@@ -50,24 +61,11 @@
 
   button {
     position: absolute;
-    right: 3px;
-    top: 3px;
-    height: 44px;
-    cursor: pointer;
-    border: none;
-    padding: 0 30px;
-    line-height: 44px;
-    background-color: #2a4555;
-    border-radius: 30px;
+    right: 0px;
+    top: 1px;
+    padding: 14px 40px;
+    border-radius: 10px;
     transition: 0.5s;
-    color: $white;
-    font-size: 16px;
-    font-weight: 600;
-
-    &:hover {
-      background-color: #5d9f7b;
-      color: $white;
-    }
 
     span {
       margin: 0;
@@ -76,12 +74,12 @@
 }
 
 .successMessage {
-  color: green;
+  color: $success;
   margin-top: 10px;
 }
 
 .errorMessage {
-  color: red;
+  color: $error;
   margin-top: 10px;
 }
 

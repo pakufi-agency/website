@@ -50,6 +50,9 @@ export const HOMEPAGE_QUERY = gql`
         }
         ... on ComponentCommonNewsletter {
           buttonLabel
+          title
+          subtitle
+          footnote
         }
         ... on ComponentCommonSection {
           sectionTitle

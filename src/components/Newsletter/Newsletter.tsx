@@ -14,9 +14,17 @@ import whiteTriangle from "/public/images/backgrounds/white-triangle.svg";
 
 interface NewsletterProps {
   buttonLabel: string;
+  title: string;
+  subtitle: string;
+  footnote: string;
 }
 
-const Newsletter: React.FC<NewsletterProps> = ({ buttonLabel }) => {
+const Newsletter: React.FC<NewsletterProps> = ({
+  buttonLabel,
+  title,
+  subtitle,
+  footnote,
+}) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState(false);
@@ -76,26 +84,23 @@ const Newsletter: React.FC<NewsletterProps> = ({ buttonLabel }) => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className="container">
-        <h2>Start your free trial</h2>
+    <div className={styles.section}>
+      <div className={`container ${styles.container}`}>
+        <h2>{title}</h2>
+        <p>{subtitle}</p>
         <form className={styles.newsletterForm} onSubmit={handleSubmit}>
           {!isSubmitting && (
             <input
               type="email"
               className={styles.inputNewsletter}
-              placeholder="Enter your business email here"
+              placeholder="Your Email Address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
           )}
-          {/* <button type="submit" disabled={isSubmitting}>
-            {isSubmitting ? "Subscribing..." : "Sign Up Free"}
-          </button> */}
 
           <button
-            // href={buttonCtaOneLink}
             type="submit"
             className={`btn button-pakufi-dark ${styles.button}`}
           >
@@ -119,19 +124,16 @@ const Newsletter: React.FC<NewsletterProps> = ({ buttonLabel }) => {
             {message}
           </p>
         )}
-        <p>
-          Test out the Machine Learning features for 14 days, no credit card
-          required.
-        </p>
+        <p className={styles.footnote}>{footnote}</p>
       </div>
       {/* Shape Images */}
-      <div className="shape2 rotateme">
+      <div className="shape3 rotateme">
         <Image src={whiteCross} alt="shape" width={22} height={22} />
       </div>
-      <div className="shape4">
+      <div className="shape1">
         <Image src={whiteTriangle} alt="shape" width={12} height={16} />
       </div>
-      <div className="shape7">
+      <div className="shape5">
         <Image src={whiteTriangle} alt="shape" width={21} height={20} />
       </div>
     </div>
