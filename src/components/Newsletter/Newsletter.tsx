@@ -3,7 +3,6 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { trackClick } from "../../utils/utils";
 import { usePathname } from "next/navigation";
 
@@ -89,16 +88,14 @@ const Newsletter: React.FC<NewsletterProps> = ({
         <h2>{title}</h2>
         <p>{subtitle}</p>
         <form className={styles.newsletterForm} onSubmit={handleSubmit}>
-          {!isSubmitting && (
-            <input
-              type="email"
-              className={styles.inputNewsletter}
-              placeholder="Your Email Address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          )}
+          <input
+            type="email"
+            className={styles.inputNewsletter}
+            placeholder="Your Email Address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
           <button
             type="submit"
@@ -114,7 +111,7 @@ const Newsletter: React.FC<NewsletterProps> = ({
                 )
               }
             >
-              {isSubmitting ? "Subscribing..." : buttonLabel}
+              {buttonLabel}
             </span>
           </button>
         </form>
@@ -126,6 +123,7 @@ const Newsletter: React.FC<NewsletterProps> = ({
         )}
         <p className={styles.footnote}>{footnote}</p>
       </div>
+
       {/* Shape Images */}
       <div className="shape3 rotateme">
         <Image src={whiteCross} alt="shape" width={22} height={22} />

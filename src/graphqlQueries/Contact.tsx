@@ -95,6 +95,12 @@ export const CONTACT_QUERY = gql`
             richText
           }
         }
+        ... on ComponentCommonNewsletter {
+          buttonLabel
+          title
+          subtitle
+          footnote
+        }
         ... on ComponentCommonSectionhalfbackground {
           sectionTitle
           sectionSubtitle

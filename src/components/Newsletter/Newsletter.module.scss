@@ -30,6 +30,16 @@
     font-size: 12px;
     margin-top: 15px;
   }
+
+  .successMessage {
+    color: $success;
+    margin-top: 10px;
+  }
+
+  .errorMessage {
+    color: $error;
+    margin-top: 10px;
+  }
 }
 
 .newsletterForm {
@@ -71,16 +81,6 @@
       margin: 0;
     }
   }
-}
-
-.successMessage {
-  color: $success;
-  margin-top: 10px;
-}
-
-.errorMessage {
-  color: $error;
-  margin-top: 10px;
 }
 
 @media only screen and (min-width: 767px) {
