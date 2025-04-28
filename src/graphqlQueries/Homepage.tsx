@@ -48,6 +48,12 @@ export const HOMEPAGE_QUERY = gql`
           buttonCtaOneLabel
           buttonCtaOneLink
         }
+        ... on ComponentCommonNewsletter {
+          buttonLabel
+          title
+          subtitle
+          footnote
+        }
         ... on ComponentCommonSection {
           sectionTitle
           sectionSubtitle

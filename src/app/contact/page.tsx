@@ -12,8 +12,9 @@ import LoadingError from "../../components/Errors/LoadingError";
 import BoxesText from "../../components/BoxesText/BoxesText";
 import PageBanner from "../../components/PageBanner/PageBanner";
 import IntroSinglePage from "../../components/IntroSinglePage/IntroSinglePage";
+import Newsletter from "../../components/Newsletter/Newsletter";
 import { getStrapiPageData, renderMultipleComponents } from "../../utils/utils";
-import { generatePageMetadata } from "../../utils/seo"
+import { generatePageMetadata } from "../../utils/seo";
 
 import MobileMenuProvider from "../../context/MobileMenuProvider";
 import { CONTACT_QUERY } from "../../graphqlQueries/Contact";
@@ -32,9 +33,18 @@ interface PageProps {
   sections: any[];
 }
 
-export const generateMetadata = async () => generatePageMetadata(() => getStrapiPageData<PageProps>({ query: CONTACT_QUERY, pageType: "Contact Us" }));
+export const generateMetadata = async () =>
+  generatePageMetadata(() =>
+    getStrapiPageData<PageProps>({
+      query: CONTACT_QUERY,
+      pageType: "Contact Us",
+    })
+  );
 
-function renderSection(section: SectionProps, ComponentWrapper: React.ComponentType<any>) {
+function renderSection(
+  section: SectionProps,
+  ComponentWrapper: React.ComponentType<any>
+) {
   const componentMap: Record<string, any> = {
     TextImageButtonsComponent: TextImageButtons,
     boxesText: BoxesText,
@@ -42,14 +52,17 @@ function renderSection(section: SectionProps, ComponentWrapper: React.ComponentT
     iconTitleSubtitle: IconTitleSubtitle,
   };
   return renderMultipleComponents({
-      section,
-      ComponentWrapper,
-      componentMap,
+    section,
+    ComponentWrapper,
+    componentMap,
   });
 }
 
 export default async function Page() {
-  const pageData = await getStrapiPageData<PageProps>({ query: CONTACT_QUERY, pageType: "Contact Us" });
+  const pageData = await getStrapiPageData<PageProps>({
+    query: CONTACT_QUERY,
+    pageType: "Contact Us",
+  });
 
   if (!pageData) {
     return (
@@ -68,7 +81,7 @@ export default async function Page() {
         pageTitle={pageData.pageTitle}
         internalBannerMedia={pageData.internalBannerMedia}
       />
-      
+
       {pageData.sections &&
         pageData.sections.map((section: any, index: number) => {
           switch (section.__typename) {
@@ -80,6 +93,9 @@ export default async function Page() {
 
             case "ComponentCommonSectionhalfbackground":
               return renderSection(section, SectionHalfBackground);
+
+            case "ComponentCommonNewsletter":
+              return <Newsletter {...section} key={index} />;
 
             case "ComponentCommonCta":
               if (!section.isBig) {

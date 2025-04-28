@@ -21,8 +21,8 @@ const CtaText: React.FC<CtaTextProps> = ({
   buttonCtaOneLabel,
   buttonCtaOneLink,
 }) => {
-  const pathname = usePathname(); // Get the current page path
-  
+  const pathname = usePathname();
+
   return (
     <>
       <div className={styles.container}>
@@ -30,9 +30,19 @@ const CtaText: React.FC<CtaTextProps> = ({
           <h3>{title}</h3>
           <p>{description}</p>
 
-          <Link href={buttonCtaOneLink} className={`btn button-pakufi-dark ${styles.button}`}>
+          <Link
+            href={buttonCtaOneLink}
+            className={`btn button-pakufi-dark ${styles.button}`}
+          >
             <span
-              onClick={() => trackClick('CTA:banner', buttonCtaOneLabel, buttonCtaOneLink, pathname)}
+              onClick={() =>
+                trackClick(
+                  "CTA:banner",
+                  buttonCtaOneLabel,
+                  buttonCtaOneLink,
+                  pathname
+                )
+              }
             >
               {buttonCtaOneLabel}
             </span>
