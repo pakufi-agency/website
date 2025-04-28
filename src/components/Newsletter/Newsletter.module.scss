@@ -1,0 +1,97 @@
+@use "../../styles/variables.scss" as *;
+
+.section {
+  background: $gradient2;
+  z-index: 0;
+  text-align: center;
+  position: relative;
+}
+
+.container {
+  max-width: 650px;
+  z-index: 0;
+  padding: {
+    top: 50px;
+    bottom: 50px;
+  }
+
+  h2 {
+    font-size: 28px;
+    color: $white;
+  }
+
+  p {
+    font-size: 18px;
+    color: $mint-green;
+  }
+
+  .footnote {
+    color: $navy-blue;
+    font-size: 12px;
+    margin-top: 15px;
+  }
+
+  .successMessage {
+    color: $success;
+    margin-top: 10px;
+  }
+
+  .errorMessage {
+    color: $error;
+    margin-top: 10px;
+  }
+}
+
+.newsletterForm {
+  position: relative;
+  margin-top: 25px;
+  margin-bottom: 10px;
+
+  .inputNewsletter {
+    display: block;
+    width: 100%;
+    height: 50px;
+    color: $white;
+    border: none;
+    outline: 0;
+    background-color: $primary-color;
+    border-radius: 10px;
+    padding-top: 3px;
+    padding-left: 20px;
+
+    &::placeholder {
+      color: $secondary-color;
+      transition: 0.5s;
+    }
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+  }
+
+  button {
+    position: absolute;
+    right: 0px;
+    top: 1px;
+    padding: 14px 40px;
+    border-radius: 10px;
+    transition: 0.5s;
+
+    span {
+      margin: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  .container {
+    padding: {
+      top: 80px;
+      bottom: 80px;
+    }
+
+    h2 {
+      font-size: 28px;
+    }
+  }
+}

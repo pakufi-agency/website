@@ -94,6 +94,12 @@ export const ABOUTUS_QUERY = gql`
             richText
           }
         }
+        ... on ComponentCommonNewsletter {
+          buttonLabel
+          title
+          subtitle
+          footnote
+        }
       }
     }
   }
