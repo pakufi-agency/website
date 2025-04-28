@@ -11,10 +11,6 @@ export async function POST(req: NextRequest) {
   try {
     const brevoUrl = 'https://api.brevo.com/v3/contacts'
 
-    console.log('email', email, typeof email)
-    console.log('id', brevoListId, typeof brevoListId)
-    console.log('key', brevoApiKey)
-
     const response = await fetch(brevoUrl, {
       method: 'POST',
       headers: {
@@ -29,13 +25,13 @@ export async function POST(req: NextRequest) {
       }),
     })
 
+    const data = await response.json()
+
     if (!response.ok) {
-      const errorData = await response.json()
-      console.error('Brevo API error', errorData)
+      console.error('Brevo API error', data)
       return NextResponse.json({ message: 'Brevo API Error' }, { status: 500 })
     }
 
-    const data = await response.json()
     console.log(data)
     return NextResponse.json(
       { message: 'Subscription successful' },
