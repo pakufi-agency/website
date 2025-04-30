@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import * as Icon from "react-feather";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useMobileMenu } from "../../context/MobileMenuProvider";
 import { DESKTOP_MEDIA_QUERY } from "../../utils/consts";
 
@@ -14,6 +14,7 @@ import logo from "/public/images/logo.png";
 
 const Navbar: React.FC = () => {
   const currentRoute = usePathname();
+  const router = useRouter();
   const { isMobileMenuOpen, setMobileMenuOpen } = useMobileMenu();
   const [isDropdownOpen, setDropdownOpen] = useState<string | null>(null);
 
@@ -21,7 +22,14 @@ const Navbar: React.FC = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleMenuItemClick = (e: any, id: string) => {
+  const handleMenuItemClick = (e: any, routeName: string) => {
+    e.preventDefault();
+
+    router.push(routeName);
+    setMobileMenuOpen(false);
+  };
+
+  const handleParentItemCLick = (e: any, id: string) => {
     e.preventDefault();
 
     setDropdownOpen((prev) => (prev === id ? null : id));
@@ -75,22 +83,39 @@ const Navbar: React.FC = () => {
             >
               <ul className="navbar-nav ms-auto">
                 <li className={`nav-item ${styles.navItem}`}>
-                  <Link href="/" className={styles.navLink}>
+                  <Link
+                    href="/"
+                    className={styles.navLink}
+                    onClick={(e) => handleMenuItemClick(e, "/")}
+                  >
                     Home
                   </Link>
                 </li>
                 <li className={`nav-item ${styles.navItem}`}>
-                  <Link href="/about/" className={styles.navLink}>
+                  <Link
+                    href="/about/"
+                    className={styles.navLink}
+                    onClick={(e) => handleMenuItemClick(e, "/about")}
+                  >
                     About
+                  </Link>
+                </li>
+                <li className={`nav-item ${styles.navItem}`}>
+                  <Link
+                    href="/#serviceSection"
+                    className={styles.navLink}
+                    onClick={(e) => handleMenuItemClick(e, "/#serviceSection")}
+                  >
+                    Our Services
                   </Link>
                 </li>
                 <li className={`nav-item ${styles.navItem}`}>
                   <Link
                     href="/contact/"
                     className={styles.navLink}
-                    // onClick={(e) => handleMenuItemClick(e, "contact")}
+                    onClick={(e) => handleMenuItemClick(e, "/contact")}
                   >
-                    Contact
+                    Contact us
                   </Link>
                 </li>
                 {/* <li className={`nav-item ${styles.navItem}`}>
@@ -99,7 +124,7 @@ const Navbar: React.FC = () => {
                     className={`${styles.navLink} ${
                       isDropdownOpen === "home" && styles.navLinkDropdown
                     } ${styles.linkWithIcon}`}
-                    onClick={(e) => handleMenuItemClick(e, "home")}
+                    onClick={(e) => handleParentItemCLick(e, "home")}
                   >
                     Item with subitem example <Icon.ChevronDown />
                   </Link>
