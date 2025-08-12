@@ -1,0 +1,258 @@
+@use '../../styles/variables.scss' as *;
+
+// Mixins
+@mixin gradient-text($gradient) {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin card-shadow($opacity: 0.08) {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, $opacity);
+}
+
+@mixin transition($property: all, $duration: 0.3s, $easing: ease) {
+  transition: $property $duration $easing;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: rotate(0deg) translate(-50px, -50px);
+  }
+  100% {
+    transform: rotate(360deg) translate(-50px, -50px);
+  }
+}
+
+// AnimatedCards
+.whatWeDoSection {
+    background: $river-bed-green;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    padding: 60px 20px;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 80px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $primary-color;
+    margin-bottom: 20px;
+  }
+}
+
+.servicesContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+@media only screen and (min-width: 767px) {
+    .whatWeDoSection {
+        padding: 100px 20px;
+
+        h2 {
+            font-size: 3rem;
+        }
+
+        .servicesContainer {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+    }
+
+}
+
+//////////////////////////////////////////////////
+// AnimatedCard
+.serviceCard {
+  background: $white;
+  border-radius: 20px;
+  padding: 50px 40px;
+  @include card-shadow();
+  position: relative;
+  overflow: hidden;
+  @include transition(all, 0.4s, cubic-bezier(0.25, 0.8, 0.25, 1));
+  opacity: 0;
+  transform: translateY(50px);
+
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    transform: translateY(-10px) scale(1.02);
+    @include card-shadow(0.15);
+
+    &::before {
+      left: 100%;
+    }
+
+    .serviceIcon {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .serviceFeatures li {
+      opacity: 1;
+      transform: translateX(5px);
+
+      &::before {
+        transform: scale(1.2);
+      }
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.serviceIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  @include transition();
+  position: relative;
+  overflow: hidden;
+
+  &.techIcon {
+    background: $primary-gradient;
+    box-shadow: 0 10px 30px rgba(106, 156, 230, 0.3);
+  }
+
+  &.talentIcon {
+    background: $secondary-gradient;
+    box-shadow: 0 10px 30px rgba(89, 175, 100, 0.329);
+  }
+}
+
+.serviceTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  @include transition(color);
+}
+
+.tech {
+  &:hover .serviceTitle {
+    color: $paragraph-color;
+  }
+
+  .serviceFeatures li::before {
+    color: $primary-color;
+  }
+}
+
+.talent {
+  .serviceTitle {
+    color: $secondary-color;
+  }
+  &:hover .serviceTitle {
+    color: $acid-green;
+  }
+
+  .serviceFeatures li::before {
+    color: $secondary-color;
+  }
+}
+
+.serviceFeatures {
+  list-style: none;
+  margin-bottom: 35px;
+
+  li {
+    padding: 12px 0;
+    color: $grey-5e5e5e;
+    font-size: 1.1rem;
+    position: relative;
+    padding-left: 30px;
+    @include transition();
+    opacity: 0.8;
+
+    &::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      font-weight: bold;
+      @include transition();
+    }
+  }
+}
+
+
+// BUTTON
+.serviceCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  @include transition(all, 0.3s, cubic-bezier(0.25, 0.8, 0.25, 1));
+  position: relative;
+  overflow: hidden;
+
+  &.techCta {
+    background: $primary-gradient;
+    color: $white;
+    box-shadow: 0 8px 25px rgba(106, 156, 230, 0.3);
+  }
+
+  &.talentCta {
+    background: $secondary-gradient;
+    color: $white;
+    box-shadow: 0 8px 25px rgba(89, 175, 100, 0.329);
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px $black-01-box-shadow;
+
+    &::after {
+      left: 100%;
+    }
+
+    .ctaArrow {
+      transform: translateX(5px);
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    @include transition(left, 0.6s);
+  }
+}
+
+.ctaArrow {
+  @include transition(transform);
+}

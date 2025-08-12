@@ -3,6 +3,8 @@ import Navbar from "../components/Layout/Navbar";
 import Footer from "../components/Layout/Footer";
 import HeroBanner from "../components/Hero/Hero";
 import WeBanner from "../components/WeBanner/WeBanner";
+import AnimatedCards from "../components/AnimatedCards/AnimatedCards";
+import { CardDataProps } from "../components/AnimatedCards/AnimatedCard";
 import Section from "../components/Sections/Section";
 import SectionHalfBackground from "../components/Sections/SectionHalfBackground";
 import TextImageButtons from "../components/TextImageButtons/TextImageButtons";
@@ -78,6 +80,37 @@ export default async function Page() {
     );
   }
 
+  const cardsData: CardDataProps[] = [
+    {
+      id: "tech-agency",
+      title: "Pakufi Tech Agency",
+      icon: "💻",
+      variant: "tech",
+      features: [
+        "We build custom software with a personal touch",
+        "From planning your idea to launching your product",
+        "Human-centered development that puts you first",
+        "Quality over quantity, always",
+      ],
+      ctaText: "Learn More",
+      ctaLink: "/tech-agency",
+    },
+    {
+      id: "talent-growth",
+      title: "Pakufi Talent Growth",
+      icon: "🚀",
+      variant: "talent",
+      features: [
+        "Career mentorship for tech professionals",
+        "Real support from experienced mentors",
+        "Build skills, find jobs, grow your career",
+        "Join our global community",
+      ],
+      ctaText: "Discover Mentorship",
+      ctaLink: "/talent-growth",
+    },
+  ];
+
   return (
     <MobileMenuProvider>
       <Navbar />
@@ -89,7 +122,8 @@ export default async function Page() {
               return <HeroBanner {...section} key={index} />;
 
             case "ComponentStaticComponentWeStatment":
-              return <WeBanner {...section} key={index} />;
+              // return <WeBanner {...section} key={index} />;
+              return <AnimatedCards cards={cardsData} />;
 
             case "ComponentCommonNewsletter":
               return <Newsletter {...section} key={index} />;

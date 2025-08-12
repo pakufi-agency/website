@@ -16,20 +16,20 @@ import greenTriangle from "/public/images/backgrounds/green-triangle.svg";
 interface HeroProps {
   title: string;
   descriptionRichText: BlocksContent;
-  ctaLabel: string;
-  ctaLink: string;
+  Button: { url: string; label: string }[];
   mediaHero: { url: string; alternativeText: string };
 }
 
 const Hero: React.FC<HeroProps> = ({
   title,
   descriptionRichText,
-  ctaLabel,
-  ctaLink,
+  Button,
   mediaHero,
 }) => {
   const pathname = usePathname();
-  
+
+  console.log(Button);
+
   return (
     <>
       <div className={`${styles.heroBanner}`}>
@@ -55,13 +55,34 @@ const Hero: React.FC<HeroProps> = ({
               <BlockRendererClient content={descriptionRichText} />
             </div>
 
-            <Link href={ctaLink} className={`btn button-pakufi-dark ${styles.button}`}>
-              <span
-                onClick={() => trackClick('CTA:hero', ctaLabel, ctaLink, pathname)}
+            {Button.map((button, index) => (
+              <Link
+                key={index}
+                href={button.url}
+                className={`btn button-pakufi-dark ${styles.button}`}
               >
-                {ctaLabel}
+                <span
+                  onClick={() =>
+                    trackClick("CTA:hero", button.label, button.url, pathname)
+                  }
+                >
+                  {button.label}
+                </span>
+              </Link>
+            ))}
+
+            {/* <Link
+              href={Button.url}
+              className={`btn button-pakufi-dark ${styles.button}`}
+            >
+              <span
+                onClick={() =>
+                  trackClick("CTA:hero", Button.label, Button.url, pathname)
+                }
+              >
+                {Button.label}
               </span>
-            </Link>
+            </Link> */}
           </div>
 
           <div className={styles.bannerImage}>

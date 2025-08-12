@@ -48,6 +48,8 @@ $grey-7e7e7e: #7e7e7e;
 $grey-5e5e5e: #5e5e5e;
 
 // gradients
+$primary-gradient: linear-gradient(135deg, $black-color 0%, $navy-blue 100%);
+$secondary-gradient: linear-gradient(135deg, $acid-green 0%, $mint-green 100%);
 $gradient-color: linear-gradient(135deg, $primary-color 0%, $mint-green 100%);
 $gradient-color2: linear-gradient(
   to right bottom,

@@ -16,11 +16,13 @@ export const HOMEPAGE_QUERY = gql`
         ... on ComponentStaticComponentHero {
           id
           title
-          ctaLabel
-          ctaLink
           descriptionRichText
           mediaHero {
             alternativeText
+            url
+          }
+          Button {
+            label
             url
           }
         }
