@@ -2,8 +2,8 @@ import React from "react";
 import Navbar from "../components/Layout/Navbar";
 import Footer from "../components/Layout/Footer";
 import HeroBanner from "../components/Hero/Hero";
-import WeBanner from "../components/WeBanner/WeBanner";
-import AnimatedCards from "../components/AnimatedCards/AnimatedCards";
+// import WeBanner from "../components/WeBanner/WeBanner";
+import WhatWeDoSection from "../components/WhatWeDoSection/WhatWeDoSection";
 import { CardDataProps } from "../components/AnimatedCards/AnimatedCard";
 import Section from "../components/Sections/Section";
 import SectionHalfBackground from "../components/Sections/SectionHalfBackground";
@@ -123,7 +123,7 @@ export default async function Page() {
 
             case "ComponentStaticComponentWeStatment":
               // return <WeBanner {...section} key={index} />;
-              return <AnimatedCards cards={cardsData} />;
+              return <WhatWeDoSection cards={cardsData} />;
 
             case "ComponentCommonNewsletter":
               return <Newsletter {...section} key={index} />;

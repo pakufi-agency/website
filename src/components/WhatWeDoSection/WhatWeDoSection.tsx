@@ -1,24 +1,22 @@
 "use client";
 
-import AnimatedCard, { CardDataProps } from "./AnimatedCard";
-import styles from "./AnimatedCards.module.scss";
+import AnimatedCard, { CardDataProps } from "../AnimatedCards/AnimatedCard";
+import styles from "./WhatWeDoSection.module.scss";
 
-interface AnimatedCardsProps {
+interface SectionProps {
   title?: string;
   subtitle?: string;
   cards: CardDataProps[];
 }
 
-const AnimatedCards: React.FC<AnimatedCardsProps> = ({
+const WhatWeDoSection: React.FC<SectionProps> = ({
   title = "What We Do",
-  subtitle = "We combine technology expertise with human-centered mentorship to create lasting impact",
   cards = [],
 }) => {
   return (
     <section className={styles.whatWeDoSection}>
       <div className={styles.sectionTitle}>
         <h2>{title}</h2>
-        {/* <p>{subtitle}</p> */}
       </div>
 
       <div className={styles.servicesContainer}>
@@ -30,4 +28,4 @@ const AnimatedCards: React.FC<AnimatedCardsProps> = ({
   );
 };
 
-export default AnimatedCards;
+export default WhatWeDoSection;

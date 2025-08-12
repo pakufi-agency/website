@@ -109,11 +109,13 @@ const AnimatedCard: React.FC<CardDataProps> = ({
 
       <Link
         href={ctaLink}
-        className={`btn ${styles.serviceCta} ${styles[`${variant}Cta`]}`}
+        className={`btn btn-cta-shining ${styles.serviceCta} ${
+          styles[`${variant}Cta`]
+        }`}
         onClick={handleCtaClick}
       >
         {ctaText}
-        <span className={styles.ctaArrow}>→</span>
+        <span className={`arrow`}>→</span>
       </Link>
     </div>
   );
