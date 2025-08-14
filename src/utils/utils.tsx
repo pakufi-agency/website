@@ -2,11 +2,11 @@ import React from "react";
 import createApolloClient from "./apolloClient";
 import { Url } from "url";
 
-
 export const getStrapiImageUrl = (url: string) => {
-  return url.startsWith("http") ? url : `${process.env.NEXT_PUBLIC_CMS_ENDPOINT}${url}`;
+  return url.startsWith("http")
+    ? url
+    : `${process.env.NEXT_PUBLIC_CMS_ENDPOINT}${url}`;
 };
-
 
 /**
  * Fetches data for a Strapi page.
@@ -16,30 +16,32 @@ export const getStrapiImageUrl = (url: string) => {
  * @param {string} pageType - The type of page being fetched.
  */
 interface StrapiPageDataOptions {
-    query: any;
-    variables?: Record<string, any>;
-    pageType: string;
+  query: any;
+  variables?: Record<string, any>;
+  pageType: string;
 }
 
-export async function getStrapiPageData<T>(options: StrapiPageDataOptions): Promise<T | null> {
-    const client = createApolloClient();
+export async function getStrapiPageData<T>(
+  options: StrapiPageDataOptions
+): Promise<T | null> {
+  const client = createApolloClient();
 
-    try {
-        const { data } = await client.query({
-            query: options.query,
-            fetchPolicy: "cache-first",
-        });
+  try {
+    const { data } = await client.query({
+      query: options.query,
+      fetchPolicy: "cache-first",
+    });
 
-        if (!data || !data.pages || !data.pages[0]) {
-            console.warn(`${options.pageType} data is missing or invalid.`);
-            return null;
-        }
-
-        return data.pages[0] as T;
-    } catch (error) {
-        console.error(`Error fetching ${options.pageType} data:`, error);
-        return null;
+    if (!data || !data.pages || !data.pages[0]) {
+      console.warn(`${options.pageType} data is missing or invalid.`);
+      return null;
     }
+
+    return data.pages[0] as T;
+  } catch (error) {
+    console.error(`Error fetching ${options.pageType} data:`, error);
+    return null;
+  }
 }
 
 /**
@@ -80,6 +82,8 @@ export function renderMultipleComponents({
         const Component = componentMap[key];
         const sectionData = section[key];
 
+        console.log(`Rendering section: ${key}`, sectionData);
+
         if (!Component || !sectionData) {
           return null;
         }
@@ -104,7 +108,12 @@ declare global {
   }
 }
 
-export const trackClick = (eventName: string, label: string, link: Url | string, pathname: string) => {
+export const trackClick = (
+  eventName: string,
+  label: string,
+  link: Url | string,
+  pathname: string
+) => {
   if (typeof window !== "undefined" && window.umami) {
     window.umami.track(eventName, {
       label,

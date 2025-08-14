@@ -28,8 +28,6 @@ const Hero: React.FC<HeroProps> = ({
 }) => {
   const pathname = usePathname();
 
-  console.log(Button);
-
   return (
     <>
       <div className={`${styles.heroBanner}`}>

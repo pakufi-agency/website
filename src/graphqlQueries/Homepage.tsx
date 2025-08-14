@@ -26,16 +26,23 @@ export const HOMEPAGE_QUERY = gql`
             url
           }
         }
-
-        ... on ComponentStaticComponentWeStatment {
-          sectionTitle
-          backgroundImage {
-            url
-            alternativeText
+        ... on ComponentStaticComponentWhatWeDo {
+          title
+          pakufiOffers {
+            cardStyle
+            title
+            content
+            button {
+              label
+              url
+              style
+            }
+            iconAsText
+            iconAsImg {
+              url
+              alternativeText
+            }
           }
-          statmentOne
-          statmentThree
-          statmentTwo
         }
         ... on ComponentCommonCta {
           title
@@ -58,7 +65,7 @@ export const HOMEPAGE_QUERY = gql`
         }
         ... on ComponentCommonSection {
           sectionTitle
-          sectionSubtitle
+          subtitle
           backgroundColor
           titleColor
           descriptionColor
@@ -77,6 +84,7 @@ export const HOMEPAGE_QUERY = gql`
             buttonTwoLabel
             buttonTwoLink
             textColor
+            buttonStyle
           }
           serviceList {
             services {
@@ -100,6 +108,19 @@ export const HOMEPAGE_QUERY = gql`
                 alternativeText
               }
               shortDescription
+            }
+          }
+          collaboratorList {
+            collaborators {
+              fullName
+              jobPosition
+              email
+              linkedinAbsoluteUrl
+              personalWebsiteAbsoluteUrl
+              profilePic {
+                url
+                alternativeText
+              }
             }
           }
           faqList {

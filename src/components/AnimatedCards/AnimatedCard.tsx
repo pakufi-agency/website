@@ -2,16 +2,20 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import BlockRendererClient from "../BlockRendererClient";
+import { type BlocksContent } from "@strapi/blocks-react-renderer";
 import styles from "./AnimatedCards.module.scss";
 
 export interface CardDataProps {
-  id: string;
   title: string;
-  icon: string;
-  variant: "tech" | "talent";
-  features: string[];
-  ctaText: string;
-  ctaLink: string;
+  cardStyle?: string;
+  content?: BlocksContent;
+  button?: { url: string; label: string; style?: string }[];
+  iconAsText?: string;
+  iconAsImg?: {
+    url: string;
+    alternativeText: string;
+  };
   delay?: number;
 }
 
@@ -22,11 +26,11 @@ interface MousePosition {
 
 const AnimatedCard: React.FC<CardDataProps> = ({
   title,
-  icon,
-  features,
-  ctaText,
-  ctaLink,
-  variant = "tech",
+  cardStyle,
+  content,
+  button,
+  iconAsText,
+  iconAsImg,
   delay = 0,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -83,7 +87,7 @@ const AnimatedCard: React.FC<CardDataProps> = ({
   return (
     <div
       ref={cardRef}
-      className={`${styles.serviceCard} ${styles[variant]} ${
+      className={`${styles.serviceCard} ${cardStyle && styles[cardStyle]} ${
         isVisible ? styles.animate : ""
       }`}
       onMouseMove={handleMouseMove}
@@ -95,28 +99,38 @@ const AnimatedCard: React.FC<CardDataProps> = ({
             : "",
       }}
     >
-      <div className={`${styles.serviceIcon} ${styles[`${variant}Icon`]}`}>
-        {icon}
+      <div
+        className={`${styles.serviceIcon} 
+        ${cardStyle && styles[`${cardStyle}Icon`]}`}
+      >
+        {iconAsText && iconAsText}
+        {iconAsImg && (
+          <img src={iconAsImg.url} alt={iconAsImg.alternativeText} />
+        )}
       </div>
 
       <h3 className={styles.serviceTitle}>{title}</h3>
 
-      <ul className={styles.serviceFeatures}>
-        {features.map((feature, index) => (
-          <li key={index}>{feature}</li>
-        ))}
-      </ul>
+      {content && (
+        <div className={styles.serviceFeatures}>
+          <BlockRendererClient content={content} />
+        </div>
+      )}
 
-      <Link
-        href={ctaLink}
-        className={`btn btn-cta-shining ${styles.serviceCta} ${
-          styles[`${variant}Cta`]
-        }`}
-        onClick={handleCtaClick}
-      >
-        {ctaText}
-        <span className={`arrow`}>→</span>
-      </Link>
+      {button &&
+        button.map((btn, index) => (
+          <Link
+            key={index}
+            href={btn.url}
+            className={`btn ${btn.style} ${styles.serviceCta} ${
+              styles[`${cardStyle && cardStyle}Cta`]
+            }`}
+            onClick={handleCtaClick}
+          >
+            {btn.label}
+            <span className={`arrow`}>→</span>
+          </Link>
+        ))}
     </div>
   );
 };

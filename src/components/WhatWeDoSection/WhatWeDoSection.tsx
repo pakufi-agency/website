@@ -6,13 +6,11 @@ import styles from "./WhatWeDoSection.module.scss";
 interface SectionProps {
   title?: string;
   subtitle?: string;
-  cards: CardDataProps[];
+  pakufiOffers: CardDataProps[];
 }
 
-const WhatWeDoSection: React.FC<SectionProps> = ({
-  title = "What We Do",
-  cards = [],
-}) => {
+const WhatWeDoSection: React.FC<SectionProps> = ({ title, pakufiOffers }) => {
+  console.log(title, pakufiOffers);
   return (
     <section className={styles.whatWeDoSection}>
       <div className={styles.sectionTitle}>
@@ -20,7 +18,7 @@ const WhatWeDoSection: React.FC<SectionProps> = ({
       </div>
 
       <div className={styles.servicesContainer}>
-        {cards.map((card, index) => (
+        {pakufiOffers.map((card, index) => (
           <AnimatedCard key={card.id} {...card} delay={index * 200} />
         ))}
       </div>

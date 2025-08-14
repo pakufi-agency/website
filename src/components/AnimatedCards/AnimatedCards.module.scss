@@ -111,25 +111,27 @@
 }
 
 .serviceFeatures {
-  list-style: none;
-  margin-bottom: 35px;
+  ul {
+    list-style: none;
+    margin-bottom: 35px;
 
-  li {
-    padding: 12px 0;
-    color: $grey-5e5e5e;
-    font-size: 1.1rem;
-    position: relative;
-    padding-left: 30px;
-    @include transition();
-    opacity: 0.8;
-
-    &::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      top: 12px;
-      font-weight: bold;
+    li {
+      padding: 12px 0;
+      color: $grey-5e5e5e;
+      font-size: 1.1rem;
+      position: relative;
+      padding-left: 30px;
       @include transition();
+      opacity: 0.8;
+
+      &::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        top: 12px;
+        font-weight: bold;
+        @include transition();
+      }
     }
   }
 }

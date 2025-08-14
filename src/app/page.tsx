@@ -2,17 +2,16 @@ import React from "react";
 import Navbar from "../components/Layout/Navbar";
 import Footer from "../components/Layout/Footer";
 import HeroBanner from "../components/Hero/Hero";
-// import WeBanner from "../components/WeBanner/WeBanner";
-import WhatWeDoSection from "../components/WhatWeDoSection/WhatWeDoSection";
-import { CardDataProps } from "../components/AnimatedCards/AnimatedCard";
 import Section from "../components/Sections/Section";
 import SectionHalfBackground from "../components/Sections/SectionHalfBackground";
 import TextImageButtons from "../components/TextImageButtons/TextImageButtons";
 import CtaText from "../components/CtaText/CtaText";
+import WhatWeDoSection from "../components/WhatWeDoSection/WhatWeDoSection";
 import TeamSection from "../components/TeamSection/TeamSection";
 import ServiceBox from "../components/ServicesBox/ServiceBox";
 import BoxesText from "../components/BoxesText/BoxesText";
 import FaqSection from "../components/FaqSection/FaqSection";
+import CollaboratorsSection from "../components/CollaboratorsSection/CollaboratorsSection";
 import CtaBig from "../components/CtaBig/CtaBig";
 import Newsletter from "../components/Newsletter/Newsletter";
 import LoadingError from "../components/Errors/LoadingError";
@@ -54,6 +53,7 @@ function renderSection(
   const componentMap: Record<string, any> = {
     TextImageButtonsComponent: TextImageButtons,
     serviceList: ServiceBox,
+    collaboratorList: CollaboratorsSection,
     teamMemberList: TeamSection,
     boxesText: BoxesText,
     faqList: FaqSection,
@@ -80,37 +80,6 @@ export default async function Page() {
     );
   }
 
-  const cardsData: CardDataProps[] = [
-    {
-      id: "tech-agency",
-      title: "Pakufi Tech Agency",
-      icon: "💻",
-      variant: "tech",
-      features: [
-        "We build custom software with a personal touch",
-        "From planning your idea to launching your product",
-        "Human-centered development that puts you first",
-        "Quality over quantity, always",
-      ],
-      ctaText: "Learn More",
-      ctaLink: "/tech-agency",
-    },
-    {
-      id: "talent-growth",
-      title: "Pakufi Talent Growth",
-      icon: "🚀",
-      variant: "talent",
-      features: [
-        "Career mentorship for tech professionals",
-        "Real support from experienced mentors",
-        "Build skills, find jobs, grow your career",
-        "Join our global community",
-      ],
-      ctaText: "Discover Mentorship",
-      ctaLink: "/talent-growth",
-    },
-  ];
-
   return (
     <MobileMenuProvider>
       <Navbar />
@@ -121,9 +90,8 @@ export default async function Page() {
             case "ComponentStaticComponentHero":
               return <HeroBanner {...section} key={index} />;
 
-            case "ComponentStaticComponentWeStatment":
-              // return <WeBanner {...section} key={index} />;
-              return <WhatWeDoSection cards={cardsData} />;
+            case "ComponentStaticComponentWhatWeDo":
+              return <WhatWeDoSection {...section} key={index} />;
 
             case "ComponentCommonNewsletter":
               return <Newsletter {...section} key={index} />;
