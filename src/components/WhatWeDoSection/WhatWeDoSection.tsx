@@ -10,7 +10,6 @@ interface SectionProps {
 }
 
 const WhatWeDoSection: React.FC<SectionProps> = ({ title, pakufiOffers }) => {
-  console.log(title, pakufiOffers);
   return (
     <section className={styles.whatWeDoSection}>
       <div className={styles.sectionTitle}>
@@ -19,7 +18,7 @@ const WhatWeDoSection: React.FC<SectionProps> = ({ title, pakufiOffers }) => {
 
       <div className={styles.servicesContainer}>
         {pakufiOffers.map((card, index) => (
-          <AnimatedCard key={card.id} {...card} delay={index * 200} />
+          <AnimatedCard key={index} {...card} delay={index * 200} />
         ))}
       </div>
     </section>
