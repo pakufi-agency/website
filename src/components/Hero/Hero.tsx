@@ -68,19 +68,6 @@ const Hero: React.FC<HeroProps> = ({
                 </span>
               </Link>
             ))}
-
-            {/* <Link
-              href={Button.url}
-              className={`btn button-pakufi-dark ${styles.button}`}
-            >
-              <span
-                onClick={() =>
-                  trackClick("CTA:hero", Button.label, Button.url, pathname)
-                }
-              >
-                {Button.label}
-              </span>
-            </Link> */}
           </div>
 
           <div className={styles.bannerImage}>

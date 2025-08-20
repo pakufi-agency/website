@@ -35,7 +35,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ message: "Brevo API Error" }, { status: 500 });
     }
 
-    console.log(data);
     return NextResponse.json(
       { message: "Subscription successful" },
       { status: 200 }
