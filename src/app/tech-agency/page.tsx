@@ -7,6 +7,7 @@ import TextImageButtons from "../../components/TextImageButtons/TextImageButtons
 import CtaText from "../../components/CtaText/CtaText";
 import ServiceBox from "../../components/ServicesBox/ServiceBox";
 import PricingPackageList from "../../components/PricingPackages/PricingPackageList";
+import TimelineSection from "../../components/TimelineSection/TimelineSection";
 import CtaBig from "../../components/CtaBig/CtaBig";
 import LoadingError from "../../components/Errors/LoadingError";
 import Newsletter from "../../components/Newsletter/Newsletter";
@@ -47,6 +48,7 @@ function renderSection(
     TextImageButtonsComponent: TextImageButtons,
     serviceList: ServiceBox,
     pricePackageList: PricingPackageList,
+    timelineSection: TimelineSection,
   };
   return renderMultipleComponents({
     section,

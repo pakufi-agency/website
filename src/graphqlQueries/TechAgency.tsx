@@ -87,14 +87,6 @@ export const TECHAGENCY_QUERY = gql`
           boxesText {
             content
           }
-          projectTimelineSteps {
-            projectTimelineStep {
-              id
-              stepNumber
-              title
-              description
-            }
-          }
           pricePackageList {
             price_packages {
               title
@@ -108,9 +100,11 @@ export const TECHAGENCY_QUERY = gql`
               }
             }
           }
-          projectTimelineSteps {
-            projectTimelineStep {
-              id
+          timelineSection {
+            sideText
+            timelineAlign
+            timelineStep {
+              stepNumber
               title
               description
             }
@@ -183,6 +177,15 @@ export const TECHAGENCY_QUERY = gql`
                 url
                 style
               }
+            }
+          }
+          timelineSection {
+            sideText
+            timelineAlign
+            timelineStep {
+              stepNumber
+              title
+              description
             }
           }
           serviceList {
