@@ -57,6 +57,39 @@ const PricingPackage: React.FC<PricingPackageProps> = ({
     return () => observer.disconnect();
   }, [delay]);
 
+  useEffect(() => {
+    // Function to equalize header heights
+    const equalizeHeaderHeights = () => {
+      const headers = document.querySelectorAll(`.${styles.pricingHeader}`);
+      let maxHeight = 0;
+
+      // Reset heights first
+      headers.forEach((header) => {
+        (header as HTMLElement).style.height = "auto";
+      });
+
+      // Find the maximum height
+      headers.forEach((header) => {
+        const height = header.getBoundingClientRect().height;
+        maxHeight = Math.max(maxHeight, height);
+      });
+
+      // Set all headers to the maximum height
+      headers.forEach((header) => {
+        (header as HTMLElement).style.height = `${maxHeight}px`;
+      });
+    };
+
+    // Run after content loads and on resize
+    const timer = setTimeout(equalizeHeaderHeights, 100);
+    window.addEventListener("resize", equalizeHeaderHeights);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("resize", equalizeHeaderHeights);
+    };
+  }, []);
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
 

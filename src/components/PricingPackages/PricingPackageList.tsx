@@ -14,11 +14,11 @@ const PricingPackageList: React.FC<PricingPackageListProps> = ({
   return (
     <div id="priceSection" className={`${styles.pricePackagesArea}`}>
       <div className="container">
-        <div className="row justify-content-center g-4">
+        <div className={`row justify-content-center g-4 ${styles.row}`}>
           {price_packages.map((pricePackage, index) => (
             <div
               key={index}
-              className={`col-lg-4 col-sm-6 col-md-6`}
+              className={`col-lg-4 col-sm-6 col-md-6 ${styles.col}`}
               data-aos="fade-up"
               data-aos-delay="100"
               data-aos-duration="500"
