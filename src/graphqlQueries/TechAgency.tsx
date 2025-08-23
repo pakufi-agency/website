@@ -52,6 +52,10 @@ export const TECHAGENCY_QUERY = gql`
             buttonOneLink
             buttonTwoLabel
             buttonTwoLink
+            media {
+              alternativeText
+              url
+            }
           }
           teamMemberList {
             team_members {
@@ -131,6 +135,10 @@ export const TECHAGENCY_QUERY = gql`
             buttonOneLink
             buttonTwoLabel
             buttonTwoLink
+            media {
+              alternativeText
+              url
+            }
           }
           teamMemberList {
             team_members {
