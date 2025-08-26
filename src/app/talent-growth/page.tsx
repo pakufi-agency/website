@@ -5,7 +5,6 @@ import Section from "../../components/Sections/Section";
 import HeroBanner from "../../components/Hero/Hero";
 import TextImageButtons from "../../components/TextImageButtons/TextImageButtons";
 import CtaText from "../../components/CtaText/CtaText";
-import ServiceBox from "../../components/ServicesBox/ServiceBox";
 import OfferPackageList from "../../components/OfferPackages/OfferPackageList";
 import TimelineSection from "../../components/TimelineSection/TimelineSection";
 import CtaBig from "../../components/CtaBig/CtaBig";
@@ -14,8 +13,10 @@ import Newsletter from "../../components/Newsletter/Newsletter";
 import { getStrapiPageData, renderMultipleComponents } from "../../utils/utils";
 import { generatePageMetadata } from "../../utils/seo";
 import MobileMenuProvider from "../../context/MobileMenuProvider";
-import { TECHAGENCY_QUERY } from "../../graphqlQueries/TechAgency";
-import SectionHalfBackground from "@/components/Sections/SectionHalfBackground";
+import { TALENTGROWTH_QUERY } from "../../graphqlQueries/TalentGrowth";
+import SectionHalfBackground from "../../components/Sections/SectionHalfBackground";
+import CollaboratorsSection from "../../components/CollaboratorsSection/CollaboratorsSection";
+import BlockRendererClient from "../../components/BlockRendererClient";
 
 interface SectionProps {
   [key: string]: any;
@@ -35,8 +36,8 @@ interface PageProps {
 export const generateMetadata = async () =>
   generatePageMetadata(() =>
     getStrapiPageData<PageProps>({
-      query: TECHAGENCY_QUERY,
-      pageType: "Tech Agency",
+      query: TALENTGROWTH_QUERY,
+      pageType: "Talent Growth",
     })
   );
 
@@ -46,9 +47,9 @@ function renderSection(
 ) {
   const componentMap: Record<string, any> = {
     TextImageButtonsComponent: TextImageButtons,
-    services: ServiceBox,
-    price_packages: OfferPackageList,
     timelineSection: TimelineSection,
+    mentorship_programs: OfferPackageList,
+    mentors: CollaboratorsSection,
   };
   return renderMultipleComponents({
     section,
@@ -59,8 +60,8 @@ function renderSection(
 
 export default async function Page() {
   const pageData = await getStrapiPageData<PageProps>({
-    query: TECHAGENCY_QUERY,
-    pageType: "Tech Agency",
+    query: TALENTGROWTH_QUERY,
+    pageType: "Talent Growth",
   });
 
   if (!pageData) {
@@ -84,6 +85,15 @@ export default async function Page() {
               return <HeroBanner {...section} key={index} />;
 
             case "ComponentCommonSection":
+              console.log("Rendering ComponentCommonSection:", section);
+              if (section.TextBlock) {
+                return (
+                  <Section {...section}>
+                    <BlockRendererClient content={section.TextBlock.content} />
+                  </Section>
+                );
+              }
+
               return renderSection(section, Section);
 
             case "ComponentCommonSectionhalfbackground":
@@ -98,6 +108,10 @@ export default async function Page() {
               } else {
                 return <CtaBig {...section} key={index} />;
               }
+
+            case "ComponentCommonTextImageButtons":
+              return <TextImageButtons {...section} key={index} />;
+
             default:
               return null;
           }

@@ -5,17 +5,17 @@ import PersonCard from "../PersonCard/PersonCard";
 
 import styles from "./CollaboratorsSection.module.scss";
 interface CollaboratorsSectionProps {
-  collaborators: [];
+  items: [];
 }
 
 const CollaboratorsSection: React.FC<CollaboratorsSectionProps> = ({
-  collaborators,
+  items,
 }) => {
   return (
     <>
       <div>
         <div className="row justify-content-center">
-          {collaborators.map(
+          {items.map(
             (
               {
                 fullName,

@@ -93,7 +93,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <a
-                      href="https://discord.gg/KUeQrY5eMw"
+                      href="https://discord.gg/bSGefr73g9"
                       className="discord"
                       target="_blank"
                     >
@@ -173,7 +173,11 @@ const Footer = () => {
                     </a>
                   </li>
                 </ul>
-                <p>We are open source! <br/> Check out our <a href="https://github.com/pakufi-agency/">Github</a> if you wish to contribute!</p>
+                <p>
+                  We are open source! <br /> Check out our{" "}
+                  <a href="https://github.com/pakufi-agency/">Github</a> if you
+                  wish to contribute!
+                </p>
               </div>
             </div>
 

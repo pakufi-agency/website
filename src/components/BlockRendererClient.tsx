@@ -27,13 +27,10 @@ export default function BlockRendererClient({
     return /<[^>]*>/g.test(text);
   };
 
-  // Simple HTML sanitization - only allow safe button tags
   const sanitizeHTML = (html: string): string => {
-    // Only allow specific button patterns and basic formatting
     const allowedTags = /^<(\/?)(?:button|strong|em|u|br|span|a)(\s[^>]*)?>$/i;
 
-    // For now, let's trust the content from Strapi and do minimal sanitization
-    // In production, you should use proper HTML sanitization
+    // TODO: proper HTML sanitization
     return html;
   };
 
@@ -71,7 +68,6 @@ export default function BlockRendererClient({
           window.location.href = href;
         }
       }
-      console.log("Button clicked:", buttonText, "URL:", href);
     }
 
     // Handle direct anchor clicks
@@ -83,7 +79,6 @@ export default function BlockRendererClient({
         trackClick("CTA:RichTextLink", linkText, href, pathname);
       }
 
-      // Let the anchor handle its own navigation unless it's inside a button
       if (target.closest("button")) {
         e.preventDefault();
       }
@@ -110,7 +105,6 @@ export default function BlockRendererClient({
             return <p>{children}</p>;
           }
 
-          // First, let's try to reconstruct the full HTML from all children
           let fullTextContent = "";
           React.Children.forEach(children, (child) => {
             if (
@@ -122,14 +116,9 @@ export default function BlockRendererClient({
             }
           });
 
-          // Debug logging
-          console.log("Full text content:", fullTextContent);
-          console.log("Contains HTML:", containsHTML(fullTextContent));
-
           // If the full content contains HTML, process it as a whole
           if (containsHTML(fullTextContent)) {
             const sanitizedHTML = sanitizeHTML(fullTextContent);
-            console.log("Rendering HTML:", sanitizedHTML);
             return (
               <div
                 dangerouslySetInnerHTML={{ __html: sanitizedHTML }}

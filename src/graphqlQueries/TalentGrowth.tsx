@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
-export const TECHAGENCY_QUERY = gql`
-  query getTechAgency {
-    pages(filters: { documentId: { eq: "k42kqa4fvjtkmvrg1rhvdyjt" } }) {
+export const TALENTGROWTH_QUERY = gql`
+  query getTalentGrowth {
+    pages(filters: { documentId: { eq: "qlh6njvxulawqnkmxe49v8v3" } }) {
       pageTitle
       pageDescription
       internalBannerMedia {
@@ -42,6 +42,19 @@ export const TECHAGENCY_QUERY = gql`
           subtitle
           footnote
         }
+        ... on ComponentCommonTextImageButtons {
+          richText
+          media {
+            alternativeText
+            url
+          }
+          buttonOneLabel
+          buttonOneLink
+          buttonTwoLabel
+          buttonTwoLink
+          ImagePosition
+          buttonStyle
+        }
         ... on ComponentCommonSection {
           sectionTitle
           subtitle
@@ -68,22 +81,9 @@ export const TECHAGENCY_QUERY = gql`
             }
             iconName
           }
-          boxesText {
-            content
-          }
-          timelineSection {
-            sideText
-            timelineAlign
-            timelineStep {
-              stepNumber
-              title
-              description
-            }
-          }
-          price_packages {
+          mentorship_programs {
             title
             subtitle
-            price
             features
             cta {
               label
@@ -91,10 +91,27 @@ export const TECHAGENCY_QUERY = gql`
               style
             }
           }
-          services {
-            name
-            descriptionRichText
-            icon
+          mentors {
+            fullName
+            jobPosition
+            email
+            linkedinAbsoluteUrl
+            profilePic {
+              alternativeText
+              url
+            }
+          }
+          timelineSection {
+            timelineStep {
+              stepNumber
+              title
+              description
+            }
+            timelineAlign
+            sideText
+          }
+          TextBlock {
+            content
           }
         }
         ... on ComponentCommonSectionhalfbackground {
@@ -120,35 +137,6 @@ export const TECHAGENCY_QUERY = gql`
               url
             }
             iconName
-          }
-          boxesText {
-            content
-          }
-          price_packages {
-            title
-            subtitle
-            price
-            features
-            cta {
-              label
-              url
-              style
-            }
-          }
-
-          services {
-            name
-            descriptionRichText
-            icon
-          }
-          timelineSection {
-            sideText
-            timelineAlign
-            timelineStep {
-              stepNumber
-              title
-              description
-            }
           }
         }
       }

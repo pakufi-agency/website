@@ -52,11 +52,11 @@ function renderSection(
 ) {
   const componentMap: Record<string, any> = {
     TextImageButtonsComponent: TextImageButtons,
-    serviceList: ServiceBox,
-    collaboratorList: CollaboratorsSection,
-    teamMemberList: TeamSection,
+    services: ServiceBox,
+    collaborators: CollaboratorsSection,
+    team_members: TeamSection,
     boxesText: BoxesText,
-    faqList: FaqSection,
+    question_answers: FaqSection,
   };
   return renderMultipleComponents({
     section,

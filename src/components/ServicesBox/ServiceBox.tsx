@@ -22,10 +22,10 @@ interface ServiceBoxProps {
 }
 
 interface ServiceBoxesProps {
-  services: ServiceBoxProps[];
+  items: ServiceBoxProps[];
 }
 
-const ServiceBox: React.FC<ServiceBoxesProps> = ({ services }) => {
+const ServiceBox: React.FC<ServiceBoxesProps> = ({ items }) => {
   const getImage = (iconName: string): StaticImageData => {
     switch (iconName) {
       case "brush":
@@ -49,24 +49,24 @@ const ServiceBox: React.FC<ServiceBoxesProps> = ({ services }) => {
     <div id="serviceSection" className={`${styles.solutionsArea}`}>
       <div className="container">
         <div className="row justify-content-center g-4">
-          {services.map((service, index) => (
+          {items.map((item, index) => (
             <div key={index} className={`col-lg-4 col-sm-6 col-md-6`}>
               <div className={styles.singleSolutionsBox}>
                 <div className={styles.singleSolutionsBoxTitle}>
                   <div className={styles.icon}>
                     <Image
-                      src={getImage(service.icon)}
-                      alt={service.name}
+                      src={getImage(item.icon)}
+                      alt={item.name}
                       width={150}
                       height={150}
                     />
                   </div>
-                  <h2>{service.name}</h2>
-                  <h5>{service.subtitle}</h5>
+                  <h2>{item.name}</h2>
+                  <h5>{item.subtitle}</h5>
                 </div>
                 <div className={styles.description}>
                   {" "}
-                  <BlockRendererClient content={service.descriptionRichText} />
+                  <BlockRendererClient content={item.descriptionRichText} />
                 </div>
               </div>
             </div>
