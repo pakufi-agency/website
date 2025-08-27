@@ -8,7 +8,6 @@ interface FaqSectionProps {
 }
 
 const FaqSection: React.FC<FaqSectionProps> = ({ items }) => {
-  console.log("FAQ items:", items);
   return (
     <>
       <div id="faqSection" className="row justify-content-center">

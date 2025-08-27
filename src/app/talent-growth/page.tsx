@@ -85,7 +85,6 @@ export default async function Page() {
               return <HeroBanner {...section} key={index} />;
 
             case "ComponentCommonSection":
-              console.log("Rendering ComponentCommonSection:", section);
               if (section.TextBlock) {
                 return (
                   <Section {...section}>

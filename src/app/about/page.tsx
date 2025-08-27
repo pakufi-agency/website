@@ -42,8 +42,8 @@ function renderSection(
 ) {
   const componentMap: Record<string, any> = {
     TextImageButtonsComponent: TextImageButtons,
-    teamMemberList: TeamSection,
-    collaboratorList: CollaboratorsSection,
+    team_members: TeamSection,
+    collaborators: CollaboratorsSection,
   };
   return renderMultipleComponents({
     section,

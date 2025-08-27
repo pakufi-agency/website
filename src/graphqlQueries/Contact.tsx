@@ -5,14 +5,6 @@ export const CONTACT_QUERY = gql`
     pages(filters: { documentId: { eq: "feli3eyi8vf1pi56v3jct7js" } }) {
       pageTitle
       pageDescription
-      SEO {
-        seoTitle
-        seoDescription
-        seoPreview {
-          url
-          alternativeText
-        }
-      }
       internalBannerMedia {
         alternativeText
         url
@@ -31,9 +23,15 @@ export const CONTACT_QUERY = gql`
           buttonCtaOneLabel
           buttonCtaOneLink
         }
+        ... on ComponentCommonNewsletter {
+          buttonLabel
+          title
+          subtitle
+          footnote
+        }
         ... on ComponentCommonSection {
           sectionTitle
-          sectionSubtitle
+          subtitle
           backgroundColor
           titleColor
           descriptionColor
@@ -47,29 +45,25 @@ export const CONTACT_QUERY = gql`
             buttonOneLink
             buttonTwoLabel
             buttonTwoLink
-            textColor
           }
-          teamMemberList {
-            team_members {
-              firstName
-              lastName
-              jobPosition
-              email
-              linkedinAbsoluteUrl
-              personalWebsiteAbsoluteUrl
-              githubAsboluteUrl
-              profilePic {
-                url
-                alternativeText
-              }
-              shortDescription
+          team_members {
+            firstName
+            lastName
+            jobPosition
+            email
+            linkedinAbsoluteUrl
+            personalWebsiteAbsoluteUrl
+            githubAsboluteUrl
+            profilePic {
+              url
+              alternativeText
             }
+            shortDescription
           }
-          faqList {
-            question_answers {
-              question
-              answer
-            }
+
+          question_answers {
+            question
+            answer
           }
           iconTitleSubtitle {
             Title
@@ -95,12 +89,6 @@ export const CONTACT_QUERY = gql`
             richText
           }
         }
-        ... on ComponentCommonNewsletter {
-          buttonLabel
-          title
-          subtitle
-          footnote
-        }
         ... on ComponentCommonSectionhalfbackground {
           sectionTitle
           sectionSubtitle
@@ -116,34 +104,24 @@ export const CONTACT_QUERY = gql`
             buttonTwoLabel
             buttonTwoLink
           }
-          serviceList {
-            services {
-              name
-              descriptionRichText
-              icon
-            }
+          services {
+            name
+            descriptionRichText
+            icon
           }
-          teamMemberList {
-            team_members {
-              firstName
-              lastName
-              jobPosition
-              email
-              linkedinAbsoluteUrl
-              personalWebsiteAbsoluteUrl
-              githubAsboluteUrl
-              profilePic {
-                url
-                alternativeText
-              }
-              shortDescription
+          team_members {
+            firstName
+            lastName
+            jobPosition
+            email
+            linkedinAbsoluteUrl
+            personalWebsiteAbsoluteUrl
+            githubAsboluteUrl
+            profilePic {
+              url
+              alternativeText
             }
-          }
-          faqList {
-            question_answers {
-              question
-              answer
-            }
+            shortDescription
           }
         }
       }

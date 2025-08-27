@@ -58,6 +58,10 @@ export const TECHAGENCY_QUERY = gql`
             buttonOneLink
             buttonTwoLabel
             buttonTwoLink
+            media {
+              url
+              alternativeText
+            }
           }
           iconTitleSubtitle {
             Title
