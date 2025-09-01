@@ -32,6 +32,17 @@
     }
 }
 
+.aboutText h3 {
+    padding: 10px;
+    background-size: cover;
+    background: linear-gradient(
+                    to right bottom,
+                    $secondary-color,
+                    $mint-green,
+                    $acid-green
+                );
+}
+
 .details {
     display: flex;
     flex-direction: row;
