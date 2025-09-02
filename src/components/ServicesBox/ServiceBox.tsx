@@ -62,7 +62,6 @@ const ServiceBox: React.FC<ServiceBoxesProps> = ({ items }) => {
                     />
                   </div>
                   <h2>{item.name}</h2>
-                  <h5>{item.subtitle}</h5>
                 </div>
                 <div className={styles.description}>
                   {" "}
