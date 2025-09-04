@@ -63,7 +63,9 @@ const Section: React.FC<SectionProps> = ({
                 barBallColor === "green" ? styles.ballGreen : styles.ballBlue
               }`}
             ></div>
-            <p style={{ color: descriptionColor }}>{sectionSubtitle}</p>
+            {sectionSubtitle && (
+              <p style={{ color: descriptionColor }}>{sectionSubtitle}</p>
+            )}
           </div>
 
           <div className="row justify-content-center">{children}</div>

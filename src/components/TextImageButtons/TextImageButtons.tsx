@@ -19,6 +19,7 @@ interface TextImageButtons {
   buttonTwoLink: Url;
   media: { url: string; alternativeText: string };
   textColor: string;
+  buttonStyle: string;
 }
 
 const TextImageButtons: React.FC<TextImageButtons> = ({
@@ -30,9 +31,10 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
   buttonTwoLabel,
   buttonTwoLink,
   textColor,
+  buttonStyle,
 }) => {
   const pathname = usePathname();
-  
+
   return (
     <>
       <div className={`${styles.container}`}>
@@ -50,10 +52,17 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                     {buttonOneLink && (
                       <Link
                         href={buttonOneLink}
-                        className={`btn btn-primary ${styles.buttonLink}`}
+                        className={`btn btn-primary ${buttonStyle} ${styles.buttonLink}`}
                       >
                         <span
-                          onClick={() => trackClick('CTA:TextImageSection', buttonOneLabel, buttonOneLink, pathname)}
+                          onClick={() =>
+                            trackClick(
+                              "CTA:TextImageSection",
+                              buttonOneLabel,
+                              buttonOneLink,
+                              pathname
+                            )
+                          }
                         >
                           {buttonOneLabel}
                         </span>
@@ -63,10 +72,17 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                     {buttonTwoLink && (
                       <Link
                         href={buttonTwoLink}
-                        className={`btn btn-primary ${styles.buttonLink}`}
+                        className={`btn btn-primary ${buttonStyle} ${styles.buttonLink}`}
                       >
                         <span
-                          onClick={() => trackClick('CTA:TextImageSection', buttonTwoLabel, buttonTwoLink, pathname)}
+                          onClick={() =>
+                            trackClick(
+                              "CTA:TextImageSection",
+                              buttonTwoLabel,
+                              buttonTwoLink,
+                              pathname
+                            )
+                          }
                         >
                           {buttonTwoLabel}
                         </span>
@@ -126,7 +142,14 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                         className={`btn btn-primary ${styles.buttonLink}`}
                       >
                         <span
-                          onClick={() => trackClick('CTA:TextImageSection', buttonOneLabel, buttonOneLink, pathname)}
+                          onClick={() =>
+                            trackClick(
+                              "CTA:TextImageSection",
+                              buttonOneLabel,
+                              buttonOneLink,
+                              pathname
+                            )
+                          }
                         >
                           {buttonOneLabel}
                         </span>
@@ -139,7 +162,14 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                         className={`btn btn-primary ${styles.buttonLink}`}
                       >
                         <span
-                          onClick={() => trackClick('CTA:TextImageSection', buttonTwoLabel, buttonTwoLink, pathname)}
+                          onClick={() =>
+                            trackClick(
+                              "CTA:TextImageSection",
+                              buttonTwoLabel,
+                              buttonTwoLink,
+                              pathname
+                            )
+                          }
                         >
                           {buttonTwoLabel}
                         </span>
@@ -164,10 +194,17 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                       className={`btn btn-primary ${styles.buttonLink}`}
                     >
                       <span
-                          onClick={() => trackClick('CTA:TextImageSection', buttonOneLabel, buttonOneLink, pathname)}
-                        >
-                          {buttonOneLabel}
-                        </span>
+                        onClick={() =>
+                          trackClick(
+                            "CTA:TextImageSection",
+                            buttonOneLabel,
+                            buttonOneLink,
+                            pathname
+                          )
+                        }
+                      >
+                        {buttonOneLabel}
+                      </span>
                     </Link>
                   )}
 
@@ -177,10 +214,17 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                       className={`btn btn-primary ${styles.buttonLink}`}
                     >
                       <span
-                          onClick={() => trackClick('CTA:TextImageSection', buttonTwoLabel, buttonTwoLink, pathname)}
-                        >
-                          {buttonTwoLabel}
-                        </span>
+                        onClick={() =>
+                          trackClick(
+                            "CTA:TextImageSection",
+                            buttonTwoLabel,
+                            buttonTwoLink,
+                            pathname
+                          )
+                        }
+                      >
+                        {buttonTwoLabel}
+                      </span>
                     </Link>
                   )}
                 </div>

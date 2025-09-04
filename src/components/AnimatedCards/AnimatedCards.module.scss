@@ -1,0 +1,153 @@
+@use '../../styles/variables.scss' as *;
+
+// Mixins
+@mixin card-shadow($opacity: 0.08) {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, $opacity);
+}
+
+@mixin transition($property: all, $duration: 0.3s, $easing: ease) {
+  transition: $property $duration $easing;
+}
+
+
+// AnimatedCard
+.serviceCard {
+  background: $white;
+  border-radius: 20px;
+  padding: 50px 40px;
+  @include card-shadow();
+  position: relative;
+  overflow: hidden;
+  @include transition(all, 0.4s, cubic-bezier(0.25, 0.8, 0.25, 1));
+  opacity: 0;
+  transform: translateY(50px);
+
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    transform: translateY(-10px) scale(1.02);
+    @include card-shadow(0.15);
+
+    &::before {
+      left: 100%;
+    }
+
+    .serviceIcon {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .serviceFeatures li {
+      opacity: 1;
+      transform: translateX(5px);
+
+      &::before {
+        transform: scale(1.2);
+      }
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+// ICON
+.serviceIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  @include transition();
+  position: relative;
+  overflow: hidden;
+
+  &.techIcon {
+    background: $primary-gradient;
+    box-shadow: 0 10px 30px rgba(106, 156, 230, 0.3);
+  }
+
+  &.talentIcon {
+    background: $secondary-gradient;
+    box-shadow: 0 10px 30px rgba(89, 175, 100, 0.329);
+  }
+}
+
+.serviceTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  @include transition(color);
+}
+
+.tech {
+  &:hover .serviceTitle {
+    color: $paragraph-color;
+  }
+
+  .serviceFeatures li::before {
+    color: $primary-color;
+  }
+}
+
+.talent {
+  .serviceTitle {
+    color: $secondary-color;
+  }
+  &:hover .serviceTitle {
+    color: $acid-green;
+  }
+
+  .serviceFeatures li::before {
+    color: $secondary-color;
+  }
+}
+
+.serviceFeatures {
+  ul {
+    list-style: none;
+    margin-bottom: 35px;
+
+    li {
+      padding: 12px 0;
+      color: $grey-5e5e5e;
+      font-size: 1.1rem;
+      position: relative;
+      padding-left: 30px;
+      @include transition();
+      opacity: 0.8;
+
+      &::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        top: 12px;
+        font-weight: bold;
+        @include transition();
+      }
+    }
+  }
+}
+
+
+// BUTTON
+.serviceCta {
+  &.techCta {
+    background: $primary-gradient;
+    color: $white;
+    box-shadow: 0 8px 25px rgba(106, 156, 230, 0.3);
+  }
+
+  &.talentCta {
+    background: $secondary-gradient;
+    color: $white;
+    box-shadow: 0 8px 25px rgba(89, 175, 100, 0.329);
+  }
+}
