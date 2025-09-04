@@ -96,7 +96,6 @@ export default function BlockRendererClient({
           }
 
           const childArray = React.Children.toArray(children);
-          console.log(childArray);
 
           // Build raw string version to detect injected HTML
           const rawHTML = childArray
