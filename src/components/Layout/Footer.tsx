@@ -95,12 +95,8 @@ const Footer = () => {
                     <Link href="https://tally.so/r/waE8Av">I am a talent</Link>
                   </li>
                   <li>
-                    <a
-                      href="https://discord.gg/bSGefr73g9"
-                      className="discord"
-                      target="_blank"
-                    >
-                      Join Pakufi Community
+                    <a href="mailto:info@pakufi.agency">
+                      Love the mission and want to join? Write us!
                     </a>
                   </li>
                 </ul>
