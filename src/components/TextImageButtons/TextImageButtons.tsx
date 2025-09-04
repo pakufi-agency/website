@@ -3,10 +3,10 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import BlockRendererClient from "../BlockRendererClient";
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
 import { getStrapiImageUrl, trackClick } from "../../utils/utils";
+import { usePathname } from "next/navigation";
 
 import styles from "./TextImageButtons.module.scss";
 import { Url } from "url";
@@ -46,7 +46,7 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                   className={`col-lg-6 ${styles.content}`}
                   style={{ color: textColor }}
                 >
-                  <BlockRendererClient content={richText} />
+                  <BlockRendererClient content={richText} pathname={pathname} />
 
                   <div className={styles.buttons}>
                     {buttonOneLink && (
@@ -133,7 +133,7 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                   className={`col-lg-6 ${styles.content}`}
                   style={{ color: textColor }}
                 >
-                  <BlockRendererClient content={richText} />
+                  <BlockRendererClient content={richText} pathname={pathname} />
 
                   <div className={styles.buttons}>
                     {buttonOneLink && (
@@ -185,7 +185,7 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                 className={`col-12 ${styles.content} ${styles.centralAlign}`}
                 style={{ color: textColor }}
               >
-                <BlockRendererClient content={richText} />
+                <BlockRendererClient content={richText} pathname={pathname} />
 
                 <div className={styles.buttons}>
                   {buttonOneLink && (

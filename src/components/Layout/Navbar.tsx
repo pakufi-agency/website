@@ -93,20 +93,20 @@ const Navbar: React.FC = () => {
                 </li>
                 <li className={`nav-item ${styles.navItem}`}>
                   <Link
+                    href="/tech-agency/"
+                    className={styles.navLink}
+                    onClick={(e) => handleMenuItemClick(e, "/tech-agency")}
+                  >
+                    Tech Agency
+                  </Link>
+                </li>
+                <li className={`nav-item ${styles.navItem}`}>
+                  <Link
                     href="/about/"
                     className={styles.navLink}
                     onClick={(e) => handleMenuItemClick(e, "/about")}
                   >
                     About
-                  </Link>
-                </li>
-                <li className={`nav-item ${styles.navItem}`}>
-                  <Link
-                    href="/#serviceSection"
-                    className={styles.navLink}
-                    onClick={(e) => handleMenuItemClick(e, "/#serviceSection")}
-                  >
-                    Our Services
                   </Link>
                 </li>
                 <li className={`nav-item ${styles.navItem}`}>

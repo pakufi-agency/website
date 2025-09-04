@@ -1,0 +1,272 @@
+@use '../../styles/variables.scss' as *;
+
+.timelineStep {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 15px;
+  margin-bottom: 0px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, rgba($white, 0.1) 0%, rgba($white, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    border-radius: 20px;
+    margin: -10px;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+
+    .connector {
+      display: none;
+    }
+  }
+
+  // Tablet and up
+  @media (min-width: 576px) {
+    gap: 20px;
+
+    &::before {
+      margin: -10px;
+    }
+  }
+
+  // Desktop and up
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 30px;
+
+    &::before {
+      margin: -15px;
+    }
+  }
+}
+
+.stepNumber {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: $secondary-gradient;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 8px 25px $secondary-box-shadow;
+  transition: all 0.3s ease;
+
+  span {
+    font-size: 20px;
+    font-weight: 800;
+    color: $white;
+    text-shadow: 0 2px 4px rgba($black-color, 0.2);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 50%;
+    background: $secondary-gradient;
+    z-index: -1;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+  }
+
+  .timelineStep:hover & {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px $secondary-box-shadow;
+
+    &::before {
+      opacity: 0.6;
+    }
+  }
+
+  // Tablet and up
+  @media (min-width: 576px) {
+    width: 60px;
+    height: 60px;
+
+    span {
+      font-size: 24px;
+    }
+
+    &::before {
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+    }
+
+    .timelineStep:hover & {
+      box-shadow: 0 15px 40px $secondary-box-shadow;
+    }
+  }
+
+  // Desktop and up
+  @media (min-width: 768px) {
+    width: 80px;
+    height: 80px;
+
+    span {
+      font-size: 28px;
+    }
+  }
+}
+
+.stepContent {
+  flex: 1;
+  padding-top: 0;
+
+  // Desktop and up
+  @media (min-width: 768px) {
+    padding-top: 10px;
+  }
+}
+
+.stepTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: $black-color;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+
+  .timelineStep:hover & {
+    color: $secondary-color;
+  }
+
+  // Tablet and up
+  @media (min-width: 576px) {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  // Desktop and up
+  @media (min-width: 768px) {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+}
+
+.stepDescription {
+  font-size: $font-size;
+  color: $paragraph-color;
+  line-height: 1.7;
+  margin: 0;
+  transition: color 0.3s ease;
+
+  .timelineStep:hover & {
+    color: $dark-grey-blue;
+  }
+
+  // Tablet and up
+  @media (min-width: 576px) {
+    font-size: 15px;
+  }
+
+  // Desktop and up
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.connector {
+  display: none;
+
+  // Desktop and up - show connectors
+  @media (min-width: 768px) {
+    display: block;
+    position: absolute;
+    left: 39px;
+    top: 80px;
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(180deg, $secondary-color 0%, rgba($secondary-color, 0.3) 100%);
+    z-index: -1;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 8px;
+      background: $secondary-color;
+      border-radius: 50%;
+      opacity: 0.6;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 6px;
+      background: rgba($secondary-color, 0.4);
+      border-radius: 50%;
+    }
+  }
+}
+
+// Animation delays for staggered entrance
+.timelineStep:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+.timelineStep:nth-child(2) {
+  transition-delay: 0.35s;
+}
+
+.timelineStep:nth-child(3) {
+  transition-delay: 0.5s;
+}
+
+.timelineStep:nth-child(4) {
+  transition-delay: 0.65s;
+}
+
+.timelineStep:nth-child(5) {
+  transition-delay: 0.8s;
+}
+
+.timelineStep:nth-child(6) {
+  transition-delay: 0.95s;
+}
+
+.timelineStep:nth-child(7) {
+  transition-delay: 1.1s;
+}
+
+.timelineStep:nth-child(8) {
+  transition-delay: 1.25s;
+}

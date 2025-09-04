@@ -82,8 +82,6 @@ export function renderMultipleComponents({
         const Component = componentMap[key];
         const sectionData = section[key];
 
-        console.log(`Rendering section: ${key}`, sectionData);
-
         if (!Component || !sectionData) {
           return null;
         }

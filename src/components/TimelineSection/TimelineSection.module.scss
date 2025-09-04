@@ -1,0 +1,154 @@
+@use '../../styles/variables.scss' as *;
+
+.sideLayout {
+  .col6 {
+    margin-bottom: 60px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.centerLayout {
+  text-align: center;
+}
+
+.centerContent {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.timelineWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+  > * {
+    width: 100%;
+  }
+}
+
+.sideTextBelow {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.sideTextWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+.sideLayout {
+  .col6:first-child {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .col6:last-child {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+  }
+}
+
+.centerLayout {
+  .timelineWrapper {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .sideTextBelow {
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+  }
+}
+
+.sideLayout .centerContent {
+  .timelineWrapper {
+    animation: fadeInUp 0.8s ease-out;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// TABLET
+@media (min-width: 576px) {
+  .sideTextBelow {
+    margin-top: 40px;
+  }
+
+  .sideLayout {
+    .col6 {
+      margin-bottom: 80px; // More space for tablet
+    }
+   }
+}
+
+// DESKTOP
+@media (min-width: 768px) {
+  .centerContent {
+    max-width: 800px;
+  }
+
+  .sideTextBelow {
+    margin-top: 60px;
+  }
+}
+
+// DESKTOP BIGGER
+@media (min-width: 992px) {
+  .sideLayout {
+    .col6 {
+      padding: 0 30px;
+      margin-bottom: 0;
+    }
+
+    .col6:first-child {
+      animation: fadeInLeft 0.8s ease-out;
+    }
+
+    .col6:last-child {
+      animation: fadeInRight 0.8s ease-out;
+    }
+  }
+
+  .sideTextWrapper {
+    .sideLayout & {
+      text-align: left;
+    }
+  }
+
+  .sideLayout .col6 {
+    padding: 0 40px; // Increased from 30px for more space between sections
+  }
+}
