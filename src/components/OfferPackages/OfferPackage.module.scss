@@ -1,6 +1,6 @@
 @use '../../styles/variables.scss' as *;
 
-.pricingCard {
+.offerCard {
 	text-align: center;
 	background: $white;
 	box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.06);
@@ -8,13 +8,12 @@
 	padding-bottom: 35px;
     transition: $transition;
     margin-bottom: 30px;
-
-        display: grid;
+    display: grid;
     grid-template-rows: auto auto 1fr auto; // header, price, features (flexible), footer
     flex: 1;
     width: 100%;
 
-  .pricingHeader {
+  .offerHeader {
       background: $white;
       position: relative;
       padding: 30px 20px;
@@ -81,9 +80,11 @@
           }
       }
   }
-  .pricingFeatures {
+  .offerFeatures {
         display: flex;
         flex-direction: column;
+        padding: 5px;
+        
       ul {
           padding: 0;
           list-style-type: none;
@@ -103,7 +104,7 @@
       }
   }
   
-  .pricingFooter {
+  .offerFooter {
     align-self: end;
   }
   

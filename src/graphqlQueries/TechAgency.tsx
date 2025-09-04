@@ -36,6 +36,12 @@ export const TECHAGENCY_QUERY = gql`
           buttonCtaOneLabel
           buttonCtaOneLink
         }
+        ... on ComponentCommonNewsletter {
+          buttonLabel
+          title
+          subtitle
+          footnote
+        }
         ... on ComponentCommonSection {
           sectionTitle
           subtitle
@@ -53,30 +59,8 @@ export const TECHAGENCY_QUERY = gql`
             buttonTwoLabel
             buttonTwoLink
             media {
-              alternativeText
               url
-            }
-          }
-          teamMemberList {
-            team_members {
-              firstName
-              lastName
-              jobPosition
-              email
-              linkedinAbsoluteUrl
-              personalWebsiteAbsoluteUrl
-              githubAsboluteUrl
-              profilePic {
-                url
-                alternativeText
-              }
-              shortDescription
-            }
-          }
-          faqList {
-            question_answers {
-              question
-              answer
+              alternativeText
             }
           }
           iconTitleSubtitle {
@@ -91,19 +75,6 @@ export const TECHAGENCY_QUERY = gql`
           boxesText {
             content
           }
-          pricePackageList {
-            price_packages {
-              title
-              subtitle
-              price
-              features
-              cta {
-                label
-                url
-                style
-              }
-            }
-          }
           timelineSection {
             sideText
             timelineAlign
@@ -113,12 +84,21 @@ export const TECHAGENCY_QUERY = gql`
               description
             }
           }
-          serviceList {
-            services {
-              name
-              descriptionRichText
-              icon
+          price_packages {
+            title
+            subtitle
+            price
+            features
+            cta {
+              label
+              url
+              style
             }
+          }
+          services {
+            name
+            descriptionRichText
+            icon
           }
         }
         ... on ComponentCommonSectionhalfbackground {
@@ -135,32 +115,6 @@ export const TECHAGENCY_QUERY = gql`
             buttonOneLink
             buttonTwoLabel
             buttonTwoLink
-            media {
-              alternativeText
-              url
-            }
-          }
-          teamMemberList {
-            team_members {
-              firstName
-              lastName
-              jobPosition
-              email
-              linkedinAbsoluteUrl
-              personalWebsiteAbsoluteUrl
-              githubAsboluteUrl
-              profilePic {
-                url
-                alternativeText
-              }
-              shortDescription
-            }
-          }
-          faqList {
-            question_answers {
-              question
-              answer
-            }
           }
           iconTitleSubtitle {
             Title
@@ -174,18 +128,22 @@ export const TECHAGENCY_QUERY = gql`
           boxesText {
             content
           }
-          pricePackageList {
-            price_packages {
-              title
-              subtitle
-              price
-              features
-              cta {
-                label
-                url
-                style
-              }
+          price_packages {
+            title
+            subtitle
+            price
+            features
+            cta {
+              label
+              url
+              style
             }
+          }
+
+          services {
+            name
+            descriptionRichText
+            icon
           }
           timelineSection {
             sideText
@@ -196,19 +154,6 @@ export const TECHAGENCY_QUERY = gql`
               description
             }
           }
-          serviceList {
-            services {
-              name
-              descriptionRichText
-              icon
-            }
-          }
-        }
-        ... on ComponentCommonNewsletter {
-          buttonLabel
-          title
-          subtitle
-          footnote
         }
       }
     }

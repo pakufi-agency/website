@@ -5,15 +5,15 @@ import PersonCard from "../PersonCard/PersonCard";
 
 import styles from "./TeamSection.module.scss";
 interface TeamSectionProps {
-  team_members: [];
+  items: [];
 }
 
-const TeamSection: React.FC<TeamSectionProps> = ({ team_members }) => {
+const TeamSection: React.FC<TeamSectionProps> = ({ items }) => {
   return (
     <>
       <div>
         <div className="row justify-content-center">
-          {team_members.map(
+          {items.map(
             (
               {
                 firstName,

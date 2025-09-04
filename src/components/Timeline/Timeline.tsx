@@ -22,34 +22,37 @@ const Timeline: React.FC<TimelineComponentProps> = ({ steps }) => {
   const delay = 0.3;
   const isLast = false;
 
-  const stepRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const [mousePos, setMousePos] = useState<MousePosition>({ x: 0, y: 0 });
+  const [mousePositions, setMousePositions] = useState<MousePosition[]>(
+    steps.map(() => ({ x: 0, y: 0 }))
+  );
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => setIsVisible(true), delay);
+          setTimeout(() => setIsVisible(true), delay * 1000);
         }
       },
       {
         threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
+        rootMargin: "200px 0px -50px 0px",
       }
     );
 
-    if (stepRef.current) {
-      observer.observe(stepRef.current);
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
     }
 
     return () => observer.disconnect();
   }, [delay]);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!stepRef.current) return;
-
-    const rect = stepRef.current.getBoundingClientRect();
+  const handleMouseMove = (
+    e: React.MouseEvent<HTMLDivElement>,
+    index: number
+  ) => {
+    const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
@@ -59,25 +62,29 @@ const Timeline: React.FC<TimelineComponentProps> = ({ steps }) => {
     const rotateX = (y - centerY) / 30;
     const rotateY = (centerX - x) / 30;
 
-    setMousePos({ x: rotateX, y: rotateY });
+    setMousePositions((prev) =>
+      prev.map((pos, i) => (i === index ? { x: rotateX, y: rotateY } : pos))
+    );
   };
 
-  const handleMouseLeave = () => {
-    setMousePos({ x: 0, y: 0 });
+  const handleMouseLeave = (index: number) => {
+    setMousePositions((prev) =>
+      prev.map((pos, i) => (i === index ? { x: 0, y: 0 } : pos))
+    );
   };
 
   return (
-    <div className={`${styles.container}`}>
+    <div ref={containerRef} className={`${styles.container}`}>
       {steps.map(({ stepNumber, title, description }, index) => {
+        const mousePos = mousePositions[index];
         return (
           <div
             key={index}
-            ref={stepRef}
             className={`${styles.timelineStep} ${
               isVisible ? styles.animate : ""
             }`}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
+            onMouseMove={(e) => handleMouseMove(e, index)}
+            onMouseLeave={() => handleMouseLeave(index)}
             style={{
               transform:
                 mousePos.x !== 0 || mousePos.y !== 0
@@ -94,7 +101,9 @@ const Timeline: React.FC<TimelineComponentProps> = ({ steps }) => {
               <p className={styles.stepDescription}>{description}</p>
             </div>
 
-            {!isLast && <div className={styles.connector}></div>}
+            {index < steps.length - 1 && (
+              <div className={styles.connector}></div>
+            )}
           </div>
         );
       })}

@@ -6,7 +6,7 @@ import HeroBanner from "../../components/Hero/Hero";
 import TextImageButtons from "../../components/TextImageButtons/TextImageButtons";
 import CtaText from "../../components/CtaText/CtaText";
 import ServiceBox from "../../components/ServicesBox/ServiceBox";
-import PricingPackageList from "../../components/PricingPackages/PricingPackageList";
+import OfferPackageList from "../../components/OfferPackages/OfferPackageList";
 import TimelineSection from "../../components/TimelineSection/TimelineSection";
 import CtaBig from "../../components/CtaBig/CtaBig";
 import LoadingError from "../../components/Errors/LoadingError";
@@ -46,8 +46,8 @@ function renderSection(
 ) {
   const componentMap: Record<string, any> = {
     TextImageButtonsComponent: TextImageButtons,
-    serviceList: ServiceBox,
-    pricePackageList: PricingPackageList,
+    services: ServiceBox,
+    price_packages: OfferPackageList,
     timelineSection: TimelineSection,
   };
   return renderMultipleComponents({

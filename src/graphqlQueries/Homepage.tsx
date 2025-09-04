@@ -86,51 +86,39 @@ export const HOMEPAGE_QUERY = gql`
             textColor
             buttonStyle
           }
-          serviceList {
-            services {
-              name
-              subtitle
-              descriptionRichText
-              icon
+          services {
+            name
+            subtitle
+            descriptionRichText
+            icon
+          }
+          team_members {
+            firstName
+            lastName
+            jobPosition
+            email
+            linkedinAbsoluteUrl
+            personalWebsiteAbsoluteUrl
+            githubAsboluteUrl
+            profilePic {
+              url
+              alternativeText
+            }
+            shortDescription
+          }
+          collaborators {
+            fullName
+            jobPosition
+            email
+            linkedinAbsoluteUrl
+            profilePic {
+              alternativeText
+              url
             }
           }
-          teamMemberList {
-            team_members {
-              firstName
-              lastName
-              jobPosition
-              email
-              linkedinAbsoluteUrl
-              personalWebsiteAbsoluteUrl
-              githubAsboluteUrl
-              profilePic {
-                url
-                alternativeText
-              }
-              shortDescription
-            }
-          }
-          collaboratorList {
-            collaborators {
-              fullName
-              jobPosition
-              email
-              linkedinAbsoluteUrl
-              personalWebsiteAbsoluteUrl
-              profilePic {
-                url
-                alternativeText
-              }
-            }
-          }
-          faqList {
-            question_answers {
-              question
-              answer
-            }
-          }
-          boxesText {
-            content
+          question_answers {
+            question
+            answer
           }
         }
         ... on ComponentCommonSectionhalfbackground {
@@ -152,36 +140,6 @@ export const HOMEPAGE_QUERY = gql`
             buttonTwoLabel
             buttonTwoLink
             textColor
-          }
-          serviceList {
-            services {
-              name
-              subtitle
-              descriptionRichText
-              icon
-            }
-          }
-          teamMemberList {
-            team_members {
-              firstName
-              lastName
-              jobPosition
-              email
-              linkedinAbsoluteUrl
-              personalWebsiteAbsoluteUrl
-              githubAsboluteUrl
-              profilePic {
-                url
-                alternativeText
-              }
-              shortDescription
-            }
-          }
-          faqList {
-            question_answers {
-              question
-              answer
-            }
           }
         }
       }

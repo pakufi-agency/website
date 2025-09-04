@@ -57,7 +57,10 @@ const Footer = () => {
                     <Link href="/about">About Us</Link>
                   </li>
                   <li>
-                    <Link href="/#serviceSection">Services</Link>
+                    <Link href="/tech-agency/#serviceSection">Services</Link>
+                  </li>
+                  <li>
+                    <Link href="/tech-agency/#offerSection">Price Offers</Link>
                   </li>
                   <li>
                     <Link href="/#faqSection">FAQ&apos;s</Link>
@@ -92,12 +95,8 @@ const Footer = () => {
                     <Link href="https://tally.so/r/waE8Av">I am a talent</Link>
                   </li>
                   <li>
-                    <a
-                      href="https://discord.gg/KUeQrY5eMw"
-                      className="discord"
-                      target="_blank"
-                    >
-                      Join Pakufi Community
+                    <a href="mailto:info@pakufi.agency">
+                      Love the mission and want to join? Write us!
                     </a>
                   </li>
                 </ul>
@@ -173,7 +172,11 @@ const Footer = () => {
                     </a>
                   </li>
                 </ul>
-                <p>We are open source! <br/> Check out our <a href="https://github.com/pakufi-agency/">Github</a> if you wish to contribute!</p>
+                <p>
+                  We are open source! <br /> Check out our{" "}
+                  <a href="https://github.com/pakufi-agency/">Github</a> if you
+                  wish to contribute!
+                </p>
               </div>
             </div>
 

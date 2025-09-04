@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
-export const CONTACT_QUERY = gql`
-  query getContact {
-    pages(filters: { documentId: { eq: "feli3eyi8vf1pi56v3jct7js" } }) {
+export const TALENTGROWTH_QUERY = gql`
+  query getTalentGrowth {
+    pages(filters: { documentId: { eq: "qlh6njvxulawqnkmxe49v8v3" } }) {
       pageTitle
       pageDescription
       internalBannerMedia {
@@ -10,6 +10,19 @@ export const CONTACT_QUERY = gql`
         url
       }
       sections {
+        ... on ComponentStaticComponentHero {
+          id
+          title
+          Button {
+            label
+            url
+          }
+          descriptionRichText
+          mediaHero {
+            alternativeText
+            url
+          }
+        }
         ... on ComponentCommonCta {
           title
           description
@@ -29,6 +42,19 @@ export const CONTACT_QUERY = gql`
           subtitle
           footnote
         }
+        ... on ComponentCommonTextImageButtons {
+          richText
+          media {
+            alternativeText
+            url
+          }
+          buttonOneLabel
+          buttonOneLink
+          buttonTwoLabel
+          buttonTwoLink
+          ImagePosition
+          buttonStyle
+        }
         ... on ComponentCommonSection {
           sectionTitle
           subtitle
@@ -45,25 +71,10 @@ export const CONTACT_QUERY = gql`
             buttonOneLink
             buttonTwoLabel
             buttonTwoLink
-          }
-          team_members {
-            firstName
-            lastName
-            jobPosition
-            email
-            linkedinAbsoluteUrl
-            personalWebsiteAbsoluteUrl
-            githubAsboluteUrl
-            profilePic {
+            media {
               url
               alternativeText
             }
-            shortDescription
-          }
-
-          question_answers {
-            question
-            answer
           }
           iconTitleSubtitle {
             Title
@@ -74,19 +85,37 @@ export const CONTACT_QUERY = gql`
             }
             iconName
           }
-          boxesText {
+          mentorship_programs {
+            title
+            subtitle
+            features
+            cta {
+              label
+              url
+              style
+            }
+          }
+          mentors {
+            fullName
+            jobPosition
+            email
+            linkedinAbsoluteUrl
+            profilePic {
+              alternativeText
+              url
+            }
+          }
+          timelineSection {
+            timelineStep {
+              stepNumber
+              title
+              description
+            }
+            timelineAlign
+            sideText
+          }
+          TextBlock {
             content
-          }
-        }
-        ... on ComponentSectionsIntroSinglePage {
-          title
-          richTextDescription
-          mediaIntroSinglePage {
-            url
-            alternativeText
-          }
-          textCols {
-            richText
           }
         }
         ... on ComponentCommonSectionhalfbackground {
@@ -104,24 +133,14 @@ export const CONTACT_QUERY = gql`
             buttonTwoLabel
             buttonTwoLink
           }
-          services {
-            name
-            descriptionRichText
-            icon
-          }
-          team_members {
-            firstName
-            lastName
-            jobPosition
-            email
-            linkedinAbsoluteUrl
-            personalWebsiteAbsoluteUrl
-            githubAsboluteUrl
-            profilePic {
-              url
+          iconTitleSubtitle {
+            Title
+            subtitle
+            iconImg {
               alternativeText
+              url
             }
-            shortDescription
+            iconName
           }
         }
       }

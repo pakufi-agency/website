@@ -27,13 +27,8 @@ export default function BlockRendererClient({
     return /<[^>]*>/g.test(text);
   };
 
-  // Simple HTML sanitization - only allow safe button tags
   const sanitizeHTML = (html: string): string => {
-    // Only allow specific button patterns and basic formatting
-    const allowedTags = /^<(\/?)(?:button|strong|em|u|br|span|a)(\s[^>]*)?>$/i;
-
-    // For now, let's trust the content from Strapi and do minimal sanitization
-    // In production, you should use proper HTML sanitization
+    // TODO: replace with robust sanitizer (e.g., DOMPurify)
     return html;
   };
 
@@ -43,18 +38,12 @@ export default function BlockRendererClient({
     // Handle button clicks
     if (target.tagName === "BUTTON") {
       e.preventDefault();
-
-      // Look for data-url attribute first
       const dataUrl = target.getAttribute("data-url");
-
-      // If no data-url, look for an anchor tag inside the button
       const anchorTag = target.querySelector("a");
       const href =
         dataUrl || (anchorTag ? anchorTag.getAttribute("href") : null);
-
       const buttonText = target.textContent || "";
 
-      // Add tracking
       if (pathname) {
         trackClick(
           "CTA:RichTextButton",
@@ -71,7 +60,6 @@ export default function BlockRendererClient({
           window.location.href = href;
         }
       }
-      console.log("Button clicked:", buttonText, "URL:", href);
     }
 
     // Handle direct anchor clicks
@@ -83,7 +71,6 @@ export default function BlockRendererClient({
         trackClick("CTA:RichTextLink", linkText, href, pathname);
       }
 
-      // Let the anchor handle its own navigation unless it's inside a button
       if (target.closest("button")) {
         e.preventDefault();
       }
@@ -94,77 +81,67 @@ export default function BlockRendererClient({
     <BlocksRenderer
       content={content}
       blocks={{
-        image: ({ image }) => {
-          return (
-            <Image
-              src={image.url}
-              width={image.width}
-              height={image.height}
-              alt={image.alternativeText || ""}
-            />
-          );
-        },
+        image: ({ image }) => (
+          <Image
+            src={image.url}
+            width={image.width}
+            height={image.height}
+            alt={image.alternativeText || ""}
+          />
+        ),
 
         paragraph: ({ children }) => {
           if (!isClient) {
             return <p>{children}</p>;
           }
 
-          // First, let's try to reconstruct the full HTML from all children
-          let fullTextContent = "";
-          React.Children.forEach(children, (child) => {
-            if (
-              React.isValidElement(child) &&
-              child.props &&
-              typeof child.props.text === "string"
-            ) {
-              fullTextContent += child.props.text;
-            }
-          });
+          const childArray = React.Children.toArray(children);
 
-          // Debug logging
-          console.log("Full text content:", fullTextContent);
-          console.log("Contains HTML:", containsHTML(fullTextContent));
+          // Build raw string version to detect injected HTML
+          const rawHTML = childArray
+            .map((child: any) =>
+              typeof child === "string" ? child : child.props?.text || ""
+            )
+            .join("");
 
-          // If the full content contains HTML, process it as a whole
-          if (containsHTML(fullTextContent)) {
-            const sanitizedHTML = sanitizeHTML(fullTextContent);
-            console.log("Rendering HTML:", sanitizedHTML);
+          // If HTML tags are present → fallback to HTML renderer
+          if (containsHTML(rawHTML)) {
             return (
               <div
-                dangerouslySetInnerHTML={{ __html: sanitizedHTML }}
+                dangerouslySetInnerHTML={{ __html: sanitizeHTML(rawHTML) }}
                 onClick={handleClick}
               />
             );
           }
 
-          // Fallback to individual child processing for non-HTML content
-          const processedChildren = React.Children.map(children, (child) => {
+          // Otherwise → safe React rendering with newline handling
+          const processedChildren = childArray.flatMap((child, i) => {
             if (
               React.isValidElement(child) &&
-              child.props &&
-              typeof child.props.text === "string"
+              typeof child.props?.text === "string"
             ) {
-              const text = child.props.text;
+              // Split text by newline
+              const parts = child.props.text.split("\n");
+              return parts.flatMap((part: any, j: any) => {
+                let formatted: React.ReactNode = part;
 
-              // Apply formatting if present
-              let formattedText: React.ReactNode = text;
-              if (child.props.bold)
-                formattedText = <strong>{formattedText}</strong>;
-              if (child.props.italic) formattedText = <em>{formattedText}</em>;
-              if (child.props.underline) formattedText = <u>{formattedText}</u>;
-              if (child.props.strikethrough)
-                formattedText = <s>{formattedText}</s>;
-              if (child.props.code)
-                formattedText = <code>{formattedText}</code>;
+                // Preserve formatting
+                if (child.props.bold) formatted = <strong>{formatted}</strong>;
+                if (child.props.italic) formatted = <em>{formatted}</em>;
+                if (child.props.underline) formatted = <u>{formatted}</u>;
+                if (child.props.strikethrough) formatted = <s>{formatted}</s>;
+                if (child.props.code) formatted = <code>{formatted}</code>;
 
-              return formattedText;
+                return j < parts.length - 1
+                  ? [formatted, <br key={`${i}-${j}`} />]
+                  : [formatted];
+              });
             }
 
             return child;
           });
 
-          return <p>{processedChildren}</p>;
+          return <p onClick={handleClick}>{processedChildren}</p>;
         },
       }}
     />

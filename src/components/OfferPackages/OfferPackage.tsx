@@ -5,17 +5,17 @@ import Link from "next/link";
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
 import BlockRendererClient from "../BlockRendererClient";
 
-import styles from "./PricingPackage.module.scss";
+import styles from "./OfferPackage.module.scss";
 
 interface MousePosition {
   x: number;
   y: number;
 }
 
-export interface PricingPackageProps {
+export interface OfferPackageProps {
   title: string;
   subtitle?: string;
-  price: number;
+  price?: number;
   features: BlocksContent;
   delay?: number;
   cta: {
@@ -25,7 +25,7 @@ export interface PricingPackageProps {
   };
 }
 
-const PricingPackage: React.FC<PricingPackageProps> = ({
+const OfferPackage: React.FC<OfferPackageProps> = ({
   title,
   subtitle,
   price,
@@ -60,7 +60,7 @@ const PricingPackage: React.FC<PricingPackageProps> = ({
   useEffect(() => {
     // Function to equalize header heights
     const equalizeHeaderHeights = () => {
-      const headers = document.querySelectorAll(`.${styles.pricingHeader}`);
+      const headers = document.querySelectorAll(`.${styles.offerHeader}`);
       let maxHeight = 0;
 
       // Reset heights first
@@ -120,30 +120,32 @@ const PricingPackage: React.FC<PricingPackageProps> = ({
   return (
     <div
       ref={cardRef}
-      className={`${styles.pricingCard} ${isVisible ? styles.animate : ""}`}
+      className={`${styles.offerCard} ${isVisible ? styles.animate : ""}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <div className={styles.pricingHeader}>
+      <div className={styles.offerHeader}>
         <h3>{title}</h3>
         <p>{subtitle}</p>
       </div>
 
-      <div className={styles.price}>
-        <span>
-          from <sup>€</sup>
-          {price}
-        </span>
-      </div>
+      {price && (
+        <div className={styles.price}>
+          <span>
+            from <sup>€</sup>
+            {price}
+          </span>
+        </div>
+      )}
 
-      <div className={styles.pricingFeatures}>
+      <div className={styles.offerFeatures}>
         <BlockRendererClient content={features} />
       </div>
 
-      <div className={styles.pricingFooter}>
+      <div className={styles.offerFooter}>
         <Link
           href={cta.url}
-          className={`btn btn-primary ${cta.style} ${styles.pricingCta}`}
+          className={`btn btn-primary ${cta.style} ${styles.offerCta}`}
           onClick={handleCtaClick}
         >
           {cta.label}
@@ -154,4 +156,4 @@ const PricingPackage: React.FC<PricingPackageProps> = ({
   );
 };
 
-export default PricingPackage;
+export default OfferPackage;
