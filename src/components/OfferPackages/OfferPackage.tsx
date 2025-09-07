@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
 import BlockRendererClient from "../BlockRendererClient";
+import { usePathname } from "next/navigation";
 
 import styles from "./OfferPackage.module.scss";
+import { ButtonLink } from "../ButtonLink";
 
 interface MousePosition {
   x: number;
@@ -36,6 +37,7 @@ const OfferPackage: React.FC<OfferPackageProps> = ({
   const cardRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [mousePos, setMousePos] = useState<MousePosition>({ x: 0, y: 0 });
+  const pathname = usePathname();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -143,14 +145,18 @@ const OfferPackage: React.FC<OfferPackageProps> = ({
       </div>
 
       <div className={styles.offerFooter}>
-        <Link
+        <ButtonLink
           href={cta.url}
+          label={
+            <>
+              {cta.label}
+              <span className={`arrow`}>→</span>
+            </>
+          }
+          pathname={pathname}
           className={`btn btn-primary ${cta.style} ${styles.offerCta}`}
           onClick={handleCtaClick}
-        >
-          {cta.label}
-          <span className="arrow">→</span>
-        </Link>
+        />
       </div>
     </div>
   );

@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import BlockRendererClient from "../BlockRendererClient";
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
-import { getStrapiImageUrl, trackClick } from "../../utils/utils";
+import { getStrapiImageUrl } from "../../utils/utils";
+import { ButtonLink } from "../ButtonLink";
 
 import styles from "./Hero.module.scss";
 
@@ -54,19 +54,14 @@ const Hero: React.FC<HeroProps> = ({
             </div>
 
             {Button.map((button, index) => (
-              <Link
-                key={index}
-                href={button.url}
-                className={`btn button-pakufi-dark ${styles.button}`}
-              >
-                <span
-                  onClick={() =>
-                    trackClick("CTA:hero", button.label, button.url, pathname)
-                  }
-                >
-                  {button.label}
-                </span>
-              </Link>
+              <span key={index}>
+                <ButtonLink
+                  href={button.url}
+                  label={button.label}
+                  pathname={pathname}
+                  className={`btn button-pakufi-dark ${styles.button}`}
+                />
+              </span>
             ))}
           </div>
 

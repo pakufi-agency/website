@@ -7,6 +7,7 @@ import { trackClick } from "../../utils/utils";
 
 import styles from "./CtaText.module.scss";
 import { Url } from "url";
+import { ButtonLink } from "../ButtonLink";
 
 interface CtaTextProps {
   title: string;
@@ -30,23 +31,12 @@ const CtaText: React.FC<CtaTextProps> = ({
           <h3>{title}</h3>
           <p>{description}</p>
 
-          <Link
+          <ButtonLink
             href={buttonCtaOneLink}
+            label={buttonCtaOneLabel}
+            pathname={pathname}
             className={`btn button-pakufi-dark ${styles.button}`}
-          >
-            <span
-              onClick={() =>
-                trackClick(
-                  "CTA:banner",
-                  buttonCtaOneLabel,
-                  buttonCtaOneLink,
-                  pathname
-                )
-              }
-            >
-              {buttonCtaOneLabel}
-            </span>
-          </Link>
+          />
         </div>
       </div>
     </>

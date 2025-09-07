@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import { usePathname } from "next/navigation";
 import BlockRendererClient from "../BlockRendererClient";
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
+import { ButtonLink } from "../ButtonLink";
 import styles from "./AnimatedCards.module.scss";
 
 export interface CardDataProps {
@@ -36,6 +37,7 @@ const AnimatedCard: React.FC<CardDataProps> = ({
   const cardRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [mousePos, setMousePos] = useState<MousePosition>({ x: 0, y: 0 });
+  const pathname = usePathname();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -119,17 +121,21 @@ const AnimatedCard: React.FC<CardDataProps> = ({
 
       {button &&
         button.map((btn, index) => (
-          <Link
+          <ButtonLink
             key={index}
             href={btn.url}
+            label={
+              <>
+                {btn.label}
+                <span className={`arrow`}>→</span>
+              </>
+            }
+            pathname={pathname} // or any tracking context
             className={`btn ${btn.style} ${styles.serviceCta} ${
               styles[`${cardStyle && cardStyle}Cta`]
             }`}
             onClick={handleCtaClick}
-          >
-            {btn.label}
-            <span className={`arrow`}>→</span>
-          </Link>
+          />
         ))}
     </div>
   );
