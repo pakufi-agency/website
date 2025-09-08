@@ -67,7 +67,34 @@ export default function BlockRendererClient({
             );
           }
 
-          return <p onClick={handleClick}>{childArray}</p>;
+          // Otherwise → safe React rendering with newline handling
+          const processedChildren = childArray.flatMap((child, i) => {
+            if (
+              React.isValidElement(child) &&
+              typeof child.props?.text === "string"
+            ) {
+              // Split text by newline
+              const parts = child.props.text.split("\n");
+              return parts.flatMap((part: any, j: any) => {
+                let formatted: React.ReactNode = part;
+
+                // Preserve formatting
+                if (child.props.bold) formatted = <strong>{formatted}</strong>;
+                if (child.props.italic) formatted = <em>{formatted}</em>;
+                if (child.props.underline) formatted = <u>{formatted}</u>;
+                if (child.props.strikethrough) formatted = <s>{formatted}</s>;
+                if (child.props.code) formatted = <code>{formatted}</code>;
+
+                return j < parts.length - 1
+                  ? [formatted, <br key={`${i}-${j}`} />]
+                  : [formatted];
+              });
+            }
+
+            return child;
+          });
+
+          return <p onClick={handleClick}>{processedChildren}</p>;
         },
       }}
     />
