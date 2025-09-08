@@ -80,9 +80,9 @@
         top: 20px;
         filter: brightness(80%);
         min-width: 350px;
-        display: flex;
         align-items: center;
         justify-content: center;
+        display: none;
         
         .Image {
             width: 100%;
@@ -94,7 +94,7 @@
 @media only screen and (min-width: 767px ) {
     .heroBanner {
         padding: {
-            top: 215px;
+            top: 185px;
             bottom: 150px;
         }
         height: 115vh;
@@ -114,7 +114,6 @@
             max-width: 445px;
             margin-right: 50px;
             min-width: 300px;
-            margin-top: -150px;
 
             span {
                 display: inline-block;
@@ -129,8 +128,9 @@
         }
 
         .bannerImage {
-            top: -50px;
-            min-width: 750px;
+            top: 200px;
+            display: flex;
+            transform: scale(3);
             
             .Image {
                 width: 100%;
@@ -148,28 +148,26 @@
     }
 }
 
-@media only screen and (min-width: 1100px ) {
+@media only screen and (min-width: 991px ) {
     .heroBanner {
         padding: {
-            top: 215px;
+            top: 185px;
             bottom: 150px;
         }
         height: 115vh;
     }
 
     .contentContainer {
+        align-items: flex-start;
         .bannerContent {
             margin-top: 50px;
         }
 
         .bannerImage {
-            position: absolute;
-            top: -50px;
-            min-width: 950px;
             display: flex;
             align-items: flex-end;
             justify-content: flex-end;
-            right: -350px;
+            transform: scale(2.5);
         }
     }
 }
@@ -182,9 +180,6 @@
 
     .contentContainer {
         .bannerImage {
-            top: 50px;
-            min-width: 750px;
-            right: 150px;
             justify-content: center;
             align-items: center;
         }
