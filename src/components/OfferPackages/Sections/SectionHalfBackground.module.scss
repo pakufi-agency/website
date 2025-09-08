@@ -1,0 +1,66 @@
+@use '../../styles/variables.scss' as *;
+
+.container {
+    position: relative;
+    padding: 80px 0;
+    z-index: 1;
+    background: $jade-green;
+
+    .sectionTitle {
+        h2 {
+            color: $white;
+        }
+        .bar {
+            &::before {
+                background: $navy-blue;
+            }
+        }
+        p {
+            color: $white;
+            opacity: .95;
+        }
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 37%;
+        width: 100%;
+        background: $white;
+        background: $bg-color-f9fafb;
+        z-index: -1;
+    }
+
+    .ballGreen {
+        background: #cdf1d8;
+
+        &::before {
+            background: $jade-green;
+        }
+    }
+
+    .ballBlue {
+        background: #cdf1d8;
+
+        &::before {
+            background: $navy-blue;
+        }
+    }
+
+}
+
+
+@media only screen and (min-width: 767px) {
+    .container {
+        padding: 120px 0;
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 35px;
+        }
+    }
+}

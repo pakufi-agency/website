@@ -12,6 +12,7 @@ import whiteCross from "/public/images/backgrounds/white-cross.svg";
 import greenTriangle from "/public/images/backgrounds/green-triangle.svg";
 import whiteTriangle from "/public/images/backgrounds/white-triangle.svg";
 import { Url } from "url";
+import { ButtonLink } from "../ButtonLink";
 
 interface CtaBigProps {
   title: string;
@@ -33,7 +34,7 @@ const CtaBig: React.FC<CtaBigProps> = ({
   media,
 }) => {
   const pathname = usePathname();
-  
+
   return (
     <>
       <div className={styles.container}>
@@ -56,28 +57,20 @@ const CtaBig: React.FC<CtaBigProps> = ({
                 {description && <p>{description}</p>}
                 <div className={styles.buttonsContainer}>
                   {buttonCtaOneLink && (
-                    <Link
+                    <ButtonLink
                       href={buttonCtaOneLink}
+                      label={buttonCtaOneLabel}
+                      pathname={pathname}
                       className={`btn button-pakufi-dark ${styles.button}`}
-                    >
-                      <span
-                        onClick={() => trackClick('CTA:big', buttonCtaOneLabel, buttonCtaOneLink, pathname)}
-                      >
-                        {buttonCtaOneLabel}
-                      </span>
-                    </Link>
+                    />
                   )}
                   {buttonCtaTwoLink && (
-                    <Link
+                    <ButtonLink
                       href={buttonCtaTwoLink}
+                      label={buttonCtaTwoLabel}
+                      pathname={pathname}
                       className={`btn button-pakufi-dark ${styles.button}`}
-                    >
-                      <span
-                        onClick={() => trackClick('Big CTA', buttonCtaOneLabel, buttonCtaOneLink, pathname)}
-                      >
-                        {buttonCtaTwoLabel}
-                      </span>
-                    </Link>
+                    />
                   )}
                 </div>
               </div>

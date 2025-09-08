@@ -1,0 +1,16 @@
+.offerPackagesArea {
+    padding-bottom: 50px;
+    position: relative;
+    z-index: 1;
+    
+    // Remove the grid override and work with Bootstrap's flexbox
+    .row {
+        display: flex;
+        align-items: stretch;
+    }
+    
+    .col {
+        display: flex;
+        flex-direction: column;
+    }
+}

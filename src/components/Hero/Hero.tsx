@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import BlockRendererClient from "../BlockRendererClient";
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
-import { getStrapiImageUrl, trackClick } from "../../utils/utils";
+import { getStrapiImageUrl } from "../../utils/utils";
+import { ButtonLink } from "../ButtonLink";
 
 import styles from "./Hero.module.scss";
 
@@ -16,20 +16,18 @@ import greenTriangle from "/public/images/backgrounds/green-triangle.svg";
 interface HeroProps {
   title: string;
   descriptionRichText: BlocksContent;
-  ctaLabel: string;
-  ctaLink: string;
+  Button: { url: string; label: string }[];
   mediaHero: { url: string; alternativeText: string };
 }
 
 const Hero: React.FC<HeroProps> = ({
   title,
   descriptionRichText,
-  ctaLabel,
-  ctaLink,
+  Button,
   mediaHero,
 }) => {
   const pathname = usePathname();
-  
+
   return (
     <>
       <div className={`${styles.heroBanner}`}>
@@ -55,13 +53,16 @@ const Hero: React.FC<HeroProps> = ({
               <BlockRendererClient content={descriptionRichText} />
             </div>
 
-            <Link href={ctaLink} className={`btn button-pakufi-dark ${styles.button}`}>
-              <span
-                onClick={() => trackClick('CTA:hero', ctaLabel, ctaLink, pathname)}
-              >
-                {ctaLabel}
+            {Button.map((button, index) => (
+              <span key={index}>
+                <ButtonLink
+                  href={button.url}
+                  label={button.label}
+                  pathname={pathname}
+                  className={`btn button-pakufi-dark ${styles.button}`}
+                />
               </span>
-            </Link>
+            ))}
           </div>
 
           <div className={styles.bannerImage}>

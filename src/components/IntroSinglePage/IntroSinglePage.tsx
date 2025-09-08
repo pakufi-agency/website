@@ -57,7 +57,7 @@ const IntroSinglePage: React.FC<TextImageButtons> = ({
             <div className={styles.details}>
               {textCols.map((col, index) => (
                 <div className="container" key={index}>
-                  <div className="aboutText">
+                  <div className={styles.aboutText}>
                     <BlockRendererClient content={col.richText} />
                   </div>
                 </div>

@@ -2,19 +2,20 @@ import React from "react";
 import Navbar from "../../components/Layout/Navbar";
 import Footer from "../../components/Layout/Footer";
 import Section from "../../components/Sections/Section";
+import HeroBanner from "../../components/Hero/Hero";
 import TextImageButtons from "../../components/TextImageButtons/TextImageButtons";
 import CtaText from "../../components/CtaText/CtaText";
-import TeamSection from "../../components/TeamSection/TeamSection";
-import CollaboratorsSection from "../../components/CollaboratorsSection/CollaboratorsSection";
+import ServiceBox from "../../components/ServicesBox/ServiceBox";
+import OfferPackageList from "../../components/OfferPackages/OfferPackageList";
+import TimelineSection from "../../components/TimelineSection/TimelineSection";
 import CtaBig from "../../components/CtaBig/CtaBig";
 import LoadingError from "../../components/Errors/LoadingError";
-import PageBanner from "../../components/PageBanner/PageBanner";
-import IntroSinglePage from "../../components/IntroSinglePage/IntroSinglePage";
 import Newsletter from "../../components/Newsletter/Newsletter";
 import { getStrapiPageData, renderMultipleComponents } from "../../utils/utils";
 import { generatePageMetadata } from "../../utils/seo";
 import MobileMenuProvider from "../../context/MobileMenuProvider";
-import { ABOUTUS_QUERY } from "../../graphqlQueries/Aboutus";
+import { TECHAGENCY_QUERY } from "../../graphqlQueries/TechAgency";
+import SectionHalfBackground from "@/components/Sections/SectionHalfBackground";
 
 interface SectionProps {
   [key: string]: any;
@@ -33,7 +34,10 @@ interface PageProps {
 
 export const generateMetadata = async () =>
   generatePageMetadata(() =>
-    getStrapiPageData<PageProps>({ query: ABOUTUS_QUERY, pageType: "About Us" })
+    getStrapiPageData<PageProps>({
+      query: TECHAGENCY_QUERY,
+      pageType: "Tech Agency",
+    })
   );
 
 function renderSection(
@@ -42,8 +46,9 @@ function renderSection(
 ) {
   const componentMap: Record<string, any> = {
     TextImageButtonsComponent: TextImageButtons,
-    team_members: TeamSection,
-    collaborators: CollaboratorsSection,
+    services: ServiceBox,
+    price_packages: OfferPackageList,
+    timelineSection: TimelineSection,
   };
   return renderMultipleComponents({
     section,
@@ -54,8 +59,8 @@ function renderSection(
 
 export default async function Page() {
   const pageData = await getStrapiPageData<PageProps>({
-    query: ABOUTUS_QUERY,
-    pageType: "About Us",
+    query: TECHAGENCY_QUERY,
+    pageType: "Tech Agency",
   });
 
   if (!pageData) {
@@ -71,19 +76,18 @@ export default async function Page() {
   return (
     <MobileMenuProvider>
       <Navbar />
-      <PageBanner
-        pageTitle={pageData.pageTitle}
-        internalBannerMedia={pageData.internalBannerMedia}
-      />
 
       {pageData.sections &&
         pageData.sections.map((section: any, index: number) => {
           switch (section.__typename) {
-            case "ComponentSectionsIntroSinglePage":
-              return <IntroSinglePage {...section} key={index} />;
+            case "ComponentStaticComponentHero":
+              return <HeroBanner {...section} key={index} />;
 
             case "ComponentCommonSection":
               return renderSection(section, Section);
+
+            case "ComponentCommonSectionhalfbackground":
+              return renderSection(section, SectionHalfBackground);
 
             case "ComponentCommonNewsletter":
               return <Newsletter {...section} key={index} />;

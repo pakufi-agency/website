@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
-export const CONTACT_QUERY = gql`
-  query getContact {
-    pages(filters: { documentId: { eq: "feli3eyi8vf1pi56v3jct7js" } }) {
+export const TECHAGENCY_QUERY = gql`
+  query getTechAgency {
+    pages(filters: { documentId: { eq: "k42kqa4fvjtkmvrg1rhvdyjt" } }) {
       pageTitle
       pageDescription
       internalBannerMedia {
@@ -10,6 +10,19 @@ export const CONTACT_QUERY = gql`
         url
       }
       sections {
+        ... on ComponentStaticComponentHero {
+          id
+          title
+          Button {
+            label
+            url
+          }
+          descriptionRichText
+          mediaHero {
+            alternativeText
+            url
+          }
+        }
         ... on ComponentCommonCta {
           title
           description
@@ -45,25 +58,10 @@ export const CONTACT_QUERY = gql`
             buttonOneLink
             buttonTwoLabel
             buttonTwoLink
-          }
-          team_members {
-            firstName
-            lastName
-            jobPosition
-            email
-            linkedinAbsoluteUrl
-            personalWebsiteAbsoluteUrl
-            githubAsboluteUrl
-            profilePic {
+            media {
               url
               alternativeText
             }
-            shortDescription
-          }
-
-          question_answers {
-            question
-            answer
           }
           iconTitleSubtitle {
             Title
@@ -77,16 +75,30 @@ export const CONTACT_QUERY = gql`
           boxesText {
             content
           }
-        }
-        ... on ComponentSectionsIntroSinglePage {
-          title
-          richTextDescription
-          mediaIntroSinglePage {
-            url
-            alternativeText
+          timelineSection {
+            sideText
+            timelineAlign
+            timelineStep {
+              stepNumber
+              title
+              description
+            }
           }
-          textCols {
-            richText
+          price_packages {
+            title
+            subtitle
+            price
+            features
+            cta {
+              label
+              url
+              style
+            }
+          }
+          services {
+            name
+            descriptionRichText
+            icon
           }
         }
         ... on ComponentCommonSectionhalfbackground {
@@ -104,24 +116,43 @@ export const CONTACT_QUERY = gql`
             buttonTwoLabel
             buttonTwoLink
           }
+          iconTitleSubtitle {
+            Title
+            subtitle
+            iconImg {
+              alternativeText
+              url
+            }
+            iconName
+          }
+          boxesText {
+            content
+          }
+          price_packages {
+            title
+            subtitle
+            price
+            features
+            cta {
+              label
+              url
+              style
+            }
+          }
+
           services {
             name
             descriptionRichText
             icon
           }
-          team_members {
-            firstName
-            lastName
-            jobPosition
-            email
-            linkedinAbsoluteUrl
-            personalWebsiteAbsoluteUrl
-            githubAsboluteUrl
-            profilePic {
-              url
-              alternativeText
+          timelineSection {
+            sideText
+            timelineAlign
+            timelineStep {
+              stepNumber
+              title
+              description
             }
-            shortDescription
           }
         }
       }

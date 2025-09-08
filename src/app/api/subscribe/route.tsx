@@ -1,3 +1,4 @@
+import { error } from "console";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
@@ -16,20 +17,21 @@ export async function POST(req: NextRequest) {
     const response = await fetch(brevoUrl, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        accept: "application/json",
+        "content-type": "application/json",
         "api-key": brevoApiKey,
       },
       body: JSON.stringify({
         email: email,
         listIds: [parseInt(brevoListId)],
-        updateEnabled: true, // Update existing contacts
+        updateEnabled: false, // Update existing contacts
       }),
     });
 
     const data = await response.json();
 
     if (!response.ok) {
-      console.error("Brevo API error:", data);
+      console.error("Brevo API error", data);
       return NextResponse.json({ message: "Brevo API Error" }, { status: 500 });
     }
 

@@ -2,15 +2,16 @@ import React from "react";
 import Navbar from "../components/Layout/Navbar";
 import Footer from "../components/Layout/Footer";
 import HeroBanner from "../components/Hero/Hero";
-import WeBanner from "../components/WeBanner/WeBanner";
 import Section from "../components/Sections/Section";
 import SectionHalfBackground from "../components/Sections/SectionHalfBackground";
 import TextImageButtons from "../components/TextImageButtons/TextImageButtons";
 import CtaText from "../components/CtaText/CtaText";
+import WhatWeDoSection from "../components/WhatWeDoSection/WhatWeDoSection";
 import TeamSection from "../components/TeamSection/TeamSection";
 import ServiceBox from "../components/ServicesBox/ServiceBox";
 import BoxesText from "../components/BoxesText/BoxesText";
 import FaqSection from "../components/FaqSection/FaqSection";
+import CollaboratorsSection from "../components/CollaboratorsSection/CollaboratorsSection";
 import CtaBig from "../components/CtaBig/CtaBig";
 import Newsletter from "../components/Newsletter/Newsletter";
 import LoadingError from "../components/Errors/LoadingError";
@@ -51,10 +52,11 @@ function renderSection(
 ) {
   const componentMap: Record<string, any> = {
     TextImageButtonsComponent: TextImageButtons,
-    serviceList: ServiceBox,
-    teamMemberList: TeamSection,
+    services: ServiceBox,
+    collaborators: CollaboratorsSection,
+    team_members: TeamSection,
     boxesText: BoxesText,
-    faqList: FaqSection,
+    question_answers: FaqSection,
   };
   return renderMultipleComponents({
     section,
@@ -88,8 +90,8 @@ export default async function Page() {
             case "ComponentStaticComponentHero":
               return <HeroBanner {...section} key={index} />;
 
-            case "ComponentStaticComponentWeStatment":
-              return <WeBanner {...section} key={index} />;
+            case "ComponentStaticComponentWhatWeDo":
+              return <WhatWeDoSection {...section} key={index} />;
 
             case "ComponentCommonNewsletter":
               return <Newsletter {...section} key={index} />;

@@ -5,14 +5,6 @@ export const ABOUTUS_QUERY = gql`
     pages(filters: { documentId: { eq: "v5mtxcrqht85b8xve4lcfhn3" } }) {
       pageTitle
       pageDescription
-      SEO {
-        seoTitle
-        seoDescription
-        seoPreview {
-          url
-          alternativeText
-        }
-      }
       internalBannerMedia {
         alternativeText
         url
@@ -31,9 +23,15 @@ export const ABOUTUS_QUERY = gql`
           buttonCtaOneLabel
           buttonCtaOneLink
         }
+        ... on ComponentCommonNewsletter {
+          buttonLabel
+          title
+          subtitle
+          footnote
+        }
         ... on ComponentCommonSection {
           sectionTitle
-          sectionSubtitle
+          subtitle
           backgroundColor
           titleColor
           descriptionColor
@@ -51,35 +49,31 @@ export const ABOUTUS_QUERY = gql`
             buttonOneLink
             buttonTwoLabel
             buttonTwoLink
-            textColor
           }
-          teamMemberList {
-            team_members {
-              firstName
-              lastName
-              jobPosition
-              email
-              linkedinAbsoluteUrl
-              personalWebsiteAbsoluteUrl
-              githubAsboluteUrl
-              profilePic {
-                url
-                alternativeText
-              }
-              shortDescription
+          team_members {
+            firstName
+            lastName
+            jobPosition
+            email
+            linkedinAbsoluteUrl
+            personalWebsiteAbsoluteUrl
+            githubAsboluteUrl
+            profilePic {
+              url
+              alternativeText
             }
+            shortDescription
           }
-          collaboratorList {
-            collaborators {
-              fullName
-              jobPosition
-              email
-              linkedinAbsoluteUrl
-              personalWebsiteAbsoluteUrl
-              profilePic {
-                url
-                alternativeText
-              }
+
+          collaborators {
+            fullName
+            jobPosition
+            email
+            linkedinAbsoluteUrl
+            personalWebsiteAbsoluteUrl
+            profilePic {
+              url
+              alternativeText
             }
           }
         }
@@ -93,12 +87,6 @@ export const ABOUTUS_QUERY = gql`
           textCols {
             richText
           }
-        }
-        ... on ComponentCommonNewsletter {
-          buttonLabel
-          title
-          subtitle
-          footnote
         }
       }
     }

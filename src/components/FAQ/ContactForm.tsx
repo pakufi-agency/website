@@ -119,7 +119,7 @@ const ContactForm: React.FC = () => {
                   onChange={handleCheckboxChange}
                   id="flexCheckDefault"
                 />
-                <label className="form-check-label" htmlFor="flexCheckDefault">
+                {/* <label className="form-check-label" htmlFor="flexCheckDefault">
                   By checking this, you agree to our{" "}
                   <Link href="/terms-conditions" >
                     Terms
@@ -129,7 +129,7 @@ const ContactForm: React.FC = () => {
                     Privacy policy
                   </Link>
                   .
-                </label>
+                </label> */}
               </div>
             </div>
 

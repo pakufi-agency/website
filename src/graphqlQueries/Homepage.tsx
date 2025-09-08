@@ -16,24 +16,33 @@ export const HOMEPAGE_QUERY = gql`
         ... on ComponentStaticComponentHero {
           id
           title
-          ctaLabel
-          ctaLink
           descriptionRichText
           mediaHero {
             alternativeText
             url
           }
-        }
-
-        ... on ComponentStaticComponentWeStatment {
-          sectionTitle
-          backgroundImage {
+          Button {
+            label
             url
-            alternativeText
           }
-          statmentOne
-          statmentThree
-          statmentTwo
+        }
+        ... on ComponentStaticComponentWhatWeDo {
+          title
+          pakufiOffers {
+            cardStyle
+            title
+            content
+            button {
+              label
+              url
+              style
+            }
+            iconAsText
+            iconAsImg {
+              url
+              alternativeText
+            }
+          }
         }
         ... on ComponentCommonCta {
           title
@@ -56,7 +65,7 @@ export const HOMEPAGE_QUERY = gql`
         }
         ... on ComponentCommonSection {
           sectionTitle
-          sectionSubtitle
+          subtitle
           backgroundColor
           titleColor
           descriptionColor
@@ -75,39 +84,41 @@ export const HOMEPAGE_QUERY = gql`
             buttonTwoLabel
             buttonTwoLink
             textColor
+            buttonStyle
           }
-          serviceList {
-            services {
-              name
-              subtitle
-              descriptionRichText
-              icon
+          services {
+            name
+            subtitle
+            descriptionRichText
+            icon
+          }
+          team_members {
+            firstName
+            lastName
+            jobPosition
+            email
+            linkedinAbsoluteUrl
+            personalWebsiteAbsoluteUrl
+            githubAsboluteUrl
+            profilePic {
+              url
+              alternativeText
+            }
+            shortDescription
+          }
+          collaborators {
+            fullName
+            jobPosition
+            email
+            linkedinAbsoluteUrl
+            profilePic {
+              alternativeText
+              url
             }
           }
-          teamMemberList {
-            team_members {
-              firstName
-              lastName
-              jobPosition
-              email
-              linkedinAbsoluteUrl
-              personalWebsiteAbsoluteUrl
-              githubAsboluteUrl
-              profilePic {
-                url
-                alternativeText
-              }
-              shortDescription
-            }
-          }
-          faqList {
-            question_answers {
-              question
-              answer
-            }
-          }
-          boxesText {
-            content
+          question_answers {
+            question
+            answer
           }
         }
         ... on ComponentCommonSectionhalfbackground {
@@ -129,36 +140,6 @@ export const HOMEPAGE_QUERY = gql`
             buttonTwoLabel
             buttonTwoLink
             textColor
-          }
-          serviceList {
-            services {
-              name
-              subtitle
-              descriptionRichText
-              icon
-            }
-          }
-          teamMemberList {
-            team_members {
-              firstName
-              lastName
-              jobPosition
-              email
-              linkedinAbsoluteUrl
-              personalWebsiteAbsoluteUrl
-              githubAsboluteUrl
-              profilePic {
-                url
-                alternativeText
-              }
-              shortDescription
-            }
-          }
-          faqList {
-            question_answers {
-              question
-              answer
-            }
           }
         }
       }
