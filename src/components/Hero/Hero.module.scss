@@ -4,7 +4,8 @@
     position: relative;
     padding: 150px 0 80px;
     z-index: 0;
-    height: 97vh;
+    min-height: 100vh;
+    height: auto; 
     background: $river-bed-green;
     background: $gradient-hero;
     color: $white;
@@ -24,7 +25,7 @@
     }
 }
 
-.contentContainer {
+.flexContentContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -97,7 +98,8 @@
             top: 185px;
             bottom: 150px;
         }
-        height: 115vh;
+        min-height: 100vh;
+        height: auto;
 
         &::after {
             background-color: $river-bed-green;
@@ -105,7 +107,7 @@
         
     }
 
-    .contentContainer {
+    .flexContentContainer {
         display: flex;
         flex-direction: row;
         text-align: left;
@@ -154,13 +156,12 @@
             top: 185px;
             bottom: 150px;
         }
-        height: 115vh;
     }
 
-    .contentContainer {
+    .flexContentContainer {
         align-items: flex-start;
         .bannerContent {
-            margin-top: 50px;
+            margin-top: -50px;
         }
 
         .bannerImage {
@@ -170,15 +171,20 @@
             transform: scale(2.5);
         }
     }
+
+    :global(.homepage-page) .flexContentContainer .bannerContent {
+        margin-top: 50px;
+    }
 }
 
 // Big screen
 @media only screen and (min-width: 1550px ) {
     .heroBanner {
-        height: 97vh;
+        min-height: 100vh;
+        height: auto;
     }
 
-    .contentContainer {
+    .flexContentContainer {
         .bannerImage {
             justify-content: center;
             align-items: center;

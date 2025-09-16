@@ -74,35 +74,37 @@ export default async function Page() {
   }
 
   return (
-    <MobileMenuProvider>
-      <Navbar />
+    <div className="tech-agency-page">
+      <MobileMenuProvider>
+        <Navbar />
 
-      {pageData.sections &&
-        pageData.sections.map((section: any, index: number) => {
-          switch (section.__typename) {
-            case "ComponentStaticComponentHero":
-              return <HeroBanner {...section} key={index} />;
+        {pageData.sections &&
+          pageData.sections.map((section: any, index: number) => {
+            switch (section.__typename) {
+              case "ComponentStaticComponentHero":
+                return <HeroBanner {...section} key={index} />;
 
-            case "ComponentCommonSection":
-              return renderSection(section, Section);
+              case "ComponentCommonSection":
+                return renderSection(section, Section);
 
-            case "ComponentCommonSectionhalfbackground":
-              return renderSection(section, SectionHalfBackground);
+              case "ComponentCommonSectionhalfbackground":
+                return renderSection(section, SectionHalfBackground);
 
-            case "ComponentCommonNewsletter":
-              return <Newsletter {...section} key={index} />;
+              case "ComponentCommonNewsletter":
+                return <Newsletter {...section} key={index} />;
 
-            case "ComponentCommonCta":
-              if (!section.isBig) {
-                return <CtaText {...section} key={index} />;
-              } else {
-                return <CtaBig {...section} key={index} />;
-              }
-            default:
-              return null;
-          }
-        })}
-      <Footer />
-    </MobileMenuProvider>
+              case "ComponentCommonCta":
+                if (!section.isBig) {
+                  return <CtaText {...section} key={index} />;
+                } else {
+                  return <CtaBig {...section} key={index} />;
+                }
+              default:
+                return null;
+            }
+          })}
+        <Footer />
+      </MobileMenuProvider>
+    </div>
   );
 }

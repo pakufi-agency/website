@@ -32,47 +32,49 @@ const Hero: React.FC<HeroProps> = ({
     <>
       <div className={`${styles.heroBanner}`}>
         <div className={`container ${styles.contentContainer}`}>
-          <div className={styles.bannerContent}>
-            <span
-              data-aos="fade-up"
-              data-aos-delay="100"
-              data-aos-duration="500"
-              data-aos-once="true"
-              className={styles.smallTitle}
-            >
-              {title}
-            </span>
+          <div className={`${styles.flexContentContainer}`}>
+            <div className={styles.bannerContent}>
+              <span
+                data-aos="fade-up"
+                data-aos-delay="100"
+                data-aos-duration="500"
+                data-aos-once="true"
+                className={styles.smallTitle}
+              >
+                {title}
+              </span>
 
-            <div
-              className={styles.description}
-              data-aos="fade-up"
-              data-aos-delay="300"
-              data-aos-duration="500"
-              data-aos-once="true"
-            >
-              <BlockRendererClient content={descriptionRichText} />
+              <div
+                className={styles.description}
+                data-aos="fade-up"
+                data-aos-delay="300"
+                data-aos-duration="500"
+                data-aos-once="true"
+              >
+                <BlockRendererClient content={descriptionRichText} />
+              </div>
+
+              {Button.map((button, index) => (
+                <span key={index}>
+                  <ButtonLink
+                    href={button.url}
+                    label={button.label}
+                    pathname={pathname}
+                    className={`btn button-pakufi-dark ${styles.button}`}
+                  />
+                </span>
+              ))}
             </div>
 
-            {Button.map((button, index) => (
-              <span key={index}>
-                <ButtonLink
-                  href={button.url}
-                  label={button.label}
-                  pathname={pathname}
-                  className={`btn button-pakufi-dark ${styles.button}`}
-                />
-              </span>
-            ))}
-          </div>
-
-          <div className={styles.bannerImage}>
-            <Image
-              src={getStrapiImageUrl(mediaHero.url)}
-              alt={mediaHero.alternativeText}
-              width={821}
-              height={820}
-              className={styles.Image}
-            />
+            <div className={styles.bannerImage}>
+              <Image
+                src={getStrapiImageUrl(mediaHero.url)}
+                alt={mediaHero.alternativeText}
+                width={821}
+                height={820}
+                className={styles.Image}
+              />
+            </div>
           </div>
 
           <div className={`shape3 ${styles.triangleShape}`}>
