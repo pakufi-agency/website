@@ -1,4 +1,5 @@
 @use './variables.scss' as *;
+@use './mixin.scss' as *;
 
 @font-face {
     font-family: "Grafita Normal";
@@ -37,11 +38,6 @@
     --gradient1: linear-gradient(0deg, var(--river-bed-green-rgba) 0%, var(--river-bed-green-rgba) 65%, var(--navy-blue-rgba) 100%);
     --gradient2: linear-gradient(0deg, var(--river-bed-green-rgba) 0%, var(--river-bed-green-rgba) 45%, var(--navy-blue-rgba) 100%);
     --gradient3: linear-gradient(150deg, var(--primary-color) 0%, var(--mint-green) 50%, var(--mint-green) 100%);
-}
-
-// MIXINS
-@mixin transition($property: all, $duration: 0.3s, $easing: ease) {
-  transition: $property $duration $easing;
 }
 
 html {

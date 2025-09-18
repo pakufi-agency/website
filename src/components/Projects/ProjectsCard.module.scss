@@ -1,0 +1,121 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixin.scss' as *;
+
+.projectsSection {
+  padding: 80px 0 50px;
+  position: relative;
+}
+
+.projectCard {
+    position: relative;
+    background: $white;
+    overflow: hidden;
+    margin-bottom: 30px;
+    @include transition(all, 0.3s, ease);
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #23bdb8 0%, #43e794 100%);
+        transition: 0.5s;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .projectImage {
+        border-bottom: 1px solid $white-eeeeee;
+    }
+
+    .icon {
+        position: absolute;
+        border-radius: 50%;
+        top: 0;
+        right: 25px;
+        background: #ffffff;
+        width: 45px;
+        text-align: center;
+        height: 45px;
+        line-height: 42px;
+        opacity: 0;
+        visibility: hidden;
+
+        @include transition();
+        svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        &:hover {
+            background: $secondary-gradient;
+            transform: scale(1.1);
+        }
+    }
+
+    .projectContent {
+        position: absolute;
+        bottom: -60px;
+        left: 0;
+        padding: 20px;
+        transition: 0.5s;
+        opacity: 0;
+        visibility: hidden;
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: $white;
+        }
+
+        a {
+            @include transition(color, 0.3s, ease);
+            }
+
+        p {
+            color: $grey-5e5e5e;
+            font-size: 1rem;
+            line-height: 1.6;
+            @include transition(color, 0.3s, ease);
+        }
+    }
+}
+
+
+.projectCard {
+    &:hover {
+    transform: translateY(-8px) scale(1.02);
+    background: $primary-gradient;
+
+    &::before {
+      opacity: 0.9;
+      visibility: visible;
+      z-index: 1;
+    }
+
+    & .icon {
+      opacity: 1;
+      visibility: visible;
+      top: 25px;
+      z-index: 5;
+    }
+    
+    .projectContent {
+      opacity: 1;
+      visibility: visible;
+      bottom: 0;
+      z-index: 5;
+      p {
+        color: $white;
+      }
+      
+      h3 a {
+        color: $white;
+      }
+    }
+  }
+
+}

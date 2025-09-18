@@ -21,6 +21,8 @@ import { generatePageMetadata } from "../utils/seo";
 import MobileMenuProvider from "../context/MobileMenuProvider";
 import { HOMEPAGE_QUERY } from "../graphqlQueries/Homepage";
 
+import ProjectsCard from "../components/Projects/ProjectsCard";
+
 import "../styles/common.scss";
 
 interface SectionProps {
@@ -92,7 +94,8 @@ export default async function Page() {
                 return <HeroBanner {...section} key={index} />;
 
               case "ComponentStaticComponentWhatWeDo":
-                return <WhatWeDoSection {...section} key={index} />;
+                return <ProjectsCard />;
+              // return <WhatWeDoSection {...section} key={index} />;
 
               case "ComponentCommonNewsletter":
                 return <Newsletter {...section} key={index} />;
