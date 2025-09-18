@@ -79,11 +79,16 @@ export default function BlockRendererClient({
                 let formatted: React.ReactNode = part;
 
                 // Preserve formatting
-                if (child.props.bold) formatted = <strong>{formatted}</strong>;
-                if (child.props.italic) formatted = <em>{formatted}</em>;
-                if (child.props.underline) formatted = <u>{formatted}</u>;
-                if (child.props.strikethrough) formatted = <s>{formatted}</s>;
-                if (child.props.code) formatted = <code>{formatted}</code>;
+                if (child.props.bold)
+                  formatted = <strong key={`b-${i}-${j}`}>{formatted}</strong>;
+                if (child.props.italic)
+                  formatted = <em key={`i-${i}-${j}`}>{formatted}</em>;
+                if (child.props.underline)
+                  formatted = <u key={`u-${i}-${j}`}>{formatted}</u>;
+                if (child.props.strikethrough)
+                  formatted = <s key={`s-${i}-${j}`}>{formatted}</s>;
+                if (child.props.code)
+                  formatted = <code key={`c-${i}-${j}`}>{formatted}</code>;
 
                 return j < parts.length - 1
                   ? [formatted, <br key={`${i}-${j}`} />]
