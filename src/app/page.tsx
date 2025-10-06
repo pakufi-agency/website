@@ -22,6 +22,7 @@ import MobileMenuProvider from "../context/MobileMenuProvider";
 import { HOMEPAGE_QUERY } from "../graphqlQueries/Homepage";
 
 import BlogGrid from "../components/Blog/BlogGrid";
+import BlogDetails from "../components/Blog/BlogDetails";
 
 import "../styles/common.scss";
 
@@ -95,7 +96,7 @@ export default async function Page() {
 
               case "ComponentStaticComponentWhatWeDo":
                 // return <WhatWeDoSection {...section} key={index} />;
-                return <BlogGrid />;
+                return <BlogDetails />;
 
               case "ComponentCommonNewsletter":
                 return <Newsletter {...section} key={index} />;

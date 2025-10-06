@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Pagination from "../Pagination/Pagination";
 
-// import BlogSidebar from "../Blog/BlogSidebar";
+// import BlogSidebar from "./BlogSidebar/BlogSidebar";
 
 import { blogMockData } from "./blogMockData";
 import styles from "./BlogGrid.module.scss";
@@ -81,7 +81,12 @@ const BlogWithRightSidebar: React.FC = () => {
           </div>
 
           {/* <div className="col-lg-4 col-md-12">
-            <BlogSidebar />
+            <BlogSidebar
+              showSearch={true}
+              showPopularPosts={true}
+              showCategories={false}
+              showTags={false}
+            />
           </div> */}
         </div>
       </div>
