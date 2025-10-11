@@ -100,6 +100,16 @@ export const TECHAGENCY_QUERY = gql`
             descriptionRichText
             icon
           }
+          projects {
+            coverPicture {
+              alternativeText
+              url
+            }
+            metaDescription
+            description
+            slug
+            title
+          }
         }
         ... on ComponentCommonSectionhalfbackground {
           sectionTitle

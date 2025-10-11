@@ -1,93 +1,135 @@
 @use '../../styles/variables.scss' as *;
 @use '../../styles/mixin.scss' as *;
 
-
 .projectDetails {
-  padding: 80px 0;
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.6s ease;
+  overflow-x: hidden;
 
   &.animate {
     opacity: 1;
     transform: translateY(0);
   }
-}
 
-.imageWrapper {
-  margin-bottom: 30px;
-  border-radius: 15px;
-  overflow: hidden;
-  @include card-shadow();
+  .contentContainer {
+    display: flex;
+    flex-direction: column; 
+    gap: 2rem;
 
-  img {
-    border-radius: 15px;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-}
-
-.description {
-  h3 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: $primary-color;
+    @media (min-width: 992px) {
+      flex-direction: row; 
+      align-items: flex-start;
+    }
   }
 
-  p {
-    margin-bottom: 20px;
-    color: $grey-5e5e5e;
-    font-size: 1.1rem;
-    line-height: 1.7;
-  }
-}
+  .description {
+    flex: 1; 
+    @media (min-width: 992px) {
+      flex: 0 0 33.33%;
+      max-width: 33.33%;
+    }
 
-.infoGrid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 30px;
-}
+    h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: $primary-color;
+    }
 
-.infoBox {
-  flex: 1 1 200px;
-  background: $white;
-  border-radius: 12px;
-  padding: 20px;
-  @include card-shadow(0.08);
-
-  h4 {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: $primary-color;
+    p {
+      margin-bottom: 20px;
+      color: $grey-5e5e5e;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
   }
 
-  p {
-    font-size: 0.95rem;
-    color: $grey-5e5e5e;
+  .images {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+    justify-items: center;
+
+    @media (min-width: 992px) {
+      flex: 0 0 66.66%;
+      max-width: 66.66%;
+      grid-template-columns: repeat(2, 1fr); 
+      justify-items: stretch;
+    }
+
+    &:has(.imageWrapper:only-child) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+
+    .imageWrapper {
+      max-width: 70%;
+      margin: 0 auto;
+    }
+  }
   }
 
-  .btn {
-    margin-top: 10px;
+  .imageWrapper {
+    margin-bottom: 30px;
+    overflow: hidden;
+    @include card-shadow();
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
   }
-}
 
-.socialLinks {
-  list-style: none;
-  display: flex;
-  gap: 12px;
-  padding: 0;
+  .infoGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+  }
 
-  li a {
-    color: $primary-color;
-    font-size: 1.3rem;
-    transition: color 0.3s ease;
+  .infoBox {
+    flex: 1 1 200px;
+    background: $white;
+    padding: 20px;
+    @include card-shadow(0.08);
 
-    &:hover {
-      color: $secondary-color;
+    h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: $primary-color;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: $grey-5e5e5e;
+    }
+
+    .btn {
+      margin-top: 10px;
+    }
+  }
+
+  .livePreview {
+    display: flex;
+    align-items: center;
+  }
+
+  .socialLinks {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    padding: 0;
+
+    li a {
+      color: $primary-color;
+      font-size: 1.3rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $secondary-color;
+      }
     }
   }
 }

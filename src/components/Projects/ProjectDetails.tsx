@@ -2,54 +2,54 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import * as Icon from "react-feather";
 import styles from "./ProjectDetails.module.scss";
+import { Link, ExternalLink } from "react-feather";
+import { getStrapiImageUrl } from "../../utils/utils";
+import BlockRendererClient from "../BlockRendererClient";
+import { type BlocksContent } from "@strapi/blocks-react-renderer";
+import { ButtonLink } from "../ButtonLink";
+import { usePathname } from "next/navigation";
 
-// Mock Data (replace later with Strapi)
-const project = {
-  title: "Network Marketing",
-  description: [
-    `Lorem ipsum dolor sit amet, conse cte tuer adipiscing elit,
-     sed diam no nu m nibhie eui smod. Facil isis atve eros et accumsan etiu sto
-     odi dignis sim qui blandit praesen lup ta de er...`,
-    `Lorem ipsum dolor sit amet, conse cte tuer adipiscing elit,
-     sed diam no nu m nibhie eui smod. Facil isis atve eros et accumsan etiu sto
-     odi dignis sim qui blandit praesen lup ta de er...`,
-  ],
-  images: [
-    "/images/legacy/works-image/works-image1.jpg",
-    "/images/legacy/works-image/works-image2.jpg",
-    "/images/legacy/works-image/works-image3.jpg",
-    "/images/legacy/works-image/works-image4.jpg",
-  ],
-  info: {
-    client: "John Doe",
-    category: "Portfolio, Personal",
-    date: "February 28, 2022",
-    shareLinks: {
-      facebook: "https://www.facebook.com/",
-      twitter: "https://www.twitter.com/",
-      instagram: "https://www.instagram.com/",
-      linkedin: "https://www.linkedin.com/",
-    },
-    livePreview: "#",
-  },
-};
+export interface ProjectDetailsProps {
+  title: string;
+  description: BlocksContent;
+  media: { url: string; alternativeText: string }[];
+  client: { label: string; url: string };
+  livePreviewUrl?: string | null;
+  projectDate: string;
+  coverPicture?: { url: string; alternativeText: string } | null;
+}
 
-const ProjectDetails: React.FC = () => {
+const ProjectDetails: React.FC<ProjectDetailsProps> = ({
+  title,
+  description,
+  media,
+  client,
+  livePreviewUrl,
+  projectDate,
+  coverPicture,
+}) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const pathname = usePathname();
+
+  console.log("ProjectDetails media:", media);
 
   useEffect(() => {
+    if (typeof window === "undefined" || !sectionRef.current) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          observer.disconnect(); // stop observing once visible
         }
       },
       { threshold: 0.1 }
     );
-    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    observer.observe(sectionRef.current);
+
     return () => observer.disconnect();
   }, []);
 
@@ -58,86 +58,59 @@ const ProjectDetails: React.FC = () => {
       ref={sectionRef}
       className={`${styles.projectDetails} ${isVisible ? styles.animate : ""}`}
     >
-      <div className="container">
-        <div className="row">
-          {project.images.map((img, idx) => (
-            <div key={idx} className="col-lg-6 col-md-6 col-sm-6">
-              <div className={styles.imageWrapper}>
-                <Image src={img} alt={project.title} width={640} height={550} />
-              </div>
+      <div className={`container`}>
+        <div className={`${styles.contentContainer}`}>
+          <div className={styles.description}>
+            <h3>{title}</h3>
+            <div>
+              <BlockRendererClient content={description} />
             </div>
-          ))}
 
-          <div className="col-lg-12">
-            <div className={styles.description}>
-              <h3>{project.title}</h3>
-
-              {project.description.map((para, i) => (
-                <p key={i}>{para}</p>
-              ))}
-
-              <div className={styles.infoGrid}>
-                <div className={styles.infoBox}>
-                  <h4>Happy Client</h4>
-                  <p>{project.info.client}</p>
-                </div>
-
-                <div className={styles.infoBox}>
-                  <h4>Category</h4>
-                  <p>{project.info.category}</p>
-                </div>
-
-                <div className={styles.infoBox}>
-                  <h4>Date</h4>
-                  <p>{project.info.date}</p>
-                </div>
-
-                <div className={styles.infoBox}>
-                  <h4>Share</h4>
-                  <ul className={styles.socialLinks}>
-                    <li>
-                      <a
-                        href={project.info.shareLinks.facebook}
-                        target="_blank"
-                      >
-                        <Icon.Facebook />
-                      </a>
-                    </li>
-                    <li>
-                      <a href={project.info.shareLinks.twitter} target="_blank">
-                        <Icon.Twitter />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href={project.info.shareLinks.instagram}
-                        target="_blank"
-                      >
-                        <Icon.Instagram />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href={project.info.shareLinks.linkedin}
-                        target="_blank"
-                      >
-                        <Icon.Linkedin />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className={styles.infoBox}>
-                  <a
-                    href={project.info.livePreview}
-                    className="btn btn-primary"
-                    target="_blank"
-                  >
-                    Live Preview
-                  </a>
-                </div>
+            <div className={styles.infoGrid}>
+              <div className={styles.infoBox}>
+                <h4>Client</h4>
+                <Link></Link>
+                {` `}
+                <ButtonLink
+                  href={client.url}
+                  label={client.label}
+                  pathname={pathname}
+                />
               </div>
+
+              <div className={styles.infoBox}>
+                <h4>Year</h4>
+                <p>{projectDate || "—"}</p>
+              </div>
+
+              {livePreviewUrl && (
+                <div className={`${styles.infoBox} ${styles.livePreview}`}>
+                  <h4>
+                    <ButtonLink
+                      href={livePreviewUrl}
+                      label="Live Preview"
+                      pathname={pathname}
+                      className={`btn btn-primary `}
+                    />
+                  </h4>
+                </div>
+              )}
             </div>
+          </div>
+
+          <div className={styles.images}>
+            {(media?.length ? media : coverPicture ? [coverPicture] : []).map(
+              (img, idx) => (
+                <div key={idx} className={styles.imageWrapper}>
+                  <Image
+                    src={getStrapiImageUrl(img.url)}
+                    alt={img.alternativeText || "Project image"}
+                    width={640}
+                    height={550}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>

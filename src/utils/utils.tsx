@@ -15,20 +15,21 @@ export const getStrapiImageUrl = (url: string) => {
  * @param {Record<string, any>} variables - The variables to pass to the query.
  * @param {string} pageType - The type of page being fetched.
  */
-interface StrapiPageDataOptions {
+interface StrapiDataOptions {
   query: any;
   variables?: Record<string, any>;
   pageType: string;
 }
 
 export async function getStrapiPageData<T>(
-  options: StrapiPageDataOptions
+  options: StrapiDataOptions
 ): Promise<T | null> {
   const client = createApolloClient();
 
   try {
     const { data } = await client.query({
       query: options.query,
+      variables: options.variables,
       fetchPolicy: "cache-first",
     });
 
@@ -38,6 +39,41 @@ export async function getStrapiPageData<T>(
     }
 
     return data.pages[0] as T;
+  } catch (error) {
+    console.error(`Error fetching ${options.pageType} data:`, error);
+    return null;
+  }
+}
+
+/**
+ * Fetches data from Strapi using a GraphQL query.
+ * This function can be used to retrieve any Strapi collection or single type,
+ * optionally filtered by variables such as slug or ID.
+ *
+ * @template T - The expected return data type.
+ * @param {any} query - The GraphQL query used to fetch the data.
+ * @param {Record<string, any>} [variables={}] - Optional query variables to filter results.
+ * @param {string} [dataType="data"] - The root field key (e.g., "projects" or "pages") expected in the response.
+ * @returns {Promise<T | null>} The fetched data cast to type T, or null if not found or on error.
+ */
+export async function getStrapiData<T>(
+  options: StrapiDataOptions
+): Promise<T | null> {
+  const client = createApolloClient();
+
+  try {
+    const { data } = await client.query({
+      query: options.query,
+      variables: options.variables,
+      fetchPolicy: "network-only",
+    });
+
+    if (!data) {
+      console.warn(`${options.pageType} data is missing or invalid.`);
+      return null;
+    }
+
+    return data as T;
   } catch (error) {
     console.error(`Error fetching ${options.pageType} data:`, error);
     return null;
