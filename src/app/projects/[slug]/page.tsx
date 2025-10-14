@@ -51,7 +51,8 @@ interface Project {
     label: string;
     url: string;
   };
-  projectDate: string;
+  projectTypes: string;
+  services: string;
 }
 
 interface StrapiResponse<T> {
@@ -139,9 +140,10 @@ export default async function ProjectPage({ params }: { params: Params }) {
     description,
     media,
     client,
-    projectDate,
+    projectTypes,
     coverPicture,
     livePreviewUrl,
+    services,
   } = project;
 
   return (
@@ -152,7 +154,8 @@ export default async function ProjectPage({ params }: { params: Params }) {
           description={description}
           media={media}
           client={client}
-          projectDate={projectDate}
+          projectTypes={projectTypes}
+          services={services}
           coverPicture={coverPicture}
           livePreviewUrl={livePreviewUrl}
         />

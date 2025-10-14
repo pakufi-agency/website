@@ -14,6 +14,7 @@ export const PROJECTS_LIST_QUERY = gql`
         label
         url
       }
+      services
     }
   }
 `;
@@ -38,7 +39,8 @@ export const PROJECT_BY_SLUG_QUERY = gql`
         url
         alternativeText
       }
-      projectDate
+      services
+      projectTypes
     }
   }
 `;

@@ -5,15 +5,12 @@ import Link from "next/link";
 import * as Icon from "react-feather";
 import styles from "./ProjectsCard.module.scss";
 import { getStrapiImageUrl } from "@/utils/utils";
-import { type BlocksContent } from "@strapi/blocks-react-renderer";
-import BlockRendererClient from "../BlockRendererClient";
 
 interface ProjectsListProps {
   items: any[];
 }
 
 const ProjectsCard: React.FC<ProjectsListProps> = ({ items = [] }) => {
-  console.log(items);
   return (
     <section className={styles.projectsSection}>
       <div className="container">
@@ -38,8 +35,7 @@ const ProjectsCard: React.FC<ProjectsListProps> = ({ items = [] }) => {
 
                   <div className={styles.projectContent}>
                     <h3>{project.title}</h3>
-                    <p>{project.metaDescription}</p>
-                    {/* <BlockRendererClient content={project.description} /> */}
+                    {/* <p>{project.services}</p> */}
                   </div>
                 </div>
               </Link>

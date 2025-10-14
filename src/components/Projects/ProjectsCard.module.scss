@@ -28,6 +28,7 @@
 
     .projectImage {
         border-bottom: 1px solid $white-eeeeee;
+        width: 100%;
     }
 
     .icon {
@@ -63,6 +64,9 @@
         transition: 0.5s;
         opacity: 0;
         visibility: hidden;
+        display: flex;
+        align-content: flex-end;
+        flex-wrap: wrap;
 
         h3 {
             font-size: 1.4rem;
@@ -107,6 +111,7 @@
       opacity: 1;
       visibility: visible;
       bottom: 0;
+      top: 0;
       z-index: 5;
       p {
         color: $white;
@@ -118,4 +123,13 @@
     }
   }
 
+}
+
+@media (min-width: 771px) {
+  .projectCard {
+    .projectImage {
+      height: 250px;
+      object-fit: contain;
+    }
+  }
 }

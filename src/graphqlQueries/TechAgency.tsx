@@ -36,12 +36,6 @@ export const TECHAGENCY_QUERY = gql`
           buttonCtaOneLabel
           buttonCtaOneLink
         }
-        ... on ComponentCommonNewsletter {
-          buttonLabel
-          title
-          subtitle
-          footnote
-        }
         ... on ComponentCommonSection {
           sectionTitle
           subtitle
@@ -58,10 +52,6 @@ export const TECHAGENCY_QUERY = gql`
             buttonOneLink
             buttonTwoLabel
             buttonTwoLink
-            media {
-              url
-              alternativeText
-            }
           }
           iconTitleSubtitle {
             Title
@@ -100,6 +90,7 @@ export const TECHAGENCY_QUERY = gql`
             descriptionRichText
             icon
           }
+
           projects {
             coverPicture {
               alternativeText
@@ -109,6 +100,7 @@ export const TECHAGENCY_QUERY = gql`
             description
             slug
             title
+            services
           }
         }
         ... on ComponentCommonSectionhalfbackground {

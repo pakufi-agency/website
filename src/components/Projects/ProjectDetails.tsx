@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import styles from "./ProjectDetails.module.scss";
-import { Link, ExternalLink } from "react-feather";
+import { Link } from "react-feather";
 import { getStrapiImageUrl } from "../../utils/utils";
 import BlockRendererClient from "../BlockRendererClient";
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
@@ -16,7 +16,8 @@ export interface ProjectDetailsProps {
   media: { url: string; alternativeText: string }[];
   client: { label: string; url: string };
   livePreviewUrl?: string | null;
-  projectDate: string;
+  services: string;
+  projectTypes: string;
   coverPicture?: { url: string; alternativeText: string } | null;
 }
 
@@ -26,7 +27,8 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
   media,
   client,
   livePreviewUrl,
-  projectDate,
+  services,
+  projectTypes,
   coverPicture,
 }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -76,25 +78,28 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
                   label={client.label}
                   pathname={pathname}
                 />
-              </div>
 
-              <div className={styles.infoBox}>
-                <h4>Year</h4>
-                <p>{projectDate || "—"}</p>
-              </div>
-
-              {livePreviewUrl && (
-                <div className={`${styles.infoBox} ${styles.livePreview}`}>
-                  <h4>
+                {livePreviewUrl && (
+                  <div className={styles.livePreview}>
                     <ButtonLink
                       href={livePreviewUrl}
                       label="Live Preview"
                       pathname={pathname}
                       className={`btn btn-primary `}
                     />
-                  </h4>
-                </div>
-              )}
+                  </div>
+                )}
+              </div>
+
+              <div className={styles.infoBox}>
+                <h4>Type</h4>
+                <p>{projectTypes || "—"}</p>
+              </div>
+
+              <div className={styles.infoBox}>
+                <h4>Services</h4>
+                <p>{services || "—"}</p>
+              </div>
             </div>
           </div>
 
