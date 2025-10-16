@@ -6,143 +6,148 @@ import * as Icon from "react-feather";
 import Image from "next/image";
 import BlockRendererClient from "../BlockRendererClient";
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
+import BlogSidebar from "./BlogSidebar/BlogSidebar";
 import styles from "./BlogDetails.module.scss";
 
 type BlogDetailsProps = {
-  articleImage: string;
-  entryMeta: {
-    date: string;
-    author: string;
+  title: string;
+  slug: string;
+  content: BlocksContent;
+  coverImage?: {
+    url: string;
+    alternativeText?: string;
   };
-  richText: BlocksContent;
-  tags: string[];
-  navigation: {
+  PostMetaInfo?: {
+    metaDescription?: string;
+    metaTitle?: string;
+    metaImage?: {
+      url: string;
+      alternativeText?: string;
+    };
+    readingTime?: string;
+  };
+  navigation?: {
     previous?: {
       title: string;
-      date: string;
-      image: string;
-      href: string;
+      slug: string;
+      coverImage?: { url: string };
+      publishedAt?: string;
     };
     next?: {
       title: string;
-      date: string;
-      image: string;
-      href: string;
+      slug: string;
+      coverImage?: { url: string };
+      publishedAt?: string;
     };
   };
 };
 
 const BlogDetailsContent: React.FC<BlogDetailsProps> = ({
-  articleImage,
-  entryMeta,
-  richText,
-  tags,
+  title,
+  content,
+  coverImage,
+  PostMetaInfo,
   navigation,
 }) => {
+  console.log("coverImage", coverImage);
   return (
     <div className={styles.blogDetailsArea}>
       <div className="container">
         <div className="row">
-          <div className="col-lg-8 col-md-12">
+          <div className={styles.articleContainer}>
+            {/* <div className="col-lg-8 col-md-12"> */}
             <article className={styles.blogDetailsDesc}>
-              {/* Article Image */}
-              <div className={styles.articleImage}>
-                <Image
-                  src={articleImage}
-                  alt="Blog Details"
-                  width={860}
-                  height={700}
-                />
-              </div>
+              <h1>{title}</h1>
 
-              {/* Entry Meta */}
-              <div className={styles.articleContent}>
+              {/* Reading time */}
+              {PostMetaInfo?.readingTime && (
                 <ul className={styles.entryMeta}>
                   <li>
-                    <Icon.Clock /> {entryMeta.date}
+                    <Icon.Clock /> {PostMetaInfo.readingTime}
                   </li>
                   <li>
-                    <Icon.User /> <Link href="#">{entryMeta.author}</Link>
+                    <Icon.User /> {"Pakufi Team"}
                   </li>
                 </ul>
+              )}
 
-                <BlockRendererClient content={richText} />
-              </div>
-
-              {/* Tags */}
-              {tags?.length > 0 && (
-                <div className={styles.articleFooter}>
-                  <div className={styles.articleTags}>
-                    {tags.map((tag) => (
-                      <Link key={tag} href="#">
-                        {tag}
-                      </Link>
-                    ))}
-                  </div>
+              {/* Cover image */}
+              {coverImage?.url && (
+                <div className={styles.articleImage}>
+                  <Image
+                    src={coverImage.url}
+                    alt={coverImage.alternativeText || title}
+                    width={860}
+                    height={700}
+                  />
                 </div>
               )}
 
+              {/* Content */}
+              <div className={styles.articleContent}>
+                <BlockRendererClient content={content} />
+              </div>
+
               {/* Post Navigation */}
               <div className={styles.postNavigation}>
-                {navigation.previous && (
+                {navigation?.previous && (
                   <div className={styles.prevLinkWrapper}>
-                    <div className={styles.infoPrevLinkWrapper}>
-                      <Link href={navigation.previous.href}>
-                        <span className={styles.imagePrev}>
+                    <Link href={`/blog/${navigation.previous.slug}`}>
+                      <span className={styles.imagePrev}>
+                        {navigation.previous.coverImage?.url && (
                           <Image
-                            src={navigation.previous.image}
-                            alt="Previous Post"
+                            src={navigation.previous.coverImage.url}
+                            alt={navigation.previous.title}
                             width={860}
                             height={700}
                           />
-                          <span className={styles.postNavTitle}>Prev</span>
+                        )}
+                        <span className={styles.postNavTitle}>Prev</span>
+                      </span>
+                      <span className={styles.prevLinkInfoWrapper}>
+                        <span className={styles.prevTitle}>
+                          {navigation.previous.title}
                         </span>
-                        <span className={styles.prevLinkInfoWrapper}>
-                          <span className={styles.prevTitle}>
-                            {navigation.previous.title}
+                        {navigation.previous.publishedAt && (
+                          <span className={styles.datePost}>
+                            {navigation.previous.publishedAt}
                           </span>
-                          <span className={styles.metaWrapper}>
-                            <span className={styles.datePost}>
-                              {navigation.previous.date}
-                            </span>
-                          </span>
-                        </span>
-                      </Link>
-                    </div>
+                        )}
+                      </span>
+                    </Link>
                   </div>
                 )}
 
-                {navigation.next && (
+                {navigation?.next && (
                   <div className={styles.nextLinkWrapper}>
-                    <div className={styles.infoNextLinkWrapper}>
-                      <Link href={navigation.next.href}>
-                        <span className={styles.nextLinkInfoWrapper}>
-                          <span className={styles.nextTitle}>
-                            {navigation.next.title}
-                          </span>
-                          <span className={styles.metaWrapper}>
-                            <span className={styles.datePost}>
-                              {navigation.next.date}
-                            </span>
-                          </span>
+                    <Link href={`/blog/${navigation.next.slug}`}>
+                      <span className={styles.nextLinkInfoWrapper}>
+                        <span className={styles.nextTitle}>
+                          {navigation.next.title}
                         </span>
-                        <span className={styles.imageNext}>
+                        {navigation.next.publishedAt && (
+                          <span className={styles.datePost}>
+                            {navigation.next.publishedAt}
+                          </span>
+                        )}
+                      </span>
+                      <span className={styles.imageNext}>
+                        {navigation.next.coverImage?.url && (
                           <Image
-                            src={navigation.next.image}
-                            alt="Next Post"
+                            src={navigation.next.coverImage.url}
+                            alt={navigation.next.title}
                             width={860}
                             height={700}
                           />
-                          <span className={styles.postNavTitle}>Next</span>
-                        </span>
-                      </Link>
-                    </div>
+                        )}
+                        <span className={styles.postNavTitle}>Next</span>
+                      </span>
+                    </Link>
                   </div>
                 )}
               </div>
             </article>
           </div>
-
           {/* <div className="col-lg-4 col-md-12">
             <BlogSidebar />
           </div> */}

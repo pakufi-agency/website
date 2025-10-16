@@ -1,3 +1,5 @@
+import { Url } from "url";
+
 export interface SinglePageResponse {
   slug: string;
   cta: {
