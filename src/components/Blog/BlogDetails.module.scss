@@ -1,5 +1,5 @@
-@use '../../styles/variables.scss' as *;
-@use '../../styles/mixin.scss' as *;
+@use "../../styles/variables.scss" as *;
+@use "../../styles/mixin.scss" as *;
 
 /* === BLOG DETAILS AREA === */
 .blogDetailsArea {
@@ -7,33 +7,40 @@
 }
 
 /* === ARTICLE STRUCTURE === */
+.articleContainer {
+  width: 100%;
+  margin: 0 auto;
+
+  @media (min-width: 992px) {
+    width: 80%;
+  }
+}
+
 .blogDetailsDesc {
   background: $white;
   @include card-shadow();
   padding: 20px;
-}
+  border-radius: 10px;
 
-.articleImage {
-  margin-bottom: 30px;
-  img {
-    width: 100%;
-    border-radius: 10px;
+  h1 {
+    font-weight: 700;
+    margin-bottom: 15px;
   }
-}
 
-.articleContent {
-  ul.entryMeta {
+  .entryMeta {
     padding-left: 0;
     list-style: none;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
 
     li {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
       font-size: 14px;
       color: $paragraph-color;
-      margin-right: 15px;
 
       svg {
         width: 14px;
@@ -48,6 +55,25 @@
       }
     }
   }
+}
+
+/* === ARTICLE IMAGE === */
+.articleImage {
+  margin-bottom: 30px;
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+  }
+}
+
+/* === ARTICLE CONTENT === */
+.articleContent {
+  p {
+    color: $paragraph-color;
+    line-height: 1.7;
+    margin-bottom: 15px;
+  }
 
   h2,
   h3 {
@@ -56,13 +82,7 @@
     margin-bottom: 15px;
   }
 
-  p {
-    color: $paragraph-color;
-    line-height: 1.7;
-    margin-bottom: 15px;
-  }
-
-  .blockquote {
+  blockquote {
     background: $bg-color-f7fafd;
     border-left: 3px solid $primary-color;
     padding: 20px;
@@ -78,46 +98,16 @@
     }
   }
 
-  .blockGallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 15px;
-    margin: 25px 0;
-    padding: 0;
-    list-style: none;
-
-    .blockGalleryItem {
-      figure {
-        margin: 0;
-        img {
-          border-radius: 10px;
-        }
-      }
-    }
-  }
-
-  .featuresList {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-
-    li {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 8px;
-      color: $paragraph-color;
-
-      svg {
-        color: $primary-color;
-      }
-    }
+  ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
   }
 }
 
 /* === ARTICLE FOOTER === */
 .articleFooter {
-  margin-top: 30px;
+  margin-top: 40px;
 
   .articleTags {
     display: flex;
@@ -144,7 +134,8 @@
 .postNavigation {
   display: flex;
   justify-content: space-between;
-  margin-top: 40px;
+  gap: 20px;
+  margin-top: 50px;
 
   .prevLinkWrapper,
   .nextLinkWrapper {
@@ -155,9 +146,11 @@
   .imageNext {
     position: relative;
     display: block;
+
     img {
       border-radius: 10px;
       width: 100%;
+      height: auto;
     }
 
     .postNavTitle {
@@ -172,12 +165,17 @@
     }
   }
 
+  .prevLinkInfoWrapper,
+  .nextLinkInfoWrapper {
+    display: block;
+    margin-top: 10px;
+  }
+
   .prevTitle,
   .nextTitle {
     font-weight: 600;
     color: $black-color;
     display: block;
-    margin-top: 10px;
   }
 
   .metaWrapper {
@@ -185,5 +183,3 @@
     color: $paragraph-color;
   }
 }
-
-
