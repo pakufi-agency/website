@@ -4,11 +4,14 @@ import React from "react";
 import SinglePageContainer from "../Layout/SinglePageContainer";
 import { ButtonLink } from "../ButtonLink";
 import { usePathname } from "next/navigation";
+import { defaultSinglePageResponse } from "../../types/types";
 
 const LoadingError = () => {
   const pathname = usePathname();
   return (
-    <SinglePageContainer>
+    <SinglePageContainer
+      singlePageData={{ singlePages: [defaultSinglePageResponse] }}
+    >
       <div style={{ textAlign: "center", padding: "80px 0" }}>
         <h1>Error Loading Page</h1>
         <p>

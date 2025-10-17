@@ -1,0 +1,69 @@
+@use '../../../styles/variables.scss' as *;
+
+.widgetSearch {
+    box-shadow: 0px 0px 29px 0px rgba(102, 102, 102, 0.1);
+    background-color: $white;
+    padding: 15px;
+
+    .searchForm {
+        position: relative;
+
+        .searchFormLabel {
+            display: block;
+            margin-bottom: 0;
+        }
+
+        .screenReadeText {
+            display: none;
+        }
+
+        .searchField {
+            background-color: transparent;
+            height: 50px;
+            padding: 6px 15px;
+            border: 1px solid $white-eeeeee;
+            width: 100%;
+            display: block;
+            outline: 0;
+            transition: $transition;
+
+            &:focus {
+                border-color: $primary-color;
+            }
+        }
+
+        .searchButton {
+            position: absolute;
+            right: 0;
+            outline: 0;
+            bottom: 0;
+            height: 50px;
+            width: 50px;
+            z-index: 1;
+            border: none;
+            cursor: pointer;
+            color: $white;
+            background-color: $primary-color;
+            transition: $transition;
+            font-size: 20px;
+
+            svg {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+                left: 0;
+                width: 20px;
+                margin: {
+                    left: auto;
+                    right: auto;
+                };
+            }
+
+            &:hover {
+                background-color: $secondary-color;
+                color: $white;
+            }
+        }
+    }
+}

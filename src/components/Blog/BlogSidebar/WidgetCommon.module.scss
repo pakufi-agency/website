@@ -1,0 +1,28 @@
+@use '../../../styles/variables.scss' as *;
+
+.widgetArea {
+  margin-top: 35px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  .widgetTitle {
+    border-bottom: 1px solid $white-eeeeee;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    position: relative;
+    font-weight: 600;
+    font-size: 19px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background: $primary-color;
+      bottom: -1px;
+      left: 0;
+      width: 50px;
+      height: 1px;
+    }
+  }
+}
