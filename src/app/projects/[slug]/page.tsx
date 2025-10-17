@@ -6,36 +6,12 @@ import {
   PROJECT_BY_SLUG_QUERY,
 } from "../../../graphqlQueries/Projects";
 import { SINGLE_PAGE_QUERY } from "../../../graphqlQueries/SinglePage";
-import { Url } from "url";
 import SinglePageContainer from "@/components/Layout/SinglePageContainer";
 import LoadingError from "@/components/Errors/LoadingError";
 import MobileMenuProvider from "../../../context/MobileMenuProvider";
 import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
-
-export interface SinglePageResponse {
-  slug: string;
-  cta: {
-    title: string;
-    description: string;
-    media: {
-      url: string;
-      alternativeText: string;
-    };
-    buttonCtaTwoLabel: string;
-    buttonCtaTwoLink: Url;
-    isBig: boolean;
-    buttonCtaOneLabel: string;
-    buttonCtaOneLink: Url;
-  };
-  newsletter: {
-    buttonLabel: string;
-    title: string;
-    subtitle: string;
-    footnote: string;
-  };
-}
-
+import { SinglePageResponse } from "../../../types/types";
 interface Project {
   title: string;
   slug: string;
