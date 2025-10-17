@@ -52,6 +52,7 @@ function renderSection(
     timelineSection: TimelineSection,
     projects: ProjectsCard,
   };
+
   return renderMultipleComponents({
     section,
     ComponentWrapper,
@@ -87,6 +88,7 @@ export default async function Page() {
                 return <HeroBanner {...section} key={index} />;
 
               case "ComponentCommonSection":
+                console.log("Rendering Section:", section);
                 return renderSection(section, Section);
 
               case "ComponentCommonSectionhalfbackground":

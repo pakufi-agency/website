@@ -11,6 +11,8 @@ interface ProjectsListProps {
 }
 
 const ProjectsCard: React.FC<ProjectsListProps> = ({ items = [] }) => {
+  console.log("ProjectCard item:", items);
+
   return (
     <section className={styles.projectsSection}>
       <div className="container">
