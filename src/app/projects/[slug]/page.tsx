@@ -12,7 +12,6 @@ import MobileMenuProvider from "../../../context/MobileMenuProvider";
 import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
 import { SinglePageResponse } from "../../../types/types";
-
 interface Project {
   title: string;
   slug: string;
