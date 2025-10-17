@@ -35,8 +35,6 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
   const [isVisible, setIsVisible] = useState(false);
   const pathname = usePathname();
 
-  console.log("ProjectDetails media:", media);
-
   useEffect(() => {
     if (typeof window === "undefined" || !sectionRef.current) return;
 
