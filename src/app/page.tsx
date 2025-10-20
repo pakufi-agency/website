@@ -15,11 +15,17 @@ import CollaboratorsSection from "../components/CollaboratorsSection/Collaborato
 import CtaBig from "../components/CtaBig/CtaBig";
 import Newsletter from "../components/Newsletter/Newsletter";
 import LoadingError from "../components/Errors/LoadingError";
-import { getStrapiPageData, renderMultipleComponents } from "../utils/utils";
+import {
+  getStrapiPageData,
+  renderMultipleComponents,
+  getStrapiData,
+} from "../utils/utils";
 import { generatePageMetadata } from "../utils/seo";
+import BlogGrid from "../components/Blog/BlogGrid";
 
 import MobileMenuProvider from "../context/MobileMenuProvider";
 import { HOMEPAGE_QUERY } from "../graphqlQueries/Homepage";
+import { BLOG_POSTS_LATEST_QUERY } from "../graphqlQueries/Blog";
 
 import "../styles/common.scss";
 
@@ -38,6 +44,7 @@ interface PageProps {
   sections: any[];
 }
 
+// Fetch SEO metadata
 export const generateMetadata = async () =>
   generatePageMetadata(() =>
     getStrapiPageData<PageProps>({
@@ -46,9 +53,11 @@ export const generateMetadata = async () =>
     })
   );
 
+// Render a section based on componentMap
 function renderSection(
   section: SectionProps,
-  ComponentWrapper: React.ComponentType<any>
+  ComponentWrapper: React.ComponentType<any>,
+  blogPosts: any[] = []
 ) {
   const componentMap: Record<string, any> = {
     TextImageButtonsComponent: TextImageButtons,
@@ -57,6 +66,7 @@ function renderSection(
     team_members: TeamSection,
     boxesText: BoxesText,
     question_answers: FaqSection,
+    blogGrid: () => <BlogGrid posts={blogPosts} />, // Render latest blog posts
   };
   return renderMultipleComponents({
     section,
@@ -65,11 +75,19 @@ function renderSection(
   });
 }
 
+// Homepage
 export default async function Page() {
   const pageData = await getStrapiPageData<PageProps>({
     query: HOMEPAGE_QUERY,
     pageType: "Homepage",
   });
+
+  const blogData = await getStrapiData<{ blogPosts: any[] }>({
+    query: BLOG_POSTS_LATEST_QUERY,
+    pageType: "Latest Blog Posts",
+  });
+  const latestBlogPosts = blogData?.blogPosts || [];
+
   if (!pageData) {
     return (
       <MobileMenuProvider>
@@ -98,10 +116,14 @@ export default async function Page() {
                 return <Newsletter {...section} key={index} />;
 
               case "ComponentCommonSection":
-                return renderSection(section, Section);
+                return renderSection(section, Section, latestBlogPosts);
 
               case "ComponentCommonSectionhalfbackground":
-                return renderSection(section, SectionHalfBackground);
+                return renderSection(
+                  section,
+                  SectionHalfBackground,
+                  latestBlogPosts
+                );
 
               case "ComponentCommonCta":
                 if (!section.isBig) {
@@ -109,6 +131,7 @@ export default async function Page() {
                 } else {
                   return <CtaBig {...section} key={index} />;
                 }
+
               default:
                 return null;
             }

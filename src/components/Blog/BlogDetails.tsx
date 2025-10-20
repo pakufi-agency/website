@@ -6,8 +6,9 @@ import * as Icon from "react-feather";
 import Image from "next/image";
 import BlockRendererClient from "../BlockRendererClient";
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
-import BlogSidebar from "./BlogSidebar/BlogSidebar";
+// import BlogSidebar from "./BlogSidebar/BlogSidebar";
 import styles from "./BlogDetails.module.scss";
+import { getStrapiImageUrl } from "@/utils/utils";
 
 type BlogDetailsProps = {
   title: string;
@@ -25,6 +26,7 @@ type BlogDetailsProps = {
       alternativeText?: string;
     };
     readingTime?: string;
+    author?: string;
   };
   navigation?: {
     previous?: {
@@ -49,7 +51,6 @@ const BlogDetailsContent: React.FC<BlogDetailsProps> = ({
   PostMetaInfo,
   navigation,
 }) => {
-  console.log("coverImage", coverImage);
   return (
     <div className={styles.blogDetailsArea}>
       <div className="container">
@@ -66,7 +67,7 @@ const BlogDetailsContent: React.FC<BlogDetailsProps> = ({
                     <Icon.Clock /> {PostMetaInfo.readingTime}
                   </li>
                   <li>
-                    <Icon.User /> {"Pakufi Team"}
+                    <Icon.User /> {PostMetaInfo.author && "Pakufi Team"}
                   </li>
                 </ul>
               )}
@@ -75,7 +76,7 @@ const BlogDetailsContent: React.FC<BlogDetailsProps> = ({
               {coverImage?.url && (
                 <div className={styles.articleImage}>
                   <Image
-                    src={coverImage.url}
+                    src={getStrapiImageUrl(coverImage.url)}
                     alt={coverImage.alternativeText || title}
                     width={860}
                     height={700}

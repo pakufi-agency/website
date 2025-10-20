@@ -42,19 +42,6 @@ export const TALENTGROWTH_QUERY = gql`
           subtitle
           footnote
         }
-        ... on ComponentCommonTextImageButtons {
-          richText
-          media {
-            alternativeText
-            url
-          }
-          buttonOneLabel
-          buttonOneLink
-          buttonTwoLabel
-          buttonTwoLink
-          ImagePosition
-          buttonStyle
-        }
         ... on ComponentCommonSection {
           sectionTitle
           subtitle

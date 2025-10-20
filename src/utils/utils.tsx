@@ -156,3 +156,8 @@ export const trackClick = (
     });
   }
 };
+
+export function truncateText(text: string, maxLength = 150) {
+  if (!text) return "";
+  return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
+}

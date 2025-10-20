@@ -5,21 +5,33 @@ import * as Icon from "react-feather";
 import Image from "next/image";
 import Link from "next/link";
 import Pagination from "../Pagination/Pagination";
+import BlogSidebar from "./BlogSidebar/BlogSidebar";
 
-// import BlogSidebar from "./BlogSidebar/BlogSidebar";
-
-import { blogMockData } from "./blogMockData";
 import styles from "./BlogGrid.module.scss";
+import { getStrapiImageUrl, truncateText } from "@/utils/utils";
 
-const BlogWithRightSidebar: React.FC = () => {
+export interface BlogPost {
+  title: string;
+  slug: string;
+  coverImage: { url: string; alternativeText: string };
+  publishedAt: string;
+  excerpt: string;
+}
+
+interface BlogGridProps {
+  posts: BlogPost[];
+  hasSidebar?: boolean;
+}
+
+const BlogGrid: React.FC<BlogGridProps> = ({ posts, hasSidebar = false }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 4; // Adjust this based on your needs
-  const totalPages = Math.ceil(blogMockData.length / postsPerPage);
+  const postsPerPage = 3; // Adjust this based on your needs
+  const totalPages = Math.ceil(posts.length / postsPerPage);
 
   // Calculate the posts to display for the current page
   const startIndex = (currentPage - 1) * postsPerPage;
   const endIndex = startIndex + postsPerPage;
-  const currentPosts = blogMockData.slice(startIndex, endIndex);
+  const currentPosts = posts.slice(startIndex, endIndex);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -32,66 +44,78 @@ const BlogWithRightSidebar: React.FC = () => {
       <div className="container">
         <div className="row">
           {/* Blog Posts */}
-          <div className="col-lg-8 col-md-12">
-            <div className="row justify-content-center">
-              {blogMockData.map((post, idx) => (
-                <div key={idx} className="col-lg-6 col-md-6">
-                  <Link href={post.link}>
-                    <div className={styles.singleBlogPost}>
-                      <div className={styles.blogImage}>
-                        <Image
-                          src={post.image}
-                          alt={post.title}
-                          width={860}
-                          height={700}
-                          className={styles.postImage}
-                        />
-                        <div className={styles.date}>
-                          <Icon.Calendar /> {post.date}
-                        </div>
-                      </div>
+          <div className={hasSidebar ? "col-lg-8 col-md-12" : "col-12 "}>
+            <div
+              className={`row justify-content-center ${styles.articlesContainer}`}
+            >
+              {currentPosts.map((post, index) => (
+                <article
+                  key={index}
+                  className={`col-lg-6 col-md-6 ${styles.singleBlogPost}`}
+                >
+                  <div className={styles.blogImage}>
+                    <Link href={`/blog/${post.slug}`}>
+                      <Image
+                        src={getStrapiImageUrl(post.coverImage.url)}
+                        alt={post.title}
+                        width={860}
+                        height={700}
+                      />
+                    </Link>
+                  </div>
 
-                      <div className={styles.blogPostContent}>
-                        <h3>{post.title}</h3>
+                  <div className={styles.blogDate}>
+                    <Icon.Calendar />{" "}
+                    {new Date(post.publishedAt).toLocaleDateString("en-GB", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    })}
+                  </div>
 
-                        {/* <span>
-                        By <Link href="#">{post.author}</Link>
-                      </span> */}
-
-                        <p>{post.excerpt}</p>
-
-                        <span className={styles.readMoreBtn}>
-                          Read More <Icon.ArrowRight />
-                        </span>
-                      </div>
+                  <div className={styles.blogPostContent}>
+                    <Link href={`/blog/${post.slug}`}>
+                      <h3>{post.title}</h3>
+                    </Link>
+                    <div className={styles.excerpt}>
+                      {truncateText(post.excerpt)}
                     </div>
-                  </Link>
-                </div>
+                    <Link href={`/blog/${post.slug}`}>
+                      <span className={styles.readMoreBtn}>
+                        Read More <Icon.ArrowRight />
+                      </span>
+                    </Link>
+                  </div>
+                </article>
               ))}
 
               {/* Pagination */}
-              <Pagination
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={handlePageChange}
-                showPrevNext={true}
-                maxVisiblePages={5}
-              />
+              {totalPages > 1 && (
+                <Pagination
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageChange={handlePageChange}
+                  showPrevNext={true}
+                  maxVisiblePages={5}
+                />
+              )}
             </div>
           </div>
 
-          {/* <div className="col-lg-4 col-md-12">
-            <BlogSidebar
-              showSearch={true}
-              showPopularPosts={true}
-              showCategories={false}
-              showTags={false}
-            />
-          </div> */}
+          {hasSidebar && (
+            <div className="col-lg-4 col-md-12">
+              <BlogSidebar
+                showSearch={true}
+                showPopularPosts={true}
+                showCategories={false}
+                showTags={false}
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
 };
 
-export default BlogWithRightSidebar;
+export default BlogGrid;
