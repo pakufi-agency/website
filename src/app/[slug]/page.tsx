@@ -19,6 +19,7 @@ import {
 import { BLOG_POSTS_LATEST_QUERY } from "@/graphqlQueries/Blog";
 import { generatePageMetadata } from "@/utils/seo";
 import MobileMenuProvider from "@/context/MobileMenuProvider";
+import PageBanner from "@/components/PageBanner/PageBanner";
 
 // -----------------------------------
 // COMPONENT MAP
@@ -128,7 +129,11 @@ export default async function Page({
     <div className="generic-page">
       <MobileMenuProvider>
         <Navbar />
-        {renderedSections}
+        <PageBanner
+          pageTitle={page.pageTitle}
+          internalBannerMedia={page.internalBannerMedia}
+        />
+        <div className="generic-page-content">{renderedSections}</div>
         <Footer />
       </MobileMenuProvider>
     </div>

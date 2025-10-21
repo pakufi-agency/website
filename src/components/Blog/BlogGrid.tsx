@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import * as Icon from "react-feather";
 import Image from "next/image";
 import Link from "next/link";
@@ -25,7 +25,7 @@ interface BlogGridProps {
 
 const BlogGrid: React.FC<BlogGridProps> = ({ posts, hasSidebar = false }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 3; // Adjust this based on your needs
+  const postsPerPage = 3;
   const totalPages = Math.ceil(posts.length / postsPerPage);
 
   // Calculate the posts to display for the current page
@@ -33,14 +33,21 @@ const BlogGrid: React.FC<BlogGridProps> = ({ posts, hasSidebar = false }) => {
   const endIndex = startIndex + postsPerPage;
   const currentPosts = posts.slice(startIndex, endIndex);
 
+  const blogAreaRef = useRef<HTMLDivElement>(null);
+
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
     // Optional: scroll to top of blog area
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (blogAreaRef.current) {
+      blogAreaRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   };
 
   return (
-    <div className={styles.blogArea}>
+    <div className={styles.blogArea} ref={blogAreaRef}>
       <div className="container">
         <div className="row">
           {/* Blog Posts */}
