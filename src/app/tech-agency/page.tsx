@@ -16,7 +16,7 @@ import { generatePageMetadata } from "../../utils/seo";
 import MobileMenuProvider from "../../context/MobileMenuProvider";
 import { TECHAGENCY_QUERY } from "../../graphqlQueries/TechAgency";
 import SectionHalfBackground from "@/components/Sections/SectionHalfBackground";
-
+import ProjectsCard from "@/components/Projects/ProjectsCard";
 interface SectionProps {
   [key: string]: any;
 }
@@ -49,6 +49,7 @@ function renderSection(
     services: ServiceBox,
     price_packages: OfferPackageList,
     timelineSection: TimelineSection,
+    projects: ProjectsCard,
   };
   return renderMultipleComponents({
     section,
