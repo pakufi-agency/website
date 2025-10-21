@@ -1,18 +1,18 @@
 import React from "react";
-import { getStrapiData, getStrapiImageUrl } from "../../../utils/utils";
-import {
-  BLOG_POSTS_LIST_QUERY,
-  BLOG_POST_BY_SLUG_QUERY,
-} from "../../../graphqlQueries/Blog";
-import { SINGLE_PAGE_QUERY } from "../../../graphqlQueries/SinglePage";
 import SinglePageContainer from "@/components/Layout/SinglePageContainer";
 import LoadingError from "@/components/Errors/LoadingError";
 import MobileMenuProvider from "../../../context/MobileMenuProvider";
 import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
 import BlogDetailsContent from "@/components/Blog/BlogDetails";
-import { SinglePageResponse } from "../../../types/types";
 
+import { SinglePageResponse } from "../../../types/types";
+import { getStrapiData, getStrapiImageUrl } from "../../../utils/utils";
+import {
+  BLOG_POSTS_LIST_QUERY,
+  BLOG_POST_BY_SLUG_QUERY,
+} from "../../../graphqlQueries/Blog";
+import { SINGLE_PAGE_QUERY } from "../../../graphqlQueries/SinglePage";
 interface BlogPost {
   title: string;
   slug: string;

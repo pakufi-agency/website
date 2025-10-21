@@ -141,7 +141,6 @@ export const TECHAGENCY_QUERY = gql`
               style
             }
           }
-
           services {
             name
             descriptionRichText

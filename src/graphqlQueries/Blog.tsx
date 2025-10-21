@@ -21,6 +21,7 @@ export const BLOG_POSTS_LIST_QUERY = gql`
         readingTime
         author
       }
+      publishedAt
     }
   }
 `;

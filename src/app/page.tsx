@@ -15,42 +15,25 @@ import CollaboratorsSection from "../components/CollaboratorsSection/Collaborato
 import CtaBig from "../components/CtaBig/CtaBig";
 import Newsletter from "../components/Newsletter/Newsletter";
 import LoadingError from "../components/Errors/LoadingError";
-import {
-  getStrapiPageData,
-  renderMultipleComponents,
-  getStrapiData,
-} from "../utils/utils";
-import { generatePageMetadata } from "../utils/seo";
 import BlogGrid from "../components/Blog/BlogGrid";
 
 import MobileMenuProvider from "../context/MobileMenuProvider";
 import { HOMEPAGE_QUERY } from "../graphqlQueries/Homepage";
 import { BLOG_POSTS_LATEST_QUERY } from "../graphqlQueries/Blog";
+import { renderMultipleComponents, getStrapiData } from "../utils/utils";
+import { generatePageMetadata } from "../utils/seo";
+import { PageProps, SectionProps } from "../types/types";
 
 import "../styles/common.scss";
 
-interface SectionProps {
-  [key: string]: any;
-}
-
-interface PageProps {
-  SEO: {
-    seoTitle: string;
-    seoDescription: string;
-    seoPreview: { url: string; alternativeText: string }[];
-  };
-  pageTitle: string;
-  internalBannerMedia: any;
-  sections: any[];
-}
-
 // Fetch SEO metadata
 export const generateMetadata = async () =>
-  generatePageMetadata(() =>
-    getStrapiPageData<PageProps>({
-      query: HOMEPAGE_QUERY,
-      pageType: "Homepage",
-    })
+  generatePageMetadata(
+    () =>
+      getStrapiData({
+        query: HOMEPAGE_QUERY,
+        pageType: "Homepage",
+      }) as Promise<any>
   );
 
 // Render a section based on componentMap
@@ -66,7 +49,7 @@ function renderSection(
     team_members: TeamSection,
     boxesText: BoxesText,
     question_answers: FaqSection,
-    blogGrid: () => <BlogGrid posts={blogPosts} />, // Render latest blog posts
+    blogGrid: () => <BlogGrid posts={blogPosts} />,
   };
   return renderMultipleComponents({
     section,
@@ -75,12 +58,13 @@ function renderSection(
   });
 }
 
-// Homepage
 export default async function Page() {
-  const pageData = await getStrapiPageData<PageProps>({
+  const pageData = await getStrapiData<PageProps>({
     query: HOMEPAGE_QUERY,
     pageType: "Homepage",
   });
+
+  const page = pageData?.pages[0];
 
   const blogData = await getStrapiData<{ blogPosts: any[] }>({
     query: BLOG_POSTS_LATEST_QUERY,
@@ -88,7 +72,7 @@ export default async function Page() {
   });
   const latestBlogPosts = blogData?.blogPosts || [];
 
-  if (!pageData) {
+  if (!page) {
     return (
       <MobileMenuProvider>
         <Navbar />
@@ -103,8 +87,8 @@ export default async function Page() {
       <MobileMenuProvider>
         <Navbar />
 
-        {pageData.sections &&
-          pageData.sections.map((section: any, index: number) => {
+        {page.sections &&
+          page.sections.map((section: any, index: number) => {
             switch (section.__typename) {
               case "ComponentStaticComponentHero":
                 return <HeroBanner {...section} key={index} />;

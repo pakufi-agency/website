@@ -67,7 +67,8 @@ const BlogDetailsContent: React.FC<BlogDetailsProps> = ({
                     <Icon.Clock /> {PostMetaInfo.readingTime}
                   </li>
                   <li>
-                    <Icon.User /> {PostMetaInfo.author && "Pakufi Team"}
+                    <Icon.User />{" "}
+                    {PostMetaInfo.author ? PostMetaInfo.author : "Pakufi Team"}
                   </li>
                 </ul>
               )}
