@@ -1,5 +1,5 @@
-import { Url } from "url";
-import ctaBigImage from "/public/images/peopele-meeting-contactus-homepage.png";
+import { StaticImageData } from "next/image";
+import ctaBigImage from "/public/images/people-meeting-contactus-homepage.png";
 
 export interface SinglePageResponse {
   slug: string;
@@ -7,7 +7,7 @@ export interface SinglePageResponse {
     title: string;
     description: string;
     media: {
-      url: string;
+      url: string | StaticImageData;
       alternativeText: string;
     };
     buttonCtaTwoLabel: string;
@@ -32,7 +32,7 @@ export const defaultSinglePageResponse: SinglePageResponse = {
     description:
       "Whether you’re looking for a custom web solution, need expert guidance for your digital project, or want to collaborate with an ethical agency that values impact and innovation—we’re here to help!",
     media: {
-      url: "/public/images/people-meeting-contactus-homepage.png",
+      url: ctaBigImage.src,
       alternativeText: "collaboration",
     },
     buttonCtaOneLabel: "Book a call",

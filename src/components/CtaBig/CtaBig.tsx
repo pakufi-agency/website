@@ -43,7 +43,11 @@ const CtaBig: React.FC<CtaBigProps> = ({
             <div className="col-12 col-md-6">
               <div className={styles.image}>
                 <Image
-                  src={getStrapiImageUrl(media.url)}
+                  src={
+                    media.url.startsWith("/_next/")
+                      ? media.url
+                      : getStrapiImageUrl(media.url)
+                  }
                   alt={media.alternativeText}
                   width={700}
                   height={400}

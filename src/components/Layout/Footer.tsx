@@ -31,10 +31,11 @@ const Footer = () => {
                   </Link>
                 </div>
                 <p>
-                  Pakufi, is a web agency driven by social impact. We craft
-                  high-quality, ethical, and human-centered digital solutions
-                  while empowering IT and digital professionals from
-                  underrepresented regions.
+                  Pakufi is a custom software development company and a career
+                  growth program. Our mission is to support talented people with
+                  limited opportunities to access global markets and to create
+                  digital solutions with clear communication and a people-first
+                  approach.
                 </p>
               </div>
             </div>
@@ -54,10 +55,22 @@ const Footer = () => {
                     <Link href="/about">About Us</Link>
                   </li>
                   <li>
-                    <Link href="/tech-agency/#serviceSection">Services</Link>
+                    <Link href="/tech-agency/#serviceSection">
+                      Our Services
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/tech-agency/#offerSection">Price Offers</Link>
+                    <Link href="/tech-agency/#projectSection">
+                      Our Projects
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/tech-agency/#offerSection">
+                      Our Price Offers
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/blog">Pakufi Blog</Link>
                   </li>
                   <li>
                     <Link href="/#faqSection">FAQ&apos;s</Link>
@@ -95,6 +108,11 @@ const Footer = () => {
                     <Link href="/talent-growth">I am a talent</Link>
                   </li>
                   <li>
+                    <a href="https://tally.so/r/mDjEa5" target="_blank">
+                      Apply as mentor
+                    </a>
+                  </li>
+                  <li>
                     <a href="mailto:info@pakufi.agency">
                       Love the mission and want to join? Write us!
                     </a>
@@ -114,12 +132,9 @@ const Footer = () => {
                 <h3 className={styles.h3Title}>Where to find us</h3>
 
                 <ul className={`${styles.footerContactInfo} ${styles.list}`}>
-                  {/* <li>
-                    <Icon.MapPin />
-                    27 Division St, New York, <br /> NY 10002, USA
-                  </li> */}
                   <li>
-                    <Link href="/contact">Contact Us</Link>
+                    {/* <Icon.MapPin /> {""} */}
+                    Rruga Jordan Misja, Kompleksi <br /> 1001 Tirana
                   </li>
 
                   <li>
