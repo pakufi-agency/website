@@ -19,7 +19,7 @@
   }
 }
 
-.conatinerNav {
+.containerNav {
     .logo {
       width: 150px;
       display: flex;
@@ -91,6 +91,8 @@
 
   .container, .nav {
     height: 100vh;
+    padding: 6px 0 50px;
+
   }
 
   .logo {
@@ -135,7 +137,7 @@
     }
   }
 
-  .conatinerNav {
+  .containerNav {
     .navBarContent {
       .navLink {
         line-height: 1.5em;

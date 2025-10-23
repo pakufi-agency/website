@@ -1,0 +1,42 @@
+@use '../../styles/variables.scss' as *;
+
+.banner {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $acid-green;
+  color: $white;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  z-index: 9999;
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+
+  p {
+    color: $primary-color;
+  }
+
+  a {
+    color: $white;
+    font-weight: bold;
+    padding-left: 10px;
+  }
+}
+
+.banner.hidden {
+  opacity: 0;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: $white;
+  font-size: 1.1rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}

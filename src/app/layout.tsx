@@ -12,9 +12,11 @@ import "../styles/common.scss";
 import Head from "next/head";
 import Script from "next/script";
 import { Roboto } from "next/font/google";
+
+import ApolloTracker from "../utils/ApolloSalesTracker";
+
 import AosAnimation from "../components/Layout/AosAnimation";
 import GoTop from "../components/Layout/GoTop";
-import ApolloTracker from "../utils/ApolloSalesTracker";
 
 const roboto = Roboto({
   weight: ["100", "400", "700", "900"],
