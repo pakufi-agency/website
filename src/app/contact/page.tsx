@@ -13,29 +13,16 @@ import BoxesText from "../../components/BoxesText/BoxesText";
 import PageBanner from "../../components/PageBanner/PageBanner";
 import IntroSinglePage from "../../components/IntroSinglePage/IntroSinglePage";
 import Newsletter from "../../components/Newsletter/Newsletter";
-import { getStrapiPageData, renderMultipleComponents } from "../../utils/utils";
-import { generatePageMetadata } from "../../utils/seo";
 
+import { getStrapiData, renderMultipleComponents } from "../../utils/utils";
+import { generatePageMetadata } from "../../utils/seo";
+import { PageProps, SectionProps } from "../../types/types";
 import MobileMenuProvider from "../../context/MobileMenuProvider";
 import { CONTACT_QUERY } from "../../graphqlQueries/Contact";
 
-interface SectionProps {
-  [key: string]: any;
-}
-interface PageProps {
-  SEO: {
-    seoTitle: string;
-    seoDescription: string;
-    seoPreview: { url: string; alternativeText: string }[];
-  };
-  pageTitle: string;
-  internalBannerMedia: any;
-  sections: any[];
-}
-
 export const generateMetadata = async () =>
   generatePageMetadata(() =>
-    getStrapiPageData<PageProps>({
+    getStrapiData({
       query: CONTACT_QUERY,
       pageType: "Contact Us",
     })
@@ -59,12 +46,14 @@ function renderSection(
 }
 
 export default async function Page() {
-  const pageData = await getStrapiPageData<PageProps>({
+  const pageData = await getStrapiData<PageProps>({
     query: CONTACT_QUERY,
     pageType: "Contact Us",
   });
 
-  if (!pageData) {
+  const page = pageData?.pages[0];
+
+  if (!page) {
     return (
       <MobileMenuProvider>
         <Navbar />
@@ -78,12 +67,12 @@ export default async function Page() {
     <MobileMenuProvider>
       <Navbar />
       <PageBanner
-        pageTitle={pageData.pageTitle}
-        internalBannerMedia={pageData.internalBannerMedia}
+        pageTitle={page.pageTitle}
+        internalBannerMedia={page.internalBannerMedia}
       />
 
-      {pageData.sections &&
-        pageData.sections.map((section: any, index: number) => {
+      {page.sections &&
+        page.sections.map((section: any, index: number) => {
           switch (section.__typename) {
             case "ComponentSectionsIntroSinglePage":
               return <IntroSinglePage {...section} key={index} />;

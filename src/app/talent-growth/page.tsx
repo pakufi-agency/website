@@ -10,32 +10,19 @@ import TimelineSection from "../../components/TimelineSection/TimelineSection";
 import CtaBig from "../../components/CtaBig/CtaBig";
 import LoadingError from "../../components/Errors/LoadingError";
 import Newsletter from "../../components/Newsletter/Newsletter";
-import { getStrapiPageData, renderMultipleComponents } from "../../utils/utils";
-import { generatePageMetadata } from "../../utils/seo";
-import MobileMenuProvider from "../../context/MobileMenuProvider";
-import { TALENTGROWTH_QUERY } from "../../graphqlQueries/TalentGrowth";
 import SectionHalfBackground from "../../components/Sections/SectionHalfBackground";
 import CollaboratorsSection from "../../components/CollaboratorsSection/CollaboratorsSection";
 import BlockRendererClient from "../../components/BlockRendererClient";
 
-interface SectionProps {
-  [key: string]: any;
-}
-
-interface PageProps {
-  SEO: {
-    seoTitle: string;
-    seoDescription: string;
-    seoPreview: { url: string; alternativeText: string }[];
-  };
-  pageTitle: string;
-  internalBannerMedia: any;
-  sections: any[];
-}
+import { getStrapiData, renderMultipleComponents } from "../../utils/utils";
+import { generatePageMetadata } from "../../utils/seo";
+import { PageProps, SectionProps } from "../../types/types";
+import MobileMenuProvider from "../../context/MobileMenuProvider";
+import { TALENTGROWTH_QUERY } from "../../graphqlQueries/TalentGrowth";
 
 export const generateMetadata = async () =>
   generatePageMetadata(() =>
-    getStrapiPageData<PageProps>({
+    getStrapiData({
       query: TALENTGROWTH_QUERY,
       pageType: "Talent Growth",
     })
@@ -59,12 +46,14 @@ function renderSection(
 }
 
 export default async function Page() {
-  const pageData = await getStrapiPageData<PageProps>({
+  const pageData = await getStrapiData<PageProps>({
     query: TALENTGROWTH_QUERY,
     pageType: "Talent Growth",
   });
 
-  if (!pageData) {
+  const page = pageData?.pages[0];
+
+  if (!page) {
     return (
       <MobileMenuProvider>
         <Navbar />
@@ -79,8 +68,8 @@ export default async function Page() {
       <MobileMenuProvider>
         <Navbar />
 
-        {pageData.sections &&
-          pageData.sections.map((section: any, index: number) => {
+        {page.sections &&
+          page.sections.map((section: any, index: number) => {
             switch (section.__typename) {
               case "ComponentStaticComponentHero":
                 return <HeroBanner {...section} key={index} />;
