@@ -1,40 +1,45 @@
 import { gql } from "@apollo/client";
 
-export const TALENTGROWTH_QUERY = gql`
-  query getTalentGrowth {
-    pages(filters: { documentId: { eq: "qlh6njvxulawqnkmxe49v8v3" } }) {
+export const GENERAL_PAGES_LIST_QUERY = gql`
+  query getPageGeneralList {
+    pageGenerals {
+      slug
+    }
+  }
+`;
+
+export const GENERAL_PAGE_BY_SLUG_QUERY = gql`
+  query getGeneralPageBySlug($slug: String!) {
+    pageGenerals(filters: { slug: { eq: $slug } }) {
       pageTitle
+      slug
       pageDescription
       internalBannerMedia {
         alternativeText
         url
       }
-      sections {
-        ... on ComponentStaticComponentHero {
-          id
-          title
-          Button {
-            label
-            url
-          }
-          descriptionRichText
-          mediaHero {
-            alternativeText
-            url
-          }
+      Seo {
+        seoTitle
+        seoDescription
+        seoPreview {
+          url
+          alternativeText
         }
+      }
+      sections {
+        __typename
         ... on ComponentCommonCta {
           title
           description
+          isBig
+          buttonCtaOneLabel
+          buttonCtaOneLink
+          buttonCtaTwoLabel
+          buttonCtaTwoLink
           media {
             url
             alternativeText
           }
-          buttonCtaTwoLabel
-          buttonCtaTwoLink
-          isBig
-          buttonCtaOneLabel
-          buttonCtaOneLink
         }
         ... on ComponentCommonNewsletter {
           buttonLabel
@@ -45,12 +50,6 @@ export const TALENTGROWTH_QUERY = gql`
         ... on ComponentCommonSection {
           sectionTitle
           subtitle
-          backgroundColor
-          titleColor
-          descriptionColor
-          barBallColor
-          shapesVariation
-          backgroundVariation
           TextImageButtonsComponent {
             ImagePosition
             richText
@@ -104,30 +103,27 @@ export const TALENTGROWTH_QUERY = gql`
           TextBlock {
             content
           }
-        }
-        ... on ComponentCommonSectionhalfbackground {
-          sectionTitle
-          sectionSubtitle
-          backgroundColor
-          titleColor
-          descriptionColor
-          barBallColor2
-          TextImageButtonsComponent {
-            ImagePosition
-            richText
-            buttonOneLabel
-            buttonOneLink
-            buttonTwoLabel
-            buttonTwoLink
+          boxesText {
+            content
           }
-          iconTitleSubtitle {
-            Title
+          price_packages {
+            title
             subtitle
-            iconImg {
-              alternativeText
+            price
+            features
+            cta {
+              label
               url
+              style
             }
-            iconName
+          }
+          services {
+            name
+            descriptionRichText
+            icon
+          }
+          blogGrid {
+            slug
           }
         }
       }

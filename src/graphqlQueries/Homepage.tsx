@@ -86,6 +86,9 @@ export const HOMEPAGE_QUERY = gql`
             textColor
             buttonStyle
           }
+          blogGrid {
+            slug
+          }
           services {
             name
             subtitle

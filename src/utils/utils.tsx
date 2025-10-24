@@ -21,30 +21,6 @@ interface StrapiDataOptions {
   pageType: string;
 }
 
-export async function getStrapiPageData<T>(
-  options: StrapiDataOptions
-): Promise<T | null> {
-  const client = createApolloClient();
-
-  try {
-    const { data } = await client.query({
-      query: options.query,
-      variables: options.variables,
-      fetchPolicy: "cache-first",
-    });
-
-    if (!data || !data.pages || !data.pages[0]) {
-      console.warn(`${options.pageType} data is missing or invalid.`);
-      return null;
-    }
-
-    return data.pages[0] as T;
-  } catch (error) {
-    console.error(`Error fetching ${options.pageType} data:`, error);
-    return null;
-  }
-}
-
 /**
  * Fetches data from Strapi using a GraphQL query.
  * This function can be used to retrieve any Strapi collection or single type,
@@ -156,3 +132,8 @@ export const trackClick = (
     });
   }
 };
+
+export function truncateText(text: string, maxLength = 150) {
+  if (!text) return "";
+  return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
+}

@@ -12,7 +12,7 @@ interface ProjectsListProps {
 
 const ProjectsCard: React.FC<ProjectsListProps> = ({ items = [] }) => {
   return (
-    <section className={styles.projectsSection}>
+    <section id="projectSection" className={styles.projectsSection}>
       <div className="container">
         <div className="row justify-content-center">
           {items.map((project, index) => (

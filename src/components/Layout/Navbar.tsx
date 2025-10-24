@@ -7,16 +7,22 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useMobileMenu } from "../../context/MobileMenuProvider";
 import { DESKTOP_MEDIA_QUERY } from "../../utils/consts";
+import { appConfig } from "@/utils/appConfig";
+
+import GlobalBanner from "../../components/GlobalBanner/GlobalBanner";
 
 import styles from "./Navbar.module.scss";
 
 import logo from "/public/images/logo.png";
 
 const Navbar: React.FC = () => {
+  const showBanner = appConfig.features.mentorshipBanner;
+
   const currentRoute = usePathname();
   const router = useRouter();
   const { isMobileMenuOpen, setMobileMenuOpen } = useMobileMenu();
   const [isDropdownOpen, setDropdownOpen] = useState<string | null>(null);
+  const [bannerVisible, setBannerVisible] = useState(showBanner);
 
   const toggleMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
@@ -67,7 +73,13 @@ const Navbar: React.FC = () => {
       id="header"
       className={`${styles.header} ${isMobileMenuOpen ? styles.isOpen : ""}`}
     >
-      <div className={styles.conatinerNav}>
+      {bannerVisible && (
+        <div style={{ paddingTop: showBanner ? "40px" : "0" }}>
+          <GlobalBanner onClose={() => setBannerVisible(false)} />
+        </div>
+      )}
+
+      <div className={styles.containerNav}>
         <div className={`container ${styles.container}`}>
           <nav className={`navbar navbar-expand-md navbar-light ${styles.nav}`}>
             <Link href="/" className={`navbar-brand ${styles.logo}`}>
@@ -116,6 +128,15 @@ const Navbar: React.FC = () => {
                     onClick={(e) => handleMenuItemClick(e, "/about")}
                   >
                     About
+                  </Link>
+                </li>
+                <li className={`nav-item ${styles.navItem}`}>
+                  <Link
+                    href="/blog/"
+                    className={styles.navLink}
+                    onClick={(e) => handleMenuItemClick(e, "/blog")}
+                  >
+                    BLOG
                   </Link>
                 </li>
                 <li className={`nav-item ${styles.navItem}`}>

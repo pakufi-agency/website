@@ -1,10 +1,13 @@
+import { StaticImageData } from "next/image";
+import ctaBigImage from "/public/images/people-meeting-contactus-homepage.png";
+
 export interface SinglePageResponse {
   slug: string;
   cta: {
     title: string;
     description: string;
     media: {
-      url: string;
+      url: string | StaticImageData;
       alternativeText: string;
     };
     buttonCtaTwoLabel: string;
@@ -23,17 +26,17 @@ export interface SinglePageResponse {
 
 // ✅ Default fallback data for pages without Strapi content
 export const defaultSinglePageResponse: SinglePageResponse = {
-  slug: "404",
+  slug: "CTA",
   cta: {
-    title: "Page Not Found",
+    title: "Let’s Build Something Meaningful Together",
     description:
-      "It seems you’ve reached a page that doesn’t exist. Let’s get you back to something meaningful.",
+      "Whether you’re looking for a custom web solution, need expert guidance for your digital project, or want to collaborate with an ethical agency that values impact and innovation—we’re here to help!",
     media: {
-      url: "/images/404-illustration.png", // optional local image
-      alternativeText: "404 illustration",
+      url: ctaBigImage.src,
+      alternativeText: "collaboration",
     },
-    buttonCtaOneLabel: "Go Home",
-    buttonCtaOneLink: "/",
+    buttonCtaOneLabel: "Book a call",
+    buttonCtaOneLink: "https://pakufi.zohobookings.com/#/4746283000000044080",
     buttonCtaTwoLabel: "Contact Us",
     buttonCtaTwoLink: "/contact",
     isBig: false,
@@ -46,3 +49,20 @@ export const defaultSinglePageResponse: SinglePageResponse = {
     footnote: "We respect your privacy — unsubscribe anytime.",
   },
 };
+
+export interface PageProps {
+  pages: {
+    SEO: {
+      seoTitle: string;
+      seoDescription: string;
+      seoPreview: { url: string; alternativeText: string }[];
+    };
+    pageTitle: string;
+    internalBannerMedia: any;
+    sections: any[];
+  }[];
+}
+
+export interface SectionProps {
+  [key: string]: any;
+}

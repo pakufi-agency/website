@@ -1,17 +1,19 @@
 import React from "react";
-import { getStrapiData, getStrapiImageUrl } from "../../../utils/utils";
 import ProjectDetails from "@/components/Projects/ProjectDetails";
+import SinglePageContainer from "@/components/Layout/SinglePageContainer";
+import LoadingError from "@/components/Errors/LoadingError";
+import Navbar from "@/components/Layout/Navbar";
+import Footer from "@/components/Layout/Footer";
+
+import { SinglePageResponse } from "../../../types/types";
+import { getStrapiData, getStrapiImageUrl } from "../../../utils/utils";
+import MobileMenuProvider from "../../../context/MobileMenuProvider";
 import {
   PROJECTS_LIST_QUERY,
   PROJECT_BY_SLUG_QUERY,
 } from "../../../graphqlQueries/Projects";
 import { SINGLE_PAGE_QUERY } from "../../../graphqlQueries/SinglePage";
-import SinglePageContainer from "@/components/Layout/SinglePageContainer";
-import LoadingError from "@/components/Errors/LoadingError";
-import MobileMenuProvider from "../../../context/MobileMenuProvider";
-import Navbar from "@/components/Layout/Navbar";
-import Footer from "@/components/Layout/Footer";
-import { SinglePageResponse } from "../../../types/types";
+
 interface Project {
   title: string;
   slug: string;
