@@ -95,7 +95,7 @@
 @media only screen and (min-width: 767px ) {
     .heroBanner {
         padding: {
-            top: 185px;
+            top: 200px;
             bottom: 150px;
         }
         min-height: 100vh;
@@ -151,13 +151,6 @@
 }
 
 @media only screen and (min-width: 991px ) {
-    .heroBanner {
-        padding: {
-            top: 185px;
-            bottom: 150px;
-        }
-    }
-
     .flexContentContainer {
         align-items: flex-start;
         .bannerContent {
