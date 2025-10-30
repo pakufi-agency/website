@@ -14,6 +14,7 @@ export const GENERAL_PAGE_BY_SLUG_QUERY = gql`
       pageTitle
       slug
       pageDescription
+      pageBannerTitle
       internalBannerMedia {
         alternativeText
         url

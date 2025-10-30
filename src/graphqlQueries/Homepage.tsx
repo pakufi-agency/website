@@ -4,6 +4,7 @@ export const HOMEPAGE_QUERY = gql`
   query getHomepage {
     pages(filters: { documentId: { eq: "liqb7hs6ksgzj1k4129d892d" } }) {
       pageTitle
+      pageBannerTitle
       SEO {
         seoTitle
         seoDescription

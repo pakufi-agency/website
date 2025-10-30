@@ -5,6 +5,7 @@ export const CONTACT_QUERY = gql`
     pages(filters: { documentId: { eq: "feli3eyi8vf1pi56v3jct7js" } }) {
       pageTitle
       pageDescription
+      pageBannerTitle
       internalBannerMedia {
         alternativeText
         url

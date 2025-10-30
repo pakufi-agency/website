@@ -58,6 +58,8 @@ export interface PageProps {
       seoPreview: { url: string; alternativeText: string }[];
     };
     pageTitle: string;
+    pageDecsription: string;
+    pageBannerTitle: string;
     internalBannerMedia: any;
     sections: any[];
   }[];
