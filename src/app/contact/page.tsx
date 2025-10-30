@@ -67,7 +67,7 @@ export default async function Page() {
     <MobileMenuProvider>
       <Navbar />
       <PageBanner
-        pageTitle={page.pageTitle}
+        pageTitle={page.pageBannerTitle}
         internalBannerMedia={page.internalBannerMedia}
       />
 

@@ -5,6 +5,7 @@ export const TECHAGENCY_QUERY = gql`
     pages(filters: { documentId: { eq: "k42kqa4fvjtkmvrg1rhvdyjt" } }) {
       pageTitle
       pageDescription
+      pageBannerTitle
       internalBannerMedia {
         alternativeText
         url

@@ -5,6 +5,7 @@ export const ABOUTUS_QUERY = gql`
     pages(filters: { documentId: { eq: "v5mtxcrqht85b8xve4lcfhn3" } }) {
       pageTitle
       pageDescription
+      pageBannerTitle
       internalBannerMedia {
         alternativeText
         url

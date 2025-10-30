@@ -5,6 +5,7 @@ export const TALENTGROWTH_QUERY = gql`
     pages(filters: { documentId: { eq: "qlh6njvxulawqnkmxe49v8v3" } }) {
       pageTitle
       pageDescription
+      pageBannerTitle
       internalBannerMedia {
         alternativeText
         url
