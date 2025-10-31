@@ -27,14 +27,6 @@ export const GENERAL_PAGE_BY_SLUG_QUERY = gql`
         alternativeText
         url
       }
-      Seo {
-        seoTitle
-        seoDescription
-        seoPreview {
-          url
-          alternativeText
-        }
-      }
       sections {
         __typename
         ... on ComponentCommonCta {
