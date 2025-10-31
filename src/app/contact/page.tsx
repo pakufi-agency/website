@@ -21,11 +21,13 @@ import MobileMenuProvider from "../../context/MobileMenuProvider";
 import { CONTACT_QUERY } from "../../graphqlQueries/Contact";
 
 export const generateMetadata = async () =>
-  generatePageMetadata(() =>
-    getStrapiData({
-      query: CONTACT_QUERY,
-      pageType: "Contact Us",
-    })
+  generatePageMetadata(
+    () =>
+      getStrapiData({
+        query: CONTACT_QUERY,
+        pageType: "Contact Us",
+      }),
+    "/contact"
   );
 
 function renderSection(

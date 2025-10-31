@@ -15,6 +15,14 @@ export const GENERAL_PAGE_BY_SLUG_QUERY = gql`
       slug
       pageDescription
       pageBannerTitle
+      SEO {
+        seoTitle
+        seoDescription
+        seoPreview {
+          url
+          alternativeText
+        }
+      }
       internalBannerMedia {
         alternativeText
         url

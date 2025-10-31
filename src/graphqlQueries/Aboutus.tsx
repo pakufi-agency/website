@@ -6,6 +6,14 @@ export const ABOUTUS_QUERY = gql`
       pageTitle
       pageDescription
       pageBannerTitle
+      SEO {
+        seoTitle
+        seoDescription
+        seoPreview {
+          url
+          alternativeText
+        }
+      }
       internalBannerMedia {
         alternativeText
         url

@@ -1,68 +1,80 @@
-// utils/seo.ts
-
 import { Metadata } from "next";
 import { getStrapiImageUrl } from "./utils";
 
 interface PageProps {
+  pages: {
     SEO: {
-        seoTitle: string;
-        seoDescription: string;
-        seoPreview: { url: string; alternativeText: string }[];
-    }
+      seoTitle: string;
+      seoDescription: string;
+      seoPreview: { url: string; alternativeText: string }[];
+    };
     pageTitle: string;
+    pageDescription: string;
     internalBannerMedia: any;
     sections: any[];
+  }[];
 }
 
 export const DEFAULT_METADATA = {
-    seoTitle: "Pakufi - Ethical tech Agency",
-    seoDescription: "At Pakufi, we are a web agency driven by social impact. We craft high-quality, ethical, and human-centered digital solutions while empowering IT and digital professionals from underrepresented regions.",
-    seoPreview: {
-        url: "/images/logo.png",
-        alternativeText: "Pakufi Logo"
-    }
-}
+  seoTitle: "Pakufi - Ethical tech Agency",
+  seoDescription:
+    "At Pakufi, we are a web agency driven by social impact. We craft high-quality, ethical, and human-centered digital solutions while empowering IT and digital professionals from underrepresented regions.",
+  seoPreview: {
+    url: "/images/logo.png",
+    alternativeText: "Pakufi Logo",
+  },
+};
 
-// Nextjs function to generate metadata
+// Nextjs function to generate metadata in the head
 export async function generatePageMetadata(
-    getPageData: () => Promise<PageProps | null>
+  getPageData: () => Promise<PageProps | null>,
+  pathname: string = "/"
 ): Promise<Metadata> {
-    const pageData = await getPageData();
+  const pageData = await getPageData();
+  const canonical = `https://pakufi.agency${pathname}`;
 
-    if (!pageData || !pageData.SEO) {
-        return {
-            title: DEFAULT_METADATA.seoTitle,
-            description: DEFAULT_METADATA.seoDescription,
-            openGraph: {
-                title: DEFAULT_METADATA.seoTitle,
-                description: DEFAULT_METADATA.seoDescription,
-                url: "https://pakufi.com",
-                images: [getStrapiImageUrl(DEFAULT_METADATA.seoPreview.url)],
-            },
-            twitter: {
-                card: "summary_large_image",
-                title: DEFAULT_METADATA.seoTitle,
-                description: DEFAULT_METADATA.seoDescription,
-                images: [getStrapiImageUrl(DEFAULT_METADATA.seoPreview.url)], 
-            }
-        };
-    }
-
-    const {SEO: { seoTitle, seoDescription, seoPreview }} = pageData;
+  if (!pageData || !pageData?.pages[0] || !pageData.pages[0].SEO) {
     return {
-        title: seoTitle,
-        description: seoDescription,
-        openGraph: {
-            title: seoTitle,
-            description: seoDescription,
-            url: "https://pakufi.com",
-            images: [getStrapiImageUrl(seoPreview[0].url)],
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: seoTitle,
-            description: seoDescription,
-            images: [getStrapiImageUrl(seoPreview[0].url)],
-        },
+      title: DEFAULT_METADATA.seoTitle,
+      description: DEFAULT_METADATA.seoDescription,
+      alternates: {
+        canonical,
+      },
+      openGraph: {
+        title: DEFAULT_METADATA.seoTitle,
+        description: DEFAULT_METADATA.seoDescription,
+        url: "https://pakufi.com",
+        images: [getStrapiImageUrl(DEFAULT_METADATA.seoPreview.url)],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: DEFAULT_METADATA.seoTitle,
+        description: DEFAULT_METADATA.seoDescription,
+        images: [getStrapiImageUrl(DEFAULT_METADATA.seoPreview.url)],
+      },
     };
+  }
+
+  const page = pageData.pages[0];
+  const SEO = page.SEO;
+
+  return {
+    title: page.pageTitle,
+    description: page.pageDescription,
+    alternates: {
+      canonical,
+    },
+    openGraph: {
+      title: SEO.seoTitle,
+      description: SEO.seoDescription,
+      url: "https://pakufi.com",
+      images: [getStrapiImageUrl(SEO.seoPreview[0].url)],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: SEO.seoTitle,
+      description: SEO.seoDescription,
+      images: [getStrapiImageUrl(SEO.seoPreview[0].url)],
+    },
+  };
 }

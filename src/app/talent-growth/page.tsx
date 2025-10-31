@@ -21,11 +21,13 @@ import MobileMenuProvider from "../../context/MobileMenuProvider";
 import { TALENTGROWTH_QUERY } from "../../graphqlQueries/TalentGrowth";
 
 export const generateMetadata = async () =>
-  generatePageMetadata(() =>
-    getStrapiData({
-      query: TALENTGROWTH_QUERY,
-      pageType: "Talent Growth",
-    })
+  generatePageMetadata(
+    () =>
+      getStrapiData({
+        query: TALENTGROWTH_QUERY,
+        pageType: "Talent Growth",
+      }),
+    "/talent-growth"
   );
 
 function renderSection(

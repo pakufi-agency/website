@@ -21,11 +21,13 @@ import MobileMenuProvider from "../../context/MobileMenuProvider";
 import { TECHAGENCY_QUERY } from "../../graphqlQueries/TechAgency";
 
 export const generateMetadata = async () =>
-  generatePageMetadata(() =>
-    getStrapiData({
-      query: TECHAGENCY_QUERY,
-      pageType: "Tech Agency",
-    })
+  generatePageMetadata(
+    () =>
+      getStrapiData({
+        query: TECHAGENCY_QUERY,
+        pageType: "Tech Agency",
+      }),
+    "/tech-agency"
   );
 
 function renderSection(

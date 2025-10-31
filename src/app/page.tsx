@@ -27,14 +27,16 @@ import { PageProps, SectionProps } from "../types/types";
 import "../styles/common.scss";
 
 // Fetch SEO metadata
-export const generateMetadata = async () =>
-  generatePageMetadata(
+export const generateMetadata = async () => {
+  return generatePageMetadata(
     () =>
       getStrapiData({
         query: HOMEPAGE_QUERY,
         pageType: "Homepage",
-      }) as Promise<any>
+      }) as Promise<any>,
+    "/"
   );
+};
 
 // Render a section based on componentMap
 function renderSection(
