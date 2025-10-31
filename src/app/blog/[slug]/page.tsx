@@ -49,7 +49,11 @@ export async function generateMetadata({ params }: { params: Params }) {
     })) ?? {};
 
   const post = data?.blogPosts?.[0];
-  if (!post) return { title: "Blog | Pakufi" };
+  if (!post)
+    return {
+      title: "Blog Post not found – Pakufi",
+      description: "This post could not be found.",
+    };
 
   const meta = post.PostMetaInfo;
   const pageUrl = `https://pakufi.com/blog/${post.slug}`;
@@ -57,6 +61,9 @@ export async function generateMetadata({ params }: { params: Params }) {
   return {
     title: meta?.metaTitle || post.title,
     description: meta?.metaDescription || post.content?.slice(0, 160),
+    alternates: {
+      canonical: pageUrl,
+    },
     openGraph: {
       title: meta?.metaTitle || post.title,
       description: meta?.metaDescription || post.content?.slice(0, 160),

@@ -50,13 +50,20 @@ export async function generateMetadata({ params }: { params: Params }) {
     })) ?? {};
 
   const project = data?.projects?.[0];
-  if (!project) return <LoadingError />;
+  if (!project)
+    return {
+      title: "Project not found – Pakufi",
+      description: "This project could not be found.",
+    };
 
   const pageUrl = `https://pakufi.com/projects/${project.slug}`;
 
   return {
     title: project.title,
     description: (project.metaDescription || "").slice(0, 160),
+    alternates: {
+      canonical: pageUrl,
+    },
     openGraph: {
       title: project.title,
       description: project.metaDescription,

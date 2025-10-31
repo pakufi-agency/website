@@ -19,8 +19,9 @@ import MobileMenuProvider from "../../context/MobileMenuProvider";
 import { ABOUTUS_QUERY } from "../../graphqlQueries/Aboutus";
 
 export const generateMetadata = async () =>
-  generatePageMetadata(() =>
-    getStrapiData({ query: ABOUTUS_QUERY, pageType: "About Us" })
+  generatePageMetadata(
+    () => getStrapiData({ query: ABOUTUS_QUERY, pageType: "About Us" }),
+    "/about"
   );
 
 function renderSection(

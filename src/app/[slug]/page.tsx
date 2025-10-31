@@ -46,12 +46,14 @@ export async function generateMetadata({
     ? params.slug.join("/")
     : params?.slug || "home";
 
-  return generatePageMetadata(() =>
-    getStrapiData({
-      query: GENERAL_PAGE_BY_SLUG_QUERY,
-      pageType: "Generic Page",
-      variables: { slug },
-    })
+  return generatePageMetadata(
+    () =>
+      getStrapiData({
+        query: GENERAL_PAGE_BY_SLUG_QUERY,
+        pageType: "Generic Page",
+        variables: { slug },
+      }),
+    `/${slug}`
   );
 }
 

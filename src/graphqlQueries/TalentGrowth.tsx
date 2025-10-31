@@ -6,6 +6,14 @@ export const TALENTGROWTH_QUERY = gql`
       pageTitle
       pageDescription
       pageBannerTitle
+      SEO {
+        seoTitle
+        seoDescription
+        seoPreview {
+          url
+          alternativeText
+        }
+      }
       internalBannerMedia {
         alternativeText
         url
