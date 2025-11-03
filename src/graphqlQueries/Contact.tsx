@@ -69,7 +69,6 @@ export const CONTACT_QUERY = gql`
             }
             shortDescription
           }
-
           question_answers {
             question
             answer

@@ -37,7 +37,7 @@ function renderSection(
   const componentMap: Record<string, any> = {
     TextImageButtonsComponent: TextImageButtons,
     boxesText: BoxesText,
-    faqList: FaqSection,
+    question_answers: FaqSection,
     iconTitleSubtitle: IconTitleSubtitle,
   };
   return renderMultipleComponents({
