@@ -2,11 +2,6 @@
 User-agent: *
 Allow: /
 
-Disallow: /admin/
-Disallow: /login/
-Disallow: /legacy/
-
-
 # Host
 Host: https://pakufi.agency
 
