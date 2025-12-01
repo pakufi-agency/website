@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import * as Icon from "react-feather";
 import comingBgImg from "/public/images/coming-soon-1.jpg";
 import Link from "next/link";
@@ -11,7 +11,7 @@ interface CountdownProps {
 }
 
 const Countdown: React.FC<CountdownProps> = ({ endDate }) => {
-  const calculateTimeLeft = () => {
+  const calculateTimeLeft = useCallback(() => {
     if (endDate) {
       const endDateTime = new Date(endDate).getTime();
       const now = new Date().getTime();
@@ -32,7 +32,7 @@ const Countdown: React.FC<CountdownProps> = ({ endDate }) => {
         setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       }
     }
-  };
+  }, [endDate]);
 
   const [countdown, setCountdown] = useState({
     days: 0,
@@ -47,7 +47,7 @@ const Countdown: React.FC<CountdownProps> = ({ endDate }) => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [endDate]);
+  }, [calculateTimeLeft]);
 
   return (
     <>
