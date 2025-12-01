@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import BlockRendererClient from "../BlockRendererClient";
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
@@ -107,7 +108,7 @@ const AnimatedCard: React.FC<CardDataProps> = ({
       >
         {iconAsText && iconAsText}
         {iconAsImg && (
-          <img src={iconAsImg.url} alt={iconAsImg.alternativeText} />
+          <Image src={iconAsImg.url} alt={iconAsImg.alternativeText} />
         )}
       </div>
 
