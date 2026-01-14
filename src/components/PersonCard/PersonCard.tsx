@@ -13,6 +13,7 @@ interface PersonCardProps {
   jobPosition: string;
   shortDescription?: string;
   email?: string;
+  isAdvisor?: boolean;
   profilePic: { url: string; alternativeText: string };
   linkedinAbsoluteUrl?: string;
   personalWebsiteAbsoluteUrl?: string;
@@ -27,13 +28,14 @@ const PersonCard: React.FC<PersonCardProps> = ({
   jobPosition,
   shortDescription,
   email,
+  isAdvisor,
   profilePic,
   linkedinAbsoluteUrl,
   personalWebsiteAbsoluteUrl,
   githubAsboluteUrl,
   backgroundColor,
   withAnimatedBar = true,
-  iconColor
+  iconColor,
 }) => {
   return (
     <div className={styles.card} style={{ background: backgroundColor }}>
@@ -109,7 +111,7 @@ const PersonCard: React.FC<PersonCardProps> = ({
           )}
         </ul>
 
-        <p>{shortDescription}</p>
+        {!isAdvisor && <p>{shortDescription}</p>}
       </div>
     </div>
   );

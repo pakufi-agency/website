@@ -63,6 +63,8 @@ export const ABOUTUS_QUERY = gql`
             firstName
             lastName
             jobPosition
+            isAdvisor
+            backgroundColor
             email
             linkedinAbsoluteUrl
             personalWebsiteAbsoluteUrl

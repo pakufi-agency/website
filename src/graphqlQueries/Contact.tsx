@@ -59,6 +59,8 @@ export const CONTACT_QUERY = gql`
             firstName
             lastName
             jobPosition
+            isAdvisor
+            backgroundColor
             email
             linkedinAbsoluteUrl
             personalWebsiteAbsoluteUrl
