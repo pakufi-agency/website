@@ -113,14 +113,12 @@ export const HOMEPAGE_QUERY = gql`
             shortDescription
           }
           collaborators {
-            fullName
-            jobPosition
-            email
-            linkedinAbsoluteUrl
-            profilePic {
+            name
+            logo {
               alternativeText
               url
             }
+            absoluteUrl
           }
           question_answers {
             question

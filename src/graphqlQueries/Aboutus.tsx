@@ -77,15 +77,12 @@ export const ABOUTUS_QUERY = gql`
           }
 
           collaborators {
-            fullName
-            jobPosition
-            email
-            linkedinAbsoluteUrl
-            personalWebsiteAbsoluteUrl
-            profilePic {
-              url
+            name
+            logo {
               alternativeText
+              url
             }
+            absoluteUrl
           }
         }
         ... on ComponentSectionsIntroSinglePage {
