@@ -2,6 +2,8 @@
 
 import React, { ReactNode } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { ButtonLink } from "../ButtonLink";
 
 import twoBars from "/public/images/backgrounds/two-bars-blue-pink.svg";
 import twoBarsRight from "/public/images/backgrounds/two-bars-spacing-blue-yellow.svg";
@@ -24,6 +26,8 @@ interface SectionProps {
   children: ReactNode;
   shapesVariation: string;
   backgroundVariation: string;
+  buttonSectionCtaLabel?: string;
+  buttonSectionCtaLink?: string;
 }
 
 const Section: React.FC<SectionProps> = ({
@@ -35,8 +39,12 @@ const Section: React.FC<SectionProps> = ({
   barBallColor,
   shapesVariation,
   backgroundVariation,
+  buttonSectionCtaLabel,
+  buttonSectionCtaLink,
   children,
 }) => {
+  const pathname = usePathname();
+
   return (
     <>
       <div className={`${styles.sectionContainer}`} style={{ backgroundColor }}>
@@ -69,6 +77,16 @@ const Section: React.FC<SectionProps> = ({
           </div>
 
           <div className="row justify-content-center">{children}</div>
+          <div className="text-center">
+            {buttonSectionCtaLink && (
+              <ButtonLink
+                href={buttonSectionCtaLink}
+                label={buttonSectionCtaLabel}
+                pathname={pathname}
+                className="btn btn-secondary"
+              />
+            )}
+          </div>
         </div>
 
         {shapesVariation === "one" && (

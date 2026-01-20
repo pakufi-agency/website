@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import PersonCard from "../PersonCard/PersonCard";
 
 import styles from "./CollaboratorsSection.module.scss";
 interface CollaboratorsSectionProps {

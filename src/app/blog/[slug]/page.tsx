@@ -9,7 +9,7 @@ import BlogDetailsContent from "@/components/Blog/BlogDetails";
 import { SinglePageResponse } from "../../../types/types";
 import { getStrapiData, getStrapiImageUrl } from "../../../utils/utils";
 import {
-  BLOG_POSTS_LIST_QUERY,
+  BLOG_POSTS_ALL_QUERY,
   BLOG_POST_BY_SLUG_QUERY,
 } from "../../../graphqlQueries/Blog";
 import { SINGLE_PAGE_QUERY } from "../../../graphqlQueries/SinglePage";
@@ -91,7 +91,7 @@ export async function generateMetadata({ params }: { params: Params }) {
 export async function generateStaticParams(): Promise<Params[]> {
   const data: StrapiResponse<BlogPost> =
     (await getStrapiData({
-      query: BLOG_POSTS_LIST_QUERY,
+      query: BLOG_POSTS_ALL_QUERY,
       pageType: "Blog Post List",
     })) ?? {};
 

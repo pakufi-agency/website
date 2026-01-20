@@ -105,20 +105,20 @@ const Navbar: React.FC = () => {
                 </li>
                 <li className={`nav-item ${styles.navItem}`}>
                   <Link
-                    href="/tech-agency/"
+                    href="/services/"
                     className={styles.navLink}
-                    onClick={(e) => handleMenuItemClick(e, "/tech-agency")}
+                    onClick={(e) => handleMenuItemClick(e, "/services")}
                   >
-                    Tech Agency
+                    Services
                   </Link>
                 </li>
                 <li className={`nav-item ${styles.navItem}`}>
                   <Link
-                    href="/tech-agency/"
+                    href="/projects/"
                     className={styles.navLink}
-                    onClick={(e) => handleMenuItemClick(e, "/talent-growth")}
+                    onClick={(e) => handleMenuItemClick(e, "/projects")}
                   >
-                    Talent Growth
+                    Case Studies
                   </Link>
                 </li>
                 <li className={`nav-item ${styles.navItem}`}>
@@ -127,7 +127,7 @@ const Navbar: React.FC = () => {
                     className={styles.navLink}
                     onClick={(e) => handleMenuItemClick(e, "/about")}
                   >
-                    About
+                    About us
                   </Link>
                 </li>
                 <li className={`nav-item ${styles.navItem}`}>
@@ -146,6 +146,15 @@ const Navbar: React.FC = () => {
                     onClick={(e) => handleMenuItemClick(e, "/contact")}
                   >
                     Contact us
+                  </Link>
+                </li>
+                <li className={`nav-item ${styles.navItem}`}>
+                  <Link
+                    href="/talent-growth/"
+                    className={styles.navLink}
+                    onClick={(e) => handleMenuItemClick(e, "/talent-growth")}
+                  >
+                    For Talent
                   </Link>
                 </li>
                 {/* <li className={`nav-item ${styles.navItem}`}>

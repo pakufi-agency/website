@@ -1,6 +1,8 @@
 "use client";
 
 import React, { ReactNode } from "react";
+import { usePathname } from "next/navigation";
+import { ButtonLink } from "../ButtonLink";
 
 import styles from "./SectionHalfBackground.module.scss";
 
@@ -11,6 +13,8 @@ interface SectionHalfBackgroundProps {
   titleColor?: string;
   descriptionColor?: string;
   barBallColor2?: "green" | "blue";
+  buttonSectionCtaLabel?: string;
+  buttonSectionCtaLink?: string;
   children: ReactNode;
 }
 
@@ -21,8 +25,12 @@ const SectionHalfBackground: React.FC<SectionHalfBackgroundProps> = ({
   titleColor,
   descriptionColor,
   barBallColor2,
+  buttonSectionCtaLabel,
+  buttonSectionCtaLink,
   children,
 }) => {
+  const pathname = usePathname();
+
   return (
     <>
       <div className={`${styles.container} pt-80`} style={{ backgroundColor }}>
@@ -38,6 +46,17 @@ const SectionHalfBackground: React.FC<SectionHalfBackgroundProps> = ({
           </div>
 
           <div className="row justify-content-center">{children}</div>
+
+          <div className="text-center">
+            {buttonSectionCtaLink && (
+              <ButtonLink
+                href={buttonSectionCtaLink}
+                label={buttonSectionCtaLabel}
+                pathname={pathname}
+                className="btn btn-secondary"
+              />
+            )}
+          </div>
         </div>
       </div>
     </>

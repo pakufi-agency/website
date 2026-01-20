@@ -75,15 +75,6 @@ export const ABOUTUS_QUERY = gql`
             }
             shortDescription
           }
-
-          collaborators {
-            name
-            logo {
-              alternativeText
-              url
-            }
-            absoluteUrl
-          }
         }
         ... on ComponentSectionsIntroSinglePage {
           title

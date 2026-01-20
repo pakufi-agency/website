@@ -73,6 +73,8 @@ export const HOMEPAGE_QUERY = gql`
           barBallColor
           shapesVariation
           backgroundVariation
+          buttonSectionCtaLabel
+          buttonSectionCtaLink
           TextImageButtonsComponent {
             ImagePosition
             media {
@@ -96,29 +98,33 @@ export const HOMEPAGE_QUERY = gql`
             descriptionRichText
             icon
           }
-          team_members {
-            firstName
-            lastName
-            jobPosition
-            isAdvisor
-            backgroundColor
-            email
-            linkedinAbsoluteUrl
-            personalWebsiteAbsoluteUrl
-            githubAsboluteUrl
-            profilePic {
-              url
+          projects {
+            coverPicture {
               alternativeText
+              url
             }
-            shortDescription
+            metaDescription
+            description
+            slug
+            title
+            services
           }
           collaborators {
             name
+            absoluteUrl
             logo {
               alternativeText
               url
             }
-            absoluteUrl
+          }
+          timelineSection {
+            sideText
+            timelineAlign
+            timelineStep {
+              stepNumber
+              title
+              description
+            }
           }
           question_answers {
             question
@@ -132,18 +138,12 @@ export const HOMEPAGE_QUERY = gql`
           titleColor
           descriptionColor
           barBallColor2
-          TextImageButtonsComponent {
-            ImagePosition
-            media {
-              url
-              alternativeText
-            }
-            richText
-            buttonOneLabel
-            buttonOneLink
-            buttonTwoLabel
-            buttonTwoLink
-            textColor
+          buttonSectionCtaLabel
+          buttonSectionCtaLink
+          services {
+            name
+            descriptionRichText
+            icon
           }
         }
       }

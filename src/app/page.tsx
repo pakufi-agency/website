@@ -6,8 +6,6 @@ import Section from "../components/Sections/Section";
 import SectionHalfBackground from "../components/Sections/SectionHalfBackground";
 import TextImageButtons from "../components/TextImageButtons/TextImageButtons";
 import CtaText from "../components/CtaText/CtaText";
-import WhatWeDoSection from "../components/WhatWeDoSection/WhatWeDoSection";
-import TeamSection from "../components/TeamSection/TeamSection";
 import ServiceBox from "../components/ServicesBox/ServiceBox";
 import BoxesText from "../components/BoxesText/BoxesText";
 import FaqSection from "../components/FaqSection/FaqSection";
@@ -25,6 +23,9 @@ import { generatePageMetadata } from "../utils/seo";
 import { PageProps, SectionProps } from "../types/types";
 
 import "../styles/common.scss";
+import ProjectsCard from "@/components/Projects/ProjectsCard";
+import TimelineSection from "@/components/TimelineSection/TimelineSection";
+import { ButtonLink } from "@/components/ButtonLink";
 
 // Fetch SEO metadata
 export const generateMetadata = async () => {
@@ -48,9 +49,11 @@ function renderSection(
     TextImageButtonsComponent: TextImageButtons,
     services: ServiceBox,
     collaborators: CollaboratorsSection,
-    team_members: TeamSection,
+    timelineSection: TimelineSection,
+    projects: ProjectsCard,
     boxesText: BoxesText,
     question_answers: FaqSection,
+    ctaButton: ButtonLink,
     blogGrid: () => <BlogGrid posts={blogPosts} />,
   };
   return renderMultipleComponents({
@@ -94,9 +97,6 @@ export default async function Page() {
             switch (section.__typename) {
               case "ComponentStaticComponentHero":
                 return <HeroBanner {...section} key={index} />;
-
-              case "ComponentStaticComponentWhatWeDo":
-                return <WhatWeDoSection {...section} key={index} />;
 
               case "ComponentCommonNewsletter":
                 return <Newsletter {...section} key={index} />;
