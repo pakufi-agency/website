@@ -35,7 +35,7 @@ export const generateMetadata = async () => {
         query: HOMEPAGE_QUERY,
         pageType: "Homepage",
       }) as Promise<any>,
-    "/"
+    "/",
   );
 };
 
@@ -43,14 +43,14 @@ export const generateMetadata = async () => {
 function renderSection(
   section: SectionProps,
   ComponentWrapper: React.ComponentType<any>,
-  blogPosts: any[] = []
+  blogPosts: any[] = [],
 ) {
   const componentMap: Record<string, any> = {
     TextImageButtonsComponent: TextImageButtons,
     services: ServiceBox,
     collaborators: CollaboratorsSection,
-    timelineSection: TimelineSection,
     projects: ProjectsCard,
+    timelineSection: TimelineSection,
     boxesText: BoxesText,
     question_answers: FaqSection,
     ctaButton: ButtonLink,
@@ -87,6 +87,8 @@ export default async function Page() {
     );
   }
 
+  console.log("Homepage page data:", page);
+
   return (
     <div className="homepage-page">
       <MobileMenuProvider>
@@ -108,7 +110,7 @@ export default async function Page() {
                 return renderSection(
                   section,
                   SectionHalfBackground,
-                  latestBlogPosts
+                  latestBlogPosts,
                 );
 
               case "ComponentCommonCta":

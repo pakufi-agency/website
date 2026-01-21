@@ -27,24 +27,6 @@ export const HOMEPAGE_QUERY = gql`
             url
           }
         }
-        ... on ComponentStaticComponentWhatWeDo {
-          title
-          pakufiOffers {
-            cardStyle
-            title
-            content
-            button {
-              label
-              url
-              style
-            }
-            iconAsText
-            iconAsImg {
-              url
-              alternativeText
-            }
-          }
-        }
         ... on ComponentCommonCta {
           title
           description
@@ -92,12 +74,6 @@ export const HOMEPAGE_QUERY = gql`
           blogGrid {
             slug
           }
-          services {
-            name
-            subtitle
-            descriptionRichText
-            icon
-          }
           projects {
             coverPicture {
               alternativeText
@@ -108,14 +84,6 @@ export const HOMEPAGE_QUERY = gql`
             slug
             title
             services
-          }
-          collaborators {
-            name
-            absoluteUrl
-            logo {
-              alternativeText
-              url
-            }
           }
           timelineSection {
             sideText
@@ -142,8 +110,17 @@ export const HOMEPAGE_QUERY = gql`
           buttonSectionCtaLink
           services {
             name
+            subtitle
             descriptionRichText
             icon
+          }
+          collaborators {
+            name
+            absoluteUrl
+            logo {
+              alternativeText
+              url
+            }
           }
         }
       }
