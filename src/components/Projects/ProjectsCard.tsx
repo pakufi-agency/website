@@ -17,25 +17,28 @@ const ProjectsCard: React.FC<ProjectsListProps> = ({ items = [] }) => {
         <div className="row justify-content-center">
           {items.map((project, index) => (
             <div key={index} className="col-lg-4 col-md-6">
-              <Link href={`/projects/${project.slug}`}>
+              <Link href={`/projects/${project.slug}`} className={styles.link}>
                 <div className={styles.projectCard}>
-                  <Image
-                    src={getStrapiImageUrl(project.coverPicture?.url)}
-                    alt={
-                      project.coverPicture?.alternativeText || "Project image"
-                    }
-                    width={640}
-                    height={550}
-                    className={styles.projectImage}
-                  />
+                  <div className={styles.imageWrapper}>
+                    <Image
+                      src={getStrapiImageUrl(project.coverPicture?.url)}
+                      alt={
+                        project.coverPicture?.alternativeText || "Project image"
+                      }
+                      className={styles.projectImage}
+                      sizes="(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      fill
+                      objectFit="cover"
+                    />
 
-                  <span className={styles.icon}>
-                    <Icon.Settings />
-                  </span>
+                    <span className={styles.icon}>
+                      <Icon.Settings />
+                    </span>
 
-                  <div className={styles.projectContent}>
-                    <h3>{project.title}</h3>
-                    {/* <p>{project.services}</p> */}
+                    <div className={styles.projectContent}>
+                      <h3>{project.title}</h3>
+                      {/* <p>{project.services}</p> */}
+                    </div>
                   </div>
                 </div>
               </Link>

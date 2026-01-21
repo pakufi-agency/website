@@ -1,21 +1,25 @@
 import React from "react";
-import Navbar from "../components/Layout/Navbar";
-import Footer from "../components/Layout/Footer";
-import HeroBanner from "../components/Hero/Hero";
-import Section from "../components/Sections/Section";
-import SectionHalfBackground from "../components/Sections/SectionHalfBackground";
-import TextImageButtons from "../components/TextImageButtons/TextImageButtons";
-import CtaText from "../components/CtaText/CtaText";
-import ServiceBox from "../components/ServicesBox/ServiceBox";
-import BoxesText from "../components/BoxesText/BoxesText";
-import FaqSection from "../components/FaqSection/FaqSection";
-import CollaboratorsSection from "../components/CollaboratorsSection/CollaboratorsSection";
-import CtaBig from "../components/CtaBig/CtaBig";
-import Newsletter from "../components/Newsletter/Newsletter";
-import LoadingError from "../components/Errors/LoadingError";
-import BlogGrid from "../components/Blog/BlogGrid";
+import Navbar from "@/components/Layout/Navbar";
+import Footer from "@/components/Layout/Footer";
+import HeroBanner from "@/components/Hero/Hero";
+import Section from "@/components/Sections/Section";
+import SectionHalfBackground from "@/components/Sections/SectionHalfBackground";
+import TextImageButtons from "@/components/TextImageButtons/TextImageButtons";
+import CtaText from "@/components/CtaText/CtaText";
+import ServiceBox from "@/components/ServicesBox/ServiceBox";
+import BoxesText from "@/components/BoxesText/BoxesText";
+import FaqSection from "@/components/FaqSection/FaqSection";
+import CollaboratorsSection from "@/components/CollaboratorsSection/CollaboratorsSection";
+import CtaBig from "@/components/CtaBig/CtaBig";
+import Newsletter from "@/components/Newsletter/Newsletter";
+import LoadingError from "@/components/Errors/LoadingError";
+import BlogGrid from "@/components/Blog/BlogGrid";
+import ProjectsCard from "@/components/Projects/ProjectsCard";
+import TimelineSection from "@/components/TimelineSection/TimelineSection";
+import { ButtonLink } from "@/components/ButtonLink";
+import SectionFullWidth from "@/components/Sections/SectionFullWidth";
 
-import MobileMenuProvider from "../context/MobileMenuProvider";
+import MobileMenuProvider from "@/context/MobileMenuProvider";
 import { HOMEPAGE_QUERY } from "../graphqlQueries/Homepage";
 import { BLOG_POSTS_LATEST_QUERY } from "../graphqlQueries/Blog";
 import { renderMultipleComponents, getStrapiData } from "../utils/utils";
@@ -23,9 +27,6 @@ import { generatePageMetadata } from "../utils/seo";
 import { PageProps, SectionProps } from "../types/types";
 
 import "../styles/common.scss";
-import ProjectsCard from "@/components/Projects/ProjectsCard";
-import TimelineSection from "@/components/TimelineSection/TimelineSection";
-import { ButtonLink } from "@/components/ButtonLink";
 
 // Fetch SEO metadata
 export const generateMetadata = async () => {
@@ -87,8 +88,6 @@ export default async function Page() {
     );
   }
 
-  console.log("Homepage page data:", page);
-
   return (
     <div className="homepage-page">
       <MobileMenuProvider>
@@ -112,6 +111,9 @@ export default async function Page() {
                   SectionHalfBackground,
                   latestBlogPosts,
                 );
+
+              case "ComponentCommonSectionfullWidth":
+                return renderSection(section, SectionFullWidth);
 
               case "ComponentCommonCta":
                 if (!section.isBig) {

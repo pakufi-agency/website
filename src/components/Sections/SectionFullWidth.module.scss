@@ -1,0 +1,84 @@
+@use '../../styles/variables.scss' as *;
+
+.sectionContainer {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background-color: #f9fafb;
+
+    .containerFluid {
+        padding: 0 40px; 
+    }
+
+    .ballGreen {
+        background: #cdf1d8;
+
+        &::before {
+            background: $jade-green;
+        }
+    }
+
+    .ballBlue {
+        background: #cdf1d8;
+
+        &::before {
+            background: $navy-blue;
+        }
+    }
+
+    p {
+        opacity: .95;
+    }
+
+    .barsLeft, .barsRight {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 767px) {
+    .sectionContainer {
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 35px;
+        }
+
+        .barsLeft {
+            display: block;
+            position: absolute;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        .barsRight {
+            display: block;
+            position: absolute;
+            opacity: 0.8;
+            z-index: -1;
+        }
+
+        .twoLeft {
+            left: -20px;
+            top: -10px;
+            transform: scale(-1, -1) rotate(360deg);
+        }
+        .twoRight {
+            right: -20px;
+            bottom: -10px;
+        }
+
+
+        .threeLeft {
+            left: 0;
+            bottom: 2%;
+        }
+        .threeRight {
+            right: 0;
+            bottom: 2%;
+        }
+    }
+}

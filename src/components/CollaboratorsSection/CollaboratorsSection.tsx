@@ -20,12 +20,11 @@ const CollaboratorsSection: React.FC<CollaboratorsSectionProps> = ({
 }: {
   items: PartnerItem[];
 }) => {
-  console.log("Collaborators items:", items);
   return (
     <>
       <div>
         <div className={`row justify-content-center ${styles.container}`}>
-          <h3 className={styles.title}>Our valued clients and partners:</h3>
+          <h3 className={styles.title}>Our valued clients and partners</h3>
           <Carousel items={items} />
         </div>
       </div>

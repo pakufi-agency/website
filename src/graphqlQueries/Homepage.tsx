@@ -111,9 +111,21 @@ export const HOMEPAGE_QUERY = gql`
           services {
             name
             subtitle
-            descriptionRichText
             icon
           }
+        }
+        ... on ComponentCommonSectionfullWidth {
+          sectionTitle3
+          showTitle
+          sectionSubtitle3
+          backgroundColor3
+          titleColor3
+          descriptionColor3
+          barBallColor3
+          shapesVariation3
+          backgroundVariation3
+          buttonSectionCtaLabel
+          buttonSectionCtaLink
           collaborators {
             name
             absoluteUrl
