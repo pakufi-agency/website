@@ -20,13 +20,13 @@
     color: $white;
   }
 
-  p {
+  .subtitle {
     font-size: 18px;
-    color: $mint-green;
+    color: $white-fbfaff;
   }
 
   .footnote {
-    color: $navy-blue;
+    color: $acid-green;
     font-size: 12px;
     margin-top: 15px;
   }
@@ -69,14 +69,17 @@
     }
   }
 
-  button {
+  .button {
     position: absolute;
     right: 0px;
-    top: 1px;
-    padding: 14px 40px;
-    border-radius: 10px;
-    transition: 0.5s;
+    top: 0.5px;
+    border-radius: 0;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
 
+    &:hover {
+      transform: translateY(0);
+    }
     span {
       margin: 0;
     }

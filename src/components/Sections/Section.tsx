@@ -18,6 +18,7 @@ import styles from "./Section.module.scss";
 
 interface SectionProps {
   sectionTitle: string;
+  showTitle?: boolean;
   subtitle?: string;
   backgroundColor?: string;
   titleColor?: string;
@@ -32,6 +33,7 @@ interface SectionProps {
 
 const Section: React.FC<SectionProps> = ({
   sectionTitle,
+  showTitle,
   subtitle,
   backgroundColor,
   titleColor,
@@ -64,16 +66,21 @@ const Section: React.FC<SectionProps> = ({
           </div>
         )}
         <div className="container">
-          <div className={`section-title`}>
-            <h2 style={{ color: titleColor }}>{sectionTitle}</h2>
-            <div
-              className={`bar ${
-                barBallColor === "green" ? styles.ballGreen : styles.ballBlue
-              }`}
-            ></div>
-            {subtitle && <p style={{ color: descriptionColor }}>{subtitle}</p>}
-          </div>
-
+          {" "}
+          \
+          {showTitle && (
+            <div className={`section-title`}>
+              <h2 style={{ color: titleColor }}>{sectionTitle}</h2>
+              <div
+                className={`bar ${
+                  barBallColor === "green" ? styles.ballGreen : styles.ballBlue
+                }`}
+              ></div>
+              {subtitle && (
+                <p style={{ color: descriptionColor }}>{subtitle}</p>
+              )}
+            </div>
+          )}
           <div className="row justify-content-center">{children}</div>
           <div className="text-center">
             {buttonSectionCtaLink && (
@@ -81,7 +88,7 @@ const Section: React.FC<SectionProps> = ({
                 href={buttonSectionCtaLink}
                 label={buttonSectionCtaLabel}
                 pathname={pathname}
-                className="btn btn-secondary"
+                className="btn btn-primary"
               />
             )}
           </div>

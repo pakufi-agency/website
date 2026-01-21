@@ -90,7 +90,7 @@ const SectionFullWidth: React.FC<SectionFullWidthProps> = ({
                 href={buttonSectionCtaLink}
                 label={buttonSectionCtaLabel}
                 pathname={pathname}
-                className="btn btn-secondary"
+                className="btn btn-primary"
               />
             )}
           </div>

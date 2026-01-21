@@ -35,7 +35,7 @@ const CtaText: React.FC<CtaTextProps> = ({
             href={buttonCtaOneLink}
             label={buttonCtaOneLabel}
             pathname={pathname}
-            className={`btn button-pakufi-dark ${styles.button}`}
+            className={`btn btn-primary btn-shining ${styles.button}`}
           />
         </div>
       </div>

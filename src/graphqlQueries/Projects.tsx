@@ -61,6 +61,7 @@ export const PROJECTS_PAGE_QUERY = gql`
       sections {
         ... on ComponentCommonSection {
           sectionTitle
+          showTitle
           subtitle
           backgroundColor
           titleColor

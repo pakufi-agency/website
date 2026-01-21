@@ -204,92 +204,88 @@ textarea.form-control {
     }
 }
 
-/* btn btn-primary */
-.btn-primary {
-    color: $white;
-    background-color: $primary-color;
-    box-shadow: 0 13px 27px 0 $primary-box-shadow;
+@mixin button-variant(
+  $text-color,
+  $bg-color,
+  $hover-bg-color,
+  $shadow-color,
+  $hover-shadow-color
+) {
+  color: $text-color;
+  background-color: $bg-color;
+  box-shadow: 0 13px 27px 0 $shadow-color;
 
-    &:hover, &:focus, &:active {
-        color: $white;
-        background: $black-color;
-        transform: translateY(-5px);
-        box-shadow: 0 13px 27px 0 $secondary-box-shadow;
-    }
-    &.focus, &:focus {
-        box-shadow: unset;
-    }
-    &:not(:disabled):not(.disabled).active:focus, &:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
-        box-shadow: unset;
-    }
-    &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
-        color: $white;
-        background: $black-color;
-        transform: translateY(-5px);
-        box-shadow: 0 13px 27px 0 $secondary-box-shadow;
-    }
-    &.disabled, &:disabled {
-        color: $white;
-        background-color: $primary-color;
-        box-shadow: 0 13px 27px 0 $primary-box-shadow;
-        opacity: 1;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $text-color;
+    background: $hover-bg-color;
+    transform: translateY(-5px);
+    box-shadow: 0 13px 27px 0 $hover-shadow-color;
+  }
 
-        &:hover, &:focus {
-            background: $black-color;
-            box-shadow: 0 13px 27px 0 $secondary-box-shadow;
-        }
-    }
-}
+  &.focus,
+  &:focus {
+    box-shadow: unset;
+  }
 
-/* btn-secondary */
-.btn-secondary {
-    text-transform: capitalize;
-    border-radius: 0;
-    background-color: $primary-color;
-    padding: 13px 30px;
-    box-shadow: 5px 5px 5px $acid-green;
-    margin: {
-        right: 5px;
-        bottom: 5px;
-    };
-    font: {
-        size: 14px;
-        weight: 500;
-    };
-    &::before {
-        border-radius: 0;
-        background: $secondary-color;
-    }
-    &::after {
-        border-radius: 0;
-        background: $secondary-color;
-    }
-    &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active, .show>&.dropdown-toggle {
-        color: $white;
-        background-color: $primary-color;
-        border-color: $primary-color;
-    }
-    &:not(:disabled):not(.disabled).active:focus, &:not(:disabled):not(.disabled):active:focus, .show>&.dropdown-toggle:focus {
-        box-shadow: 5px 5px 5px $acid-green;
-    }
+  &:not(:disabled):not(.disabled).active:focus,
+  &:not(:disabled):not(.disabled):active:focus,
+  .show > &.dropdown-toggle:focus {
+    box-shadow: unset;
+  }
+
+  &:not(:disabled):not(.disabled).active,
+  &:not(:disabled):not(.disabled):active,
+  .show > &.dropdown-toggle {
+    color: $text-color;
+    background: $hover-bg-color;
+    transform: translateY(-5px);
+    box-shadow: 0 13px 27px 0 $hover-shadow-color;
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $text-color;
+    background-color: $bg-color;
+    box-shadow: 0 13px 27px 0 $shadow-color;
+    opacity: 1;
+
+    &:hover,
     &:focus {
-        color: $white;
+      background: $hover-bg-color;
+      box-shadow: 0 13px 27px 0 $hover-shadow-color;
     }
-    &:hover, &:focus {
-        box-shadow: 5px 5px 5px $acid-green;
-    }
+  }
 }
 
-/* btn-shining */
-.btn-shining,
-.btn_shining {
+@mixin button-shining {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 15px 30px;
-  @include transition(all, 0.3s, cubic-bezier(0.25, 0.8, 0.25, 1));
   position: relative;
   overflow: hidden;
+
+  @include transition(all, 0.3s, cubic-bezier(0.25, 0.8, 0.25, 1));
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.25),
+      transparent
+    );
+
+    @include transition(left, 0.6s);
+  }
 
   &:hover {
     transform: translateY(-2px);
@@ -303,18 +299,39 @@ textarea.form-control {
       transform: translateX(5px);
     }
   }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    @include transition(left, 0.6s);
-  }
 }
+
+
+
+/* btn btn-primary */
+.btn-primary {
+  @include button-variant(
+    $white,
+    $primary-color,
+    $black-color,
+    $primary-box-shadow,
+    $secondary-box-shadow
+  );
+}
+
+/* btn btn-secondary */
+.btn-secondary {
+  @include button-variant(
+    $white,
+    $secondary-color,
+    $jade-green,
+    $secondary-box-shadow,
+    $primary-box-shadow
+  );
+}
+
+/* btn btn-secondary: to be used with btn-primary or btn-secondary */
+.btn-shining {
+  @include button-shining;
+}
+
+
+
 
 .arrow {
   @include transition(transform);
@@ -438,34 +455,39 @@ label {
 }
 
 // DARK THEME
-.pakufi-dark-theme {
-    background-color: $navy-blue;
-    color: #f8f9fa;
+// .pakufi-dark-theme {
+//     background-color: $navy-blue;
+//     color: #f8f9fa;
 
-    h1, h2, h3, h4, h5, h6, p {
-        color: #f8f9fa;  
-    }
+//     h1, h2, h3, h4, h5, h6, p {
+//         color: #f8f9fa;  
+//     }
 
-    .link {
-        color: $tertiary-color;
-    }
-}
+//     .link {
+//         color: $tertiary-color;
+//     }
+// }
 
-.button-pakufi-dark {
-    background: $secondary-color;
-    box-shadow: 0 0 4px 0 rgba(121, 227, 213, 0.474);
-    color: $primary-color;
+// .button-pakufi-dark {
+//     background: $secondary-color;
+//     box-shadow: 0 0 4px 0 rgba(121, 227, 213, 0.474);
+//     color: $primary-color;
 
-    &::after, &::before {
-        background: $primary-color;
-        box-shadow: 0 0 4px 0 rgba(68, 165, 206, 0.491);
-    }
+//     &::after, &::before {
+//         background: $primary-color;
+//         box-shadow: 0 0 4px 0 rgba(68, 165, 206, 0.491);
+//     }
 
-    &:hover {
-        border: 1px solid $secondary-color;
-        color: $secondary-color;
-    }
-}
+//     &:hover {
+//         border: 1px solid $secondary-color;
+//         color: $secondary-color;
+//         box-shadow: 0 0 0px 0 transparent;
+
+//         &::after, &::before {
+//             box-shadow: 0 0 0px 0 transparent;
+//         }
+//     }
+// }
 
 // phone/tablet
 @media only screen and (min-width: 576px) {

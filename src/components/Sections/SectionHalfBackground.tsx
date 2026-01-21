@@ -53,7 +53,7 @@ const SectionHalfBackground: React.FC<SectionHalfBackgroundProps> = ({
                 href={buttonSectionCtaLink}
                 label={buttonSectionCtaLabel}
                 pathname={pathname}
-                className="btn btn-secondary"
+                className="btn btn-primary"
               />
             )}
           </div>
