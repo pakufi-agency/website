@@ -66,8 +66,6 @@ const Section: React.FC<SectionProps> = ({
           </div>
         )}
         <div className="container">
-          {" "}
-          \
           {showTitle && (
             <div className={`section-title`}>
               <h2 style={{ color: titleColor }}>{sectionTitle}</h2>

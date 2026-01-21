@@ -48,6 +48,7 @@ export const HOMEPAGE_QUERY = gql`
         }
         ... on ComponentCommonSection {
           sectionTitle
+          showTitle
           subtitle
           backgroundColor
           titleColor

@@ -11,7 +11,6 @@ import CtaBig from "../../components/CtaBig/CtaBig";
 import LoadingError from "../../components/Errors/LoadingError";
 import Newsletter from "../../components/Newsletter/Newsletter";
 import SectionHalfBackground from "../../components/Sections/SectionHalfBackground";
-import CollaboratorsSection from "../../components/CollaboratorsSection/CollaboratorsSection";
 import BlockRendererClient from "../../components/BlockRendererClient";
 
 import { getStrapiData, renderMultipleComponents } from "../../utils/utils";
@@ -27,18 +26,17 @@ export const generateMetadata = async () =>
         query: TALENTGROWTH_QUERY,
         pageType: "Talent Growth",
       }),
-    "/talent-growth"
+    "/talent-growth",
   );
 
 function renderSection(
   section: SectionProps,
-  ComponentWrapper: React.ComponentType<any>
+  ComponentWrapper: React.ComponentType<any>,
 ) {
   const componentMap: Record<string, any> = {
     TextImageButtonsComponent: TextImageButtons,
     timelineSection: TimelineSection,
     mentorship_programs: OfferPackageList,
-    mentors: CollaboratorsSection,
   };
   return renderMultipleComponents({
     section,
