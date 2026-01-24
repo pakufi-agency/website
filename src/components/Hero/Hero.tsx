@@ -60,7 +60,9 @@ const Hero: React.FC<HeroProps> = ({
                     href={button.url}
                     label={button.label}
                     pathname={pathname}
-                    className={`btn btn-primary btn-shining ${styles.button}`}
+                    className={`btn ${
+                      index === 0 ? "btn-secondary" : "btn-primary"
+                    } btn-shining ${styles.button}`}
                   />
                 </span>
               ))}

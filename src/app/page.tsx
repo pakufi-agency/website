@@ -26,7 +26,7 @@ import { renderMultipleComponents, getStrapiData } from "../utils/utils";
 import { generatePageMetadata } from "../utils/seo";
 import { PageProps, SectionProps } from "../types/types";
 
-import "../styles/common.scss";
+// import "../styles/common.scss";
 
 // Fetch SEO metadata
 export const generateMetadata = async () => {

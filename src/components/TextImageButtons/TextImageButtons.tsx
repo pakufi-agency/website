@@ -55,7 +55,7 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                         href={buttonOneLink}
                         label={buttonOneLabel}
                         pathname={pathname}
-                        className={`btn btn-primary ${buttonStyle} ${styles.buttonLink}`}
+                        className={`btn btn-secondary ${buttonStyle} ${styles.buttonLink}`}
                       />
                     )}
 
@@ -120,7 +120,7 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                         href={buttonOneLink}
                         label={buttonOneLabel}
                         pathname={pathname}
-                        className={`btn btn-primary ${buttonStyle} ${styles.buttonLink}`}
+                        className={`btn btn-secondary ${buttonStyle} ${styles.buttonLink}`}
                       />
                     )}
 
@@ -150,7 +150,7 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                       href={buttonOneLink}
                       label={buttonOneLabel}
                       pathname={pathname}
-                      className={`btn btn-primary ${buttonStyle} ${styles.buttonLink}`}
+                      className={`btn btn-secondary ${buttonStyle} ${styles.buttonLink}`}
                     />
                   )}
 

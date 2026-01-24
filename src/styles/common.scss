@@ -49,6 +49,7 @@ body {
     padding: 0;
     margin: 0;
     font-size: $font-size;
+    font-family: var(--font-primary, var(--font-roboto, sans-serif));
     font-family: var(--font-primary);
 }
 img {
@@ -214,6 +215,7 @@ textarea.form-control {
   color: $text-color;
   background-color: $bg-color;
   box-shadow: 0 13px 27px 0 $shadow-color;
+  font-family: var(--font-primary);
 
   &:hover,
   &:focus,

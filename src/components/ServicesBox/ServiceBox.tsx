@@ -26,8 +26,6 @@ interface ServiceBoxesProps {
 }
 
 const ServiceBox: React.FC<ServiceBoxesProps> = ({ items }) => {
-  console.log("ServiceBox items:", items);
-
   const getImage = (iconName: string): StaticImageData => {
     switch (iconName) {
       case "brush":
