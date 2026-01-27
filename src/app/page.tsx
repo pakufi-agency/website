@@ -1,30 +1,32 @@
 import React from "react";
-import Navbar from "../components/Layout/Navbar";
-import Footer from "../components/Layout/Footer";
-import HeroBanner from "../components/Hero/Hero";
-import Section from "../components/Sections/Section";
-import SectionHalfBackground from "../components/Sections/SectionHalfBackground";
-import TextImageButtons from "../components/TextImageButtons/TextImageButtons";
-import CtaText from "../components/CtaText/CtaText";
-import WhatWeDoSection from "../components/WhatWeDoSection/WhatWeDoSection";
-import TeamSection from "../components/TeamSection/TeamSection";
-import ServiceBox from "../components/ServicesBox/ServiceBox";
-import BoxesText from "../components/BoxesText/BoxesText";
-import FaqSection from "../components/FaqSection/FaqSection";
-import CollaboratorsSection from "../components/CollaboratorsSection/CollaboratorsSection";
-import CtaBig from "../components/CtaBig/CtaBig";
-import Newsletter from "../components/Newsletter/Newsletter";
-import LoadingError from "../components/Errors/LoadingError";
-import BlogGrid from "../components/Blog/BlogGrid";
+import Navbar from "@/components/Layout/Navbar";
+import Footer from "@/components/Layout/Footer";
+import HeroBanner from "@/components/Hero/Hero";
+import Section from "@/components/Sections/Section";
+import SectionHalfBackground from "@/components/Sections/SectionHalfBackground";
+import TextImageButtons from "@/components/TextImageButtons/TextImageButtons";
+import CtaText from "@/components/CtaText/CtaText";
+import ServiceBox from "@/components/ServicesBox/ServiceBox";
+import BoxesText from "@/components/BoxesText/BoxesText";
+import FaqSection from "@/components/FaqSection/FaqSection";
+import CollaboratorsSection from "@/components/CollaboratorsSection/CollaboratorsSection";
+import CtaBig from "@/components/CtaBig/CtaBig";
+import Newsletter from "@/components/Newsletter/Newsletter";
+import LoadingError from "@/components/Errors/LoadingError";
+import BlogGrid from "@/components/Blog/BlogGrid";
+import ProjectsCard from "@/components/Projects/ProjectsCard";
+import TimelineSection from "@/components/TimelineSection/TimelineSection";
+import { ButtonLink } from "@/components/ButtonLink";
+import SectionFullWidth from "@/components/Sections/SectionFullWidth";
 
-import MobileMenuProvider from "../context/MobileMenuProvider";
+import MobileMenuProvider from "@/context/MobileMenuProvider";
 import { HOMEPAGE_QUERY } from "../graphqlQueries/Homepage";
 import { BLOG_POSTS_LATEST_QUERY } from "../graphqlQueries/Blog";
 import { renderMultipleComponents, getStrapiData } from "../utils/utils";
 import { generatePageMetadata } from "../utils/seo";
 import { PageProps, SectionProps } from "../types/types";
 
-import "../styles/common.scss";
+// import "../styles/common.scss";
 
 // Fetch SEO metadata
 export const generateMetadata = async () => {
@@ -34,7 +36,7 @@ export const generateMetadata = async () => {
         query: HOMEPAGE_QUERY,
         pageType: "Homepage",
       }) as Promise<any>,
-    "/"
+    "/",
   );
 };
 
@@ -42,15 +44,17 @@ export const generateMetadata = async () => {
 function renderSection(
   section: SectionProps,
   ComponentWrapper: React.ComponentType<any>,
-  blogPosts: any[] = []
+  blogPosts: any[] = [],
 ) {
   const componentMap: Record<string, any> = {
     TextImageButtonsComponent: TextImageButtons,
     services: ServiceBox,
     collaborators: CollaboratorsSection,
-    team_members: TeamSection,
+    projects: ProjectsCard,
+    timelineSection: TimelineSection,
     boxesText: BoxesText,
     question_answers: FaqSection,
+    ctaButton: ButtonLink,
     blogGrid: () => <BlogGrid posts={blogPosts} />,
   };
   return renderMultipleComponents({
@@ -95,9 +99,6 @@ export default async function Page() {
               case "ComponentStaticComponentHero":
                 return <HeroBanner {...section} key={index} />;
 
-              case "ComponentStaticComponentWhatWeDo":
-                return <WhatWeDoSection {...section} key={index} />;
-
               case "ComponentCommonNewsletter":
                 return <Newsletter {...section} key={index} />;
 
@@ -108,8 +109,11 @@ export default async function Page() {
                 return renderSection(
                   section,
                   SectionHalfBackground,
-                  latestBlogPosts
+                  latestBlogPosts,
                 );
+
+              case "ComponentCommonSectionfullWidth":
+                return renderSection(section, SectionFullWidth);
 
               case "ComponentCommonCta":
                 if (!section.isBig) {

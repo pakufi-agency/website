@@ -44,7 +44,7 @@ const Newsletter: React.FC<NewsletterProps> = ({
       setError(true);
       setMessage("API key or List ID is missing. Please contact support.");
       console.error(
-        "Brevo API key or List ID is missing from environment variables."
+        "Brevo API key or List ID is missing from environment variables.",
       );
       return;
     }
@@ -67,7 +67,7 @@ const Newsletter: React.FC<NewsletterProps> = ({
       } else {
         setError(true);
         setMessage(
-          "There was a problem with your subscription. Please reload and try again."
+          "There was a problem with your subscription. Please reload and try again.",
         );
         console.error("Brevo subscription failed:", data);
       }
@@ -75,7 +75,7 @@ const Newsletter: React.FC<NewsletterProps> = ({
       setIsSubmitting(false);
       setError(true);
       setMessage(
-        "Is not you, is us! An error occurred. Please try again later."
+        "Is not you, is us! An error occurred. Please try again later.",
       );
       console.error("Error during subscription:", error);
       return;
@@ -86,7 +86,7 @@ const Newsletter: React.FC<NewsletterProps> = ({
     <div className={styles.section}>
       <div className={`container ${styles.container}`}>
         <h2>{title}</h2>
-        <p>{subtitle}</p>
+        <p className={styles.subtitle}>{subtitle}</p>
         <form className={styles.newsletterForm} onSubmit={handleSubmit}>
           <input
             type="email"
@@ -99,7 +99,7 @@ const Newsletter: React.FC<NewsletterProps> = ({
 
           <button
             type="submit"
-            className={`btn button-pakufi-dark ${styles.button}`}
+            className={`btn btn-secondary btn-shining ${styles.button}`}
           >
             <span
               onClick={() =>
@@ -107,7 +107,7 @@ const Newsletter: React.FC<NewsletterProps> = ({
                   "Newsletter:signup",
                   buttonLabel,
                   "/api/subscribe",
-                  pathname
+                  pathname,
                 )
               }
             >

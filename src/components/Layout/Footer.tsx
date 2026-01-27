@@ -31,11 +31,10 @@ const Footer = () => {
                   </Link>
                 </div>
                 <p>
-                  Pakufi is a custom software development company and a career
-                  growth program. Our mission is to support talented people with
-                  limited opportunities to access global markets and to create
-                  digital solutions with clear communication and a people-first
-                  approach.
+                  Pakufi is a senior-led software delivery company building
+                  reliable digital solutions with transparency and care. We work
+                  with professionals from underrepresented regions and create
+                  fair access to global tech work through real client projects.
                 </p>
               </div>
             </div>
@@ -55,19 +54,10 @@ const Footer = () => {
                     <Link href="/about">About Us</Link>
                   </li>
                   <li>
-                    <Link href="/tech-agency/#serviceSection">
-                      Our Services
-                    </Link>
+                    <Link href="/services">Our Services</Link>
                   </li>
                   <li>
-                    <Link href="/tech-agency/#projectSection">
-                      Our Projects
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/tech-agency/#offerSection">
-                      Our Price Offers
-                    </Link>
+                    <Link href="/projects">Our Projects</Link>
                   </li>
                   <li>
                     <Link href="/blog">Pakufi Blog</Link>

@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
-export const BLOG_POSTS_LIST_QUERY = gql`
+export const BLOG_POSTS_ALL_QUERY = gql`
   query getBlogPostList {
-    blogPosts {
+    blogPosts(sort: "publishedAt:desc", pagination: { limit: 500 }) {
       title
       slug
       content
@@ -73,6 +73,59 @@ export const BLOG_POSTS_LATEST_QUERY = gql`
         author
       }
       publishedAt
+    }
+  }
+`;
+
+export const BLOG_PAGE_QUERY = gql`
+  query getBlogPage {
+    pages(filters: { documentId: { eq: "hoch66ye8uio5h4kalff2tc8" } }) {
+      pageTitle
+      pageBannerTitle
+      SEO {
+        seoTitle
+        seoDescription
+        seoPreview {
+          url
+          alternativeText
+        }
+      }
+      sections {
+        ... on ComponentCommonSection {
+          sectionTitle
+          subtitle
+          backgroundColor
+          titleColor
+          descriptionColor
+          barBallColor
+          shapesVariation
+          backgroundVariation
+          buttonSectionCtaLabel
+          buttonSectionCtaLink
+          blogGrid {
+            slug
+          }
+        }
+        ... on ComponentCommonNewsletter {
+          buttonLabel
+          title
+          subtitle
+          footnote
+        }
+        ... on ComponentCommonCta {
+          title
+          description
+          media {
+            url
+            alternativeText
+          }
+          buttonCtaTwoLabel
+          buttonCtaTwoLink
+          isBig
+          buttonCtaOneLabel
+          buttonCtaOneLink
+        }
+      }
     }
   }
 `;

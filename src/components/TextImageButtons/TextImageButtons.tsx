@@ -1,11 +1,10 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 import BlockRendererClient from "../BlockRendererClient";
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
-import { getStrapiImageUrl, trackClick } from "../../utils/utils";
+import { getStrapiImageUrl } from "../../utils/utils";
 import { usePathname } from "next/navigation";
 import { ButtonLink } from "../ButtonLink";
 
@@ -56,7 +55,7 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                         href={buttonOneLink}
                         label={buttonOneLabel}
                         pathname={pathname}
-                        className={`btn btn-primary ${buttonStyle} ${styles.buttonLink}`}
+                        className={`btn btn-secondary ${buttonStyle} ${styles.buttonLink}`}
                       />
                     )}
 
@@ -121,7 +120,7 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                         href={buttonOneLink}
                         label={buttonOneLabel}
                         pathname={pathname}
-                        className={`btn btn-primary ${buttonStyle} ${styles.buttonLink}`}
+                        className={`btn btn-secondary ${buttonStyle} ${styles.buttonLink}`}
                       />
                     )}
 
@@ -151,7 +150,7 @@ const TextImageButtons: React.FC<TextImageButtons> = ({
                       href={buttonOneLink}
                       label={buttonOneLabel}
                       pathname={pathname}
-                      className={`btn btn-primary ${buttonStyle} ${styles.buttonLink}`}
+                      className={`btn btn-secondary ${buttonStyle} ${styles.buttonLink}`}
                     />
                   )}
 

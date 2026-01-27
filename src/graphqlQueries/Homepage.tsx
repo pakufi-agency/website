@@ -27,24 +27,6 @@ export const HOMEPAGE_QUERY = gql`
             url
           }
         }
-        ... on ComponentStaticComponentWhatWeDo {
-          title
-          pakufiOffers {
-            cardStyle
-            title
-            content
-            button {
-              label
-              url
-              style
-            }
-            iconAsText
-            iconAsImg {
-              url
-              alternativeText
-            }
-          }
-        }
         ... on ComponentCommonCta {
           title
           description
@@ -66,6 +48,7 @@ export const HOMEPAGE_QUERY = gql`
         }
         ... on ComponentCommonSection {
           sectionTitle
+          showTitle
           subtitle
           backgroundColor
           titleColor
@@ -73,6 +56,8 @@ export const HOMEPAGE_QUERY = gql`
           barBallColor
           shapesVariation
           backgroundVariation
+          buttonSectionCtaLabel
+          buttonSectionCtaLink
           TextImageButtonsComponent {
             ImagePosition
             media {
@@ -90,34 +75,24 @@ export const HOMEPAGE_QUERY = gql`
           blogGrid {
             slug
           }
-          services {
-            name
-            subtitle
-            descriptionRichText
-            icon
-          }
-          team_members {
-            firstName
-            lastName
-            jobPosition
-            email
-            linkedinAbsoluteUrl
-            personalWebsiteAbsoluteUrl
-            githubAsboluteUrl
-            profilePic {
-              url
+          projects {
+            coverPicture {
               alternativeText
+              url
             }
-            shortDescription
+            metaDescription
+            description
+            slug
+            title
+            services
           }
-          collaborators {
-            fullName
-            jobPosition
-            email
-            linkedinAbsoluteUrl
-            profilePic {
-              alternativeText
-              url
+          timelineSection {
+            sideText
+            timelineAlign
+            timelineStep {
+              stepNumber
+              title
+              description
             }
           }
           question_answers {
@@ -132,18 +107,35 @@ export const HOMEPAGE_QUERY = gql`
           titleColor
           descriptionColor
           barBallColor2
-          TextImageButtonsComponent {
-            ImagePosition
-            media {
-              url
+          buttonSectionCtaLabel
+          buttonSectionCtaLink
+          services {
+            name
+            subtitle
+            icon
+          }
+        }
+        ... on ComponentCommonSectionfullWidth {
+          sectionTitle3
+          showTitle
+          sectionSubtitle3
+          backgroundColor3
+          titleColor3
+          descriptionColor3
+          barBallColor3
+          shapesVariation3
+          backgroundVariation3
+          buttonSectionCtaLabel
+          buttonSectionCtaLink
+          collaborators {
+            name
+            absoluteUrl
+            logo {
               alternativeText
+              url
             }
-            richText
-            buttonOneLabel
-            buttonOneLink
-            buttonTwoLabel
-            buttonTwoLink
-            textColor
+            logoHeight
+            logoWidth
           }
         }
       }

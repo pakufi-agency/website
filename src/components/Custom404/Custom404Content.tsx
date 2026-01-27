@@ -30,7 +30,7 @@ const Custom404Content = () => {
               href="/"
               label="Go to Homepage"
               pathname={pathname}
-              className={`btn button-pakufi-dark ${styles.button}`}
+              className={`btn btn-primary btn-shining ${styles.button}`}
             />
           </div>
         </div>

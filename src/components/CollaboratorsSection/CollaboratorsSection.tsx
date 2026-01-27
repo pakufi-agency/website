@@ -1,54 +1,33 @@
 "use client";
 
 import React from "react";
-import PersonCard from "../PersonCard/PersonCard";
+import Carousel from "./Carousel";
 
 import styles from "./CollaboratorsSection.module.scss";
+
+export interface PartnerItem {
+  name: string;
+  absoluteUrl: string;
+  logo: { url: string; alternativeText?: string | null };
+  logoHeight?: number;
+  logoWidth?: number;
+}
+
 interface CollaboratorsSectionProps {
   items: [];
 }
 
 const CollaboratorsSection: React.FC<CollaboratorsSectionProps> = ({
   items,
+}: {
+  items: PartnerItem[];
 }) => {
   return (
     <>
       <div>
-        <div className="row justify-content-center">
-          {items.map(
-            (
-              {
-                fullName,
-                jobPosition,
-                email,
-                linkedinAbsoluteUrl,
-                personalWebsiteAbsoluteUrl,
-                profilePic,
-              },
-              index
-            ) => (
-              <div
-                className={`col-8 col-lg-4 ${styles.card}`}
-                data-aos="fade-up"
-                data-aos-delay="400"
-                data-aos-duration="500"
-                data-aos-once="true"
-                key={index}
-              >
-                <PersonCard
-                  name={fullName}
-                  jobPosition={jobPosition}
-                  email={email}
-                  profilePic={profilePic}
-                  linkedinAbsoluteUrl={linkedinAbsoluteUrl}
-                  personalWebsiteAbsoluteUrl={personalWebsiteAbsoluteUrl}
-                  backgroundColor="none"
-                  withAnimatedBar={false}
-                  iconColor="var(--jade-green)"
-                />
-              </div>
-            )
-          )}
+        <div className={`row justify-content-center ${styles.container}`}>
+          <h3 className={styles.title}>Our valued clients and partners</h3>
+          <Carousel items={items} />
         </div>
       </div>
     </>

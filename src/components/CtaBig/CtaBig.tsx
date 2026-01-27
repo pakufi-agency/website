@@ -65,7 +65,7 @@ const CtaBig: React.FC<CtaBigProps> = ({
                       href={buttonCtaOneLink}
                       label={buttonCtaOneLabel}
                       pathname={pathname}
-                      className={`btn button-pakufi-dark ${styles.button}`}
+                      className={`btn btn-secondary btn-shining ${styles.button}`}
                     />
                   )}
                   {buttonCtaTwoLink && (
@@ -73,7 +73,7 @@ const CtaBig: React.FC<CtaBigProps> = ({
                       href={buttonCtaTwoLink}
                       label={buttonCtaTwoLabel}
                       pathname={pathname}
-                      className={`btn button-pakufi-dark ${styles.button}`}
+                      className={`btn btn-secondary btn-shining ${styles.button}`}
                     />
                   )}
                 </div>

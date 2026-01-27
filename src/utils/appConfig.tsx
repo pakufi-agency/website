@@ -1,6 +1,6 @@
 export const appConfig = {
   features: {
-    mentorshipBanner: true,
+    mentorshipBanner: false,
   },
   mentorshipBannerText: "Pakufi mentorship program now open!",
   mentorshipBannerLink: "/talent-growth",

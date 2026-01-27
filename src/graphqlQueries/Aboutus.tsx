@@ -63,6 +63,8 @@ export const ABOUTUS_QUERY = gql`
             firstName
             lastName
             jobPosition
+            isAdvisor
+            backgroundColor
             email
             linkedinAbsoluteUrl
             personalWebsiteAbsoluteUrl
@@ -72,18 +74,6 @@ export const ABOUTUS_QUERY = gql`
               alternativeText
             }
             shortDescription
-          }
-
-          collaborators {
-            fullName
-            jobPosition
-            email
-            linkedinAbsoluteUrl
-            personalWebsiteAbsoluteUrl
-            profilePic {
-              url
-              alternativeText
-            }
           }
         }
         ... on ComponentSectionsIntroSinglePage {
