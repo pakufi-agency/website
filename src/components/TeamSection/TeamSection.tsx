@@ -27,12 +27,9 @@ const TeamSection: React.FC<TeamSectionProps> = ({ items }) => {
   const teamMembers = items.filter((p) => !p.isAdvisor);
   const advisors = items.filter((p) => p.isAdvisor);
 
-  console.log("items", items);
-  console.log("advisors", advisors);
-
   return (
     <div>
-      <div className="row justify-content-center">
+      <div className="row justify-content-center ">
         {teamMembers.map((person, index) => (
           <div
             key={
