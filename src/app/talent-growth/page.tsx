@@ -12,6 +12,7 @@ import LoadingError from "../../components/Errors/LoadingError";
 import Newsletter from "../../components/Newsletter/Newsletter";
 import SectionHalfBackground from "../../components/Sections/SectionHalfBackground";
 import BlockRendererClient from "../../components/BlockRendererClient";
+import MentorsSection from "@/components/MentorsSection/MentorsSection";
 
 import { getStrapiData, renderMultipleComponents } from "../../utils/utils";
 import { generatePageMetadata } from "../../utils/seo";
@@ -37,6 +38,7 @@ function renderSection(
     TextImageButtonsComponent: TextImageButtons,
     timelineSection: TimelineSection,
     mentorship_programs: OfferPackageList,
+    mentors: MentorsSection,
   };
   return renderMultipleComponents({
     section,

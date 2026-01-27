@@ -29,7 +29,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ items }) => {
 
   return (
     <div>
-      <div className="row justify-content-center">
+      <div className="row justify-content-center ">
         {teamMembers.map((person, index) => (
           <div
             key={
