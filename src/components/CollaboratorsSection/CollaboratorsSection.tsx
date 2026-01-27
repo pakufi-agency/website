@@ -9,6 +9,8 @@ export interface PartnerItem {
   name: string;
   absoluteUrl: string;
   logo: { url: string; alternativeText?: string | null };
+  logoHeight?: number;
+  logoWidth?: number;
 }
 
 interface CollaboratorsSectionProps {

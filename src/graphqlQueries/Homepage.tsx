@@ -134,6 +134,8 @@ export const HOMEPAGE_QUERY = gql`
               alternativeText
               url
             }
+            logoHeight
+            logoWidth
           }
         }
       }

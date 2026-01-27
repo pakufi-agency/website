@@ -30,6 +30,7 @@ export default function Carousel({ items, className }: CarouselProps) {
             delay: 6000,
             pauseOnMouseEnter: true,
           }}
+          // loop={true}
           breakpoints={{
             0: { slidesPerView: 2 },
             576: { slidesPerView: 3 },
@@ -41,21 +42,21 @@ export default function Carousel({ items, className }: CarouselProps) {
           className={styles.swiper}
         >
           {items.map((item, index) => {
-            const width = DEFAULT_LOGO_SIZE.width;
-            const height = DEFAULT_LOGO_SIZE.height;
-
+            const width = item.logoWidth ?? DEFAULT_LOGO_SIZE.width;
+            const height = item.logoHeight ?? DEFAULT_LOGO_SIZE.height;
             const logoUrl = getStrapiImageUrl(item.logo.url);
             const alt = item.logo.alternativeText || item.name;
 
             const content = (
               <div className={styles.card}>
-                <div className={styles.logoWrap}>
+                <div className={styles.logoWrap} style={{ width, height }}>
                   <Image
                     src={logoUrl}
                     alt={alt}
                     width={width}
                     height={height}
                     className={styles.logoBase}
+                    style={{ width: "100%", height: "100%" }}
                   />
                   <span className={styles.hoverMask} aria-hidden>
                     <Image
@@ -64,6 +65,7 @@ export default function Carousel({ items, className }: CarouselProps) {
                       width={width}
                       height={height}
                       className={styles.logoHover}
+                      style={{ width: "100%", height: "100%" }}
                     />
                   </span>
                 </div>
