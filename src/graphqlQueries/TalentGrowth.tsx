@@ -53,6 +53,7 @@ export const TALENTGROWTH_QUERY = gql`
         }
         ... on ComponentCommonSection {
           sectionTitle
+          showTitle
           subtitle
           backgroundColor
           titleColor
