@@ -18,6 +18,7 @@ import ProjectsCard from "@/components/Projects/ProjectsCard";
 import TimelineSection from "@/components/TimelineSection/TimelineSection";
 import { ButtonLink } from "@/components/ButtonLink";
 import SectionFullWidth from "@/components/Sections/SectionFullWidth";
+import Reviews from "@/components/Reviews/Reviews";
 
 import MobileMenuProvider from "@/context/MobileMenuProvider";
 import { HOMEPAGE_QUERY } from "../graphqlQueries/Homepage";
@@ -92,6 +93,8 @@ export default async function Page() {
     <div className="homepage-page">
       <MobileMenuProvider>
         <Navbar />
+
+        <Reviews />
 
         {page.sections &&
           page.sections.map((section: any, index: number) => {
