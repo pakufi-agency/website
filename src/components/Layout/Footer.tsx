@@ -32,7 +32,7 @@ const Footer = () => {
                 </div>
                 <p>
                   Pakufi is a senior-led software delivery company building
-                  reliable digital solutions with transparency and care. We work
+                  tailored digital solutions with transparency and care. We work
                   with professionals from underrepresented regions and create
                   fair access to global tech work through real client projects.
                 </p>
@@ -82,7 +82,7 @@ const Footer = () => {
                 <ul className={styles.list}>
                   <li>
                     <Link
-                      href="https://pakufi.zohobookings.com/#/4746283000000044080"
+                      href="https://cal.com/tahir-qalliu-m7pygj/client-call-pakufi-30-min?overlayCalendar=true"
                       target="_blank"
                     >
                       I have a project
@@ -124,7 +124,12 @@ const Footer = () => {
                 <ul className={`${styles.footerContactInfo} ${styles.list}`}>
                   <li>
                     {/* <Icon.MapPin /> {""} */}
-                    Rruga Jordan Misja, Kompleksi <br /> 1001 Tirana
+                    Albania | Germany | Italy
+                  </li>
+                  <li>
+                    {/* <Icon.MapPin /> {""} */}
+                    Legal address: Rruga Jordan Misja, Kompleksi <br /> 1001
+                    Tirana
                   </li>
 
                   <li>
