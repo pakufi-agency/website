@@ -86,6 +86,19 @@ export const HOMEPAGE_QUERY = gql`
             title
             services
           }
+          client_reviews {
+            name
+            reviewTitle
+            reviewContent
+            location
+            company
+            companyUrl
+            rating
+            image {
+              url
+              alternativeText
+            }
+          }
           timelineSection {
             sideText
             timelineAlign

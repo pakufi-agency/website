@@ -52,6 +52,7 @@ function renderSection(
     services: ServiceBox,
     collaborators: CollaboratorsSection,
     projects: ProjectsCard,
+    client_reviews: Reviews,
     timelineSection: TimelineSection,
     boxesText: BoxesText,
     question_answers: FaqSection,
@@ -93,8 +94,6 @@ export default async function Page() {
     <div className="homepage-page">
       <MobileMenuProvider>
         <Navbar />
-
-        <Reviews />
 
         {page.sections &&
           page.sections.map((section: any, index: number) => {
