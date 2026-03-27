@@ -18,6 +18,7 @@ type BlogDetailsProps = {
     url: string;
     alternativeText?: string;
   };
+  createdAt: string;
   PostMetaInfo?: {
     metaDescription?: string;
     metaTitle?: string;
@@ -33,13 +34,13 @@ type BlogDetailsProps = {
       title: string;
       slug: string;
       coverImage?: { url: string };
-      publishedAt?: string;
+      createdAt?: string;
     };
     next?: {
       title: string;
       slug: string;
       coverImage?: { url: string };
-      publishedAt?: string;
+      createdAt?: string;
     };
   };
 };
@@ -48,6 +49,7 @@ const BlogDetailsContent: React.FC<BlogDetailsProps> = ({
   title,
   content,
   coverImage,
+  createdAt,
   PostMetaInfo,
   navigation,
 }) => {
@@ -69,6 +71,14 @@ const BlogDetailsContent: React.FC<BlogDetailsProps> = ({
                   <li>
                     <Icon.User />{" "}
                     {PostMetaInfo.author ? PostMetaInfo.author : "Pakufi Team"}
+                  </li>
+                  <li>
+                    <Icon.Calendar />{" "}
+                    {new Date(createdAt).toLocaleDateString("en-GB", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    })}
                   </li>
                 </ul>
               )}
@@ -110,9 +120,9 @@ const BlogDetailsContent: React.FC<BlogDetailsProps> = ({
                         <span className={styles.prevTitle}>
                           {navigation.previous.title}
                         </span>
-                        {navigation.previous.publishedAt && (
+                        {navigation.previous.createdAt && (
                           <span className={styles.datePost}>
-                            {navigation.previous.publishedAt}
+                            {navigation.previous.createdAt}
                           </span>
                         )}
                       </span>
@@ -127,9 +137,9 @@ const BlogDetailsContent: React.FC<BlogDetailsProps> = ({
                         <span className={styles.nextTitle}>
                           {navigation.next.title}
                         </span>
-                        {navigation.next.publishedAt && (
+                        {navigation.next.createdAt && (
                           <span className={styles.datePost}>
-                            {navigation.next.publishedAt}
+                            {navigation.next.createdAt}
                           </span>
                         )}
                       </span>

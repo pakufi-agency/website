@@ -21,6 +21,7 @@ interface BlogPost {
     url: string;
     alternativeText?: string;
   };
+  createdAt: string;
   PostMetaInfo?: {
     metaDescription?: string;
     metaTitle?: string;
@@ -70,8 +71,8 @@ export async function generateMetadata({ params }: { params: Params }) {
       images: meta?.metaImage
         ? [getStrapiImageUrl(meta.metaImage.url)]
         : post.coverImage
-        ? [getStrapiImageUrl(post.coverImage.url)]
-        : [],
+          ? [getStrapiImageUrl(post.coverImage.url)]
+          : [],
       url: pageUrl,
     },
     twitter: {
@@ -81,8 +82,8 @@ export async function generateMetadata({ params }: { params: Params }) {
       images: meta?.metaImage
         ? [getStrapiImageUrl(meta.metaImage.url)]
         : post.coverImage
-        ? [getStrapiImageUrl(post.coverImage.url)]
-        : [],
+          ? [getStrapiImageUrl(post.coverImage.url)]
+          : [],
     },
   };
 }
@@ -131,6 +132,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     slug: post.slug,
     content: post.content,
     coverImage: post.coverImage,
+    createdAt: post.createdAt,
     PostMetaInfo: post.PostMetaInfo,
     navigation: {
       previous: undefined,
