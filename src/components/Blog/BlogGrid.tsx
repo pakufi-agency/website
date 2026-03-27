@@ -14,7 +14,7 @@ export interface BlogPost {
   title: string;
   slug: string;
   coverImage: { url: string; alternativeText: string };
-  publishedAt: string;
+  createdAt: string;
   excerpt: string;
 }
 
@@ -73,7 +73,7 @@ const BlogGrid: React.FC<BlogGridProps> = ({ posts, hasSidebar = false }) => {
 
                   <div className={styles.blogDate}>
                     <Icon.Calendar />{" "}
-                    {new Date(post.publishedAt).toLocaleDateString("en-GB", {
+                    {new Date(post.createdAt).toLocaleDateString("en-GB", {
                       year: "numeric",
                       month: "short",
                       day: "numeric",

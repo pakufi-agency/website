@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 export const BLOG_POSTS_ALL_QUERY = gql`
   query getBlogPostList {
-    blogPosts(sort: "publishedAt:desc", pagination: { limit: 500 }) {
+    blogPosts(sort: "createdAt:desc", pagination: { limit: 500 }) {
       title
       slug
       content
@@ -21,7 +21,7 @@ export const BLOG_POSTS_ALL_QUERY = gql`
         readingTime
         author
       }
-      publishedAt
+      createdAt
     }
   }
 `;
@@ -37,6 +37,7 @@ export const BLOG_POST_BY_SLUG_QUERY = gql`
         url
       }
       excerpt
+      createdAt
       PostMetaInfo {
         metaDescription
         metaTitle
@@ -72,7 +73,7 @@ export const BLOG_POSTS_LATEST_QUERY = gql`
         readingTime
         author
       }
-      publishedAt
+      createdAt
     }
   }
 `;
