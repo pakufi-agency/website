@@ -33,7 +33,7 @@ interface StrapiDataOptions {
  * @returns {Promise<T | null>} The fetched data cast to type T, or null if not found or on error.
  */
 export async function getStrapiData<T>(
-  options: StrapiDataOptions
+  options: StrapiDataOptions,
 ): Promise<T | null> {
   const client = createApolloClient();
 
@@ -122,7 +122,7 @@ export const trackClick = (
   eventName: string,
   label: string,
   link: Url | string,
-  pathname: string
+  pathname: string,
 ) => {
   if (typeof window !== "undefined" && window.umami) {
     window.umami.track(eventName, {

@@ -8,12 +8,32 @@ import { usePathname, useRouter } from "next/navigation";
 import { useMobileMenu } from "../../context/MobileMenuProvider";
 import { DESKTOP_MEDIA_QUERY } from "../../utils/consts";
 import { appConfig } from "@/utils/appConfig";
+import { getStrapiData } from "../../utils/utils";
+import { SERVICES_ALL_QUERY } from "../../graphqlQueries/Services";
 
 import GlobalBanner from "../../components/GlobalBanner/GlobalBanner";
 
+import logo from "/public/images/logo.png";
+
 import styles from "./Navbar.module.scss";
 
-import logo from "/public/images/logo.png";
+interface Service {
+  name: string;
+  slug: string;
+  subtitle: string;
+  descriptionRichText: any;
+  descriptionShort?: any;
+  icon: string;
+  createdAt: string;
+  Seo: {
+    seoTitle?: string;
+    seoDescription?: string;
+    seoPreview?: {
+      url: string;
+      alternativeText?: string;
+    };
+  };
+}
 
 const Navbar: React.FC = () => {
   const showBanner = appConfig.features.mentorshipBanner;
@@ -23,6 +43,28 @@ const Navbar: React.FC = () => {
   const { isMobileMenuOpen, setMobileMenuOpen } = useMobileMenu();
   const [isDropdownOpen, setDropdownOpen] = useState<string | null>(null);
   const [bannerVisible, setBannerVisible] = useState(showBanner);
+  const [services, setServices] = useState<Service[]>([]);
+
+  // Fetch services for navigation
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const data = await getStrapiData<{ services: Service[] }>({
+          query: SERVICES_ALL_QUERY,
+          pageType: "Services Navigation",
+        });
+        console.log("Services data from Strapi:", data);
+        const servicesList = data?.services || [];
+        console.log("Services list:", servicesList);
+        setServices(servicesList);
+      } catch (error) {
+        console.error("Error fetching services:", error);
+        setServices([]);
+      }
+    };
+
+    fetchServices();
+  }, []);
 
   const toggleMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
@@ -104,13 +146,55 @@ const Navbar: React.FC = () => {
                   </Link>
                 </li>
                 <li className={`nav-item ${styles.navItem}`}>
-                  <Link
-                    href="/services/"
-                    className={styles.navLink}
-                    onClick={(e) => handleMenuItemClick(e, "/services")}
+                  <div
+                    className={`${styles.navLink} ${
+                      isDropdownOpen === "services" && styles.navLinkDropdown
+                    } ${styles.linkWithIcon}`}
+                    onClick={(e) => handleParentItemCLick(e, "services")}
                   >
-                    Services
-                  </Link>
+                    Services <Icon.ChevronDown />
+                  </div>
+                  <ul
+                    className={`${styles.dropdownMenu} ${
+                      isDropdownOpen === "services" ? styles.dropdownOpen : ""
+                    }`}
+                  >
+                    <li className={styles.navItem}>
+                      <Link
+                        href="/services/"
+                        className={`${styles.navLink} ${
+                          currentRoute === "/services/" ? "active" : ""
+                        }`}
+                      >
+                        Overview
+                      </Link>
+                    </li>
+                    {services.length > 0 ? (
+                      services.map((service) => (
+                        <li className={styles.navItem} key={service.slug}>
+                          <Link
+                            href={`/services/${service.slug}`}
+                            className={`${styles.navLink} ${
+                              currentRoute === `/services/${service.slug}`
+                                ? "active"
+                                : ""
+                            }`}
+                          >
+                            {service.name}
+                          </Link>
+                        </li>
+                      ))
+                    ) : (
+                      <li className={styles.navItem}>
+                        <span
+                          className={styles.navLink}
+                          style={{ opacity: 0.6 }}
+                        >
+                          No services found
+                        </span>
+                      </li>
+                    )}
+                  </ul>
                 </li>
                 <li className={`nav-item ${styles.navItem}`}>
                   <Link
@@ -157,33 +241,6 @@ const Navbar: React.FC = () => {
                     For Talent
                   </Link>
                 </li>
-                {/* <li className={`nav-item ${styles.navItem}`}>
-                  <Link
-                    href="#"
-                    className={`${styles.navLink} ${
-                      isDropdownOpen === "home" && styles.navLinkDropdown
-                    } ${styles.linkWithIcon}`}
-                    onClick={(e) => handleParentItemCLick(e, "home")}
-                  >
-                    Item with subitem example <Icon.ChevronDown />
-                  </Link>
-                  <ul
-                    className={`${styles.dropdownMenu} ${
-                      isDropdownOpen === "home" ? styles.dropdownOpen : ""
-                    }`}
-                  >
-                    <li className={styles.navItem}>
-                      <Link
-                        href="/iot/"
-                        className={`${styles.navLink} ${
-                          currentRoute === "/iot/" ? "active" : ""
-                        }`}
-                      >
-                        IOT
-                      </Link>
-                    </li>
-                  </ul>
-                </li> */}
               </ul>
             </div>
             {/* <div className={styles.othersOption}>

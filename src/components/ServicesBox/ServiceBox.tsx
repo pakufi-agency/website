@@ -18,7 +18,16 @@ interface ServiceBoxProps {
   name: string;
   subtitle: string;
   descriptionRichText: BlocksContent;
+  descriptionShort?: BlocksContent;
   icon: string;
+  Seo: {
+    seoTitle?: string;
+    seoDescription?: string;
+    seoPreview?: {
+      url: string;
+      alternativeText?: string;
+    };
+  };
 }
 
 interface ServiceBoxesProps {
@@ -65,7 +74,11 @@ const ServiceBox: React.FC<ServiceBoxesProps> = ({ items }) => {
                 </div>
                 <div className={styles.description}>
                   {" "}
-                  <BlockRendererClient content={item.descriptionRichText} />
+                  {item.descriptionShort ? (
+                    <BlockRendererClient content={item.descriptionShort} />
+                  ) : (
+                    <BlockRendererClient content={item.descriptionRichText} />
+                  )}
                 </div>
               </div>
             </div>
