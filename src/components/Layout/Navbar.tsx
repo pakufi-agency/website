@@ -113,7 +113,17 @@ const Navbar: React.FC<NavbarProps> = ({ services = [] }) => {
                     Home
                   </Link>
                 </li>
-                <li className={`nav-item ${styles.navItem}`}>
+                <li className={styles.navItem}>
+                  <Link
+                    href="/services/"
+                    className={`${styles.navLink} ${
+                      currentRoute === "/services/" ? "active" : ""
+                    }`}
+                  >
+                    Services
+                  </Link>
+                </li>
+                {/* <li className={`nav-item ${styles.navItem}`}>
                   <div
                     className={`${styles.navLink} ${
                       isDropdownOpen === "services" && styles.navLinkDropdown
@@ -155,7 +165,7 @@ const Navbar: React.FC<NavbarProps> = ({ services = [] }) => {
                       </li>
                     )}
                   </ul>
-                </li>
+                </li> */}
                 <li className={`nav-item ${styles.navItem}`}>
                   <Link
                     href="/projects/"

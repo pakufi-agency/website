@@ -126,6 +126,8 @@ export const HOMEPAGE_QUERY = gql`
             name
             subtitle
             icon
+            slug
+            descriptionShort
           }
         }
         ... on ComponentCommonSectionfullWidth {

@@ -19,17 +19,8 @@ type ServiceDetailsProps = {
   slug: string;
   subtitle: string;
   descriptionRichText: any;
-  descriptionShort?: any;
   icon: string;
   createdAt: string;
-  Seo: {
-    seoTitle?: string;
-    seoDescription?: string;
-    seoPreview?: {
-      url: string;
-      alternativeText?: string;
-    };
-  };
 };
 
 const ServiceDetails: React.FC<ServiceDetailsProps> = ({

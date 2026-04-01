@@ -71,6 +71,7 @@ export const SERVICES_PAGE_QUERY = gql`
           buttonSectionCtaLink
           services {
             name
+            slug
             subtitle
             descriptionRichText
             icon
