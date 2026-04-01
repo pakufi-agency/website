@@ -27,7 +27,7 @@ interface Service {
     seoPreview: {
       url: string;
       alternativeText: string;
-    };
+    }[];
   };
 }
 
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: { params: Params }) {
       description: "This service could not be found.",
     };
 
-  const seo = service.Seo;
+  const seo = service.seo;
   const pageUrl = `https://pakufi.com/services/${service.slug}`;
 
   return {
@@ -66,14 +66,14 @@ export async function generateMetadata({ params }: { params: Params }) {
     openGraph: {
       title: seo?.seoTitle || service.name,
       description: seo?.seoDescription || service.name,
-      images: seo?.seoPreview ? [getStrapiImageUrl(seo.seoPreview.url)] : [],
+      images: seo?.seoPreview ? [getStrapiImageUrl(seo.seoPreview[0].url)] : [],
       url: pageUrl,
     },
     twitter: {
       card: "summary_large_image",
       title: seo?.seoTitle || service.name,
       description: seo?.seoDescription || service.name,
-      images: seo?.seoPreview ? [getStrapiImageUrl(seo.seoPreview.url)] : [],
+      images: seo?.seoPreview ? [getStrapiImageUrl(seo.seoPreview[0].url)] : [],
     },
   };
 }

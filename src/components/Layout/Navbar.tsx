@@ -8,8 +8,6 @@ import { usePathname, useRouter } from "next/navigation";
 import { useMobileMenu } from "../../context/MobileMenuProvider";
 import { DESKTOP_MEDIA_QUERY } from "../../utils/consts";
 import { appConfig } from "@/utils/appConfig";
-import { getStrapiData } from "../../utils/utils";
-import { SERVICES_ALL_QUERY } from "../../graphqlQueries/Services";
 
 import GlobalBanner from "../../components/GlobalBanner/GlobalBanner";
 
@@ -20,22 +18,14 @@ import styles from "./Navbar.module.scss";
 interface Service {
   name: string;
   slug: string;
-  subtitle: string;
-  descriptionRichText: any;
-  descriptionShort?: any;
-  icon: string;
-  createdAt: string;
-  Seo: {
-    seoTitle?: string;
-    seoDescription?: string;
-    seoPreview?: {
-      url: string;
-      alternativeText?: string;
-    };
-  };
+  createdAt?: string;
 }
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  services?: Service[];
+}
+
+const Navbar: React.FC<NavbarProps> = ({ services = [] }) => {
   const showBanner = appConfig.features.mentorshipBanner;
 
   const currentRoute = usePathname();
@@ -43,28 +33,6 @@ const Navbar: React.FC = () => {
   const { isMobileMenuOpen, setMobileMenuOpen } = useMobileMenu();
   const [isDropdownOpen, setDropdownOpen] = useState<string | null>(null);
   const [bannerVisible, setBannerVisible] = useState(showBanner);
-  const [services, setServices] = useState<Service[]>([]);
-
-  // Fetch services for navigation
-  useEffect(() => {
-    const fetchServices = async () => {
-      try {
-        const data = await getStrapiData<{ services: Service[] }>({
-          query: SERVICES_ALL_QUERY,
-          pageType: "Services Navigation",
-        });
-        console.log("Services data from Strapi:", data);
-        const servicesList = data?.services || [];
-        console.log("Services list:", servicesList);
-        setServices(servicesList);
-      } catch (error) {
-        console.error("Error fetching services:", error);
-        setServices([]);
-      }
-    };
-
-    fetchServices();
-  }, []);
 
   const toggleMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
@@ -159,16 +127,6 @@ const Navbar: React.FC = () => {
                       isDropdownOpen === "services" ? styles.dropdownOpen : ""
                     }`}
                   >
-                    <li className={styles.navItem}>
-                      <Link
-                        href="/services/"
-                        className={`${styles.navLink} ${
-                          currentRoute === "/services/" ? "active" : ""
-                        }`}
-                      >
-                        Overview
-                      </Link>
-                    </li>
                     {services.length > 0 ? (
                       services.map((service) => (
                         <li className={styles.navItem} key={service.slug}>
@@ -186,12 +144,14 @@ const Navbar: React.FC = () => {
                       ))
                     ) : (
                       <li className={styles.navItem}>
-                        <span
-                          className={styles.navLink}
-                          style={{ opacity: 0.6 }}
+                        <Link
+                          href="/services/"
+                          className={`${styles.navLink} ${
+                            currentRoute === "/services/" ? "active" : ""
+                          }`}
                         >
-                          No services found
-                        </span>
+                          Overview
+                        </Link>
                       </li>
                     )}
                   </ul>

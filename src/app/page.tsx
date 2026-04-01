@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "@/components/Layout/Navbar";
+import NavbarServer from "@/components/Layout/NavbarServer";
 import Footer from "@/components/Layout/Footer";
 import HeroBanner from "@/components/Hero/Hero";
 import Section from "@/components/Sections/Section";
@@ -83,7 +83,7 @@ export default async function Page() {
   if (!page) {
     return (
       <MobileMenuProvider>
-        <Navbar />
+        <NavbarServer />
         <LoadingError />
         <Footer />
       </MobileMenuProvider>
@@ -93,7 +93,7 @@ export default async function Page() {
   return (
     <div className="homepage-page">
       <MobileMenuProvider>
-        <Navbar />
+        <NavbarServer />
 
         {page.sections &&
           page.sections.map((section: any, index: number) => {
