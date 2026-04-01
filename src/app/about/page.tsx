@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../components/Layout/Navbar";
+import NavbarServer from "../..//components/Layout/NavbarServer";
 import Footer from "../../components/Layout/Footer";
 import Section from "../../components/Sections/Section";
 import TextImageButtons from "../../components/TextImageButtons/TextImageButtons";
@@ -21,12 +21,12 @@ import { ABOUTUS_QUERY } from "../../graphqlQueries/Aboutus";
 export const generateMetadata = async () =>
   generatePageMetadata(
     () => getStrapiData({ query: ABOUTUS_QUERY, pageType: "About Us" }),
-    "/about"
+    "/about",
   );
 
 function renderSection(
   section: SectionProps,
-  ComponentWrapper: React.ComponentType<any>
+  ComponentWrapper: React.ComponentType<any>,
 ) {
   const componentMap: Record<string, any> = {
     TextImageButtonsComponent: TextImageButtons,
@@ -51,7 +51,7 @@ export default async function Page() {
   if (!page) {
     return (
       <MobileMenuProvider>
-        <Navbar />
+        <NavbarServer />
         <LoadingError />
         <Footer />
       </MobileMenuProvider>
@@ -60,7 +60,7 @@ export default async function Page() {
 
   return (
     <MobileMenuProvider>
-      <Navbar />
+      <NavbarServer />
       <PageBanner
         pageTitle={page.pageBannerTitle}
         internalBannerMedia={page.internalBannerMedia}

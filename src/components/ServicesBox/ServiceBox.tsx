@@ -4,6 +4,7 @@ import React from "react";
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
 import Image, { StaticImageData } from "next/image";
 import BlockRendererClient from "../BlockRendererClient";
+import { ButtonLink } from "../ButtonLink";
 
 import brush from "/public/images/brush.svg";
 import devices from "/public/images/devices.svg";
@@ -18,7 +19,9 @@ interface ServiceBoxProps {
   name: string;
   subtitle: string;
   descriptionRichText: BlocksContent;
+  descriptionShort: BlocksContent;
   icon: string;
+  slug: string;
 }
 
 interface ServiceBoxesProps {
@@ -65,8 +68,19 @@ const ServiceBox: React.FC<ServiceBoxesProps> = ({ items }) => {
                 </div>
                 <div className={styles.description}>
                   {" "}
-                  <BlockRendererClient content={item.descriptionRichText} />
+                  {item.descriptionShort ? (
+                    <BlockRendererClient content={item.descriptionShort} />
+                  ) : (
+                    <BlockRendererClient content={item.descriptionRichText} />
+                  )}
                 </div>
+                {/* <div className={styles.buttonContainer}>
+                  <ButtonLink
+                    href={`/services/${item.slug}`}
+                    label="Learn More"
+                    className="btn btn-primary"
+                  />
+                </div> */}
               </div>
             </div>
           ))}
