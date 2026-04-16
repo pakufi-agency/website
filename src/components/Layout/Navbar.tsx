@@ -11,11 +11,21 @@ import { appConfig } from "@/utils/appConfig";
 
 import GlobalBanner from "../../components/GlobalBanner/GlobalBanner";
 
-import styles from "./Navbar.module.scss";
-
 import logo from "/public/images/logo.png";
 
-const Navbar: React.FC = () => {
+import styles from "./Navbar.module.scss";
+
+interface Service {
+  name: string;
+  slug: string;
+  createdAt?: string;
+}
+
+interface NavbarProps {
+  services?: Service[];
+}
+
+const Navbar: React.FC<NavbarProps> = ({ services = [] }) => {
   const showBanner = appConfig.features.mentorshipBanner;
 
   const currentRoute = usePathname();
@@ -50,6 +60,26 @@ const Navbar: React.FC = () => {
     };
     document.addEventListener("scroll", handleScroll);
     return () => document.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      const dropdown = document.querySelector(`.${styles.dropdownMenu}`);
+      const dropdownToggle = document.querySelector(`.${styles.linkWithIcon}`);
+
+      if (
+        dropdown &&
+        !dropdown.contains(target) &&
+        dropdownToggle &&
+        !dropdownToggle.contains(target)
+      ) {
+        setDropdownOpen(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   useEffect(() => {
@@ -103,14 +133,73 @@ const Navbar: React.FC = () => {
                     Home
                   </Link>
                 </li>
-                <li className={`nav-item ${styles.navItem}`}>
+                {/* <li className={styles.navItem}>
                   <Link
                     href="/services/"
-                    className={styles.navLink}
-                    onClick={(e) => handleMenuItemClick(e, "/services")}
+                    className={`${styles.navLink} ${
+                      currentRoute === "/services/" ? "active" : ""
+                    }`}
                   >
                     Services
                   </Link>
+                </li> */}
+                <li className={`nav-item ${styles.navItem}`}>
+                  <div
+                    className={`${styles.navLink} ${
+                      isDropdownOpen === "services" && styles.navLinkDropdown
+                    } ${styles.linkWithIcon}`}
+                    onClick={(e) => handleParentItemCLick(e, "services")}
+                  >
+                    Services <Icon.ChevronDown />
+                  </div>
+                  <ul
+                    className={`${styles.dropdownMenu} ${
+                      isDropdownOpen === "services" ? styles.dropdownOpen : ""
+                    }`}
+                  >
+                    {services.length > 0 ? (
+                      <>
+                        {services.map((service) => (
+                          <li className={styles.navItem} key={service.slug}>
+                            <Link
+                              href={`/services/${service.slug}`}
+                              className={`${styles.navLink} ${
+                                currentRoute === `/services/${service.slug}`
+                                  ? "active"
+                                  : ""
+                              }`}
+                              onClick={() => setDropdownOpen(null)}
+                            >
+                              {service.name}
+                            </Link>
+                          </li>
+                        ))}
+                        <li className={styles.navItem}>
+                          <Link
+                            href="/services/"
+                            className={`${styles.navLink} ${
+                              currentRoute === "/services/" ? "active" : ""
+                            }`}
+                            onClick={() => setDropdownOpen(null)}
+                          >
+                            See all services
+                          </Link>
+                        </li>
+                      </>
+                    ) : (
+                      <li className={styles.navItem}>
+                        <Link
+                          href="/services/"
+                          className={`${styles.navLink} ${
+                            currentRoute === "/services/" ? "active" : ""
+                          }`}
+                          onClick={() => setDropdownOpen(null)}
+                        >
+                          Overview
+                        </Link>
+                      </li>
+                    )}
+                  </ul>
                 </li>
                 <li className={`nav-item ${styles.navItem}`}>
                   <Link
@@ -157,33 +246,6 @@ const Navbar: React.FC = () => {
                     For Talent
                   </Link>
                 </li>
-                {/* <li className={`nav-item ${styles.navItem}`}>
-                  <Link
-                    href="#"
-                    className={`${styles.navLink} ${
-                      isDropdownOpen === "home" && styles.navLinkDropdown
-                    } ${styles.linkWithIcon}`}
-                    onClick={(e) => handleParentItemCLick(e, "home")}
-                  >
-                    Item with subitem example <Icon.ChevronDown />
-                  </Link>
-                  <ul
-                    className={`${styles.dropdownMenu} ${
-                      isDropdownOpen === "home" ? styles.dropdownOpen : ""
-                    }`}
-                  >
-                    <li className={styles.navItem}>
-                      <Link
-                        href="/iot/"
-                        className={`${styles.navLink} ${
-                          currentRoute === "/iot/" ? "active" : ""
-                        }`}
-                      >
-                        IOT
-                      </Link>
-                    </li>
-                  </ul>
-                </li> */}
               </ul>
             </div>
             {/* <div className={styles.othersOption}>

@@ -1,0 +1,154 @@
+@use "../../styles/variables.scss" as *;
+
+.serviceDetailsArea {
+  padding: 80px 0;
+  background-color: $white-fffcff;
+}
+
+.serviceDetailsDesc {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.serviceHeader {
+  text-align: center;
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid $bg-color-d6d6d6;
+}
+
+.serviceIcon {
+  margin-bottom: 30px;
+  
+  img {
+    max-width: 120px;
+    height: auto;
+  }
+}
+
+.serviceInfo {
+  h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: $black-color;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+}
+
+.serviceContent {
+  font-size: 16px;
+  line-height: 1.8;
+  color: $black-color;
+
+  // Style for rendered blocks
+  :global(h2) {
+    font-size: 28px;
+    color: $black-color;
+    margin: 40px 0 20px 0;
+    font-weight: 600;
+  }
+
+  :global(h3) {
+    font-size: 22px;
+    color: $black-color;
+    margin: 30px 0 15px 0;
+    font-weight: 600;
+  }
+
+  :global(p) {
+    margin-bottom: 20px;
+  }
+
+  :global(ul), :global(ol) {
+    margin: 20px 0;
+    padding-left: 30px;
+  }
+
+  :global(li) {
+    margin-bottom: 10px;
+  }
+
+  :global(blockquote) {
+    border-left: 4px solid $secondary-color;
+    padding-left: 20px;
+    margin: 30px 0;
+    font-style: italic;
+    color: $tertiary-color;
+  }
+
+  :global(a) {
+    color: $secondary-color;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.actionButtons {
+  margin-top: 50px;
+  padding-top: 40px;
+  border-top: 1px solid $bg-color-d6d6d6;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .primaryButton {
+    min-width: 160px;
+  }
+
+  .secondaryButton {
+    min-width: 200px;
+  }
+}
+
+// Mobile responsive
+@media only screen and (max-width: 766px) {
+  .serviceDetailsArea {
+    padding: 40px 0;
+  }
+
+  .serviceHeader {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+  }
+
+  .serviceInfo {
+    h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .serviceContent {
+    font-size: 15px;
+
+    :global(h2) {
+      font-size: 24px;
+      margin: 30px 0 15px 0;
+    }
+
+    :global(h3) {
+      font-size: 20px;
+      margin: 25px 0 12px 0;
+    }
+  }
+
+  .actionButtons {
+    margin-top: 30px;
+    padding-top: 30px;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+
+    .primaryButton,
+    .secondaryButton {
+      width: 100%;
+      max-width: 280px;
+      min-width: auto;
+    }
+  }
+}

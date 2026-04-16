@@ -134,6 +134,27 @@
       visibility: visible; 
       opacity: 1;
       box-shadow: none; 
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 5px;
+      padding: 8px 0;
+
+      .navLink {
+        color: $white;
+        font-size: 0.875rem;
+        padding: 8px 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        text-transform: none;
+        font-family: "Grafita Normal", sans-serif;
+
+        &:hover, &.active {
+          color: $secondary-color;
+          background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
     }
   }
 
@@ -172,6 +193,26 @@
       border-radius: 5px;
       display: none;
       transition: display 0.3s;
+      background-color: $primary-color;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+      .navLink {
+        color: $white;
+        font-size: 0.875rem;
+        padding: 8px 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        text-transform: none;
+        font-family: "Grafita Normal", sans-serif;
+
+        &:hover, &.active {
+          color: $secondary-color;
+          background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
     }
 
     .dropdownOpen {
@@ -214,9 +255,32 @@
 
         .dropdownMenu {
           position: absolute;
-          min-width: 150px;
+          min-width: 180px;
           margin-left: 10px;
           text-align: left;
+          background-color: $primary-color;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          border-radius: 5px;
+          padding: 15px 0 10px;
+
+          .navLink {
+            color: $white;
+            font-size: 0.875rem;
+            padding: 8px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-transform: none;
+            font-family: "Grafita Normal", sans-serif;
+            border-bottom: none;
+
+            &:hover, &.active {
+              color: $secondary-color;
+              background-color: rgba(255, 255, 255, 0.05);
+            }
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
         }
       }
 
