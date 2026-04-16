@@ -1,8 +1,7 @@
 import React from "react";
-import SinglePageContainer from "@/components/Layout/SinglePageContainer";
 import LoadingError from "@/components/Errors/LoadingError";
 import MobileMenuProvider from "../../../context/MobileMenuProvider";
-import Navbar from "@/components/Layout/Navbar";
+import Navbar from "@/components/Layout/NavbarServer";
 import Footer from "@/components/Layout/Footer";
 import BlogDetailsContent from "@/components/Blog/BlogDetails";
 
@@ -142,9 +141,11 @@ export default async function BlogPostPage({ params }: { params: Params }) {
 
   return (
     <div className="blog-detail-page">
-      <SinglePageContainer singlePageData={singlePageResponse}>
+      <MobileMenuProvider>
+        <Navbar />
         <BlogDetailsContent {...formattedProps} />
-      </SinglePageContainer>
+        <Footer />
+      </MobileMenuProvider>
     </div>
   );
 }

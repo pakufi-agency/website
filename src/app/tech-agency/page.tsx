@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../components/Layout/Navbar";
+import Navbar from "../../components/Layout/NavbarServer";
 import Footer from "../../components/Layout/Footer";
 import Section from "../../components/Sections/Section";
 import HeroBanner from "../../components/Hero/Hero";
@@ -27,12 +27,12 @@ export const generateMetadata = async () =>
         query: TECHAGENCY_QUERY,
         pageType: "Tech Agency",
       }),
-    "/tech-agency"
+    "/tech-agency",
   );
 
 function renderSection(
   section: SectionProps,
-  ComponentWrapper: React.ComponentType<any>
+  ComponentWrapper: React.ComponentType<any>,
 ) {
   const componentMap: Record<string, any> = {
     TextImageButtonsComponent: TextImageButtons,

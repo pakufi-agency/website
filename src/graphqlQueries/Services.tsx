@@ -74,6 +74,7 @@ export const SERVICES_PAGE_QUERY = gql`
             slug
             subtitle
             descriptionRichText
+            descriptionShort
             icon
           }
         }

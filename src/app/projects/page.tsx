@@ -1,6 +1,6 @@
 // app/projects/page.tsx
 import React from "react";
-import Navbar from "../../components/Layout/Navbar";
+import Navbar from "../../components/Layout/NavbarServer";
 import Footer from "../../components/Layout/Footer";
 import Section from "../../components/Sections/Section";
 import TextImageButtons from "../../components/TextImageButtons/TextImageButtons";
@@ -26,12 +26,12 @@ export const generateMetadata = async () =>
         query: PROJECTS_PAGE_QUERY,
         pageType: "Projects Page",
       }),
-    "/projects"
+    "/projects",
   );
 
 function renderSection(
   section: any,
-  ComponentWrapper: React.ComponentType<any>
+  ComponentWrapper: React.ComponentType<any>,
 ) {
   const componentMap: Record<string, any> = {
     TextImageButtonsComponent: TextImageButtons,

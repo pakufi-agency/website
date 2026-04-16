@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "@/components/Layout/Navbar";
+import Navbar from "@/components/Layout/NavbarServer";
 import Footer from "@/components/Layout/Footer";
 import Section from "@/components/Sections/Section";
 import SectionHalfBackground from "@/components/Sections/SectionHalfBackground";
@@ -51,7 +51,7 @@ export async function generateMetadata({
         pageType: "Generic Page",
         variables: { slug },
       }),
-    `/${slug}`
+    `/${slug}`,
   );
 }
 

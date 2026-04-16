@@ -1,8 +1,7 @@
 import React from "react";
-import SinglePageContainer from "@/components/Layout/SinglePageContainer";
 import LoadingError from "@/components/Errors/LoadingError";
 import MobileMenuProvider from "../../../context/MobileMenuProvider";
-import Navbar from "@/components/Layout/Navbar";
+import Navbar from "@/components/Layout/NavbarServer";
 import Footer from "@/components/Layout/Footer";
 import ServiceDetails from "@/components/Services/ServiceDetails";
 
@@ -18,7 +17,6 @@ interface Service {
   slug: string;
   subtitle: string;
   descriptionRichText: any;
-  descriptionShort?: any;
   icon: string;
   createdAt: string;
   seo: {
@@ -119,9 +117,11 @@ export default async function ServicePage({ params }: { params: Params }) {
 
   return (
     <div className="service-detail-page">
-      <SinglePageContainer singlePageData={singlePageResponse}>
+      <MobileMenuProvider>
+        <Navbar />
         <ServiceDetails {...service} />
-      </SinglePageContainer>
+        <Footer />
+      </MobileMenuProvider>
     </div>
   );
 }
