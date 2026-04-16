@@ -87,6 +87,24 @@
   }
 }
 
+.actionButtons {
+  margin-top: 50px;
+  padding-top: 40px;
+  border-top: 1px solid $bg-color-d6d6d6;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .primaryButton {
+    min-width: 160px;
+  }
+
+  .secondaryButton {
+    min-width: 200px;
+  }
+}
+
 // Mobile responsive
 @media only screen and (max-width: 766px) {
   .serviceDetailsArea {
@@ -116,6 +134,21 @@
     :global(h3) {
       font-size: 20px;
       margin: 25px 0 12px 0;
+    }
+  }
+
+  .actionButtons {
+    margin-top: 30px;
+    padding-top: 30px;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+
+    .primaryButton,
+    .secondaryButton {
+      width: 100%;
+      max-width: 280px;
+      min-width: auto;
     }
   }
 }

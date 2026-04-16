@@ -74,13 +74,13 @@ const ServiceBox: React.FC<ServiceBoxesProps> = ({ items }) => {
                     <BlockRendererClient content={item.descriptionRichText} />
                   )}
                 </div>
-                {/* <div className={styles.buttonContainer}>
+                <div className={styles.buttonContainer}>
                   <ButtonLink
                     href={`/services/${item.slug}`}
                     label="Learn More"
                     className="btn btn-primary"
                   />
-                </div> */}
+                </div>
               </div>
             </div>
           ))}

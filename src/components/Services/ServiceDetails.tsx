@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 import BlockRendererClient from "../BlockRendererClient";
 import styles from "./ServiceDetails.module.scss";
 import { getStrapiImageUrl } from "@/utils/utils";
@@ -73,6 +74,24 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({
               {/* Service Content */}
               <div className={styles.serviceContent}>
                 <BlockRendererClient content={descriptionRichText} />
+              </div>
+
+              {/* Action Buttons */}
+              <div className={styles.actionButtons}>
+                <Link
+                  href="https://pakufi.zohobookings.com/#/4746283000000044080"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`btn btn-secondary btn-shining ${styles.primaryButton}`}
+                >
+                  Chat with us
+                </Link>
+                <Link
+                  href="/services/"
+                  className={`btn btn-primary ${styles.secondaryButton}`}
+                >
+                  Go back to services overview
+                </Link>
               </div>
             </article>
           </div>

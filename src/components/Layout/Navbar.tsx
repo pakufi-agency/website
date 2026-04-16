@@ -63,6 +63,26 @@ const Navbar: React.FC<NavbarProps> = ({ services = [] }) => {
   }, []);
 
   useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      const dropdown = document.querySelector(`.${styles.dropdownMenu}`);
+      const dropdownToggle = document.querySelector(`.${styles.linkWithIcon}`);
+
+      if (
+        dropdown &&
+        !dropdown.contains(target) &&
+        dropdownToggle &&
+        !dropdownToggle.contains(target)
+      ) {
+        setDropdownOpen(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
     const mediaQuery = window.matchMedia(DESKTOP_MEDIA_QUERY);
 
     const handleResize = () => {
@@ -113,7 +133,7 @@ const Navbar: React.FC<NavbarProps> = ({ services = [] }) => {
                     Home
                   </Link>
                 </li>
-                <li className={styles.navItem}>
+                {/* <li className={styles.navItem}>
                   <Link
                     href="/services/"
                     className={`${styles.navLink} ${
@@ -122,8 +142,8 @@ const Navbar: React.FC<NavbarProps> = ({ services = [] }) => {
                   >
                     Services
                   </Link>
-                </li>
-                {/* <li className={`nav-item ${styles.navItem}`}>
+                </li> */}
+                <li className={`nav-item ${styles.navItem}`}>
                   <div
                     className={`${styles.navLink} ${
                       isDropdownOpen === "services" && styles.navLinkDropdown
@@ -138,20 +158,34 @@ const Navbar: React.FC<NavbarProps> = ({ services = [] }) => {
                     }`}
                   >
                     {services.length > 0 ? (
-                      services.map((service) => (
-                        <li className={styles.navItem} key={service.slug}>
+                      <>
+                        {services.map((service) => (
+                          <li className={styles.navItem} key={service.slug}>
+                            <Link
+                              href={`/services/${service.slug}`}
+                              className={`${styles.navLink} ${
+                                currentRoute === `/services/${service.slug}`
+                                  ? "active"
+                                  : ""
+                              }`}
+                              onClick={() => setDropdownOpen(null)}
+                            >
+                              {service.name}
+                            </Link>
+                          </li>
+                        ))}
+                        <li className={styles.navItem}>
                           <Link
-                            href={`/services/${service.slug}`}
+                            href="/services/"
                             className={`${styles.navLink} ${
-                              currentRoute === `/services/${service.slug}`
-                                ? "active"
-                                : ""
+                              currentRoute === "/services/" ? "active" : ""
                             }`}
+                            onClick={() => setDropdownOpen(null)}
                           >
-                            {service.name}
+                            See all services
                           </Link>
                         </li>
-                      ))
+                      </>
                     ) : (
                       <li className={styles.navItem}>
                         <Link
@@ -159,13 +193,14 @@ const Navbar: React.FC<NavbarProps> = ({ services = [] }) => {
                           className={`${styles.navLink} ${
                             currentRoute === "/services/" ? "active" : ""
                           }`}
+                          onClick={() => setDropdownOpen(null)}
                         >
                           Overview
                         </Link>
                       </li>
                     )}
                   </ul>
-                </li> */}
+                </li>
                 <li className={`nav-item ${styles.navItem}`}>
                   <Link
                     href="/projects/"
