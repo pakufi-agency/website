@@ -1,9 +1,6 @@
 "use client";
 
 import React, { ReactNode } from "react";
-import MobileMenuProvider from "../../context/MobileMenuProvider";
-import Navbar from "../../components/Layout/Navbar";
-import Footer from "../../components/Layout/Footer";
 import CtaBig from "../../components/CtaBig/CtaBig";
 import Newsletter from "../../components/Newsletter/Newsletter";
 
@@ -27,13 +24,9 @@ const SinglePageContainer: React.FC<SinglePageContainerProps> = ({
 
   return (
     <div className={`single-page-container ${styles.container}`}>
-      <MobileMenuProvider>
-        <Navbar />
-        <div className={styles.mainContent}>{children}</div>
-        <Newsletter {...sections.newsletter} />
-        <CtaBig {...sections.cta} />
-        <Footer />
-      </MobileMenuProvider>
+      <div className={styles.mainContent}>{children}</div>
+      <Newsletter {...sections.newsletter} />
+      <CtaBig {...sections.cta} />
     </div>
   );
 };

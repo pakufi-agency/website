@@ -14,11 +14,10 @@ interface StrapiResponse<T> {
 }
 
 const NavbarServer = async () => {
-  const data: StrapiResponse<Service> =
-    (await getStrapiData({
-      query: SERVICES_ALL_QUERY,
-      pageType: "Services Navigation",
-    })) ?? {};
+  const data = await getStrapiData<StrapiResponse<Service>>({
+    query: SERVICES_ALL_QUERY,
+    pageType: "Services Navigation",
+  });
 
   const navProps = (data?.services || []).map((service) => ({
     name: service.name,

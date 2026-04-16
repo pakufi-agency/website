@@ -98,8 +98,8 @@
   flex-direction: column;
   align-items: center;
 
-  .primaryButton,
-  .secondaryButton {
+  .firstCTA,
+  .secondCTA {
     width: 100%;
     max-width: 280px;
     min-width: auto;
@@ -144,13 +144,13 @@
     gap: 20px;
     flex-direction: row;
 
-    .primaryButton {
+    .firstCTA {
       min-width: 160px;
       width: auto;
       max-width: none;
     }
 
-    .secondaryButton {
+    .secondCTA {
       min-width: 200px;
       width: auto;
       max-width: none;

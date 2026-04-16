@@ -82,13 +82,13 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({
                   href="https://cal.com/tahir-qalliu-m7pygj/client-call-pakufi-30-min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`btn btn-primary ${styles.primaryButton}`}
+                  className={`btn btn-secondary ${styles.firstCTA}`}
                 >
                   Chat with us
                 </Link>
                 <Link
                   href="/services/"
-                  className={`btn btn-secondary ${styles.secondaryButton}`}
+                  className={`btn btn-primary ${styles.secondCTA}`}
                 >
                   Go back to services overview
                 </Link>
