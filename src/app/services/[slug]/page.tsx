@@ -1,10 +1,10 @@
 import React from "react";
-import SinglePageContainer from "@/components/Layout/SinglePageContainer";
 import LoadingError from "@/components/Errors/LoadingError";
 import MobileMenuProvider from "../../../context/MobileMenuProvider";
-import Navbar from "@/components/Layout/Navbar";
+import NavbarServer from "@/components/Layout/NavbarServer";
 import Footer from "@/components/Layout/Footer";
 import ServiceDetails from "@/components/Services/ServiceDetails";
+import SinglePageContainer from "@/components/Layout/SinglePageContainer";
 
 import { getStrapiData, getStrapiImageUrl } from "../../../utils/utils";
 import {
@@ -18,7 +18,6 @@ interface Service {
   slug: string;
   subtitle: string;
   descriptionRichText: any;
-  descriptionShort?: any;
   icon: string;
   createdAt: string;
   seo: {
@@ -110,7 +109,7 @@ export default async function ServicePage({ params }: { params: Params }) {
   if (!service || !singlePageResponse) {
     return (
       <MobileMenuProvider>
-        <Navbar />
+        <NavbarServer />
         <LoadingError />
         <Footer />
       </MobileMenuProvider>
@@ -118,10 +117,14 @@ export default async function ServicePage({ params }: { params: Params }) {
   }
 
   return (
-    <div className="service-detail-page">
-      <SinglePageContainer singlePageData={singlePageResponse}>
-        <ServiceDetails {...service} />
-      </SinglePageContainer>
-    </div>
+    <MobileMenuProvider>
+      <NavbarServer />
+      <div className="service-detail-page">
+        <SinglePageContainer singlePageData={singlePageResponse}>
+          <ServiceDetails {...service} />
+        </SinglePageContainer>
+      </div>
+      <Footer />
+    </MobileMenuProvider>
   );
 }

@@ -79,16 +79,16 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({
               {/* Action Buttons */}
               <div className={styles.actionButtons}>
                 <Link
-                  href="https://pakufi.zohobookings.com/#/4746283000000044080"
+                  href="https://cal.com/tahir-qalliu-m7pygj/client-call-pakufi-30-min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`btn btn-secondary btn-shining ${styles.primaryButton}`}
+                  className={`btn btn-secondary ${styles.firstCTA}`}
                 >
                   Chat with us
                 </Link>
                 <Link
                   href="/services/"
-                  className={`btn btn-primary ${styles.secondaryButton}`}
+                  className={`btn btn-primary ${styles.secondCTA}`}
                 >
                   Go back to services overview
                 </Link>

@@ -36,7 +36,8 @@ export const defaultSinglePageResponse: SinglePageResponse = {
       alternativeText: "collaboration",
     },
     buttonCtaOneLabel: "Book a call",
-    buttonCtaOneLink: "https://pakufi.zohobookings.com/#/4746283000000044080",
+    buttonCtaOneLink:
+      "https://cal.com/tahir-qalliu-m7pygj/client-call-pakufi-30-min",
     buttonCtaTwoLabel: "Contact Us",
     buttonCtaTwoLink: "/contact",
     isBig: false,

@@ -1,4 +1,4 @@
-import Navbar from "@/components/Layout/Navbar";
+import Navbar from "@/components/Layout/NavbarServer";
 import Footer from "@/components/Layout/Footer";
 import Custom404Content from "@/components/Custom404/Custom404Content";
 
