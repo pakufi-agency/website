@@ -1,6 +1,11 @@
 @use '../../styles/variables.scss' as *;
- 
+
+.project-detail-page {
+  padding-top: 105px;
+}
+
 .header {
+  height: 105px;
   position: fixed;
   width: 100%;
   top: 0;
