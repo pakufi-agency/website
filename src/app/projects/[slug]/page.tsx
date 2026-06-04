@@ -131,9 +131,11 @@ export default async function ProjectPage({ params }: { params: Params }) {
   } = project;
 
   return (
-    <div className="project-detail-page">
-      <MobileMenuProvider>
-        <Navbar />
+  <MobileMenuProvider>
+    <div className="page">
+      <Navbar />
+
+      <main className="pageContent">
         <ProjectDetails
           title={title}
           description={description}
@@ -144,8 +146,10 @@ export default async function ProjectPage({ params }: { params: Params }) {
           coverPicture={coverPicture}
           livePreviewUrl={livePreviewUrl}
         />
-        <Footer />
-      </MobileMenuProvider>
+      </main>
+
+      <Footer />
     </div>
-  );
+  </MobileMenuProvider>
+);
 }
