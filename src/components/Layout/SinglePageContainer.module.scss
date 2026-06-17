@@ -3,5 +3,9 @@
 }
 
 .mainContent {
-    padding-bottom: 50px;
+    padding-bottom: 150px;
+
+    :global(.ProjectDetails_projectDetails__x0b7Z) {
+        overflow: visible !important;
+    }
 }
