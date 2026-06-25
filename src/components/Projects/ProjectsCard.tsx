@@ -28,7 +28,7 @@ const ProjectsCard: React.FC<ProjectsListProps> = ({ items = [] }) => {
                       className={styles.projectImage}
                       sizes="(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw"
                       fill
-                      objectFit="cover"
+                      objectFit="container"
                     />
 
                     <span className={styles.icon}>
