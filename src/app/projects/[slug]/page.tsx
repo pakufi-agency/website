@@ -1,5 +1,6 @@
 import React from "react";
 import ProjectDetails from "@/components/Projects/ProjectDetails";
+import SinglePageContainer from "@/components/Layout/SinglePageContainer";
 import LoadingError from "@/components/Errors/LoadingError";
 import Navbar from "@/components/Layout/NavbarServer";
 import Footer from "@/components/Layout/Footer";
@@ -131,9 +132,10 @@ export default async function ProjectPage({ params }: { params: Params }) {
   } = project;
 
   return (
+  <MobileMenuProvider>
+    <Navbar />
     <div className="project-detail-page">
-      <MobileMenuProvider>
-        <Navbar />
+      <SinglePageContainer singlePageData={singlePageResponse}>
         <ProjectDetails
           title={title}
           description={description}
@@ -144,8 +146,9 @@ export default async function ProjectPage({ params }: { params: Params }) {
           coverPicture={coverPicture}
           livePreviewUrl={livePreviewUrl}
         />
-        <Footer />
-      </MobileMenuProvider>
+      </SinglePageContainer>
     </div>
-  );
+    <Footer />
+  </MobileMenuProvider>
+);
 }
