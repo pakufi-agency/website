@@ -43,7 +43,6 @@ const Hero: React.FC<HeroProps> = ({
               >
                 {title}
               </span>
-
               <div
                 className={styles.description}
                 data-aos="fade-up"
@@ -53,21 +52,21 @@ const Hero: React.FC<HeroProps> = ({
               >
                 <BlockRendererClient content={descriptionRichText} />
               </div>
-
-              {Button.map((button, index) => (
-                <span key={index}>
-                  <ButtonLink
-                    href={button.url}
-                    label={button.label}
-                    pathname={pathname}
-                    className={`btn ${
-                      index === 0 ? "btn-secondary" : "btn-primary"
-                    } btn-shining ${styles.button}`}
-                  />
-                </span>
-              ))}
+              <div className={styles.buttonGroup}>
+                {Button.map((button, index) => (
+                  <span key={index}>
+                    <ButtonLink
+                      href={button.url}
+                      label={button.label}
+                      pathname={pathname}
+                      className={`btn ${
+                        index === 0 ? "btn-secondary" : "btn-primary"
+                      } btn-shining ${styles.button}`}
+                    />
+                  </span>
+                ))}
+              </div>
             </div>
-
             <div className={styles.bannerImage}>
               <Image
                 src={getStrapiImageUrl(mediaHero.url)}
@@ -78,7 +77,6 @@ const Hero: React.FC<HeroProps> = ({
               />
             </div>
           </div>
-
           <div className={`shape3 ${styles.triangleShape}`}>
             <Image src={greenTriangle} alt="shape" width={21} height={20} />
           </div>
