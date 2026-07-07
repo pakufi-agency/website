@@ -63,7 +63,40 @@
                 margin-bottom: 20px;
                 color: $white;
             }
+            ul {
+               list-style: none;
+               margin: 20px 0 0;
+              padding: 0;
+              display: flex;
+              flex-wrap: wrap;
+              gap: 10px;
+              justify-content: center;
+            li {
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              background: rgba($secondary-color, 0.12);
+              color: $white;
+              font-size: 13px;
+              padding: 6px 14px;
+              border-radius: 20px;
+              line-height: 1.4;
+            &::before {
+            content: "◆";
+              font-size: 10px;
+              color: $secondary-color;
+            }
+          }
         }
+        .buttonGroup {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+            justify-content: center;
+          }
+        }
+
 
         .button {
             margin: 10px;
@@ -126,6 +159,12 @@
                 h4 {
                     font-size: 20px;
                 }
+                ul {
+                    justify-content: flex-start;
+                }
+            }
+            .buttonGroup {
+                    justify-content: flex-start;
             }
         }
 
