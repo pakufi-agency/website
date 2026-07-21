@@ -102,6 +102,9 @@ export const TALENTGROWTH_QUERY = gql`
               url
             }
           }
+          boxesText {
+            content
+          }
           timelineSection {
             timelineStep {
               stepNumber
