@@ -104,6 +104,7 @@ export const TALENTGROWTH_QUERY = gql`
           }
           boxesText {
             content
+            variant
           }
           timelineSection {
             timelineStep {
