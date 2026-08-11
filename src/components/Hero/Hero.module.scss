@@ -81,11 +81,6 @@
               padding: 6px 14px;
               border-radius: 20px;
               line-height: 1.4;
-            &::before {
-            content: "◆";
-              font-size: 10px;
-              color: $secondary-color;
-            }
           }
         }
         .buttonGroup {
