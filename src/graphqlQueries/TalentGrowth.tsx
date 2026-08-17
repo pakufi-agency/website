@@ -115,10 +115,10 @@ export const TALENTGROWTH_QUERY = gql`
             content
           }
           client_reviews {
-          name
-          reviewTitle
-          reviewContent
-          rating
+            name
+            reviewTitle
+            reviewContent
+            rating
           }
         }
         ... on ComponentCommonSectionhalfbackground {
