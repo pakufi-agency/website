@@ -75,7 +75,7 @@ a {
     transition: $transition;
 
     &:hover, &:focus {
-        color: $primary-color;
+        color: $secondary-color;
         text-decoration: none;
     }
 }

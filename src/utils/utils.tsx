@@ -138,9 +138,9 @@ export function truncateText(text: string, maxLength = 150) {
   return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
 }
 
-const URL_PATTERN = /https?:\/\/[^\s)]+/g;
+const BRACKET_LINK_PATTERN = /(\S+)\s*\[(https?:\/\/[^\]\s]+)\]/g;
 
-export function linkifyUrls(
+export function linkifyBracketedUrls(
   text: string,
   linkClassName: string,
 ): React.ReactNode {
@@ -148,10 +148,10 @@ export function linkifyUrls(
   let lastIndex = 0;
   let key = 0;
 
-  const matches = Array.from(text.matchAll(URL_PATTERN));
+  const matches = Array.from(text.matchAll(BRACKET_LINK_PATTERN));
 
   matches.forEach((match) => {
-    const url = match[0];
+    const [fullMatch, word, url] = match;
     const start = match.index ?? 0;
 
     if (start > lastIndex) {
@@ -168,11 +168,11 @@ export function linkifyUrls(
           rel: "noopener noreferrer",
           className: linkClassName,
         },
-        url
+        word
       )
     );
 
-    lastIndex = start + url.length;
+    lastIndex = start + fullMatch.length;
   });
 
   if (lastIndex < text.length) {
