@@ -210,7 +210,7 @@
     height: 60px;
     background: linear-gradient(180deg, $secondary-color 0%, rgba($secondary-color, 0.3) 100%);
     z-index: -1;
-    
+
     &::before {
       content: '';
       position: absolute;

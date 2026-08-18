@@ -8,30 +8,12 @@ export const getStrapiImageUrl = (url: string) => {
     : `${process.env.NEXT_PUBLIC_CMS_ENDPOINT}${url}`;
 };
 
-/**
- * Fetches data for a Strapi page.
- * This function is used to fetch data for a specific page type from Strapi.
- * @param {any} query - The GraphQL query to fetch the page data.
- * @param {Record<string, any>} variables - The variables to pass to the query.
- * @param {string} pageType - The type of page being fetched.
- */
 interface StrapiDataOptions {
   query: any;
   variables?: Record<string, any>;
   pageType: string;
 }
 
-/**
- * Fetches data from Strapi using a GraphQL query.
- * This function can be used to retrieve any Strapi collection or single type,
- * optionally filtered by variables such as slug or ID.
- *
- * @template T - The expected return data type.
- * @param {any} query - The GraphQL query used to fetch the data.
- * @param {Record<string, any>} [variables={}] - Optional query variables to filter results.
- * @param {string} [dataType="data"] - The root field key (e.g., "projects" or "pages") expected in the response.
- * @returns {Promise<T | null>} The fetched data cast to type T, or null if not found or on error.
- */
 export async function getStrapiData<T>(
   options: StrapiDataOptions,
 ): Promise<T | null> {
@@ -56,21 +38,6 @@ export async function getStrapiData<T>(
   }
 }
 
-/**
- * Renders multiple components within a section based on a component map.
- * This function is used mostly in pages to render the different data type
- * added to a Section like Common Section, as defined in Strapi Content-Type.
- *
- * Wit this function we can render one or several data type included in a section
- * and they can be either an array or an object. The possibility of undefined is also handled.
- *
- * @param {RenderSectionProps} props - Props for the function.
- * @param {SectionProps} props.section - The section data containing the different component data.
- * @param {React.ComponentType<any>} props.ComponentWrapper - The wrapper component for the entire section.
- * @param {Record<string, React.ComponentType<any>>} props.componentMap - A map of component keys to React components.
- *
- * @returns {JSX.Element} - A React element containing the rendered components within the ComponentWrapper.
- */
 interface SectionProps {
   [key: string]: any;
 }
@@ -136,4 +103,48 @@ export const trackClick = (
 export function truncateText(text: string, maxLength = 150) {
   if (!text) return "";
   return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
+}
+
+const URL_PATTERN = /https?:\/\/[^\s)]+/g;
+
+export function linkifyUrls(
+  text: string,
+  linkClassName: string,
+): React.ReactNode {
+  const parts: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let key = 0;
+
+  const matches = Array.from(text.matchAll(URL_PATTERN));
+
+  matches.forEach((match) => {
+    const url = match[0];
+    const start = match.index ?? 0;
+
+    if (start > lastIndex) {
+      parts.push(text.slice(lastIndex, start));
+    }
+
+    parts.push(
+      React.createElement(
+        "a",
+        {
+          key: key++,
+          href: url,
+          target: "_blank",
+          rel: "noopener noreferrer",
+          className: linkClassName,
+        },
+        url
+      )
+    );
+
+    lastIndex = start + url.length;
+  });
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : text;
 }
