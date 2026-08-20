@@ -53,7 +53,7 @@ const Hero: React.FC<HeroProps> = ({
               >
                 <BlockRendererClient content={descriptionRichText} />
               </div>
-              <div className={styles.buttonGroup}>
+
               {Button.map((button, index) => (
                 <span key={index}>
                   <ButtonLink
@@ -66,7 +66,6 @@ const Hero: React.FC<HeroProps> = ({
                   />
                 </span>
               ))}
-              </div>
             </div>
 
             <div className={styles.bannerImage}>

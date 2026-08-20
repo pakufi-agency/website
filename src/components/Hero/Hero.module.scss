@@ -5,7 +5,7 @@
     padding: 150px 0 80px;
     z-index: 0;
     min-height: 100vh;
-    height: auto;
+    height: auto; 
     background: $river-bed-green;
     background: $gradient-hero;
     color: $white;
@@ -33,18 +33,18 @@
 
     .bannerContent {
         max-width: 100%;
-
+    
         .smallTitle {
             color: $secondary-color;
             font-size: 15px;
             margin-bottom: 10px;
             display: none;
         }
-
+    
         .description {
             color: $white;
             margin-bottom: 34px;
-
+            
             h1 {
                 font-size: 40px;
                 color: $white;
@@ -63,41 +63,10 @@
                 margin-bottom: 20px;
                 color: $white;
             }
-
-            ul {
-                list-style: none;
-                margin: 20px 0 0;
-                padding: 0;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-                justify-content: center;
-
-                li {
-                    display: flex;
-                    align-items: center;
-                    gap: 6px;
-                    background: rgba($secondary-color, 0.12);
-                    color: $white;
-                    font-size: 13px;
-                    padding: 6px 14px;
-                    border-radius: 20px;
-                    line-height: 1.4;
-                }
-            }
-        }
-
-        .buttonGroup {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 24px;
-            justify-content: center;
         }
 
         .button {
             margin: 10px;
-
             > span {
                 color: inherit;
                 padding: 0;
@@ -115,14 +84,15 @@
         align-items: center;
         justify-content: center;
         display: none;
-
+        
         .Image {
             width: 100%;
         }
     }
 }
 
-@media only screen and (min-width: 767px) {
+
+@media only screen and (min-width: 767px ) {
     .heroBanner {
         padding: {
             top: 200px;
@@ -134,6 +104,7 @@
         &::after {
             background-color: $river-bed-green;
         }
+        
     }
 
     .flexContentContainer {
@@ -151,17 +122,10 @@
             }
 
             .description {
+
                 h4 {
                     font-size: 20px;
                 }
-
-                ul {
-                    justify-content: flex-start;
-                }
-            }
-
-            .buttonGroup {
-                justify-content: flex-start;
             }
         }
 
@@ -169,7 +133,7 @@
             top: 200px;
             display: flex;
             transform: scale(3);
-
+            
             .Image {
                 width: 100%;
             }
@@ -186,10 +150,9 @@
     }
 }
 
-@media only screen and (min-width: 991px) {
+@media only screen and (min-width: 991px ) {
     .flexContentContainer {
         align-items: flex-start;
-
         .bannerContent {
             margin-top: -50px;
         }
@@ -208,7 +171,7 @@
 }
 
 // Big screen
-@media only screen and (min-width: 1550px) {
+@media only screen and (min-width: 1550px ) {
     .heroBanner {
         min-height: 100vh;
         height: auto;
