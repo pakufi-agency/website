@@ -118,6 +118,12 @@ export const TALENTGROWTH_QUERY = gql`
           TextBlock {
             content
           }
+          client_reviews {
+            name
+            reviewTitle
+            reviewContent
+            rating
+          }
         }
         ... on ComponentCommonSectionhalfbackground {
           sectionTitle

@@ -14,6 +14,7 @@ import SectionHalfBackground from "../../components/Sections/SectionHalfBackgrou
 import BlockRendererClient from "../../components/BlockRendererClient";
 import MentorsSection from "@/components/MentorsSection/MentorsSection";
 import BoxesText from "@/components/BoxesText/BoxesText";
+import Reviews from "@/components/Reviews/Reviews";
 
 import { getStrapiData, renderMultipleComponents } from "../../utils/utils";
 import { generatePageMetadata } from "../../utils/seo";
@@ -40,6 +41,8 @@ function renderSection(
     timelineSection: TimelineSection,
     mentorship_programs: OfferPackageList,
     mentors: MentorsSection,
+    boxesText: BoxesText,
+    client_reviews: Reviews,
     boxesText: BoxesText
   };
   return renderMultipleComponents({
