@@ -138,46 +138,32 @@ export function truncateText(text: string, maxLength = 150) {
   return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
 }
 
-const BRACKET_LINK_PATTERN = /(\S+)\s*\[(https?:\/\/[^\]\s]+)\]/g;
+const markdownLinkRegex = /(\S+)\s*\[(https?:\/\/[^\]\s]+)\]/g;
 
-export function linkifyBracketedUrls(
+export function renderTextWithLinks(
   text: string,
   linkClassName: string,
-): React.ReactNode {
-  const parts: React.ReactNode[] = [];
-  let lastIndex = 0;
-  let key = 0;
+): React.ReactNode[] {
+  const parts = text.split(markdownLinkRegex);
 
-  const matches = Array.from(text.matchAll(BRACKET_LINK_PATTERN));
-
-  matches.forEach((match) => {
-    const [fullMatch, word, url] = match;
-    const start = match.index ?? 0;
-
-    if (start > lastIndex) {
-      parts.push(text.slice(lastIndex, start));
+  return parts.flatMap<React.ReactNode>((part, i) => {
+    if (i % 3 === 0) return part ? [part] : [];
+    if (i % 3 === 1) {
+      const anchorTag = "a";
+      return [
+        React.createElement(
+          anchorTag,
+          {
+            key: i,
+            href: parts[i + 1],
+            target: "_blank",
+            rel: "noopener noreferrer",
+            className: linkClassName,
+          },
+          part,
+        ),
+      ];
     }
-
-    parts.push(
-      React.createElement(
-        "a",
-        {
-          key: key++,
-          href: url,
-          target: "_blank",
-          rel: "noopener noreferrer",
-          className: linkClassName,
-        },
-        word
-      )
-    );
-
-    lastIndex = start + fullMatch.length;
+    return [];
   });
-
-  if (lastIndex < text.length) {
-    parts.push(text.slice(lastIndex));
-  }
-
-  return parts.length > 0 ? parts : text;
 }
