@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Timeline.module.scss";
-import { linkifyBracketedUrls } from "../../utils/utils";
+import { renderTextWithLinks } from "../../utils/utils";
 
 interface MousePosition {
   x: number;
@@ -99,7 +99,7 @@ const Timeline: React.FC<TimelineComponentProps> = ({ steps }) => {
             <div className={styles.stepContent}>
               <h3 className={styles.stepTitle}>{title}</h3>
               <p className={styles.stepDescription}>
-                {linkifyBracketedUrls(description, "link-hover")}
+                {renderTextWithLinks(description, "link-hover")}
               </p>
             </div>
 
