@@ -43,6 +43,7 @@ function renderSection(
     mentors: MentorsSection,
     boxesText: BoxesText,
     client_reviews: Reviews,
+    boxesText: BoxesText
   };
   return renderMultipleComponents({
     section,
