@@ -137,3 +137,33 @@ export function truncateText(text: string, maxLength = 150) {
   if (!text) return "";
   return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
 }
+
+const markdownLinkRegex = /(\S+)\s*\[(https?:\/\/[^\]\s]+)\]/g;
+
+export function renderTextWithLinks(
+  text: string,
+  linkClassName: string,
+): React.ReactNode[] {
+  const parts = text.split(markdownLinkRegex);
+
+  return parts.flatMap<React.ReactNode>((part, i) => {
+    if (i % 3 === 0) return part ? [part] : [];
+    if (i % 3 === 1) {
+      const anchorTag = "a";
+      return [
+        React.createElement(
+          anchorTag,
+          {
+            key: i,
+            href: parts[i + 1],
+            target: "_blank",
+            rel: "noopener noreferrer",
+            className: linkClassName,
+          },
+          part,
+        ),
+      ];
+    }
+    return [];
+  });
+}
