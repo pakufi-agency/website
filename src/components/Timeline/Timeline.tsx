@@ -21,7 +21,7 @@ export interface TimelineComponentProps {
 
 const Timeline: React.FC<TimelineComponentProps> = ({ steps }) => {
   const delay = 0.3;
-
+  const isLast = false;
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [mousePositions, setMousePositions] = useState<MousePosition[]>(
