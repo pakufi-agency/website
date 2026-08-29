@@ -7,14 +7,6 @@ import { ButtonLink } from "../ButtonLink";
 
 import styles from "./SectionFullWidth.module.scss";
 
-import twoBars from "/public/images/backgrounds/two-bars-blue-pink.svg";
-import twoBarsRight from "/public/images/backgrounds/two-bars-spacing-blue-yellow.svg";
-import threeBarsLeft from "/public/images/backgrounds/three-bars-left-side.svg";
-import threeBarsRight from "/public/images/backgrounds/three-bars-right-side.svg";
-import greenCross from "/public/images/backgrounds/green-cross.svg";
-import whiteCross from "/public/images/backgrounds/white-cross.svg";
-import greenTriangle from "/public/images/backgrounds/green-triangle.svg";
-import whiteTriangle from "/public/images/backgrounds/white-triangle.svg";
 
 interface SectionFullWidthProps {
   sectionTitle3: string;
@@ -55,13 +47,13 @@ const SectionFullWidth: React.FC<SectionFullWidthProps> = ({
       >
         {backgroundVariation3 === "two_bars" && (
           <div className={`${styles.barsLeft} ${styles.twoLeft}`}>
-            <Image src={twoBars} alt="decorations" width={550} height={550} />
+            <Image src="/images/backgrounds/two-bars-blue-pink.svg" alt="decorations" width={550} height={550} />
           </div>
         )}
         {backgroundVariation3 === "three_bars" && (
           <div className={`${styles.barsLeft} ${styles.threeLeft}`}>
             <Image
-              src={threeBarsLeft}
+              src="/images/backgrounds/three-bars-left-side.svg"
               alt="decorations"
               width={350}
               height={350}
@@ -99,16 +91,16 @@ const SectionFullWidth: React.FC<SectionFullWidthProps> = ({
         {shapesVariation3 === "one" && (
           <>
             <div className="shape6 rotateme">
-              <Image src={whiteTriangle} alt="shape" width={21} height={20} />
+              <Image src="/images/backgrounds/white-triangle.svg" alt="shape" width={21} height={20} />
             </div>
             <div className="shape7 rotateme">
-              <Image src={greenCross} alt="shape" width={22} height={22} />
+              <Image src="/images/backgrounds/green-cross.svg" alt="shape" width={22} height={22} />
             </div>
             <div className="shape2">
-              <Image src={whiteTriangle} alt="shape" width={21} height={20} />
+              <Image src="/images/backgrounds/white-triangle.svg" alt="shape" width={21} height={20} />
             </div>
             <div className="shape4 rotateme">
-              <Image src={greenTriangle} alt="shape" width={21} height={20} />
+              <Image src="/images/backgrounds/green-triangle.svg" alt="shape" width={21} height={20} />
             </div>
           </>
         )}
@@ -116,29 +108,29 @@ const SectionFullWidth: React.FC<SectionFullWidthProps> = ({
         {shapesVariation3 === "two" && (
           <>
             <div className="shape4">
-              <Image src={greenTriangle} alt="shape" width={21} height={20} />
+              <Image src="/images/backgrounds/green-triangle.svg" alt="shape" width={21} height={20} />
             </div>
             <div className="shape6 rotateme">
-              <Image src={greenTriangle} alt="shape" width={21} height={20} />
+              <Image src="/images/backgrounds/green-triangle.svg" alt="shape" width={21} height={20} />
             </div>
             <div className="shape7">
-              <Image src={greenTriangle} alt="shape" width={21} height={20} />
+              <Image src="/images/backgrounds/green-triangle.svg" alt="shape" width={21} height={20} />
             </div>
             <div className="shape2 rotateme">
-              <Image src={greenCross} alt="shape" width={22} height={22} />
+              <Image src="/images/backgrounds/green-cross.svg" alt="shape" width={22} height={22} />
             </div>
           </>
         )}
 
         {backgroundVariation3 === "two_bars" && (
           <div className={`${styles.barsRight} ${styles.twoRight}`}>
-            <Image src={twoBars} alt="decorations" width={550} height={550} />
+            <Image src="/images/backgrounds/two-bars-blue-pink.svg" alt="decorations" width={550} height={550} />
           </div>
         )}
         {backgroundVariation3 === "three_bars" && (
           <div className={`${styles.barsRight} ${styles.threeRight}`}>
             <Image
-              src={threeBarsRight}
+              src="/images/backgrounds/three-bars-right-side.svg"
               alt="decorations"
               width={350}
               height={350}

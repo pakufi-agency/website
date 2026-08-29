@@ -17,11 +17,11 @@
     "aos": "^2.3.4",
     "graphql": "^16.9.0",
     "html-react-parser": "^5.2.6",
-    "next": "^14.1.4",
+    "next": "^16.3.2",
     "next-sitemap": "^4.2.3",
-    "react": "^18",
+    "react": "^19.2.8",
     "react-accessible-accordion": "^5.0.0",
-    "react-dom": "^18",
+    "react-dom": "^19.2.8",
     "react-feather": "^2.0.10",
     "react-responsive-masonry": "^2.2.0",
     "react-tabs": "^6.0.2",
@@ -37,9 +37,13 @@
     "@types/react-dom": "^18.2.22",
     "bootstrap": "^5.3.3",
     "dompurify": "^3.2.6",
-    "eslint": "^8.57.0",
-    "eslint-config-next": "^14.1.4",
+    "eslint": "^10.9.1",
+    "eslint-config-next": "^16.3.2",
     "husky": "^9.1.7",
     "typescript": "^5.4.3"
+  },
+  "allowScripts": {
+    "sharp@0.35.3": true,
+    "sharp@0.33.3": true
   }
 }

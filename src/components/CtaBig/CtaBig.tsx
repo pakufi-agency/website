@@ -8,9 +8,6 @@ import { getStrapiImageUrl, trackClick } from "../../utils/utils";
 
 import styles from "./CtaBig.module.scss";
 
-import whiteCross from "/public/images/backgrounds/white-cross.svg";
-import greenTriangle from "/public/images/backgrounds/green-triangle.svg";
-import whiteTriangle from "/public/images/backgrounds/white-triangle.svg";
 import { Url } from "url";
 import { ButtonLink } from "../ButtonLink";
 
@@ -83,13 +80,13 @@ const CtaBig: React.FC<CtaBigProps> = ({
         </div>
 
         <div className="shape4">
-          <Image src={greenTriangle} alt="shape" width={21} height={20} />
+          <Image src="/images/backgrounds/green-triangle.svg" alt="shape" width={21} height={20} />
         </div>
         <div className="shape1">
-          <Image src={whiteTriangle} alt="shape" width={21} height={20} />
+          <Image src="/images/backgrounds/white-triangle.svg" alt="shape" width={21} height={20} />
         </div>
         <div className="shape8 rotateme">
-          <Image src={whiteCross} alt="shape" width={22} height={22} />
+          <Image src="/images/backgrounds/white-cross.svg" alt="shape" width={22} height={22} />
         </div>
       </div>
     </>

@@ -6,12 +6,6 @@ import Image, { StaticImageData } from "next/image";
 import BlockRendererClient from "../BlockRendererClient";
 import { ButtonLink } from "../ButtonLink";
 
-import brush from "/public/images/brush.svg";
-import devices from "/public/images/devices.svg";
-import maintenance from "/public/images/maintenance.svg";
-import management from "/public/images/management.svg";
-import planning from "/public/images/planning.svg";
-import socialMedia from "/public/images/social-media.svg";
 
 import styles from "./ServiceBox.module.scss";
 
