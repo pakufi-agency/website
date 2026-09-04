@@ -5,7 +5,6 @@ import * as Icon from "react-feather";
 import Image from "next/image";
 import { getStrapiImageUrl } from "../../utils/utils";
 
-import PersonIcon from "/public/images/icons/person-icon-placeholder.png";
 import styles from "./PersonCard.module.scss";
 
 interface PersonCardProps {

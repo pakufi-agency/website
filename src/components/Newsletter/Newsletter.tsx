@@ -8,8 +8,6 @@ import { usePathname } from "next/navigation";
 
 import styles from "./Newsletter.module.scss";
 
-import whiteCross from "/public/images/backgrounds/white-cross.svg";
-import whiteTriangle from "/public/images/backgrounds/white-triangle.svg";
 
 interface NewsletterProps {
   buttonLabel: string;
@@ -126,13 +124,13 @@ const Newsletter: React.FC<NewsletterProps> = ({
 
       {/* Shape Images */}
       <div className="shape3 rotateme">
-        <Image src={whiteCross} alt="shape" width={22} height={22} />
+        <Image src="/images/backgrounds/white-cross.svg" alt="shape" width={22} height={22} />
       </div>
       <div className="shape1">
-        <Image src={whiteTriangle} alt="shape" width={12} height={16} />
+        <Image src="/images/backgrounds/white-triangle.svg" alt="shape" width={12} height={16} />
       </div>
       <div className="shape5">
-        <Image src={whiteTriangle} alt="shape" width={21} height={20} />
+        <Image src="/images/backgrounds/white-triangle.svg" alt="shape" width={21} height={20} />
       </div>
     </div>
   );

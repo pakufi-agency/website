@@ -41,7 +41,8 @@ interface Params {
   slug: string;
 }
 
-export async function generateMetadata({ params }: { params: Params }) {
+export async function generateMetadata(props: { params: Promise<Params> }) {
+  const params =  await props.params;
   const data: StrapiResponse<Project> =
     (await getStrapiData({
       query: PROJECT_BY_SLUG_QUERY,
@@ -93,7 +94,8 @@ export async function generateStaticParams(): Promise<Params[]> {
   return (data?.projects || []).map((p) => ({ slug: p.slug }));
 }
 
-export default async function ProjectPage({ params }: { params: Params }) {
+export default async function ProjectPage(props: { params: Promise<Params> }) {
+  const params = await props.params;
   const data: StrapiResponse<Project> =
     (await getStrapiData({
       query: PROJECT_BY_SLUG_QUERY,

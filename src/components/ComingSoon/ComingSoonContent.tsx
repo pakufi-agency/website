@@ -2,10 +2,8 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import * as Icon from "react-feather";
-import comingBgImg from "/public/images/coming-soon-1.jpg";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "/public/images/logo.png";
 interface CountdownProps {
   endDate?: string; // Format: "Month Day, Year HH:mm:ss" i.e. "August 23, 2025 17:00:00 PDT"
 }
@@ -60,7 +58,7 @@ const Countdown: React.FC<CountdownProps> = ({ endDate }) => {
             <div className="container">
               <div className="coming-soon-content">
                 <h1>
-                  <Image src={logo} alt="logo" width={300} />
+                  <Image src="/images/logo.png" alt="logo" width={300} />
                 </h1>
                 <h2>Coming Soon</h2>
 

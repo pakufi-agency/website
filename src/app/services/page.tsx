@@ -25,9 +25,22 @@ export const generateMetadata = async () =>
       getStrapiData({
         query: SERVICES_PAGE_QUERY,
         pageType: "Services Page",
+        errorPolicy: "all",
       }),
     "/services",
   );
+
+function sanitizeServices(page) {
+  if (!page?.sections) return page;
+  return {
+    ...page,
+    sections: page.sections.map((section) =>
+      Array.isArray(section.services)
+        ? { ...section, services: section.services.filter((s) => s?.slug) }
+        : section,
+    ),
+  };
+}
 
 function renderSection(
   section: any,
@@ -49,9 +62,11 @@ export default async function Page() {
   const pageData = await getStrapiData<PageProps>({
     query: SERVICES_PAGE_QUERY,
     pageType: "Services Page",
+        errorPolicy: "all",
   });
 
-  const page = pageData?.pages?.[0];
+  let page = pageData?.pages?.[0];
+  page = sanitizeServices(page);
 
   if (!page) {
     return (

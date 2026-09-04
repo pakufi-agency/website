@@ -1,5 +1,4 @@
 import { StaticImageData } from "next/image";
-import ctaBigImage from "/public/images/people-meeting-contactus-homepage.png";
 
 export interface SinglePageResponse {
   slug: string;

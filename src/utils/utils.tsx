@@ -19,6 +19,7 @@ interface StrapiDataOptions {
   query: any;
   variables?: Record<string, any>;
   pageType: string;
+  errorPolicy?: "none" | "ignore" | "all";
 }
 
 /**
@@ -42,6 +43,7 @@ export async function getStrapiData<T>(
       query: options.query,
       variables: options.variables,
       fetchPolicy: "network-only",
+      errorPolicy: options.errorPolicy ?? "none",
     });
 
     if (!data) {

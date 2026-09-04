@@ -11,7 +11,6 @@ import { appConfig } from "@/utils/appConfig";
 
 import GlobalBanner from "../../components/GlobalBanner/GlobalBanner";
 
-import logo from "/public/images/logo.png";
 
 import styles from "./Navbar.module.scss";
 
@@ -113,7 +112,7 @@ const Navbar: React.FC<NavbarProps> = ({ services = [] }) => {
         <div className={`container ${styles.container}`}>
           <nav className={`navbar navbar-expand-md navbar-light ${styles.nav}`}>
             <Link href="/" className={`navbar-brand ${styles.logo}`}>
-              <Image src={logo} alt="logo" width={110} height={36} />
+              <Image src="/images/logo.png" alt="logo" width={110} height={36} />
               <span>Ethical Tech Agency</span>
             </Link>
 

@@ -8,12 +8,6 @@ import styles from "./ServiceDetails.module.scss";
 import { getStrapiImageUrl } from "@/utils/utils";
 
 // Import icons
-import brush from "/public/images/brush.svg";
-import devices from "/public/images/devices.svg";
-import maintenance from "/public/images/maintenance.svg";
-import management from "/public/images/management.svg";
-import planning from "/public/images/planning.svg";
-import socialMedia from "/public/images/social-media.svg";
 
 type ServiceDetailsProps = {
   name: string;
