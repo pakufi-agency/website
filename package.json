@@ -40,7 +40,7 @@
     "eslint": "^10.9.1",
     "eslint-config-next": "^16.3.2",
     "husky": "^9.1.7",
-    "typescript": "^5.4.3"
+    "typescript": "^7.0.2"
   },
   "allowScripts": {
     "sharp@0.35.3": true,
