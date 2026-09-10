@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Timeline.module.scss";
+import { renderTextWithLinks } from "../../utils/utils";
 
 interface MousePosition {
   x: number;
@@ -21,7 +22,6 @@ export interface TimelineComponentProps {
 const Timeline: React.FC<TimelineComponentProps> = ({ steps }) => {
   const delay = 0.3;
   const isLast = false;
-
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [mousePositions, setMousePositions] = useState<MousePosition[]>(
@@ -98,7 +98,9 @@ const Timeline: React.FC<TimelineComponentProps> = ({ steps }) => {
 
             <div className={styles.stepContent}>
               <h3 className={styles.stepTitle}>{title}</h3>
-              <p className={styles.stepDescription}>{description}</p>
+              <p className={styles.stepDescription}>
+                {renderTextWithLinks(description, "link-hover")}
+              </p>
             </div>
 
             {index < steps.length - 1 && (
