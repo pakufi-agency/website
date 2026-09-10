@@ -102,6 +102,10 @@ export const TALENTGROWTH_QUERY = gql`
               url
             }
           }
+          boxesText {
+            content
+            variant
+          }
           timelineSection {
             timelineStep {
               stepNumber
@@ -113,6 +117,12 @@ export const TALENTGROWTH_QUERY = gql`
           }
           TextBlock {
             content
+          }
+          client_reviews {
+            name
+            reviewTitle
+            reviewContent
+            rating
           }
         }
         ... on ComponentCommonSectionhalfbackground {
