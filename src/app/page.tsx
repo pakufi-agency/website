@@ -36,12 +36,25 @@ export const generateMetadata = async () => {
       getStrapiData({
         query: HOMEPAGE_QUERY,
         pageType: "Homepage",
+        errorPolicy: "all",
       }) as Promise<any>,
     "/",
   );
 };
 
 // Render a section based on componentMap
+function sanitizeServices(page: any) {
+  if (!page?.sections) return page;
+  return {
+    ...page,
+    sections: page.sections.map((section: any) =>
+      Array.isArray(section.services)
+        ? { ...section, services: section.services.filter((s: any) => s?.slug) }
+        : section,
+    ),
+  };
+}
+
 function renderSection(
   section: SectionProps,
   ComponentWrapper: React.ComponentType<any>,
@@ -70,9 +83,11 @@ export default async function Page() {
   const pageData = await getStrapiData<PageProps>({
     query: HOMEPAGE_QUERY,
     pageType: "Homepage",
+        errorPolicy: "all",
   });
 
-  const page = pageData?.pages[0];
+  let page = pageData?.pages[0];
+  page = sanitizeServices(page);
 
   const blogData = await getStrapiData<{ blogPosts: any[] }>({
     query: BLOG_POSTS_LATEST_QUERY,

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-export function middleware(request: any) {
+export function proxy(request: any) {
   const { pathname } = request.nextUrl;
 
   // Skip API routes, Next.js internals, and files with extensions (.css, .js, .png, etc.)

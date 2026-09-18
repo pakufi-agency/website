@@ -6,9 +6,6 @@ import Link from "next/link";
 import * as Icon from "react-feather";
 
 import styles from "./Footer.module.scss";
-import logo from "/public/images/logo.png";
-import greenCross from "/public/images/backgrounds/green-cross.svg";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -27,7 +24,7 @@ const Footer = () => {
               <div className={`${styles.singleFooterWidget} ${styles.logoCol}`}>
                 <div className={styles.logo}>
                   <Link href="/" className={styles.link}>
-                    <Image src={logo} alt="logo" width={110} height={36} />
+                    <Image src="/images/logo.png" alt="logo" width={110} height={36} />
                   </Link>
                 </div>
                 <p>
@@ -201,7 +198,7 @@ const Footer = () => {
         </div>
 
         <div className="shape8 rotateme">
-          <Image src={greenCross} alt="shape" width={22} height={22} />
+          <Image src="/images/backgrounds/green-cross.svg" alt="shape" width={22} height={22} />
         </div>
       </footer>
     </>

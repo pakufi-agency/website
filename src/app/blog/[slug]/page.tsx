@@ -40,7 +40,8 @@ interface Params {
   slug: string;
 }
 
-export async function generateMetadata({ params }: { params: Params }) {
+export async function generateMetadata(props: { params: Promise<Params> }) {
+  const params = await props.params;
   const data: StrapiResponse<BlogPost> =
     (await getStrapiData({
       query: BLOG_POST_BY_SLUG_QUERY,
@@ -98,7 +99,8 @@ export async function generateStaticParams(): Promise<Params[]> {
   return (data?.blogPosts || []).map((p) => ({ slug: p.slug }));
 }
 
-export default async function BlogPostPage({ params }: { params: Params }) {
+export default async function BlogPostPage(props: { params: Promise<Params> }) {
+  const params = await props.params;
   const data: StrapiResponse<BlogPost> =
     (await getStrapiData({
       query: BLOG_POST_BY_SLUG_QUERY,

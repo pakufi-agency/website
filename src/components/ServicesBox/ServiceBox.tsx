@@ -6,12 +6,6 @@ import Image, { StaticImageData } from "next/image";
 import BlockRendererClient from "../BlockRendererClient";
 import { ButtonLink } from "../ButtonLink";
 
-import brush from "/public/images/brush.svg";
-import devices from "/public/images/devices.svg";
-import maintenance from "/public/images/maintenance.svg";
-import management from "/public/images/management.svg";
-import planning from "/public/images/planning.svg";
-import socialMedia from "/public/images/social-media.svg";
 
 import styles from "./ServiceBox.module.scss";
 
@@ -29,22 +23,22 @@ interface ServiceBoxesProps {
 }
 
 const ServiceBox: React.FC<ServiceBoxesProps> = ({ items }) => {
-  const getImage = (iconName: string): StaticImageData => {
+  const getImage = (iconName: string): string => {
     switch (iconName) {
       case "brush":
-        return brush;
+        return "/images/brush.svg";
       case "devices":
-        return devices;
+        return "/images/devices.svg";
       case "maintenance":
-        return maintenance;
+        return "/images/maintenance.svg";
       case "management":
-        return management;
+        return "/images/management.svg";
       case "planning":
-        return planning;
+        return "/images/planning.svg";
       case "socialMedia":
-        return socialMedia;
+        return "/images/social-media.svg";
       default:
-        return devices; // Fallback image
+        return "/images/devices.svg"; // Fallback image
     }
   };
 

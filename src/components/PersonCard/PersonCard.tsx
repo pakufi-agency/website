@@ -5,7 +5,6 @@ import * as Icon from "react-feather";
 import Image from "next/image";
 import { getStrapiImageUrl } from "../../utils/utils";
 
-import PersonIcon from "/public/images/icons/person-icon-placeholder.png";
 import styles from "./PersonCard.module.scss";
 
 interface PersonCardProps {
@@ -46,7 +45,7 @@ const PersonCard: React.FC<PersonCardProps> = ({
       >
         <Image
           alt={profilePic?.alternativeText || "profile icon"}
-          src={profilePic?.url ? getStrapiImageUrl(profilePic.url) : PersonIcon}
+          src={profilePic?.url ? getStrapiImageUrl(profilePic.url) : "/images/icons/person-icon-placeholder.png"}
           width={125}
           height={125}
           style={{ objectFit: "cover", borderRadius: "50%" }}

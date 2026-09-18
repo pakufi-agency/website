@@ -1,25 +1,24 @@
-import blogImg from "/public/images/people-meeting-contactus-homepage.png";
 
 export const popularPostsData = [
   {
     id: 1,
     title: "Making Peace With The Feast Or Famine Of Freelancing",
     date: "June 10, 2022",
-    image: blogImg,
+    image: "/images/people-meeting-contactus-homepage.png",
     link: "/blog/blog-details/",
   },
   {
     id: 2,
     title: "I Used The Web For A Day On A 50 MB Budget",
     date: "June 21, 2022",
-    image: blogImg,
+    image: "/images/people-meeting-contactus-homepage.png",
     link: "/blog/blog-details/",
   },
   {
     id: 3,
     title: "How To Create A Responsive Popup Gallery?",
     date: "June 30, 2022",
-    image: blogImg,
+    image: "/images/people-meeting-contactus-homepage.png",
     link: "/blog/blog-details/",
   },
 ];

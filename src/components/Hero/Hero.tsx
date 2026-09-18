@@ -10,8 +10,6 @@ import { ButtonLink } from "../ButtonLink";
 
 import styles from "./Hero.module.scss";
 
-import whiteCross from "/public/images/backgrounds/white-cross.svg";
-import greenTriangle from "/public/images/backgrounds/green-triangle.svg";
 
 interface HeroProps {
   title: string;
@@ -81,10 +79,10 @@ const Hero: React.FC<HeroProps> = ({
           </div>
 
           <div className={`shape3 ${styles.triangleShape}`}>
-            <Image src={greenTriangle} alt="shape" width={21} height={20} />
+            <Image src="/images/backgrounds/green-triangle.svg" alt="shape" width={21} height={20} />
           </div>
           <div className={`shape7 ${styles.crossShape}`}>
-            <Image src={whiteCross} alt="shape" width={21} height={20} />
+            <Image src="/images/backgrounds/white-cross.svg" alt="shape" width={21} height={20} />
           </div>
         </div>
       </div>

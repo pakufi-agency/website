@@ -6,8 +6,6 @@ import { getStrapiImageUrl } from "../../utils/utils";
 
 import styles from "./PageBanner.module.scss";
 
-import whiteCross from "/public/images/backgrounds/white-cross.svg";
-import greenTriangle from "/public/images/backgrounds/green-triangle.svg";
 
 interface PageBannerProps {
   pageTitle: string;
@@ -37,13 +35,13 @@ const PageBanner: React.FC<PageBannerProps> = ({
         </div>
 
         <div className="shape2 rotateme">
-          <Image src={whiteCross} alt="shape" width={22} height={22} />
+          <Image src="/images/backgrounds/white-cross.svg" alt="shape" width={22} height={22} />
         </div>
         <div className="shape7">
-          <Image src={greenTriangle} alt="shape" width={12} height={16} />
+          <Image src="/images/backgrounds/green-triangle.svg" alt="shape" width={12} height={16} />
         </div>
         <div className="shape6 rotateme">
-          <Image src={greenTriangle} alt="shape" width={22} height={22} />
+          <Image src="/images/backgrounds/green-triangle.svg" alt="shape" width={22} height={22} />
         </div>
       </div>
     </>

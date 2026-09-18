@@ -5,7 +5,6 @@ import Image from "next/image";
 
 import styles from "./WeBanner.module.scss";
 
-import circle from "/public/images/backgrounds/green-spiral-bg.svg";
 
 interface WeBannerProps {
   sectionTitle: String;
@@ -27,7 +26,7 @@ const WeBanner: React.FC<WeBannerProps> = ({
           <div className="row align-items-center">
             <div className="col-lg-4">
               <div className={`${styles.ctaShape}`}>
-                <Image src={circle} alt="image" width={821} height={801} />
+                <Image src="/images/backgrounds/green-spiral-bg.svg" alt="image" width={821} height={801} />
               </div>
             </div>
             <div className="col-lg-8">
