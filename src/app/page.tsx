@@ -43,13 +43,13 @@ export const generateMetadata = async () => {
 };
 
 // Render a section based on componentMap
-function sanitizeServices(page) {
+function sanitizeServices(page: any) {
   if (!page?.sections) return page;
   return {
     ...page,
-    sections: page.sections.map((section) =>
+    sections: page.sections.map((section: any) =>
       Array.isArray(section.services)
-        ? { ...section, services: section.services.filter((s) => s?.slug) }
+        ? { ...section, services: section.services.filter((s: any) => s?.slug) }
         : section,
     ),
   };

@@ -51,7 +51,7 @@ const Countdown: React.FC<CountdownProps> = ({ endDate }) => {
     <>
       <div
         className="coming-soon-area"
-        style={{ backgroundImage: `url(${comingBgImg.src})` }}
+        style={{ backgroundImage: `url()` }}
       >
         <div className="d-table">
           <div className="d-table-cell">

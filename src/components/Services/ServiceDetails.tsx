@@ -24,22 +24,22 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({
   descriptionRichText,
   icon,
 }) => {
-  const getImage = (iconName: string): StaticImageData => {
+  const getImage = (iconName: string): string => {
     switch (iconName) {
       case "brush":
-        return brush;
+        return "/images/brush.svg";
       case "devices":
-        return devices;
+        return "/images/devices.svg";
       case "maintenance":
-        return maintenance;
+        return "/images/maintenance.svg";
       case "management":
-        return management;
+        return "/images/management.svg";
       case "planning":
-        return planning;
+        return "/images/planning.svg";
       case "socialMedia":
-        return socialMedia;
+        return "/images/social-media.svg";
       default:
-        return devices; // Fallback image
+        return "/images/devices.svg"; // Fallback image
     }
   };
 
